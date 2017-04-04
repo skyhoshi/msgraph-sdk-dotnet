@@ -25,9 +25,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 emailAddresses.Add("22222@aaaaaaa.onmicrosoft.com");
                 emailAddresses.Add("33333@aaaaaaa.onmicrosoft.com");
 
-                var mailTipsCollectionPage = await graphClient.Me.GetMailTips(emailAddresses, MailTipsType.AutomaticReplies | 
-                                                                                              MailTipsType.CustomMailTip | 
-                                                                                              MailTipsType.MaxMessageSize | 
+                var mailTipsCollectionPage = await graphClient.Me.GetMailTips(emailAddresses, MailTipsType.AutomaticReplies |
+                                                                                              MailTipsType.CustomMailTip |
+                                                                                              MailTipsType.MaxMessageSize |
                                                                                               MailTipsType.RecipientScope |
                                                                                               MailTipsType.TotalMemberCount).Request().PostAsync();
 
@@ -43,5 +43,29 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
+        [Fact(Skip = "No CI set up for functional tests; setup a listener for the webhook")]
+        public async System.Threading.Tasks.Task UserNotificationSubscription()
+        {
+            try
+            {
+                var s = new Subscription()
+                {
+                    ClientState = "Secret state information",
+                    ChangeType = "created,updated",
+                    NotificationUrl = "https://useAnAzureFunctionForThis.azurewebsites.net/api/WebhookTrigger",
+                    Resource = "/me/mailfolders/inbox/messages",
+                    ExpirationDateTime = new DateTimeOffset(DateTime.Now.AddMinutes(120))
+                };
+
+                var subscription = await graphClient.Subscriptions.Request().AddAsync(s);
+                
+                Assert.NotNull(subscription.Id);
+                
+            }
+            catch (Microsoft.Graph.ServiceException e)
+            {
+                Assert.True(false, "Something happened, check out a trace. Error code: " + e.Error.Code);
+            }
+        }
     }
 }
