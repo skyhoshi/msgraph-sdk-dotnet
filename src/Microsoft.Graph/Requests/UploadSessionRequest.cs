@@ -8,10 +8,20 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
     using System.Threading;
     using System.Threading.Tasks;
+
+    /// <summary>
+    /// The request for large file upload
+    /// </summary>
     public class UploadSessionRequest : BaseRequest
     {
         private readonly UploadSession session;
 
+        /// <summary>
+        /// Create a new upload session request
+        /// </summary>
+        /// <param name="session">The upload session to use</param>
+        /// <param name="client">The client to send the request with</param>
+        /// <param name="options">Options to run the request with</param>
         public UploadSessionRequest(UploadSession session, IBaseClient client, IEnumerable<Option> options)
             : base(session.UploadUrl, client, options)
         {

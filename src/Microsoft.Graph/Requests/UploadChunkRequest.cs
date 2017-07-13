@@ -23,9 +23,24 @@ namespace Microsoft.Graph
     /// </summary>
     public partial class UploadChunkRequest : BaseRequest, IUploadChunkRequest
     {
+        /// <summary>
+        /// Beginning of the chunk range
+        /// </summary>
         public long RangeBegin { get; private set; }
+
+        /// <summary>
+        /// End of the chunk range
+        /// </summary>
         public long RangeEnd { get; private set; }
+
+        /// <summary>
+        /// Total length of the session
+        /// </summary>
         public long TotalSessionLength { get; private set; }
+
+        /// <summary>
+        /// The length of the range
+        /// </summary>
         public int RangeLength => (int)(this.RangeEnd - this.RangeBegin + 1);
 
         /// <summary>
@@ -147,10 +162,24 @@ namespace Microsoft.Graph
         }
     }
 
+    /// <summary>
+    /// Defines the response object
+    /// </summary>
     public class UploadChunkResult
     {
+        /// <summary>
+        /// The upload session from the request
+        /// </summary>
         public UploadSession UploadSession;
+
+        /// <summary>
+        /// The completed drive item
+        /// </summary>
         public DriveItem ItemResponse;
+
+        /// <summary>
+        /// The status of the upload
+        /// </summary>
         public bool UploadSucceeded => this.ItemResponse != null;
     }
 }
