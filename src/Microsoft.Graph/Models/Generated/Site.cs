@@ -46,6 +46,12 @@ namespace Microsoft.Graph
         public SiteCollection SiteCollection { get; set; }
     
         /// <summary>
+        /// Gets or sets columns.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "columns", Required = Newtonsoft.Json.Required.Default)]
+        public ISiteColumnsCollectionPage Columns { get; set; }
+    
+        /// <summary>
         /// Gets or sets drive.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "drive", Required = Newtonsoft.Json.Required.Default)]
@@ -56,6 +62,18 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "drives", Required = Newtonsoft.Json.Required.Default)]
         public ISiteDrivesCollectionPage Drives { get; set; }
+    
+        /// <summary>
+        /// Gets or sets items.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "items", Required = Newtonsoft.Json.Required.Default)]
+        public ISiteItemsCollectionPage Items { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lists.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lists", Required = Newtonsoft.Json.Required.Default)]
+        public ISiteListsCollectionPage Lists { get; set; }
     
         /// <summary>
         /// Gets or sets sites.

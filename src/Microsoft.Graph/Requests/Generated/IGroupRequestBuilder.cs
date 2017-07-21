@@ -31,6 +31,12 @@ namespace Microsoft.Graph
         new IGroupRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Extensions.
+        /// </summary>
+        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
+        IGroupExtensionsCollectionRequestBuilder Extensions { get; }
+
+        /// <summary>
         /// Gets the request builder for Members.
         /// </summary>
         /// <returns>The <see cref="IGroupMembersCollectionWithReferencesRequestBuilder"/>.</returns>
@@ -55,10 +61,16 @@ namespace Microsoft.Graph
         IGroupOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
-        /// Gets the request builder for Extensions.
+        /// Gets the request builder for Settings.
         /// </summary>
-        /// <returns>The <see cref="IGroupExtensionsCollectionRequestBuilder"/>.</returns>
-        IGroupExtensionsCollectionRequestBuilder Extensions { get; }
+        /// <returns>The <see cref="IGroupSettingsCollectionRequestBuilder"/>.</returns>
+        IGroupSettingsCollectionRequestBuilder Settings { get; }
+
+        /// <summary>
+        /// Gets the request builder for Endpoints.
+        /// </summary>
+        /// <returns>The <see cref="IGroupEndpointsCollectionRequestBuilder"/>.</returns>
+        IGroupEndpointsCollectionRequestBuilder Endpoints { get; }
 
         /// <summary>
         /// Gets the request builder for Threads.
@@ -133,6 +145,12 @@ namespace Microsoft.Graph
         IGroupSitesCollectionRequestBuilder Sites { get; }
 
         /// <summary>
+        /// Gets the request builder for Plans.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        IGroupPlansCollectionWithReferencesRequestBuilder Plans { get; }
+
+        /// <summary>
         /// Gets the request builder for Planner.
         /// </summary>
         /// <returns>The <see cref="IPlannerGroupRequestBuilder"/>.</returns>
@@ -143,7 +161,19 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         IOnenoteRequestBuilder Onenote { get; }
+
+        /// <summary>
+        /// Gets the request builder for Channels.
+        /// </summary>
+        /// <returns>The <see cref="IGroupChannelsCollectionRequestBuilder"/>.</returns>
+        IGroupChannelsCollectionRequestBuilder Channels { get; }
     
+        /// <summary>
+        /// Gets the request builder for GroupRenew.
+        /// </summary>
+        /// <returns>The <see cref="IGroupRenewRequestBuilder"/>.</returns>
+        IGroupRenewRequestBuilder Renew();
+
         /// <summary>
         /// Gets the request builder for GroupSubscribeByMail.
         /// </summary>

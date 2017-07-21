@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public Int32? ChildCount { get; set; }
     
         /// <summary>
+        /// Gets or sets view.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "view", Required = Newtonsoft.Json.Required.Default)]
+        public FolderView View { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData(ReadData = true)]

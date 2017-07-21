@@ -60,6 +60,89 @@ namespace Microsoft.Graph
                 return new OrganizationExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("extensions"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for DepOnboardingSettings.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationDepOnboardingSettingsCollectionRequestBuilder"/>.</returns>
+        public IOrganizationDepOnboardingSettingsCollectionRequestBuilder DepOnboardingSettings
+        {
+            get
+            {
+                return new OrganizationDepOnboardingSettingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("depOnboardingSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AppleVolumePurchaseProgramTokens.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationAppleVolumePurchaseProgramTokensCollectionRequestBuilder"/>.</returns>
+        public IOrganizationAppleVolumePurchaseProgramTokensCollectionRequestBuilder AppleVolumePurchaseProgramTokens
+        {
+            get
+            {
+                return new OrganizationAppleVolumePurchaseProgramTokensCollectionRequestBuilder(this.AppendSegmentToRequestUrl("appleVolumePurchaseProgramTokens"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder"/>.</returns>
+        public IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder SetMobileDeviceManagementAuthority()
+        {
+            return new OrganizationSetMobileDeviceManagementAuthorityRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setMobileDeviceManagementAuthority"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for OrganizationUploadDepToken.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationUploadDepTokenRequestBuilder"/>.</returns>
+        public IOrganizationUploadDepTokenRequestBuilder UploadDepToken(
+            string appleId = null,
+            string depToken = null)
+        {
+            return new OrganizationUploadDepTokenRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.uploadDepToken"),
+                this.Client,
+                appleId,
+                depToken);
+        }
+
+        /// <summary>
+        /// Gets the request builder for OrganizationSyncWithAppleDeviceEnrollmentProgram.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationSyncWithAppleDeviceEnrollmentProgramRequestBuilder"/>.</returns>
+        public IOrganizationSyncWithAppleDeviceEnrollmentProgramRequestBuilder SyncWithAppleDeviceEnrollmentProgram()
+        {
+            return new OrganizationSyncWithAppleDeviceEnrollmentProgramRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.syncWithAppleDeviceEnrollmentProgram"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for OrganizationToggleOnPremisesCertificateConnector.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationToggleOnPremisesCertificateConnectorRequestBuilder"/>.</returns>
+        public IOrganizationToggleOnPremisesCertificateConnectorRequestBuilder ToggleOnPremisesCertificateConnector()
+        {
+            return new OrganizationToggleOnPremisesCertificateConnectorRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.toggleOnPremisesCertificateConnector"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for OrganizationGetEncryptionPublicKey.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationGetEncryptionPublicKeyRequestBuilder"/>.</returns>
+        public IOrganizationGetEncryptionPublicKeyRequestBuilder GetEncryptionPublicKey()
+        {
+            return new OrganizationGetEncryptionPublicKeyRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEncryptionPublicKey"),
+                this.Client);
+        }
     
     }
 }

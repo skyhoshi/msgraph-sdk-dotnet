@@ -31,10 +31,22 @@ namespace Microsoft.Graph
         new IDriveItemRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Workbook.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
+        IWorkbookRequestBuilder Workbook { get; }
+
+        /// <summary>
         /// Gets the request builder for Children.
         /// </summary>
         /// <returns>The <see cref="IDriveItemChildrenCollectionRequestBuilder"/>.</returns>
         IDriveItemChildrenCollectionRequestBuilder Children { get; }
+
+        /// <summary>
+        /// Gets the request builder for ListItem.
+        /// </summary>
+        /// <returns>The <see cref="IListItemRequestBuilder"/>.</returns>
+        IListItemRequestBuilder ListItem { get; }
 
         /// <summary>
         /// Gets the request builder for Permissions.
@@ -47,12 +59,6 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemThumbnailsCollectionRequestBuilder"/>.</returns>
         IDriveItemThumbnailsCollectionRequestBuilder Thumbnails { get; }
-
-        /// <summary>
-        /// Gets the request builder for Workbook.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
-        IWorkbookRequestBuilder Workbook { get; }
     
         /// <summary>
         /// Gets the request builder for Content.
@@ -73,8 +79,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateLinkRequestBuilder"/>.</returns>
         IDriveItemCreateLinkRequestBuilder CreateLink(
-            string type = null,
-            string scope = null);
+            string scope = null,
+            string type = null);
 
         /// <summary>
         /// Gets the request builder for DriveItemCreateUploadSession.

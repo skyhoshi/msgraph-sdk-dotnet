@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public IDriveItemsCollectionPage Items { get; set; }
     
         /// <summary>
+        /// Gets or sets list.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "list", Required = Newtonsoft.Json.Required.Default)]
+        public List List { get; set; }
+    
+        /// <summary>
         /// Gets or sets root.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "root", Required = Newtonsoft.Json.Required.Default)]

@@ -142,10 +142,22 @@ namespace Microsoft.Graph
         public string WebDavUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets workbook.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workbook", Required = Newtonsoft.Json.Required.Default)]
+        public Workbook Workbook { get; set; }
+    
+        /// <summary>
         /// Gets or sets children.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "children", Required = Newtonsoft.Json.Required.Default)]
         public IDriveItemChildrenCollectionPage Children { get; set; }
+    
+        /// <summary>
+        /// Gets or sets list item.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "listItem", Required = Newtonsoft.Json.Required.Default)]
+        public ListItem ListItem { get; set; }
     
         /// <summary>
         /// Gets or sets permissions.
@@ -158,12 +170,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "thumbnails", Required = Newtonsoft.Json.Required.Default)]
         public IDriveItemThumbnailsCollectionPage Thumbnails { get; set; }
-    
-        /// <summary>
-        /// Gets or sets workbook.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "workbook", Required = Newtonsoft.Json.Required.Default)]
-        public Workbook Workbook { get; set; }
     
     }
 }

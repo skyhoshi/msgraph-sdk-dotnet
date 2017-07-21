@@ -20,6 +20,11 @@ namespace Microsoft.Graph
     public partial interface IMessageCreateForwardRequest : IBaseRequest
     {
 
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        MessageCreateForwardRequestBody RequestBody { get; }
+
 
         /// <summary>
         /// Issues the POST request.
@@ -29,7 +34,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        /// <param name=""cancellationToken"">The <see cref=""CancellationToken""/> for the request.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         System.Threading.Tasks.Task<Message> PostAsync(
             CancellationToken cancellationToken);

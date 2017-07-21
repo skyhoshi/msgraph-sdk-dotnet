@@ -50,6 +50,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Workbook.
+        /// </summary>
+        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
+        public IWorkbookRequestBuilder Workbook
+        {
+            get
+            {
+                return new WorkbookRequestBuilder(this.AppendSegmentToRequestUrl("workbook"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Children.
         /// </summary>
         /// <returns>The <see cref="IDriveItemChildrenCollectionRequestBuilder"/>.</returns>
@@ -58,6 +70,18 @@ namespace Microsoft.Graph
             get
             {
                 return new DriveItemChildrenCollectionRequestBuilder(this.AppendSegmentToRequestUrl("children"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ListItem.
+        /// </summary>
+        /// <returns>The <see cref="IListItemRequestBuilder"/>.</returns>
+        public IListItemRequestBuilder ListItem
+        {
+            get
+            {
+                return new ListItemRequestBuilder(this.AppendSegmentToRequestUrl("listItem"), this.Client);
             }
         }
 
@@ -82,18 +106,6 @@ namespace Microsoft.Graph
             get
             {
                 return new DriveItemThumbnailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("thumbnails"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Workbook.
-        /// </summary>
-        /// <returns>The <see cref="IWorkbookRequestBuilder"/>.</returns>
-        public IWorkbookRequestBuilder Workbook
-        {
-            get
-            {
-                return new WorkbookRequestBuilder(this.AppendSegmentToRequestUrl("workbook"), this.Client);
             }
         }
     
@@ -129,14 +141,14 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDriveItemCreateLinkRequestBuilder"/>.</returns>
         public IDriveItemCreateLinkRequestBuilder CreateLink(
-            string type = null,
-            string scope = null)
+            string scope = null,
+            string type = null)
         {
             return new DriveItemCreateLinkRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.createLink"),
                 this.Client,
-                type,
-                scope);
+                scope,
+                type);
         }
 
         /// <summary>

@@ -190,6 +190,12 @@ namespace Microsoft.Graph
         public string OnlineMeetingUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets creation options.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "creationOptions", Required = Newtonsoft.Json.Required.Default)]
+        public EventCreationOptions CreationOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets calendar.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "calendar", Required = Newtonsoft.Json.Required.Default)]

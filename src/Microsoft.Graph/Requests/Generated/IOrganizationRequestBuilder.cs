@@ -35,6 +35,50 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOrganizationExtensionsCollectionRequestBuilder"/>.</returns>
         IOrganizationExtensionsCollectionRequestBuilder Extensions { get; }
+
+        /// <summary>
+        /// Gets the request builder for DepOnboardingSettings.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationDepOnboardingSettingsCollectionRequestBuilder"/>.</returns>
+        IOrganizationDepOnboardingSettingsCollectionRequestBuilder DepOnboardingSettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for AppleVolumePurchaseProgramTokens.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationAppleVolumePurchaseProgramTokensCollectionRequestBuilder"/>.</returns>
+        IOrganizationAppleVolumePurchaseProgramTokensCollectionRequestBuilder AppleVolumePurchaseProgramTokens { get; }
+    
+        /// <summary>
+        /// Gets the request builder for OrganizationSetMobileDeviceManagementAuthority.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder"/>.</returns>
+        IOrganizationSetMobileDeviceManagementAuthorityRequestBuilder SetMobileDeviceManagementAuthority();
+
+        /// <summary>
+        /// Gets the request builder for OrganizationUploadDepToken.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationUploadDepTokenRequestBuilder"/>.</returns>
+        IOrganizationUploadDepTokenRequestBuilder UploadDepToken(
+            string appleId = null,
+            string depToken = null);
+
+        /// <summary>
+        /// Gets the request builder for OrganizationSyncWithAppleDeviceEnrollmentProgram.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationSyncWithAppleDeviceEnrollmentProgramRequestBuilder"/>.</returns>
+        IOrganizationSyncWithAppleDeviceEnrollmentProgramRequestBuilder SyncWithAppleDeviceEnrollmentProgram();
+
+        /// <summary>
+        /// Gets the request builder for OrganizationToggleOnPremisesCertificateConnector.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationToggleOnPremisesCertificateConnectorRequestBuilder"/>.</returns>
+        IOrganizationToggleOnPremisesCertificateConnectorRequestBuilder ToggleOnPremisesCertificateConnector();
+
+        /// <summary>
+        /// Gets the request builder for OrganizationGetEncryptionPublicKey.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationGetEncryptionPublicKeyRequestBuilder"/>.</returns>
+        IOrganizationGetEncryptionPublicKeyRequestBuilder GetEncryptionPublicKey();
     
     }
 }

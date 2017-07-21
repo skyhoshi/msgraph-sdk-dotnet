@@ -28,7 +28,14 @@ namespace Microsoft.Graph
             IEnumerable<Option> options)
             : base(requestUrl, client, options)
         {
+            this.ContentType = "application/json";
+            this.RequestBody = new MessageCreateReplyRequestBody();
         }
+
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        public MessageCreateReplyRequestBody RequestBody { get; private set; }
 
         /// <summary>
         /// Issues the POST request.
@@ -41,13 +48,13 @@ namespace Microsoft.Graph
         /// <summary>
         /// Issues the POST request.
         /// </summary>
-        /// <param name=""cancellationToken"">The <see cref=""CancellationToken""/> for the request.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await for async call.</returns>
         public System.Threading.Tasks.Task<Message> PostAsync(
             CancellationToken cancellationToken)
         {
             this.Method = "POST";
-            return this.SendAsync<Message>(null, cancellationToken);
+            return this.SendAsync<Message>(this.RequestBody, cancellationToken);
         }
 
 

@@ -53,6 +53,12 @@ namespace Microsoft.Graph
         public string SiteUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets tenantId.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tenantId", Required = Newtonsoft.Json.Required.Default)]
+        public string TenantId { get; set; }
+    
+        /// <summary>
         /// Gets or sets webId.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "webId", Required = Newtonsoft.Json.Required.Default)]
