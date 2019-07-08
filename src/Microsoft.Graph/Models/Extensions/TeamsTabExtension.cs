@@ -8,7 +8,7 @@ namespace Microsoft.Graph
         /// Gets or sets an assiociated existing app with a teams tab.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamsApp@odata.bind", Required = Newtonsoft.Json.Required.Default)]
-        public string OdataBind { get; set; }
+        public string ODataBind { get; set; }
 
     }
 }
