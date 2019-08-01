@@ -21,10 +21,10 @@ namespace Microsoft.Graph.Tasks
     /// <typeparam name="TEntity">The Microsoft Graph entity type returned in the result set.</typeparam>
     public class PageIterator<TEntity>
     {
-        private IBaseClient client;
-        private ICollectionPage<TEntity> currentPage;
-        private Queue<TEntity> pageItemQueue;
-        private Func<TEntity, bool> processPageItemCallback;
+        private IBaseClient _client;
+        private ICollectionPage<TEntity> _currentPage;
+        private Queue<TEntity> _pageItemQueue;
+        private Func<TEntity, bool> _processPageItemCallback;
 
         /// <summary>
         /// The @odata.deltaLink returned from a delta query.
@@ -56,10 +56,10 @@ namespace Microsoft.Graph.Tasks
 
             return new PageIterator<TEntity>()
             {
-                client = client,
-                currentPage = page,
-                pageItemQueue = new Queue<TEntity>(page),
-                processPageItemCallback = callback,
+                _client = client,
+                _currentPage = page,
+                _pageItemQueue = new Queue<TEntity>(page),
+                _processPageItemCallback = callback,
                 State = PagingState.NotStarted
             };
         }
@@ -68,26 +68,56 @@ namespace Microsoft.Graph.Tasks
         /// Iterate across the content of a a single results page with the callback.
         /// </summary>
         /// <returns>A boolean value that indicates whether the callback cancelled 
-        /// iterating across the page results. A value of false indicates that
-        /// the iterator should stop iterating.</returns>
+        /// iterating across the page results or whether there are more pages to page. 
+        /// A return value of false indicates that the iterator should stop iterating.</returns>
         private bool IntrapageIterate()
         {
             State = PagingState.IntrapageIteration;
 
-            bool shouldContinue = true;
+            //bool shouldContinue = true;
 
-            while (pageItemQueue.Count != 0 && shouldContinue)
+            while (_pageItemQueue.Count != 0) // && shouldContinue)
             {
-                shouldContinue = processPageItemCallback(pageItemQueue.Dequeue());
+                bool shouldContinue = _processPageItemCallback(_pageItemQueue.Dequeue());
 
                 // Cancel processing of items in the page and stop requesting more pages.
                 if (!shouldContinue)
                 {
-                    break;
+                    State = PagingState.Paused;
+                    return shouldContinue;
                 }
             }
 
-            return shouldContinue;
+            // There are more pages ready to be paged.
+            if (_currentPage.AdditionalData.TryGetValue("@odata.nextLink", out object nextlink))
+            {
+                Nextlink = nextlink as string;
+                return true;
+            }
+
+            // There are no pages CURRENTLY ready to be paged. Attempt to call delta query later.
+            else if (_currentPage.AdditionalData.TryGetValue("@odata.deltaLink", out object deltalink))
+            {
+                Deltalink = deltalink as string;
+                State = PagingState.Delta;
+                Nextlink = string.Empty;
+
+                // Setup deltalink request. Using dynamic to access the NextPageRequest.
+                dynamic page = _currentPage;
+                page.InitializeNextPageRequest(this._client, Deltalink);
+                _currentPage = page;
+
+                return false;
+            }
+
+            // Paging has completed - no more nextlinks.
+            else
+            {
+                State = PagingState.Complete;
+                Nextlink = string.Empty;
+
+                return false;
+            }
         }
 
         /// <summary>
@@ -97,27 +127,38 @@ namespace Microsoft.Graph.Tasks
         /// <returns>The task object that represents the results of this asynchronous operation.</returns>
         /// <exception cref="Microsoft.Graph.ServiceException">Thrown when the service encounters an error with
         /// a request.</exception>
-        private async Task<bool> InterpageIterateAsync(CancellationToken token)
+        private async Task InterpageIterateAsync(CancellationToken token)
         {
             State = PagingState.InterpageIteration;
 
-            // We need access to the NextPageRequest to call and get the next page. ICollectionPage<TEntity> doesn't define NextPageRequest.
-            // We are making this dynamic so we can access NextPageRequest.
-            dynamic page = this.currentPage;
-
-            if (page.NextPageRequest == null)
-                return false;
-
-            // Call the service to get the next page of results and set that page as the currentPage.
-            this.currentPage = await page.NextPageRequest.GetAsync(token).ConfigureAwait(false);
-
-            if (this.currentPage.Count > 0)
+            // Get the next page if it is available and queue the items for processing.
+            if (_currentPage.AdditionalData.TryGetValue("@odata.nextLink", out object nextlink))
             {
-                this.pageItemQueue = new Queue<TEntity>(this.currentPage);
-                return true;
-                //await IterateAsync(token);
+                // We need access to the NextPageRequest to call and get the next page. ICollectionPage<TEntity> doesn't define NextPageRequest.
+                // We are making this dynamic so we can access NextPageRequest.
+                dynamic page = _currentPage;
+
+                // Call the MSGraph API to get the next page of results and set that page as the currentPage.
+                _currentPage = await page.NextPageRequest.GetAsync(token).ConfigureAwait(false);
+
+                // Add all of the items returned in the response to the queue.
+                if (_currentPage.Count > 0)
+                {
+                    foreach (TEntity entity in _currentPage)
+                    {
+                        _pageItemQueue.Enqueue(entity);
+                    }
+                }
             }
-            else return false;
+
+            // Detect nextLink loop
+            if (_currentPage.AdditionalData.TryGetValue("@odata.nextLink", out object nextNextLink) && nextlink.Equals(nextNextLink))
+            {
+                throw new ServiceException(new Error()
+                {
+                    Message = $"Detected nextLink loop. Nextlink value: {Nextlink}"
+                });
+            }
         }
 
         /// <summary>
@@ -141,64 +182,29 @@ namespace Microsoft.Graph.Tasks
         /// <exception cref="Microsoft.CSharp.RuntimeBinder.RuntimeBinderException">Thrown when a base CollectionPage that does not implement NextPageRequest
         /// is provided to the PageIterator</exception>
         /// <exception cref="Microsoft.Graph.ServiceException">Thrown when the service encounters an error with
-        /// a request.</exception>
+        /// a request or there is an internal error with the service.</exception>
         public async Task IterateAsync(CancellationToken token)
         {
-            // Iterate over the contents of the initial page with the callback.
-            bool shouldContinueIntrapageIteration = IntrapageIterate();
+            // Occurs when we try to request new changes from MSGraph with a deltalink.
+            if (State == PagingState.Delta)
+            {
+                // Make a call to get the next page of results and add items to queue. 
+                await InterpageIterateAsync(token);
+            }
+
+            // Iterate over the contents of queue. The queue could be from the initial page
+            // results passed to the iterator or from a cancelled iteration that gets resumed.
+            bool shouldContinueInterpageIteration = IntrapageIterate();
 
             // Request more pages if they are available.
-            if (shouldContinueIntrapageIteration && !token.IsCancellationRequested)
+            while (shouldContinueInterpageIteration && !token.IsCancellationRequested)
             {
-                // Using dynamic to access the NextPageRequest.
-                dynamic page = this.currentPage;
+                // Make a call to get the next page of results and add items to queue. 
+                await InterpageIterateAsync(token);
 
-                // TODO: detect nextLink loop detection.
-
-                // TODO: this needs to be set 
-                // Initial capture the nextLink and deltaLink from the first page result 
-                // in case we need to restart iteration. 
-                currentPage.AdditionalData.TryGetValue("@odata.nextLink", out object nextlink);
-                Nextlink = nextlink as string;
-
-                currentPage.AdditionalData.TryGetValue("@odata.deltaLink", out object deltalink);
-                Deltalink = deltalink as string;
-
-                while (page.NextPageRequest != null && shouldContinueIntrapageIteration)
-                {
-                    // Returns true 
-                    var existsMorePages = await InterpageIterateAsync(token);
-
-                    // requestMorePages is always true right now.
-                    // requestMorePages now needs to be represented by two bool flags.
-                    shouldContinueIntrapageIteration = IntrapageIterate();
-                }
-
-                // TODO: these need to be looped
-                if (deltalink != null)
-                {
-                    page.InitializeNextPageRequest(this.client, Deltalink);
-                    this.currentPage = page;
-
-                    State = PagingState.Delta;
-                }
-                else if (nextlink != null)
-                {
-                    // intrapage iteration was cancelled by the callback but there are more pages. 
-                    // The iterator is in a resumeable state.
-                    State = PagingState.Paused;
-                }
-                else
-                {
-                    // Do nothing since there is nothing more to iterate.
-                    State = PagingState.Complete;
-                }
-            }
-            else
-            {
-                // Initial intrapage iteration was cancelled by the callback. 
-                // The iterator is in a resumeable state.
-                State = PagingState.Paused;
+                // Iterate over items added to the queue by InterpageIterateAsync and
+                // determine whether there are more pages to request.
+                shouldContinueInterpageIteration = IntrapageIterate();
             }
         }
 

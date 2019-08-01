@@ -13,10 +13,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
         {
             this.AdditionalData = new Dictionary<string, object>();
 
-            if (linkType == "nextlink")
-                AdditionalData.Add("@odata.nextlink", "testNextlink");
+            if (linkType == "nextLink")
+                AdditionalData.Add("@odata.nextLink", "testNextlink");
             else if (linkType == "deltalink")
-                AdditionalData.Add("@odata.deltalink", "testDeltalink");
+                AdditionalData.Add("@odata.deltaLink", "testDeltalink");
 
             NextPageRequest = nextPageRequest;
         }
