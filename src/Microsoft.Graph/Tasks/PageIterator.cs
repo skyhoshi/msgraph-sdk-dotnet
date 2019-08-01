@@ -74,8 +74,6 @@ namespace Microsoft.Graph.Tasks
         {
             State = PagingState.IntrapageIteration;
 
-            //bool shouldContinue = true;
-
             while (_pageItemQueue.Count != 0) // && shouldContinue)
             {
                 bool shouldContinue = _processPageItemCallback(_pageItemQueue.Dequeue());
@@ -193,7 +191,8 @@ namespace Microsoft.Graph.Tasks
             }
 
             // Iterate over the contents of queue. The queue could be from the initial page
-            // results passed to the iterator or from a cancelled iteration that gets resumed.
+            // results passed to the iterator, the resultsof a delta query, or from a 
+            // previoulsy cancelled iteration that gets resumed.
             bool shouldContinueInterpageIteration = IntrapageIterate();
 
             // Request more pages if they are available.

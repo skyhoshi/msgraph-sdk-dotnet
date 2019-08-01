@@ -10,7 +10,8 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
-using TT = Microsoft.Graph.Tasks; // TODO: Remove this namespace before final build and publication - assumes that Core no longer has PageIterator.
+using TT = Microsoft.Graph.Tasks; 
+// TODO: Remove this namespace before final build and publication - assumes that Core no longer has PageIterator.
 
 /**
 
@@ -24,8 +25,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
     {
         private TT.PageIterator<Event> eventPageIterator;
 
-        //[Fact(Skip = "No CI set up for e2e tests")]
-        [Fact]
+        [Fact(Skip = "No CI set up for e2e tests")]
         public async Task PageIteratorDevTest()
         {
             // Get an initial page results to populate the iterator.
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             Assert.Equal(TT.PagingState.Complete, eventPageIterator.State);
         }
 
-        [Fact]
+        [Fact(Skip = "No CI set up for e2e tests")]
         public async Task DeltaPageIteratorDevTest()
         {
             // Get an initial page results to populate the iterator.
