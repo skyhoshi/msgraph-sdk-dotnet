@@ -14,9 +14,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
             this.AdditionalData = new Dictionary<string, object>();
 
             if (linkType == "nextLink")
-                AdditionalData.Add("@odata.nextLink", "testNextlink");
+                AdditionalData.Add(Constants.OdataInstanceAnnotations.NextLink, "testNextlink");
             else if (linkType == "deltalink")
-                AdditionalData.Add("@odata.deltaLink", "testDeltalink");
+                AdditionalData.Add(Constants.OdataInstanceAnnotations.DeltaLink, "testDeltalink");
 
             NextPageRequest = nextPageRequest;
         }

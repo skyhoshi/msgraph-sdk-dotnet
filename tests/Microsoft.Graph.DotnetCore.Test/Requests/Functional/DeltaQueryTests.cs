@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             object deltaLink;
 
             // Now let's use the deltalink to make sure there aren't any changes. There shouldn't be.
-            if (driveItemDeltaCollectionPage.AdditionalData.TryGetValue("@odata.deltaLink", out deltaLink))
+            if (driveItemDeltaCollectionPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.DeltaLink, out deltaLink))
             {
                 driveItemDeltaCollectionPage.InitializeNextPageRequest(graphClient, deltaLink.ToString());
                 driveItemDeltaCollectionPage = await driveItemDeltaCollectionPage.NextPageRequest.GetAsync();
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
 
             // Now let's use the deltalink to make sure there aren't any changes. 
-            if (driveItemDeltaCollectionPage.AdditionalData.TryGetValue("@odata.deltaLink", out deltaLink))
+            if (driveItemDeltaCollectionPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.DeltaLink, out deltaLink))
             {
                 driveItemDeltaCollectionPage.InitializeNextPageRequest(graphClient, deltaLink.ToString());
                 driveItemDeltaCollectionPage = await driveItemDeltaCollectionPage.NextPageRequest.GetAsync();
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             object deltaLink;
 
             // Now let's use the deltalink to make sure there aren't any changes. There shouldn't be.
-            if (messagesDeltaCollectionPage.AdditionalData.TryGetValue("@odata.deltaLink", out deltaLink))
+            if (messagesDeltaCollectionPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.DeltaLink, out deltaLink))
             {
                 messagesDeltaCollectionPage.InitializeNextPageRequest(graphClient, deltaLink.ToString());
                 messagesDeltaCollectionPage = await messagesDeltaCollectionPage.NextPageRequest.GetAsync();
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             //CreateNewMessage();
 
             // Now let's use the deltalink to make sure there aren't any changes. We expect to see a new message.
-            if (messagesDeltaCollectionPage.AdditionalData.TryGetValue("@odata.deltaLink", out deltaLink))
+            if (messagesDeltaCollectionPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.DeltaLink, out deltaLink))
             {
                 messagesDeltaCollectionPage.InitializeNextPageRequest(graphClient, deltaLink.ToString());
                 messagesDeltaCollectionPage = await messagesDeltaCollectionPage.NextPageRequest.GetAsync();
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
             // Now let's use the deltalink to make sure there aren't any changes. We won't test this collection
             // since other tests could be making changes to the users in the org.
-            if (userDeltaCollectionPage.AdditionalData.TryGetValue("@odata.deltaLink", out deltaLink))
+            if (userDeltaCollectionPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.DeltaLink, out deltaLink))
             {
                 userDeltaCollectionPage.InitializeNextPageRequest(graphClient, deltaLink.ToString());
                 userDeltaCollectionPage = await userDeltaCollectionPage.NextPageRequest.GetAsync();
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             object deltaLink;
 
             // Now let's use the deltalink to make sure there aren't any changes.
-            if (groupDeltaCollectionPage.AdditionalData.TryGetValue("@odata.deltaLink", out deltaLink))
+            if (groupDeltaCollectionPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.DeltaLink, out deltaLink))
             {
                 groupDeltaCollectionPage.InitializeNextPageRequest(graphClient, deltaLink.ToString());
                 groupDeltaCollectionPage = await groupDeltaCollectionPage.NextPageRequest.GetAsync();

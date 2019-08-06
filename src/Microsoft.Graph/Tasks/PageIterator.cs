@@ -9,9 +9,7 @@ Spec
     https://github.com/microsoftgraph/msgraph-sdk-design/blob/master/tasks/PageIteratorTask.md
 */
 
-/// <summary>
-/// TODO: Change this back to Microsoft.Graph before publication.
-/// </summary>
+// TODO: Change this back to Microsoft.Graph before publication.
 namespace Microsoft.Graph.Tasks
 {
     /// <summary>
@@ -87,14 +85,14 @@ namespace Microsoft.Graph.Tasks
             }
 
             // There are more pages ready to be paged.
-            if (_currentPage.AdditionalData.TryGetValue("@odata.nextLink", out object nextlink))
+            if (_currentPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.NextLink, out object nextlink))
             {
                 Nextlink = nextlink as string;
                 return true;
             }
 
             // There are no pages CURRENTLY ready to be paged. Attempt to call delta query later.
-            else if (_currentPage.AdditionalData.TryGetValue("@odata.deltaLink", out object deltalink))
+            else if (_currentPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.DeltaLink, out object deltalink))
             {
                 Deltalink = deltalink as string;
                 State = PagingState.Delta;
@@ -130,7 +128,7 @@ namespace Microsoft.Graph.Tasks
             State = PagingState.InterpageIteration;
 
             // Get the next page if it is available and queue the items for processing.
-            if (_currentPage.AdditionalData.TryGetValue("@odata.nextLink", out object nextlink))
+            if (_currentPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.NextLink, out object nextlink))
             {
                 // We need access to the NextPageRequest to call and get the next page. ICollectionPage<TEntity> doesn't define NextPageRequest.
                 // We are making this dynamic so we can access NextPageRequest.
@@ -150,7 +148,7 @@ namespace Microsoft.Graph.Tasks
             }
 
             // Detect nextLink loop
-            if (_currentPage.AdditionalData.TryGetValue("@odata.nextLink", out object nextNextLink) && nextlink.Equals(nextNextLink))
+            if (_currentPage.AdditionalData.TryGetValue(Constants.OdataInstanceAnnotations.NextLink, out object nextNextLink) && nextlink.Equals(nextNextLink))
             {
                 throw new ServiceException(new Error()
                 {

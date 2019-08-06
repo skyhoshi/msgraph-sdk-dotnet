@@ -111,7 +111,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
                 AdditionalData = new Dictionary<string, object>()
             };
 
-            page.AdditionalData.Add("@odata.nextLink", "testnextlink");
+            page.AdditionalData.Add(Constants.OdataInstanceAnnotations.NextLink, "testnextlink");
 
             eventPageIterator = TT.PageIterator<Event>.CreatePageIterator(graphClient, page, (e) => { return true; });
             await Assert.ThrowsAsync<RuntimeBinderException>(() => eventPageIterator.IterateAsync());
@@ -297,7 +297,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
 
             // This will be the same nextLink value as the one set in MockUserEventsCollectionPage cstor.
             nextPage.AdditionalData = new Dictionary<string, object>() {
-                { "@odata.nextLink", "testNextlink"}
+                { Constants.OdataInstanceAnnotations.NextLink, "testNextlink"}
             };
 
             // Create the delegate to process each entity returned in the pages. The delegate will 
