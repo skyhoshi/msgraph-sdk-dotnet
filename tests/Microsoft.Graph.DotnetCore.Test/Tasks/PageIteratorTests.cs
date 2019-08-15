@@ -22,24 +22,23 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
     public class PageIteratorTests : GraphTestBase
     {
         private PageIterator<Event> eventPageIterator;
-        private const string nextPageSubject = "";
 
         [Fact(Skip = "No CI set up for e2e tests")]
         public async Task PageIteratorDevTest()
         {
             // Get an initial page results to populate the iterator.
             IUserEventsCollectionPage iUserEventsCollectionPage = await graphClient.Me.Events.Request().Top(2).GetAsync();
-            
+
             // Create the function to process each entity returned in the pages.
-            Func<Event,bool> processEachEvent = (e) =>
-            {
-                bool shouldContinue = true;
+            Func<Event, bool> processEachEvent = (e) =>
+             {
+                 bool shouldContinue = true;
 
                 //if (e.Subject.Contains("Latin"))
                 //    shouldContinue = false;
                 Debug.WriteLine($"Event subject: {e.Subject}");
-                return shouldContinue;
-            }; 
+                 return shouldContinue;
+             };
 
             // This requires the dev to specify the generic type in the CollectionPage.
             eventPageIterator = PageIterator<Event>.CreatePageIterator(graphClient, iUserEventsCollectionPage, processEachEvent);
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
                                                              .Delta()
                                                              .Request()
                                                              .GetAsync();
-           
+
             // Create the function to process each entity returned in the pages.
             Func<Message, bool> processEachMessage = (e) =>
             {
@@ -68,8 +67,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             };
 
             // This requires the dev to specify the generic type in the CollectionPage.
-            var messagePageIterator = PageIterator<Message>.CreatePageIterator(graphClient, 
-                                                            messagesDeltaCollectionPage, 
+            var messagePageIterator = PageIterator<Message>.CreatePageIterator(graphClient,
+                                                            messagesDeltaCollectionPage,
                                                             processEachMessage);
 
             await messagePageIterator.IterateAsync();
@@ -110,7 +109,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
                 AdditionalData = new Dictionary<string, object>()
             };
 
-            page.AdditionalData.Add("@odata.nextlink", "testnextlink");
+            page.AdditionalData.Add(Constants.OdataInstanceAnnotations.NextLink, "testnextlink");
 
             eventPageIterator = PageIterator<Event>.CreatePageIterator(graphClient, page, (e) => { return true; });
             await Assert.ThrowsAsync<RuntimeBinderException>(() => eventPageIterator.IterateAsync());
@@ -141,7 +140,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
 
             List<Event> events = new List<Event>();
 
-            eventPageIterator = PageIterator<Event>.CreatePageIterator(graphClient, page, (e) => 
+            eventPageIterator = PageIterator<Event>.CreatePageIterator(graphClient, page, (e) =>
             {
                 events.Add(e);
                 return true;
@@ -168,7 +167,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             {
                 if (e.Subject == "Subject7")
                     return false;
-                
+
                 events.Add(e);
                 return true;
             });
@@ -266,13 +265,52 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             };
 
             Mocks.MockUserEventsCollectionRequest mockUserEventsCollectionRequest = new Mocks.MockUserEventsCollectionRequest(nextPage);
-            var mockUserEventsCollectionPage = new Mocks.MockUserEventsCollectionPage(originalCollectionPageEvents, mockUserEventsCollectionRequest, "nextlink") as IUserEventsCollectionPage;
+            var mockUserEventsCollectionPage = new Mocks.MockUserEventsCollectionPage(originalCollectionPageEvents, mockUserEventsCollectionRequest, "nextLink") as IUserEventsCollectionPage;
 
             eventPageIterator = PageIterator<Event>.CreatePageIterator(graphClient, mockUserEventsCollectionPage, processEachEvent);
             await eventPageIterator.IterateAsync();
 
             Assert.True(reachedNextPage, "The delegate page iterator did not reach the next page.");
             Assert.Equal(PagingState.Paused, eventPageIterator.State);
+        }
+
+        [Fact]
+        public async Task Given_CollectionPage_It_Detects_Nextlink_Loop()
+        {
+            // Create the 17 events to initiallize the original collection page.
+            List<Event> originalCollectionPageEvents = new List<Event>();
+            int inputEventCount = 5;
+            for (int i = 0; i < inputEventCount; i++)
+            {
+                originalCollectionPageEvents.Add(new Event() { Subject = $"Subject{i.ToString()}" });
+            }
+
+            // Create the 5 events to initialize the next collection page.
+            UserEventsCollectionPage nextPage = new UserEventsCollectionPage();
+            int nextPageEventCount = 5;
+            for (int i = 0; i < nextPageEventCount; i++)
+            {
+                nextPage.Add(new Event() { Subject = $"Subject for next page events: {i.ToString()}" });
+            }
+
+            // This will be the same nextLink value as the one set in MockUserEventsCollectionPage cstor.
+            nextPage.AdditionalData = new Dictionary<string, object>() {
+                { Constants.OdataInstanceAnnotations.NextLink, "testNextlink"}
+            };
+
+            // Create the delegate to process each entity returned in the pages. The delegate will 
+            // signal that we reached an event in the next page.
+            Func<Event, bool> processEachEvent = (e) =>
+            {
+                return true;
+            };
+
+            Mocks.MockUserEventsCollectionRequest mockUserEventsCollectionRequest = new Mocks.MockUserEventsCollectionRequest(nextPage);
+            var mockUserEventsCollectionPage = new Mocks.MockUserEventsCollectionPage(originalCollectionPageEvents, mockUserEventsCollectionRequest, "nextLink") as IUserEventsCollectionPage;
+
+            eventPageIterator = PageIterator<Event>.CreatePageIterator(graphClient, mockUserEventsCollectionPage, processEachEvent);
+            
+            await Assert.ThrowsAsync<ServiceException>(async () => await eventPageIterator.IterateAsync());
         }
 
         [Fact]
