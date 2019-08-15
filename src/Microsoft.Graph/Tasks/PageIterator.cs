@@ -9,8 +9,7 @@ Spec
     https://github.com/microsoftgraph/msgraph-sdk-design/blob/master/tasks/PageIteratorTask.md
 */
 
-// TODO: Change this back to Microsoft.Graph before publication.
-namespace Microsoft.Graph.Tasks
+namespace Microsoft.Graph
 {
     /// <summary>
     /// Use PageIterator&lt;TEntity&gt; to automatically page through result sets across multiple calls 

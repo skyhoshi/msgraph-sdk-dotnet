@@ -22,7 +22,10 @@
     <VersionPrefix>1.16.0</VersionPrefix>
     <!-- VersionPrefix minor version is not required to be manually set. It will be updated automatically. Major and patch versions must be automatically set. -->
     <VersionSuffix></VersionSuffix>
-    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageReleaseNotes>
+- New generated requests and models.
+- Add PageIterator from Microsoft.Graph.Core library.
+    </PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.3|AnyCPU'">
     <DocumentationFile>bin\Release\Microsoft.Graph.xml</DocumentationFile>
