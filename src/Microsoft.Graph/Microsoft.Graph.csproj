@@ -19,8 +19,10 @@
     <DelaySign>false</DelaySign>
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <VersionPrefix>1.16.0</VersionPrefix>
-    <!-- VersionPrefix minor version is not required to be manually set. It will be updated automatically. Major and patch versions must be automatically set. -->
+    <VersionPrefix>1.17.0</VersionPrefix>
+    <!-- VersionPrefix minor version should not be set when the change comes from the generator. It will be updated automatically. -->
+    <!-- VersionPrefix minor version must be manually set when making manual changes to code. -->
+    <!-- VersionPrefix major and patch versions must be manually set. -->
     <VersionSuffix></VersionSuffix>
     <PackageReleaseNotes>
 - New generated requests and models.
