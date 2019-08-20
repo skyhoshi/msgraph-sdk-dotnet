@@ -125,7 +125,6 @@ namespace Microsoft.Graph
         public async Task<DriveItem> UploadAsync(int maxTries = 3, IEnumerable<Option> options = null)
         {
             var uploadTries = 0;
-            var readBuffer = new byte[this.maxChunkSize];
             var trackedExceptions = new List<Exception>();
 
             while (uploadTries < maxTries)
@@ -134,7 +133,7 @@ namespace Microsoft.Graph
 
                 foreach (var request in chunkRequests)
                 {
-                    var result = await this.GetChunkRequestResponseAsync(request, readBuffer, trackedExceptions).ConfigureAwait(false);
+                    var result = await this.GetChunkRequestResponseAsync(request, trackedExceptions).ConfigureAwait(false);
 
                     if (result.UploadSucceeded)
                     {
@@ -158,22 +157,17 @@ namespace Microsoft.Graph
         /// Write a chunk of data using the UploadChunkRequest.
         /// </summary>
         /// <param name="request">The UploadChunkRequest to make the request with.</param>
-        /// <param name="readBuffer">The byte[] content to read from.</param>
         /// <param name="exceptionTrackingList">A list of exceptions to use to track progress. ChunkedUpload may retry.</param>
         /// <returns></returns>
-        public virtual async Task<UploadChunkResult> GetChunkRequestResponseAsync(UploadChunkRequest request, byte[] readBuffer, ICollection<Exception> exceptionTrackingList)
+        public virtual async Task<UploadChunkResult> GetChunkRequestResponseAsync(UploadChunkRequest request, ICollection<Exception> exceptionTrackingList)
         {
             var firstAttempt = true;
             this.uploadStream.Seek(request.RangeBegin, SeekOrigin.Begin);
-            await this.uploadStream.ReadAsync(readBuffer, 0, request.RangeLength).ConfigureAwait(false);
 
             while (true)
             {
-                using (var requestBodyStream = new MemoryStream(request.RangeLength))
+                using (var requestBodyStream = new ReadOnlySubStream(this.uploadStream,request.RangeBegin,request.RangeLength))
                 {
-                    await requestBodyStream.WriteAsync(readBuffer, 0, request.RangeLength).ConfigureAwait(false);
-                    requestBodyStream.Seek(0, SeekOrigin.Begin);
-
                     try
                     {
                         return await request.PutAsync(requestBodyStream).ConfigureAwait(false);

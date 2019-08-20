@@ -61,7 +61,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                     // Setup the chunk request necessities
                     var chunkRequests = provider.GetUploadChunkRequests();
-                    var readBuffer = new byte[maxChunkSize];
                     var trackedExceptions = new List<Exception>();
                     DriveItem itemResult = null;
 
@@ -71,7 +70,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                         // Do your updates here: update progress bar, etc.
                         // ...
                         // Send chunk request
-                        var result = await provider.GetChunkRequestResponseAsync(request, readBuffer, trackedExceptions);
+                        var result = await provider.GetChunkRequestResponseAsync(request, trackedExceptions);
 
                         if (result.UploadSucceeded)
                         {
