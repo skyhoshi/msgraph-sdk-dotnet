@@ -19,15 +19,7 @@ To install the client library via NuGet:
 
 ### 1. Register your application
 
-Register your application to use Microsoft Graph API using one of the following
-supported authentication portals:
-
-* [Microsoft Application Registration Portal](https://apps.dev.microsoft.com):
-  Register a new application that works with Microsoft Account and/or
-  organizational accounts using the unified V2 Authentication Endpoint.
-* [Microsoft Azure Active Directory](https://manage.windowsazure.com): Register
-  a new application in your tenant's Active Directory to support work or school
-  users for your tenant or multiple tenants.
+Register your application to use Microsoft Graph API using the [Microsoft Application Registration Portal](https://aka.ms/appregistrations).
 
 ### 2. Authenticate for the Microsoft Graph service
 
