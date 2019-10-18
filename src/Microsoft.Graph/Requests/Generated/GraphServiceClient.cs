@@ -87,6 +87,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceCertificateBasedAuthConfiguration request builder.
+        /// </summary>
+        public IGraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration
+        {
+            get
+            {
+                return new GraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder(this.BaseUrl + "/certificateBasedAuthConfiguration", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         public IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects

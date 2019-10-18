@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type OrganizationRequest.
+    /// The type CertificateBasedAuthConfigurationRequest.
     /// </summary>
-    public partial class OrganizationRequest : BaseRequest, IOrganizationRequest
+    public partial class CertificateBasedAuthConfigurationRequest : BaseRequest, ICertificateBasedAuthConfigurationRequest
     {
         /// <summary>
-        /// Constructs a new OrganizationRequest.
+        /// Constructs a new CertificateBasedAuthConfigurationRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public OrganizationRequest(
+        public CertificateBasedAuthConfigurationRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,32 +36,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified Organization using POST.
+        /// Creates the specified CertificateBasedAuthConfiguration using POST.
         /// </summary>
-        /// <param name="organizationToCreate">The Organization to create.</param>
-        /// <returns>The created Organization.</returns>
-        public System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate)
+        /// <param name="certificateBasedAuthConfigurationToCreate">The CertificateBasedAuthConfiguration to create.</param>
+        /// <returns>The created CertificateBasedAuthConfiguration.</returns>
+        public System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> CreateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate)
         {
-            return this.CreateAsync(organizationToCreate, CancellationToken.None);
+            return this.CreateAsync(certificateBasedAuthConfigurationToCreate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Creates the specified Organization using POST.
+        /// Creates the specified CertificateBasedAuthConfiguration using POST.
         /// </summary>
-        /// <param name="organizationToCreate">The Organization to create.</param>
+        /// <param name="certificateBasedAuthConfigurationToCreate">The CertificateBasedAuthConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created Organization.</returns>
-        public async System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate, CancellationToken cancellationToken)
+        /// <returns>The created CertificateBasedAuthConfiguration.</returns>
+        public async System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> CreateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
             this.Method = "POST";
-            var newEntity = await this.SendAsync<Organization>(organizationToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<CertificateBasedAuthConfiguration>(certificateBasedAuthConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Deletes the specified Organization.
+        /// Deletes the specified CertificateBasedAuthConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>
         public System.Threading.Tasks.Task DeleteAsync()
@@ -70,86 +70,86 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Deletes the specified Organization.
+        /// Deletes the specified CertificateBasedAuthConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
         {
             this.Method = "DELETE";
-            await this.SendAsync<Organization>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<CertificateBasedAuthConfiguration>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Gets the specified Organization.
+        /// Gets the specified CertificateBasedAuthConfiguration.
         /// </summary>
-        /// <returns>The Organization.</returns>
-        public System.Threading.Tasks.Task<Organization> GetAsync()
+        /// <returns>The CertificateBasedAuthConfiguration.</returns>
+        public System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> GetAsync()
         {
             return this.GetAsync(CancellationToken.None);
         }
 
         /// <summary>
-        /// Gets the specified Organization.
+        /// Gets the specified CertificateBasedAuthConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The Organization.</returns>
-        public async System.Threading.Tasks.Task<Organization> GetAsync(CancellationToken cancellationToken)
+        /// <returns>The CertificateBasedAuthConfiguration.</returns>
+        public async System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> GetAsync(CancellationToken cancellationToken)
         {
             this.Method = "GET";
-            var retrievedEntity = await this.SendAsync<Organization>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<CertificateBasedAuthConfiguration>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Updates the specified Organization using PATCH.
+        /// Updates the specified CertificateBasedAuthConfiguration using PATCH.
         /// </summary>
-        /// <param name="organizationToUpdate">The Organization to update.</param>
-        /// <returns>The updated Organization.</returns>
-        public System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate)
+        /// <param name="certificateBasedAuthConfigurationToUpdate">The CertificateBasedAuthConfiguration to update.</param>
+        /// <returns>The updated CertificateBasedAuthConfiguration.</returns>
+        public System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> UpdateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate)
         {
-            return this.UpdateAsync(organizationToUpdate, CancellationToken.None);
+            return this.UpdateAsync(certificateBasedAuthConfigurationToUpdate, CancellationToken.None);
         }
 
         /// <summary>
-        /// Updates the specified Organization using PATCH.
+        /// Updates the specified CertificateBasedAuthConfiguration using PATCH.
         /// </summary>
-        /// <param name="organizationToUpdate">The Organization to update.</param>
+        /// <param name="certificateBasedAuthConfigurationToUpdate">The CertificateBasedAuthConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated Organization.</returns>
-        public async System.Threading.Tasks.Task<Organization> UpdateAsync(Organization organizationToUpdate, CancellationToken cancellationToken)
+        /// <returns>The updated CertificateBasedAuthConfiguration.</returns>
+        public async System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> UpdateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate, CancellationToken cancellationToken)
         {
-			if (organizationToUpdate.AdditionalData != null)
+			if (certificateBasedAuthConfigurationToUpdate.AdditionalData != null)
 			{
-				if (organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				if (certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
 				{
 					throw new ClientException(
 						new Error
 						{
 							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationToUpdate.GetType().Name)
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, certificateBasedAuthConfigurationToUpdate.GetType().Name)
 						});
 				}
 			}
-            if (organizationToUpdate.AdditionalData != null)
+            if (certificateBasedAuthConfigurationToUpdate.AdditionalData != null)
             {
-                if (organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    organizationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                if (certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
                 {
                     throw new ClientException(
                         new Error
                         {
                             Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, organizationToUpdate.GetType().Name)
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, certificateBasedAuthConfigurationToUpdate.GetType().Name)
                         });
                 }
             }
             this.ContentType = "application/json";
             this.Method = "PATCH";
-            var updatedEntity = await this.SendAsync<Organization>(organizationToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<CertificateBasedAuthConfiguration>(certificateBasedAuthConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
@@ -159,7 +159,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IOrganizationRequest Expand(string value)
+        public ICertificateBasedAuthConfigurationRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IOrganizationRequest Expand(Expression<Func<Organization, object>> expandExpression)
+        public ICertificateBasedAuthConfigurationRequest Expand(Expression<Func<CertificateBasedAuthConfiguration, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -194,7 +194,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IOrganizationRequest Select(string value)
+        public ICertificateBasedAuthConfigurationRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -205,7 +205,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IOrganizationRequest Select(Expression<Func<Organization, object>> selectExpression)
+        public ICertificateBasedAuthConfigurationRequest Select(Expression<Func<CertificateBasedAuthConfiguration, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -227,47 +227,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="organizationToInitialize">The <see cref="Organization"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(Organization organizationToInitialize)
+        /// <param name="certificateBasedAuthConfigurationToInitialize">The <see cref="CertificateBasedAuthConfiguration"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToInitialize)
         {
-
-            if (organizationToInitialize != null && organizationToInitialize.AdditionalData != null)
-            {
-
-                if (organizationToInitialize.CertificateBasedAuthConfiguration != null && organizationToInitialize.CertificateBasedAuthConfiguration.CurrentPage != null)
-                {
-                    organizationToInitialize.CertificateBasedAuthConfiguration.AdditionalData = organizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("certificateBasedAuthConfiguration@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        organizationToInitialize.CertificateBasedAuthConfiguration.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-                if (organizationToInitialize.Extensions != null && organizationToInitialize.Extensions.CurrentPage != null)
-                {
-                    organizationToInitialize.Extensions.AdditionalData = organizationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    organizationToInitialize.AdditionalData.TryGetValue("extensions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        organizationToInitialize.Extensions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
-                }
-
-            }
-
 
         }
     }

@@ -32,6 +32,11 @@ namespace Microsoft.Graph
         IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
     
         /// <summary>
+        /// Gets the GraphServiceCertificateBasedAuthConfiguration request builder.
+        /// </summary>
+        IGraphServiceCertificateBasedAuthConfigurationCollectionRequestBuilder CertificateBasedAuthConfiguration { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectoryObjects request builder.
         /// </summary>
         IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects { get; }

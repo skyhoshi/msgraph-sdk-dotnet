@@ -176,6 +176,12 @@ namespace Microsoft.Graph
         public MdmAuthority? MobileDeviceManagementAuthority { get; set; }
     
         /// <summary>
+        /// Gets or sets certificate based auth configuration.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "certificateBasedAuthConfiguration", Required = Newtonsoft.Json.Required.Default)]
+        public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage CertificateBasedAuthConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets extensions.
         /// The collection of open extensions defined for the organization. Read-only. Nullable.
         /// </summary>
