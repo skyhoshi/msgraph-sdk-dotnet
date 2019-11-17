@@ -5,7 +5,7 @@
 namespace Microsoft.Graph
 {
     /// <summary>
-    /// Represents ordering onformation for the containing <see cref="PlannerTask"/> on "assigned to" task board.
+    /// Represents ordering information for the containing <see cref="PlannerTask"/> on "assigned to" task board.
     /// </summary>
     public partial class PlannerAssignedToTaskBoardTaskFormat
     {
