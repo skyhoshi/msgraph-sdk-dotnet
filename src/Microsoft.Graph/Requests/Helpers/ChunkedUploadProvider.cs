@@ -155,6 +155,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Write a chunk of data using the UploadChunkRequest.
+        /// This overload is obsolete and is kept for backward compatibility
+        /// </summary>
+        /// <param name="request">The UploadChunkRequest to make the request with.</param>
+        /// <param name="readBuffer">The byte[] content to read from.</param>
+        /// <param name="exceptionTrackingList">A list of exceptions to use to track progress. ChunkedUpload may retry.</param>
+        /// <returns></returns>
+        [Obsolete("This overload is obsolete. Please use the overload other overload as the readBuffer parameter is no longer used")]
+        public virtual async Task<UploadChunkResult> GetChunkRequestResponseAsync(UploadChunkRequest request, byte[] readBuffer, ICollection<Exception> exceptionTrackingList)
+        {
+            return await this.GetChunkRequestResponseAsync(request, exceptionTrackingList);
+        }
+
+
+        /// <summary>
+        /// Write a chunk of data using the UploadChunkRequest.
         /// </summary>
         /// <param name="request">The UploadChunkRequest to make the request with.</param>
         /// <param name="exceptionTrackingList">A list of exceptions to use to track progress. ChunkedUpload may retry.</param>
