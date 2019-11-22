@@ -146,7 +146,7 @@ namespace Microsoft.Graph
                 if (uploadTries < maxTries)
                 {
                     // Exponential backoff in case of failures.
-                    await System.Threading.Tasks.Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
+                    await Task.Delay(2000 * uploadTries * uploadTries).ConfigureAwait(false);
                 }
             }
 
@@ -161,7 +161,7 @@ namespace Microsoft.Graph
         /// <param name="readBuffer">The byte[] content to read from.</param>
         /// <param name="exceptionTrackingList">A list of exceptions to use to track progress. ChunkedUpload may retry.</param>
         /// <returns></returns>
-        [Obsolete("This overload is obsolete. Please use the overload other overload as the readBuffer parameter is no longer used")]
+        [Obsolete("This overload is obsolete. The readBuffer parameter is no longer used. Please use the other overload.")]
         public virtual async Task<UploadChunkResult> GetChunkRequestResponseAsync(UploadChunkRequest request, byte[] readBuffer, ICollection<Exception> exceptionTrackingList)
         {
             return await this.GetChunkRequestResponseAsync(request, exceptionTrackingList);
