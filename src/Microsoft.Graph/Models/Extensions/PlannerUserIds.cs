@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Checks if a given user id is present in the collection.
         /// </summary>
-        /// <param name="userId">Iser id to check</param>
+        /// <param name="userId">User id to check</param>
         /// <returns>True if the user is is present in the collection, false otherwise.</returns>
         public bool Contains(string userId)
         {
