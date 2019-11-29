@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     internal static class ComplexTypeHelper
     {
         /// <summary>
-        /// For the given dynamic property dictionary, converts the entries with the speicifed odata type value to thegiven native type.
+        /// For the given dynamic property dictionary, converts the entries with the specified odata type value to thegiven native type.
         /// </summary>
         /// <typeparam name="TObject">The native type of the objects to create</typeparam>
         /// <param name="additionalData">Dynamic properties dictionary</param>
