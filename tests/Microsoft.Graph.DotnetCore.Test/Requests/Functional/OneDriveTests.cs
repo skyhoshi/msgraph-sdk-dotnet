@@ -61,7 +61,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                     // Setup the chunk request necessities
                     var chunkRequests = provider.GetUploadChunkRequests();
-                    var readBuffer = new byte[maxChunkSize];
                     var trackedExceptions = new List<Exception>();
                     DriveItem itemResult = null;
 
@@ -71,7 +70,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                         // Do your updates here: update progress bar, etc.
                         // ...
                         // Send chunk request
-                        var result = await provider.GetChunkRequestResponseAsync(request, readBuffer, trackedExceptions);
+                        var result = await provider.GetChunkRequestResponseAsync(request, trackedExceptions);
 
                         if (result.UploadSucceeded)
                         {
@@ -223,7 +222,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     {
                         var driveItemContent = await graphClient.Me.Drive.Items[item.Id].Content.Request().GetAsync();
                         Assert.NotNull(driveItemContent);
-                        Assert.IsType(typeof(MemoryStream), driveItemContent);
+                        Assert.IsType<MemoryStream>(driveItemContent);
                         return;
                     }
                 }
@@ -347,7 +346,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                                             .Request()
                                                             .Filter("startswith(name,'Timesheet')")
                                                             .GetAsync();
-                Assert.True(itemToShare[0].Name.StartsWith("Timesheet"));
+                Assert.StartsWith("Timesheet", itemToShare[0].Name);
 
                 var me = await graphClient.Me.Request().GetAsync();
                 var domain = me.Mail.Split('@')[1];
