@@ -38,7 +38,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         /// Tests the GetAsync() method on the request for an entity collection that has a $ref navigation.
         /// </summary>
         [Fact]
-        public async System.Threading.Tasks.Task GetAsync()
+        public async Task GetAsync()
         {
             using (var httpResponseMessage = new HttpResponseMessage())
             using (var responseStream = new MemoryStream())
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var membersCollectionResponse = new GroupMembersCollectionWithReferencesResponse
                 {
                     Value = membersCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { "@odata.nextLink", nextPageRequestUrl } },
+                    AdditionalData = new Dictionary<string, object> { { Constants.OdataInstanceAnnotations.NextLink, nextPageRequestUrl } },
                 };
 
                 this.serializer.Setup(

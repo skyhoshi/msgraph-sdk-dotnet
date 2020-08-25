@@ -6,7 +6,7 @@
 Integrate the [Microsoft Graph API](https://graph.microsoft.io) into your .NET
 project!
 
-The Microsoft Graph .NET Client Library targets .NetStandard 1.1 and .Net Framework 4.5.
+The Microsoft Graph .NET Client Library targets .NetStandard 2.0 and .Net Framework 4.6.1.
 
 ## Installation via NuGet
 
@@ -19,24 +19,15 @@ To install the client library via NuGet:
 
 ### 1. Register your application
 
-Register your application to use Microsoft Graph API using one of the following
-supported authentication portals:
-
-* [Microsoft Application Registration Portal](https://apps.dev.microsoft.com):
-  Register a new application that works with Microsoft Account and/or
-  organizational accounts using the unified V2 Authentication Endpoint.
-* [Microsoft Azure Active Directory](https://manage.windowsazure.com): Register
-  a new application in your tenant's Active Directory to support work or school
-  users for your tenant or multiple tenants.
+Register your application to use Microsoft Graph API using the [Microsoft Application Registration Portal](https://aka.ms/appregistrations).
 
 ### 2. Authenticate for the Microsoft Graph service
 
-The Microsoft Graph .NET Client Library does not include any default authentication implementations.
-Instead, the user will want to authenticate with the library of their choice, or against the OAuth
-endpoint directly, and built-in **DelegateAuthenticationProvider** class to authenticate each request.
-For more information on `DelegateAuthenticationProvider`, see the [library overview](docs/overview.md)
+The Microsoft Graph .NET Client Library does not currently include any default authentication implementations.
+There are set of preview authentication providers available in the [msgraph-sdk-dotnet-auth](https://github.com/microsoftgraph/msgraph-sdk-dotnet-auth) repo.  Alternatively, you can use the built-in **DelegateAuthenticationProvider** class to authenticate each request.
+For more information on `DelegateAuthenticationProvider`, see the [library overview](docs/overview.md).  
 
-The recommended library for authenticating against AAD is [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet).
+The recommended library for authenticating against Microsoft Identity (Azure AD) is [MSAL](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet).
 
 For an example of authenticating a UWP app using the V2 Authentication Endpoint, see the [Microsoft Graph UWP Connect Library](https://github.com/OfficeDev/Microsoft-Graph-UWP-Connect-Library).
 
@@ -94,6 +85,7 @@ The following sample applications are also available:
 * [Headers](docs/headers.md)
 * [Microsoft Graph API](https://graph.microsoft.io)
 * [Release notes](https://github.com/microsoftgraph/msgraph-sdk-dotnet/releases)
+* [Blog - Microsoft Graph .NET SDK updates 3/16/20](https://developer.microsoft.com/en-us/graph/blogs/microsoft-graph-net-sdk-updates/)
 
 ## Notes
 

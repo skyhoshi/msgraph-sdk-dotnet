@@ -1,29 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Microsoft.Graph.DotnetCore.Test</AssemblyName>
     <PackageId>Microsoft.Graph.DotnetCore.Test</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
-    <PackageTargetFallback>$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
-    <RuntimeFrameworkVersion>1.0.4</RuntimeFrameworkVersion>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0-preview-20180924-03" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
+    <EmbeddedResource Include="Requests\Functional\Resources\excelTestResource.xlsx" />
+    <EmbeddedResource Include="Requests\Functional\Resources\hamilton.PNG" />
+    <EmbeddedResource Include="Requests\Functional\Resources\textfile.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Graph.DotnetCore.Core.Test\Microsoft.Graph.DotnetCore.Core.Test.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
+    <PackageReference Include="Moq" Version="4.13.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">
-    <ProjectReference Include="..\..\src\Microsoft.Graph.Core\Microsoft.Graph.Core.csproj" />
+  
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Microsoft.Graph\Microsoft.Graph.csproj" />
   </ItemGroup>
 

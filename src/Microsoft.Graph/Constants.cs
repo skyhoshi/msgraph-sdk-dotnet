@@ -44,5 +44,38 @@ namespace Microsoft.Graph
             /// </summary>
             public const string SentItems = "SentItems";
         }
+
+        /// <summary>
+        /// Constants used for HTTP property names
+        /// </summary>
+        public static class HttpPropertyNames
+        {
+            /// <summary>
+            /// The Response Headers string
+            /// </summary>
+            public const string ResponseHeaders = "responseHeaders";
+
+            /// <summary>
+            /// The Status Code string
+            /// </summary>
+            public const string StatusCode = "statusCode";
+        }
+
+        /// <summary>
+        /// Constants used to specify OData instance annotations.
+        /// https://www.odata.org/vocabularies/
+        /// </summary>
+        public static class OdataInstanceAnnotations
+        {
+            /// <summary>
+            /// The nextLink annotations string.
+            /// </summary>
+            public const string NextLink = "@odata.nextLink";
+            
+            /// <summary>
+            /// The deltaLink annotations string.
+            /// </summary>
+            public const string DeltaLink = "@odata.deltaLink";
+        }
     }
 }

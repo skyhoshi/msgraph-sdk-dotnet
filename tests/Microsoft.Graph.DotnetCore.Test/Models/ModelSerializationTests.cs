@@ -2,15 +2,10 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
 namespace Microsoft.Graph.DotnetCore.Test.Models
 {
+    using System;
+    using Xunit;
     public class ModelSerializationTests
     {
         private Serializer serializer;
@@ -103,7 +98,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
 
             var deserializedPage = this.serializer.DeserializeObject<IDriveItemChildrenCollectionPage>(serializedString);
 
-            Assert.IsType(typeof(DriveItemChildrenCollectionPage), deserializedPage);
+            Assert.IsType<DriveItemChildrenCollectionPage>(deserializedPage);
             Assert.Equal(1, deserializedPage.Count);
             Assert.Equal("id", deserializedPage[0].Id);
         }
@@ -139,7 +134,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             };
 
             var expectedSerializedStream = string.Format(
-                "{{\"contentType\":\"{1}\",\"content\":\"{0}\"}}",
+                "{{\"contentType\":\"{1}\",\"content\":\"{0}\",\"@odata.type\":\"microsoft.graph.itemBody\"}}",
                 itemBody.Content,
                 "text");
 
@@ -160,7 +155,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var now = DateTimeOffset.UtcNow;
 
-            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
+            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\",\"@odata.type\":\"microsoft.graph.recurrenceRange\"}}", now.ToString("yyyy-MM-dd"));
 
             var recurrence = new RecurrenceRange
             {
