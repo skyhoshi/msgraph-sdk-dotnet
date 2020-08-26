@@ -7,41 +7,35 @@
 
 // Template Source: Templates\CSharp\Requests\IEntityRequestBuilder.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.CallRecords
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
 
     /// <summary>
-    /// The interface ICloudCommunicationsRequestBuilder.
+    /// The interface ICallRecordRequestBuilder.
     /// </summary>
-    public partial interface ICloudCommunicationsRequestBuilder : IEntityRequestBuilder
+    public partial interface ICallRecordRequestBuilder : Microsoft.Graph.IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ICloudCommunicationsRequest Request();
+        new ICallRecordRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ICloudCommunicationsRequest Request(IEnumerable<Option> options);
+        new ICallRecordRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
         /// <summary>
-        /// Gets the request builder for Calls.
+        /// Gets the request builder for Sessions.
         /// </summary>
-        /// <returns>The <see cref="ICloudCommunicationsCallsCollectionRequestBuilder"/>.</returns>
-        ICloudCommunicationsCallsCollectionRequestBuilder Calls { get; }
-
-        /// <summary>
-        /// Gets the request builder for OnlineMeetings.
-        /// </summary>
-        /// <returns>The <see cref="ICloudCommunicationsOnlineMeetingsCollectionRequestBuilder"/>.</returns>
-        ICloudCommunicationsOnlineMeetingsCollectionRequestBuilder OnlineMeetings { get; }
+        /// <returns>The <see cref="ICallRecordSessionsCollectionRequestBuilder"/>.</returns>
+        ICallRecordSessionsCollectionRequestBuilder Sessions { get; }
     
     }
 }

@@ -250,6 +250,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (cloudCommunicationsToInitialize.CallRecords != null && cloudCommunicationsToInitialize.CallRecords.CurrentPage != null)
+                {
+                    cloudCommunicationsToInitialize.CallRecords.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    cloudCommunicationsToInitialize.AdditionalData.TryGetValue("callRecords@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        cloudCommunicationsToInitialize.CallRecords.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (cloudCommunicationsToInitialize.OnlineMeetings != null && cloudCommunicationsToInitialize.OnlineMeetings.CurrentPage != null)
                 {
                     cloudCommunicationsToInitialize.OnlineMeetings.AdditionalData = cloudCommunicationsToInitialize.AdditionalData;

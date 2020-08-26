@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public ICloudCommunicationsCallsCollectionPage Calls { get; set; }
     
         /// <summary>
+        /// Gets or sets call records.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "callRecords", Required = Newtonsoft.Json.Required.Default)]
+        public ICloudCommunicationsCallRecordsCollectionPage CallRecords { get; set; }
+    
+        /// <summary>
         /// Gets or sets online meetings.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
