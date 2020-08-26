@@ -12,12 +12,12 @@ resources:
     type: github
     endpoint: microsoftgraph
     name: microsoftgraph/msgraph-sdk-dotnet
-    ref: zengin/namespacesBase # checkout the dev branch
+    ref: dev # checkout the dev branch
   - repository: msgraph-metadata
     type: github
     endpoint: microsoftgraph
     name: microsoftgraph/msgraph-metadata
-    ref: zengin/xsltNamespaces # 
+    ref: master # 
   pipelines:
   - pipeline: publishMetadata # This pipeline produces an metadata artifact that we need to validate.
     source: (v1.0 - 3) msgraph-publish-cleanmetadata
@@ -54,21 +54,13 @@ steps:
       Write-Host "Path to typewriter.exe output $outputPath"
       Write-Host "##vso[task.setvariable variable=outputPath]$outputPath"
 
-      $cleanMetadata = "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/zengin/xsltNamespaces/clean_v10_metadata/cleanMetadataWithDescriptionsv1.0.xml"
+      $cleanMetadata = "https://raw.githubusercontent.com/microsoftgraph/msgraph-metadata/master/clean_v10_metadata/cleanMetadataWithDescriptionsv1.0.xml"
       Write-Host "Path to clean metadata $cleanMetadata"
       Write-Host "##vso[task.setvariable variable=cleanMetadata]$cleanMetadata"
 
-      $branchName = "zengin/publishNamespaces" # Match the spec in the GH Action
+      $branchName = "v1.0/pipelinebuild/$env:Build_BuildId" # Match the spec in the GH Action
       Write-Host "Branch path spec for the pull request will be $branchName"
       Write-Host "##vso[task.setvariable variable=branchName]$branchName"
-
-#- task: PowerShell@2
-#  displayName: 'Git: checkout dev'
-#  inputs:
-#    targetType: inline
-#    workingDirectory: '$(Build.SourcesDirectory)/msgraph-sdk-dotnet'
-#    script: |
-#      git checkout zengin/namespacesBase | Write-Host
 
 - task: PowerShell@2
   displayName: 'Git: branch from dev named with the build id: $(Build.BuildId)'
