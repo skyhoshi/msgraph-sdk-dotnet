@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CallRecords.
+        /// </summary>
+        /// <returns>The <see cref="ICloudCommunicationsCallRecordsCollectionRequestBuilder"/>.</returns>
+        public ICloudCommunicationsCallRecordsCollectionRequestBuilder CallRecords
+        {
+            get
+            {
+                return new CloudCommunicationsCallRecordsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("callRecords"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for OnlineMeetings.
         /// </summary>
         /// <returns>The <see cref="ICloudCommunicationsOnlineMeetingsCollectionRequestBuilder"/>.</returns>
