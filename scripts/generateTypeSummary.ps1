@@ -1,3 +1,26 @@
+<#
+.SYNOPSIS
+    Creates a type summary from DLL
+
+.DESCRIPTION
+    Takes a Microsoft.Graph DLL and prints types as a flat text file
+    - Selects types that fall under Microsoft.Graph namespace
+    - Drops version information from full generic type names
+    - Types are sorted as enums, interfaces and classes
+      - Each type of types are sorted among themselves by name
+    - Properties and methods are also sorted by their name
+      - For deterministic results, overloaded methods are also sorted by their argument list
+
+.PARAMETER dllPath
+    Full path to Microsoft.Graph.dll
+
+.PARAMETER outputPath
+    Full Path to type summary file
+
+.EXAMPLE
+    PS C:\> .\generateTypeSummary.ps1 -dllPath C:\test\Microsoft.Graph.dll -outputPath C:\test\typeSummary.txt
+#>
+
 Param(
     [string]$dllPath,
     [string]$outputPath
@@ -22,6 +45,7 @@ $writer = [System.IO.File]::CreateText($outputPath)
 
 try
 {
+    # enum types
     foreach ($type in $types | Where-Object { $_.IsEnum })
     {
         $writer.WriteLine("enum " + $type.FullName)
@@ -32,10 +56,12 @@ try
         }
     }
 
+    # interface and class types
     foreach ($type in $types |
         Where-Object { !$_.FullName.Contains("+") -and ($_.IsClass -or $_.IsInterface) } |
         Sort-Object { $_.IsInterface,$_.Name })
     {
+        # type declaration line with optional base type
         $declaration = "class "
         if ($type.IsInterface)
         {
