@@ -248,6 +248,12 @@ namespace Microsoft.Graph
         public string Subject { get; set; }
     
         /// <summary>
+        /// Gets or sets transaction id.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "transactionId", Required = Newtonsoft.Json.Required.Default)]
+        public string TransactionId { get; set; }
+    
+        /// <summary>
         /// Gets or sets type.
         /// The event type. The possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only.
         /// </summary>
