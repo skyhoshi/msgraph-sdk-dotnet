@@ -102,7 +102,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// The visibility of a the group and team. Defaults to Public.
+        /// The visibility of the group and team. Defaults to Public.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "visibility", Required = Newtonsoft.Json.Required.Default)]
         public TeamVisibilityType? Visibility { get; set; }
