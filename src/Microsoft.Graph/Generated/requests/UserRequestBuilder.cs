@@ -541,6 +541,18 @@ namespace Microsoft.Graph
                 return new UserTeamworkRequestBuilder(this.AppendSegmentToRequestUrl("teamwork"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Todo.
+        /// </summary>
+        /// <returns>The <see cref="ITodoRequestBuilder"/>.</returns>
+        public ITodoRequestBuilder Todo
+        {
+            get
+            {
+                return new TodoRequestBuilder(this.AppendSegmentToRequestUrl("todo"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.
