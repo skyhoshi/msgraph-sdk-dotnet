@@ -276,6 +276,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IUserTeamworkRequestBuilder"/>.</returns>
         IUserTeamworkRequestBuilder Teamwork { get; }
+
+        /// <summary>
+        /// Gets the request builder for Todo.
+        /// </summary>
+        /// <returns>The <see cref="ITodoRequestBuilder"/>.</returns>
+        ITodoRequestBuilder Todo { get; }
     
         /// <summary>
         /// Gets the request builder for UserAssignLicense.

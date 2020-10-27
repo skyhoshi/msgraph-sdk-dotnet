@@ -123,7 +123,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets employee id.
-        /// The employee identifier assigned to the user by the organization. Supports $filter.
+        /// The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeId", Required = Newtonsoft.Json.Required.Default)]
         public string EmployeeId { get; set; }
@@ -179,7 +179,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets job title.
-        /// The user’s job title. Supports $filter.
+        /// The user's job title. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "jobTitle", Required = Newtonsoft.Json.Required.Default)]
         public string JobTitle { get; set; }
@@ -256,7 +256,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises immutable id.
-        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user’s userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.
+        /// This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user's userPrincipalName (UPN) property. Important: The $ and _ characters cannot be used when specifying this property. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesImmutableId", Required = Newtonsoft.Json.Required.Default)]
         public string OnPremisesImmutableId { get; set; }
@@ -319,7 +319,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password profile.
-        /// Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
+        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordProfile", Required = Newtonsoft.Json.Required.Default)]
         public PasswordProfile PasswordProfile { get; set; }
@@ -396,7 +396,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant’s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "userPrincipalName", Required = Newtonsoft.Json.Required.Default)]
         public string UserPrincipalName { get; set; }
@@ -438,7 +438,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hire date.
-        /// The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
+        /// The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'. Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hireDate", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? HireDate { get; set; }
@@ -521,7 +521,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets manager.
-        /// The user or contact that is this user’s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
+        /// The user or contact that is this user's manager. Read-only. (HTTP Methods: GET, PUT, DELETE.)
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "manager", Required = Newtonsoft.Json.Required.Default)]
         public DirectoryObject Manager { get; set; }
@@ -768,6 +768,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "teamwork", Required = Newtonsoft.Json.Required.Default)]
         public UserTeamwork Teamwork { get; set; }
+    
+        /// <summary>
+        /// Gets or sets todo.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "todo", Required = Newtonsoft.Json.Required.Default)]
+        public Todo Todo { get; set; }
     
     }
 }

@@ -67,14 +67,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device metadata.
-        /// For interal use only. Set to null.
+        /// For internal use only. Set to null.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceMetadata", Required = Newtonsoft.Json.Required.Default)]
         public string DeviceMetadata { get; set; }
     
         /// <summary>
         /// Gets or sets device version.
-        /// For interal use only.
+        /// For internal use only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "deviceVersion", Required = Newtonsoft.Json.Required.Default)]
         public Int32? DeviceVersion { get; set; }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises last sync date time.
-        /// The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Read-only.
+        /// The last time at which the object was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z' Read-only.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesLastSyncDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? OnPremisesLastSyncDateTime { get; set; }
@@ -137,7 +137,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets physical ids.
-        /// For interal use only. Not nullable.
+        /// For internal use only. Not nullable.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "physicalIds", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> PhysicalIds { get; set; }

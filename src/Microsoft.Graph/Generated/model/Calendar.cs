@@ -86,6 +86,12 @@ namespace Microsoft.Graph
         public string HexColor { get; set; }
     
         /// <summary>
+        /// Gets or sets is default calendar.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isDefaultCalendar", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsDefaultCalendar { get; set; }
+    
+        /// <summary>
         /// Gets or sets is removable.
         /// Indicates whether this user calendar can be deleted from the user mailbox.
         /// </summary>
