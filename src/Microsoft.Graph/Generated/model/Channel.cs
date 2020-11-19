@@ -52,6 +52,13 @@ namespace Microsoft.Graph
         public string Email { get; set; }
     
         /// <summary>
+        /// Gets or sets is favorite by default.
+        /// Indicates whether the channel should automatically be marked 'favorite' for all members of the team. Can only be set programmatically with Create team. Default: false.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isFavoriteByDefault", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsFavoriteByDefault { get; set; }
+    
+        /// <summary>
         /// Gets or sets membership type.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipType", Required = Newtonsoft.Json.Required.Default)]

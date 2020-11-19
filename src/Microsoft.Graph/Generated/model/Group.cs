@@ -325,6 +325,12 @@ namespace Microsoft.Graph
         public IGroupOwnersCollectionWithReferencesPage Owners { get; set; }
     
         /// <summary>
+        /// Gets or sets permission grants.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "permissionGrants", Required = Newtonsoft.Json.Required.Default)]
+        public IGroupPermissionGrantsCollectionPage PermissionGrants { get; set; }
+    
+        /// <summary>
         /// Gets or sets settings.
         /// Read-only. Nullable.
         /// </summary>

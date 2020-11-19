@@ -60,7 +60,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets business phones.
-        /// The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property.
+        /// The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "businessPhones", Required = Newtonsoft.Json.Required.Default)]
         public IEnumerable<string> BusinessPhones { get; set; }
@@ -221,7 +221,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mobile phone.
-        /// The primary cellular telephone number for the user.
+        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mobilePhone", Required = Newtonsoft.Json.Required.Default)]
         public string MobilePhone { get; set; }
@@ -319,7 +319,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password profile.
-        /// Specifies the password profile for the user. The profile contains the user's password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
+        /// Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "passwordProfile", Required = Newtonsoft.Json.Required.Default)]
         public PasswordProfile PasswordProfile { get; set; }
@@ -771,6 +771,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets todo.
+        /// Represents the To Do services available to a user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "todo", Required = Newtonsoft.Json.Required.Default)]
         public Todo Todo { get; set; }
