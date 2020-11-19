@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets allowed presenters.
+        /// Specifies who can be a presenter in a meeting. Possible values are listed in the following table.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "allowedPresenters", Required = Newtonsoft.Json.Required.Default)]
+        public OnlineMeetingPresenters? AllowedPresenters { get; set; }
+    
+        /// <summary>
         /// Gets or sets audio conferencing.
         /// The phone access (dial-in) information for an online meeting. Read-only.
         /// </summary>
@@ -65,6 +72,13 @@ namespace Microsoft.Graph
         public string ExternalId { get; set; }
     
         /// <summary>
+        /// Gets or sets is entry exit announced.
+        /// Whether or not to announce when callers join or leave.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEntryExitAnnounced", Required = Newtonsoft.Json.Required.Default)]
+        public bool? IsEntryExitAnnounced { get; set; }
+    
+        /// <summary>
         /// Gets or sets join information.
         /// The join information in the language and locale variant specified in the Accept-Language request HTTP header. Read-only.
         /// </summary>
@@ -77,6 +91,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "joinWebUrl", Required = Newtonsoft.Json.Required.Default)]
         public string JoinWebUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets lobby bypass settings.
+        /// Specifies which participants can bypass the meeting   lobby.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lobbyBypassSettings", Required = Newtonsoft.Json.Required.Default)]
+        public LobbyBypassSettings LobbyBypassSettings { get; set; }
     
         /// <summary>
         /// Gets or sets participants.

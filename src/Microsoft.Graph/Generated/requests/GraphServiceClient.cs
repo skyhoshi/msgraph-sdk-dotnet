@@ -252,6 +252,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServicePermissionGrants request builder.
+        /// </summary>
+        public IGraphServicePermissionGrantsCollectionRequestBuilder PermissionGrants
+        {
+            get
+            {
+                return new GraphServicePermissionGrantsCollectionRequestBuilder(this.BaseUrl + "/permissionGrants", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceScopedRoleMemberships request builder.
         /// </summary>
         public IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships
@@ -538,6 +549,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceSearch request builder.
+        /// </summary>
+        public ISearchEntityRequestBuilder Search
+        {
+            get
+            {
+                return new SearchEntityRequestBuilder(this.BaseUrl + "/search", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServicePlanner request builder.
         /// </summary>
         public IPlannerRequestBuilder Planner
@@ -555,7 +577,7 @@ namespace Microsoft.Graph
         {
             get
             {
-                return new SecurityRequestBuilder(this.BaseUrl + "/Security", this);
+                return new SecurityRequestBuilder(this.BaseUrl + "/security", this);
             }
         }
     

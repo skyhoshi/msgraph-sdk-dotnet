@@ -216,6 +216,12 @@ namespace Microsoft.Graph
         public string ServicePrincipalType { get; set; }
     
         /// <summary>
+        /// Gets or sets sign in audience.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "signInAudience", Required = Newtonsoft.Json.Required.Default)]
+        public string SignInAudience { get; set; }
+    
+        /// <summary>
         /// Gets or sets tags.
         /// Custom strings that can be used to categorize and identify the service principal. Not nullable.
         /// </summary>
