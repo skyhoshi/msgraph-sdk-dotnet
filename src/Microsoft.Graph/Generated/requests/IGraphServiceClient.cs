@@ -107,6 +107,11 @@ namespace Microsoft.Graph
         IGraphServiceOrganizationCollectionRequestBuilder Organization { get; }
     
         /// <summary>
+        /// Gets the GraphServicePermissionGrants request builder.
+        /// </summary>
+        IGraphServicePermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceScopedRoleMemberships request builder.
         /// </summary>
         IGraphServiceScopedRoleMembershipsCollectionRequestBuilder ScopedRoleMemberships { get; }
@@ -235,6 +240,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceReports request builder.
         /// </summary>
         IReportRootRequestBuilder Reports { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceSearch request builder.
+        /// </summary>
+        ISearchEntityRequestBuilder Search { get; }
     
         /// <summary>
         /// Gets the GraphServicePlanner request builder.

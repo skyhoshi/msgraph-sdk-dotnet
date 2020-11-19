@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         IGroupOwnersCollectionWithReferencesRequestBuilder Owners { get; }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        IGroupPermissionGrantsCollectionRequestBuilder PermissionGrants { get; }
+
+        /// <summary>
         /// Gets the request builder for Settings.
         /// </summary>
         /// <returns>The <see cref="IGroupSettingsCollectionRequestBuilder"/>.</returns>
@@ -194,6 +200,12 @@ namespace Microsoft.Graph
         IGroupAssignLicenseRequestBuilder AssignLicense(
             IEnumerable<AssignedLicense> addLicenses,
             IEnumerable<Guid> removeLicenses);
+
+        /// <summary>
+        /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
+        /// </summary>
+        /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>
+        IGroupCheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp();
 
         /// <summary>
         /// Gets the request builder for GroupValidateProperties.

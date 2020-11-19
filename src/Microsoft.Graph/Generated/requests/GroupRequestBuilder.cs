@@ -123,6 +123,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PermissionGrants.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPermissionGrantsCollectionRequestBuilder"/>.</returns>
+        public IGroupPermissionGrantsCollectionRequestBuilder PermissionGrants
+        {
+            get
+            {
+                return new GroupPermissionGrantsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("permissionGrants"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Settings.
         /// </summary>
         /// <returns>The <see cref="IGroupSettingsCollectionRequestBuilder"/>.</returns>
@@ -375,6 +387,17 @@ namespace Microsoft.Graph
                 this.Client,
                 addLicenses,
                 removeLicenses);
+        }
+
+        /// <summary>
+        /// Gets the request builder for GroupCheckGrantedPermissionsForApp.
+        /// </summary>
+        /// <returns>The <see cref="IGroupCheckGrantedPermissionsForAppRequestBuilder"/>.</returns>
+        public IGroupCheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp()
+        {
+            return new GroupCheckGrantedPermissionsForAppRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.checkGrantedPermissionsForApp"),
+                this.Client);
         }
 
         /// <summary>
