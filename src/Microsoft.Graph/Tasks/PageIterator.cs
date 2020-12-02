@@ -43,8 +43,9 @@ namespace Microsoft.Graph
         /// <param name="client">The GraphServiceClient object used to create the NextPageRequest for a delta query.</param>
         /// <param name="page">A generated implementation of ICollectionPage.</param>
         /// <param name="callback">A Func delegate that processes type TEntity in the result set and should return false if the iterator should cancel processing.</param>
+        /// <param name="requestConfigurator">A Func delegate that configures the NextPageRequest</param>
         /// <returns>A PageIterator&lt;TEntity&gt; that will process additional result pages based on the rules specified in Func&lt;TEntity,bool&gt; processPageItems</returns>
-        public static PageIterator<TEntity> CreatePageIterator(IBaseClient client, ICollectionPage<TEntity> page, Func<TEntity, bool> callback)
+        public static PageIterator<TEntity> CreatePageIterator(IBaseClient client, ICollectionPage<TEntity> page, Func<TEntity, bool> callback, Func<IBaseRequest, IBaseRequest> requestConfigurator = null)
         {
             if (page == null)
                 throw new ArgumentNullException("page");
@@ -58,23 +59,9 @@ namespace Microsoft.Graph
                 _currentPage = page,
                 _pageItemQueue = new Queue<TEntity>(page),
                 _processPageItemCallback = callback,
+                _requestConfigurator = requestConfigurator,
                 State = PagingState.NotStarted
             };
-        }
-
-        /// <summary>
-        /// Creates the PageIterator with the results of an initial paged request. 
-        /// </summary>
-        /// <param name="client">The GraphServiceClient object used to create the NextPageRequest for a delta query.</param>
-        /// <param name="page">A generated implementation of ICollectionPage.</param>
-        /// <param name="callback">A Func delegate that processes type TEntity in the result set and should return false if the iterator should cancel processing.</param>
-        /// <param name="requestConfigurator">A Func delegate that configures the NextPageRequest</param>
-        /// <returns>A PageIterator&lt;TEntity&gt; that will process additional result pages based on the rules specified in Func&lt;TEntity,bool&gt; processPageItems</returns>
-        public static PageIterator<TEntity> CreatePageIterator(IBaseClient client, ICollectionPage<TEntity> page, Func<TEntity, bool> callback, Func<IBaseRequest, IBaseRequest> requestConfigurator = null)
-        {
-            var iterator = CreatePageIterator(client, page, callback);
-            iterator._requestConfigurator = requestConfigurator;
-            return iterator;
         }
 
         /// <summary>
