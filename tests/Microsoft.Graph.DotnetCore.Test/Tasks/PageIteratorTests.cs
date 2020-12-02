@@ -363,5 +363,46 @@ namespace Microsoft.Graph.DotnetCore.Test.Tasks
             // Assert
             Assert.Equal<PagingState>(PagingState.NotStarted, eventPageIterator.State);
         }
-    }
+
+        [Fact]
+        public async Task Given_RequestConfigurator_It_Is_Invoked()
+        {
+            // Create the 17 events to initiallize the original collection page.
+            List<Event> originalCollectionPageEvents = new List<Event>();
+            int inputEventCount = 17;
+            for (int i = 0; i < inputEventCount; i++)
+            {
+                originalCollectionPageEvents.Add(new Event() { Subject = $"Subject{i.ToString()}" });
+            }
+
+            // Create the 5 events to initialize the next collection page.
+            UserEventsCollectionPage nextPage = new UserEventsCollectionPage();
+            int nextPageEventCount = 5;
+            for (int i = 0; i < nextPageEventCount; i++)
+            {
+                nextPage.Add(new Event() { Subject = $"Subject for next page events: {i.ToString()}" });
+            }
+            nextPage.AdditionalData = new Dictionary<string, object>();
+
+            // Create the delegate to process each entity returned in the pages. 
+            Func<Event, bool> processEachEvent = (e) => { return true; };
+
+            // Create the delegate to configure the next page request. The delegate will signal that it was invoked.
+            bool requestConfiguratorInvoked = false;
+
+            Func<IBaseRequest, IBaseRequest> requestConfigurator = (request) =>
+            {
+                requestConfiguratorInvoked = true;
+                return request;
+            };
+
+            Mocks.MockUserEventsCollectionRequest mockUserEventsCollectionRequest = new Mocks.MockUserEventsCollectionRequest(nextPage);
+            var mockUserEventsCollectionPage = new Mocks.MockUserEventsCollectionPage(originalCollectionPageEvents, mockUserEventsCollectionRequest, "nextLink") as IUserEventsCollectionPage;
+
+            eventPageIterator = PageIterator<Event>.CreatePageIterator(graphClient, mockUserEventsCollectionPage, processEachEvent, requestConfigurator);
+            await eventPageIterator.IterateAsync();
+
+            Assert.True(requestConfiguratorInvoked, "The delegate request configurator not invoked.");
+        }
+    }	
 }

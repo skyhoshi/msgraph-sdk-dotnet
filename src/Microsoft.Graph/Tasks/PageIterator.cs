@@ -22,11 +22,12 @@ namespace Microsoft.Graph
         private ICollectionPage<TEntity> _currentPage;
         private Queue<TEntity> _pageItemQueue;
         private Func<TEntity, bool> _processPageItemCallback;
+        private Func<IBaseRequest, IBaseRequest> _requestConfigurator;
 
-        /// <summary>
-        /// The @odata.deltaLink returned from a delta query.
-        /// </summary>
-        public string Deltalink { get; private set; }
+    /// <summary>
+    /// The @odata.deltaLink returned from a delta query.
+    /// </summary>
+    public string Deltalink { get; private set; }
         /// <summary>
         /// The @odata.nextLink returned in a paged result.
         /// </summary>
@@ -59,6 +60,21 @@ namespace Microsoft.Graph
                 _processPageItemCallback = callback,
                 State = PagingState.NotStarted
             };
+        }
+
+        /// <summary>
+        /// Creates the PageIterator with the results of an initial paged request. 
+        /// </summary>
+        /// <param name="client">The GraphServiceClient object used to create the NextPageRequest for a delta query.</param>
+        /// <param name="page">A generated implementation of ICollectionPage.</param>
+        /// <param name="callback">A Func delegate that processes type TEntity in the result set and should return false if the iterator should cancel processing.</param>
+        /// <param name="requestConfigurator">A Func delegate that configures the NextPageRequest</param>
+        /// <returns>A PageIterator&lt;TEntity&gt; that will process additional result pages based on the rules specified in Func&lt;TEntity,bool&gt; processPageItems</returns>
+        public static PageIterator<TEntity> CreatePageIterator(IBaseClient client, ICollectionPage<TEntity> page, Func<TEntity, bool> callback, Func<IBaseRequest, IBaseRequest> requestConfigurator = null)
+        {
+            var iterator = CreatePageIterator(client, page, callback);
+            iterator._requestConfigurator = requestConfigurator;
+            return iterator;
         }
 
         /// <summary>
@@ -134,7 +150,7 @@ namespace Microsoft.Graph
                 dynamic page = _currentPage;
 
                 // Call the MSGraph API to get the next page of results and set that page as the currentPage.
-                _currentPage = await page.NextPageRequest.GetAsync(token).ConfigureAwait(false);
+                _currentPage = await (_requestConfigurator == null ? page.NextPageRequest : _requestConfigurator(page.NextPageRequest)).GetAsync(token).ConfigureAwait(false);
 
                 // Add all of the items returned in the response to the queue.
                 if (_currentPage.Count > 0)
