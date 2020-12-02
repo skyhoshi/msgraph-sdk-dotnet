@@ -24,10 +24,10 @@ namespace Microsoft.Graph
         private Func<TEntity, bool> _processPageItemCallback;
         private Func<IBaseRequest, IBaseRequest> _requestConfigurator;
 
-    /// <summary>
-    /// The @odata.deltaLink returned from a delta query.
-    /// </summary>
-    public string Deltalink { get; private set; }
+        /// <summary>
+        /// The @odata.deltaLink returned from a delta query.
+        /// </summary>
+        public string Deltalink { get; private set; }
         /// <summary>
         /// The @odata.nextLink returned in a paged result.
         /// </summary>
