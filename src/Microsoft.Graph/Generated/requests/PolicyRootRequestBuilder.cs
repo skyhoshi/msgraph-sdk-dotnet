@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AuthorizationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAuthorizationPolicyRequestBuilder"/>.</returns>
+        public IAuthorizationPolicyRequestBuilder AuthorizationPolicy
+        {
+            get
+            {
+                return new AuthorizationPolicyRequestBuilder(this.AppendSegmentToRequestUrl("authorizationPolicy"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ClaimsMappingPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootClaimsMappingPoliciesCollectionRequestBuilder"/>.</returns>

@@ -85,6 +85,31 @@ namespace Microsoft.Graph
                 return new CloudCommunicationsOnlineMeetingsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("onlineMeetings"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for Presences.
+        /// </summary>
+        /// <returns>The <see cref="ICloudCommunicationsPresencesCollectionRequestBuilder"/>.</returns>
+        public ICloudCommunicationsPresencesCollectionRequestBuilder Presences
+        {
+            get
+            {
+                return new CloudCommunicationsPresencesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("presences"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for CloudCommunicationsGetPresencesByUserId.
+        /// </summary>
+        /// <returns>The <see cref="ICloudCommunicationsGetPresencesByUserIdRequestBuilder"/>.</returns>
+        public ICloudCommunicationsGetPresencesByUserIdRequestBuilder GetPresencesByUserId(
+            IEnumerable<string> ids)
+        {
+            return new CloudCommunicationsGetPresencesByUserIdRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getPresencesByUserId"),
+                this.Client,
+                ids);
+        }
     
     }
 }

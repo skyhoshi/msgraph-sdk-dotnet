@@ -20,26 +20,6 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
-        /// Success
-        /// </summary>
-        Success = 0,
-	
-        /// <summary>
-        /// Available
-        /// </summary>
-        Available = 1,
-	
-        /// <summary>
-        /// Idle
-        /// </summary>
-        Idle = 2,
-	
-        /// <summary>
-        /// Unknown
-        /// </summary>
-        Unknown = 3,
-	
-        /// <summary>
         /// Device Os Higher Than Desired Os Version
         /// </summary>
         DeviceOsHigherThanDesiredOsVersion = -2016330696,
@@ -108,6 +88,26 @@ namespace Microsoft.Graph
         /// Downloading
         /// </summary>
         Downloading = -2016330712,
+	
+        /// <summary>
+        /// Success
+        /// </summary>
+        Success = 0,
+	
+        /// <summary>
+        /// Available
+        /// </summary>
+        Available = 1,
+	
+        /// <summary>
+        /// Idle
+        /// </summary>
+        Idle = 2,
+	
+        /// <summary>
+        /// Unknown
+        /// </summary>
+        Unknown = 3,
 	
     }
 }
