@@ -32,24 +32,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentSource.
+        /// The name of the content source which the externalItem is part of .
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSource", Required = Newtonsoft.Json.Required.Default)]
         public string ContentSource { get; set; }
     
         /// <summary>
         /// Gets or sets hitId.
+        /// The internal identifier for the item.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "hitId", Required = Newtonsoft.Json.Required.Default)]
         public string HitId { get; set; }
     
         /// <summary>
         /// Gets or sets rank.
+        /// The rank or the order of the result.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rank", Required = Newtonsoft.Json.Required.Default)]
         public Int32? Rank { get; set; }
     
         /// <summary>
         /// Gets or sets summary.
+        /// A summary of the result, if a summary is available.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "summary", Required = Newtonsoft.Json.Required.Default)]
         public string Summary { get; set; }

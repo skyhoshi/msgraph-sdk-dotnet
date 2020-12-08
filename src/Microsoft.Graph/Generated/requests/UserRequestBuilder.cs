@@ -519,6 +519,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Presence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceRequestBuilder"/>.</returns>
+        public IPresenceRequestBuilder Presence
+        {
+            get
+            {
+                return new PresenceRequestBuilder(this.AppendSegmentToRequestUrl("presence"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>

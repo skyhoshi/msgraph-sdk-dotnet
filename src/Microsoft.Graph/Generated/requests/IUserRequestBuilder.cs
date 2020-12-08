@@ -266,6 +266,12 @@ namespace Microsoft.Graph
         IUserOnlineMeetingsCollectionRequestBuilder OnlineMeetings { get; }
 
         /// <summary>
+        /// Gets the request builder for Presence.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceRequestBuilder"/>.</returns>
+        IPresenceRequestBuilder Presence { get; }
+
+        /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>

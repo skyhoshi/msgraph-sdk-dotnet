@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public IPolicyRootActivityBasedTimeoutPoliciesCollectionPage ActivityBasedTimeoutPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets authorization policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authorizationPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public AuthorizationPolicy AuthorizationPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets claims mapping policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "claimsMappingPolicies", Required = Newtonsoft.Json.Required.Default)]
