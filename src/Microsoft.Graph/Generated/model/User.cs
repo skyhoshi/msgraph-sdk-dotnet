@@ -122,11 +122,32 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets employee hire date.
+        /// The date and time when the user was hired or will start work in case of a future hire. Returned only on $select. Supports $filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeHireDate", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? EmployeeHireDate { get; set; }
+    
+        /// <summary>
         /// Gets or sets employee id.
         /// The employee identifier assigned to the user by the organization. Returned only on $select. Supports $filter.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeId", Required = Newtonsoft.Json.Required.Default)]
         public string EmployeeId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets employee org data.
+        /// Represents organization data (e.g. division and costCenter) associated with a user. Returned only on $select.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeOrgData", Required = Newtonsoft.Json.Required.Default)]
+        public EmployeeOrgData EmployeeOrgData { get; set; }
+    
+        /// <summary>
+        /// Gets or sets employee type.
+        /// Captures enterprise worker type: Employee, Contractor, Consultant, Vendor, etc. Returned only on $select. Supports $filter.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "employeeType", Required = Newtonsoft.Json.Required.Default)]
+        public string EmployeeType { get; set; }
     
         /// <summary>
         /// Gets or sets external user state.
@@ -193,7 +214,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets legal age group classification.
-        /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.)
+        /// Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, minorWithOutParentalConsent, minorWithParentalConsent, minorNoParentalConsentRequired, notAdult and adult. Refer to the legal age group property definitions for further information.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "legalAgeGroupClassification", Required = Newtonsoft.Json.Required.Default)]
         public string LegalAgeGroupClassification { get; set; }
@@ -756,6 +777,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onlineMeetings", Required = Newtonsoft.Json.Required.Default)]
         public IUserOnlineMeetingsCollectionPage OnlineMeetings { get; set; }
+    
+        /// <summary>
+        /// Gets or sets presence.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "presence", Required = Newtonsoft.Json.Required.Default)]
+        public Presence Presence { get; set; }
     
         /// <summary>
         /// Gets or sets joined teams.

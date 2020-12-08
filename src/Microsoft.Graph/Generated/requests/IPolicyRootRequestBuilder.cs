@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder ActivityBasedTimeoutPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthorizationPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAuthorizationPolicyRequestBuilder"/>.</returns>
+        IAuthorizationPolicyRequestBuilder AuthorizationPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for ClaimsMappingPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootClaimsMappingPoliciesCollectionRequestBuilder"/>.</returns>

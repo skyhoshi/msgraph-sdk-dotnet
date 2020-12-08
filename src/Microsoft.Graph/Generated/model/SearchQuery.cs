@@ -32,6 +32,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets queryString.
+        /// The search query containing the search terms. Required.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "queryString", Required = Newtonsoft.Json.Required.Default)]
         public string QueryString { get; set; }
