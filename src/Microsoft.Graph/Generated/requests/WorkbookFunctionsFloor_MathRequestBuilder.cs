@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("number", number, true);
             this.SetParameter("significance", significance, true);
             this.SetParameter("mode", mode, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

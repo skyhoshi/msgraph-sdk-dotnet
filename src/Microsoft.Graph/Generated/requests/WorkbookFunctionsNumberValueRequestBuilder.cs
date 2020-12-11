@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("text", text, true);
             this.SetParameter("decimalSeparator", decimalSeparator, true);
             this.SetParameter("groupSeparator", groupSeparator, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

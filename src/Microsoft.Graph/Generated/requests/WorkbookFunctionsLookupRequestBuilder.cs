@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("lookupValue", lookupValue, true);
             this.SetParameter("lookupVector", lookupVector, true);
             this.SetParameter("resultVector", resultVector, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

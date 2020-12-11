@@ -52,7 +52,7 @@ namespace Microsoft.Graph
             this.SetParameter("frequency", frequency, true);
             this.SetParameter("basis", basis, true);
             this.SetParameter("calcMethod", calcMethod, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

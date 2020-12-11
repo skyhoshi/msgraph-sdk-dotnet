@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("alpha", alpha, true);
             this.SetParameter("beta", beta, true);
             this.SetParameter("cumulative", cumulative, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

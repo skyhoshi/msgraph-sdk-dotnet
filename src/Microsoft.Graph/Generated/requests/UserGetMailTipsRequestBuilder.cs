@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("emailAddresses", EmailAddresses, false);
             this.SetParameter("mailTipsOptions", MailTipsOptions, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

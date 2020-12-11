@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("alpha", alpha, true);
             this.SetParameter("standardDev", standardDev, true);
             this.SetParameter("size", size, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

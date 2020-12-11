@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("averageRange", averageRange, true);
             this.SetParameter("values", values, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

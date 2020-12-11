@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("oldText", oldText, true);
             this.SetParameter("newText", newText, true);
             this.SetParameter("instanceNum", instanceNum, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

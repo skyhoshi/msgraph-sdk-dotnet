@@ -43,7 +43,7 @@ namespace Microsoft.Graph
             this.SetParameter("beta", beta, true);
             this.SetParameter("a", A, true);
             this.SetParameter("b", B, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("callbackUri", callbackUri, false);
             this.SetParameter("mediaConfig", mediaConfig, false);
             this.SetParameter("acceptedModalities", acceptedModalities, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

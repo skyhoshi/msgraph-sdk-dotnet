@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("disableUserAccounts", disableUserAccounts, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("mean", mean, true);
             this.SetParameter("standardDev", standardDev, true);
             this.SetParameter("cumulative", cumulative, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

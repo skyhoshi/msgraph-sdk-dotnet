@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("attachmentItem", AttachmentItem, false);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

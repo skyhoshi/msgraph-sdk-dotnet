@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("message", Message, false);
             this.SetParameter("saveToSentItems", SaveToSentItems, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

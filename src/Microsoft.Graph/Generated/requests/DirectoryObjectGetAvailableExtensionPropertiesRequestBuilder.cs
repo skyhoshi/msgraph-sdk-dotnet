@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("isSyncedFromOnPremises", isSyncedFromOnPremises, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

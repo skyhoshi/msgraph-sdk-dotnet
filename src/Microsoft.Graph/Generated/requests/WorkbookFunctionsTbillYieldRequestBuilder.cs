@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("settlement", settlement, true);
             this.SetParameter("maturity", maturity, true);
             this.SetParameter("pr", pr, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

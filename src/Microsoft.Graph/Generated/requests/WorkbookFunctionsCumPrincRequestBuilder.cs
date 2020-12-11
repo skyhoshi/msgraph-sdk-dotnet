@@ -46,7 +46,7 @@ namespace Microsoft.Graph
             this.SetParameter("startPeriod", startPeriod, true);
             this.SetParameter("endPeriod", endPeriod, true);
             this.SetParameter("type", type, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

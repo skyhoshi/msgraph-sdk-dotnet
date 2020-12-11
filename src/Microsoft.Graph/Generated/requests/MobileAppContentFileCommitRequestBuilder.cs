@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("fileEncryptionInfo", fileEncryptionInfo, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

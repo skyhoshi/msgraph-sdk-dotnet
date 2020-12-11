@@ -28,7 +28,7 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
-            this.SetFunctionParameters();
+            this.SetFunctionParameters();            
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph
             this.SetParameter("startDateTime", startDateTime, true);
             this.SetParameter("endDateTime", endDateTime, true);
             this.SetParameter("interval", interval, true);
-            this.SetFunctionParameters();
+            this.SetFunctionParameters();            
         }
 
         /// <summary>

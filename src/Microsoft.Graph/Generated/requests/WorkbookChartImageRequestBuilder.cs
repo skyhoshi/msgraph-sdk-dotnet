@@ -28,7 +28,7 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
-            this.SetFunctionParameters();
+            this.SetFunctionParameters();            
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("width", width, false);
-            this.SetFunctionParameters();
+            this.SetFunctionParameters();            
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("width", width, false);
             this.SetParameter("height", height, false);
-            this.SetFunctionParameters();
+            this.SetFunctionParameters();            
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
             this.SetParameter("width", width, false);
             this.SetParameter("height", height, false);
             this.SetParameter("fittingMode", fittingMode, false);
-            this.SetFunctionParameters();
+            this.SetFunctionParameters();            
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("year", year, true);
             this.SetParameter("month", month, true);
             this.SetParameter("day", day, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

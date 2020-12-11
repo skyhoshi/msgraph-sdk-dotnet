@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("endTime", EndTime, true);
             this.SetParameter("startTime", StartTime, true);
             this.SetParameter("availabilityViewInterval", AvailabilityViewInterval, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

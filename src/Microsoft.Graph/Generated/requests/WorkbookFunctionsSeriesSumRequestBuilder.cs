@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("n", n, true);
             this.SetParameter("m", m, true);
             this.SetParameter("coefficients", coefficients, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

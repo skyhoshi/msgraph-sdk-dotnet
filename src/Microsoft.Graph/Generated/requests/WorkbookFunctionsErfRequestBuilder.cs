@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("lowerLimit", lowerLimit, true);
             this.SetParameter("upperLimit", upperLimit, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

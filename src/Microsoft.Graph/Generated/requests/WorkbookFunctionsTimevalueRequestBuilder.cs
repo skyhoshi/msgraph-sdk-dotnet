@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("timeText", timeText, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("percent", percent, false);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

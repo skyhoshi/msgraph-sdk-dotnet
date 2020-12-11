@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("number", number, true);
             this.SetParameter("radix", radix, true);
             this.SetParameter("minLength", minLength, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

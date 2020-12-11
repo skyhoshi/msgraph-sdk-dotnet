@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("newReminderTime", NewReminderTime, false);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

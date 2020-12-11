@@ -43,7 +43,7 @@ namespace Microsoft.Graph
             this.SetParameter("notebookFolder", notebookFolder, true);
             this.SetParameter("siteCollectionId", siteCollectionId, true);
             this.SetParameter("siteId", siteId, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

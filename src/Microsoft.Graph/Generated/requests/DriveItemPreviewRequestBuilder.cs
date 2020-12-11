@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("page", page, true);
             this.SetParameter("zoom", zoom, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

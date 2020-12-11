@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("ids", ids, false);
             this.SetParameter("types", types, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

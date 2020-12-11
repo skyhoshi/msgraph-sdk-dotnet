@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("currentPassword", currentPassword, true);
             this.SetParameter("newPassword", newPassword, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("checkInAs", checkInAs, true);
             this.SetParameter("comment", comment, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

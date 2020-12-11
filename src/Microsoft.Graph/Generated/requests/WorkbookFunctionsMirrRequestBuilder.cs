@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("values", values, true);
             this.SetParameter("financeRate", financeRate, true);
             this.SetParameter("reinvestRate", reinvestRate, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

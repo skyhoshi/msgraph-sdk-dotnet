@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("deltaRows", deltaRows, false);
             this.SetParameter("deltaColumns", deltaColumns, false);
-            this.SetFunctionParameters();
+            this.SetFunctionParameters();            
         }
 
         /// <summary>

@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("inputIds", InputIds, false);
             this.SetParameter("targetIdType", TargetIdType, false);
             this.SetParameter("sourceIdType", SourceIdType, false);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("participants", participants, false);
             this.SetParameter("clientContext", clientContext, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

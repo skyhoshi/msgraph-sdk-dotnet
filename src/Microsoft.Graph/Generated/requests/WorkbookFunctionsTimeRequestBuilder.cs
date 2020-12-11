@@ -37,7 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("hour", hour, true);
             this.SetParameter("minute", minute, true);
             this.SetParameter("second", second, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("startCell", startCell, true);
             this.SetParameter("endCell", endCell, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("icon", icon, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>

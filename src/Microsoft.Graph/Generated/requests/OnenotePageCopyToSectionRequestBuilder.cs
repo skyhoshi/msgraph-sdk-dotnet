@@ -40,7 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("groupId", groupId, true);
             this.SetParameter("siteCollectionId", siteCollectionId, true);
             this.SetParameter("siteId", siteId, true);
-            this.SetFunctionParameters();
+            
         }
 
         /// <summary>
