@@ -23,7 +23,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void NoParameters()
         {
-            var expectedRequestUrl = string.Format("{0}/me/drive/root/microsoft.graph.delta", graphBaseUrl);
+            var expectedRequestUrl = string.Format("{0}/me/drive/root/microsoft.graph.delta()", graphBaseUrl);
 
             var deltaRequestBuilder = this.graphServiceClient.Me.Drive.Root.Delta() as DriveItemDeltaRequestBuilder;
 
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var searchRequestBuilder = this.graphServiceClient.Me.Drive.Root.Search() as DriveItemSearchRequestBuilder;
 
             Assert.NotNull(searchRequestBuilder);
-            Assert.Equal(methodBaseUrl, searchRequestBuilder.RequestUrl);
+            Assert.Equal(expectedRequestUrl, searchRequestBuilder.RequestUrl);
 
             var searchRequest = searchRequestBuilder.Request() as DriveItemSearchRequest;
             Assert.NotNull(searchRequest);
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var searchRequestBuilder = this.graphServiceClient.Me.Drive.Root.Search(q) as DriveItemSearchRequestBuilder;
 
             Assert.NotNull(searchRequestBuilder);
-            Assert.Equal(methodBaseUrl, searchRequestBuilder.RequestUrl);
+            Assert.Equal(expectedRequestUrl, searchRequestBuilder.RequestUrl);
 
             var searchRequest = searchRequestBuilder.Request() as DriveItemSearchRequest;
             Assert.NotNull(searchRequest);
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var reminderViewRequestBuilder = this.graphServiceClient.Me.ReminderView(startDateTime) as UserReminderViewRequestBuilder;
 
             Assert.NotNull(reminderViewRequestBuilder);
-            Assert.Equal(methodBaseUrl, reminderViewRequestBuilder.RequestUrl);
+            Assert.Equal(expectedRequestUrl, reminderViewRequestBuilder.RequestUrl);
 
             var reminderViewRequest = reminderViewRequestBuilder.Request() as UserReminderViewRequest;
             Assert.NotNull(reminderViewRequest);
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var reminderViewRequestBuilder = this.graphServiceClient.Me.ReminderView(startDateTime, endDateTime) as UserReminderViewRequestBuilder;
 
             Assert.NotNull(reminderViewRequestBuilder);
-            Assert.Equal(methodBaseUrl, reminderViewRequestBuilder.RequestUrl);
+            Assert.Equal(expectedRequestUrl, reminderViewRequestBuilder.RequestUrl);
 
             var reminderViewRequest = reminderViewRequestBuilder.Request() as UserReminderViewRequest;
             Assert.NotNull(reminderViewRequest);
@@ -335,7 +335,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void ComposableFunctionWithComposedNavigation()
         {
-            // Actual: https://graph.microsoft.com/v1.0/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range/microsoft.graph.boundingRect/format
             var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')/format", this.graphBaseUrl);
             var formatRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Format.Request() as WorkbookRangeFormatRequest;
 
@@ -349,7 +348,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void ComposableFunctionWithComposedAction()
         {
-            // Actual: https://graph.microsoft.com/v1.0/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range/microsoft.graph.boundingRect/microsoft.graph.delete
             var expectedRequestUrl = string.Format("{0}/me/drives/driveId/items/fileId/workbook/worksheets/sheetId/microsoft.graph.range()/microsoft.graph.boundingRect(anotherRange='A1:B2')/microsoft.graph.delete", this.graphBaseUrl);
             var deleteRequest = this.graphServiceClient.Me.Drives[driveId].Items[fieldId].Workbook.Worksheets[sheetId].Range().BoundingRect(rangeAddress).Delete("Up").Request() as WorkbookRangeDeleteRequest;
 
