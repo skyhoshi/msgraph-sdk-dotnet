@@ -26,6 +26,7 @@
     <VersionSuffix>
     </VersionSuffix>
     <PackageReleaseNotes>
+- Support composable functions.
     </PackageReleaseNotes>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -38,7 +39,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="1.24" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="1.*" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\LICENSE.txt">
