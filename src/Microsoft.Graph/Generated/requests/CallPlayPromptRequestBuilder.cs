@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("prompts", prompts, false);
             this.SetParameter("clientContext", clientContext, true);
-            
         }
 
         /// <summary>

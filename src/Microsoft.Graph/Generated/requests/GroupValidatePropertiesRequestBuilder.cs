@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("displayName", displayName, true);
             this.SetParameter("mailNickname", mailNickname, true);
             this.SetParameter("onBehalfOfUserId", onBehalfOfUserId, true);
-            
         }
 
         /// <summary>

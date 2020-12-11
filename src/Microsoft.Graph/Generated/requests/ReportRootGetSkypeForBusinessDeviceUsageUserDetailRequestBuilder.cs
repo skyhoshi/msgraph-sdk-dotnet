@@ -31,7 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("date", date, false);
-            this.SetFunctionParameters();            
+            this.SetFunctionParameters();
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("period", period, false);
-            this.SetFunctionParameters();            
+            this.SetFunctionParameters();
         }
 
         /// <summary>

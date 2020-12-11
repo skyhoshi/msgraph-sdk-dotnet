@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("keepEnrollmentData", keepEnrollmentData, true);
             this.SetParameter("keepUserData", keepUserData, true);
             this.SetParameter("macOsUnlockCode", macOsUnlockCode, true);
-            
         }
 
         /// <summary>

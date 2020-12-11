@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("reason", reason, true);
             this.SetParameter("callbackUri", callbackUri, true);
-            
         }
 
         /// <summary>

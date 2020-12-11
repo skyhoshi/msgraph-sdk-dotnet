@@ -46,7 +46,6 @@ namespace Microsoft.Graph
             this.SetParameter("fv", fv, true);
             this.SetParameter("type", type, true);
             this.SetParameter("guess", guess, true);
-            
         }
 
         /// <summary>

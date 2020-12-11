@@ -28,7 +28,7 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
-            this.SetFunctionParameters();            
+            this.SetFunctionParameters();
         }
 
         /// <summary>

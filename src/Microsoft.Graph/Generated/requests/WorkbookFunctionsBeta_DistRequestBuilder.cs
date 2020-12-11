@@ -46,7 +46,6 @@ namespace Microsoft.Graph
             this.SetParameter("cumulative", cumulative, true);
             this.SetParameter("a", A, true);
             this.SetParameter("b", B, true);
-            
         }
 
         /// <summary>

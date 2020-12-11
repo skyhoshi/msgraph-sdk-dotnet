@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("nominalRate", nominalRate, true);
             this.SetParameter("npery", npery, true);
-            
         }
 
         /// <summary>

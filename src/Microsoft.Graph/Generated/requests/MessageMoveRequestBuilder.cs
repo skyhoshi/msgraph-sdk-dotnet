@@ -31,7 +31,6 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("destinationId", DestinationId, false);
-            
         }
 
         /// <summary>

@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("password", password, false);
             this.SetParameter("challengeToken", challengeToken, true);
-            
         }
 
         /// <summary>

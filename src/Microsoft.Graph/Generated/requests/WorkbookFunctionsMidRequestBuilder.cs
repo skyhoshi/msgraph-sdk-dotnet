@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("text", text, true);
             this.SetParameter("startNum", startNum, true);
             this.SetParameter("numChars", numChars, true);
-            
         }
 
         /// <summary>

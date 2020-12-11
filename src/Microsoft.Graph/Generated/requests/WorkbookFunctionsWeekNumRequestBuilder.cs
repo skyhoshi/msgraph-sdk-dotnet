@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("serialNumber", serialNumber, true);
             this.SetParameter("returnType", returnType, true);
-            
         }
 
         /// <summary>

@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("keyId", keyId, false);
             this.SetParameter("proof", proof, false);
-            
         }
 
         /// <summary>

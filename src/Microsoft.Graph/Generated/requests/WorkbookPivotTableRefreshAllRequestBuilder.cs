@@ -28,7 +28,6 @@ namespace Microsoft.Graph
             IBaseClient client)
             : base(requestUrl, client)
         {
-            
         }
 
         /// <summary>

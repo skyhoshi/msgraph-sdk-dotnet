@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("x", x, true);
             this.SetParameter("degFreedom1", degFreedom1, true);
             this.SetParameter("degFreedom2", degFreedom2, true);
-            
         }
 
         /// <summary>

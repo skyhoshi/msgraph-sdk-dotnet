@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("findText", findText, true);
             this.SetParameter("withinText", withinText, true);
             this.SetParameter("startNum", startNum, true);
-            
         }
 
         /// <summary>

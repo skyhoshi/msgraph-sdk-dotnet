@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("z", z, true);
             this.SetParameter("cumulative", cumulative, true);
-            
         }
 
         /// <summary>

@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("cost", cost, true);
             this.SetParameter("salvage", salvage, true);
             this.SetParameter("life", life, true);
-            
         }
 
         /// <summary>

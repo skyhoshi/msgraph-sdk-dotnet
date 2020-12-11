@@ -43,7 +43,6 @@ namespace Microsoft.Graph
             this.SetParameter("pmt", pmt, true);
             this.SetParameter("pv", pv, true);
             this.SetParameter("type", type, true);
-            
         }
 
         /// <summary>

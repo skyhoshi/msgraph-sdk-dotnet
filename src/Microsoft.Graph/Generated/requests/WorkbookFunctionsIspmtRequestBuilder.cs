@@ -40,7 +40,6 @@ namespace Microsoft.Graph
             this.SetParameter("per", per, true);
             this.SetParameter("nper", nper, true);
             this.SetParameter("pv", pv, true);
-            
         }
 
         /// <summary>

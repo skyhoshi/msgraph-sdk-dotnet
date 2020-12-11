@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("rate", rate, true);
             this.SetParameter("pv", pv, true);
             this.SetParameter("fv", fv, true);
-            
         }
 
         /// <summary>

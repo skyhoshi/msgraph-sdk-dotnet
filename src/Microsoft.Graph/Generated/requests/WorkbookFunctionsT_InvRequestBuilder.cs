@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("probability", probability, true);
             this.SetParameter("degFreedom", degFreedom, true);
-            
         }
 
         /// <summary>

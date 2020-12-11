@@ -40,7 +40,6 @@ namespace Microsoft.Graph
             this.SetParameter("trials", trials, true);
             this.SetParameter("probabilityS", probabilityS, true);
             this.SetParameter("cumulative", cumulative, true);
-            
         }
 
         /// <summary>

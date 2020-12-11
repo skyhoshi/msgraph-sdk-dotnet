@@ -40,7 +40,6 @@ namespace Microsoft.Graph
             this.SetParameter("tableArray", tableArray, true);
             this.SetParameter("rowIndexNum", rowIndexNum, true);
             this.SetParameter("rangeLookup", rangeLookup, true);
-            
         }
 
         /// <summary>

@@ -31,7 +31,6 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("deviceTag", deviceTag, true);
-            
         }
 
         /// <summary>

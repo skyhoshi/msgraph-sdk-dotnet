@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("oper", oper, false);
             this.SetParameter("criteria1", criteria1, true);
             this.SetParameter("criteria2", criteria2, true);
-            
         }
 
         /// <summary>

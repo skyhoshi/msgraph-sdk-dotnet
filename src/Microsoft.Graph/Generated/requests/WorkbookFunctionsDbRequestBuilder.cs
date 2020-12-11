@@ -43,7 +43,6 @@ namespace Microsoft.Graph
             this.SetParameter("life", life, true);
             this.SetParameter("period", period, true);
             this.SetParameter("month", month, true);
-            
         }
 
         /// <summary>

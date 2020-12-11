@@ -46,7 +46,6 @@ namespace Microsoft.Graph
             this.SetParameter("yld", yld, true);
             this.SetParameter("frequency", frequency, true);
             this.SetParameter("basis", basis, true);
-            
         }
 
         /// <summary>

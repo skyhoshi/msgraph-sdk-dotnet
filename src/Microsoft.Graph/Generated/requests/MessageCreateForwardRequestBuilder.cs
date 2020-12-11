@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("toRecipients", ToRecipients, true);
             this.SetParameter("message", Message, true);
             this.SetParameter("comment", Comment, true);
-            
         }
 
         /// <summary>

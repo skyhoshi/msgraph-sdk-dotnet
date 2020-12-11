@@ -46,7 +46,6 @@ namespace Microsoft.Graph
             this.SetParameter("description", description, true);
             this.SetParameter("mailNickname", mailNickname, true);
             this.SetParameter("classification", classification, true);
-            
         }
 
         /// <summary>

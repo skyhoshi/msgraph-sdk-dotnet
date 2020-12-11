@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("realNum", realNum, true);
             this.SetParameter("iNum", iNum, true);
             this.SetParameter("suffix", suffix, true);
-            
         }
 
         /// <summary>

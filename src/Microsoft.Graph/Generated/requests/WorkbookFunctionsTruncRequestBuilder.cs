@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("number", number, true);
             this.SetParameter("numDigits", numDigits, true);
-            
         }
 
         /// <summary>

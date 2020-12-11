@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("number", number, true);
             this.SetParameter("shiftAmount", shiftAmount, true);
-            
         }
 
         /// <summary>

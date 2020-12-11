@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("array", array, true);
             this.SetParameter("x", x, true);
             this.SetParameter("significance", significance, true);
-            
         }
 
         /// <summary>

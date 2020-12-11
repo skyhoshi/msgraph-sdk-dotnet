@@ -40,7 +40,6 @@ namespace Microsoft.Graph
             this.SetParameter("probabilityS", probabilityS, true);
             this.SetParameter("numberS", numberS, true);
             this.SetParameter("numberS2", numberS2, true);
-            
         }
 
         /// <summary>

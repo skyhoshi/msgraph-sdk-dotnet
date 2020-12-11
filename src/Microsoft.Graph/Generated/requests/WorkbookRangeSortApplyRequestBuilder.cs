@@ -43,7 +43,6 @@ namespace Microsoft.Graph
             this.SetParameter("orientation", orientation, false);
             this.SetParameter("method", method, false);
             this.SetParameter("fields", fields, true);
-            
         }
 
         /// <summary>

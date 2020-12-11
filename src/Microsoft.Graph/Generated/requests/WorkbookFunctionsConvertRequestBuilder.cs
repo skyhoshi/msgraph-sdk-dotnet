@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("number", number, true);
             this.SetParameter("fromUnit", fromUnit, true);
             this.SetParameter("toUnit", toUnit, true);
-            
         }
 
         /// <summary>

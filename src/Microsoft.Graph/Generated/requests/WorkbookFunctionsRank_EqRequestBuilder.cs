@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("number", number, true);
             this.SetParameter("ref", @ref, true);
             this.SetParameter("order", order, true);
-            
         }
 
         /// <summary>

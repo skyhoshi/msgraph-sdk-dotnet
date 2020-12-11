@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("name", name, true);
             this.SetParameter("formula", formula, true);
             this.SetParameter("comment", comment, true);
-            
         }
 
         /// <summary>

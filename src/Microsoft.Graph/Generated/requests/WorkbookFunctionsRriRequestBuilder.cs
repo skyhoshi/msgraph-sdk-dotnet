@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("nper", nper, true);
             this.SetParameter("pv", pv, true);
             this.SetParameter("fv", fv, true);
-            
         }
 
         /// <summary>

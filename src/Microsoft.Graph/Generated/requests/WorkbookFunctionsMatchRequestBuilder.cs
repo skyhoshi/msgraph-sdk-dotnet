@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("lookupValue", lookupValue, true);
             this.SetParameter("lookupArray", lookupArray, true);
             this.SetParameter("matchType", matchType, true);
-            
         }
 
         /// <summary>

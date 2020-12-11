@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("x", x, true);
             this.SetParameter("degFreedom", degFreedom, true);
             this.SetParameter("cumulative", cumulative, true);
-            
         }
 
         /// <summary>

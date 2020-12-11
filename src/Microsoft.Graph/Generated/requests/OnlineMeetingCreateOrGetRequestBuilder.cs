@@ -46,7 +46,6 @@ namespace Microsoft.Graph
             this.SetParameter("participants", participants, true);
             this.SetParameter("startDateTime", startDateTime, true);
             this.SetParameter("subject", subject, true);
-            
         }
 
         /// <summary>

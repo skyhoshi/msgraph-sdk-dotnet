@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("startDate", startDate, true);
             this.SetParameter("months", months, true);
-            
         }
 
         /// <summary>

@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("keyCredential", keyCredential, false);
             this.SetParameter("proof", proof, false);
             this.SetParameter("passwordCredential", passwordCredential, true);
-            
         }
 
         /// <summary>

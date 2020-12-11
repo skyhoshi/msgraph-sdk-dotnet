@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("parentReference", parentReference, true);
             this.SetParameter("name", name, true);
-            
         }
 
         /// <summary>

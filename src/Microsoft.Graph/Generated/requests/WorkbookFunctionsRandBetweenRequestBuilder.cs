@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("bottom", bottom, true);
             this.SetParameter("top", top, true);
-            
         }
 
         /// <summary>

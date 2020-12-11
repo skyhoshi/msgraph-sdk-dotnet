@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("matchCase", matchCase, false);
             this.SetParameter("method", method, false);
             this.SetParameter("fields", fields, true);
-            
         }
 
         /// <summary>

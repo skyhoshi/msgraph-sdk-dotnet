@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("sumRange", sumRange, true);
             this.SetParameter("values", values, true);
-            
         }
 
         /// <summary>

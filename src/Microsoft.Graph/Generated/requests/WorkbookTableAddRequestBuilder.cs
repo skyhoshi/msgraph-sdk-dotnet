@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("hasHeaders", hasHeaders, false);
             this.SetParameter("address", address, true);
-            
         }
 
         /// <summary>

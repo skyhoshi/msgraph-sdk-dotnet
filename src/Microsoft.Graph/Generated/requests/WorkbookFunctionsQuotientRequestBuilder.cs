@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("numerator", numerator, true);
             this.SetParameter("denominator", denominator, true);
-            
         }
 
         /// <summary>

@@ -40,7 +40,6 @@ namespace Microsoft.Graph
             this.SetParameter("maturity", maturity, true);
             this.SetParameter("frequency", frequency, true);
             this.SetParameter("basis", basis, true);
-            
         }
 
         /// <summary>

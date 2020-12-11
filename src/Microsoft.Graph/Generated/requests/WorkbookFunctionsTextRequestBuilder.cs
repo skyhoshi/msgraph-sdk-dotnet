@@ -34,7 +34,6 @@ namespace Microsoft.Graph
         {
             this.SetParameter("value", value, true);
             this.SetParameter("formatText", formatText, true);
-            
         }
 
         /// <summary>

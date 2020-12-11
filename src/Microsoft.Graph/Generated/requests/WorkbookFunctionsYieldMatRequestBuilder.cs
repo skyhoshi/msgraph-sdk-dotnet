@@ -46,7 +46,6 @@ namespace Microsoft.Graph
             this.SetParameter("rate", rate, true);
             this.SetParameter("pr", pr, true);
             this.SetParameter("basis", basis, true);
-            
         }
 
         /// <summary>

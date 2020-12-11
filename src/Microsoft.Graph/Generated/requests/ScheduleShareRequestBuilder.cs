@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("notifyTeam", notifyTeam, true);
             this.SetParameter("startDateTime", startDateTime, true);
             this.SetParameter("endDateTime", endDateTime, true);
-            
         }
 
         /// <summary>

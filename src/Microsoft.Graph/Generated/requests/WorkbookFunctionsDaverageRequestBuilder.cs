@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("database", database, true);
             this.SetParameter("field", field, true);
             this.SetParameter("criteria", criteria, true);
-            
         }
 
         /// <summary>

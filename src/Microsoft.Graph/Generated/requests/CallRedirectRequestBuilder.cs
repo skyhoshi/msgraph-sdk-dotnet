@@ -37,7 +37,6 @@ namespace Microsoft.Graph
             this.SetParameter("targets", targets, false);
             this.SetParameter("timeout", timeout, true);
             this.SetParameter("callbackUri", callbackUri, true);
-            
         }
 
         /// <summary>

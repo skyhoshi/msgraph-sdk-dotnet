@@ -43,7 +43,6 @@ namespace Microsoft.Graph
             this.SetParameter("renameAs", renameAs, true);
             this.SetParameter("siteCollectionId", siteCollectionId, true);
             this.SetParameter("siteId", siteId, true);
-            
         }
 
         /// <summary>
