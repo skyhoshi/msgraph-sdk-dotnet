@@ -40,6 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("endDate", endDate, true);
             this.SetParameter("weekend", weekend, true);
             this.SetParameter("holidays", holidays, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

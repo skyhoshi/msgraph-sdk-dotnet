@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("number", number, true);
             this.SetParameter("decimals", decimals, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

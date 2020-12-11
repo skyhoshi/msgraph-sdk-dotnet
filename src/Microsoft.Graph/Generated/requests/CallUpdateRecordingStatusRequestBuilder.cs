@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("status", status, false);
             this.SetParameter("clientContext", clientContext, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

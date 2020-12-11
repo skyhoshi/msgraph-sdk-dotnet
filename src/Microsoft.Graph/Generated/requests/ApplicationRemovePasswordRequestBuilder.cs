@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("keyId", keyId, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("passwordCredential", passwordCredential, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

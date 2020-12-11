@@ -43,6 +43,7 @@ namespace Microsoft.Graph
             this.SetParameter("investment", investment, true);
             this.SetParameter("discount", discount, true);
             this.SetParameter("basis", basis, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

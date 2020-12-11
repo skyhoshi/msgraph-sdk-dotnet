@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("calculationType", calculationType, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("text", text, true);
             this.SetParameter("numChars", numChars, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

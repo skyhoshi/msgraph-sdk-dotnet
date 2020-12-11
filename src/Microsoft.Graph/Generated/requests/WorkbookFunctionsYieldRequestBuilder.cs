@@ -49,6 +49,7 @@ namespace Microsoft.Graph
             this.SetParameter("redemption", redemption, true);
             this.SetParameter("frequency", frequency, true);
             this.SetParameter("basis", basis, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

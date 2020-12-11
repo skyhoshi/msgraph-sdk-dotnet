@@ -43,6 +43,7 @@ namespace Microsoft.Graph
             this.SetParameter("populationS", populationS, true);
             this.SetParameter("numberPop", numberPop, true);
             this.SetParameter("cumulative", cumulative, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

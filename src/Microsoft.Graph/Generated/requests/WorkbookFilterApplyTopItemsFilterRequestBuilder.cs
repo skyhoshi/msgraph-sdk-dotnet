@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("count", count, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

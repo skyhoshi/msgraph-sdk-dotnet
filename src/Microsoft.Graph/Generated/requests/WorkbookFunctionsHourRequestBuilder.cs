@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("serialNumber", serialNumber, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

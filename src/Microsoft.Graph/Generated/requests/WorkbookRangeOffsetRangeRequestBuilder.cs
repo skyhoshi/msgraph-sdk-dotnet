@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("rowOffset", rowOffset, false);
             this.SetParameter("columnOffset", columnOffset, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

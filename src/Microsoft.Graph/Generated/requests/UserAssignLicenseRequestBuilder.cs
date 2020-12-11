@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("addLicenses", addLicenses, false);
             this.SetParameter("removeLicenses", removeLicenses, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

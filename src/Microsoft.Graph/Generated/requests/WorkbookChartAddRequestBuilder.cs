@@ -37,6 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("type", type, false);
             this.SetParameter("seriesBy", seriesBy, false);
             this.SetParameter("sourceData", sourceData, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

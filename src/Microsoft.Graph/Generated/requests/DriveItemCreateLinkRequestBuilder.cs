@@ -43,6 +43,7 @@ namespace Microsoft.Graph
             this.SetParameter("expirationDateTime", expirationDateTime, true);
             this.SetParameter("password", password, true);
             this.SetParameter("message", message, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

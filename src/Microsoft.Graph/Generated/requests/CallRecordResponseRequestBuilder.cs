@@ -52,6 +52,7 @@ namespace Microsoft.Graph
             this.SetParameter("playBeep", playBeep, true);
             this.SetParameter("stopTones", stopTones, true);
             this.SetParameter("clientContext", clientContext, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

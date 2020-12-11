@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("role", role, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

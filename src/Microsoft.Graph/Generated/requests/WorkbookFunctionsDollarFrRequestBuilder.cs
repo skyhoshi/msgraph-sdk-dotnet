@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("decimalDollar", decimalDollar, true);
             this.SetParameter("fraction", fraction, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("quickScan", quickScan, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

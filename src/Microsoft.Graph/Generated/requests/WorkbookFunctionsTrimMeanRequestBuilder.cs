@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("array", array, true);
             this.SetParameter("percent", percent, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

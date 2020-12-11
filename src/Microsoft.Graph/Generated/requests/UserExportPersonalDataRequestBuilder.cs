@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("storageLocation", storageLocation, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

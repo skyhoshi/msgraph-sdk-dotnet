@@ -40,6 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("startNum", startNum, true);
             this.SetParameter("numBytes", numBytes, true);
             this.SetParameter("newText", newText, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

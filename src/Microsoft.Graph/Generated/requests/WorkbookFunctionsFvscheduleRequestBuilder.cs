@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("principal", principal, true);
             this.SetParameter("schedule", schedule, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

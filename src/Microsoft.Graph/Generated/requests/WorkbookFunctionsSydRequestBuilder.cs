@@ -40,6 +40,7 @@ namespace Microsoft.Graph
             this.SetParameter("salvage", salvage, true);
             this.SetParameter("life", life, true);
             this.SetParameter("per", per, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("quality", quality, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

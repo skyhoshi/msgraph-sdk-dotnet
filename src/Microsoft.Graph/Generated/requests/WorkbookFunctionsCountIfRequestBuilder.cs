@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("range", range, true);
             this.SetParameter("criteria", criteria, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

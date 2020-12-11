@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("effectRate", effectRate, true);
             this.SetParameter("npery", npery, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

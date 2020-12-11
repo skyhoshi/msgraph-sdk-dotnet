@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("rate", rate, true);
             this.SetParameter("values", values, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

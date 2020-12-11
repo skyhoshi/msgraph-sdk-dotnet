@@ -43,6 +43,7 @@ namespace Microsoft.Graph
             this.SetParameter("discount", discount, true);
             this.SetParameter("redemption", redemption, true);
             this.SetParameter("basis", basis, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

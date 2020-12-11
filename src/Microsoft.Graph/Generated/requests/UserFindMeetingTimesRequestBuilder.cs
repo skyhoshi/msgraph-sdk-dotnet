@@ -52,6 +52,7 @@ namespace Microsoft.Graph
             this.SetParameter("isOrganizerOptional", isOrganizerOptional, true);
             this.SetParameter("returnSuggestionReasons", returnSuggestionReasons, true);
             this.SetParameter("minimumAttendeePercentage", minimumAttendeePercentage, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

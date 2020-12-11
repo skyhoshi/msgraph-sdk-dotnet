@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("roles", roles, true);
             this.SetParameter("recipients", recipients, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("message", Message, true);
             this.SetParameter("comment", Comment, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

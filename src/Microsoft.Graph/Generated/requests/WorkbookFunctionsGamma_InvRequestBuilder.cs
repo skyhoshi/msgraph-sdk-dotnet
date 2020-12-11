@@ -37,6 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("probability", probability, true);
             this.SetParameter("alpha", alpha, true);
             this.SetParameter("beta", beta, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

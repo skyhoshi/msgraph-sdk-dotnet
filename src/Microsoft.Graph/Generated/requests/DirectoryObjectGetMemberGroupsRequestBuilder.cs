@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("securityEnabledOnly", securityEnabledOnly, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

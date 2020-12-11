@@ -37,6 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("x", x, true);
             this.SetParameter("lambda", lambda, true);
             this.SetParameter("cumulative", cumulative, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

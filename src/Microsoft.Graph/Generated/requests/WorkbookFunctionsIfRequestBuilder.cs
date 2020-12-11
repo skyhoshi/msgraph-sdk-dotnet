@@ -37,6 +37,7 @@ namespace Microsoft.Graph
             this.SetParameter("logicalTest", logicalTest, true);
             this.SetParameter("valueIfTrue", valueIfTrue, true);
             this.SetParameter("valueIfFalse", valueIfFalse, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("row", row, false);
             this.SetParameter("column", column, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("probability", probability, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
             : base(requestUrl, client)
         {
             this.SetParameter("groupId", groupId, false);
+            this.SetFunctionParameters();
         }
 
         /// <summary>

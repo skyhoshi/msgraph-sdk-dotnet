@@ -34,6 +34,7 @@ namespace Microsoft.Graph
         {
             this.SetParameter("linkLocation", linkLocation, true);
             this.SetParameter("friendlyName", friendlyName, true);
+            this.SetFunctionParameters();
         }
 
         /// <summary>
