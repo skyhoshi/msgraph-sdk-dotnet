@@ -70,6 +70,25 @@ namespace Microsoft.Graph
                 this.Client);
         }
         /// <summary>
+        /// Gets the request builder for SiteGetActivitiesByIntervalRequestBuilder.
+        /// </summary>
+        /// <param name="startDateTime">A startDateTime parameter for the OData method call.</param>
+        /// <param name="endDateTime">A endDateTime parameter for the OData method call.</param>
+        /// <param name="interval">A interval parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        public ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime,
+            string endDateTime,
+            string interval)
+        {
+            return new SiteGetActivitiesByIntervalRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getActivitiesByInterval"),
+                this.Client,
+                startDateTime,
+                endDateTime,
+                interval);
+        }
+        /// <summary>
         /// Gets the request builder for SiteGetByPathRequestBuilder.
         /// </summary>
         /// <param name="path">A path parameter for the OData method call.</param>

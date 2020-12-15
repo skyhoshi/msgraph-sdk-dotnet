@@ -37,6 +37,17 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
         ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval();
         /// <summary>
+        /// Gets the request builder for SiteGetActivitiesByIntervalRequestBuilder.
+        /// </summary>
+        /// <param name="startDateTime">A startDateTime parameter for the OData method call.</param>
+        /// <param name="endDateTime">A endDateTime parameter for the OData method call.</param>
+        /// <param name="interval">A interval parameter for the OData method call.</param>
+        /// <returns>The <see cref="ISiteGetActivitiesByIntervalRequestBuilder"/>.</returns>
+        ISiteGetActivitiesByIntervalRequestBuilder GetActivitiesByInterval(
+            string startDateTime,
+            string endDateTime,
+            string interval);
+        /// <summary>
         /// Gets the request builder for SiteGetByPathRequestBuilder.
         /// </summary>
         /// <param name="path">A path parameter for the OData method call.</param>
