@@ -45,6 +45,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
         public IList<QueryOption> QueryOptions => throw new NotImplementedException();
 
         public IDictionary<string, IMiddlewareOption> MiddlewareOptions => throw new NotImplementedException();
+        public IResponseHandler ResponseHandler { get; }
 
         public Task<Event> AddAsync(Event eventsEvent)
         {
