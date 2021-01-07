@@ -12,13 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Planner User.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
+    
     public partial class PlannerUser : Entity
     {
     
@@ -34,14 +33,14 @@ namespace Microsoft.Graph
         /// Gets or sets plans.
         /// Read-only. Nullable. Returns the plannerTasks assigned to the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "plans", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("plans")]
         public IPlannerUserPlansCollectionPage Plans { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
         /// Read-only. Nullable. Returns the plannerPlans shared with the user.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "tasks", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("tasks")]
         public IPlannerUserTasksCollectionPage Tasks { get; set; }
     
     }
