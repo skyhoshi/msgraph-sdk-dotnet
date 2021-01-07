@@ -12,14 +12,12 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type SearchRequest.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
-    [JsonConverter(typeof(DerivedTypeConverter))]
+    [JsonConverter(typeof(DerivedTypeConverter<SearchRequestObject>))]
     public partial class SearchRequestObject
     {
         /// <summary>
@@ -33,55 +31,55 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets contentSources.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "contentSources", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("contentSources")]
         public IEnumerable<string> ContentSources { get; set; }
     
         /// <summary>
         /// Gets or sets enableTopResults.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "enableTopResults", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("enableTopResults")]
         public bool? EnableTopResults { get; set; }
     
         /// <summary>
         /// Gets or sets entityTypes.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "entityTypes", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("entityTypes")]
         public IEnumerable<EntityType> EntityTypes { get; set; }
     
         /// <summary>
         /// Gets or sets fields.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "fields", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("fields")]
         public IEnumerable<string> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets from.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "from", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("from")]
         public Int32? From { get; set; }
     
         /// <summary>
         /// Gets or sets query.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "query", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("query")]
         public SearchQuery Query { get; set; }
     
         /// <summary>
         /// Gets or sets size.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "size", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("size")]
         public Int32? Size { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>
-        [JsonExtensionData(ReadData = true)]
+        [JsonExtensionData]
         public IDictionary<string, object> AdditionalData { get; set; }
 
         /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "@odata.type", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("@odata.type")]
         public string ODataType { get; set; }
     
     }
