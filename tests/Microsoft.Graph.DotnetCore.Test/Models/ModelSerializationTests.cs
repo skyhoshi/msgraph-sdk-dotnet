@@ -26,7 +26,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 userId,
                 givenName);
 
-            var user = this.serializer.DeserializeObject<DirectoryObject>(stringToDeserialize) as User;
+            var user = this.serializer.DeserializeObject<Entity>(stringToDeserialize) as User;
 
             Assert.NotNull(user);
             Assert.Equal(userId, user.Id);
