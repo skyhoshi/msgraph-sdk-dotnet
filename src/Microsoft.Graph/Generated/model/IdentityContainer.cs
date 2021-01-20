@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Identity Container.
     /// </summary>
-    
     public partial class IdentityContainer : Entity
     {
     

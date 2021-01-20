@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Setting Template.
     /// </summary>
-    
     public partial class GroupSettingTemplate : DirectoryObject
     {
     

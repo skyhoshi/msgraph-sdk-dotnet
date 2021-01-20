@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Setting.
     /// </summary>
-    
     public partial class GroupSetting : Entity
     {
     
