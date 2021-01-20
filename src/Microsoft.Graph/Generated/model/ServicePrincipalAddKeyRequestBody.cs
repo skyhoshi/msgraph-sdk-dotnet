@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type ServicePrincipalAddKeyRequestBody.
     /// </summary>
-    
     public partial class ServicePrincipalAddKeyRequestBody
     {
     

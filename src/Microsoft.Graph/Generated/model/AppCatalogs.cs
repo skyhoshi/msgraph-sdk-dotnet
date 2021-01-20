@@ -17,7 +17,6 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type App Catalogs.
     /// </summary>
-    
     public partial class AppCatalogs : Entity
     {
     
