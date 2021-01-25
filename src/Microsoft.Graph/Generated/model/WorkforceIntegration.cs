@@ -12,13 +12,11 @@ namespace Microsoft.Graph
     using System;
     using System.Collections.Generic;
     using System.IO;
-    using System.Runtime.Serialization;
-    using Newtonsoft.Json;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// The type Workforce Integration.
     /// </summary>
-    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     public partial class WorkforceIntegration : ChangeTrackedEntity
     {
     
@@ -34,42 +32,42 @@ namespace Microsoft.Graph
         /// Gets or sets api version.
         /// API version for the call back URL. Start with 1.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "apiVersion", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("apiVersion")]
         public Int32? ApiVersion { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
         /// Name of the workforce integration.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "displayName", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets encryption.
         /// The workforce integration encryption resource.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "encryption", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("encryption")]
         public WorkforceIntegrationEncryption Encryption { get; set; }
     
         /// <summary>
         /// Gets or sets is active.
         /// Indicates whether this workforce integration is currently active and available.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isActive", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets supported entities.
         /// The Shifts entities supported for synchronous change notifications. Shifts will make a call back to the url provided on client changes on those entities added here. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, openshift, openShiftRequest, userShiftPreferences
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "supportedEntities", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("supportedEntities")]
         public WorkforceIntegrationSupportedEntities? SupportedEntities { get; set; }
     
         /// <summary>
         /// Gets or sets url.
         /// Workforce Integration URL for callbacks from the Shifts service.
         /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "url", Required = Newtonsoft.Json.Required.Default)]
+        [JsonPropertyName("url")]
         public string Url { get; set; }
     
     }
