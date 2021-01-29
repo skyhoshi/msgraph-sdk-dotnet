@@ -89,9 +89,21 @@ The following sample applications are also available:
 
 ## Notes
 
+### NewtonSoft.Json version
+
 Install NewtonSoft.Json first if you want to use a version greater than NewtonSoft.Json 6.0.1. For example, you'll need to install NewtonSoft.Json 9.0.1 first if you want to use this to library while targeting .Net Core with standard1.0.
 
 Install System.Runtime.InteropServices.RuntimeInformation before you install Microsoft.Graph >=1.3 if you are having an issue updating the package for a Xamarin solution. You may need to updated references to Microsoft.NETCore.UniversalWindowsPlatform to >=5.2.2 as well.
+
+### Upgrading from v1
+
+Between 1.x and 3.x there were some minor possibly breaking changes:
+
+ * .NET Standard minimum version bumped from `netStandard1.3` to `netstandard2.0`
+ * .NET Framework minimum version bumped from `net45` to `net461`
+ * a change in enum order for `GiphyRatingType`
+ * `ParticipantInfo` became `InvitationParticipantInfo`
+ * `CallRecordRequestBody` became `CallRecordResponseRequestBody`
 
 ## Issues
 
