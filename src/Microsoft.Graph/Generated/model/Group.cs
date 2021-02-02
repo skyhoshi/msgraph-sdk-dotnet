@@ -303,7 +303,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets members.
-        /// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups) Nullable.
+        /// Users and groups that are members of this group. HTTP Methods: GET (supported for all groups), POST (supported for Microsoft 365 groups, security groups and mail-enabled security groups), DELETE (supported for Microsoft 365 groups and security groups). Nullable.
         /// </summary>
         [JsonPropertyName("members")]
         public IGroupMembersCollectionWithReferencesPage Members { get; set; }
@@ -352,7 +352,7 @@ namespace Microsoft.Graph
         /// The list of users or groups that are allowed to create post's or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.
         /// </summary>
         [JsonPropertyName("acceptedSenders")]
-        public IGroupAcceptedSendersCollectionPage AcceptedSenders { get; set; }
+        public IGroupAcceptedSendersCollectionWithReferencesPage AcceptedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets calendar.
@@ -401,7 +401,7 @@ namespace Microsoft.Graph
         /// The list of users or groups that are not allowed to create posts or calendar events in this group. Nullable
         /// </summary>
         [JsonPropertyName("rejectedSenders")]
-        public IGroupRejectedSendersCollectionPage RejectedSenders { get; set; }
+        public IGroupRejectedSendersCollectionWithReferencesPage RejectedSenders { get; set; }
     
         /// <summary>
         /// Gets or sets threads.

@@ -79,12 +79,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hex color.
+        /// The calendar color, expressed in a hex color code of three hexidecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is empty. Read-only.
         /// </summary>
         [JsonPropertyName("hexColor")]
         public string HexColor { get; set; }
     
         /// <summary>
         /// Gets or sets is default calendar.
+        /// True if this is the default calendar where new events are created by default, false otherwise.
         /// </summary>
         [JsonPropertyName("isDefaultCalendar")]
         public bool? IsDefaultCalendar { get; set; }

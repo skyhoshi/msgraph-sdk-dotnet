@@ -72,6 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hide attendees.
+        /// When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.
         /// </summary>
         [JsonPropertyName("hideAttendees")]
         public bool? HideAttendees { get; set; }
@@ -106,6 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is draft.
+        /// Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.
         /// </summary>
         [JsonPropertyName("isDraft")]
         public bool? IsDraft { get; set; }

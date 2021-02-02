@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets add ins.
-        /// Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Microsoft 365 call the application in the context of a document the user is working on.
+        /// Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.
         /// </summary>
         [JsonPropertyName("addIns")]
         public IEnumerable<AddIn> AddIns { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets app roles.
-        /// The collection of roles the application declares. With app role assignments, these roles can be assigned to users, groups, or other applications' service principals. Not nullable.
+        /// The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.
         /// </summary>
         [JsonPropertyName("appRoles")]
         public IEnumerable<AppRole> AppRoles { get; set; }
@@ -84,7 +84,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group membership claims.
-        /// Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of
+        /// Configures the groups claim issued in a user or OAuth 2.0 access token that the application expects. To set this attribute, use one of the following valid string values:NoneSecurityGroup: For security groups and Azure AD rolesAll: This gets all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of.
         /// </summary>
         [JsonPropertyName("groupMembershipClaims")]
         public string GroupMembershipClaims { get; set; }
@@ -111,14 +111,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is fallback public client.
-        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as web app. There are certain scenarios where Azure AD cannot determine the client application type (e.g. ROPC flow where it is configured without specifying a redirect URI). In those cases Azure AD will interpret the application type based on the value of this property.
+        /// Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false which means the fallback application type is confidential client such as a web app. There are certain scenarios where Azure AD cannot determine the client application type. For example, the ROPC flow where it is configured without specifying a redirect URI. In those cases Azure AD interprets the application type based on the value of this property.
         /// </summary>
         [JsonPropertyName("isFallbackPublicClient")]
         public bool? IsFallbackPublicClient { get; set; }
     
         /// <summary>
         /// Gets or sets key credentials.
-        /// The collection of key credentials associated with the application Not nullable.
+        /// The collection of key credentials associated with the application. Not nullable.
         /// </summary>
         [JsonPropertyName("keyCredentials")]
         public IEnumerable<KeyCredential> KeyCredentials { get; set; }
@@ -144,7 +144,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets optional claims.
-        /// Application developers can configure optional claims in their Azure AD apps to specify which claims they want in tokens sent to their application by the Microsoft security token service. See provide optional claims to your Azure AD app for more information.
+        /// Application developers can configure optional claims in their Azure AD applications to specify the claims that are sent to their application by the Microsoft security token service. For more information, see How to: Provide optional claims to your app.
         /// </summary>
         [JsonPropertyName("optionalClaims")]
         public OptionalClaims OptionalClaims { get; set; }
@@ -172,14 +172,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publisher domain.
-        /// The verified publisher domain for the application. Read-only.
+        /// The verified publisher domain for the application. Read-only. For more information, see How to: Configure an application's publisher domain.
         /// </summary>
         [JsonPropertyName("publisherDomain")]
         public string PublisherDomain { get; set; }
     
         /// <summary>
         /// Gets or sets required resource access.
-        /// Specifies resources that this application requires access to and the set of OAuth permission scopes and application roles that it needs under each of those resources. This pre-configuration of required resource access drives the consent experience. Not nullable.
+        /// Specifies the resources that the application needs to access. This property also specifies the set of OAuth permission scopes and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. Not nullable.
         /// </summary>
         [JsonPropertyName("requiredResourceAccess")]
         public IEnumerable<RequiredResourceAccess> RequiredResourceAccess { get; set; }
@@ -190,6 +190,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("signInAudience")]
         public string SignInAudience { get; set; }
+    
+        /// <summary>
+        /// Gets or sets spa.
+        /// </summary>
+        [JsonPropertyName("spa")]
+        public SpaApplication Spa { get; set; }
     
         /// <summary>
         /// Gets or sets tags.

@@ -269,7 +269,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets endpoints.
-        /// Endpoints available for discovery. Services like Sharepoint populate this property with a tenant specific SharePoint endpoints that other applications can discover and use in their experiences.
         /// </summary>
         [JsonPropertyName("endpoints")]
         public IServicePrincipalEndpointsCollectionPage Endpoints { get; set; }

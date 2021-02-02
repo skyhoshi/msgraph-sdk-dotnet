@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets builtInControls.
-        /// List of values of built-in controls required by the policy. Possible values: Block, Mfa, CompliantDevice, DomainJoinedDevice, ApprovedApplication, CompliantApplication
+        /// List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange.
         /// </summary>
         [JsonPropertyName("builtInControls")]
         public IEnumerable<ConditionalAccessGrantControl> BuiltInControls { get; set; }

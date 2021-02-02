@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets business phones.
-        /// The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory.
+        /// The telephone numbers for the user. NOTE: Although this is a string collection, only one number can be set for this property. Read-only for users synced from on-premises directory. Returned by default.
         /// </summary>
         [JsonPropertyName("businessPhones")]
         public IEnumerable<string> BusinessPhones { get; set; }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Supports $filter and $orderby.
+        /// The name displayed in the address book for the user. This is usually the combination of the user's first name, middle initial and last name. This property is required when a user is created and it cannot be cleared during updates. Returned by default. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -170,7 +170,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets given name.
-        /// The given name (first name) of the user. Supports $filter.
+        /// The given name (first name) of the user. Returned by default. Supports $filter.
         /// </summary>
         [JsonPropertyName("givenName")]
         public string GivenName { get; set; }
@@ -198,7 +198,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets job title.
-        /// The user's job title. Supports $filter.
+        /// The user's job title. Returned by default. Supports $filter.
         /// </summary>
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
@@ -226,7 +226,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the user, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter.
+        /// The SMTP address for the user, for example, 'jeff@contoso.onmicrosoft.com'. Returned by default. Supports $filter and endsWith.
         /// </summary>
         [JsonPropertyName("mail")]
         public string Mail { get; set; }
@@ -240,14 +240,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mobile phone.
-        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.
+        /// The primary cellular telephone number for the user. Read-only for users synced from on-premises directory. Returned by default.
         /// </summary>
         [JsonPropertyName("mobilePhone")]
         public string MobilePhone { get; set; }
     
         /// <summary>
         /// Gets or sets office location.
-        /// The office location in the user's place of business.
+        /// The office location in the user's place of business. Returned by default.
         /// </summary>
         [JsonPropertyName("officeLocation")]
         public string OfficeLocation { get; set; }
@@ -352,7 +352,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets preferred language.
-        /// The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'.
+        /// The preferred language for the user. Should follow ISO 639-1 Code; for example 'en-US'. Returned by default.
         /// </summary>
         [JsonPropertyName("preferredLanguage")]
         public string PreferredLanguage { get; set; }
@@ -401,7 +401,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets surname.
-        /// The user's surname (family name or last name). Supports $filter.
+        /// The user's surname (family name or last name). Returned by default. Supports $filter.
         /// </summary>
         [JsonPropertyName("surname")]
         public string Surname { get; set; }
@@ -415,7 +415,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Supports $filter and $orderby.
+        /// The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user's email name. The general format is alias@domain, where domain must be present in the tenant's collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization. Returned by default. Supports $filter, $orderby, and endsWith.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
