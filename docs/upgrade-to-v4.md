@@ -28,9 +28,9 @@ For example, the code sample :-
 ```cs
 GraphServiceClient graphClient = new GraphServiceClient( authProvider );
 
-var index = 5;
+int index = 5;
 
-var values = JToken.Parse("[[1,2,3],[4,5,6]]");
+JToken values = JToken.Parse("[[1,2,3],[4,5,6]]");
 
 await graphClient.Me.Drive.Items["{id}"].Workbook.Tables["{id|name}"].Rows
 	.Add(index,values)
@@ -43,9 +43,9 @@ would change to :-
 ```cs
 GraphServiceClient graphClient = new GraphServiceClient( authProvider );
 
-var index = 5;
+int index = 5;
 
-var values = JsonDocument.Parse("[[1,2,3],[4,5,6]]");
+JsonDocument values = JsonDocument.Parse("[[1,2,3],[4,5,6]]");
 
 await graphClient.Me.Drive.Items["{id}"].Workbook.Tables["{id|name}"].Rows
 	.Add(index,values)
