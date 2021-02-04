@@ -25,13 +25,30 @@ namespace Microsoft.Graph.CallRecords
         /// </summary>
         /// <param name="callRecordToCreate">The CallRecord to create.</param>
         /// <returns>The created CallRecord.</returns>
-        System.Threading.Tasks.Task<CallRecord> CreateAsync(CallRecord callRecordToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CallRecord> CreateAsync(CallRecord callRecordToCreate);
+
+        /// <summary>
         /// Creates the specified CallRecord using POST.
         /// </summary>
         /// <param name="callRecordToCreate">The CallRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CallRecord.</returns>
         System.Threading.Tasks.Task<CallRecord> CreateAsync(CallRecord callRecordToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CallRecord using POST and returns a <see cref="GraphResponse{CallRecord}"/> object.
+        /// </summary>
+        /// <param name="callRecordToCreate">The CallRecord to create.</param>
+        /// <returns>The <see cref="GraphResponse{CallRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CallRecord>> CreateResponseAsync(CallRecord callRecordToCreate);
+
+        /// <summary>
+        /// Creates the specified CallRecord using POST and returns a <see cref="GraphResponse{CallRecord}"/> object.
+        /// </summary>
+        /// <param name="callRecordToCreate">The CallRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CallRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CallRecord>> CreateResponseAsync(CallRecord callRecordToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CallRecord.

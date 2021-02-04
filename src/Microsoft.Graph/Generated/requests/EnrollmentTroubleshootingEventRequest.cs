@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EnrollmentTroubleshootingEvent using POST and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> CreateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate)
+        {
+            return this.CreateResponseAsync(enrollmentTroubleshootingEventToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EnrollmentTroubleshootingEvent using POST and returns a <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="enrollmentTroubleshootingEventToCreate">The EnrollmentTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentTroubleshootingEvent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentTroubleshootingEvent>> CreateResponseAsync(EnrollmentTroubleshootingEvent enrollmentTroubleshootingEventToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EnrollmentTroubleshootingEvent>(enrollmentTroubleshootingEventToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EnrollmentTroubleshootingEvent.
         /// </summary>
         /// <returns>The task to await.</returns>

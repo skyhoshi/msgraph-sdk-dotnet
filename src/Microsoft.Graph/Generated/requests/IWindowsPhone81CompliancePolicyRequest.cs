@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsPhone81CompliancePolicyToCreate">The WindowsPhone81CompliancePolicy to create.</param>
         /// <returns>The created WindowsPhone81CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> CreateAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> CreateAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsPhone81CompliancePolicy using POST.
         /// </summary>
         /// <param name="windowsPhone81CompliancePolicyToCreate">The WindowsPhone81CompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsPhone81CompliancePolicy.</returns>
         System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> CreateAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsPhone81CompliancePolicy using POST and returns a <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81CompliancePolicyToCreate">The WindowsPhone81CompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CompliancePolicy>> CreateResponseAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsPhone81CompliancePolicy using POST and returns a <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81CompliancePolicyToCreate">The WindowsPhone81CompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CompliancePolicy>> CreateResponseAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsPhone81CompliancePolicy.

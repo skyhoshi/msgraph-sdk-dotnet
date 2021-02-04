@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
         /// <returns>The created LinkedResource.</returns>
-        System.Threading.Tasks.Task<LinkedResource> CreateAsync(LinkedResource linkedResourceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<LinkedResource> CreateAsync(LinkedResource linkedResourceToCreate);
+
+        /// <summary>
         /// Creates the specified LinkedResource using POST.
         /// </summary>
         /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LinkedResource.</returns>
         System.Threading.Tasks.Task<LinkedResource> CreateAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified LinkedResource using POST and returns a <see cref="GraphResponse{LinkedResource}"/> object.
+        /// </summary>
+        /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> CreateResponseAsync(LinkedResource linkedResourceToCreate);
+
+        /// <summary>
+        /// Creates the specified LinkedResource using POST and returns a <see cref="GraphResponse{LinkedResource}"/> object.
+        /// </summary>
+        /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> CreateResponseAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified LinkedResource.

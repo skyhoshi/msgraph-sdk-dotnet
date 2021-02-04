@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnlineMeeting using POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> CreateResponseAsync(OnlineMeeting onlineMeetingToCreate)
+        {
+            return this.CreateResponseAsync(onlineMeetingToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnlineMeeting using POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> CreateResponseAsync(OnlineMeeting onlineMeetingToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeetingToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnlineMeeting.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="organizationToCreate">The Organization to create.</param>
         /// <returns>The created Organization.</returns>
-        System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate);
+
+        /// <summary>
         /// Creates the specified Organization using POST.
         /// </summary>
         /// <param name="organizationToCreate">The Organization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Organization.</returns>
         System.Threading.Tasks.Task<Organization> CreateAsync(Organization organizationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Organization using POST and returns a <see cref="GraphResponse{Organization}"/> object.
+        /// </summary>
+        /// <param name="organizationToCreate">The Organization to create.</param>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Organization>> CreateResponseAsync(Organization organizationToCreate);
+
+        /// <summary>
+        /// Creates the specified Organization using POST and returns a <see cref="GraphResponse{Organization}"/> object.
+        /// </summary>
+        /// <param name="organizationToCreate">The Organization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Organization>> CreateResponseAsync(Organization organizationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Organization.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
         /// <returns>The created Win32LobApp.</returns>
-        System.Threading.Tasks.Task<Win32LobApp> CreateAsync(Win32LobApp win32LobAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Win32LobApp> CreateAsync(Win32LobApp win32LobAppToCreate);
+
+        /// <summary>
         /// Creates the specified Win32LobApp using POST.
         /// </summary>
         /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Win32LobApp.</returns>
         System.Threading.Tasks.Task<Win32LobApp> CreateAsync(Win32LobApp win32LobAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Win32LobApp using POST and returns a <see cref="GraphResponse{Win32LobApp}"/> object.
+        /// </summary>
+        /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{Win32LobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Win32LobApp>> CreateResponseAsync(Win32LobApp win32LobAppToCreate);
+
+        /// <summary>
+        /// Creates the specified Win32LobApp using POST and returns a <see cref="GraphResponse{Win32LobApp}"/> object.
+        /// </summary>
+        /// <param name="win32LobAppToCreate">The Win32LobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Win32LobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Win32LobApp>> CreateResponseAsync(Win32LobApp win32LobAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Win32LobApp.

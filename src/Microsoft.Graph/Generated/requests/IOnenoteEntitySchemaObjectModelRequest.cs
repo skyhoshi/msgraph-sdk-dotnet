@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
         /// <returns>The created OnenoteEntitySchemaObjectModel.</returns>
-        System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> CreateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> CreateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteEntitySchemaObjectModel using POST.
         /// </summary>
         /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteEntitySchemaObjectModel.</returns>
         System.Threading.Tasks.Task<OnenoteEntitySchemaObjectModel> CreateAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteEntitySchemaObjectModel using POST and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> CreateResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteEntitySchemaObjectModel using POST and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> CreateResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteEntitySchemaObjectModel.

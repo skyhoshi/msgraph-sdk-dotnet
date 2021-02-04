@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
         /// <returns>The created DeviceEnrollmentConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> CreateAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> CreateAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceEnrollmentConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceEnrollmentConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> CreateAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> CreateResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> CreateResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceEnrollmentConfiguration.

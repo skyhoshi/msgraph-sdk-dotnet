@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OutlookItem using POST and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OutlookItem>> CreateResponseAsync(OutlookItem outlookItemToCreate)
+        {
+            return this.CreateResponseAsync(outlookItemToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OutlookItem using POST and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookItem>> CreateResponseAsync(OutlookItem outlookItemToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OutlookItem>(outlookItemToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OutlookItem.
         /// </summary>
         /// <returns>The task to await.</returns>

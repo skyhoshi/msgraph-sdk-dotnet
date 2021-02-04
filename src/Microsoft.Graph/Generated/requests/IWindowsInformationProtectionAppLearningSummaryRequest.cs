@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
         /// <returns>The created WindowsInformationProtectionAppLearningSummary.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> CreateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> CreateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsInformationProtectionAppLearningSummary using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionAppLearningSummary.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> CreateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionAppLearningSummary using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> CreateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionAppLearningSummary using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLearningSummaryToCreate">The WindowsInformationProtectionAppLearningSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> CreateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionAppLearningSummary.

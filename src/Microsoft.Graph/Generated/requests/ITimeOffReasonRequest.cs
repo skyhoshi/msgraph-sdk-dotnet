@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="timeOffReasonToCreate">The TimeOffReason to create.</param>
         /// <returns>The created TimeOffReason.</returns>
-        System.Threading.Tasks.Task<TimeOffReason> CreateAsync(TimeOffReason timeOffReasonToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TimeOffReason> CreateAsync(TimeOffReason timeOffReasonToCreate);
+
+        /// <summary>
         /// Creates the specified TimeOffReason using POST.
         /// </summary>
         /// <param name="timeOffReasonToCreate">The TimeOffReason to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TimeOffReason.</returns>
         System.Threading.Tasks.Task<TimeOffReason> CreateAsync(TimeOffReason timeOffReasonToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TimeOffReason using POST and returns a <see cref="GraphResponse{TimeOffReason}"/> object.
+        /// </summary>
+        /// <param name="timeOffReasonToCreate">The TimeOffReason to create.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> CreateResponseAsync(TimeOffReason timeOffReasonToCreate);
+
+        /// <summary>
+        /// Creates the specified TimeOffReason using POST and returns a <see cref="GraphResponse{TimeOffReason}"/> object.
+        /// </summary>
+        /// <param name="timeOffReasonToCreate">The TimeOffReason to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> CreateResponseAsync(TimeOffReason timeOffReasonToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TimeOffReason.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
         /// <returns>The created SoftwareUpdateStatusSummary.</returns>
-        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified SoftwareUpdateStatusSummary using POST.
         /// </summary>
         /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SoftwareUpdateStatusSummary.</returns>
         System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> CreateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SoftwareUpdateStatusSummary using POST and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> CreateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified SoftwareUpdateStatusSummary using POST and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToCreate">The SoftwareUpdateStatusSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> CreateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SoftwareUpdateStatusSummary.

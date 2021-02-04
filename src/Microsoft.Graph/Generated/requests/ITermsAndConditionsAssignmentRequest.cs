@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="termsAndConditionsAssignmentToCreate">The TermsAndConditionsAssignment to create.</param>
         /// <returns>The created TermsAndConditionsAssignment.</returns>
-        System.Threading.Tasks.Task<TermsAndConditionsAssignment> CreateAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TermsAndConditionsAssignment> CreateAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified TermsAndConditionsAssignment using POST.
         /// </summary>
         /// <param name="termsAndConditionsAssignmentToCreate">The TermsAndConditionsAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditionsAssignment.</returns>
         System.Threading.Tasks.Task<TermsAndConditionsAssignment> CreateAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TermsAndConditionsAssignment using POST and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAssignmentToCreate">The TermsAndConditionsAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> CreateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified TermsAndConditionsAssignment using POST and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAssignmentToCreate">The TermsAndConditionsAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> CreateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TermsAndConditionsAssignment.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
         /// <returns>The created OnenoteSection.</returns>
-        System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteSection using POST.
         /// </summary>
         /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteSection.</returns>
         System.Threading.Tasks.Task<OnenoteSection> CreateAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteSection.

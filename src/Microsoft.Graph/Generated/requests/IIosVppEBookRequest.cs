@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
         /// <returns>The created IosVppEBook.</returns>
-        System.Threading.Tasks.Task<IosVppEBook> CreateAsync(IosVppEBook iosVppEBookToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosVppEBook> CreateAsync(IosVppEBook iosVppEBookToCreate);
+
+        /// <summary>
         /// Creates the specified IosVppEBook using POST.
         /// </summary>
         /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosVppEBook.</returns>
         System.Threading.Tasks.Task<IosVppEBook> CreateAsync(IosVppEBook iosVppEBookToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosVppEBook using POST and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> CreateResponseAsync(IosVppEBook iosVppEBookToCreate);
+
+        /// <summary>
+        /// Creates the specified IosVppEBook using POST and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> CreateResponseAsync(IosVppEBook iosVppEBookToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosVppEBook.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceCompliancePolicyToCreate">The DeviceCompliancePolicy to create.</param>
         /// <returns>The created DeviceCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicy> CreateAsync(DeviceCompliancePolicy deviceCompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceCompliancePolicy> CreateAsync(DeviceCompliancePolicy deviceCompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceCompliancePolicy using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyToCreate">The DeviceCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCompliancePolicy.</returns>
         System.Threading.Tasks.Task<DeviceCompliancePolicy> CreateAsync(DeviceCompliancePolicy deviceCompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicy using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyToCreate">The DeviceCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicy>> CreateResponseAsync(DeviceCompliancePolicy deviceCompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicy using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyToCreate">The DeviceCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicy>> CreateResponseAsync(DeviceCompliancePolicy deviceCompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceCompliancePolicy.

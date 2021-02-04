@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="permissionToCreate">The Permission to create.</param>
         /// <returns>The created Permission.</returns>
-        System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate);
+
+        /// <summary>
         /// Creates the specified Permission using POST.
         /// </summary>
         /// <param name="permissionToCreate">The Permission to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Permission.</returns>
         System.Threading.Tasks.Task<Permission> CreateAsync(Permission permissionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Permission using POST and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="permissionToCreate">The Permission to create.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> CreateResponseAsync(Permission permissionToCreate);
+
+        /// <summary>
+        /// Creates the specified Permission using POST and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="permissionToCreate">The Permission to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> CreateResponseAsync(Permission permissionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Permission.

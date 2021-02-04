@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
         /// <returns>The created WorkbookComment.</returns>
-        System.Threading.Tasks.Task<WorkbookComment> CreateAsync(WorkbookComment workbookCommentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookComment> CreateAsync(WorkbookComment workbookCommentToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookComment using POST.
         /// </summary>
         /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookComment.</returns>
         System.Threading.Tasks.Task<WorkbookComment> CreateAsync(WorkbookComment workbookCommentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookComment using POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> CreateResponseAsync(WorkbookComment workbookCommentToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookComment using POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> CreateResponseAsync(WorkbookComment workbookCommentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookComment.

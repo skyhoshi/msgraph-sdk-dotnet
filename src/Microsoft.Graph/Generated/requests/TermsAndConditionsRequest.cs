@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TermsAndConditions using POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> CreateResponseAsync(TermsAndConditions termsAndConditionsToCreate)
+        {
+            return this.CreateResponseAsync(termsAndConditionsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TermsAndConditions using POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> CreateResponseAsync(TermsAndConditions termsAndConditionsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TermsAndConditions>(termsAndConditionsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TermsAndConditions.
         /// </summary>
         /// <returns>The task to await.</returns>

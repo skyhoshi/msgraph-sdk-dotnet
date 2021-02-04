@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
         /// <returns>The created ServicePrincipal.</returns>
-        System.Threading.Tasks.Task<ServicePrincipal> CreateAsync(ServicePrincipal servicePrincipalToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ServicePrincipal> CreateAsync(ServicePrincipal servicePrincipalToCreate);
+
+        /// <summary>
         /// Creates the specified ServicePrincipal using POST.
         /// </summary>
         /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServicePrincipal.</returns>
         System.Threading.Tasks.Task<ServicePrincipal> CreateAsync(ServicePrincipal servicePrincipalToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ServicePrincipal using POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> CreateResponseAsync(ServicePrincipal servicePrincipalToCreate);
+
+        /// <summary>
+        /// Creates the specified ServicePrincipal using POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> CreateResponseAsync(ServicePrincipal servicePrincipalToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ServicePrincipal.

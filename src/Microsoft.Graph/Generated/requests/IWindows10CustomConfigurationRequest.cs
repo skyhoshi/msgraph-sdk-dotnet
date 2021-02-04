@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
         /// <returns>The created Windows10CustomConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10CustomConfiguration> CreateAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10CustomConfiguration> CreateAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10CustomConfiguration using POST.
         /// </summary>
         /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10CustomConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10CustomConfiguration> CreateAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10CustomConfiguration using POST and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> CreateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10CustomConfiguration using POST and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> CreateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10CustomConfiguration.

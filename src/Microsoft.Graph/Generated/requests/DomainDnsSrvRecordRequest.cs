@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DomainDnsSrvRecord using POST and returns a <see cref="GraphResponse{DomainDnsSrvRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsSrvRecordToCreate">The DomainDnsSrvRecord to create.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsSrvRecord}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DomainDnsSrvRecord>> CreateResponseAsync(DomainDnsSrvRecord domainDnsSrvRecordToCreate)
+        {
+            return this.CreateResponseAsync(domainDnsSrvRecordToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DomainDnsSrvRecord using POST and returns a <see cref="GraphResponse{DomainDnsSrvRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsSrvRecordToCreate">The DomainDnsSrvRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsSrvRecord}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsSrvRecord>> CreateResponseAsync(DomainDnsSrvRecord domainDnsSrvRecordToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DomainDnsSrvRecord>(domainDnsSrvRecordToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DomainDnsSrvRecord.
         /// </summary>
         /// <returns>The task to await.</returns>

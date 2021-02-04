@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ShiftPreferences using POST and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> CreateResponseAsync(ShiftPreferences shiftPreferencesToCreate)
+        {
+            return this.CreateResponseAsync(shiftPreferencesToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ShiftPreferences using POST and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> CreateResponseAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ShiftPreferences>(shiftPreferencesToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ShiftPreferences.
         /// </summary>
         /// <returns>The task to await.</returns>

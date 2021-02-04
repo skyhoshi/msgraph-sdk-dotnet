@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
         /// <returns>The created DirectoryRole.</returns>
-        System.Threading.Tasks.Task<DirectoryRole> CreateAsync(DirectoryRole directoryRoleToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DirectoryRole> CreateAsync(DirectoryRole directoryRoleToCreate);
+
+        /// <summary>
         /// Creates the specified DirectoryRole using POST.
         /// </summary>
         /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryRole.</returns>
         System.Threading.Tasks.Task<DirectoryRole> CreateAsync(DirectoryRole directoryRoleToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DirectoryRole using POST and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> CreateResponseAsync(DirectoryRole directoryRoleToCreate);
+
+        /// <summary>
+        /// Creates the specified DirectoryRole using POST and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleToCreate">The DirectoryRole to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> CreateResponseAsync(DirectoryRole directoryRoleToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DirectoryRole.

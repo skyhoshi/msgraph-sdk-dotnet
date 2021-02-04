@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EducationOrganization using POST and returns a <see cref="GraphResponse{EducationOrganization}"/> object.
+        /// </summary>
+        /// <param name="educationOrganizationToCreate">The EducationOrganization to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> CreateResponseAsync(EducationOrganization educationOrganizationToCreate)
+        {
+            return this.CreateResponseAsync(educationOrganizationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EducationOrganization using POST and returns a <see cref="GraphResponse{EducationOrganization}"/> object.
+        /// </summary>
+        /// <param name="educationOrganizationToCreate">The EducationOrganization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> CreateResponseAsync(EducationOrganization educationOrganizationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationOrganization>(educationOrganizationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EducationOrganization.
         /// </summary>
         /// <returns>The task to await.</returns>

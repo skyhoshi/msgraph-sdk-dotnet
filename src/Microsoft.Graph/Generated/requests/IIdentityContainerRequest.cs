@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
         /// <returns>The created IdentityContainer.</returns>
-        System.Threading.Tasks.Task<IdentityContainer> CreateAsync(IdentityContainer identityContainerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IdentityContainer> CreateAsync(IdentityContainer identityContainerToCreate);
+
+        /// <summary>
         /// Creates the specified IdentityContainer using POST.
         /// </summary>
         /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityContainer.</returns>
         System.Threading.Tasks.Task<IdentityContainer> CreateAsync(IdentityContainer identityContainerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IdentityContainer using POST and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
+        /// </summary>
+        /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> CreateResponseAsync(IdentityContainer identityContainerToCreate);
+
+        /// <summary>
+        /// Creates the specified IdentityContainer using POST and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
+        /// </summary>
+        /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> CreateResponseAsync(IdentityContainer identityContainerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IdentityContainer.

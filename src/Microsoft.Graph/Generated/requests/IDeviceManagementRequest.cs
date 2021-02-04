@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
         /// <returns>The created DeviceManagement.</returns>
-        System.Threading.Tasks.Task<DeviceManagement> CreateAsync(DeviceManagement deviceManagementToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagement> CreateAsync(DeviceManagement deviceManagementToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagement using POST.
         /// </summary>
         /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagement.</returns>
         System.Threading.Tasks.Task<DeviceManagement> CreateAsync(DeviceManagement deviceManagementToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagement using POST and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> CreateResponseAsync(DeviceManagement deviceManagementToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagement using POST and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> CreateResponseAsync(DeviceManagement deviceManagementToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagement.

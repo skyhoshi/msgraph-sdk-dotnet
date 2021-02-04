@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userSettingsToCreate">The UserSettings to create.</param>
         /// <returns>The created UserSettings.</returns>
-        System.Threading.Tasks.Task<UserSettings> CreateAsync(UserSettings userSettingsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserSettings> CreateAsync(UserSettings userSettingsToCreate);
+
+        /// <summary>
         /// Creates the specified UserSettings using POST.
         /// </summary>
         /// <param name="userSettingsToCreate">The UserSettings to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserSettings.</returns>
         System.Threading.Tasks.Task<UserSettings> CreateAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserSettings using POST and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToCreate">The UserSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate);
+
+        /// <summary>
+        /// Creates the specified UserSettings using POST and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToCreate">The UserSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserSettings.

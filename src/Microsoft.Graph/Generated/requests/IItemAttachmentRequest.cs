@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="itemAttachmentToCreate">The ItemAttachment to create.</param>
         /// <returns>The created ItemAttachment.</returns>
-        System.Threading.Tasks.Task<ItemAttachment> CreateAsync(ItemAttachment itemAttachmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ItemAttachment> CreateAsync(ItemAttachment itemAttachmentToCreate);
+
+        /// <summary>
         /// Creates the specified ItemAttachment using POST.
         /// </summary>
         /// <param name="itemAttachmentToCreate">The ItemAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemAttachment.</returns>
         System.Threading.Tasks.Task<ItemAttachment> CreateAsync(ItemAttachment itemAttachmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ItemAttachment using POST and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <param name="itemAttachmentToCreate">The ItemAttachment to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> CreateResponseAsync(ItemAttachment itemAttachmentToCreate);
+
+        /// <summary>
+        /// Creates the specified ItemAttachment using POST and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <param name="itemAttachmentToCreate">The ItemAttachment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> CreateResponseAsync(ItemAttachment itemAttachmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ItemAttachment.

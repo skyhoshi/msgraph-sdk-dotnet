@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
         /// <returns>The created DeviceManagementPartner.</returns>
-        System.Threading.Tasks.Task<DeviceManagementPartner> CreateAsync(DeviceManagementPartner deviceManagementPartnerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementPartner> CreateAsync(DeviceManagementPartner deviceManagementPartnerToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementPartner using POST.
         /// </summary>
         /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementPartner.</returns>
         System.Threading.Tasks.Task<DeviceManagementPartner> CreateAsync(DeviceManagementPartner deviceManagementPartnerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementPartner using POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> CreateResponseAsync(DeviceManagementPartner deviceManagementPartnerToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementPartner using POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> CreateResponseAsync(DeviceManagementPartner deviceManagementPartnerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementPartner.

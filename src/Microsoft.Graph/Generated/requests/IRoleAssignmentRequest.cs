@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
         /// <returns>The created RoleAssignment.</returns>
-        System.Threading.Tasks.Task<RoleAssignment> CreateAsync(RoleAssignment roleAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RoleAssignment> CreateAsync(RoleAssignment roleAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified RoleAssignment using POST.
         /// </summary>
         /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleAssignment.</returns>
         System.Threading.Tasks.Task<RoleAssignment> CreateAsync(RoleAssignment roleAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RoleAssignment using POST and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> CreateResponseAsync(RoleAssignment roleAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified RoleAssignment using POST and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> CreateResponseAsync(RoleAssignment roleAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RoleAssignment.

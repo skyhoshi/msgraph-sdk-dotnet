@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
         /// <returns>The created ConditionalAccessRoot.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessRoot> CreateAsync(ConditionalAccessRoot conditionalAccessRootToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ConditionalAccessRoot> CreateAsync(ConditionalAccessRoot conditionalAccessRootToCreate);
+
+        /// <summary>
         /// Creates the specified ConditionalAccessRoot using POST.
         /// </summary>
         /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessRoot.</returns>
         System.Threading.Tasks.Task<ConditionalAccessRoot> CreateAsync(ConditionalAccessRoot conditionalAccessRootToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessRoot using POST and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> CreateResponseAsync(ConditionalAccessRoot conditionalAccessRootToCreate);
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessRoot using POST and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessRootToCreate">The ConditionalAccessRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> CreateResponseAsync(ConditionalAccessRoot conditionalAccessRootToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ConditionalAccessRoot.

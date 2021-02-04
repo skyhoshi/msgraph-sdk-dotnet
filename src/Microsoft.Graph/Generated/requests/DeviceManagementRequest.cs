@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagement using POST and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> CreateResponseAsync(DeviceManagement deviceManagementToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagement using POST and returns a <see cref="GraphResponse{DeviceManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementToCreate">The DeviceManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagement}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagement>> CreateResponseAsync(DeviceManagement deviceManagementToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagement>(deviceManagementToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagement.
         /// </summary>
         /// <returns>The task to await.</returns>

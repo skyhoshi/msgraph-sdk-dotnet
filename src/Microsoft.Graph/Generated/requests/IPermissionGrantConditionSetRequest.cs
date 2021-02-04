@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="permissionGrantConditionSetToCreate">The PermissionGrantConditionSet to create.</param>
         /// <returns>The created PermissionGrantConditionSet.</returns>
-        System.Threading.Tasks.Task<PermissionGrantConditionSet> CreateAsync(PermissionGrantConditionSet permissionGrantConditionSetToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PermissionGrantConditionSet> CreateAsync(PermissionGrantConditionSet permissionGrantConditionSetToCreate);
+
+        /// <summary>
         /// Creates the specified PermissionGrantConditionSet using POST.
         /// </summary>
         /// <param name="permissionGrantConditionSetToCreate">The PermissionGrantConditionSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PermissionGrantConditionSet.</returns>
         System.Threading.Tasks.Task<PermissionGrantConditionSet> CreateAsync(PermissionGrantConditionSet permissionGrantConditionSetToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PermissionGrantConditionSet using POST and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object.
+        /// </summary>
+        /// <param name="permissionGrantConditionSetToCreate">The PermissionGrantConditionSet to create.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> CreateResponseAsync(PermissionGrantConditionSet permissionGrantConditionSetToCreate);
+
+        /// <summary>
+        /// Creates the specified PermissionGrantConditionSet using POST and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object.
+        /// </summary>
+        /// <param name="permissionGrantConditionSetToCreate">The PermissionGrantConditionSet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> CreateResponseAsync(PermissionGrantConditionSet permissionGrantConditionSetToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PermissionGrantConditionSet.

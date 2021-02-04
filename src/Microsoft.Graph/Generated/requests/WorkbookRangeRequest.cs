@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookRange using POST and returns a <see cref="GraphResponse{WorkbookRange}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeToCreate">The WorkbookRange to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRange}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> CreateResponseAsync(WorkbookRange workbookRangeToCreate)
+        {
+            return this.CreateResponseAsync(workbookRangeToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookRange using POST and returns a <see cref="GraphResponse{WorkbookRange}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeToCreate">The WorkbookRange to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRange}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> CreateResponseAsync(WorkbookRange workbookRangeToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookRange>(workbookRangeToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookRange.
         /// </summary>
         /// <returns>The task to await.</returns>

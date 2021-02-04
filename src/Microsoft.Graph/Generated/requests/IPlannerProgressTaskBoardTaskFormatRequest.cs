@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
         /// <returns>The created PlannerProgressTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerProgressTaskBoardTaskFormat.</returns>
         System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> CreateAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerProgressTaskBoardTaskFormat.

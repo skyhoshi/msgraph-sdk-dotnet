@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileLobAppToCreate">The MobileLobApp to create.</param>
         /// <returns>The created MobileLobApp.</returns>
-        System.Threading.Tasks.Task<MobileLobApp> CreateAsync(MobileLobApp mobileLobAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileLobApp> CreateAsync(MobileLobApp mobileLobAppToCreate);
+
+        /// <summary>
         /// Creates the specified MobileLobApp using POST.
         /// </summary>
         /// <param name="mobileLobAppToCreate">The MobileLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileLobApp.</returns>
         System.Threading.Tasks.Task<MobileLobApp> CreateAsync(MobileLobApp mobileLobAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileLobApp using POST and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="mobileLobAppToCreate">The MobileLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> CreateResponseAsync(MobileLobApp mobileLobAppToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileLobApp using POST and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="mobileLobAppToCreate">The MobileLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> CreateResponseAsync(MobileLobApp mobileLobAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileLobApp.

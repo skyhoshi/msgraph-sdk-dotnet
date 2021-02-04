@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppToCreate">The MobileApp to create.</param>
         /// <returns>The created MobileApp.</returns>
-        System.Threading.Tasks.Task<MobileApp> CreateAsync(MobileApp mobileAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileApp> CreateAsync(MobileApp mobileAppToCreate);
+
+        /// <summary>
         /// Creates the specified MobileApp using POST.
         /// </summary>
         /// <param name="mobileAppToCreate">The MobileApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileApp.</returns>
         System.Threading.Tasks.Task<MobileApp> CreateAsync(MobileApp mobileAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileApp using POST and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToCreate">The MobileApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileApp>> CreateResponseAsync(MobileApp mobileAppToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileApp using POST and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToCreate">The MobileApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileApp>> CreateResponseAsync(MobileApp mobileAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileApp.

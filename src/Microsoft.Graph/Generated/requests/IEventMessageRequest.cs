@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="eventMessageToCreate">The EventMessage to create.</param>
         /// <returns>The created EventMessage.</returns>
-        System.Threading.Tasks.Task<EventMessage> CreateAsync(EventMessage eventMessageToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EventMessage> CreateAsync(EventMessage eventMessageToCreate);
+
+        /// <summary>
         /// Creates the specified EventMessage using POST.
         /// </summary>
         /// <param name="eventMessageToCreate">The EventMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EventMessage.</returns>
         System.Threading.Tasks.Task<EventMessage> CreateAsync(EventMessage eventMessageToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EventMessage using POST and returns a <see cref="GraphResponse{EventMessage}"/> object.
+        /// </summary>
+        /// <param name="eventMessageToCreate">The EventMessage to create.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessage>> CreateResponseAsync(EventMessage eventMessageToCreate);
+
+        /// <summary>
+        /// Creates the specified EventMessage using POST and returns a <see cref="GraphResponse{EventMessage}"/> object.
+        /// </summary>
+        /// <param name="eventMessageToCreate">The EventMessage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessage>> CreateResponseAsync(EventMessage eventMessageToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EventMessage.

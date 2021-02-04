@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EBookInstallSummary using POST and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
+        /// </summary>
+        /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> CreateResponseAsync(EBookInstallSummary eBookInstallSummaryToCreate)
+        {
+            return this.CreateResponseAsync(eBookInstallSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EBookInstallSummary using POST and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
+        /// </summary>
+        /// <param name="eBookInstallSummaryToCreate">The EBookInstallSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> CreateResponseAsync(EBookInstallSummary eBookInstallSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EBookInstallSummary>(eBookInstallSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EBookInstallSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

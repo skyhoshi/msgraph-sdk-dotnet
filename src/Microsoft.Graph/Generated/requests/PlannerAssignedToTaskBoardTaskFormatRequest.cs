@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> CreateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate)
+        {
+            return this.CreateResponseAsync(plannerAssignedToTaskBoardTaskFormatToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> CreateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PlannerAssignedToTaskBoardTaskFormat>(plannerAssignedToTaskBoardTaskFormatToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PlannerAssignedToTaskBoardTaskFormat.
         /// </summary>
         /// <returns>The task to await.</returns>

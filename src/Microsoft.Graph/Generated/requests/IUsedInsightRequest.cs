@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
         /// <returns>The created UsedInsight.</returns>
-        System.Threading.Tasks.Task<UsedInsight> CreateAsync(UsedInsight usedInsightToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UsedInsight> CreateAsync(UsedInsight usedInsightToCreate);
+
+        /// <summary>
         /// Creates the specified UsedInsight using POST.
         /// </summary>
         /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UsedInsight.</returns>
         System.Threading.Tasks.Task<UsedInsight> CreateAsync(UsedInsight usedInsightToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UsedInsight using POST and returns a <see cref="GraphResponse{UsedInsight}"/> object.
+        /// </summary>
+        /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> CreateResponseAsync(UsedInsight usedInsightToCreate);
+
+        /// <summary>
+        /// Creates the specified UsedInsight using POST and returns a <see cref="GraphResponse{UsedInsight}"/> object.
+        /// </summary>
+        /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> CreateResponseAsync(UsedInsight usedInsightToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UsedInsight.

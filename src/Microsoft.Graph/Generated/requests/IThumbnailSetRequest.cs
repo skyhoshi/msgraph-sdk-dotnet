@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
         /// <returns>The created ThumbnailSet.</returns>
-        System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate);
+
+        /// <summary>
         /// Creates the specified ThumbnailSet using POST.
         /// </summary>
         /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ThumbnailSet.</returns>
         System.Threading.Tasks.Task<ThumbnailSet> CreateAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
+        /// </summary>
+        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
+        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate);
+
+        /// <summary>
+        /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
+        /// </summary>
+        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ThumbnailSet.

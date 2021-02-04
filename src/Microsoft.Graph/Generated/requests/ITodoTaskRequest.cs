@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="todoTaskToCreate">The TodoTask to create.</param>
         /// <returns>The created TodoTask.</returns>
-        System.Threading.Tasks.Task<TodoTask> CreateAsync(TodoTask todoTaskToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TodoTask> CreateAsync(TodoTask todoTaskToCreate);
+
+        /// <summary>
         /// Creates the specified TodoTask using POST.
         /// </summary>
         /// <param name="todoTaskToCreate">The TodoTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TodoTask.</returns>
         System.Threading.Tasks.Task<TodoTask> CreateAsync(TodoTask todoTaskToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TodoTask using POST and returns a <see cref="GraphResponse{TodoTask}"/> object.
+        /// </summary>
+        /// <param name="todoTaskToCreate">The TodoTask to create.</param>
+        /// <returns>The <see cref="GraphResponse{TodoTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TodoTask>> CreateResponseAsync(TodoTask todoTaskToCreate);
+
+        /// <summary>
+        /// Creates the specified TodoTask using POST and returns a <see cref="GraphResponse{TodoTask}"/> object.
+        /// </summary>
+        /// <param name="todoTaskToCreate">The TodoTask to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TodoTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TodoTask>> CreateResponseAsync(TodoTask todoTaskToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TodoTask.

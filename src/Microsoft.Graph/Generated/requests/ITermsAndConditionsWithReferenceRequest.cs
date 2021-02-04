@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
         /// <returns>The created TermsAndConditions.</returns>
-        System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate);
+
+        /// <summary>
         /// Creates the specified TermsAndConditions using POST.
         /// </summary>
         /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditions.</returns>
         System.Threading.Tasks.Task<TermsAndConditions> CreateAsync(TermsAndConditions termsAndConditionsToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified TermsAndConditions using POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> CreateResponseAsync(TermsAndConditions termsAndConditionsToCreate);
+
+        /// <summary>
+        /// Creates the specified TermsAndConditions using POST and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsToCreate">The TermsAndConditions to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> CreateResponseAsync(TermsAndConditions termsAndConditionsToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified TermsAndConditions using PATCH.

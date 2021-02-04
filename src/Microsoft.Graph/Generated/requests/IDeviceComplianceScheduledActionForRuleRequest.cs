@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
         /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceComplianceScheduledActionForRule using POST.
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
         System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> CreateAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceScheduledActionForRule using POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceScheduledActionForRule using POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceComplianceScheduledActionForRule.

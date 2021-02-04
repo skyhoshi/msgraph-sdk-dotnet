@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedAppStatus using POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> CreateResponseAsync(ManagedAppStatus managedAppStatusToCreate)
+        {
+            return this.CreateResponseAsync(managedAppStatusToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedAppStatus using POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> CreateResponseAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedAppStatus>(managedAppStatusToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedAppStatus.
         /// </summary>
         /// <returns>The task to await.</returns>

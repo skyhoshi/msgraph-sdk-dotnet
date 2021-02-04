@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
         /// <returns>The created WorkbookChartFill.</returns>
-        System.Threading.Tasks.Task<WorkbookChartFill> CreateAsync(WorkbookChartFill workbookChartFillToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartFill> CreateAsync(WorkbookChartFill workbookChartFillToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartFill using POST.
         /// </summary>
         /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartFill.</returns>
         System.Threading.Tasks.Task<WorkbookChartFill> CreateAsync(WorkbookChartFill workbookChartFillToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartFill using POST and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFill}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> CreateResponseAsync(WorkbookChartFill workbookChartFillToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartFill using POST and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFill}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> CreateResponseAsync(WorkbookChartFill workbookChartFillToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartFill.

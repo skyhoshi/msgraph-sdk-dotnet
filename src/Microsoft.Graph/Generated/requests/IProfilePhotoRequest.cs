@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="profilePhotoToCreate">The ProfilePhoto to create.</param>
         /// <returns>The created ProfilePhoto.</returns>
-        System.Threading.Tasks.Task<ProfilePhoto> CreateAsync(ProfilePhoto profilePhotoToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ProfilePhoto> CreateAsync(ProfilePhoto profilePhotoToCreate);
+
+        /// <summary>
         /// Creates the specified ProfilePhoto using POST.
         /// </summary>
         /// <param name="profilePhotoToCreate">The ProfilePhoto to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ProfilePhoto.</returns>
         System.Threading.Tasks.Task<ProfilePhoto> CreateAsync(ProfilePhoto profilePhotoToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ProfilePhoto using POST and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
+        /// </summary>
+        /// <param name="profilePhotoToCreate">The ProfilePhoto to create.</param>
+        /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> CreateResponseAsync(ProfilePhoto profilePhotoToCreate);
+
+        /// <summary>
+        /// Creates the specified ProfilePhoto using POST and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
+        /// </summary>
+        /// <param name="profilePhotoToCreate">The ProfilePhoto to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> CreateResponseAsync(ProfilePhoto profilePhotoToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ProfilePhoto.

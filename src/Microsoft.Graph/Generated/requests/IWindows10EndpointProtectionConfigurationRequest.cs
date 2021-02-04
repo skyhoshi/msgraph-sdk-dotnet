@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
         /// <returns>The created Windows10EndpointProtectionConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> CreateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> CreateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10EndpointProtectionConfiguration using POST.
         /// </summary>
         /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10EndpointProtectionConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EndpointProtectionConfiguration> CreateAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10EndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> CreateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10EndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> CreateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10EndpointProtectionConfiguration.

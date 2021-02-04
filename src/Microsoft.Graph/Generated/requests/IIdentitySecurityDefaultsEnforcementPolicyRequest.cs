@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
         /// <returns>The created IdentitySecurityDefaultsEnforcementPolicy.</returns>
-        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> CreateAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> CreateAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified IdentitySecurityDefaultsEnforcementPolicy using POST.
         /// </summary>
         /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentitySecurityDefaultsEnforcementPolicy.</returns>
         System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> CreateAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IdentitySecurityDefaultsEnforcementPolicy using POST and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
+        /// </summary>
+        /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> CreateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified IdentitySecurityDefaultsEnforcementPolicy using POST and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
+        /// </summary>
+        /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> CreateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IdentitySecurityDefaultsEnforcementPolicy.

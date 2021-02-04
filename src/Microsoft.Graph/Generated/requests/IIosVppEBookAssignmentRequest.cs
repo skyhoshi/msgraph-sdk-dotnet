@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
         /// <returns>The created IosVppEBookAssignment.</returns>
-        System.Threading.Tasks.Task<IosVppEBookAssignment> CreateAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosVppEBookAssignment> CreateAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified IosVppEBookAssignment using POST.
         /// </summary>
         /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosVppEBookAssignment.</returns>
         System.Threading.Tasks.Task<IosVppEBookAssignment> CreateAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosVppEBookAssignment using POST and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> CreateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified IosVppEBookAssignment using POST and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookAssignmentToCreate">The IosVppEBookAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> CreateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosVppEBookAssignment.

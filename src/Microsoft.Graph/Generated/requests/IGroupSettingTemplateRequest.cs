@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
         /// <returns>The created GroupSettingTemplate.</returns>
-        System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate);
+
+        /// <summary>
         /// Creates the specified GroupSettingTemplate using POST.
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupSettingTemplate.</returns>
         System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupSettingTemplate using POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> CreateResponseAsync(GroupSettingTemplate groupSettingTemplateToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupSettingTemplate using POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> CreateResponseAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupSettingTemplate.

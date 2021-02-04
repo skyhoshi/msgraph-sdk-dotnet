@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
         /// <returns>The created MacOSCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSCustomConfiguration> CreateAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOSCustomConfiguration> CreateAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified MacOSCustomConfiguration using POST.
         /// </summary>
         /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSCustomConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSCustomConfiguration> CreateAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOSCustomConfiguration using POST and returns a <see cref="GraphResponse{MacOSCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> CreateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOSCustomConfiguration using POST and returns a <see cref="GraphResponse{MacOSCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSCustomConfigurationToCreate">The MacOSCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCustomConfiguration>> CreateResponseAsync(MacOSCustomConfiguration macOSCustomConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOSCustomConfiguration.

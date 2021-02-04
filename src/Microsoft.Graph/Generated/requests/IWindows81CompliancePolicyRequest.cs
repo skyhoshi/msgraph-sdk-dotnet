@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows81CompliancePolicyToCreate">The Windows81CompliancePolicy to create.</param>
         /// <returns>The created Windows81CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows81CompliancePolicy> CreateAsync(Windows81CompliancePolicy windows81CompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows81CompliancePolicy> CreateAsync(Windows81CompliancePolicy windows81CompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified Windows81CompliancePolicy using POST.
         /// </summary>
         /// <param name="windows81CompliancePolicyToCreate">The Windows81CompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows81CompliancePolicy.</returns>
         System.Threading.Tasks.Task<Windows81CompliancePolicy> CreateAsync(Windows81CompliancePolicy windows81CompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows81CompliancePolicy using POST and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToCreate">The Windows81CompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> CreateResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows81CompliancePolicy using POST and returns a <see cref="GraphResponse{Windows81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows81CompliancePolicyToCreate">The Windows81CompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81CompliancePolicy>> CreateResponseAsync(Windows81CompliancePolicy windows81CompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows81CompliancePolicy.

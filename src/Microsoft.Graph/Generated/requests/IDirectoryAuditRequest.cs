@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
         /// <returns>The created DirectoryAudit.</returns>
-        System.Threading.Tasks.Task<DirectoryAudit> CreateAsync(DirectoryAudit directoryAuditToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DirectoryAudit> CreateAsync(DirectoryAudit directoryAuditToCreate);
+
+        /// <summary>
         /// Creates the specified DirectoryAudit using POST.
         /// </summary>
         /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryAudit.</returns>
         System.Threading.Tasks.Task<DirectoryAudit> CreateAsync(DirectoryAudit directoryAuditToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DirectoryAudit using POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object.
+        /// </summary>
+        /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> CreateResponseAsync(DirectoryAudit directoryAuditToCreate);
+
+        /// <summary>
+        /// Creates the specified DirectoryAudit using POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object.
+        /// </summary>
+        /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> CreateResponseAsync(DirectoryAudit directoryAuditToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DirectoryAudit.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
         /// <returns>The created Security.</returns>
-        System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate);
+
+        /// <summary>
         /// Creates the specified Security using POST.
         /// </summary>
         /// <param name="securityToCreate">The Security to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Security.</returns>
         System.Threading.Tasks.Task<Security> CreateAsync(Security securityToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Security using POST and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="securityToCreate">The Security to create.</param>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> CreateResponseAsync(Security securityToCreate);
+
+        /// <summary>
+        /// Creates the specified Security using POST and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="securityToCreate">The Security to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> CreateResponseAsync(Security securityToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Security.

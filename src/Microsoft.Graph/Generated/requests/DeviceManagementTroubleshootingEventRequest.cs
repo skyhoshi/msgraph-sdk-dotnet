@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementTroubleshootingEvent using POST and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> CreateResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementTroubleshootingEventToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementTroubleshootingEvent using POST and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> CreateResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementTroubleshootingEvent>(deviceManagementTroubleshootingEventToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementTroubleshootingEvent.
         /// </summary>
         /// <returns>The task to await.</returns>

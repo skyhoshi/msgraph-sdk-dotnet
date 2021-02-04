@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ChangeTrackedEntity using POST and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="changeTrackedEntityToCreate">The ChangeTrackedEntity to create.</param>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> CreateResponseAsync(ChangeTrackedEntity changeTrackedEntityToCreate)
+        {
+            return this.CreateResponseAsync(changeTrackedEntityToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ChangeTrackedEntity using POST and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="changeTrackedEntityToCreate">The ChangeTrackedEntity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> CreateResponseAsync(ChangeTrackedEntity changeTrackedEntityToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ChangeTrackedEntity>(changeTrackedEntityToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ChangeTrackedEntity.
         /// </summary>
         /// <returns>The task to await.</returns>

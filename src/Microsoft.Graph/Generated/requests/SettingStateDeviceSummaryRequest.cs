@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SettingStateDeviceSummary using POST and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> CreateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate)
+        {
+            return this.CreateResponseAsync(settingStateDeviceSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SettingStateDeviceSummary using POST and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="settingStateDeviceSummaryToCreate">The SettingStateDeviceSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> CreateResponseAsync(SettingStateDeviceSummary settingStateDeviceSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SettingStateDeviceSummary>(settingStateDeviceSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SettingStateDeviceSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

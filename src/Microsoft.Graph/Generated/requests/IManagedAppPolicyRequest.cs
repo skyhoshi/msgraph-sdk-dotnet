@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
         /// <returns>The created ManagedAppPolicy.</returns>
-        System.Threading.Tasks.Task<ManagedAppPolicy> CreateAsync(ManagedAppPolicy managedAppPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppPolicy> CreateAsync(ManagedAppPolicy managedAppPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppPolicy using POST.
         /// </summary>
         /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppPolicy.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicy> CreateAsync(ManagedAppPolicy managedAppPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicy using POST and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> CreateResponseAsync(ManagedAppPolicy managedAppPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicy using POST and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> CreateResponseAsync(ManagedAppPolicy managedAppPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppPolicy.

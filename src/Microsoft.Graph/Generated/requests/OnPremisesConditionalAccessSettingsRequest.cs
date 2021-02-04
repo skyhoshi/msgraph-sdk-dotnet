@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> CreateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate)
+        {
+            return this.CreateResponseAsync(onPremisesConditionalAccessSettingsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnPremisesConditionalAccessSettings using POST and returns a <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object.
+        /// </summary>
+        /// <param name="onPremisesConditionalAccessSettingsToCreate">The OnPremisesConditionalAccessSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnPremisesConditionalAccessSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnPremisesConditionalAccessSettings>> CreateResponseAsync(OnPremisesConditionalAccessSettings onPremisesConditionalAccessSettingsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnPremisesConditionalAccessSettings>(onPremisesConditionalAccessSettingsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnPremisesConditionalAccessSettings.
         /// </summary>
         /// <returns>The task to await.</returns>

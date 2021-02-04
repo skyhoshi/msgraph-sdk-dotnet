@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="swapShiftsChangeRequestObjectToCreate">The SwapShiftsChangeRequestObject to create.</param>
         /// <returns>The created SwapShiftsChangeRequestObject.</returns>
-        System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> CreateAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> CreateAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified SwapShiftsChangeRequestObject using POST.
         /// </summary>
         /// <param name="swapShiftsChangeRequestObjectToCreate">The SwapShiftsChangeRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SwapShiftsChangeRequestObject.</returns>
         System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> CreateAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SwapShiftsChangeRequestObject using POST and returns a <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="swapShiftsChangeRequestObjectToCreate">The SwapShiftsChangeRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> CreateResponseAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified SwapShiftsChangeRequestObject using POST and returns a <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="swapShiftsChangeRequestObjectToCreate">The SwapShiftsChangeRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> CreateResponseAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SwapShiftsChangeRequestObject.

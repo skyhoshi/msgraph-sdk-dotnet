@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ColumnLink using POST and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnLink>> CreateResponseAsync(ColumnLink columnLinkToCreate)
+        {
+            return this.CreateResponseAsync(columnLinkToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ColumnLink using POST and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ColumnLink>> CreateResponseAsync(ColumnLink columnLinkToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ColumnLink>(columnLinkToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ColumnLink.
         /// </summary>
         /// <returns>The task to await.</returns>

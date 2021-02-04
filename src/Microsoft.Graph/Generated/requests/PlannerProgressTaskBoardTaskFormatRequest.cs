@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate)
+        {
+            return this.CreateResponseAsync(plannerProgressTaskBoardTaskFormatToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PlannerProgressTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerProgressTaskBoardTaskFormatToCreate">The PlannerProgressTaskBoardTaskFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> CreateResponseAsync(PlannerProgressTaskBoardTaskFormat plannerProgressTaskBoardTaskFormatToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PlannerProgressTaskBoardTaskFormat>(plannerProgressTaskBoardTaskFormatToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PlannerProgressTaskBoardTaskFormat.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
         /// <returns>The created IosManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<IosManagedAppRegistration> CreateAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosManagedAppRegistration> CreateAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate);
+
+        /// <summary>
         /// Creates the specified IosManagedAppRegistration using POST.
         /// </summary>
         /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosManagedAppRegistration.</returns>
         System.Threading.Tasks.Task<IosManagedAppRegistration> CreateAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosManagedAppRegistration using POST and returns a <see cref="GraphResponse{IosManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> CreateResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate);
+
+        /// <summary>
+        /// Creates the specified IosManagedAppRegistration using POST and returns a <see cref="GraphResponse{IosManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> CreateResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosManagedAppRegistration.

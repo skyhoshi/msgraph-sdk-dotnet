@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
         /// <returns>The created ItemActivityStat.</returns>
-        System.Threading.Tasks.Task<ItemActivityStat> CreateAsync(ItemActivityStat itemActivityStatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ItemActivityStat> CreateAsync(ItemActivityStat itemActivityStatToCreate);
+
+        /// <summary>
         /// Creates the specified ItemActivityStat using POST.
         /// </summary>
         /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemActivityStat.</returns>
         System.Threading.Tasks.Task<ItemActivityStat> CreateAsync(ItemActivityStat itemActivityStatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ItemActivityStat using POST and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
+        /// </summary>
+        /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> CreateResponseAsync(ItemActivityStat itemActivityStatToCreate);
+
+        /// <summary>
+        /// Creates the specified ItemActivityStat using POST and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
+        /// </summary>
+        /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> CreateResponseAsync(ItemActivityStat itemActivityStatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ItemActivityStat.

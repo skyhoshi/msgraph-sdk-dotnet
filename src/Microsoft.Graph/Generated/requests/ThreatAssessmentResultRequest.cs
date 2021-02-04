@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ThreatAssessmentResult using POST and returns a <see cref="GraphResponse{ThreatAssessmentResult}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentResultToCreate">The ThreatAssessmentResult to create.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> CreateResponseAsync(ThreatAssessmentResult threatAssessmentResultToCreate)
+        {
+            return this.CreateResponseAsync(threatAssessmentResultToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ThreatAssessmentResult using POST and returns a <see cref="GraphResponse{ThreatAssessmentResult}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentResultToCreate">The ThreatAssessmentResult to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> CreateResponseAsync(ThreatAssessmentResult threatAssessmentResultToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ThreatAssessmentResult>(threatAssessmentResultToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ThreatAssessmentResult.
         /// </summary>
         /// <returns>The task to await.</returns>

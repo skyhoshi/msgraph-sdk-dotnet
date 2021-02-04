@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
         /// <returns>The created AppCatalogs.</returns>
-        System.Threading.Tasks.Task<AppCatalogs> CreateAsync(AppCatalogs appCatalogsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AppCatalogs> CreateAsync(AppCatalogs appCatalogsToCreate);
+
+        /// <summary>
         /// Creates the specified AppCatalogs using POST.
         /// </summary>
         /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppCatalogs.</returns>
         System.Threading.Tasks.Task<AppCatalogs> CreateAsync(AppCatalogs appCatalogsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AppCatalogs using POST and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> CreateResponseAsync(AppCatalogs appCatalogsToCreate);
+
+        /// <summary>
+        /// Creates the specified AppCatalogs using POST and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> CreateResponseAsync(AppCatalogs appCatalogsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AppCatalogs.

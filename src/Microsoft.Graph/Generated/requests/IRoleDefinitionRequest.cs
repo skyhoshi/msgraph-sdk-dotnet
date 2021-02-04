@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
         /// <returns>The created RoleDefinition.</returns>
-        System.Threading.Tasks.Task<RoleDefinition> CreateAsync(RoleDefinition roleDefinitionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RoleDefinition> CreateAsync(RoleDefinition roleDefinitionToCreate);
+
+        /// <summary>
         /// Creates the specified RoleDefinition using POST.
         /// </summary>
         /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleDefinition.</returns>
         System.Threading.Tasks.Task<RoleDefinition> CreateAsync(RoleDefinition roleDefinitionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RoleDefinition using POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> CreateResponseAsync(RoleDefinition roleDefinitionToCreate);
+
+        /// <summary>
+        /// Creates the specified RoleDefinition using POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="roleDefinitionToCreate">The RoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> CreateResponseAsync(RoleDefinition roleDefinitionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RoleDefinition.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
         /// <returns>The created OnenoteResource.</returns>
-        System.Threading.Tasks.Task<OnenoteResource> CreateAsync(OnenoteResource onenoteResourceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteResource> CreateAsync(OnenoteResource onenoteResourceToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteResource using POST.
         /// </summary>
         /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteResource.</returns>
         System.Threading.Tasks.Task<OnenoteResource> CreateAsync(OnenoteResource onenoteResourceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteResource using POST and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> CreateResponseAsync(OnenoteResource onenoteResourceToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteResource using POST and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToCreate">The OnenoteResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> CreateResponseAsync(OnenoteResource onenoteResourceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteResource.

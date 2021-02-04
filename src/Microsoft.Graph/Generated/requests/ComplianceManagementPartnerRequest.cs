@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ComplianceManagementPartner using POST and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> CreateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToCreate)
+        {
+            return this.CreateResponseAsync(complianceManagementPartnerToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ComplianceManagementPartner using POST and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> CreateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ComplianceManagementPartner>(complianceManagementPartnerToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ComplianceManagementPartner.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="channelToCreate">The Channel to create.</param>
         /// <returns>The created Channel.</returns>
-        System.Threading.Tasks.Task<Channel> CreateAsync(Channel channelToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Channel> CreateAsync(Channel channelToCreate);
+
+        /// <summary>
         /// Creates the specified Channel using POST.
         /// </summary>
         /// <param name="channelToCreate">The Channel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Channel.</returns>
         System.Threading.Tasks.Task<Channel> CreateAsync(Channel channelToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Channel using POST and returns a <see cref="GraphResponse{Channel}"/> object.
+        /// </summary>
+        /// <param name="channelToCreate">The Channel to create.</param>
+        /// <returns>The <see cref="GraphResponse{Channel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Channel>> CreateResponseAsync(Channel channelToCreate);
+
+        /// <summary>
+        /// Creates the specified Channel using POST and returns a <see cref="GraphResponse{Channel}"/> object.
+        /// </summary>
+        /// <param name="channelToCreate">The Channel to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Channel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Channel>> CreateResponseAsync(Channel channelToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Channel.

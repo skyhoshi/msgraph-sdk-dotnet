@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="placeToCreate">The Place to create.</param>
         /// <returns>The created Place.</returns>
-        System.Threading.Tasks.Task<Place> CreateAsync(Place placeToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Place> CreateAsync(Place placeToCreate);
+
+        /// <summary>
         /// Creates the specified Place using POST.
         /// </summary>
         /// <param name="placeToCreate">The Place to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Place.</returns>
         System.Threading.Tasks.Task<Place> CreateAsync(Place placeToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Place using POST and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <param name="placeToCreate">The Place to create.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Place>> CreateResponseAsync(Place placeToCreate);
+
+        /// <summary>
+        /// Creates the specified Place using POST and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <param name="placeToCreate">The Place to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Place>> CreateResponseAsync(Place placeToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Place.

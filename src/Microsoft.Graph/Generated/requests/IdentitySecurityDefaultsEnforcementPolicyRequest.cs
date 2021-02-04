@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IdentitySecurityDefaultsEnforcementPolicy using POST and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
+        /// </summary>
+        /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> CreateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate)
+        {
+            return this.CreateResponseAsync(identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IdentitySecurityDefaultsEnforcementPolicy using POST and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
+        /// </summary>
+        /// <param name="identitySecurityDefaultsEnforcementPolicyToCreate">The IdentitySecurityDefaultsEnforcementPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> CreateResponseAsync(IdentitySecurityDefaultsEnforcementPolicy identitySecurityDefaultsEnforcementPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IdentitySecurityDefaultsEnforcementPolicy>(identitySecurityDefaultsEnforcementPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IdentitySecurityDefaultsEnforcementPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

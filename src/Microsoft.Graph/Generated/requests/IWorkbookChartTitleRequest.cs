@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
         /// <returns>The created WorkbookChartTitle.</returns>
-        System.Threading.Tasks.Task<WorkbookChartTitle> CreateAsync(WorkbookChartTitle workbookChartTitleToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartTitle> CreateAsync(WorkbookChartTitle workbookChartTitleToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartTitle using POST.
         /// </summary>
         /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartTitle.</returns>
         System.Threading.Tasks.Task<WorkbookChartTitle> CreateAsync(WorkbookChartTitle workbookChartTitleToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartTitle using POST and returns a <see cref="GraphResponse{WorkbookChartTitle}"/> object.
+        /// </summary>
+        /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartTitle}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> CreateResponseAsync(WorkbookChartTitle workbookChartTitleToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartTitle using POST and returns a <see cref="GraphResponse{WorkbookChartTitle}"/> object.
+        /// </summary>
+        /// <param name="workbookChartTitleToCreate">The WorkbookChartTitle to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartTitle}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitle>> CreateResponseAsync(WorkbookChartTitle workbookChartTitleToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartTitle.

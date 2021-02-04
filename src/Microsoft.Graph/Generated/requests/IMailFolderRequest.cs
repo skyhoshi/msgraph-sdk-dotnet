@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mailFolderToCreate">The MailFolder to create.</param>
         /// <returns>The created MailFolder.</returns>
-        System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate);
+
+        /// <summary>
         /// Creates the specified MailFolder using POST.
         /// </summary>
         /// <param name="mailFolderToCreate">The MailFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailFolder.</returns>
         System.Threading.Tasks.Task<MailFolder> CreateAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MailFolder using POST and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <param name="mailFolderToCreate">The MailFolder to create.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> CreateResponseAsync(MailFolder mailFolderToCreate);
+
+        /// <summary>
+        /// Creates the specified MailFolder using POST and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <param name="mailFolderToCreate">The MailFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> CreateResponseAsync(MailFolder mailFolderToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MailFolder.

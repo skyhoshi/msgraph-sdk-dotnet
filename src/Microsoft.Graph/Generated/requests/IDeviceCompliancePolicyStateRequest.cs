@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceCompliancePolicyStateToCreate">The DeviceCompliancePolicyState to create.</param>
         /// <returns>The created DeviceCompliancePolicyState.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyState> CreateAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceCompliancePolicyState> CreateAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceCompliancePolicyState using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyStateToCreate">The DeviceCompliancePolicyState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCompliancePolicyState.</returns>
         System.Threading.Tasks.Task<DeviceCompliancePolicyState> CreateAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyState using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyStateToCreate">The DeviceCompliancePolicyState to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> CreateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyState using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyStateToCreate">The DeviceCompliancePolicyState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> CreateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceCompliancePolicyState.

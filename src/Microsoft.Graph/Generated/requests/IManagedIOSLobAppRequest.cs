@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedIOSLobAppToCreate">The ManagedIOSLobApp to create.</param>
         /// <returns>The created ManagedIOSLobApp.</returns>
-        System.Threading.Tasks.Task<ManagedIOSLobApp> CreateAsync(ManagedIOSLobApp managedIOSLobAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedIOSLobApp> CreateAsync(ManagedIOSLobApp managedIOSLobAppToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedIOSLobApp using POST.
         /// </summary>
         /// <param name="managedIOSLobAppToCreate">The ManagedIOSLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedIOSLobApp.</returns>
         System.Threading.Tasks.Task<ManagedIOSLobApp> CreateAsync(ManagedIOSLobApp managedIOSLobAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedIOSLobApp using POST and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedIOSLobAppToCreate">The ManagedIOSLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> CreateResponseAsync(ManagedIOSLobApp managedIOSLobAppToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedIOSLobApp using POST and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedIOSLobAppToCreate">The ManagedIOSLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> CreateResponseAsync(ManagedIOSLobApp managedIOSLobAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedIOSLobApp.

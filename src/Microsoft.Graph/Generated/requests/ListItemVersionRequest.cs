@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate)
+        {
+            return this.CreateResponseAsync(listItemVersionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ListItemVersion>(listItemVersionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ListItemVersion.
         /// </summary>
         /// <returns>The task to await.</returns>

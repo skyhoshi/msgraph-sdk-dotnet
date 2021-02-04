@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppConfigurationToCreate">The ManagedAppConfiguration to create.</param>
         /// <returns>The created ManagedAppConfiguration.</returns>
-        System.Threading.Tasks.Task<ManagedAppConfiguration> CreateAsync(ManagedAppConfiguration managedAppConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppConfiguration> CreateAsync(ManagedAppConfiguration managedAppConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppConfiguration using POST.
         /// </summary>
         /// <param name="managedAppConfigurationToCreate">The ManagedAppConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppConfiguration.</returns>
         System.Threading.Tasks.Task<ManagedAppConfiguration> CreateAsync(ManagedAppConfiguration managedAppConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppConfiguration using POST and returns a <see cref="GraphResponse{ManagedAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="managedAppConfigurationToCreate">The ManagedAppConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppConfiguration>> CreateResponseAsync(ManagedAppConfiguration managedAppConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppConfiguration using POST and returns a <see cref="GraphResponse{ManagedAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="managedAppConfigurationToCreate">The ManagedAppConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppConfiguration>> CreateResponseAsync(ManagedAppConfiguration managedAppConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppConfiguration.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows10EndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> CreateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windows10EndpointProtectionConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows10EndpointProtectionConfiguration using POST and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EndpointProtectionConfigurationToCreate">The Windows10EndpointProtectionConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> CreateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows10EndpointProtectionConfiguration>(windows10EndpointProtectionConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows10EndpointProtectionConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

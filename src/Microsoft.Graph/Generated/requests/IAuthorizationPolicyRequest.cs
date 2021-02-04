@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="authorizationPolicyToCreate">The AuthorizationPolicy to create.</param>
         /// <returns>The created AuthorizationPolicy.</returns>
-        System.Threading.Tasks.Task<AuthorizationPolicy> CreateAsync(AuthorizationPolicy authorizationPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AuthorizationPolicy> CreateAsync(AuthorizationPolicy authorizationPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified AuthorizationPolicy using POST.
         /// </summary>
         /// <param name="authorizationPolicyToCreate">The AuthorizationPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthorizationPolicy.</returns>
         System.Threading.Tasks.Task<AuthorizationPolicy> CreateAsync(AuthorizationPolicy authorizationPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AuthorizationPolicy using POST and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="authorizationPolicyToCreate">The AuthorizationPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> CreateResponseAsync(AuthorizationPolicy authorizationPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified AuthorizationPolicy using POST and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="authorizationPolicyToCreate">The AuthorizationPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> CreateResponseAsync(AuthorizationPolicy authorizationPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AuthorizationPolicy.

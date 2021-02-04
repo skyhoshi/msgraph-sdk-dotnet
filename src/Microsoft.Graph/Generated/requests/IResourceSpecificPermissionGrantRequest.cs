@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="resourceSpecificPermissionGrantToCreate">The ResourceSpecificPermissionGrant to create.</param>
         /// <returns>The created ResourceSpecificPermissionGrant.</returns>
-        System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> CreateAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> CreateAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToCreate);
+
+        /// <summary>
         /// Creates the specified ResourceSpecificPermissionGrant using POST.
         /// </summary>
         /// <param name="resourceSpecificPermissionGrantToCreate">The ResourceSpecificPermissionGrant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ResourceSpecificPermissionGrant.</returns>
         System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> CreateAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ResourceSpecificPermissionGrant using POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrantToCreate">The ResourceSpecificPermissionGrant to create.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> CreateResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToCreate);
+
+        /// <summary>
+        /// Creates the specified ResourceSpecificPermissionGrant using POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrantToCreate">The ResourceSpecificPermissionGrant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> CreateResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ResourceSpecificPermissionGrant.

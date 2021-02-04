@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
         /// <returns>The created TeamsApp.</returns>
-        System.Threading.Tasks.Task<TeamsApp> CreateAsync(TeamsApp teamsAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TeamsApp> CreateAsync(TeamsApp teamsAppToCreate);
+
+        /// <summary>
         /// Creates the specified TeamsApp using POST.
         /// </summary>
         /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsApp.</returns>
         System.Threading.Tasks.Task<TeamsApp> CreateAsync(TeamsApp teamsAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TeamsApp using POST and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> CreateResponseAsync(TeamsApp teamsAppToCreate);
+
+        /// <summary>
+        /// Creates the specified TeamsApp using POST and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="teamsAppToCreate">The TeamsApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> CreateResponseAsync(TeamsApp teamsAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TeamsApp.

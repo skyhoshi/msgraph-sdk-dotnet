@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedAppProtection using POST and returns a <see cref="GraphResponse{ManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="managedAppProtectionToCreate">The ManagedAppProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppProtection>> CreateResponseAsync(ManagedAppProtection managedAppProtectionToCreate)
+        {
+            return this.CreateResponseAsync(managedAppProtectionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedAppProtection using POST and returns a <see cref="GraphResponse{ManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="managedAppProtectionToCreate">The ManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppProtection>> CreateResponseAsync(ManagedAppProtection managedAppProtectionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedAppProtection>(managedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedAppProtection.
         /// </summary>
         /// <returns>The task to await.</returns>

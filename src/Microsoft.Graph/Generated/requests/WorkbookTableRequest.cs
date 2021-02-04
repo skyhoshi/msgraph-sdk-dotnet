@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookTable using POST and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> CreateResponseAsync(WorkbookTable workbookTableToCreate)
+        {
+            return this.CreateResponseAsync(workbookTableToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookTable using POST and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> CreateResponseAsync(WorkbookTable workbookTableToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookTable>(workbookTableToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookTable.
         /// </summary>
         /// <returns>The task to await.</returns>

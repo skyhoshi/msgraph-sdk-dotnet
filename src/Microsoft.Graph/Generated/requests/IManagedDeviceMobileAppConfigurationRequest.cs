@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationToCreate">The ManagedDeviceMobileAppConfiguration to create.</param>
         /// <returns>The created ManagedDeviceMobileAppConfiguration.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> CreateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> CreateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedDeviceMobileAppConfiguration using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationToCreate">The ManagedDeviceMobileAppConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfiguration.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> CreateAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfiguration using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationToCreate">The ManagedDeviceMobileAppConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> CreateResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfiguration using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationToCreate">The ManagedDeviceMobileAppConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> CreateResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfiguration.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementExchangeConnector using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementExchangeConnectorToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementExchangeConnector using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementExchangeConnector.
         /// </summary>
         /// <returns>The task to await.</returns>

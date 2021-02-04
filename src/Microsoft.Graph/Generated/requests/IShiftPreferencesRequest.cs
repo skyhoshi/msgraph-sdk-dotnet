@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
         /// <returns>The created ShiftPreferences.</returns>
-        System.Threading.Tasks.Task<ShiftPreferences> CreateAsync(ShiftPreferences shiftPreferencesToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ShiftPreferences> CreateAsync(ShiftPreferences shiftPreferencesToCreate);
+
+        /// <summary>
         /// Creates the specified ShiftPreferences using POST.
         /// </summary>
         /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ShiftPreferences.</returns>
         System.Threading.Tasks.Task<ShiftPreferences> CreateAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ShiftPreferences using POST and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> CreateResponseAsync(ShiftPreferences shiftPreferencesToCreate);
+
+        /// <summary>
+        /// Creates the specified ShiftPreferences using POST and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <param name="shiftPreferencesToCreate">The ShiftPreferences to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> CreateResponseAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ShiftPreferences.

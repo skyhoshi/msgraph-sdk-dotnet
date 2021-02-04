@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Conversation using POST and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToCreate">The Conversation to create.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Conversation>> CreateResponseAsync(Conversation conversationToCreate)
+        {
+            return this.CreateResponseAsync(conversationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Conversation using POST and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToCreate">The Conversation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Conversation>> CreateResponseAsync(Conversation conversationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Conversation>(conversationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Conversation.
         /// </summary>
         /// <returns>The task to await.</returns>

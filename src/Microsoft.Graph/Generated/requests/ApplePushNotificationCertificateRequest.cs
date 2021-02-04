@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ApplePushNotificationCertificate using POST and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
+        /// </summary>
+        /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> CreateResponseAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate)
+        {
+            return this.CreateResponseAsync(applePushNotificationCertificateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ApplePushNotificationCertificate using POST and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
+        /// </summary>
+        /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> CreateResponseAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ApplePushNotificationCertificate>(applePushNotificationCertificateToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ApplePushNotificationCertificate.
         /// </summary>
         /// <returns>The task to await.</returns>

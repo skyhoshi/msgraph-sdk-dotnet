@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
         /// <returns>The created RemoteAssistancePartner.</returns>
-        System.Threading.Tasks.Task<RemoteAssistancePartner> CreateAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RemoteAssistancePartner> CreateAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate);
+
+        /// <summary>
         /// Creates the specified RemoteAssistancePartner using POST.
         /// </summary>
         /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RemoteAssistancePartner.</returns>
         System.Threading.Tasks.Task<RemoteAssistancePartner> CreateAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RemoteAssistancePartner using POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> CreateResponseAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate);
+
+        /// <summary>
+        /// Creates the specified RemoteAssistancePartner using POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> CreateResponseAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RemoteAssistancePartner.

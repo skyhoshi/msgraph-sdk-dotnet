@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <returns>The created OutlookCategory.</returns>
-        System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate);
+
+        /// <summary>
         /// Creates the specified OutlookCategory using POST.
         /// </summary>
         /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookCategory.</returns>
         System.Threading.Tasks.Task<OutlookCategory> CreateAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OutlookCategory using POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
+        /// </summary>
+        /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate);
+
+        /// <summary>
+        /// Creates the specified OutlookCategory using POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
+        /// </summary>
+        /// <param name="outlookCategoryToCreate">The OutlookCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> CreateResponseAsync(OutlookCategory outlookCategoryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OutlookCategory.

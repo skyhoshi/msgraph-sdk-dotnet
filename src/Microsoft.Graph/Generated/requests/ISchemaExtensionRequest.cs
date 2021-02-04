@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
         /// <returns>The created SchemaExtension.</returns>
-        System.Threading.Tasks.Task<SchemaExtension> CreateAsync(SchemaExtension schemaExtensionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SchemaExtension> CreateAsync(SchemaExtension schemaExtensionToCreate);
+
+        /// <summary>
         /// Creates the specified SchemaExtension using POST.
         /// </summary>
         /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SchemaExtension.</returns>
         System.Threading.Tasks.Task<SchemaExtension> CreateAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SchemaExtension using POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
+        /// </summary>
+        /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate);
+
+        /// <summary>
+        /// Creates the specified SchemaExtension using POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
+        /// </summary>
+        /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SchemaExtension.

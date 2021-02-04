@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookToCreate">The Workbook to create.</param>
         /// <returns>The created Workbook.</returns>
-        System.Threading.Tasks.Task<Workbook> CreateAsync(Workbook workbookToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Workbook> CreateAsync(Workbook workbookToCreate);
+
+        /// <summary>
         /// Creates the specified Workbook using POST.
         /// </summary>
         /// <param name="workbookToCreate">The Workbook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Workbook.</returns>
         System.Threading.Tasks.Task<Workbook> CreateAsync(Workbook workbookToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Workbook using POST and returns a <see cref="GraphResponse{Workbook}"/> object.
+        /// </summary>
+        /// <param name="workbookToCreate">The Workbook to create.</param>
+        /// <returns>The <see cref="GraphResponse{Workbook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Workbook>> CreateResponseAsync(Workbook workbookToCreate);
+
+        /// <summary>
+        /// Creates the specified Workbook using POST and returns a <see cref="GraphResponse{Workbook}"/> object.
+        /// </summary>
+        /// <param name="workbookToCreate">The Workbook to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Workbook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Workbook>> CreateResponseAsync(Workbook workbookToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Workbook.

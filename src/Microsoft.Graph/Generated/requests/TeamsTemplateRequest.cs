@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TeamsTemplate using POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> CreateResponseAsync(TeamsTemplate teamsTemplateToCreate)
+        {
+            return this.CreateResponseAsync(teamsTemplateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TeamsTemplate using POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> CreateResponseAsync(TeamsTemplate teamsTemplateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TeamsTemplate>(teamsTemplateToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TeamsTemplate.
         /// </summary>
         /// <returns>The task to await.</returns>

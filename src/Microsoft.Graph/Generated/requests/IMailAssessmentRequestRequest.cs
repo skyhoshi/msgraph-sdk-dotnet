@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mailAssessmentRequestObjectToCreate">The MailAssessmentRequestObject to create.</param>
         /// <returns>The created MailAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<MailAssessmentRequestObject> CreateAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MailAssessmentRequestObject> CreateAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified MailAssessmentRequestObject using POST.
         /// </summary>
         /// <param name="mailAssessmentRequestObjectToCreate">The MailAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailAssessmentRequestObject.</returns>
         System.Threading.Tasks.Task<MailAssessmentRequestObject> CreateAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MailAssessmentRequestObject using POST and returns a <see cref="GraphResponse{MailAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="mailAssessmentRequestObjectToCreate">The MailAssessmentRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{MailAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailAssessmentRequestObject>> CreateResponseAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified MailAssessmentRequestObject using POST and returns a <see cref="GraphResponse{MailAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="mailAssessmentRequestObjectToCreate">The MailAssessmentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailAssessmentRequestObject>> CreateResponseAsync(MailAssessmentRequestObject mailAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MailAssessmentRequestObject.

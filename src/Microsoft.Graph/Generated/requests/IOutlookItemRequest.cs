@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
         /// <returns>The created OutlookItem.</returns>
-        System.Threading.Tasks.Task<OutlookItem> CreateAsync(OutlookItem outlookItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OutlookItem> CreateAsync(OutlookItem outlookItemToCreate);
+
+        /// <summary>
         /// Creates the specified OutlookItem using POST.
         /// </summary>
         /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookItem.</returns>
         System.Threading.Tasks.Task<OutlookItem> CreateAsync(OutlookItem outlookItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OutlookItem using POST and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookItem>> CreateResponseAsync(OutlookItem outlookItemToCreate);
+
+        /// <summary>
+        /// Creates the specified OutlookItem using POST and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <param name="outlookItemToCreate">The OutlookItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookItem>> CreateResponseAsync(OutlookItem outlookItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OutlookItem.

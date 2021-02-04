@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="updateRecordingStatusOperationToCreate">The UpdateRecordingStatusOperation to create.</param>
         /// <returns>The created UpdateRecordingStatusOperation.</returns>
-        System.Threading.Tasks.Task<UpdateRecordingStatusOperation> CreateAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UpdateRecordingStatusOperation> CreateAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToCreate);
+
+        /// <summary>
         /// Creates the specified UpdateRecordingStatusOperation using POST.
         /// </summary>
         /// <param name="updateRecordingStatusOperationToCreate">The UpdateRecordingStatusOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UpdateRecordingStatusOperation.</returns>
         System.Threading.Tasks.Task<UpdateRecordingStatusOperation> CreateAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UpdateRecordingStatusOperation using POST and returns a <see cref="GraphResponse{UpdateRecordingStatusOperation}"/> object.
+        /// </summary>
+        /// <param name="updateRecordingStatusOperationToCreate">The UpdateRecordingStatusOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{UpdateRecordingStatusOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UpdateRecordingStatusOperation>> CreateResponseAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified UpdateRecordingStatusOperation using POST and returns a <see cref="GraphResponse{UpdateRecordingStatusOperation}"/> object.
+        /// </summary>
+        /// <param name="updateRecordingStatusOperationToCreate">The UpdateRecordingStatusOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UpdateRecordingStatusOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UpdateRecordingStatusOperation>> CreateResponseAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UpdateRecordingStatusOperation.

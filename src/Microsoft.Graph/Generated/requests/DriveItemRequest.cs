@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate)
+        {
+            return this.CreateResponseAsync(driveItemToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DriveItem>(driveItemToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DriveItem.
         /// </summary>
         /// <returns>The task to await.</returns>

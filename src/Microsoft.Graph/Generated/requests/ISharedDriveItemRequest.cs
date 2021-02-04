@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <returns>The created SharedDriveItem.</returns>
-        System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate);
+
+        /// <summary>
         /// Creates the specified SharedDriveItem using POST.
         /// </summary>
         /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedDriveItem.</returns>
         System.Threading.Tasks.Task<SharedDriveItem> CreateAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SharedDriveItem using POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
+        /// </summary>
+        /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate);
+
+        /// <summary>
+        /// Creates the specified SharedDriveItem using POST and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
+        /// </summary>
+        /// <param name="sharedDriveItemToCreate">The SharedDriveItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> CreateResponseAsync(SharedDriveItem sharedDriveItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SharedDriveItem.

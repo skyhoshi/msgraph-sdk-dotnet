@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
         /// <returns>The created MuteParticipantOperation.</returns>
-        System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate);
+
+        /// <summary>
         /// Creates the specified MuteParticipantOperation using POST.
         /// </summary>
         /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MuteParticipantOperation.</returns>
         System.Threading.Tasks.Task<MuteParticipantOperation> CreateAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MuteParticipantOperation using POST and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified MuteParticipantOperation using POST and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MuteParticipantOperation.

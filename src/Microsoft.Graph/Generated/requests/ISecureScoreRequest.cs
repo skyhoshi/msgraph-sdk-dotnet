@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="secureScoreToCreate">The SecureScore to create.</param>
         /// <returns>The created SecureScore.</returns>
-        System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate);
+
+        /// <summary>
         /// Creates the specified SecureScore using POST.
         /// </summary>
         /// <param name="secureScoreToCreate">The SecureScore to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecureScore.</returns>
         System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SecureScore using POST and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="secureScoreToCreate">The SecureScore to create.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> CreateResponseAsync(SecureScore secureScoreToCreate);
+
+        /// <summary>
+        /// Creates the specified SecureScore using POST and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="secureScoreToCreate">The SecureScore to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> CreateResponseAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SecureScore.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
         /// <returns>The created DeviceEnrollmentLimitConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceEnrollmentLimitConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceEnrollmentLimitConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> CreateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> CreateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceEnrollmentLimitConfiguration.

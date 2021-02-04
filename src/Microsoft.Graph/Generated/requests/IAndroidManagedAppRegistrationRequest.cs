@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
         /// <returns>The created AndroidManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<AndroidManagedAppRegistration> CreateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidManagedAppRegistration> CreateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidManagedAppRegistration using POST.
         /// </summary>
         /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidManagedAppRegistration.</returns>
         System.Threading.Tasks.Task<AndroidManagedAppRegistration> CreateAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidManagedAppRegistration using POST and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> CreateResponseAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidManagedAppRegistration using POST and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppRegistrationToCreate">The AndroidManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> CreateResponseAsync(AndroidManagedAppRegistration androidManagedAppRegistrationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidManagedAppRegistration.

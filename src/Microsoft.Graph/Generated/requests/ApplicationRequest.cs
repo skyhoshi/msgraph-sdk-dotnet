@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Application using POST and returns a <see cref="GraphResponse{Application}"/> object.
+        /// </summary>
+        /// <param name="applicationToCreate">The Application to create.</param>
+        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Application>> CreateResponseAsync(Application applicationToCreate)
+        {
+            return this.CreateResponseAsync(applicationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Application using POST and returns a <see cref="GraphResponse{Application}"/> object.
+        /// </summary>
+        /// <param name="applicationToCreate">The Application to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Application>> CreateResponseAsync(Application applicationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Application>(applicationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Application.
         /// </summary>
         /// <returns>The task to await.</returns>

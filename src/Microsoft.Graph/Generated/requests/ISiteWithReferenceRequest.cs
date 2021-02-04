@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="siteToCreate">The Site to create.</param>
         /// <returns>The created Site.</returns>
-        System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate);
+
+        /// <summary>
         /// Creates the specified Site using POST.
         /// </summary>
         /// <param name="siteToCreate">The Site to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Site.</returns>
         System.Threading.Tasks.Task<Site> CreateAsync(Site siteToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified Site using POST and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToCreate">The Site to create.</param>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Site>> CreateResponseAsync(Site siteToCreate);
+
+        /// <summary>
+        /// Creates the specified Site using POST and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToCreate">The Site to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Site>> CreateResponseAsync(Site siteToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified Site using PATCH.

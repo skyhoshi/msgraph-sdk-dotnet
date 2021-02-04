@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MobileAppContent using POST and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> CreateResponseAsync(MobileAppContent mobileAppContentToCreate)
+        {
+            return this.CreateResponseAsync(mobileAppContentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MobileAppContent using POST and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> CreateResponseAsync(MobileAppContent mobileAppContentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileAppContent>(mobileAppContentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MobileAppContent.
         /// </summary>
         /// <returns>The task to await.</returns>

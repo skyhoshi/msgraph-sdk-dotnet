@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidManagedAppProtection using POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> CreateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate)
+        {
+            return this.CreateResponseAsync(androidManagedAppProtectionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidManagedAppProtection using POST and returns a <see cref="GraphResponse{AndroidManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="androidManagedAppProtectionToCreate">The AndroidManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> CreateResponseAsync(AndroidManagedAppProtection androidManagedAppProtectionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidManagedAppProtection>(androidManagedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidManagedAppProtection.
         /// </summary>
         /// <returns>The task to await.</returns>

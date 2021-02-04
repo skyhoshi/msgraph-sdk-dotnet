@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified RemoteAssistancePartner using POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> CreateResponseAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate)
+        {
+            return this.CreateResponseAsync(remoteAssistancePartnerToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified RemoteAssistancePartner using POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <param name="remoteAssistancePartnerToCreate">The RemoteAssistancePartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> CreateResponseAsync(RemoteAssistancePartner remoteAssistancePartnerToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RemoteAssistancePartner>(remoteAssistancePartnerToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified RemoteAssistancePartner.
         /// </summary>
         /// <returns>The task to await.</returns>

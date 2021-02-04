@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="listToCreate">The List to create.</param>
         /// <returns>The created List.</returns>
-        System.Threading.Tasks.Task<List> CreateAsync(List listToCreate);        /// <summary>
+        System.Threading.Tasks.Task<List> CreateAsync(List listToCreate);
+
+        /// <summary>
         /// Creates the specified List using POST.
         /// </summary>
         /// <param name="listToCreate">The List to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created List.</returns>
         System.Threading.Tasks.Task<List> CreateAsync(List listToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified List using POST and returns a <see cref="GraphResponse{List}"/> object.
+        /// </summary>
+        /// <param name="listToCreate">The List to create.</param>
+        /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<List>> CreateResponseAsync(List listToCreate);
+
+        /// <summary>
+        /// Creates the specified List using POST and returns a <see cref="GraphResponse{List}"/> object.
+        /// </summary>
+        /// <param name="listToCreate">The List to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{List}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<List>> CreateResponseAsync(List listToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified List.

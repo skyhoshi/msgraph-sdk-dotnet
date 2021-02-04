@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookNamedItemToCreate">The WorkbookNamedItem to create.</param>
         /// <returns>The created WorkbookNamedItem.</returns>
-        System.Threading.Tasks.Task<WorkbookNamedItem> CreateAsync(WorkbookNamedItem workbookNamedItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookNamedItem> CreateAsync(WorkbookNamedItem workbookNamedItemToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookNamedItem using POST.
         /// </summary>
         /// <param name="workbookNamedItemToCreate">The WorkbookNamedItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookNamedItem.</returns>
         System.Threading.Tasks.Task<WorkbookNamedItem> CreateAsync(WorkbookNamedItem workbookNamedItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookNamedItem using POST and returns a <see cref="GraphResponse{WorkbookNamedItem}"/> object.
+        /// </summary>
+        /// <param name="workbookNamedItemToCreate">The WorkbookNamedItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamedItem>> CreateResponseAsync(WorkbookNamedItem workbookNamedItemToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookNamedItem using POST and returns a <see cref="GraphResponse{WorkbookNamedItem}"/> object.
+        /// </summary>
+        /// <param name="workbookNamedItemToCreate">The WorkbookNamedItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamedItem>> CreateResponseAsync(WorkbookNamedItem workbookNamedItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookNamedItem.

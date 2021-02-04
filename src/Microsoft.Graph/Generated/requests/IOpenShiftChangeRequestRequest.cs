@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
         /// <returns>The created OpenShiftChangeRequestObject.</returns>
-        System.Threading.Tasks.Task<OpenShiftChangeRequestObject> CreateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OpenShiftChangeRequestObject> CreateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified OpenShiftChangeRequestObject using POST.
         /// </summary>
         /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenShiftChangeRequestObject.</returns>
         System.Threading.Tasks.Task<OpenShiftChangeRequestObject> CreateAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OpenShiftChangeRequestObject using POST and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> CreateResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified OpenShiftChangeRequestObject using POST and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> CreateResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OpenShiftChangeRequestObject.

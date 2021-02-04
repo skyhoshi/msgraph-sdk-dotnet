@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <returns>The created ManagedAppRegistration.</returns>
-        System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppRegistration using POST.
         /// </summary>
         /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppRegistration.</returns>
         System.Threading.Tasks.Task<ManagedAppRegistration> CreateAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified ManagedAppRegistration using POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> CreateResponseAsync(ManagedAppRegistration managedAppRegistrationToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppRegistration using POST and returns a <see cref="GraphResponse{ManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="managedAppRegistrationToCreate">The ManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> CreateResponseAsync(ManagedAppRegistration managedAppRegistrationToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified ManagedAppRegistration using PATCH.

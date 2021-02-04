@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartDataLabelFormatToCreate">The WorkbookChartDataLabelFormat to create.</param>
         /// <returns>The created WorkbookChartDataLabelFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartDataLabelFormat> CreateAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartDataLabelFormat> CreateAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartDataLabelFormat using POST.
         /// </summary>
         /// <param name="workbookChartDataLabelFormatToCreate">The WorkbookChartDataLabelFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartDataLabelFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartDataLabelFormat> CreateAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartDataLabelFormat using POST and returns a <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelFormatToCreate">The WorkbookChartDataLabelFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabelFormat>> CreateResponseAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartDataLabelFormat using POST and returns a <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelFormatToCreate">The WorkbookChartDataLabelFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabelFormat>> CreateResponseAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartDataLabelFormat.

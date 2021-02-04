@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WebApp using POST and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToCreate">The WebApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate)
+        {
+            return this.CreateResponseAsync(webAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WebApp using POST and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToCreate">The WebApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WebApp>(webAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WebApp.
         /// </summary>
         /// <returns>The task to await.</returns>

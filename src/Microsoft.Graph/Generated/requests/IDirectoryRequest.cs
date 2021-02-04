@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryToCreate">The Directory to create.</param>
         /// <returns>The created Directory.</returns>
-        System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate);
+
+        /// <summary>
         /// Creates the specified Directory using POST.
         /// </summary>
         /// <param name="directoryToCreate">The Directory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Directory.</returns>
         System.Threading.Tasks.Task<Directory> CreateAsync(Directory directoryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Directory using POST and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// </summary>
+        /// <param name="directoryToCreate">The Directory to create.</param>
+        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Directory>> CreateResponseAsync(Directory directoryToCreate);
+
+        /// <summary>
+        /// Creates the specified Directory using POST and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// </summary>
+        /// <param name="directoryToCreate">The Directory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Directory>> CreateResponseAsync(Directory directoryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Directory.

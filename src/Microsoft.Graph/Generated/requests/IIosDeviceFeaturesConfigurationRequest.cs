@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
         /// <returns>The created IosDeviceFeaturesConfiguration.</returns>
-        System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> CreateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> CreateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified IosDeviceFeaturesConfiguration using POST.
         /// </summary>
         /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosDeviceFeaturesConfiguration.</returns>
         System.Threading.Tasks.Task<IosDeviceFeaturesConfiguration> CreateAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosDeviceFeaturesConfiguration using POST and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> CreateResponseAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified IosDeviceFeaturesConfiguration using POST and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> CreateResponseAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosDeviceFeaturesConfiguration.

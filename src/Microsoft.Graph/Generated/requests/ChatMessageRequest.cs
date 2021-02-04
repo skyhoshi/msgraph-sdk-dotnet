@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ChatMessage using POST and returns a <see cref="GraphResponse{ChatMessage}"/> object.
+        /// </summary>
+        /// <param name="chatMessageToCreate">The ChatMessage to create.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChatMessage>> CreateResponseAsync(ChatMessage chatMessageToCreate)
+        {
+            return this.CreateResponseAsync(chatMessageToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ChatMessage using POST and returns a <see cref="GraphResponse{ChatMessage}"/> object.
+        /// </summary>
+        /// <param name="chatMessageToCreate">The ChatMessage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessage}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChatMessage>> CreateResponseAsync(ChatMessage chatMessageToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ChatMessage>(chatMessageToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ChatMessage.
         /// </summary>
         /// <returns>The task to await.</returns>

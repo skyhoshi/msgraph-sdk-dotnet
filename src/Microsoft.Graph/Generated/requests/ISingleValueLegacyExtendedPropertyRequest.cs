@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
         /// <returns>The created SingleValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> CreateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> CreateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate);
+
+        /// <summary>
         /// Creates the specified SingleValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SingleValueLegacyExtendedProperty.</returns>
         System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> CreateAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SingleValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
+        /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> CreateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate);
+
+        /// <summary>
+        /// Creates the specified SingleValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="singleValueLegacyExtendedPropertyToCreate">The SingleValueLegacyExtendedProperty to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> CreateResponseAsync(SingleValueLegacyExtendedProperty singleValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SingleValueLegacyExtendedProperty.

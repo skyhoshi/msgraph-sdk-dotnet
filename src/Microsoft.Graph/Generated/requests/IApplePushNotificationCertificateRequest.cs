@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
         /// <returns>The created ApplePushNotificationCertificate.</returns>
-        System.Threading.Tasks.Task<ApplePushNotificationCertificate> CreateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ApplePushNotificationCertificate> CreateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate);
+
+        /// <summary>
         /// Creates the specified ApplePushNotificationCertificate using POST.
         /// </summary>
         /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApplePushNotificationCertificate.</returns>
         System.Threading.Tasks.Task<ApplePushNotificationCertificate> CreateAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ApplePushNotificationCertificate using POST and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
+        /// </summary>
+        /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
+        /// <returns>The <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> CreateResponseAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate);
+
+        /// <summary>
+        /// Creates the specified ApplePushNotificationCertificate using POST and returns a <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object.
+        /// </summary>
+        /// <param name="applePushNotificationCertificateToCreate">The ApplePushNotificationCertificate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ApplePushNotificationCertificate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ApplePushNotificationCertificate>> CreateResponseAsync(ApplePushNotificationCertificate applePushNotificationCertificateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ApplePushNotificationCertificate.

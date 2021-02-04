@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnenoteEntitySchemaObjectModel using POST and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> CreateResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate)
+        {
+            return this.CreateResponseAsync(onenoteEntitySchemaObjectModelToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnenoteEntitySchemaObjectModel using POST and returns a <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntitySchemaObjectModelToCreate">The OnenoteEntitySchemaObjectModel to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntitySchemaObjectModel}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteEntitySchemaObjectModel>> CreateResponseAsync(OnenoteEntitySchemaObjectModel onenoteEntitySchemaObjectModelToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnenoteEntitySchemaObjectModel>(onenoteEntitySchemaObjectModelToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnenoteEntitySchemaObjectModel.
         /// </summary>
         /// <returns>The task to await.</returns>

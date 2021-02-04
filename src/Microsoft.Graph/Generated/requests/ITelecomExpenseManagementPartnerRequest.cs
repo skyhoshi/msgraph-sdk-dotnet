@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
         /// <returns>The created TelecomExpenseManagementPartner.</returns>
-        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> CreateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TelecomExpenseManagementPartner> CreateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate);
+
+        /// <summary>
         /// Creates the specified TelecomExpenseManagementPartner using POST.
         /// </summary>
         /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TelecomExpenseManagementPartner.</returns>
         System.Threading.Tasks.Task<TelecomExpenseManagementPartner> CreateAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TelecomExpenseManagementPartner using POST and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> CreateResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate);
+
+        /// <summary>
+        /// Creates the specified TelecomExpenseManagementPartner using POST and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartnerToCreate">The TelecomExpenseManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> CreateResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartnerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TelecomExpenseManagementPartner.

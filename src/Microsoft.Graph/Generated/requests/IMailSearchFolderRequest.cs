@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
         /// <returns>The created MailSearchFolder.</returns>
-        System.Threading.Tasks.Task<MailSearchFolder> CreateAsync(MailSearchFolder mailSearchFolderToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MailSearchFolder> CreateAsync(MailSearchFolder mailSearchFolderToCreate);
+
+        /// <summary>
         /// Creates the specified MailSearchFolder using POST.
         /// </summary>
         /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MailSearchFolder.</returns>
         System.Threading.Tasks.Task<MailSearchFolder> CreateAsync(MailSearchFolder mailSearchFolderToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MailSearchFolder using POST and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> CreateResponseAsync(MailSearchFolder mailSearchFolderToCreate);
+
+        /// <summary>
+        /// Creates the specified MailSearchFolder using POST and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> CreateResponseAsync(MailSearchFolder mailSearchFolderToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MailSearchFolder.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartAxisFormatToCreate">The WorkbookChartAxisFormat to create.</param>
         /// <returns>The created WorkbookChartAxisFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAxisFormat> CreateAsync(WorkbookChartAxisFormat workbookChartAxisFormatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartAxisFormat> CreateAsync(WorkbookChartAxisFormat workbookChartAxisFormatToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartAxisFormat using POST.
         /// </summary>
         /// <param name="workbookChartAxisFormatToCreate">The WorkbookChartAxisFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartAxisFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartAxisFormat> CreateAsync(WorkbookChartAxisFormat workbookChartAxisFormatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxisFormat using POST and returns a <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisFormatToCreate">The WorkbookChartAxisFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisFormat>> CreateResponseAsync(WorkbookChartAxisFormat workbookChartAxisFormatToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxisFormat using POST and returns a <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisFormatToCreate">The WorkbookChartAxisFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisFormat>> CreateResponseAsync(WorkbookChartAxisFormat workbookChartAxisFormatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartAxisFormat.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookComment using POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> CreateResponseAsync(WorkbookComment workbookCommentToCreate)
+        {
+            return this.CreateResponseAsync(workbookCommentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookComment using POST and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentToCreate">The WorkbookComment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> CreateResponseAsync(WorkbookComment workbookCommentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookComment>(workbookCommentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookComment.
         /// </summary>
         /// <returns>The task to await.</returns>

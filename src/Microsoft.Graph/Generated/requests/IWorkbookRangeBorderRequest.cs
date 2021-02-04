@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookRangeBorder using POST.
         /// </summary>
         /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
         System.Threading.Tasks.Task<WorkbookRangeBorder> CreateAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookRangeBorder.

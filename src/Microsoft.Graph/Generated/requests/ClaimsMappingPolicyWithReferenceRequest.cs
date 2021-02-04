@@ -81,6 +81,29 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Creates the specified ClaimsMappingPolicy using POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToCreate">The ClaimsMappingPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> CreateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToCreate)
+        {
+            return this.CreateResponseAsync(claimsMappingPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ClaimsMappingPolicy using POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToCreate">The ClaimsMappingPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> CreateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ClaimsMappingPolicy>(claimsMappingPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Updates the specified ClaimsMappingPolicy using PATCH.
         /// </summary>
         /// <param name="claimsMappingPolicyToUpdate">The ClaimsMappingPolicy to update.</param>

@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationClassToCreate">The EducationClass to create.</param>
         /// <returns>The created EducationClass.</returns>
-        System.Threading.Tasks.Task<EducationClass> CreateAsync(EducationClass educationClassToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationClass> CreateAsync(EducationClass educationClassToCreate);
+
+        /// <summary>
         /// Creates the specified EducationClass using POST.
         /// </summary>
         /// <param name="educationClassToCreate">The EducationClass to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationClass.</returns>
         System.Threading.Tasks.Task<EducationClass> CreateAsync(EducationClass educationClassToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified EducationClass using POST and returns a <see cref="GraphResponse{EducationClass}"/> object.
+        /// </summary>
+        /// <param name="educationClassToCreate">The EducationClass to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationClass}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationClass>> CreateResponseAsync(EducationClass educationClassToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationClass using POST and returns a <see cref="GraphResponse{EducationClass}"/> object.
+        /// </summary>
+        /// <param name="educationClassToCreate">The EducationClass to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationClass}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationClass>> CreateResponseAsync(EducationClass educationClassToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified EducationClass using PATCH.

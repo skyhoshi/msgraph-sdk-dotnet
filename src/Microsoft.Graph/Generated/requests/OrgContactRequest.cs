@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OrgContact using POST and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <param name="orgContactToCreate">The OrgContact to create.</param>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OrgContact>> CreateResponseAsync(OrgContact orgContactToCreate)
+        {
+            return this.CreateResponseAsync(orgContactToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OrgContact using POST and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <param name="orgContactToCreate">The OrgContact to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OrgContact>> CreateResponseAsync(OrgContact orgContactToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OrgContact>(orgContactToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OrgContact.
         /// </summary>
         /// <returns>The task to await.</returns>

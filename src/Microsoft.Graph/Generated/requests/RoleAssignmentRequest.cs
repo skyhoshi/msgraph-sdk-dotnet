@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified RoleAssignment using POST and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> CreateResponseAsync(RoleAssignment roleAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(roleAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified RoleAssignment using POST and returns a <see cref="GraphResponse{RoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="roleAssignmentToCreate">The RoleAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> CreateResponseAsync(RoleAssignment roleAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RoleAssignment>(roleAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified RoleAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>

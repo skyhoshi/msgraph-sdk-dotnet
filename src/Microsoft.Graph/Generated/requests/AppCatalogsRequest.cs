@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AppCatalogs using POST and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> CreateResponseAsync(AppCatalogs appCatalogsToCreate)
+        {
+            return this.CreateResponseAsync(appCatalogsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AppCatalogs using POST and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToCreate">The AppCatalogs to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> CreateResponseAsync(AppCatalogs appCatalogsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AppCatalogs>(appCatalogsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AppCatalogs.
         /// </summary>
         /// <returns>The task to await.</returns>

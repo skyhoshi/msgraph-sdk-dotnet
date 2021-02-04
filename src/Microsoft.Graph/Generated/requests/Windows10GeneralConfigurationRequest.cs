@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows10GeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> CreateResponseAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windows10GeneralConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows10GeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> CreateResponseAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows10GeneralConfiguration>(windows10GeneralConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows10GeneralConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

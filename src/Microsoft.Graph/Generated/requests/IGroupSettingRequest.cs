@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupSettingToCreate">The GroupSetting to create.</param>
         /// <returns>The created GroupSetting.</returns>
-        System.Threading.Tasks.Task<GroupSetting> CreateAsync(GroupSetting groupSettingToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupSetting> CreateAsync(GroupSetting groupSettingToCreate);
+
+        /// <summary>
         /// Creates the specified GroupSetting using POST.
         /// </summary>
         /// <param name="groupSettingToCreate">The GroupSetting to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupSetting.</returns>
         System.Threading.Tasks.Task<GroupSetting> CreateAsync(GroupSetting groupSettingToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupSetting using POST and returns a <see cref="GraphResponse{GroupSetting}"/> object.
+        /// </summary>
+        /// <param name="groupSettingToCreate">The GroupSetting to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSetting>> CreateResponseAsync(GroupSetting groupSettingToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupSetting using POST and returns a <see cref="GraphResponse{GroupSetting}"/> object.
+        /// </summary>
+        /// <param name="groupSettingToCreate">The GroupSetting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSetting>> CreateResponseAsync(GroupSetting groupSettingToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupSetting.

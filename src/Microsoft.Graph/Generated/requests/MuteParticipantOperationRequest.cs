@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MuteParticipantOperation using POST and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate)
+        {
+            return this.CreateResponseAsync(muteParticipantOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MuteParticipantOperation using POST and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="muteParticipantOperationToCreate">The MuteParticipantOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> CreateResponseAsync(MuteParticipantOperation muteParticipantOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MuteParticipantOperation>(muteParticipantOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MuteParticipantOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

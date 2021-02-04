@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate)
+        {
+            return this.CreateResponseAsync(conditionalAccessPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ConditionalAccessPolicy>(conditionalAccessPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ConditionalAccessPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

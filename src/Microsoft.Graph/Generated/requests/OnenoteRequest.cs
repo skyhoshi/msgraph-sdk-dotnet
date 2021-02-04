@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Onenote using POST and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToCreate">The Onenote to create.</param>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Onenote>> CreateResponseAsync(Onenote onenoteToCreate)
+        {
+            return this.CreateResponseAsync(onenoteToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Onenote using POST and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToCreate">The Onenote to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Onenote>> CreateResponseAsync(Onenote onenoteToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Onenote>(onenoteToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Onenote.
         /// </summary>
         /// <returns>The task to await.</returns>

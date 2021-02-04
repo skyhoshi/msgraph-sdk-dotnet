@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OpenShiftChangeRequestObject using POST and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> CreateResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(openShiftChangeRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OpenShiftChangeRequestObject using POST and returns a <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="openShiftChangeRequestObjectToCreate">The OpenShiftChangeRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShiftChangeRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OpenShiftChangeRequestObject>> CreateResponseAsync(OpenShiftChangeRequestObject openShiftChangeRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OpenShiftChangeRequestObject>(openShiftChangeRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OpenShiftChangeRequest.
         /// </summary>
         /// <returns>The task to await.</returns>

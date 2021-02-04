@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteToCreate">The Onenote to create.</param>
         /// <returns>The created Onenote.</returns>
-        System.Threading.Tasks.Task<Onenote> CreateAsync(Onenote onenoteToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Onenote> CreateAsync(Onenote onenoteToCreate);
+
+        /// <summary>
         /// Creates the specified Onenote using POST.
         /// </summary>
         /// <param name="onenoteToCreate">The Onenote to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Onenote.</returns>
         System.Threading.Tasks.Task<Onenote> CreateAsync(Onenote onenoteToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Onenote using POST and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToCreate">The Onenote to create.</param>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Onenote>> CreateResponseAsync(Onenote onenoteToCreate);
+
+        /// <summary>
+        /// Creates the specified Onenote using POST and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToCreate">The Onenote to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Onenote>> CreateResponseAsync(Onenote onenoteToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Onenote.

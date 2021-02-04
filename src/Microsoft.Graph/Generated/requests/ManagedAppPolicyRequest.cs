@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedAppPolicy using POST and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> CreateResponseAsync(ManagedAppPolicy managedAppPolicyToCreate)
+        {
+            return this.CreateResponseAsync(managedAppPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicy using POST and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyToCreate">The ManagedAppPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> CreateResponseAsync(ManagedAppPolicy managedAppPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedAppPolicy>(managedAppPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedAppPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

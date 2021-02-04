@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationRootToCreate">The EducationRoot to create.</param>
         /// <returns>The created EducationRoot.</returns>
-        System.Threading.Tasks.Task<EducationRoot> CreateAsync(EducationRoot educationRootToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationRoot> CreateAsync(EducationRoot educationRootToCreate);
+
+        /// <summary>
         /// Creates the specified EducationRoot using POST.
         /// </summary>
         /// <param name="educationRootToCreate">The EducationRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationRoot.</returns>
         System.Threading.Tasks.Task<EducationRoot> CreateAsync(EducationRoot educationRootToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EducationRoot using POST and returns a <see cref="GraphResponse{EducationRoot}"/> object.
+        /// </summary>
+        /// <param name="educationRootToCreate">The EducationRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRoot>> CreateResponseAsync(EducationRoot educationRootToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationRoot using POST and returns a <see cref="GraphResponse{EducationRoot}"/> object.
+        /// </summary>
+        /// <param name="educationRootToCreate">The EducationRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationRoot>> CreateResponseAsync(EducationRoot educationRootToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EducationRoot.

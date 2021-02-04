@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <returns>The created DetectedApp.</returns>
-        System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate);
+
+        /// <summary>
         /// Creates the specified DetectedApp using POST.
         /// </summary>
         /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DetectedApp.</returns>
         System.Threading.Tasks.Task<DetectedApp> CreateAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate);
+
+        /// <summary>
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DetectedApp.

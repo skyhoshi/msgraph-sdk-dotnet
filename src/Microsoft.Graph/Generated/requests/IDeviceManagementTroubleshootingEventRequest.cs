@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
-        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> CreateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> CreateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementTroubleshootingEvent using POST.
         /// </summary>
         /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
         System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> CreateAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementTroubleshootingEvent using POST and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> CreateResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementTroubleshootingEvent using POST and returns a <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementTroubleshootingEventToCreate">The DeviceManagementTroubleshootingEvent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> CreateResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEventToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementTroubleshootingEvent.

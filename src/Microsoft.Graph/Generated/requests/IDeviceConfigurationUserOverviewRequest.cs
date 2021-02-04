@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceConfigurationUserOverviewToCreate">The DeviceConfigurationUserOverview to create.</param>
         /// <returns>The created DeviceConfigurationUserOverview.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserOverview> CreateAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceConfigurationUserOverview> CreateAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceConfigurationUserOverview using POST.
         /// </summary>
         /// <param name="deviceConfigurationUserOverviewToCreate">The DeviceConfigurationUserOverview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationUserOverview.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationUserOverview> CreateAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationUserOverview using POST and returns a <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserOverviewToCreate">The DeviceConfigurationUserOverview to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserOverview>> CreateResponseAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationUserOverview using POST and returns a <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserOverviewToCreate">The DeviceConfigurationUserOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserOverview>> CreateResponseAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceConfigurationUserOverview.

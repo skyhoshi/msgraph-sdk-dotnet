@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
         /// <returns>The created TokenIssuancePolicy.</returns>
-        System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified TokenIssuancePolicy using POST.
         /// </summary>
         /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TokenIssuancePolicy.</returns>
         System.Threading.Tasks.Task<TokenIssuancePolicy> CreateAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified TokenIssuancePolicy using POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> CreateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified TokenIssuancePolicy using POST and returns a <see cref="GraphResponse{TokenIssuancePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenIssuancePolicyToCreate">The TokenIssuancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TokenIssuancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenIssuancePolicy>> CreateResponseAsync(TokenIssuancePolicy tokenIssuancePolicyToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified TokenIssuancePolicy using PATCH.

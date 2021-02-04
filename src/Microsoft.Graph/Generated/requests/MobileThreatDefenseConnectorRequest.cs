@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MobileThreatDefenseConnector using POST and returns a <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object.
+        /// </summary>
+        /// <param name="mobileThreatDefenseConnectorToCreate">The MobileThreatDefenseConnector to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> CreateResponseAsync(MobileThreatDefenseConnector mobileThreatDefenseConnectorToCreate)
+        {
+            return this.CreateResponseAsync(mobileThreatDefenseConnectorToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MobileThreatDefenseConnector using POST and returns a <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object.
+        /// </summary>
+        /// <param name="mobileThreatDefenseConnectorToCreate">The MobileThreatDefenseConnector to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> CreateResponseAsync(MobileThreatDefenseConnector mobileThreatDefenseConnectorToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileThreatDefenseConnector>(mobileThreatDefenseConnectorToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MobileThreatDefenseConnector.
         /// </summary>
         /// <returns>The task to await.</returns>

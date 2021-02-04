@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
         /// <returns>The created DeviceInstallState.</returns>
-        System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceInstallState using POST.
         /// </summary>
         /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceInstallState.</returns>
         System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceInstallState using POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
+        /// </summary>
+        /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> CreateResponseAsync(DeviceInstallState deviceInstallStateToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceInstallState using POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object.
+        /// </summary>
+        /// <param name="deviceInstallStateToCreate">The DeviceInstallState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> CreateResponseAsync(DeviceInstallState deviceInstallStateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceInstallState.

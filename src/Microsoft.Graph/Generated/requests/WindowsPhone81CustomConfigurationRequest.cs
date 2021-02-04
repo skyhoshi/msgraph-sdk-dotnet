@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsPhone81CustomConfiguration using POST and returns a <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81CustomConfigurationToCreate">The WindowsPhone81CustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CustomConfiguration>> CreateResponseAsync(WindowsPhone81CustomConfiguration windowsPhone81CustomConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windowsPhone81CustomConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsPhone81CustomConfiguration using POST and returns a <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81CustomConfigurationToCreate">The WindowsPhone81CustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CustomConfiguration>> CreateResponseAsync(WindowsPhone81CustomConfiguration windowsPhone81CustomConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81CustomConfiguration>(windowsPhone81CustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsPhone81CustomConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

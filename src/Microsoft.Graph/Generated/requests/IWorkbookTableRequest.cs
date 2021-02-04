@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
         /// <returns>The created WorkbookTable.</returns>
-        System.Threading.Tasks.Task<WorkbookTable> CreateAsync(WorkbookTable workbookTableToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookTable> CreateAsync(WorkbookTable workbookTableToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookTable using POST.
         /// </summary>
         /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTable.</returns>
         System.Threading.Tasks.Task<WorkbookTable> CreateAsync(WorkbookTable workbookTableToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookTable using POST and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> CreateResponseAsync(WorkbookTable workbookTableToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookTable using POST and returns a <see cref="GraphResponse{WorkbookTable}"/> object.
+        /// </summary>
+        /// <param name="workbookTableToCreate">The WorkbookTable to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTable>> CreateResponseAsync(WorkbookTable workbookTableToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookTable.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ActivityHistoryItem using POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> CreateResponseAsync(ActivityHistoryItem activityHistoryItemToCreate)
+        {
+            return this.CreateResponseAsync(activityHistoryItemToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ActivityHistoryItem using POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> CreateResponseAsync(ActivityHistoryItem activityHistoryItemToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ActivityHistoryItem>(activityHistoryItemToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ActivityHistoryItem.
         /// </summary>
         /// <returns>The task to await.</returns>

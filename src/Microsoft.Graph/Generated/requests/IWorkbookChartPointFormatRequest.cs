@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartPointFormatToCreate">The WorkbookChartPointFormat to create.</param>
         /// <returns>The created WorkbookChartPointFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPointFormat> CreateAsync(WorkbookChartPointFormat workbookChartPointFormatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartPointFormat> CreateAsync(WorkbookChartPointFormat workbookChartPointFormatToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartPointFormat using POST.
         /// </summary>
         /// <param name="workbookChartPointFormatToCreate">The WorkbookChartPointFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartPointFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartPointFormat> CreateAsync(WorkbookChartPointFormat workbookChartPointFormatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartPointFormat using POST and returns a <see cref="GraphResponse{WorkbookChartPointFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartPointFormatToCreate">The WorkbookChartPointFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPointFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPointFormat>> CreateResponseAsync(WorkbookChartPointFormat workbookChartPointFormatToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartPointFormat using POST and returns a <see cref="GraphResponse{WorkbookChartPointFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartPointFormatToCreate">The WorkbookChartPointFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPointFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPointFormat>> CreateResponseAsync(WorkbookChartPointFormat workbookChartPointFormatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartPointFormat.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Presence using POST and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToCreate">The Presence to create.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Presence>> CreateResponseAsync(Presence presenceToCreate)
+        {
+            return this.CreateResponseAsync(presenceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Presence using POST and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="presenceToCreate">The Presence to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Presence>> CreateResponseAsync(Presence presenceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Presence>(presenceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Presence.
         /// </summary>
         /// <returns>The task to await.</returns>

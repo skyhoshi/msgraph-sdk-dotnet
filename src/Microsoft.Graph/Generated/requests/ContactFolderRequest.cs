@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ContactFolder using POST and returns a <see cref="GraphResponse{ContactFolder}"/> object.
+        /// </summary>
+        /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
+        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContactFolder>> CreateResponseAsync(ContactFolder contactFolderToCreate)
+        {
+            return this.CreateResponseAsync(contactFolderToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ContactFolder using POST and returns a <see cref="GraphResponse{ContactFolder}"/> object.
+        /// </summary>
+        /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ContactFolder>> CreateResponseAsync(ContactFolder contactFolderToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ContactFolder>(contactFolderToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ContactFolder.
         /// </summary>
         /// <returns>The task to await.</returns>

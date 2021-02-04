@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="delegatedPermissionClassificationToCreate">The DelegatedPermissionClassification to create.</param>
         /// <returns>The created DelegatedPermissionClassification.</returns>
-        System.Threading.Tasks.Task<DelegatedPermissionClassification> CreateAsync(DelegatedPermissionClassification delegatedPermissionClassificationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DelegatedPermissionClassification> CreateAsync(DelegatedPermissionClassification delegatedPermissionClassificationToCreate);
+
+        /// <summary>
         /// Creates the specified DelegatedPermissionClassification using POST.
         /// </summary>
         /// <param name="delegatedPermissionClassificationToCreate">The DelegatedPermissionClassification to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DelegatedPermissionClassification.</returns>
         System.Threading.Tasks.Task<DelegatedPermissionClassification> CreateAsync(DelegatedPermissionClassification delegatedPermissionClassificationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DelegatedPermissionClassification using POST and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <param name="delegatedPermissionClassificationToCreate">The DelegatedPermissionClassification to create.</param>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> CreateResponseAsync(DelegatedPermissionClassification delegatedPermissionClassificationToCreate);
+
+        /// <summary>
+        /// Creates the specified DelegatedPermissionClassification using POST and returns a <see cref="GraphResponse{DelegatedPermissionClassification}"/> object.
+        /// </summary>
+        /// <param name="delegatedPermissionClassificationToCreate">The DelegatedPermissionClassification to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> CreateResponseAsync(DelegatedPermissionClassification delegatedPermissionClassificationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DelegatedPermissionClassification.

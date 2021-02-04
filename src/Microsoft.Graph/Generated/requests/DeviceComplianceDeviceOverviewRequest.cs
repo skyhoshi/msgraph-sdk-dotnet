@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceComplianceDeviceOverview using POST and returns a <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceDeviceOverviewToCreate">The DeviceComplianceDeviceOverview to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceOverview>> CreateResponseAsync(DeviceComplianceDeviceOverview deviceComplianceDeviceOverviewToCreate)
+        {
+            return this.CreateResponseAsync(deviceComplianceDeviceOverviewToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceDeviceOverview using POST and returns a <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceDeviceOverviewToCreate">The DeviceComplianceDeviceOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceOverview}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceOverview>> CreateResponseAsync(DeviceComplianceDeviceOverview deviceComplianceDeviceOverviewToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceComplianceDeviceOverview>(deviceComplianceDeviceOverviewToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceComplianceDeviceOverview.
         /// </summary>
         /// <returns>The task to await.</returns>

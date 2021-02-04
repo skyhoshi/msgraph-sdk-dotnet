@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
         /// <returns>The created ContactFolder.</returns>
-        System.Threading.Tasks.Task<ContactFolder> CreateAsync(ContactFolder contactFolderToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ContactFolder> CreateAsync(ContactFolder contactFolderToCreate);
+
+        /// <summary>
         /// Creates the specified ContactFolder using POST.
         /// </summary>
         /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContactFolder.</returns>
         System.Threading.Tasks.Task<ContactFolder> CreateAsync(ContactFolder contactFolderToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ContactFolder using POST and returns a <see cref="GraphResponse{ContactFolder}"/> object.
+        /// </summary>
+        /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
+        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> CreateResponseAsync(ContactFolder contactFolderToCreate);
+
+        /// <summary>
+        /// Creates the specified ContactFolder using POST and returns a <see cref="GraphResponse{ContactFolder}"/> object.
+        /// </summary>
+        /// <param name="contactFolderToCreate">The ContactFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContactFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContactFolder>> CreateResponseAsync(ContactFolder contactFolderToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ContactFolder.

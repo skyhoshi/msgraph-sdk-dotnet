@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="informationProtectionToCreate">The InformationProtection to create.</param>
         /// <returns>The created InformationProtection.</returns>
-        System.Threading.Tasks.Task<InformationProtection> CreateAsync(InformationProtection informationProtectionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<InformationProtection> CreateAsync(InformationProtection informationProtectionToCreate);
+
+        /// <summary>
         /// Creates the specified InformationProtection using POST.
         /// </summary>
         /// <param name="informationProtectionToCreate">The InformationProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InformationProtection.</returns>
         System.Threading.Tasks.Task<InformationProtection> CreateAsync(InformationProtection informationProtectionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified InformationProtection using POST and returns a <see cref="GraphResponse{InformationProtection}"/> object.
+        /// </summary>
+        /// <param name="informationProtectionToCreate">The InformationProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtection>> CreateResponseAsync(InformationProtection informationProtectionToCreate);
+
+        /// <summary>
+        /// Creates the specified InformationProtection using POST and returns a <see cref="GraphResponse{InformationProtection}"/> object.
+        /// </summary>
+        /// <param name="informationProtectionToCreate">The InformationProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtection>> CreateResponseAsync(InformationProtection informationProtectionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified InformationProtection.

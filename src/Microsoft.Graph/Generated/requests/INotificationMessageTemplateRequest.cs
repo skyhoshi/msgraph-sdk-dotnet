@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
         /// <returns>The created NotificationMessageTemplate.</returns>
-        System.Threading.Tasks.Task<NotificationMessageTemplate> CreateAsync(NotificationMessageTemplate notificationMessageTemplateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<NotificationMessageTemplate> CreateAsync(NotificationMessageTemplate notificationMessageTemplateToCreate);
+
+        /// <summary>
         /// Creates the specified NotificationMessageTemplate using POST.
         /// </summary>
         /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NotificationMessageTemplate.</returns>
         System.Threading.Tasks.Task<NotificationMessageTemplate> CreateAsync(NotificationMessageTemplate notificationMessageTemplateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified NotificationMessageTemplate using POST and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
+        /// </summary>
+        /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> CreateResponseAsync(NotificationMessageTemplate notificationMessageTemplateToCreate);
+
+        /// <summary>
+        /// Creates the specified NotificationMessageTemplate using POST and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
+        /// </summary>
+        /// <param name="notificationMessageTemplateToCreate">The NotificationMessageTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> CreateResponseAsync(NotificationMessageTemplate notificationMessageTemplateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified NotificationMessageTemplate.

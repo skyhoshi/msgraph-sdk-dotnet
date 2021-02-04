@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedMobileLobApp using POST and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> CreateResponseAsync(ManagedMobileLobApp managedMobileLobAppToCreate)
+        {
+            return this.CreateResponseAsync(managedMobileLobAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedMobileLobApp using POST and returns a <see cref="GraphResponse{ManagedMobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileLobAppToCreate">The ManagedMobileLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedMobileLobApp>> CreateResponseAsync(ManagedMobileLobApp managedMobileLobAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedMobileLobApp>(managedMobileLobAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedMobileLobApp.
         /// </summary>
         /// <returns>The task to await.</returns>

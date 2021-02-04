@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookOperationToCreate">The WorkbookOperation to create.</param>
         /// <returns>The created WorkbookOperation.</returns>
-        System.Threading.Tasks.Task<WorkbookOperation> CreateAsync(WorkbookOperation workbookOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookOperation> CreateAsync(WorkbookOperation workbookOperationToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookOperation using POST.
         /// </summary>
         /// <param name="workbookOperationToCreate">The WorkbookOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookOperation.</returns>
         System.Threading.Tasks.Task<WorkbookOperation> CreateAsync(WorkbookOperation workbookOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookOperation using POST and returns a <see cref="GraphResponse{WorkbookOperation}"/> object.
+        /// </summary>
+        /// <param name="workbookOperationToCreate">The WorkbookOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookOperation>> CreateResponseAsync(WorkbookOperation workbookOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookOperation using POST and returns a <see cref="GraphResponse{WorkbookOperation}"/> object.
+        /// </summary>
+        /// <param name="workbookOperationToCreate">The WorkbookOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookOperation>> CreateResponseAsync(WorkbookOperation workbookOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookOperation.

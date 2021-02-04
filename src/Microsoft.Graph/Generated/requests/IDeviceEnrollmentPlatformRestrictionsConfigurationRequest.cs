@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
         /// <returns>The created DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
-        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST.
         /// </summary>
         /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceEnrollmentPlatformRestrictionsConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentPlatformRestrictionsConfiguration> CreateAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> CreateResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentPlatformRestrictionsConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentPlatformRestrictionsConfigurationToCreate">The DeviceEnrollmentPlatformRestrictionsConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentPlatformRestrictionsConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentPlatformRestrictionsConfiguration>> CreateResponseAsync(DeviceEnrollmentPlatformRestrictionsConfiguration deviceEnrollmentPlatformRestrictionsConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceEnrollmentPlatformRestrictionsConfiguration.

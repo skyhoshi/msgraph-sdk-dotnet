@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UnmuteParticipantOperation using POST and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> CreateResponseAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate)
+        {
+            return this.CreateResponseAsync(unmuteParticipantOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UnmuteParticipantOperation using POST and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> CreateResponseAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UnmuteParticipantOperation>(unmuteParticipantOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UnmuteParticipantOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

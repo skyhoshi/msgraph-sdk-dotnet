@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DirectoryAudit using POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object.
+        /// </summary>
+        /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> CreateResponseAsync(DirectoryAudit directoryAuditToCreate)
+        {
+            return this.CreateResponseAsync(directoryAuditToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DirectoryAudit using POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object.
+        /// </summary>
+        /// <param name="directoryAuditToCreate">The DirectoryAudit to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> CreateResponseAsync(DirectoryAudit directoryAuditToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DirectoryAudit>(directoryAuditToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DirectoryAudit.
         /// </summary>
         /// <returns>The task to await.</returns>

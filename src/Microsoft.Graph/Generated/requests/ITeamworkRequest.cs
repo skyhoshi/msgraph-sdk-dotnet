@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamworkToCreate">The Teamwork to create.</param>
         /// <returns>The created Teamwork.</returns>
-        System.Threading.Tasks.Task<Teamwork> CreateAsync(Teamwork teamworkToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Teamwork> CreateAsync(Teamwork teamworkToCreate);
+
+        /// <summary>
         /// Creates the specified Teamwork using POST.
         /// </summary>
         /// <param name="teamworkToCreate">The Teamwork to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Teamwork.</returns>
         System.Threading.Tasks.Task<Teamwork> CreateAsync(Teamwork teamworkToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Teamwork using POST and returns a <see cref="GraphResponse{Teamwork}"/> object.
+        /// </summary>
+        /// <param name="teamworkToCreate">The Teamwork to create.</param>
+        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> CreateResponseAsync(Teamwork teamworkToCreate);
+
+        /// <summary>
+        /// Creates the specified Teamwork using POST and returns a <see cref="GraphResponse{Teamwork}"/> object.
+        /// </summary>
+        /// <param name="teamworkToCreate">The Teamwork to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> CreateResponseAsync(Teamwork teamworkToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Teamwork.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Invitation using POST and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <param name="invitationToCreate">The Invitation to create.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Invitation>> CreateResponseAsync(Invitation invitationToCreate)
+        {
+            return this.CreateResponseAsync(invitationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Invitation using POST and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <param name="invitationToCreate">The Invitation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Invitation>> CreateResponseAsync(Invitation invitationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Invitation>(invitationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Invitation.
         /// </summary>
         /// <returns>The task to await.</returns>

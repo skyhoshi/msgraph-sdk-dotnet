@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
         /// <returns>The created WindowsUpdateForBusinessConfiguration.</returns>
-        System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsUpdateForBusinessConfiguration using POST.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUpdateForBusinessConfiguration.</returns>
         System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsUpdateForBusinessConfiguration.

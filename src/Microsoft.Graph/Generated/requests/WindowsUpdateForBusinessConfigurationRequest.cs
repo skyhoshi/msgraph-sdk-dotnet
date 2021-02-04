@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windowsUpdateForBusinessConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsUpdateForBusinessConfiguration using POST and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsUpdateForBusinessConfigurationToCreate">The WindowsUpdateForBusinessConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsUpdateForBusinessConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

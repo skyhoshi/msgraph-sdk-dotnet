@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sectionGroupToCreate">The SectionGroup to create.</param>
         /// <returns>The created SectionGroup.</returns>
-        System.Threading.Tasks.Task<SectionGroup> CreateAsync(SectionGroup sectionGroupToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SectionGroup> CreateAsync(SectionGroup sectionGroupToCreate);
+
+        /// <summary>
         /// Creates the specified SectionGroup using POST.
         /// </summary>
         /// <param name="sectionGroupToCreate">The SectionGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SectionGroup.</returns>
         System.Threading.Tasks.Task<SectionGroup> CreateAsync(SectionGroup sectionGroupToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SectionGroup using POST and returns a <see cref="GraphResponse{SectionGroup}"/> object.
+        /// </summary>
+        /// <param name="sectionGroupToCreate">The SectionGroup to create.</param>
+        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> CreateResponseAsync(SectionGroup sectionGroupToCreate);
+
+        /// <summary>
+        /// Creates the specified SectionGroup using POST and returns a <see cref="GraphResponse{SectionGroup}"/> object.
+        /// </summary>
+        /// <param name="sectionGroupToCreate">The SectionGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> CreateResponseAsync(SectionGroup sectionGroupToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SectionGroup.

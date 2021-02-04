@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ResourceSpecificPermissionGrant using POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrantToCreate">The ResourceSpecificPermissionGrant to create.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> CreateResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToCreate)
+        {
+            return this.CreateResponseAsync(resourceSpecificPermissionGrantToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ResourceSpecificPermissionGrant using POST and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="resourceSpecificPermissionGrantToCreate">The ResourceSpecificPermissionGrant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> CreateResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrantToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ResourceSpecificPermissionGrant>(resourceSpecificPermissionGrantToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ResourceSpecificPermissionGrant.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
         /// <returns>The created OnenoteOperation.</returns>
-        System.Threading.Tasks.Task<OnenoteOperation> CreateAsync(OnenoteOperation onenoteOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteOperation> CreateAsync(OnenoteOperation onenoteOperationToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteOperation using POST.
         /// </summary>
         /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteOperation.</returns>
         System.Threading.Tasks.Task<OnenoteOperation> CreateAsync(OnenoteOperation onenoteOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteOperation using POST and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> CreateResponseAsync(OnenoteOperation onenoteOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteOperation using POST and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> CreateResponseAsync(OnenoteOperation onenoteOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteOperation.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosStoreApp using POST and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> CreateResponseAsync(IosStoreApp iosStoreAppToCreate)
+        {
+            return this.CreateResponseAsync(iosStoreAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosStoreApp using POST and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> CreateResponseAsync(IosStoreApp iosStoreAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosStoreApp>(iosStoreAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosStoreApp.
         /// </summary>
         /// <returns>The task to await.</returns>

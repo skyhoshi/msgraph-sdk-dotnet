@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
         /// <returns>The created AndroidGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> CreateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> CreateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> CreateAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> CreateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> CreateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidGeneralDeviceConfiguration.

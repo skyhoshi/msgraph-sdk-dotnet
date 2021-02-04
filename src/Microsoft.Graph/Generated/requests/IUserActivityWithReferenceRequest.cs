@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userActivityToCreate">The UserActivity to create.</param>
         /// <returns>The created UserActivity.</returns>
-        System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate);
+
+        /// <summary>
         /// Creates the specified UserActivity using POST.
         /// </summary>
         /// <param name="userActivityToCreate">The UserActivity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserActivity.</returns>
         System.Threading.Tasks.Task<UserActivity> CreateAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified UserActivity using POST and returns a <see cref="GraphResponse{UserActivity}"/> object.
+        /// </summary>
+        /// <param name="userActivityToCreate">The UserActivity to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserActivity>> CreateResponseAsync(UserActivity userActivityToCreate);
+
+        /// <summary>
+        /// Creates the specified UserActivity using POST and returns a <see cref="GraphResponse{UserActivity}"/> object.
+        /// </summary>
+        /// <param name="userActivityToCreate">The UserActivity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserActivity>> CreateResponseAsync(UserActivity userActivityToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified UserActivity using PATCH.

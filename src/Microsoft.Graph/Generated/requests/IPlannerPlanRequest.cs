@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerPlanToCreate">The PlannerPlan to create.</param>
         /// <returns>The created PlannerPlan.</returns>
-        System.Threading.Tasks.Task<PlannerPlan> CreateAsync(PlannerPlan plannerPlanToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerPlan> CreateAsync(PlannerPlan plannerPlanToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerPlan using POST.
         /// </summary>
         /// <param name="plannerPlanToCreate">The PlannerPlan to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerPlan.</returns>
         System.Threading.Tasks.Task<PlannerPlan> CreateAsync(PlannerPlan plannerPlanToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerPlan using POST and returns a <see cref="GraphResponse{PlannerPlan}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanToCreate">The PlannerPlan to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerPlan}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerPlan>> CreateResponseAsync(PlannerPlan plannerPlanToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerPlan using POST and returns a <see cref="GraphResponse{PlannerPlan}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanToCreate">The PlannerPlan to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerPlan}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerPlan>> CreateResponseAsync(PlannerPlan plannerPlanToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerPlan.

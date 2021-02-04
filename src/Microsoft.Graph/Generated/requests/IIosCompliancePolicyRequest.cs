@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
         /// <returns>The created IosCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<IosCompliancePolicy> CreateAsync(IosCompliancePolicy iosCompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosCompliancePolicy> CreateAsync(IosCompliancePolicy iosCompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified IosCompliancePolicy using POST.
         /// </summary>
         /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosCompliancePolicy.</returns>
         System.Threading.Tasks.Task<IosCompliancePolicy> CreateAsync(IosCompliancePolicy iosCompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosCompliancePolicy using POST and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> CreateResponseAsync(IosCompliancePolicy iosCompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified IosCompliancePolicy using POST and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> CreateResponseAsync(IosCompliancePolicy iosCompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosCompliancePolicy.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookChartDataLabelFormat using POST and returns a <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelFormatToCreate">The WorkbookChartDataLabelFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabelFormat>> CreateResponseAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToCreate)
+        {
+            return this.CreateResponseAsync(workbookChartDataLabelFormatToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookChartDataLabelFormat using POST and returns a <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelFormatToCreate">The WorkbookChartDataLabelFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabelFormat>> CreateResponseAsync(WorkbookChartDataLabelFormat workbookChartDataLabelFormatToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartDataLabelFormat>(workbookChartDataLabelFormatToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookChartDataLabelFormat.
         /// </summary>
         /// <returns>The task to await.</returns>

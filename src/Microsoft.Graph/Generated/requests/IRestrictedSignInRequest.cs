@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="restrictedSignInToCreate">The RestrictedSignIn to create.</param>
         /// <returns>The created RestrictedSignIn.</returns>
-        System.Threading.Tasks.Task<RestrictedSignIn> CreateAsync(RestrictedSignIn restrictedSignInToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RestrictedSignIn> CreateAsync(RestrictedSignIn restrictedSignInToCreate);
+
+        /// <summary>
         /// Creates the specified RestrictedSignIn using POST.
         /// </summary>
         /// <param name="restrictedSignInToCreate">The RestrictedSignIn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RestrictedSignIn.</returns>
         System.Threading.Tasks.Task<RestrictedSignIn> CreateAsync(RestrictedSignIn restrictedSignInToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RestrictedSignIn using POST and returns a <see cref="GraphResponse{RestrictedSignIn}"/> object.
+        /// </summary>
+        /// <param name="restrictedSignInToCreate">The RestrictedSignIn to create.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> CreateResponseAsync(RestrictedSignIn restrictedSignInToCreate);
+
+        /// <summary>
+        /// Creates the specified RestrictedSignIn using POST and returns a <see cref="GraphResponse{RestrictedSignIn}"/> object.
+        /// </summary>
+        /// <param name="restrictedSignInToCreate">The RestrictedSignIn to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> CreateResponseAsync(RestrictedSignIn restrictedSignInToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RestrictedSignIn.

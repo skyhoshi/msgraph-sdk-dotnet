@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MobileAppContentFile using POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate)
+        {
+            return this.CreateResponseAsync(mobileAppContentFileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MobileAppContentFile using POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentFileToCreate">The MobileAppContentFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> CreateResponseAsync(MobileAppContentFile mobileAppContentFileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileAppContentFile>(mobileAppContentFileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MobileAppContentFile.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="messageRuleToCreate">The MessageRule to create.</param>
         /// <returns>The created MessageRule.</returns>
-        System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate);
+
+        /// <summary>
         /// Creates the specified MessageRule using POST.
         /// </summary>
         /// <param name="messageRuleToCreate">The MessageRule to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MessageRule.</returns>
         System.Threading.Tasks.Task<MessageRule> CreateAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MessageRule using POST and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate);
+
+        /// <summary>
+        /// Creates the specified MessageRule using POST and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MessageRule.

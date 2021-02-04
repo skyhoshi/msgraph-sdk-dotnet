@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
         /// <returns>The created DeviceManagementExchangeConnector.</returns>
-        System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceManagementExchangeConnector using POST.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementExchangeConnector.</returns>
         System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementExchangeConnector using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceManagementExchangeConnector using POST and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementExchangeConnectorToCreate">The DeviceManagementExchangeConnector to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceManagementExchangeConnector.

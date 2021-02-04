@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="scheduleChangeRequestObjectToCreate">The ScheduleChangeRequestObject to create.</param>
         /// <returns>The created ScheduleChangeRequestObject.</returns>
-        System.Threading.Tasks.Task<ScheduleChangeRequestObject> CreateAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ScheduleChangeRequestObject> CreateAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified ScheduleChangeRequestObject using POST.
         /// </summary>
         /// <param name="scheduleChangeRequestObjectToCreate">The ScheduleChangeRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ScheduleChangeRequestObject.</returns>
         System.Threading.Tasks.Task<ScheduleChangeRequestObject> CreateAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ScheduleChangeRequestObject using POST and returns a <see cref="GraphResponse{ScheduleChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="scheduleChangeRequestObjectToCreate">The ScheduleChangeRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleChangeRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleChangeRequestObject>> CreateResponseAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified ScheduleChangeRequestObject using POST and returns a <see cref="GraphResponse{ScheduleChangeRequestObject}"/> object.
+        /// </summary>
+        /// <param name="scheduleChangeRequestObjectToCreate">The ScheduleChangeRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScheduleChangeRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScheduleChangeRequestObject>> CreateResponseAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ScheduleChangeRequestObject.

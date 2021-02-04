@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified InviteParticipantsOperation using POST and returns a <see cref="GraphResponse{InviteParticipantsOperation}"/> object.
+        /// </summary>
+        /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{InviteParticipantsOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InviteParticipantsOperation>> CreateResponseAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate)
+        {
+            return this.CreateResponseAsync(inviteParticipantsOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified InviteParticipantsOperation using POST and returns a <see cref="GraphResponse{InviteParticipantsOperation}"/> object.
+        /// </summary>
+        /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InviteParticipantsOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<InviteParticipantsOperation>> CreateResponseAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<InviteParticipantsOperation>(inviteParticipantsOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified InviteParticipantsOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

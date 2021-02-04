@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> CreateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(androidWorkProfileGeneralDeviceConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> CreateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>(androidWorkProfileGeneralDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidWorkProfileGeneralDeviceConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

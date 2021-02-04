@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
         /// <returns>The created WorkbookRangeFill.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeFill> CreateAsync(WorkbookRangeFill workbookRangeFillToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookRangeFill> CreateAsync(WorkbookRangeFill workbookRangeFillToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookRangeFill using POST.
         /// </summary>
         /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeFill.</returns>
         System.Threading.Tasks.Task<WorkbookRangeFill> CreateAsync(WorkbookRangeFill workbookRangeFillToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeFill using POST and returns a <see cref="GraphResponse{WorkbookRangeFill}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFill}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> CreateResponseAsync(WorkbookRangeFill workbookRangeFillToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeFill using POST and returns a <see cref="GraphResponse{WorkbookRangeFill}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeFillToCreate">The WorkbookRangeFill to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFill}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFill>> CreateResponseAsync(WorkbookRangeFill workbookRangeFillToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookRangeFill.

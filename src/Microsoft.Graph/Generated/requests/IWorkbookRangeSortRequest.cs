@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookRangeSortToCreate">The WorkbookRangeSort to create.</param>
         /// <returns>The created WorkbookRangeSort.</returns>
-        System.Threading.Tasks.Task<WorkbookRangeSort> CreateAsync(WorkbookRangeSort workbookRangeSortToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookRangeSort> CreateAsync(WorkbookRangeSort workbookRangeSortToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookRangeSort using POST.
         /// </summary>
         /// <param name="workbookRangeSortToCreate">The WorkbookRangeSort to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeSort.</returns>
         System.Threading.Tasks.Task<WorkbookRangeSort> CreateAsync(WorkbookRangeSort workbookRangeSortToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeSort using POST and returns a <see cref="GraphResponse{WorkbookRangeSort}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeSortToCreate">The WorkbookRangeSort to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeSort}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeSort>> CreateResponseAsync(WorkbookRangeSort workbookRangeSortToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeSort using POST and returns a <see cref="GraphResponse{WorkbookRangeSort}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeSortToCreate">The WorkbookRangeSort to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeSort}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeSort>> CreateResponseAsync(WorkbookRangeSort workbookRangeSortToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookRangeSort.

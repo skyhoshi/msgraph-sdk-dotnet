@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceConfigurationDeviceStatus using POST and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationDeviceStatusToCreate">The DeviceConfigurationDeviceStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStatus>> CreateResponseAsync(DeviceConfigurationDeviceStatus deviceConfigurationDeviceStatusToCreate)
+        {
+            return this.CreateResponseAsync(deviceConfigurationDeviceStatusToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationDeviceStatus using POST and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationDeviceStatusToCreate">The DeviceConfigurationDeviceStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStatus>> CreateResponseAsync(DeviceConfigurationDeviceStatus deviceConfigurationDeviceStatusToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceConfigurationDeviceStatus>(deviceConfigurationDeviceStatusToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceConfigurationDeviceStatus.
         /// </summary>
         /// <returns>The task to await.</returns>

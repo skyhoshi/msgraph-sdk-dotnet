@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SecureScoreControlProfile using POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object.
+        /// </summary>
+        /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> CreateResponseAsync(SecureScoreControlProfile secureScoreControlProfileToCreate)
+        {
+            return this.CreateResponseAsync(secureScoreControlProfileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SecureScoreControlProfile using POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object.
+        /// </summary>
+        /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> CreateResponseAsync(SecureScoreControlProfile secureScoreControlProfileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SecureScoreControlProfile>(secureScoreControlProfileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SecureScoreControlProfile.
         /// </summary>
         /// <returns>The task to await.</returns>

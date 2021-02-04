@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
         /// <returns>The created DeviceComplianceActionItem.</returns>
-        System.Threading.Tasks.Task<DeviceComplianceActionItem> CreateAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceComplianceActionItem> CreateAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceComplianceActionItem using POST.
         /// </summary>
         /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceActionItem.</returns>
         System.Threading.Tasks.Task<DeviceComplianceActionItem> CreateAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceActionItem using POST and returns a <see cref="GraphResponse{DeviceComplianceActionItem}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceActionItem>> CreateResponseAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceActionItem using POST and returns a <see cref="GraphResponse{DeviceComplianceActionItem}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceActionItem>> CreateResponseAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceComplianceActionItem.

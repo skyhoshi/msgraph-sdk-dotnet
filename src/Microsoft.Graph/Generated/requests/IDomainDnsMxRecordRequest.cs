@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="domainDnsMxRecordToCreate">The DomainDnsMxRecord to create.</param>
         /// <returns>The created DomainDnsMxRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsMxRecord> CreateAsync(DomainDnsMxRecord domainDnsMxRecordToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DomainDnsMxRecord> CreateAsync(DomainDnsMxRecord domainDnsMxRecordToCreate);
+
+        /// <summary>
         /// Creates the specified DomainDnsMxRecord using POST.
         /// </summary>
         /// <param name="domainDnsMxRecordToCreate">The DomainDnsMxRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsMxRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsMxRecord> CreateAsync(DomainDnsMxRecord domainDnsMxRecordToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DomainDnsMxRecord using POST and returns a <see cref="GraphResponse{DomainDnsMxRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsMxRecordToCreate">The DomainDnsMxRecord to create.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsMxRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsMxRecord>> CreateResponseAsync(DomainDnsMxRecord domainDnsMxRecordToCreate);
+
+        /// <summary>
+        /// Creates the specified DomainDnsMxRecord using POST and returns a <see cref="GraphResponse{DomainDnsMxRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsMxRecordToCreate">The DomainDnsMxRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsMxRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsMxRecord>> CreateResponseAsync(DomainDnsMxRecord domainDnsMxRecordToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DomainDnsMxRecord.

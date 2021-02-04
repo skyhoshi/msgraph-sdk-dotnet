@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosUpdateConfiguration using POST and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> CreateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(iosUpdateConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosUpdateConfiguration using POST and returns a <see cref="GraphResponse{IosUpdateConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateConfigurationToCreate">The IosUpdateConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosUpdateConfiguration>> CreateResponseAsync(IosUpdateConfiguration iosUpdateConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosUpdateConfiguration>(iosUpdateConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosUpdateConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

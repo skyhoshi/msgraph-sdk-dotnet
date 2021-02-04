@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <returns>The created SharedInsight.</returns>
-        System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate);
+
+        /// <summary>
         /// Creates the specified SharedInsight using POST.
         /// </summary>
         /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedInsight.</returns>
         System.Threading.Tasks.Task<SharedInsight> CreateAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SharedInsight using POST and returns a <see cref="GraphResponse{SharedInsight}"/> object.
+        /// </summary>
+        /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate);
+
+        /// <summary>
+        /// Creates the specified SharedInsight using POST and returns a <see cref="GraphResponse{SharedInsight}"/> object.
+        /// </summary>
+        /// <param name="sharedInsightToCreate">The SharedInsight to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> CreateResponseAsync(SharedInsight sharedInsightToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SharedInsight.

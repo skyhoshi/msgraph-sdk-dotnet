@@ -81,6 +81,29 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Creates the specified MobileAppCategory using POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> CreateResponseAsync(MobileAppCategory mobileAppCategoryToCreate)
+        {
+            return this.CreateResponseAsync(mobileAppCategoryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MobileAppCategory using POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> CreateResponseAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileAppCategory>(mobileAppCategoryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Updates the specified MobileAppCategory using PATCH.
         /// </summary>
         /// <param name="mobileAppCategoryToUpdate">The MobileAppCategory to update.</param>

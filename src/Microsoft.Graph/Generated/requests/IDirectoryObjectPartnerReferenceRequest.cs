@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
         /// <returns>The created DirectoryObjectPartnerReference.</returns>
-        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate);
+
+        /// <summary>
         /// Creates the specified DirectoryObjectPartnerReference using POST.
         /// </summary>
         /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryObjectPartnerReference.</returns>
         System.Threading.Tasks.Task<DirectoryObjectPartnerReference> CreateAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DirectoryObjectPartnerReference using POST and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> CreateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate);
+
+        /// <summary>
+        /// Creates the specified DirectoryObjectPartnerReference using POST and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> CreateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DirectoryObjectPartnerReference.

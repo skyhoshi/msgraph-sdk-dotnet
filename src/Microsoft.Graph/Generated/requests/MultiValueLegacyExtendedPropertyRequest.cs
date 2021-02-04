@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MultiValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> CreateResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate)
+        {
+            return this.CreateResponseAsync(multiValueLegacyExtendedPropertyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MultiValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> CreateResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MultiValueLegacyExtendedProperty>(multiValueLegacyExtendedPropertyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MultiValueLegacyExtendedProperty.
         /// </summary>
         /// <returns>The task to await.</returns>

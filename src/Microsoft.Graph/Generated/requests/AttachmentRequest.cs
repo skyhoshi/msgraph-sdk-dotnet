@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Attachment using POST and returns a <see cref="GraphResponse{Attachment}"/> object.
+        /// </summary>
+        /// <param name="attachmentToCreate">The Attachment to create.</param>
+        /// <returns>The <see cref="GraphResponse{Attachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Attachment>> CreateResponseAsync(Attachment attachmentToCreate)
+        {
+            return this.CreateResponseAsync(attachmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Attachment using POST and returns a <see cref="GraphResponse{Attachment}"/> object.
+        /// </summary>
+        /// <param name="attachmentToCreate">The Attachment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Attachment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Attachment>> CreateResponseAsync(Attachment attachmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Attachment>(attachmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Attachment.
         /// </summary>
         /// <returns>The task to await.</returns>

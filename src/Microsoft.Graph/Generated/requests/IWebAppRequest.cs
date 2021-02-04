@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="webAppToCreate">The WebApp to create.</param>
         /// <returns>The created WebApp.</returns>
-        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate);
+
+        /// <summary>
         /// Creates the specified WebApp using POST.
         /// </summary>
         /// <param name="webAppToCreate">The WebApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WebApp.</returns>
         System.Threading.Tasks.Task<WebApp> CreateAsync(WebApp webAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WebApp using POST and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToCreate">The WebApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate);
+
+        /// <summary>
+        /// Creates the specified WebApp using POST and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToCreate">The WebApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WebApp>> CreateResponseAsync(WebApp webAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WebApp.

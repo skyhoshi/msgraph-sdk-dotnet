@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EventMessageRequestObject using POST and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> CreateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(eventMessageRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EventMessageRequestObject using POST and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> CreateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EventMessageRequestObject>(eventMessageRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EventMessageRequest.
         /// </summary>
         /// <returns>The task to await.</returns>

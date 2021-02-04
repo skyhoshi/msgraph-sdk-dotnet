@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified InferenceClassificationOverride using POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> CreateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate)
+        {
+            return this.CreateResponseAsync(inferenceClassificationOverrideToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified InferenceClassificationOverride using POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> CreateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<InferenceClassificationOverride>(inferenceClassificationOverrideToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified InferenceClassificationOverride.
         /// </summary>
         /// <returns>The task to await.</returns>

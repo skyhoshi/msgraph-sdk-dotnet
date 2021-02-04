@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
         /// <returns>The created WorkbookTableColumn.</returns>
-        System.Threading.Tasks.Task<WorkbookTableColumn> CreateAsync(WorkbookTableColumn workbookTableColumnToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookTableColumn> CreateAsync(WorkbookTableColumn workbookTableColumnToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookTableColumn using POST.
         /// </summary>
         /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTableColumn.</returns>
         System.Threading.Tasks.Task<WorkbookTableColumn> CreateAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookTableColumn using POST and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
+        /// </summary>
+        /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> CreateResponseAsync(WorkbookTableColumn workbookTableColumnToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookTableColumn using POST and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
+        /// </summary>
+        /// <param name="workbookTableColumnToCreate">The WorkbookTableColumn to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> CreateResponseAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookTableColumn.

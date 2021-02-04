@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="operationToCreate">The Operation to create.</param>
         /// <returns>The created Operation.</returns>
-        System.Threading.Tasks.Task<Operation> CreateAsync(Operation operationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Operation> CreateAsync(Operation operationToCreate);
+
+        /// <summary>
         /// Creates the specified Operation using POST.
         /// </summary>
         /// <param name="operationToCreate">The Operation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Operation.</returns>
         System.Threading.Tasks.Task<Operation> CreateAsync(Operation operationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Operation using POST and returns a <see cref="GraphResponse{Operation}"/> object.
+        /// </summary>
+        /// <param name="operationToCreate">The Operation to create.</param>
+        /// <returns>The <see cref="GraphResponse{Operation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Operation>> CreateResponseAsync(Operation operationToCreate);
+
+        /// <summary>
+        /// Creates the specified Operation using POST and returns a <see cref="GraphResponse{Operation}"/> object.
+        /// </summary>
+        /// <param name="operationToCreate">The Operation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Operation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Operation>> CreateResponseAsync(Operation operationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Operation.

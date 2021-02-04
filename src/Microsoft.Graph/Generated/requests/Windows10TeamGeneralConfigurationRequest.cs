@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows10TeamGeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToCreate">The Windows10TeamGeneralConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> CreateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windows10TeamGeneralConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows10TeamGeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToCreate">The Windows10TeamGeneralConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> CreateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows10TeamGeneralConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

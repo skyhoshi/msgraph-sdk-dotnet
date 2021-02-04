@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
         /// <returns>The created PlannerAssignedToTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> CreateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> CreateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerAssignedToTaskBoardTaskFormat.</returns>
         System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> CreateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> CreateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerAssignedToTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerAssignedToTaskBoardTaskFormatToCreate">The PlannerAssignedToTaskBoardTaskFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> CreateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerAssignedToTaskBoardTaskFormat.

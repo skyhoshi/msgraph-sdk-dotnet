@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookRangeView using POST and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeViewToCreate">The WorkbookRangeView to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> CreateResponseAsync(WorkbookRangeView workbookRangeViewToCreate)
+        {
+            return this.CreateResponseAsync(workbookRangeViewToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeView using POST and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeViewToCreate">The WorkbookRangeView to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> CreateResponseAsync(WorkbookRangeView workbookRangeViewToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookRangeView>(workbookRangeViewToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookRangeView.
         /// </summary>
         /// <returns>The task to await.</returns>

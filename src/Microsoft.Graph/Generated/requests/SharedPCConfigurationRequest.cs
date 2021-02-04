@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SharedPCConfiguration using POST and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> CreateResponseAsync(SharedPCConfiguration sharedPCConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(sharedPCConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SharedPCConfiguration using POST and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> CreateResponseAsync(SharedPCConfiguration sharedPCConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SharedPCConfiguration>(sharedPCConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SharedPCConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

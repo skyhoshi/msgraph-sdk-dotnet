@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
+        /// </summary>
+        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
+        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate)
+        {
+            return this.CreateResponseAsync(thumbnailSetToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ThumbnailSet using POST and returns a <see cref="GraphResponse{ThumbnailSet}"/> object.
+        /// </summary>
+        /// <param name="thumbnailSetToCreate">The ThumbnailSet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> CreateResponseAsync(ThumbnailSet thumbnailSetToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ThumbnailSet>(thumbnailSetToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ThumbnailSet.
         /// </summary>
         /// <returns>The task to await.</returns>

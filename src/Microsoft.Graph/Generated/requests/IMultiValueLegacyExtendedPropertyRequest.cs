@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
-        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> CreateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> CreateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate);
+
+        /// <summary>
         /// Creates the specified MultiValueLegacyExtendedProperty using POST.
         /// </summary>
         /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MultiValueLegacyExtendedProperty.</returns>
         System.Threading.Tasks.Task<MultiValueLegacyExtendedProperty> CreateAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MultiValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> CreateResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate);
+
+        /// <summary>
+        /// Creates the specified MultiValueLegacyExtendedProperty using POST and returns a <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="multiValueLegacyExtendedPropertyToCreate">The MultiValueLegacyExtendedProperty to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MultiValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MultiValueLegacyExtendedProperty>> CreateResponseAsync(MultiValueLegacyExtendedProperty multiValueLegacyExtendedPropertyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MultiValueLegacyExtendedProperty.

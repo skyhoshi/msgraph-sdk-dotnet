@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="trendingToCreate">The Trending to create.</param>
         /// <returns>The created Trending.</returns>
-        System.Threading.Tasks.Task<Trending> CreateAsync(Trending trendingToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Trending> CreateAsync(Trending trendingToCreate);
+
+        /// <summary>
         /// Creates the specified Trending using POST.
         /// </summary>
         /// <param name="trendingToCreate">The Trending to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Trending.</returns>
         System.Threading.Tasks.Task<Trending> CreateAsync(Trending trendingToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToCreate">The Trending to create.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate);
+
+        /// <summary>
+        /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToCreate">The Trending to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Trending.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
         /// <returns>The created ManagedAppStatus.</returns>
-        System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppStatus using POST.
         /// </summary>
         /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppStatus.</returns>
         System.Threading.Tasks.Task<ManagedAppStatus> CreateAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppStatus using POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> CreateResponseAsync(ManagedAppStatus managedAppStatusToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppStatus using POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusToCreate">The ManagedAppStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> CreateResponseAsync(ManagedAppStatus managedAppStatusToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppStatus.

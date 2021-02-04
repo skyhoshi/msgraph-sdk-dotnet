@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ItemAnalytics using POST and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> CreateResponseAsync(ItemAnalytics itemAnalyticsToCreate)
+        {
+            return this.CreateResponseAsync(itemAnalyticsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ItemAnalytics using POST and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> CreateResponseAsync(ItemAnalytics itemAnalyticsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ItemAnalytics>(itemAnalyticsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ItemAnalytics.
         /// </summary>
         /// <returns>The task to await.</returns>

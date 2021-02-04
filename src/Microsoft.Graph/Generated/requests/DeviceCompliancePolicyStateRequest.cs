@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceCompliancePolicyState using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyStateToCreate">The DeviceCompliancePolicyState to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> CreateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate)
+        {
+            return this.CreateResponseAsync(deviceCompliancePolicyStateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyState using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyStateToCreate">The DeviceCompliancePolicyState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> CreateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyState>(deviceCompliancePolicyStateToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceCompliancePolicyState.
         /// </summary>
         /// <returns>The task to await.</returns>

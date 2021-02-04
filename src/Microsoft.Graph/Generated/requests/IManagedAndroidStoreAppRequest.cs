@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAndroidStoreAppToCreate">The ManagedAndroidStoreApp to create.</param>
         /// <returns>The created ManagedAndroidStoreApp.</returns>
-        System.Threading.Tasks.Task<ManagedAndroidStoreApp> CreateAsync(ManagedAndroidStoreApp managedAndroidStoreAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAndroidStoreApp> CreateAsync(ManagedAndroidStoreApp managedAndroidStoreAppToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAndroidStoreApp using POST.
         /// </summary>
         /// <param name="managedAndroidStoreAppToCreate">The ManagedAndroidStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAndroidStoreApp.</returns>
         System.Threading.Tasks.Task<ManagedAndroidStoreApp> CreateAsync(ManagedAndroidStoreApp managedAndroidStoreAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAndroidStoreApp using POST and returns a <see cref="GraphResponse{ManagedAndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="managedAndroidStoreAppToCreate">The ManagedAndroidStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAndroidStoreApp>> CreateResponseAsync(ManagedAndroidStoreApp managedAndroidStoreAppToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAndroidStoreApp using POST and returns a <see cref="GraphResponse{ManagedAndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="managedAndroidStoreAppToCreate">The ManagedAndroidStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAndroidStoreApp>> CreateResponseAsync(ManagedAndroidStoreApp managedAndroidStoreAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAndroidStoreApp.

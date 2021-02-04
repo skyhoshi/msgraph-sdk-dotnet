@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PlannerPlanDetails using POST and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToCreate">The PlannerPlanDetails to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerPlanDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> CreateResponseAsync(PlannerPlanDetails plannerPlanDetailsToCreate)
+        {
+            return this.CreateResponseAsync(plannerPlanDetailsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PlannerPlanDetails using POST and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToCreate">The PlannerPlanDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerPlanDetails}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> CreateResponseAsync(PlannerPlanDetails plannerPlanDetailsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PlannerPlanDetails>(plannerPlanDetailsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PlannerPlanDetails.
         /// </summary>
         /// <returns>The task to await.</returns>

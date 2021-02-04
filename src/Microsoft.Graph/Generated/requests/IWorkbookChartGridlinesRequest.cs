@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartGridlinesToCreate">The WorkbookChartGridlines to create.</param>
         /// <returns>The created WorkbookChartGridlines.</returns>
-        System.Threading.Tasks.Task<WorkbookChartGridlines> CreateAsync(WorkbookChartGridlines workbookChartGridlinesToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartGridlines> CreateAsync(WorkbookChartGridlines workbookChartGridlinesToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartGridlines using POST.
         /// </summary>
         /// <param name="workbookChartGridlinesToCreate">The WorkbookChartGridlines to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartGridlines.</returns>
         System.Threading.Tasks.Task<WorkbookChartGridlines> CreateAsync(WorkbookChartGridlines workbookChartGridlinesToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartGridlines using POST and returns a <see cref="GraphResponse{WorkbookChartGridlines}"/> object.
+        /// </summary>
+        /// <param name="workbookChartGridlinesToCreate">The WorkbookChartGridlines to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlines}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlines>> CreateResponseAsync(WorkbookChartGridlines workbookChartGridlinesToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartGridlines using POST and returns a <see cref="GraphResponse{WorkbookChartGridlines}"/> object.
+        /// </summary>
+        /// <param name="workbookChartGridlinesToCreate">The WorkbookChartGridlines to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlines}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlines>> CreateResponseAsync(WorkbookChartGridlines workbookChartGridlinesToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartGridlines.

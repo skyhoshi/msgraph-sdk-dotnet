@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
         /// <returns>The created WindowsInformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> CreateAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> CreateAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsInformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionPolicy.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> CreateAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> CreateResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicyToCreate">The WindowsInformationProtectionPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> CreateResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionPolicy.

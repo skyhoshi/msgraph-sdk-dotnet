@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Calendar using POST and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToCreate">The Calendar to create.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> CreateResponseAsync(Calendar calendarToCreate)
+        {
+            return this.CreateResponseAsync(calendarToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Calendar using POST and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToCreate">The Calendar to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Calendar>> CreateResponseAsync(Calendar calendarToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Calendar>(calendarToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Calendar.
         /// </summary>
         /// <returns>The task to await.</returns>

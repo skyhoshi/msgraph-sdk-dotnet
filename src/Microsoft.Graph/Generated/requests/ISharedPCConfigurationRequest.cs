@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
         /// <returns>The created SharedPCConfiguration.</returns>
-        System.Threading.Tasks.Task<SharedPCConfiguration> CreateAsync(SharedPCConfiguration sharedPCConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SharedPCConfiguration> CreateAsync(SharedPCConfiguration sharedPCConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified SharedPCConfiguration using POST.
         /// </summary>
         /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SharedPCConfiguration.</returns>
         System.Threading.Tasks.Task<SharedPCConfiguration> CreateAsync(SharedPCConfiguration sharedPCConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SharedPCConfiguration using POST and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> CreateResponseAsync(SharedPCConfiguration sharedPCConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified SharedPCConfiguration using POST and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToCreate">The SharedPCConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> CreateResponseAsync(SharedPCConfiguration sharedPCConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SharedPCConfiguration.

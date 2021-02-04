@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="personToCreate">The Person to create.</param>
         /// <returns>The created Person.</returns>
-        System.Threading.Tasks.Task<Person> CreateAsync(Person personToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Person> CreateAsync(Person personToCreate);
+
+        /// <summary>
         /// Creates the specified Person using POST.
         /// </summary>
         /// <param name="personToCreate">The Person to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Person.</returns>
         System.Threading.Tasks.Task<Person> CreateAsync(Person personToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Person using POST and returns a <see cref="GraphResponse{Person}"/> object.
+        /// </summary>
+        /// <param name="personToCreate">The Person to create.</param>
+        /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Person>> CreateResponseAsync(Person personToCreate);
+
+        /// <summary>
+        /// Creates the specified Person using POST and returns a <see cref="GraphResponse{Person}"/> object.
+        /// </summary>
+        /// <param name="personToCreate">The Person to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Person>> CreateResponseAsync(Person personToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Person.

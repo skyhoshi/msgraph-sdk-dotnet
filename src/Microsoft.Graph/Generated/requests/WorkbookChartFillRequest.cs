@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookChartFill using POST and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFill}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> CreateResponseAsync(WorkbookChartFill workbookChartFillToCreate)
+        {
+            return this.CreateResponseAsync(workbookChartFillToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookChartFill using POST and returns a <see cref="GraphResponse{WorkbookChartFill}"/> object.
+        /// </summary>
+        /// <param name="workbookChartFillToCreate">The WorkbookChartFill to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartFill}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartFill>> CreateResponseAsync(WorkbookChartFill workbookChartFillToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartFill>(workbookChartFillToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookChartFill.
         /// </summary>
         /// <returns>The task to await.</returns>

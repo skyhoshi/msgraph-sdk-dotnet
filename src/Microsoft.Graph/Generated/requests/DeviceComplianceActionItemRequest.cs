@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceComplianceActionItem using POST and returns a <see cref="GraphResponse{DeviceComplianceActionItem}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceActionItem>> CreateResponseAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate)
+        {
+            return this.CreateResponseAsync(deviceComplianceActionItemToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceActionItem using POST and returns a <see cref="GraphResponse{DeviceComplianceActionItem}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceActionItemToCreate">The DeviceComplianceActionItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceActionItem>> CreateResponseAsync(DeviceComplianceActionItem deviceComplianceActionItemToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceComplianceActionItem>(deviceComplianceActionItemToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceComplianceActionItem.
         /// </summary>
         /// <returns>The task to await.</returns>

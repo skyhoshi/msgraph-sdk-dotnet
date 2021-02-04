@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="ipNamedLocationToCreate">The IpNamedLocation to create.</param>
         /// <returns>The created IpNamedLocation.</returns>
-        System.Threading.Tasks.Task<IpNamedLocation> CreateAsync(IpNamedLocation ipNamedLocationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IpNamedLocation> CreateAsync(IpNamedLocation ipNamedLocationToCreate);
+
+        /// <summary>
         /// Creates the specified IpNamedLocation using POST.
         /// </summary>
         /// <param name="ipNamedLocationToCreate">The IpNamedLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IpNamedLocation.</returns>
         System.Threading.Tasks.Task<IpNamedLocation> CreateAsync(IpNamedLocation ipNamedLocationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IpNamedLocation using POST and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="ipNamedLocationToCreate">The IpNamedLocation to create.</param>
+        /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> CreateResponseAsync(IpNamedLocation ipNamedLocationToCreate);
+
+        /// <summary>
+        /// Creates the specified IpNamedLocation using POST and returns a <see cref="GraphResponse{IpNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="ipNamedLocationToCreate">The IpNamedLocation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> CreateResponseAsync(IpNamedLocation ipNamedLocationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IpNamedLocation.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
         /// <returns>The created EventMessageRequestObject.</returns>
-        System.Threading.Tasks.Task<EventMessageRequestObject> CreateAsync(EventMessageRequestObject eventMessageRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EventMessageRequestObject> CreateAsync(EventMessageRequestObject eventMessageRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified EventMessageRequestObject using POST.
         /// </summary>
         /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EventMessageRequestObject.</returns>
         System.Threading.Tasks.Task<EventMessageRequestObject> CreateAsync(EventMessageRequestObject eventMessageRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EventMessageRequestObject using POST and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> CreateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified EventMessageRequestObject using POST and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <param name="eventMessageRequestObjectToCreate">The EventMessageRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> CreateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EventMessageRequestObject.

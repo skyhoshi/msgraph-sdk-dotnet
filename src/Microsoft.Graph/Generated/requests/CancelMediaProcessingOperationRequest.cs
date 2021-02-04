@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CancelMediaProcessingOperation using POST and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> CreateResponseAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate)
+        {
+            return this.CreateResponseAsync(cancelMediaProcessingOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CancelMediaProcessingOperation using POST and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> CreateResponseAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CancelMediaProcessingOperation>(cancelMediaProcessingOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CancelMediaProcessingOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

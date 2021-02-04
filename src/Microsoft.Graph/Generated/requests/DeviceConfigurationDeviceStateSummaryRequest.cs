@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceConfigurationDeviceStateSummary using POST and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationDeviceStateSummaryToCreate">The DeviceConfigurationDeviceStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStateSummary>> CreateResponseAsync(DeviceConfigurationDeviceStateSummary deviceConfigurationDeviceStateSummaryToCreate)
+        {
+            return this.CreateResponseAsync(deviceConfigurationDeviceStateSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationDeviceStateSummary using POST and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationDeviceStateSummaryToCreate">The DeviceConfigurationDeviceStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStateSummary>> CreateResponseAsync(DeviceConfigurationDeviceStateSummary deviceConfigurationDeviceStateSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceConfigurationDeviceStateSummary>(deviceConfigurationDeviceStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceConfigurationDeviceStateSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

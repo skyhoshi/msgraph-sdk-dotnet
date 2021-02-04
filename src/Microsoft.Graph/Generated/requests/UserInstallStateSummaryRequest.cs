@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UserInstallStateSummary using POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object.
+        /// </summary>
+        /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> CreateResponseAsync(UserInstallStateSummary userInstallStateSummaryToCreate)
+        {
+            return this.CreateResponseAsync(userInstallStateSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UserInstallStateSummary using POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object.
+        /// </summary>
+        /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> CreateResponseAsync(UserInstallStateSummary userInstallStateSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserInstallStateSummary>(userInstallStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UserInstallStateSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

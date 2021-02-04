@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="notebookToCreate">The Notebook to create.</param>
         /// <returns>The created Notebook.</returns>
-        System.Threading.Tasks.Task<Notebook> CreateAsync(Notebook notebookToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Notebook> CreateAsync(Notebook notebookToCreate);
+
+        /// <summary>
         /// Creates the specified Notebook using POST.
         /// </summary>
         /// <param name="notebookToCreate">The Notebook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Notebook.</returns>
         System.Threading.Tasks.Task<Notebook> CreateAsync(Notebook notebookToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Notebook using POST and returns a <see cref="GraphResponse{Notebook}"/> object.
+        /// </summary>
+        /// <param name="notebookToCreate">The Notebook to create.</param>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> CreateResponseAsync(Notebook notebookToCreate);
+
+        /// <summary>
+        /// Creates the specified Notebook using POST and returns a <see cref="GraphResponse{Notebook}"/> object.
+        /// </summary>
+        /// <param name="notebookToCreate">The Notebook to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> CreateResponseAsync(Notebook notebookToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Notebook.

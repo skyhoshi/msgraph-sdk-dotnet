@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
         /// <returns>The created ListItemVersion.</returns>
-        System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate);
+
+        /// <summary>
         /// Creates the specified ListItemVersion using POST.
         /// </summary>
         /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ListItemVersion.</returns>
         System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate);
+
+        /// <summary>
+        /// Creates the specified ListItemVersion using POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object.
+        /// </summary>
+        /// <param name="listItemVersionToCreate">The ListItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ListItemVersion.

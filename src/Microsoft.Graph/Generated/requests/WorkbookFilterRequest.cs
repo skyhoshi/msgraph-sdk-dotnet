@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookFilter using POST and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
+        /// </summary>
+        /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate)
+        {
+            return this.CreateResponseAsync(workbookFilterToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookFilter using POST and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
+        /// </summary>
+        /// <param name="workbookFilterToCreate">The WorkbookFilter to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> CreateResponseAsync(WorkbookFilter workbookFilterToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookFilter>(workbookFilterToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookFilter.
         /// </summary>
         /// <returns>The task to await.</returns>

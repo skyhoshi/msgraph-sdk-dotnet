@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="vppTokenToCreate">The VppToken to create.</param>
         /// <returns>The created VppToken.</returns>
-        System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate);        /// <summary>
+        System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate);
+
+        /// <summary>
         /// Creates the specified VppToken using POST.
         /// </summary>
         /// <param name="vppTokenToCreate">The VppToken to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created VppToken.</returns>
         System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified VppToken using POST and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToCreate">The VppToken to create.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> CreateResponseAsync(VppToken vppTokenToCreate);
+
+        /// <summary>
+        /// Creates the specified VppToken using POST and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToCreate">The VppToken to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> CreateResponseAsync(VppToken vppTokenToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified VppToken.

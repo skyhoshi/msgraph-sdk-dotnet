@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosManagedAppProtection using POST and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppProtectionToCreate">The IosManagedAppProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> CreateResponseAsync(IosManagedAppProtection iosManagedAppProtectionToCreate)
+        {
+            return this.CreateResponseAsync(iosManagedAppProtectionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosManagedAppProtection using POST and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppProtectionToCreate">The IosManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> CreateResponseAsync(IosManagedAppProtection iosManagedAppProtectionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosManagedAppProtection>(iosManagedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosManagedAppProtection.
         /// </summary>
         /// <returns>The task to await.</returns>

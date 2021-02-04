@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosVppEBook using POST and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> CreateResponseAsync(IosVppEBook iosVppEBookToCreate)
+        {
+            return this.CreateResponseAsync(iosVppEBookToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosVppEBook using POST and returns a <see cref="GraphResponse{IosVppEBook}"/> object.
+        /// </summary>
+        /// <param name="iosVppEBookToCreate">The IosVppEBook to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBook}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosVppEBook>> CreateResponseAsync(IosVppEBook iosVppEBookToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosVppEBook>(iosVppEBookToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosVppEBook.
         /// </summary>
         /// <returns>The task to await.</returns>

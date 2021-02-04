@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
         /// <returns>The created ItemAnalytics.</returns>
-        System.Threading.Tasks.Task<ItemAnalytics> CreateAsync(ItemAnalytics itemAnalyticsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ItemAnalytics> CreateAsync(ItemAnalytics itemAnalyticsToCreate);
+
+        /// <summary>
         /// Creates the specified ItemAnalytics using POST.
         /// </summary>
         /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ItemAnalytics.</returns>
         System.Threading.Tasks.Task<ItemAnalytics> CreateAsync(ItemAnalytics itemAnalyticsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ItemAnalytics using POST and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> CreateResponseAsync(ItemAnalytics itemAnalyticsToCreate);
+
+        /// <summary>
+        /// Creates the specified ItemAnalytics using POST and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <param name="itemAnalyticsToCreate">The ItemAnalytics to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> CreateResponseAsync(ItemAnalytics itemAnalyticsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ItemAnalytics.

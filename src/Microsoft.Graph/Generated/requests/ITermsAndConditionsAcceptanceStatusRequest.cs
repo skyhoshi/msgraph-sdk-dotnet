@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
         /// <returns>The created TermsAndConditionsAcceptanceStatus.</returns>
-        System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> CreateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> CreateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate);
+
+        /// <summary>
         /// Creates the specified TermsAndConditionsAcceptanceStatus using POST.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TermsAndConditionsAcceptanceStatus.</returns>
         System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> CreateAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> CreateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate);
+
+        /// <summary>
+        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> CreateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TermsAndConditionsAcceptanceStatus.

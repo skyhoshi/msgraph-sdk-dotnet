@@ -81,6 +81,29 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Creates the specified EducationSchool using POST and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationSchool>> CreateResponseAsync(EducationSchool educationSchoolToCreate)
+        {
+            return this.CreateResponseAsync(educationSchoolToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EducationSchool using POST and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationSchool>> CreateResponseAsync(EducationSchool educationSchoolToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationSchool>(educationSchoolToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Updates the specified EducationSchool using PATCH.
         /// </summary>
         /// <param name="educationSchoolToUpdate">The EducationSchool to update.</param>

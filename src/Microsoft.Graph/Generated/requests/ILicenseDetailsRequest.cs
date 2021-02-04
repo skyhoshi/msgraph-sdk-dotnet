@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <returns>The created LicenseDetails.</returns>
-        System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate);
+
+        /// <summary>
         /// Creates the specified LicenseDetails using POST.
         /// </summary>
         /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LicenseDetails.</returns>
         System.Threading.Tasks.Task<LicenseDetails> CreateAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate);
+
+        /// <summary>
+        /// Creates the specified LicenseDetails using POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToCreate">The LicenseDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> CreateResponseAsync(LicenseDetails licenseDetailsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified LicenseDetails.

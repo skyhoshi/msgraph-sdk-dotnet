@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UserSettings using POST and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToCreate">The UserSettings to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate)
+        {
+            return this.CreateResponseAsync(userSettingsToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UserSettings using POST and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="userSettingsToCreate">The UserSettings to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserSettings>> CreateResponseAsync(UserSettings userSettingsToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserSettings>(userSettingsToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UserSettings.
         /// </summary>
         /// <returns>The task to await.</returns>

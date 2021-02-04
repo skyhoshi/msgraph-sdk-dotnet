@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified BaseItemVersion using POST and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
+        /// </summary>
+        /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> CreateResponseAsync(BaseItemVersion baseItemVersionToCreate)
+        {
+            return this.CreateResponseAsync(baseItemVersionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified BaseItemVersion using POST and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
+        /// </summary>
+        /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> CreateResponseAsync(BaseItemVersion baseItemVersionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<BaseItemVersion>(baseItemVersionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified BaseItemVersion.
         /// </summary>
         /// <returns>The task to await.</returns>

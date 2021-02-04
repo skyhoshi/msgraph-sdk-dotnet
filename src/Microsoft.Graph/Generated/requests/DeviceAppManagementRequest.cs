@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceAppManagement using POST and returns a <see cref="GraphResponse{DeviceAppManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementToCreate">The DeviceAppManagement to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagement}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceAppManagement>> CreateResponseAsync(DeviceAppManagement deviceAppManagementToCreate)
+        {
+            return this.CreateResponseAsync(deviceAppManagementToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceAppManagement using POST and returns a <see cref="GraphResponse{DeviceAppManagement}"/> object.
+        /// </summary>
+        /// <param name="deviceAppManagementToCreate">The DeviceAppManagement to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAppManagement}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceAppManagement>> CreateResponseAsync(DeviceAppManagement deviceAppManagementToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceAppManagement>(deviceAppManagementToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceAppManagement.
         /// </summary>
         /// <returns>The task to await.</returns>

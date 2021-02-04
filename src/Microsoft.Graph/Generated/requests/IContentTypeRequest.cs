@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="contentTypeToCreate">The ContentType to create.</param>
         /// <returns>The created ContentType.</returns>
-        System.Threading.Tasks.Task<ContentType> CreateAsync(ContentType contentTypeToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ContentType> CreateAsync(ContentType contentTypeToCreate);
+
+        /// <summary>
         /// Creates the specified ContentType using POST.
         /// </summary>
         /// <param name="contentTypeToCreate">The ContentType to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContentType.</returns>
         System.Threading.Tasks.Task<ContentType> CreateAsync(ContentType contentTypeToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ContentType using POST and returns a <see cref="GraphResponse{ContentType}"/> object.
+        /// </summary>
+        /// <param name="contentTypeToCreate">The ContentType to create.</param>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> CreateResponseAsync(ContentType contentTypeToCreate);
+
+        /// <summary>
+        /// Creates the specified ContentType using POST and returns a <see cref="GraphResponse{ContentType}"/> object.
+        /// </summary>
+        /// <param name="contentTypeToCreate">The ContentType to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> CreateResponseAsync(ContentType contentTypeToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ContentType.

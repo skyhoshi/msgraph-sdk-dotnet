@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceCompliancePolicyAssignment using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyAssignmentToCreate">The DeviceCompliancePolicyAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> CreateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(deviceCompliancePolicyAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyAssignment using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyAssignmentToCreate">The DeviceCompliancePolicyAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> CreateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyAssignment>(deviceCompliancePolicyAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceCompliancePolicyAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>

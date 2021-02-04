@@ -81,6 +81,29 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Creates the specified TeamsAppDefinition using POST and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToCreate">The TeamsAppDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> CreateResponseAsync(TeamsAppDefinition teamsAppDefinitionToCreate)
+        {
+            return this.CreateResponseAsync(teamsAppDefinitionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TeamsAppDefinition using POST and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToCreate">The TeamsAppDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> CreateResponseAsync(TeamsAppDefinition teamsAppDefinitionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TeamsAppDefinition>(teamsAppDefinitionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Updates the specified TeamsAppDefinition using PATCH.
         /// </summary>
         /// <param name="teamsAppDefinitionToUpdate">The TeamsAppDefinition to update.</param>

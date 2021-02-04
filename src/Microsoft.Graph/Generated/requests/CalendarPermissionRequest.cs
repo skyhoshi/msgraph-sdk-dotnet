@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CalendarPermission using POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
+        /// </summary>
+        /// <param name="calendarPermissionToCreate">The CalendarPermission to create.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> CreateResponseAsync(CalendarPermission calendarPermissionToCreate)
+        {
+            return this.CreateResponseAsync(calendarPermissionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CalendarPermission using POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
+        /// </summary>
+        /// <param name="calendarPermissionToCreate">The CalendarPermission to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> CreateResponseAsync(CalendarPermission calendarPermissionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CalendarPermission>(calendarPermissionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CalendarPermission.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedMobileAppToCreate">The ManagedMobileApp to create.</param>
         /// <returns>The created ManagedMobileApp.</returns>
-        System.Threading.Tasks.Task<ManagedMobileApp> CreateAsync(ManagedMobileApp managedMobileAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedMobileApp> CreateAsync(ManagedMobileApp managedMobileAppToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedMobileApp using POST.
         /// </summary>
         /// <param name="managedMobileAppToCreate">The ManagedMobileApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedMobileApp.</returns>
         System.Threading.Tasks.Task<ManagedMobileApp> CreateAsync(ManagedMobileApp managedMobileAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedMobileApp using POST and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileAppToCreate">The ManagedMobileApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> CreateResponseAsync(ManagedMobileApp managedMobileAppToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedMobileApp using POST and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object.
+        /// </summary>
+        /// <param name="managedMobileAppToCreate">The ManagedMobileApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> CreateResponseAsync(ManagedMobileApp managedMobileAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedMobileApp.

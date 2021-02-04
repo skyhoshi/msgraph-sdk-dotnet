@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
         /// <returns>The created IosStoreApp.</returns>
-        System.Threading.Tasks.Task<IosStoreApp> CreateAsync(IosStoreApp iosStoreAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosStoreApp> CreateAsync(IosStoreApp iosStoreAppToCreate);
+
+        /// <summary>
         /// Creates the specified IosStoreApp using POST.
         /// </summary>
         /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosStoreApp.</returns>
         System.Threading.Tasks.Task<IosStoreApp> CreateAsync(IosStoreApp iosStoreAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosStoreApp using POST and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> CreateResponseAsync(IosStoreApp iosStoreAppToCreate);
+
+        /// <summary>
+        /// Creates the specified IosStoreApp using POST and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToCreate">The IosStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> CreateResponseAsync(IosStoreApp iosStoreAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosStoreApp.

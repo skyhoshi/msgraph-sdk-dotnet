@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DirectoryRoleTemplate using POST and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> CreateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate)
+        {
+            return this.CreateResponseAsync(directoryRoleTemplateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DirectoryRoleTemplate using POST and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> CreateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DirectoryRoleTemplate>(directoryRoleTemplateToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DirectoryRoleTemplate.
         /// </summary>
         /// <returns>The task to await.</returns>

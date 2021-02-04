@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationAssignment.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> CreateAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> CreateAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using POST.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationAssignment.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> CreateAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationAssignment.

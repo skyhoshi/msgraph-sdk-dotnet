@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AuditLogRoot using POST and returns a <see cref="GraphResponse{AuditLogRoot}"/> object.
+        /// </summary>
+        /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{AuditLogRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> CreateResponseAsync(AuditLogRoot auditLogRootToCreate)
+        {
+            return this.CreateResponseAsync(auditLogRootToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AuditLogRoot using POST and returns a <see cref="GraphResponse{AuditLogRoot}"/> object.
+        /// </summary>
+        /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuditLogRoot}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> CreateResponseAsync(AuditLogRoot auditLogRootToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AuditLogRoot>(auditLogRootToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AuditLogRoot.
         /// </summary>
         /// <returns>The task to await.</returns>

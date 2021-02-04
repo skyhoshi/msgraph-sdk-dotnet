@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
         /// <returns>The created PlannerTaskDetails.</returns>
-        System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerTaskDetails using POST.
         /// </summary>
         /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerTaskDetails.</returns>
         System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerTaskDetails using POST and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> CreateResponseAsync(PlannerTaskDetails plannerTaskDetailsToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerTaskDetails using POST and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerTaskDetailsToCreate">The PlannerTaskDetails to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> CreateResponseAsync(PlannerTaskDetails plannerTaskDetailsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerTaskDetails.

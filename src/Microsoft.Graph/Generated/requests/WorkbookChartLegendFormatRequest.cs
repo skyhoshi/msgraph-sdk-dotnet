@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookChartLegendFormat using POST and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendFormatToCreate">The WorkbookChartLegendFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> CreateResponseAsync(WorkbookChartLegendFormat workbookChartLegendFormatToCreate)
+        {
+            return this.CreateResponseAsync(workbookChartLegendFormatToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookChartLegendFormat using POST and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendFormatToCreate">The WorkbookChartLegendFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> CreateResponseAsync(WorkbookChartLegendFormat workbookChartLegendFormatToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartLegendFormat>(workbookChartLegendFormatToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookChartLegendFormat.
         /// </summary>
         /// <returns>The task to await.</returns>

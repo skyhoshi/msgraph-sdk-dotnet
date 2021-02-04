@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
         /// <returns>The created TeamsAsyncOperation.</returns>
-        System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate);
+
+        /// <summary>
         /// Creates the specified TeamsAsyncOperation using POST.
         /// </summary>
         /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAsyncOperation.</returns>
         System.Threading.Tasks.Task<TeamsAsyncOperation> CreateAsync(TeamsAsyncOperation teamsAsyncOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TeamsAsyncOperation using POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> CreateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified TeamsAsyncOperation using POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="teamsAsyncOperationToCreate">The TeamsAsyncOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> CreateResponseAsync(TeamsAsyncOperation teamsAsyncOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TeamsAsyncOperation.

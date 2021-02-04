@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
         /// <returns>The created PolicyRoot.</returns>
-        System.Threading.Tasks.Task<PolicyRoot> CreateAsync(PolicyRoot policyRootToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PolicyRoot> CreateAsync(PolicyRoot policyRootToCreate);
+
+        /// <summary>
         /// Creates the specified PolicyRoot using POST.
         /// </summary>
         /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicyRoot.</returns>
         System.Threading.Tasks.Task<PolicyRoot> CreateAsync(PolicyRoot policyRootToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PolicyRoot using POST and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> CreateResponseAsync(PolicyRoot policyRootToCreate);
+
+        /// <summary>
+        /// Creates the specified PolicyRoot using POST and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> CreateResponseAsync(PolicyRoot policyRootToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PolicyRoot.

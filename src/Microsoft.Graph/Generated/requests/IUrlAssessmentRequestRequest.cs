@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="urlAssessmentRequestObjectToCreate">The UrlAssessmentRequestObject to create.</param>
         /// <returns>The created UrlAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<UrlAssessmentRequestObject> CreateAsync(UrlAssessmentRequestObject urlAssessmentRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UrlAssessmentRequestObject> CreateAsync(UrlAssessmentRequestObject urlAssessmentRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified UrlAssessmentRequestObject using POST.
         /// </summary>
         /// <param name="urlAssessmentRequestObjectToCreate">The UrlAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UrlAssessmentRequestObject.</returns>
         System.Threading.Tasks.Task<UrlAssessmentRequestObject> CreateAsync(UrlAssessmentRequestObject urlAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UrlAssessmentRequestObject using POST and returns a <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="urlAssessmentRequestObjectToCreate">The UrlAssessmentRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UrlAssessmentRequestObject>> CreateResponseAsync(UrlAssessmentRequestObject urlAssessmentRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified UrlAssessmentRequestObject using POST and returns a <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="urlAssessmentRequestObjectToCreate">The UrlAssessmentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UrlAssessmentRequestObject>> CreateResponseAsync(UrlAssessmentRequestObject urlAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UrlAssessmentRequestObject.

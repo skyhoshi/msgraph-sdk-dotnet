@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedIOSStoreApp using POST and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
+        /// </summary>
+        /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> CreateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate)
+        {
+            return this.CreateResponseAsync(managedIOSStoreAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedIOSStoreApp using POST and returns a <see cref="GraphResponse{ManagedIOSStoreApp}"/> object.
+        /// </summary>
+        /// <param name="managedIOSStoreAppToCreate">The ManagedIOSStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSStoreApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedIOSStoreApp>> CreateResponseAsync(ManagedIOSStoreApp managedIOSStoreAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedIOSStoreApp>(managedIOSStoreAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedIOSStoreApp.
         /// </summary>
         /// <returns>The task to await.</returns>

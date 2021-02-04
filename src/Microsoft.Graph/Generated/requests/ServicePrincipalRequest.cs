@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ServicePrincipal using POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> CreateResponseAsync(ServicePrincipal servicePrincipalToCreate)
+        {
+            return this.CreateResponseAsync(servicePrincipalToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ServicePrincipal using POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object.
+        /// </summary>
+        /// <param name="servicePrincipalToCreate">The ServicePrincipal to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> CreateResponseAsync(ServicePrincipal servicePrincipalToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ServicePrincipal>(servicePrincipalToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ServicePrincipal.
         /// </summary>
         /// <returns>The task to await.</returns>

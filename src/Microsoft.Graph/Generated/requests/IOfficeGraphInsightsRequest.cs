@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
         /// <returns>The created OfficeGraphInsights.</returns>
-        System.Threading.Tasks.Task<OfficeGraphInsights> CreateAsync(OfficeGraphInsights officeGraphInsightsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OfficeGraphInsights> CreateAsync(OfficeGraphInsights officeGraphInsightsToCreate);
+
+        /// <summary>
         /// Creates the specified OfficeGraphInsights using POST.
         /// </summary>
         /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OfficeGraphInsights.</returns>
         System.Threading.Tasks.Task<OfficeGraphInsights> CreateAsync(OfficeGraphInsights officeGraphInsightsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OfficeGraphInsights using POST and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
+        /// </summary>
+        /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeGraphInsights}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> CreateResponseAsync(OfficeGraphInsights officeGraphInsightsToCreate);
+
+        /// <summary>
+        /// Creates the specified OfficeGraphInsights using POST and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
+        /// </summary>
+        /// <param name="officeGraphInsightsToCreate">The OfficeGraphInsights to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeGraphInsights}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> CreateResponseAsync(OfficeGraphInsights officeGraphInsightsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OfficeGraphInsights.

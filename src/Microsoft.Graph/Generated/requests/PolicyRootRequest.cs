@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PolicyRoot using POST and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> CreateResponseAsync(PolicyRoot policyRootToCreate)
+        {
+            return this.CreateResponseAsync(policyRootToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PolicyRoot using POST and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="policyRootToCreate">The PolicyRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> CreateResponseAsync(PolicyRoot policyRootToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PolicyRoot>(policyRootToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PolicyRoot.
         /// </summary>
         /// <returns>The task to await.</returns>

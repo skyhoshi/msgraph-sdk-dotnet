@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookTableRowToCreate">The WorkbookTableRow to create.</param>
         /// <returns>The created WorkbookTableRow.</returns>
-        System.Threading.Tasks.Task<WorkbookTableRow> CreateAsync(WorkbookTableRow workbookTableRowToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookTableRow> CreateAsync(WorkbookTableRow workbookTableRowToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookTableRow using POST.
         /// </summary>
         /// <param name="workbookTableRowToCreate">The WorkbookTableRow to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookTableRow.</returns>
         System.Threading.Tasks.Task<WorkbookTableRow> CreateAsync(WorkbookTableRow workbookTableRowToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookTableRow using POST and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
+        /// </summary>
+        /// <param name="workbookTableRowToCreate">The WorkbookTableRow to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableRow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> CreateResponseAsync(WorkbookTableRow workbookTableRowToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookTableRow using POST and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
+        /// </summary>
+        /// <param name="workbookTableRowToCreate">The WorkbookTableRow to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableRow}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> CreateResponseAsync(WorkbookTableRow workbookTableRowToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookTableRow.

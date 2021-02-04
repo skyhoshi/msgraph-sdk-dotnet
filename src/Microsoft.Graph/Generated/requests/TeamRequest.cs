@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Team using POST and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToCreate">The Team to create.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Team>> CreateResponseAsync(Team teamToCreate)
+        {
+            return this.CreateResponseAsync(teamToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Team using POST and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToCreate">The Team to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Team>> CreateResponseAsync(Team teamToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Team>(teamToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Team.
         /// </summary>
         /// <returns>The task to await.</returns>

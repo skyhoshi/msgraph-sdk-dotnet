@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
         /// <returns>The created InferenceClassificationOverride.</returns>
-        System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate);        /// <summary>
+        System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate);
+
+        /// <summary>
         /// Creates the specified InferenceClassificationOverride using POST.
         /// </summary>
         /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InferenceClassificationOverride.</returns>
         System.Threading.Tasks.Task<InferenceClassificationOverride> CreateAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified InferenceClassificationOverride using POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> CreateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate);
+
+        /// <summary>
+        /// Creates the specified InferenceClassificationOverride using POST and returns a <see cref="GraphResponse{InferenceClassificationOverride}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationOverrideToCreate">The InferenceClassificationOverride to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassificationOverride}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassificationOverride>> CreateResponseAsync(InferenceClassificationOverride inferenceClassificationOverrideToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified InferenceClassificationOverride.

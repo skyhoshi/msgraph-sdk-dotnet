@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToCreate">The AndroidCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> CreateResponseAsync(AndroidCompliancePolicy androidCompliancePolicyToCreate)
+        {
+            return this.CreateResponseAsync(androidCompliancePolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidCompliancePolicyToCreate">The AndroidCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCompliancePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidCompliancePolicy>> CreateResponseAsync(AndroidCompliancePolicy androidCompliancePolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidCompliancePolicy>(androidCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidCompliancePolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppStatusRawToCreate">The ManagedAppStatusRaw to create.</param>
         /// <returns>The created ManagedAppStatusRaw.</returns>
-        System.Threading.Tasks.Task<ManagedAppStatusRaw> CreateAsync(ManagedAppStatusRaw managedAppStatusRawToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppStatusRaw> CreateAsync(ManagedAppStatusRaw managedAppStatusRawToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppStatusRaw using POST.
         /// </summary>
         /// <param name="managedAppStatusRawToCreate">The ManagedAppStatusRaw to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppStatusRaw.</returns>
         System.Threading.Tasks.Task<ManagedAppStatusRaw> CreateAsync(ManagedAppStatusRaw managedAppStatusRawToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppStatusRaw using POST and returns a <see cref="GraphResponse{ManagedAppStatusRaw}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusRawToCreate">The ManagedAppStatusRaw to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatusRaw}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatusRaw>> CreateResponseAsync(ManagedAppStatusRaw managedAppStatusRawToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppStatusRaw using POST and returns a <see cref="GraphResponse{ManagedAppStatusRaw}"/> object.
+        /// </summary>
+        /// <param name="managedAppStatusRawToCreate">The ManagedAppStatusRaw to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatusRaw}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatusRaw>> CreateResponseAsync(ManagedAppStatusRaw managedAppStatusRawToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppStatusRaw.

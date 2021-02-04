@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
         /// <returns>The created Windows10CompliancePolicy.</returns>
-        System.Threading.Tasks.Task<Windows10CompliancePolicy> CreateAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10CompliancePolicy> CreateAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10CompliancePolicy using POST.
         /// </summary>
         /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10CompliancePolicy.</returns>
         System.Threading.Tasks.Task<Windows10CompliancePolicy> CreateAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10CompliancePolicy using POST and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> CreateResponseAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10CompliancePolicy using POST and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10CompliancePolicyToCreate">The Windows10CompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> CreateResponseAsync(Windows10CompliancePolicy windows10CompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10CompliancePolicy.

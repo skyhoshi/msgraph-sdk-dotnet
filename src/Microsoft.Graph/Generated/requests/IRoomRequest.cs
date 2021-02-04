@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="roomToCreate">The Room to create.</param>
         /// <returns>The created Room.</returns>
-        System.Threading.Tasks.Task<Room> CreateAsync(Room roomToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Room> CreateAsync(Room roomToCreate);
+
+        /// <summary>
         /// Creates the specified Room using POST.
         /// </summary>
         /// <param name="roomToCreate">The Room to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Room.</returns>
         System.Threading.Tasks.Task<Room> CreateAsync(Room roomToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Room using POST and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <param name="roomToCreate">The Room to create.</param>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Room>> CreateResponseAsync(Room roomToCreate);
+
+        /// <summary>
+        /// Creates the specified Room using POST and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <param name="roomToCreate">The Room to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Room>> CreateResponseAsync(Room roomToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Room.

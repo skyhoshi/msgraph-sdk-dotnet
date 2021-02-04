@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookChartAxisFormat using POST and returns a <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisFormatToCreate">The WorkbookChartAxisFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisFormat>> CreateResponseAsync(WorkbookChartAxisFormat workbookChartAxisFormatToCreate)
+        {
+            return this.CreateResponseAsync(workbookChartAxisFormatToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxisFormat using POST and returns a <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisFormatToCreate">The WorkbookChartAxisFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisFormat>> CreateResponseAsync(WorkbookChartAxisFormat workbookChartAxisFormatToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartAxisFormat>(workbookChartAxisFormatToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookChartAxisFormat.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartDataLabelsToCreate">The WorkbookChartDataLabels to create.</param>
         /// <returns>The created WorkbookChartDataLabels.</returns>
-        System.Threading.Tasks.Task<WorkbookChartDataLabels> CreateAsync(WorkbookChartDataLabels workbookChartDataLabelsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartDataLabels> CreateAsync(WorkbookChartDataLabels workbookChartDataLabelsToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartDataLabels using POST.
         /// </summary>
         /// <param name="workbookChartDataLabelsToCreate">The WorkbookChartDataLabels to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartDataLabels.</returns>
         System.Threading.Tasks.Task<WorkbookChartDataLabels> CreateAsync(WorkbookChartDataLabels workbookChartDataLabelsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartDataLabels using POST and returns a <see cref="GraphResponse{WorkbookChartDataLabels}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelsToCreate">The WorkbookChartDataLabels to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabels}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabels>> CreateResponseAsync(WorkbookChartDataLabels workbookChartDataLabelsToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartDataLabels using POST and returns a <see cref="GraphResponse{WorkbookChartDataLabels}"/> object.
+        /// </summary>
+        /// <param name="workbookChartDataLabelsToCreate">The WorkbookChartDataLabels to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabels}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabels>> CreateResponseAsync(WorkbookChartDataLabels workbookChartDataLabelsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartDataLabels.

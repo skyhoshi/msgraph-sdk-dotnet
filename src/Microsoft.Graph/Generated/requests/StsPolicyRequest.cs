@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified StsPolicy using POST and returns a <see cref="GraphResponse{StsPolicy}"/> object.
+        /// </summary>
+        /// <param name="stsPolicyToCreate">The StsPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<StsPolicy>> CreateResponseAsync(StsPolicy stsPolicyToCreate)
+        {
+            return this.CreateResponseAsync(stsPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified StsPolicy using POST and returns a <see cref="GraphResponse{StsPolicy}"/> object.
+        /// </summary>
+        /// <param name="stsPolicyToCreate">The StsPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<StsPolicy>> CreateResponseAsync(StsPolicy stsPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<StsPolicy>(stsPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified StsPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

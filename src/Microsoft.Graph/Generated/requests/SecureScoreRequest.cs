@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SecureScore using POST and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="secureScoreToCreate">The SecureScore to create.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SecureScore>> CreateResponseAsync(SecureScore secureScoreToCreate)
+        {
+            return this.CreateResponseAsync(secureScoreToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SecureScore using POST and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="secureScoreToCreate">The SecureScore to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SecureScore>> CreateResponseAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SecureScore>(secureScoreToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SecureScore.
         /// </summary>
         /// <returns>The task to await.</returns>

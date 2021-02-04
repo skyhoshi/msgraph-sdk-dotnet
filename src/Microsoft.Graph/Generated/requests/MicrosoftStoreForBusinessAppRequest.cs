@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MicrosoftStoreForBusinessApp using POST and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> CreateResponseAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate)
+        {
+            return this.CreateResponseAsync(microsoftStoreForBusinessAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MicrosoftStoreForBusinessApp using POST and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="microsoftStoreForBusinessAppToCreate">The MicrosoftStoreForBusinessApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> CreateResponseAsync(MicrosoftStoreForBusinessApp microsoftStoreForBusinessAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MicrosoftStoreForBusinessApp>(microsoftStoreForBusinessAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MicrosoftStoreForBusinessApp.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsUniversalAppXToCreate">The WindowsUniversalAppX to create.</param>
         /// <returns>The created WindowsUniversalAppX.</returns>
-        System.Threading.Tasks.Task<WindowsUniversalAppX> CreateAsync(WindowsUniversalAppX windowsUniversalAppXToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsUniversalAppX> CreateAsync(WindowsUniversalAppX windowsUniversalAppXToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsUniversalAppX using POST.
         /// </summary>
         /// <param name="windowsUniversalAppXToCreate">The WindowsUniversalAppX to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsUniversalAppX.</returns>
         System.Threading.Tasks.Task<WindowsUniversalAppX> CreateAsync(WindowsUniversalAppX windowsUniversalAppXToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsUniversalAppX using POST and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXToCreate">The WindowsUniversalAppX to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> CreateResponseAsync(WindowsUniversalAppX windowsUniversalAppXToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsUniversalAppX using POST and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="windowsUniversalAppXToCreate">The WindowsUniversalAppX to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> CreateResponseAsync(WindowsUniversalAppX windowsUniversalAppXToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsUniversalAppX.

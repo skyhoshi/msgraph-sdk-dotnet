@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
         /// <returns>The created InviteParticipantsOperation.</returns>
-        System.Threading.Tasks.Task<InviteParticipantsOperation> CreateAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<InviteParticipantsOperation> CreateAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate);
+
+        /// <summary>
         /// Creates the specified InviteParticipantsOperation using POST.
         /// </summary>
         /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created InviteParticipantsOperation.</returns>
         System.Threading.Tasks.Task<InviteParticipantsOperation> CreateAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified InviteParticipantsOperation using POST and returns a <see cref="GraphResponse{InviteParticipantsOperation}"/> object.
+        /// </summary>
+        /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{InviteParticipantsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InviteParticipantsOperation>> CreateResponseAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified InviteParticipantsOperation using POST and returns a <see cref="GraphResponse{InviteParticipantsOperation}"/> object.
+        /// </summary>
+        /// <param name="inviteParticipantsOperationToCreate">The InviteParticipantsOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InviteParticipantsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InviteParticipantsOperation>> CreateResponseAsync(InviteParticipantsOperation inviteParticipantsOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified InviteParticipantsOperation.

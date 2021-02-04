@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
         /// <returns>The created BaseItemVersion.</returns>
-        System.Threading.Tasks.Task<BaseItemVersion> CreateAsync(BaseItemVersion baseItemVersionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<BaseItemVersion> CreateAsync(BaseItemVersion baseItemVersionToCreate);
+
+        /// <summary>
         /// Creates the specified BaseItemVersion using POST.
         /// </summary>
         /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BaseItemVersion.</returns>
         System.Threading.Tasks.Task<BaseItemVersion> CreateAsync(BaseItemVersion baseItemVersionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified BaseItemVersion using POST and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
+        /// </summary>
+        /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> CreateResponseAsync(BaseItemVersion baseItemVersionToCreate);
+
+        /// <summary>
+        /// Creates the specified BaseItemVersion using POST and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
+        /// </summary>
+        /// <param name="baseItemVersionToCreate">The BaseItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> CreateResponseAsync(BaseItemVersion baseItemVersionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified BaseItemVersion.

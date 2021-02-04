@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
         /// <returns>The created SubscribeToToneOperation.</returns>
-        System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate);
+
+        /// <summary>
         /// Creates the specified SubscribeToToneOperation using POST.
         /// </summary>
         /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SubscribeToToneOperation.</returns>
         System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SubscribeToToneOperation using POST and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
+        /// </summary>
+        /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> CreateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified SubscribeToToneOperation using POST and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
+        /// </summary>
+        /// <param name="subscribeToToneOperationToCreate">The SubscribeToToneOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> CreateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SubscribeToToneOperation.

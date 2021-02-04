@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
         /// <returns>The created WorkbookChartSeries.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartSeries using POST.
         /// </summary>
         /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartSeries.</returns>
         System.Threading.Tasks.Task<WorkbookChartSeries> CreateAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartSeries using POST and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
+        /// </summary>
+        /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> CreateResponseAsync(WorkbookChartSeries workbookChartSeriesToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartSeries using POST and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
+        /// </summary>
+        /// <param name="workbookChartSeriesToCreate">The WorkbookChartSeries to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> CreateResponseAsync(WorkbookChartSeries workbookChartSeriesToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartSeries.

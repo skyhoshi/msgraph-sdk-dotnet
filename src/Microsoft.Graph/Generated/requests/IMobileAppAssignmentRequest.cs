@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
         /// <returns>The created MobileAppAssignment.</returns>
-        System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppAssignment using POST.
         /// </summary>
         /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppAssignment> CreateAsync(MobileAppAssignment mobileAppAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppAssignment using POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> CreateResponseAsync(MobileAppAssignment mobileAppAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppAssignment using POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object.
+        /// </summary>
+        /// <param name="mobileAppAssignmentToCreate">The MobileAppAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> CreateResponseAsync(MobileAppAssignment mobileAppAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppAssignment.

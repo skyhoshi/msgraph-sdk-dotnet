@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceConfigurationState using POST and returns a <see cref="GraphResponse{DeviceConfigurationState}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationStateToCreate">The DeviceConfigurationState to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationState}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationState>> CreateResponseAsync(DeviceConfigurationState deviceConfigurationStateToCreate)
+        {
+            return this.CreateResponseAsync(deviceConfigurationStateToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationState using POST and returns a <see cref="GraphResponse{DeviceConfigurationState}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationStateToCreate">The DeviceConfigurationState to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationState}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationState>> CreateResponseAsync(DeviceConfigurationState deviceConfigurationStateToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceConfigurationState>(deviceConfigurationStateToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceConfigurationState.
         /// </summary>
         /// <returns>The task to await.</returns>

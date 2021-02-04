@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
         /// <returns>The created AndroidWorkProfileCustomConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidWorkProfileCustomConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileCustomConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> CreateAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> CreateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileCustomConfigurationToCreate">The AndroidWorkProfileCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> CreateResponseAsync(AndroidWorkProfileCustomConfiguration androidWorkProfileCustomConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileCustomConfiguration.

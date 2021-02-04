@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileCompliancePolicyToCreate">The AndroidWorkProfileCompliancePolicy to create.</param>
         /// <returns>The created AndroidWorkProfileCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> CreateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> CreateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidWorkProfileCompliancePolicy using POST.
         /// </summary>
         /// <param name="androidWorkProfileCompliancePolicyToCreate">The AndroidWorkProfileCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileCompliancePolicy.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> CreateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidWorkProfileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileCompliancePolicyToCreate">The AndroidWorkProfileCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCompliancePolicy>> CreateResponseAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileCompliancePolicy using POST and returns a <see cref="GraphResponse{AndroidWorkProfileCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileCompliancePolicyToCreate">The AndroidWorkProfileCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCompliancePolicy>> CreateResponseAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileCompliancePolicy.

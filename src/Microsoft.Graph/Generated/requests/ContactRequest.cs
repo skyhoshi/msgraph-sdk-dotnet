@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Contact using POST and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="contactToCreate">The Contact to create.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Contact>> CreateResponseAsync(Contact contactToCreate)
+        {
+            return this.CreateResponseAsync(contactToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Contact using POST and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="contactToCreate">The Contact to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Contact>> CreateResponseAsync(Contact contactToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Contact>(contactToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Contact.
         /// </summary>
         /// <returns>The task to await.</returns>

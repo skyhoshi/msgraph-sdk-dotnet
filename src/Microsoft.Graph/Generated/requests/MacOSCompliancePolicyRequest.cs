@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MacOSCompliancePolicy using POST and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> CreateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate)
+        {
+            return this.CreateResponseAsync(macOSCompliancePolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MacOSCompliancePolicy using POST and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> CreateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOSCompliancePolicy>(macOSCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MacOSCompliancePolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

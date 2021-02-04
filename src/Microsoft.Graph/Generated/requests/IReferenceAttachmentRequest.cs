@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
         /// <returns>The created ReferenceAttachment.</returns>
-        System.Threading.Tasks.Task<ReferenceAttachment> CreateAsync(ReferenceAttachment referenceAttachmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ReferenceAttachment> CreateAsync(ReferenceAttachment referenceAttachmentToCreate);
+
+        /// <summary>
         /// Creates the specified ReferenceAttachment using POST.
         /// </summary>
         /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReferenceAttachment.</returns>
         System.Threading.Tasks.Task<ReferenceAttachment> CreateAsync(ReferenceAttachment referenceAttachmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ReferenceAttachment using POST and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
+        /// </summary>
+        /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
+        /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> CreateResponseAsync(ReferenceAttachment referenceAttachmentToCreate);
+
+        /// <summary>
+        /// Creates the specified ReferenceAttachment using POST and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
+        /// </summary>
+        /// <param name="referenceAttachmentToCreate">The ReferenceAttachment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> CreateResponseAsync(ReferenceAttachment referenceAttachmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ReferenceAttachment.

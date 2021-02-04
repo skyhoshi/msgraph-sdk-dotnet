@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedEBookAssignment using POST and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> CreateResponseAsync(ManagedEBookAssignment managedEBookAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(managedEBookAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedEBookAssignment using POST and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedEBookAssignmentToCreate">The ManagedEBookAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> CreateResponseAsync(ManagedEBookAssignment managedEBookAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedEBookAssignment>(managedEBookAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedEBookAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>

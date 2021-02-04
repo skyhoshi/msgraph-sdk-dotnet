@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="searchEntityToCreate">The SearchEntity to create.</param>
         /// <returns>The created SearchEntity.</returns>
-        System.Threading.Tasks.Task<SearchEntity> CreateAsync(SearchEntity searchEntityToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SearchEntity> CreateAsync(SearchEntity searchEntityToCreate);
+
+        /// <summary>
         /// Creates the specified SearchEntity using POST.
         /// </summary>
         /// <param name="searchEntityToCreate">The SearchEntity to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SearchEntity.</returns>
         System.Threading.Tasks.Task<SearchEntity> CreateAsync(SearchEntity searchEntityToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SearchEntity using POST and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <param name="searchEntityToCreate">The SearchEntity to create.</param>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SearchEntity>> CreateResponseAsync(SearchEntity searchEntityToCreate);
+
+        /// <summary>
+        /// Creates the specified SearchEntity using POST and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <param name="searchEntityToCreate">The SearchEntity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SearchEntity>> CreateResponseAsync(SearchEntity searchEntityToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SearchEntity.

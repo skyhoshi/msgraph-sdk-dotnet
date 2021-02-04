@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
         /// <returns>The created AppleDeviceFeaturesConfigurationBase.</returns>
-        System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate);
+
+        /// <summary>
         /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST.
         /// </summary>
         /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AppleDeviceFeaturesConfigurationBase.</returns>
         System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> CreateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate);
+
+        /// <summary>
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> CreateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AppleDeviceFeaturesConfigurationBase.

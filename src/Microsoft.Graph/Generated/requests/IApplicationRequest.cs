@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="applicationToCreate">The Application to create.</param>
         /// <returns>The created Application.</returns>
-        System.Threading.Tasks.Task<Application> CreateAsync(Application applicationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Application> CreateAsync(Application applicationToCreate);
+
+        /// <summary>
         /// Creates the specified Application using POST.
         /// </summary>
         /// <param name="applicationToCreate">The Application to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Application.</returns>
         System.Threading.Tasks.Task<Application> CreateAsync(Application applicationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Application using POST and returns a <see cref="GraphResponse{Application}"/> object.
+        /// </summary>
+        /// <param name="applicationToCreate">The Application to create.</param>
+        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Application>> CreateResponseAsync(Application applicationToCreate);
+
+        /// <summary>
+        /// Creates the specified Application using POST and returns a <see cref="GraphResponse{Application}"/> object.
+        /// </summary>
+        /// <param name="applicationToCreate">The Application to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Application>> CreateResponseAsync(Application applicationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Application.

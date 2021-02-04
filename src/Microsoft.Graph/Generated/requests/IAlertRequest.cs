@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="alertToCreate">The Alert to create.</param>
         /// <returns>The created Alert.</returns>
-        System.Threading.Tasks.Task<Alert> CreateAsync(Alert alertToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Alert> CreateAsync(Alert alertToCreate);
+
+        /// <summary>
         /// Creates the specified Alert using POST.
         /// </summary>
         /// <param name="alertToCreate">The Alert to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Alert.</returns>
         System.Threading.Tasks.Task<Alert> CreateAsync(Alert alertToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Alert using POST and returns a <see cref="GraphResponse{Alert}"/> object.
+        /// </summary>
+        /// <param name="alertToCreate">The Alert to create.</param>
+        /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Alert>> CreateResponseAsync(Alert alertToCreate);
+
+        /// <summary>
+        /// Creates the specified Alert using POST and returns a <see cref="GraphResponse{Alert}"/> object.
+        /// </summary>
+        /// <param name="alertToCreate">The Alert to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Alert>> CreateResponseAsync(Alert alertToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Alert.

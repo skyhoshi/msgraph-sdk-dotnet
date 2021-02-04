@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartAxisToCreate">The WorkbookChartAxis to create.</param>
         /// <returns>The created WorkbookChartAxis.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAxis> CreateAsync(WorkbookChartAxis workbookChartAxisToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartAxis> CreateAsync(WorkbookChartAxis workbookChartAxisToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartAxis using POST.
         /// </summary>
         /// <param name="workbookChartAxisToCreate">The WorkbookChartAxis to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartAxis.</returns>
         System.Threading.Tasks.Task<WorkbookChartAxis> CreateAsync(WorkbookChartAxis workbookChartAxisToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxis using POST and returns a <see cref="GraphResponse{WorkbookChartAxis}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisToCreate">The WorkbookChartAxis to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxis}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxis>> CreateResponseAsync(WorkbookChartAxis workbookChartAxisToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxis using POST and returns a <see cref="GraphResponse{WorkbookChartAxis}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisToCreate">The WorkbookChartAxis to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxis}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxis>> CreateResponseAsync(WorkbookChartAxis workbookChartAxisToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartAxis.

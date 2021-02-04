@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceCompliancePolicyDeviceStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToCreate">The DeviceCompliancePolicyDeviceStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> CreateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToCreate)
+        {
+            return this.CreateResponseAsync(deviceCompliancePolicyDeviceStateSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyDeviceStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToCreate">The DeviceCompliancePolicyDeviceStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> CreateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyDeviceStateSummary>(deviceCompliancePolicyDeviceStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceCompliancePolicyDeviceStateSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

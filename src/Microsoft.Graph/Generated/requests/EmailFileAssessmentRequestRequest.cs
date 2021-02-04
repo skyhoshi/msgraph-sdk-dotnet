@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EmailFileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(emailFileAssessmentRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EmailFileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="emailFileAssessmentRequestObjectToCreate">The EmailFileAssessmentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailFileAssessmentRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EmailFileAssessmentRequestObject>> CreateResponseAsync(EmailFileAssessmentRequestObject emailFileAssessmentRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EmailFileAssessmentRequestObject>(emailFileAssessmentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EmailFileAssessmentRequest.
         /// </summary>
         /// <returns>The task to await.</returns>

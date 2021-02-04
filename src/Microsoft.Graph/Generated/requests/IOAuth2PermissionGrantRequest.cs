@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
         /// <returns>The created OAuth2PermissionGrant.</returns>
-        System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate);
+
+        /// <summary>
         /// Creates the specified OAuth2PermissionGrant using POST.
         /// </summary>
         /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OAuth2PermissionGrant.</returns>
         System.Threading.Tasks.Task<OAuth2PermissionGrant> CreateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OAuth2PermissionGrant using POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> CreateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate);
+
+        /// <summary>
+        /// Creates the specified OAuth2PermissionGrant using POST and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrantToCreate">The OAuth2PermissionGrant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> CreateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OAuth2PermissionGrant.

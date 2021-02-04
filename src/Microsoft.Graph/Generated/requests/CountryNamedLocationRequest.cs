@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified CountryNamedLocation using POST and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
+        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> CreateResponseAsync(CountryNamedLocation countryNamedLocationToCreate)
+        {
+            return this.CreateResponseAsync(countryNamedLocationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified CountryNamedLocation using POST and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> CreateResponseAsync(CountryNamedLocation countryNamedLocationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CountryNamedLocation>(countryNamedLocationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified CountryNamedLocation.
         /// </summary>
         /// <returns>The task to await.</returns>

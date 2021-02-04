@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="namedLocationToCreate">The NamedLocation to create.</param>
         /// <returns>The created NamedLocation.</returns>
-        System.Threading.Tasks.Task<NamedLocation> CreateAsync(NamedLocation namedLocationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<NamedLocation> CreateAsync(NamedLocation namedLocationToCreate);
+
+        /// <summary>
         /// Creates the specified NamedLocation using POST.
         /// </summary>
         /// <param name="namedLocationToCreate">The NamedLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NamedLocation.</returns>
         System.Threading.Tasks.Task<NamedLocation> CreateAsync(NamedLocation namedLocationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified NamedLocation using POST and returns a <see cref="GraphResponse{NamedLocation}"/> object.
+        /// </summary>
+        /// <param name="namedLocationToCreate">The NamedLocation to create.</param>
+        /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NamedLocation>> CreateResponseAsync(NamedLocation namedLocationToCreate);
+
+        /// <summary>
+        /// Creates the specified NamedLocation using POST and returns a <see cref="GraphResponse{NamedLocation}"/> object.
+        /// </summary>
+        /// <param name="namedLocationToCreate">The NamedLocation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NamedLocation>> CreateResponseAsync(NamedLocation namedLocationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified NamedLocation.

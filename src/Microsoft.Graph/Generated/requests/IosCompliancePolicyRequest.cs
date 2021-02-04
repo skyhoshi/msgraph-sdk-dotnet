@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosCompliancePolicy using POST and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> CreateResponseAsync(IosCompliancePolicy iosCompliancePolicyToCreate)
+        {
+            return this.CreateResponseAsync(iosCompliancePolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosCompliancePolicy using POST and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="iosCompliancePolicyToCreate">The IosCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> CreateResponseAsync(IosCompliancePolicy iosCompliancePolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosCompliancePolicy>(iosCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosCompliancePolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="invitationToCreate">The Invitation to create.</param>
         /// <returns>The created Invitation.</returns>
-        System.Threading.Tasks.Task<Invitation> CreateAsync(Invitation invitationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Invitation> CreateAsync(Invitation invitationToCreate);
+
+        /// <summary>
         /// Creates the specified Invitation using POST.
         /// </summary>
         /// <param name="invitationToCreate">The Invitation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Invitation.</returns>
         System.Threading.Tasks.Task<Invitation> CreateAsync(Invitation invitationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Invitation using POST and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <param name="invitationToCreate">The Invitation to create.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> CreateResponseAsync(Invitation invitationToCreate);
+
+        /// <summary>
+        /// Creates the specified Invitation using POST and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <param name="invitationToCreate">The Invitation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> CreateResponseAsync(Invitation invitationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Invitation.

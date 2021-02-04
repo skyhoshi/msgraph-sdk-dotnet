@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
         /// <returns>The created ManagedDevice.</returns>
-        System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedDevice using POST.
         /// </summary>
         /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDevice.</returns>
         System.Threading.Tasks.Task<ManagedDevice> CreateAsync(ManagedDevice managedDeviceToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedDevice using POST and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> CreateResponseAsync(ManagedDevice managedDeviceToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedDevice using POST and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> CreateResponseAsync(ManagedDevice managedDeviceToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedDevice.

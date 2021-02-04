@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartAxisTitleToCreate">The WorkbookChartAxisTitle to create.</param>
         /// <returns>The created WorkbookChartAxisTitle.</returns>
-        System.Threading.Tasks.Task<WorkbookChartAxisTitle> CreateAsync(WorkbookChartAxisTitle workbookChartAxisTitleToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartAxisTitle> CreateAsync(WorkbookChartAxisTitle workbookChartAxisTitleToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartAxisTitle using POST.
         /// </summary>
         /// <param name="workbookChartAxisTitleToCreate">The WorkbookChartAxisTitle to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartAxisTitle.</returns>
         System.Threading.Tasks.Task<WorkbookChartAxisTitle> CreateAsync(WorkbookChartAxisTitle workbookChartAxisTitleToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxisTitle using POST and returns a <see cref="GraphResponse{WorkbookChartAxisTitle}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisTitleToCreate">The WorkbookChartAxisTitle to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisTitle}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitle>> CreateResponseAsync(WorkbookChartAxisTitle workbookChartAxisTitleToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartAxisTitle using POST and returns a <see cref="GraphResponse{WorkbookChartAxisTitle}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisTitleToCreate">The WorkbookChartAxisTitle to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxisTitle}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxisTitle>> CreateResponseAsync(WorkbookChartAxisTitle workbookChartAxisTitleToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartAxisTitle.

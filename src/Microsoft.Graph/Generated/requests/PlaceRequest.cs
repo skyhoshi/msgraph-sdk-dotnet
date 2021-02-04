@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Place using POST and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <param name="placeToCreate">The Place to create.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Place>> CreateResponseAsync(Place placeToCreate)
+        {
+            return this.CreateResponseAsync(placeToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Place using POST and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <param name="placeToCreate">The Place to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Place>> CreateResponseAsync(Place placeToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Place>(placeToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Place.
         /// </summary>
         /// <returns>The task to await.</returns>

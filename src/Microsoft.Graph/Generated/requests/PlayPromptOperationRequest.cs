@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified PlayPromptOperation using POST and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> CreateResponseAsync(PlayPromptOperation playPromptOperationToCreate)
+        {
+            return this.CreateResponseAsync(playPromptOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified PlayPromptOperation using POST and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> CreateResponseAsync(PlayPromptOperation playPromptOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<PlayPromptOperation>(playPromptOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified PlayPromptOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

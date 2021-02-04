@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
         /// <returns>The created UnmuteParticipantOperation.</returns>
-        System.Threading.Tasks.Task<UnmuteParticipantOperation> CreateAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UnmuteParticipantOperation> CreateAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate);
+
+        /// <summary>
         /// Creates the specified UnmuteParticipantOperation using POST.
         /// </summary>
         /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UnmuteParticipantOperation.</returns>
         System.Threading.Tasks.Task<UnmuteParticipantOperation> CreateAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UnmuteParticipantOperation using POST and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> CreateResponseAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified UnmuteParticipantOperation using POST and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="unmuteParticipantOperationToCreate">The UnmuteParticipantOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> CreateResponseAsync(UnmuteParticipantOperation unmuteParticipantOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UnmuteParticipantOperation.

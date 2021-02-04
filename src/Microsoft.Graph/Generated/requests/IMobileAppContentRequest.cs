@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
         /// <returns>The created MobileAppContent.</returns>
-        System.Threading.Tasks.Task<MobileAppContent> CreateAsync(MobileAppContent mobileAppContentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppContent> CreateAsync(MobileAppContent mobileAppContentToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppContent using POST.
         /// </summary>
         /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppContent.</returns>
         System.Threading.Tasks.Task<MobileAppContent> CreateAsync(MobileAppContent mobileAppContentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppContent using POST and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> CreateResponseAsync(MobileAppContent mobileAppContentToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppContent using POST and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="mobileAppContentToCreate">The MobileAppContent to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> CreateResponseAsync(MobileAppContent mobileAppContentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppContent.

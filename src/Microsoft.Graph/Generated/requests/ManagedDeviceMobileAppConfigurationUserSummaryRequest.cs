@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationUserSummary using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserSummaryToCreate">The ManagedDeviceMobileAppConfigurationUserSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserSummary>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationUserSummary managedDeviceMobileAppConfigurationUserSummaryToCreate)
+        {
+            return this.CreateResponseAsync(managedDeviceMobileAppConfigurationUserSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationUserSummary using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserSummaryToCreate">The ManagedDeviceMobileAppConfigurationUserSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserSummary>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationUserSummary managedDeviceMobileAppConfigurationUserSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationUserSummary>(managedDeviceMobileAppConfigurationUserSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationUserSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

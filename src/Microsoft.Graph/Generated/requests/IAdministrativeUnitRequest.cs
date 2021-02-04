@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
         /// <returns>The created AdministrativeUnit.</returns>
-        System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate);
+
+        /// <summary>
         /// Creates the specified AdministrativeUnit using POST.
         /// </summary>
         /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AdministrativeUnit.</returns>
         System.Threading.Tasks.Task<AdministrativeUnit> CreateAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate);
+
+        /// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AdministrativeUnit.

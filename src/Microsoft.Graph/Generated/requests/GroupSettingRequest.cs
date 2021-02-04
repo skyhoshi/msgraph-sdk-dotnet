@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified GroupSetting using POST and returns a <see cref="GraphResponse{GroupSetting}"/> object.
+        /// </summary>
+        /// <param name="groupSettingToCreate">The GroupSetting to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupSetting>> CreateResponseAsync(GroupSetting groupSettingToCreate)
+        {
+            return this.CreateResponseAsync(groupSettingToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified GroupSetting using POST and returns a <see cref="GraphResponse{GroupSetting}"/> object.
+        /// </summary>
+        /// <param name="groupSettingToCreate">The GroupSetting to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSetting>> CreateResponseAsync(GroupSetting groupSettingToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<GroupSetting>(groupSettingToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified GroupSetting.
         /// </summary>
         /// <returns>The task to await.</returns>

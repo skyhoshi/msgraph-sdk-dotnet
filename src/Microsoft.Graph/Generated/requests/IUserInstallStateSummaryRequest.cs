@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
         /// <returns>The created UserInstallStateSummary.</returns>
-        System.Threading.Tasks.Task<UserInstallStateSummary> CreateAsync(UserInstallStateSummary userInstallStateSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserInstallStateSummary> CreateAsync(UserInstallStateSummary userInstallStateSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified UserInstallStateSummary using POST.
         /// </summary>
         /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserInstallStateSummary.</returns>
         System.Threading.Tasks.Task<UserInstallStateSummary> CreateAsync(UserInstallStateSummary userInstallStateSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserInstallStateSummary using POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object.
+        /// </summary>
+        /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> CreateResponseAsync(UserInstallStateSummary userInstallStateSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified UserInstallStateSummary using POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object.
+        /// </summary>
+        /// <param name="userInstallStateSummaryToCreate">The UserInstallStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> CreateResponseAsync(UserInstallStateSummary userInstallStateSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserInstallStateSummary.

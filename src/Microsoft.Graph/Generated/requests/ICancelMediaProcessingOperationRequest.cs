@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
         /// <returns>The created CancelMediaProcessingOperation.</returns>
-        System.Threading.Tasks.Task<CancelMediaProcessingOperation> CreateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CancelMediaProcessingOperation> CreateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate);
+
+        /// <summary>
         /// Creates the specified CancelMediaProcessingOperation using POST.
         /// </summary>
         /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CancelMediaProcessingOperation.</returns>
         System.Threading.Tasks.Task<CancelMediaProcessingOperation> CreateAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CancelMediaProcessingOperation using POST and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> CreateResponseAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified CancelMediaProcessingOperation using POST and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <param name="cancelMediaProcessingOperationToCreate">The CancelMediaProcessingOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> CreateResponseAsync(CancelMediaProcessingOperation cancelMediaProcessingOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CancelMediaProcessingOperation.

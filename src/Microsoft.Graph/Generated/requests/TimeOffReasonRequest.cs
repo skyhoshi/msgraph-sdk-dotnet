@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TimeOffReason using POST and returns a <see cref="GraphResponse{TimeOffReason}"/> object.
+        /// </summary>
+        /// <param name="timeOffReasonToCreate">The TimeOffReason to create.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> CreateResponseAsync(TimeOffReason timeOffReasonToCreate)
+        {
+            return this.CreateResponseAsync(timeOffReasonToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TimeOffReason using POST and returns a <see cref="GraphResponse{TimeOffReason}"/> object.
+        /// </summary>
+        /// <param name="timeOffReasonToCreate">The TimeOffReason to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> CreateResponseAsync(TimeOffReason timeOffReasonToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TimeOffReason>(timeOffReasonToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TimeOffReason.
         /// </summary>
         /// <returns>The task to await.</returns>

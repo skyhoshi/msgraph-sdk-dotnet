@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="participantToCreate">The Participant to create.</param>
         /// <returns>The created Participant.</returns>
-        System.Threading.Tasks.Task<Participant> CreateAsync(Participant participantToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Participant> CreateAsync(Participant participantToCreate);
+
+        /// <summary>
         /// Creates the specified Participant using POST.
         /// </summary>
         /// <param name="participantToCreate">The Participant to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Participant.</returns>
         System.Threading.Tasks.Task<Participant> CreateAsync(Participant participantToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Participant using POST and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <param name="participantToCreate">The Participant to create.</param>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Participant>> CreateResponseAsync(Participant participantToCreate);
+
+        /// <summary>
+        /// Creates the specified Participant using POST and returns a <see cref="GraphResponse{Participant}"/> object.
+        /// </summary>
+        /// <param name="participantToCreate">The Participant to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Participant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Participant>> CreateResponseAsync(Participant participantToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Participant.

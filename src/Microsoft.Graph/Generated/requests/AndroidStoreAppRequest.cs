@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidStoreApp using POST and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> CreateResponseAsync(AndroidStoreApp androidStoreAppToCreate)
+        {
+            return this.CreateResponseAsync(androidStoreAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidStoreApp using POST and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> CreateResponseAsync(AndroidStoreApp androidStoreAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidStoreApp>(androidStoreAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidStoreApp.
         /// </summary>
         /// <returns>The task to await.</returns>

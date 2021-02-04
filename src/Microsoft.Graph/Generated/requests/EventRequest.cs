@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Event using POST and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToCreate">The Event to create.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Event>> CreateResponseAsync(Event eventToCreate)
+        {
+            return this.CreateResponseAsync(eventToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Event using POST and returns a <see cref="GraphResponse{Event}"/> object.
+        /// </summary>
+        /// <param name="eventToCreate">The Event to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Event>> CreateResponseAsync(Event eventToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Event>(eventToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Event.
         /// </summary>
         /// <returns>The task to await.</returns>

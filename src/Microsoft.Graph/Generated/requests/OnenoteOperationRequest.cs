@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnenoteOperation using POST and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> CreateResponseAsync(OnenoteOperation onenoteOperationToCreate)
+        {
+            return this.CreateResponseAsync(onenoteOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnenoteOperation using POST and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <param name="onenoteOperationToCreate">The OnenoteOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> CreateResponseAsync(OnenoteOperation onenoteOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnenoteOperation>(onenoteOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnenoteOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedDevice using POST and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> CreateResponseAsync(ManagedDevice managedDeviceToCreate)
+        {
+            return this.CreateResponseAsync(managedDeviceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedDevice using POST and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceToCreate">The ManagedDevice to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> CreateResponseAsync(ManagedDevice managedDeviceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedDevice>(managedDeviceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedDevice.
         /// </summary>
         /// <returns>The task to await.</returns>

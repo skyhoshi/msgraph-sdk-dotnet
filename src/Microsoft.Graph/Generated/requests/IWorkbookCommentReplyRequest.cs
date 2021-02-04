@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
         /// <returns>The created WorkbookCommentReply.</returns>
-        System.Threading.Tasks.Task<WorkbookCommentReply> CreateAsync(WorkbookCommentReply workbookCommentReplyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookCommentReply> CreateAsync(WorkbookCommentReply workbookCommentReplyToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookCommentReply using POST.
         /// </summary>
         /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookCommentReply.</returns>
         System.Threading.Tasks.Task<WorkbookCommentReply> CreateAsync(WorkbookCommentReply workbookCommentReplyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookCommentReply using POST and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> CreateResponseAsync(WorkbookCommentReply workbookCommentReplyToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookCommentReply using POST and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToCreate">The WorkbookCommentReply to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> CreateResponseAsync(WorkbookCommentReply workbookCommentReplyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookCommentReply.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="shiftToCreate">The Shift to create.</param>
         /// <returns>The created Shift.</returns>
-        System.Threading.Tasks.Task<Shift> CreateAsync(Shift shiftToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Shift> CreateAsync(Shift shiftToCreate);
+
+        /// <summary>
         /// Creates the specified Shift using POST.
         /// </summary>
         /// <param name="shiftToCreate">The Shift to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Shift.</returns>
         System.Threading.Tasks.Task<Shift> CreateAsync(Shift shiftToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Shift using POST and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToCreate">The Shift to create.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Shift>> CreateResponseAsync(Shift shiftToCreate);
+
+        /// <summary>
+        /// Creates the specified Shift using POST and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToCreate">The Shift to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Shift>> CreateResponseAsync(Shift shiftToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Shift.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified InferenceClassification using POST and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationToCreate">The InferenceClassification to create.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> CreateResponseAsync(InferenceClassification inferenceClassificationToCreate)
+        {
+            return this.CreateResponseAsync(inferenceClassificationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified InferenceClassification using POST and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
+        /// </summary>
+        /// <param name="inferenceClassificationToCreate">The InferenceClassification to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> CreateResponseAsync(InferenceClassification inferenceClassificationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<InferenceClassification>(inferenceClassificationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified InferenceClassification.
         /// </summary>
         /// <returns>The task to await.</returns>

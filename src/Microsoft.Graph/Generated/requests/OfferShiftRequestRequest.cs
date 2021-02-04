@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OfferShiftRequestObject using POST and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="offerShiftRequestObjectToCreate">The OfferShiftRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> CreateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(offerShiftRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OfferShiftRequestObject using POST and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="offerShiftRequestObjectToCreate">The OfferShiftRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> CreateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(offerShiftRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OfferShiftRequest.
         /// </summary>
         /// <returns>The task to await.</returns>

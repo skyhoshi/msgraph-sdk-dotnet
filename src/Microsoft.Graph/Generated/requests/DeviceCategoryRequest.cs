@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceCategory using POST and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> CreateResponseAsync(DeviceCategory deviceCategoryToCreate)
+        {
+            return this.CreateResponseAsync(deviceCategoryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceCategory using POST and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> CreateResponseAsync(DeviceCategory deviceCategoryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceCategory>(deviceCategoryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceCategory.
         /// </summary>
         /// <returns>The task to await.</returns>

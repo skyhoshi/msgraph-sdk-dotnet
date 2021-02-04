@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosVppApp using POST and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosVppApp>> CreateResponseAsync(IosVppApp iosVppAppToCreate)
+        {
+            return this.CreateResponseAsync(iosVppAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosVppApp using POST and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToCreate">The IosVppApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosVppApp>> CreateResponseAsync(IosVppApp iosVppAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosVppApp>(iosVppAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosVppApp.
         /// </summary>
         /// <returns>The task to await.</returns>

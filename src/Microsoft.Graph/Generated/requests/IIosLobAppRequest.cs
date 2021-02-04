@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
         /// <returns>The created IosLobApp.</returns>
-        System.Threading.Tasks.Task<IosLobApp> CreateAsync(IosLobApp iosLobAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosLobApp> CreateAsync(IosLobApp iosLobAppToCreate);
+
+        /// <summary>
         /// Creates the specified IosLobApp using POST.
         /// </summary>
         /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosLobApp.</returns>
         System.Threading.Tasks.Task<IosLobApp> CreateAsync(IosLobApp iosLobAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosLobApp using POST and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> CreateResponseAsync(IosLobApp iosLobAppToCreate);
+
+        /// <summary>
+        /// Creates the specified IosLobApp using POST and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="iosLobAppToCreate">The IosLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> CreateResponseAsync(IosLobApp iosLobAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosLobApp.

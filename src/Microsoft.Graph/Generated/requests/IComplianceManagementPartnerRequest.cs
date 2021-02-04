@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
         /// <returns>The created ComplianceManagementPartner.</returns>
-        System.Threading.Tasks.Task<ComplianceManagementPartner> CreateAsync(ComplianceManagementPartner complianceManagementPartnerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ComplianceManagementPartner> CreateAsync(ComplianceManagementPartner complianceManagementPartnerToCreate);
+
+        /// <summary>
         /// Creates the specified ComplianceManagementPartner using POST.
         /// </summary>
         /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ComplianceManagementPartner.</returns>
         System.Threading.Tasks.Task<ComplianceManagementPartner> CreateAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ComplianceManagementPartner using POST and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> CreateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToCreate);
+
+        /// <summary>
+        /// Creates the specified ComplianceManagementPartner using POST and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="complianceManagementPartnerToCreate">The ComplianceManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> CreateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ComplianceManagementPartner.

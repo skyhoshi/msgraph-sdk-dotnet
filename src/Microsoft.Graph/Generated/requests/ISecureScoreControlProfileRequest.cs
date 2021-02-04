@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
         /// <returns>The created SecureScoreControlProfile.</returns>
-        System.Threading.Tasks.Task<SecureScoreControlProfile> CreateAsync(SecureScoreControlProfile secureScoreControlProfileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SecureScoreControlProfile> CreateAsync(SecureScoreControlProfile secureScoreControlProfileToCreate);
+
+        /// <summary>
         /// Creates the specified SecureScoreControlProfile using POST.
         /// </summary>
         /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecureScoreControlProfile.</returns>
         System.Threading.Tasks.Task<SecureScoreControlProfile> CreateAsync(SecureScoreControlProfile secureScoreControlProfileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SecureScoreControlProfile using POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object.
+        /// </summary>
+        /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> CreateResponseAsync(SecureScoreControlProfile secureScoreControlProfileToCreate);
+
+        /// <summary>
+        /// Creates the specified SecureScoreControlProfile using POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object.
+        /// </summary>
+        /// <param name="secureScoreControlProfileToCreate">The SecureScoreControlProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> CreateResponseAsync(SecureScoreControlProfile secureScoreControlProfileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SecureScoreControlProfile.

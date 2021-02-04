@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Site using POST and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToCreate">The Site to create.</param>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Site>> CreateResponseAsync(Site siteToCreate)
+        {
+            return this.CreateResponseAsync(siteToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Site using POST and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToCreate">The Site to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Site>> CreateResponseAsync(Site siteToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Site>(siteToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Site.
         /// </summary>
         /// <returns>The task to await.</returns>

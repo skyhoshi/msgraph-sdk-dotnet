@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
         /// <returns>The created ColumnDefinition.</returns>
-        System.Threading.Tasks.Task<ColumnDefinition> CreateAsync(ColumnDefinition columnDefinitionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ColumnDefinition> CreateAsync(ColumnDefinition columnDefinitionToCreate);
+
+        /// <summary>
         /// Creates the specified ColumnDefinition using POST.
         /// </summary>
         /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnDefinition.</returns>
         System.Threading.Tasks.Task<ColumnDefinition> CreateAsync(ColumnDefinition columnDefinitionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ColumnDefinition using POST and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
+        /// </summary>
+        /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> CreateResponseAsync(ColumnDefinition columnDefinitionToCreate);
+
+        /// <summary>
+        /// Creates the specified ColumnDefinition using POST and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
+        /// </summary>
+        /// <param name="columnDefinitionToCreate">The ColumnDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> CreateResponseAsync(ColumnDefinition columnDefinitionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ColumnDefinition.

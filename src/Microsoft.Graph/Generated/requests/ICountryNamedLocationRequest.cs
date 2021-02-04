@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
         /// <returns>The created CountryNamedLocation.</returns>
-        System.Threading.Tasks.Task<CountryNamedLocation> CreateAsync(CountryNamedLocation countryNamedLocationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CountryNamedLocation> CreateAsync(CountryNamedLocation countryNamedLocationToCreate);
+
+        /// <summary>
         /// Creates the specified CountryNamedLocation using POST.
         /// </summary>
         /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CountryNamedLocation.</returns>
         System.Threading.Tasks.Task<CountryNamedLocation> CreateAsync(CountryNamedLocation countryNamedLocationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CountryNamedLocation using POST and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
+        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> CreateResponseAsync(CountryNamedLocation countryNamedLocationToCreate);
+
+        /// <summary>
+        /// Creates the specified CountryNamedLocation using POST and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="countryNamedLocationToCreate">The CountryNamedLocation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> CreateResponseAsync(CountryNamedLocation countryNamedLocationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CountryNamedLocation.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified RoomList using POST and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <param name="roomListToCreate">The RoomList to create.</param>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate)
+        {
+            return this.CreateResponseAsync(roomListToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified RoomList using POST and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// </summary>
+        /// <param name="roomListToCreate">The RoomList to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RoomList>(roomListToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified RoomList.
         /// </summary>
         /// <returns>The task to await.</returns>

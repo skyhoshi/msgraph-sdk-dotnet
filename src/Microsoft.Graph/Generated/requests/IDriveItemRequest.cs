@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="driveItemToCreate">The DriveItem to create.</param>
         /// <returns>The created DriveItem.</returns>
-        System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate);
+
+        /// <summary>
         /// Creates the specified DriveItem using POST.
         /// </summary>
         /// <param name="driveItemToCreate">The DriveItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItem.</returns>
         System.Threading.Tasks.Task<DriveItem> CreateAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate);
+
+        /// <summary>
+        /// Creates the specified DriveItem using POST and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="driveItemToCreate">The DriveItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> CreateResponseAsync(DriveItem driveItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DriveItem.

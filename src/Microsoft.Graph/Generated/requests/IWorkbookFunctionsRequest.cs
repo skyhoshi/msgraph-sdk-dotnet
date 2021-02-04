@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookFunctionsToCreate">The WorkbookFunctions to create.</param>
         /// <returns>The created WorkbookFunctions.</returns>
-        System.Threading.Tasks.Task<WorkbookFunctions> CreateAsync(WorkbookFunctions workbookFunctionsToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookFunctions> CreateAsync(WorkbookFunctions workbookFunctionsToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookFunctions using POST.
         /// </summary>
         /// <param name="workbookFunctionsToCreate">The WorkbookFunctions to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookFunctions.</returns>
         System.Threading.Tasks.Task<WorkbookFunctions> CreateAsync(WorkbookFunctions workbookFunctionsToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookFunctions using POST and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionsToCreate">The WorkbookFunctions to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> CreateResponseAsync(WorkbookFunctions workbookFunctionsToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookFunctions using POST and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionsToCreate">The WorkbookFunctions to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctions}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> CreateResponseAsync(WorkbookFunctions workbookFunctionsToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookFunctions.

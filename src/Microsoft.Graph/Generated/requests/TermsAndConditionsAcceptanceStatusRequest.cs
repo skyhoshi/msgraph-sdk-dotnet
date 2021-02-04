@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> CreateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate)
+        {
+            return this.CreateResponseAsync(termsAndConditionsAcceptanceStatusToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TermsAndConditionsAcceptanceStatus using POST and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsAcceptanceStatusToCreate">The TermsAndConditionsAcceptanceStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> CreateResponseAsync(TermsAndConditionsAcceptanceStatus termsAndConditionsAcceptanceStatusToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TermsAndConditionsAcceptanceStatus>(termsAndConditionsAcceptanceStatusToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TermsAndConditionsAcceptanceStatus.
         /// </summary>
         /// <returns>The task to await.</returns>

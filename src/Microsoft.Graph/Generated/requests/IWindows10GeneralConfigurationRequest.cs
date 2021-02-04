@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
         /// <returns>The created Windows10GeneralConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10GeneralConfiguration> CreateAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10GeneralConfiguration> CreateAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10GeneralConfiguration using POST.
         /// </summary>
         /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10GeneralConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10GeneralConfiguration> CreateAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10GeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> CreateResponseAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10GeneralConfiguration using POST and returns a <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10GeneralConfigurationToCreate">The Windows10GeneralConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10GeneralConfiguration>> CreateResponseAsync(Windows10GeneralConfiguration windows10GeneralConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10GeneralConfiguration.

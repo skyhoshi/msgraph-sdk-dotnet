@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="eventMessageResponseToCreate">The EventMessageResponse to create.</param>
         /// <returns>The created EventMessageResponse.</returns>
-        System.Threading.Tasks.Task<EventMessageResponse> CreateAsync(EventMessageResponse eventMessageResponseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EventMessageResponse> CreateAsync(EventMessageResponse eventMessageResponseToCreate);
+
+        /// <summary>
         /// Creates the specified EventMessageResponse using POST.
         /// </summary>
         /// <param name="eventMessageResponseToCreate">The EventMessageResponse to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EventMessageResponse.</returns>
         System.Threading.Tasks.Task<EventMessageResponse> CreateAsync(EventMessageResponse eventMessageResponseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EventMessageResponse using POST and returns a <see cref="GraphResponse{EventMessageResponse}"/> object.
+        /// </summary>
+        /// <param name="eventMessageResponseToCreate">The EventMessageResponse to create.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> CreateResponseAsync(EventMessageResponse eventMessageResponseToCreate);
+
+        /// <summary>
+        /// Creates the specified EventMessageResponse using POST and returns a <see cref="GraphResponse{EventMessageResponse}"/> object.
+        /// </summary>
+        /// <param name="eventMessageResponseToCreate">The EventMessageResponse to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageResponse}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessageResponse>> CreateResponseAsync(EventMessageResponse eventMessageResponseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EventMessageResponse.

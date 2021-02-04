@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerUserToCreate">The PlannerUser to create.</param>
         /// <returns>The created PlannerUser.</returns>
-        System.Threading.Tasks.Task<PlannerUser> CreateAsync(PlannerUser plannerUserToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerUser> CreateAsync(PlannerUser plannerUserToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerUser using POST.
         /// </summary>
         /// <param name="plannerUserToCreate">The PlannerUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerUser.</returns>
         System.Threading.Tasks.Task<PlannerUser> CreateAsync(PlannerUser plannerUserToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerUser using POST and returns a <see cref="GraphResponse{PlannerUser}"/> object.
+        /// </summary>
+        /// <param name="plannerUserToCreate">The PlannerUser to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerUser>> CreateResponseAsync(PlannerUser plannerUserToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerUser using POST and returns a <see cref="GraphResponse{PlannerUser}"/> object.
+        /// </summary>
+        /// <param name="plannerUserToCreate">The PlannerUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerUser>> CreateResponseAsync(PlannerUser plannerUserToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerUser.

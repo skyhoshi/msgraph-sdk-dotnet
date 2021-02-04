@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="conversationMemberToCreate">The ConversationMember to create.</param>
         /// <returns>The created ConversationMember.</returns>
-        System.Threading.Tasks.Task<ConversationMember> CreateAsync(ConversationMember conversationMemberToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ConversationMember> CreateAsync(ConversationMember conversationMemberToCreate);
+
+        /// <summary>
         /// Creates the specified ConversationMember using POST.
         /// </summary>
         /// <param name="conversationMemberToCreate">The ConversationMember to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConversationMember.</returns>
         System.Threading.Tasks.Task<ConversationMember> CreateAsync(ConversationMember conversationMemberToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ConversationMember using POST and returns a <see cref="GraphResponse{ConversationMember}"/> object.
+        /// </summary>
+        /// <param name="conversationMemberToCreate">The ConversationMember to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConversationMember>> CreateResponseAsync(ConversationMember conversationMemberToCreate);
+
+        /// <summary>
+        /// Creates the specified ConversationMember using POST and returns a <see cref="GraphResponse{ConversationMember}"/> object.
+        /// </summary>
+        /// <param name="conversationMemberToCreate">The ConversationMember to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConversationMember>> CreateResponseAsync(ConversationMember conversationMemberToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ConversationMember.

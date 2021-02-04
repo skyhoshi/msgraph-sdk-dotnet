@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceCompliancePolicyAssignmentToCreate">The DeviceCompliancePolicyAssignment to create.</param>
         /// <returns>The created DeviceCompliancePolicyAssignment.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> CreateAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> CreateAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceCompliancePolicyAssignment using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicyAssignmentToCreate">The DeviceCompliancePolicyAssignment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCompliancePolicyAssignment.</returns>
         System.Threading.Tasks.Task<DeviceCompliancePolicyAssignment> CreateAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyAssignment using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyAssignmentToCreate">The DeviceCompliancePolicyAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> CreateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicyAssignment using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyAssignmentToCreate">The DeviceCompliancePolicyAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyAssignment>> CreateResponseAsync(DeviceCompliancePolicyAssignment deviceCompliancePolicyAssignmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceCompliancePolicyAssignment.

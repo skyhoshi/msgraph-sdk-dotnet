@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="domainToCreate">The Domain to create.</param>
         /// <returns>The created Domain.</returns>
-        System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate);
+
+        /// <summary>
         /// Creates the specified Domain using POST.
         /// </summary>
         /// <param name="domainToCreate">The Domain to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Domain.</returns>
         System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Domain using POST and returns a <see cref="GraphResponse{Domain}"/> object.
+        /// </summary>
+        /// <param name="domainToCreate">The Domain to create.</param>
+        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Domain>> CreateResponseAsync(Domain domainToCreate);
+
+        /// <summary>
+        /// Creates the specified Domain using POST and returns a <see cref="GraphResponse{Domain}"/> object.
+        /// </summary>
+        /// <param name="domainToCreate">The Domain to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Domain>> CreateResponseAsync(Domain domainToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Domain.

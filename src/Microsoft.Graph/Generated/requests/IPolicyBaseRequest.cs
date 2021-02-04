@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
         /// <returns>The created PolicyBase.</returns>
-        System.Threading.Tasks.Task<PolicyBase> CreateAsync(PolicyBase policyBaseToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PolicyBase> CreateAsync(PolicyBase policyBaseToCreate);
+
+        /// <summary>
         /// Creates the specified PolicyBase using POST.
         /// </summary>
         /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PolicyBase.</returns>
         System.Threading.Tasks.Task<PolicyBase> CreateAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PolicyBase using POST and returns a <see cref="GraphResponse{PolicyBase}"/> object.
+        /// </summary>
+        /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyBase>> CreateResponseAsync(PolicyBase policyBaseToCreate);
+
+        /// <summary>
+        /// Creates the specified PolicyBase using POST and returns a <see cref="GraphResponse{PolicyBase}"/> object.
+        /// </summary>
+        /// <param name="policyBaseToCreate">The PolicyBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyBase>> CreateResponseAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PolicyBase.

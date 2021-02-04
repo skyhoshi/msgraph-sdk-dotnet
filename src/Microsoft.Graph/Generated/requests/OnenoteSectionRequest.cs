@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate)
+        {
+            return this.CreateResponseAsync(onenoteSectionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OnenoteSection using POST and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="onenoteSectionToCreate">The OnenoteSection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> CreateResponseAsync(OnenoteSection onenoteSectionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnenoteSection>(onenoteSectionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OnenoteSection.
         /// </summary>
         /// <returns>The task to await.</returns>

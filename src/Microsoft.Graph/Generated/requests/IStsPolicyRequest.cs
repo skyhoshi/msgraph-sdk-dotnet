@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="stsPolicyToCreate">The StsPolicy to create.</param>
         /// <returns>The created StsPolicy.</returns>
-        System.Threading.Tasks.Task<StsPolicy> CreateAsync(StsPolicy stsPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<StsPolicy> CreateAsync(StsPolicy stsPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified StsPolicy using POST.
         /// </summary>
         /// <param name="stsPolicyToCreate">The StsPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created StsPolicy.</returns>
         System.Threading.Tasks.Task<StsPolicy> CreateAsync(StsPolicy stsPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified StsPolicy using POST and returns a <see cref="GraphResponse{StsPolicy}"/> object.
+        /// </summary>
+        /// <param name="stsPolicyToCreate">The StsPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<StsPolicy>> CreateResponseAsync(StsPolicy stsPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified StsPolicy using POST and returns a <see cref="GraphResponse{StsPolicy}"/> object.
+        /// </summary>
+        /// <param name="stsPolicyToCreate">The StsPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<StsPolicy>> CreateResponseAsync(StsPolicy stsPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified StsPolicy.

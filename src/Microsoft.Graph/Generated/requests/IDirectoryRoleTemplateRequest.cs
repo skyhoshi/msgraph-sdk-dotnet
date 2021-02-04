@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
         /// <returns>The created DirectoryRoleTemplate.</returns>
-        System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate);
+
+        /// <summary>
         /// Creates the specified DirectoryRoleTemplate using POST.
         /// </summary>
         /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryRoleTemplate.</returns>
         System.Threading.Tasks.Task<DirectoryRoleTemplate> CreateAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DirectoryRoleTemplate using POST and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> CreateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate);
+
+        /// <summary>
+        /// Creates the specified DirectoryRoleTemplate using POST and returns a <see cref="GraphResponse{DirectoryRoleTemplate}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleTemplateToCreate">The DirectoryRoleTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRoleTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRoleTemplate>> CreateResponseAsync(DirectoryRoleTemplate directoryRoleTemplateToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DirectoryRoleTemplate.

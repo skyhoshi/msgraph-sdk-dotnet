@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
         /// <returns>The created CalendarSharingMessage.</returns>
-        System.Threading.Tasks.Task<CalendarSharingMessage> CreateAsync(CalendarSharingMessage calendarSharingMessageToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CalendarSharingMessage> CreateAsync(CalendarSharingMessage calendarSharingMessageToCreate);
+
+        /// <summary>
         /// Creates the specified CalendarSharingMessage using POST.
         /// </summary>
         /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CalendarSharingMessage.</returns>
         System.Threading.Tasks.Task<CalendarSharingMessage> CreateAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CalendarSharingMessage using POST and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
+        /// </summary>
+        /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> CreateResponseAsync(CalendarSharingMessage calendarSharingMessageToCreate);
+
+        /// <summary>
+        /// Creates the specified CalendarSharingMessage using POST and returns a <see cref="GraphResponse{CalendarSharingMessage}"/> object.
+        /// </summary>
+        /// <param name="calendarSharingMessageToCreate">The CalendarSharingMessage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> CreateResponseAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CalendarSharingMessage.

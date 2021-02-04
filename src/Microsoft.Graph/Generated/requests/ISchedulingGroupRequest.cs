@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
         /// <returns>The created SchedulingGroup.</returns>
-        System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate);
+
+        /// <summary>
         /// Creates the specified SchedulingGroup using POST.
         /// </summary>
         /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SchedulingGroup.</returns>
         System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SchedulingGroup using POST and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
+        /// </summary>
+        /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
+        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> CreateResponseAsync(SchedulingGroup schedulingGroupToCreate);
+
+        /// <summary>
+        /// Creates the specified SchedulingGroup using POST and returns a <see cref="GraphResponse{SchedulingGroup}"/> object.
+        /// </summary>
+        /// <param name="schedulingGroupToCreate">The SchedulingGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> CreateResponseAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SchedulingGroup.

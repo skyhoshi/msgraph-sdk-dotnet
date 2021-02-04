@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TokenLifetimePolicy using POST and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenLifetimePolicyToCreate">The TokenLifetimePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> CreateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToCreate)
+        {
+            return this.CreateResponseAsync(tokenLifetimePolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TokenLifetimePolicy using POST and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenLifetimePolicyToCreate">The TokenLifetimePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> CreateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TokenLifetimePolicy>(tokenLifetimePolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TokenLifetimePolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

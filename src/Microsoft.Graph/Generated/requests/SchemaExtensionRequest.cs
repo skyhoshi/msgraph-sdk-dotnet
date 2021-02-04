@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified SchemaExtension using POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
+        /// </summary>
+        /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate)
+        {
+            return this.CreateResponseAsync(schemaExtensionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified SchemaExtension using POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
+        /// </summary>
+        /// <param name="schemaExtensionToCreate">The SchemaExtension to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SchemaExtension>(schemaExtensionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified SchemaExtension.
         /// </summary>
         /// <returns>The task to await.</returns>

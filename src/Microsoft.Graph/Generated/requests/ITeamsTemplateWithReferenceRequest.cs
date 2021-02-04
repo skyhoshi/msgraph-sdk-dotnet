@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
         /// <returns>The created TeamsTemplate.</returns>
-        System.Threading.Tasks.Task<TeamsTemplate> CreateAsync(TeamsTemplate teamsTemplateToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TeamsTemplate> CreateAsync(TeamsTemplate teamsTemplateToCreate);
+
+        /// <summary>
         /// Creates the specified TeamsTemplate using POST.
         /// </summary>
         /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTemplate.</returns>
         System.Threading.Tasks.Task<TeamsTemplate> CreateAsync(TeamsTemplate teamsTemplateToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified TeamsTemplate using POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> CreateResponseAsync(TeamsTemplate teamsTemplateToCreate);
+
+        /// <summary>
+        /// Creates the specified TeamsTemplate using POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="teamsTemplateToCreate">The TeamsTemplate to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> CreateResponseAsync(TeamsTemplate teamsTemplateToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified TeamsTemplate using PATCH.

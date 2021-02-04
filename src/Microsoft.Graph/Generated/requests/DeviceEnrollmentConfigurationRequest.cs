@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceEnrollmentConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> CreateResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(deviceEnrollmentConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfigurationToCreate">The DeviceEnrollmentConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> CreateResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceEnrollmentConfiguration>(deviceEnrollmentConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceEnrollmentConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

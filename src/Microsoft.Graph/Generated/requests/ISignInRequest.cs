@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="signInToCreate">The SignIn to create.</param>
         /// <returns>The created SignIn.</returns>
-        System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate);
+
+        /// <summary>
         /// Creates the specified SignIn using POST.
         /// </summary>
         /// <param name="signInToCreate">The SignIn to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SignIn.</returns>
         System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SignIn using POST and returns a <see cref="GraphResponse{SignIn}"/> object.
+        /// </summary>
+        /// <param name="signInToCreate">The SignIn to create.</param>
+        /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SignIn>> CreateResponseAsync(SignIn signInToCreate);
+
+        /// <summary>
+        /// Creates the specified SignIn using POST and returns a <see cref="GraphResponse{SignIn}"/> object.
+        /// </summary>
+        /// <param name="signInToCreate">The SignIn to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SignIn>> CreateResponseAsync(SignIn signInToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SignIn.

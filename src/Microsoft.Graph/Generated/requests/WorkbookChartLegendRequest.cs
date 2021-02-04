@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookChartLegend using POST and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> CreateResponseAsync(WorkbookChartLegend workbookChartLegendToCreate)
+        {
+            return this.CreateResponseAsync(workbookChartLegendToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookChartLegend using POST and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> CreateResponseAsync(WorkbookChartLegend workbookChartLegendToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartLegend>(workbookChartLegendToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookChartLegend.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OpenShift using POST and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToCreate">The OpenShift to create.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShift>> CreateResponseAsync(OpenShift openShiftToCreate)
+        {
+            return this.CreateResponseAsync(openShiftToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OpenShift using POST and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="openShiftToCreate">The OpenShift to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OpenShift>> CreateResponseAsync(OpenShift openShiftToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OpenShift>(openShiftToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OpenShift.
         /// </summary>
         /// <returns>The task to await.</returns>

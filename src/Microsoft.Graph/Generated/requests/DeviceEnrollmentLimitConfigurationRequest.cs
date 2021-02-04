@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> CreateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(deviceEnrollmentLimitConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceEnrollmentLimitConfiguration using POST and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceEnrollmentLimitConfigurationToCreate">The DeviceEnrollmentLimitConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> CreateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceEnrollmentLimitConfiguration>(deviceEnrollmentLimitConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceEnrollmentLimitConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

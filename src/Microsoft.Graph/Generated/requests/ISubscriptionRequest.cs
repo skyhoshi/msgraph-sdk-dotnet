@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="subscriptionToCreate">The Subscription to create.</param>
         /// <returns>The created Subscription.</returns>
-        System.Threading.Tasks.Task<Subscription> CreateAsync(Subscription subscriptionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Subscription> CreateAsync(Subscription subscriptionToCreate);
+
+        /// <summary>
         /// Creates the specified Subscription using POST.
         /// </summary>
         /// <param name="subscriptionToCreate">The Subscription to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Subscription.</returns>
         System.Threading.Tasks.Task<Subscription> CreateAsync(Subscription subscriptionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Subscription using POST and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="subscriptionToCreate">The Subscription to create.</param>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> CreateResponseAsync(Subscription subscriptionToCreate);
+
+        /// <summary>
+        /// Creates the specified Subscription using POST and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="subscriptionToCreate">The Subscription to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Subscription>> CreateResponseAsync(Subscription subscriptionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Subscription.

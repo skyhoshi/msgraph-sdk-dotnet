@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UsedInsight using POST and returns a <see cref="GraphResponse{UsedInsight}"/> object.
+        /// </summary>
+        /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UsedInsight>> CreateResponseAsync(UsedInsight usedInsightToCreate)
+        {
+            return this.CreateResponseAsync(usedInsightToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UsedInsight using POST and returns a <see cref="GraphResponse{UsedInsight}"/> object.
+        /// </summary>
+        /// <param name="usedInsightToCreate">The UsedInsight to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UsedInsight>> CreateResponseAsync(UsedInsight usedInsightToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UsedInsight>(usedInsightToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UsedInsight.
         /// </summary>
         /// <returns>The task to await.</returns>

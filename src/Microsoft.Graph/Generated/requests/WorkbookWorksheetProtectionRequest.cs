@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookWorksheetProtection using POST and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> CreateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate)
+        {
+            return this.CreateResponseAsync(workbookWorksheetProtectionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookWorksheetProtection using POST and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToCreate">The WorkbookWorksheetProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> CreateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookWorksheetProtection>(workbookWorksheetProtectionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookWorksheetProtection.
         /// </summary>
         /// <returns>The task to await.</returns>

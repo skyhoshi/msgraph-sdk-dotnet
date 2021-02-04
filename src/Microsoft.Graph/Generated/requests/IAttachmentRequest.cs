@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="attachmentToCreate">The Attachment to create.</param>
         /// <returns>The created Attachment.</returns>
-        System.Threading.Tasks.Task<Attachment> CreateAsync(Attachment attachmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Attachment> CreateAsync(Attachment attachmentToCreate);
+
+        /// <summary>
         /// Creates the specified Attachment using POST.
         /// </summary>
         /// <param name="attachmentToCreate">The Attachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Attachment.</returns>
         System.Threading.Tasks.Task<Attachment> CreateAsync(Attachment attachmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Attachment using POST and returns a <see cref="GraphResponse{Attachment}"/> object.
+        /// </summary>
+        /// <param name="attachmentToCreate">The Attachment to create.</param>
+        /// <returns>The <see cref="GraphResponse{Attachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Attachment>> CreateResponseAsync(Attachment attachmentToCreate);
+
+        /// <summary>
+        /// Creates the specified Attachment using POST and returns a <see cref="GraphResponse{Attachment}"/> object.
+        /// </summary>
+        /// <param name="attachmentToCreate">The Attachment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Attachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Attachment>> CreateResponseAsync(Attachment attachmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Attachment.

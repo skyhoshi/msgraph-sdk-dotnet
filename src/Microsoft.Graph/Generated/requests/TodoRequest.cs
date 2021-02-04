@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Todo using POST and returns a <see cref="GraphResponse{Todo}"/> object.
+        /// </summary>
+        /// <param name="todoToCreate">The Todo to create.</param>
+        /// <returns>The <see cref="GraphResponse{Todo}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Todo>> CreateResponseAsync(Todo todoToCreate)
+        {
+            return this.CreateResponseAsync(todoToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Todo using POST and returns a <see cref="GraphResponse{Todo}"/> object.
+        /// </summary>
+        /// <param name="todoToCreate">The Todo to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Todo}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Todo>> CreateResponseAsync(Todo todoToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Todo>(todoToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Todo.
         /// </summary>
         /// <returns>The task to await.</returns>

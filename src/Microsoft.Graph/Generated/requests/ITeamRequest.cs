@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="teamToCreate">The Team to create.</param>
         /// <returns>The created Team.</returns>
-        System.Threading.Tasks.Task<Team> CreateAsync(Team teamToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Team> CreateAsync(Team teamToCreate);
+
+        /// <summary>
         /// Creates the specified Team using POST.
         /// </summary>
         /// <param name="teamToCreate">The Team to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Team.</returns>
         System.Threading.Tasks.Task<Team> CreateAsync(Team teamToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Team using POST and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToCreate">The Team to create.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Team>> CreateResponseAsync(Team teamToCreate);
+
+        /// <summary>
+        /// Creates the specified Team using POST and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="teamToCreate">The Team to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Team>> CreateResponseAsync(Team teamToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Team.

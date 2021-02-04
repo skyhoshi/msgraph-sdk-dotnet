@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
         /// <returns>The created ManagedAppPolicyDeploymentSummary.</returns>
-        System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> CreateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> CreateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppPolicyDeploymentSummary using POST.
         /// </summary>
         /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppPolicyDeploymentSummary.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicyDeploymentSummary> CreateAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> CreateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> CreateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppPolicyDeploymentSummary.

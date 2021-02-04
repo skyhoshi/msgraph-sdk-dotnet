@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
         /// <returns>The created ConditionalAccessPolicy.</returns>
-        System.Threading.Tasks.Task<ConditionalAccessPolicy> CreateAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ConditionalAccessPolicy> CreateAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified ConditionalAccessPolicy using POST.
         /// </summary>
         /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessPolicy.</returns>
         System.Threading.Tasks.Task<ConditionalAccessPolicy> CreateAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified ConditionalAccessPolicy using POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToCreate">The ConditionalAccessPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> CreateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ConditionalAccessPolicy.

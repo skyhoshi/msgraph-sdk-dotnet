@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DriveItemVersion using POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object.
+        /// </summary>
+        /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> CreateResponseAsync(DriveItemVersion driveItemVersionToCreate)
+        {
+            return this.CreateResponseAsync(driveItemVersionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DriveItemVersion using POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object.
+        /// </summary>
+        /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> CreateResponseAsync(DriveItemVersion driveItemVersionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DriveItemVersion>(driveItemVersionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DriveItemVersion.
         /// </summary>
         /// <returns>The task to await.</returns>

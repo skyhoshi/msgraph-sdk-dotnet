@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DirectoryObjectPartnerReference using POST and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> CreateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate)
+        {
+            return this.CreateResponseAsync(directoryObjectPartnerReferenceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DirectoryObjectPartnerReference using POST and returns a <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object.
+        /// </summary>
+        /// <param name="directoryObjectPartnerReferenceToCreate">The DirectoryObjectPartnerReference to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryObjectPartnerReference}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryObjectPartnerReference>> CreateResponseAsync(DirectoryObjectPartnerReference directoryObjectPartnerReferenceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DirectoryObjectPartnerReference>(directoryObjectPartnerReferenceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DirectoryObjectPartnerReference.
         /// </summary>
         /// <returns>The task to await.</returns>

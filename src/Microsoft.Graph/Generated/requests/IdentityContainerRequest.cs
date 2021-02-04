@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IdentityContainer using POST and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
+        /// </summary>
+        /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> CreateResponseAsync(IdentityContainer identityContainerToCreate)
+        {
+            return this.CreateResponseAsync(identityContainerToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IdentityContainer using POST and returns a <see cref="GraphResponse{IdentityContainer}"/> object.
+        /// </summary>
+        /// <param name="identityContainerToCreate">The IdentityContainer to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityContainer}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityContainer>> CreateResponseAsync(IdentityContainer identityContainerToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IdentityContainer>(identityContainerToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IdentityContainer.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ItemActivity using POST and returns a <see cref="GraphResponse{ItemActivity}"/> object.
+        /// </summary>
+        /// <param name="itemActivityToCreate">The ItemActivity to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemActivity>> CreateResponseAsync(ItemActivity itemActivityToCreate)
+        {
+            return this.CreateResponseAsync(itemActivityToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ItemActivity using POST and returns a <see cref="GraphResponse{ItemActivity}"/> object.
+        /// </summary>
+        /// <param name="itemActivityToCreate">The ItemActivity to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemActivity>> CreateResponseAsync(ItemActivity itemActivityToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ItemActivity>(itemActivityToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ItemActivity.
         /// </summary>
         /// <returns>The task to await.</returns>

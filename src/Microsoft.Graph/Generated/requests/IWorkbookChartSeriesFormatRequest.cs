@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartSeriesFormatToCreate">The WorkbookChartSeriesFormat to create.</param>
         /// <returns>The created WorkbookChartSeriesFormat.</returns>
-        System.Threading.Tasks.Task<WorkbookChartSeriesFormat> CreateAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartSeriesFormat> CreateAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartSeriesFormat using POST.
         /// </summary>
         /// <param name="workbookChartSeriesFormatToCreate">The WorkbookChartSeriesFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartSeriesFormat.</returns>
         System.Threading.Tasks.Task<WorkbookChartSeriesFormat> CreateAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartSeriesFormat using POST and returns a <see cref="GraphResponse{WorkbookChartSeriesFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartSeriesFormatToCreate">The WorkbookChartSeriesFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeriesFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeriesFormat>> CreateResponseAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartSeriesFormat using POST and returns a <see cref="GraphResponse{WorkbookChartSeriesFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartSeriesFormatToCreate">The WorkbookChartSeriesFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeriesFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeriesFormat>> CreateResponseAsync(WorkbookChartSeriesFormat workbookChartSeriesFormatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartSeriesFormat.

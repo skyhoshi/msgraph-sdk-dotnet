@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
         /// <returns>The created AndroidWorkProfileGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> CreateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> CreateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidWorkProfileGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<AndroidWorkProfileGeneralDeviceConfiguration> CreateAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> CreateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidWorkProfileGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidWorkProfileGeneralDeviceConfigurationToCreate">The AndroidWorkProfileGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> CreateResponseAsync(AndroidWorkProfileGeneralDeviceConfiguration androidWorkProfileGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidWorkProfileGeneralDeviceConfiguration.

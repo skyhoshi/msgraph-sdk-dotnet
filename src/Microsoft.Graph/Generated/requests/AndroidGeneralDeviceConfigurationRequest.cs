@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> CreateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(androidGeneralDeviceConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidGeneralDeviceConfigurationToCreate">The AndroidGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> CreateResponseAsync(AndroidGeneralDeviceConfiguration androidGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidGeneralDeviceConfiguration>(androidGeneralDeviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidGeneralDeviceConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

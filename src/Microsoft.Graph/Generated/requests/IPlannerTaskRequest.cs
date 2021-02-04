@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
         /// <returns>The created PlannerTask.</returns>
-        System.Threading.Tasks.Task<PlannerTask> CreateAsync(PlannerTask plannerTaskToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerTask> CreateAsync(PlannerTask plannerTaskToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerTask using POST.
         /// </summary>
         /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerTask.</returns>
         System.Threading.Tasks.Task<PlannerTask> CreateAsync(PlannerTask plannerTaskToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerTask using POST and returns a <see cref="GraphResponse{PlannerTask}"/> object.
+        /// </summary>
+        /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> CreateResponseAsync(PlannerTask plannerTaskToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerTask using POST and returns a <see cref="GraphResponse{PlannerTask}"/> object.
+        /// </summary>
+        /// <param name="plannerTaskToCreate">The PlannerTask to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTask}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerTask>> CreateResponseAsync(PlannerTask plannerTaskToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerTask.

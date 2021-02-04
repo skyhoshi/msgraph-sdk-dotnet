@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
         /// <returns>The created AndroidLobApp.</returns>
-        System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidLobApp using POST.
         /// </summary>
         /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidLobApp.</returns>
         System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidLobApp using POST and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> CreateResponseAsync(AndroidLobApp androidLobAppToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidLobApp using POST and returns a <see cref="GraphResponse{AndroidLobApp}"/> object.
+        /// </summary>
+        /// <param name="androidLobAppToCreate">The AndroidLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> CreateResponseAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidLobApp.

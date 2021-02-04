@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
         /// <returns>The created CalendarGroup.</returns>
-        System.Threading.Tasks.Task<CalendarGroup> CreateAsync(CalendarGroup calendarGroupToCreate);        /// <summary>
+        System.Threading.Tasks.Task<CalendarGroup> CreateAsync(CalendarGroup calendarGroupToCreate);
+
+        /// <summary>
         /// Creates the specified CalendarGroup using POST.
         /// </summary>
         /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CalendarGroup.</returns>
         System.Threading.Tasks.Task<CalendarGroup> CreateAsync(CalendarGroup calendarGroupToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified CalendarGroup using POST and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> CreateResponseAsync(CalendarGroup calendarGroupToCreate);
+
+        /// <summary>
+        /// Creates the specified CalendarGroup using POST and returns a <see cref="GraphResponse{CalendarGroup}"/> object.
+        /// </summary>
+        /// <param name="calendarGroupToCreate">The CalendarGroup to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> CreateResponseAsync(CalendarGroup calendarGroupToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified CalendarGroup.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WindowsInformationProtectionAppLockerFile using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> CreateResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate)
+        {
+            return this.CreateResponseAsync(windowsInformationProtectionAppLockerFileToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionAppLockerFile using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> CreateResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionAppLockerFile>(windowsInformationProtectionAppLockerFileToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WindowsInformationProtectionAppLockerFile.
         /// </summary>
         /// <returns>The task to await.</returns>

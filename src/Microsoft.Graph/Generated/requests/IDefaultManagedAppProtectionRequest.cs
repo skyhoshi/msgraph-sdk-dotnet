@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="defaultManagedAppProtectionToCreate">The DefaultManagedAppProtection to create.</param>
         /// <returns>The created DefaultManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<DefaultManagedAppProtection> CreateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DefaultManagedAppProtection> CreateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate);
+
+        /// <summary>
         /// Creates the specified DefaultManagedAppProtection using POST.
         /// </summary>
         /// <param name="defaultManagedAppProtectionToCreate">The DefaultManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DefaultManagedAppProtection.</returns>
         System.Threading.Tasks.Task<DefaultManagedAppProtection> CreateAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DefaultManagedAppProtection using POST and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="defaultManagedAppProtectionToCreate">The DefaultManagedAppProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> CreateResponseAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate);
+
+        /// <summary>
+        /// Creates the specified DefaultManagedAppProtection using POST and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="defaultManagedAppProtectionToCreate">The DefaultManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> CreateResponseAsync(DefaultManagedAppProtection defaultManagedAppProtectionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DefaultManagedAppProtection.

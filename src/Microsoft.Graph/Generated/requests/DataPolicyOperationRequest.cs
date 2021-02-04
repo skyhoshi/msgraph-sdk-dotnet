@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DataPolicyOperation using POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> CreateResponseAsync(DataPolicyOperation dataPolicyOperationToCreate)
+        {
+            return this.CreateResponseAsync(dataPolicyOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DataPolicyOperation using POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> CreateResponseAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DataPolicyOperation>(dataPolicyOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DataPolicyOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

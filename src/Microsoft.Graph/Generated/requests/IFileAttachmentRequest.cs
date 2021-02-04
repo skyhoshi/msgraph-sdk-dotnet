@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
         /// <returns>The created FileAttachment.</returns>
-        System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate);        /// <summary>
+        System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate);
+
+        /// <summary>
         /// Creates the specified FileAttachment using POST.
         /// </summary>
         /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created FileAttachment.</returns>
         System.Threading.Tasks.Task<FileAttachment> CreateAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified FileAttachment using POST and returns a <see cref="GraphResponse{FileAttachment}"/> object.
+        /// </summary>
+        /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
+        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> CreateResponseAsync(FileAttachment fileAttachmentToCreate);
+
+        /// <summary>
+        /// Creates the specified FileAttachment using POST and returns a <see cref="GraphResponse{FileAttachment}"/> object.
+        /// </summary>
+        /// <param name="fileAttachmentToCreate">The FileAttachment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> CreateResponseAsync(FileAttachment fileAttachmentToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified FileAttachment.

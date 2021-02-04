@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <returns>The created RecordOperation.</returns>
-        System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate);
+
+        /// <summary>
         /// Creates the specified RecordOperation using POST.
         /// </summary>
         /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RecordOperation.</returns>
         System.Threading.Tasks.Task<RecordOperation> CreateAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified RecordOperation using POST and returns a <see cref="GraphResponse{RecordOperation}"/> object.
+        /// </summary>
+        /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> CreateResponseAsync(RecordOperation recordOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified RecordOperation using POST and returns a <see cref="GraphResponse{RecordOperation}"/> object.
+        /// </summary>
+        /// <param name="recordOperationToCreate">The RecordOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RecordOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RecordOperation>> CreateResponseAsync(RecordOperation recordOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified RecordOperation.

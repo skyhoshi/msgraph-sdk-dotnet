@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
         /// <returns>The created AuditLogRoot.</returns>
-        System.Threading.Tasks.Task<AuditLogRoot> CreateAsync(AuditLogRoot auditLogRootToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AuditLogRoot> CreateAsync(AuditLogRoot auditLogRootToCreate);
+
+        /// <summary>
         /// Creates the specified AuditLogRoot using POST.
         /// </summary>
         /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuditLogRoot.</returns>
         System.Threading.Tasks.Task<AuditLogRoot> CreateAsync(AuditLogRoot auditLogRootToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AuditLogRoot using POST and returns a <see cref="GraphResponse{AuditLogRoot}"/> object.
+        /// </summary>
+        /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{AuditLogRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> CreateResponseAsync(AuditLogRoot auditLogRootToCreate);
+
+        /// <summary>
+        /// Creates the specified AuditLogRoot using POST and returns a <see cref="GraphResponse{AuditLogRoot}"/> object.
+        /// </summary>
+        /// <param name="auditLogRootToCreate">The AuditLogRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuditLogRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuditLogRoot>> CreateResponseAsync(AuditLogRoot auditLogRootToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AuditLogRoot.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
         /// <returns>The created ColumnLink.</returns>
-        System.Threading.Tasks.Task<ColumnLink> CreateAsync(ColumnLink columnLinkToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ColumnLink> CreateAsync(ColumnLink columnLinkToCreate);
+
+        /// <summary>
         /// Creates the specified ColumnLink using POST.
         /// </summary>
         /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnLink.</returns>
         System.Threading.Tasks.Task<ColumnLink> CreateAsync(ColumnLink columnLinkToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ColumnLink using POST and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> CreateResponseAsync(ColumnLink columnLinkToCreate);
+
+        /// <summary>
+        /// Creates the specified ColumnLink using POST and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <param name="columnLinkToCreate">The ColumnLink to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> CreateResponseAsync(ColumnLink columnLinkToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ColumnLink.

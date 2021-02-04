@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate)
+        {
+            return this.CreateResponseAsync(workbookRangeBorderToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookRangeBorder using POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object.
+        /// </summary>
+        /// <param name="workbookRangeBorderToCreate">The WorkbookRangeBorder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> CreateResponseAsync(WorkbookRangeBorder workbookRangeBorderToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookRangeBorder>(workbookRangeBorderToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookRangeBorder.
         /// </summary>
         /// <returns>The task to await.</returns>

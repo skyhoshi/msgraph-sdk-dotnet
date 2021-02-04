@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationDeviceSummary using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationDeviceSummaryToCreate">The ManagedDeviceMobileAppConfigurationDeviceSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationDeviceSummary>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationDeviceSummary managedDeviceMobileAppConfigurationDeviceSummaryToCreate)
+        {
+            return this.CreateResponseAsync(managedDeviceMobileAppConfigurationDeviceSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationDeviceSummary using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationDeviceSummaryToCreate">The ManagedDeviceMobileAppConfigurationDeviceSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationDeviceSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationDeviceSummary>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationDeviceSummary managedDeviceMobileAppConfigurationDeviceSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationDeviceSummary>(managedDeviceMobileAppConfigurationDeviceSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationDeviceSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

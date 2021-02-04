@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosManagedAppRegistration using POST and returns a <see cref="GraphResponse{IosManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> CreateResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate)
+        {
+            return this.CreateResponseAsync(iosManagedAppRegistrationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosManagedAppRegistration using POST and returns a <see cref="GraphResponse{IosManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="iosManagedAppRegistrationToCreate">The IosManagedAppRegistration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> CreateResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosManagedAppRegistration>(iosManagedAppRegistrationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosManagedAppRegistration.
         /// </summary>
         /// <returns>The task to await.</returns>

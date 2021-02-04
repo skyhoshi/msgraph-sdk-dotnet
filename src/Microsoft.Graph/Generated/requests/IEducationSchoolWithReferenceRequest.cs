@@ -38,13 +38,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
         /// <returns>The created EducationSchool.</returns>
-        System.Threading.Tasks.Task<EducationSchool> CreateAsync(EducationSchool educationSchoolToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationSchool> CreateAsync(EducationSchool educationSchoolToCreate);
+
+        /// <summary>
         /// Creates the specified EducationSchool using POST.
         /// </summary>
         /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationSchool.</returns>
         System.Threading.Tasks.Task<EducationSchool> CreateAsync(EducationSchool educationSchoolToCreate, CancellationToken cancellationToken);
+
+		/// <summary>
+        /// Creates the specified EducationSchool using POST and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> CreateResponseAsync(EducationSchool educationSchoolToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationSchool using POST and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="educationSchoolToCreate">The EducationSchool to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> CreateResponseAsync(EducationSchool educationSchoolToCreate, CancellationToken cancellationToken);
 
 		/// <summary>
         /// Updates the specified EducationSchool using PATCH.

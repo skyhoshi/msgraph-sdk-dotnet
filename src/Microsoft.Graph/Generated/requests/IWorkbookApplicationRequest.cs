@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookApplicationToCreate">The WorkbookApplication to create.</param>
         /// <returns>The created WorkbookApplication.</returns>
-        System.Threading.Tasks.Task<WorkbookApplication> CreateAsync(WorkbookApplication workbookApplicationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookApplication> CreateAsync(WorkbookApplication workbookApplicationToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookApplication using POST.
         /// </summary>
         /// <param name="workbookApplicationToCreate">The WorkbookApplication to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookApplication.</returns>
         System.Threading.Tasks.Task<WorkbookApplication> CreateAsync(WorkbookApplication workbookApplicationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookApplication using POST and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
+        /// </summary>
+        /// <param name="workbookApplicationToCreate">The WorkbookApplication to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> CreateResponseAsync(WorkbookApplication workbookApplicationToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookApplication using POST and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
+        /// </summary>
+        /// <param name="workbookApplicationToCreate">The WorkbookApplication to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> CreateResponseAsync(WorkbookApplication workbookApplicationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookApplication.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
         /// <returns>The created ExtensionProperty.</returns>
-        System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate);
+
+        /// <summary>
         /// Creates the specified ExtensionProperty using POST.
         /// </summary>
         /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExtensionProperty.</returns>
         System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ExtensionProperty using POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
+        /// </summary>
+        /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> CreateResponseAsync(ExtensionProperty extensionPropertyToCreate);
+
+        /// <summary>
+        /// Creates the specified ExtensionProperty using POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
+        /// </summary>
+        /// <param name="extensionPropertyToCreate">The ExtensionProperty to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> CreateResponseAsync(ExtensionProperty extensionPropertyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ExtensionProperty.

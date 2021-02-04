@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosGeneralDeviceConfigurationToCreate">The IosGeneralDeviceConfiguration to create.</param>
         /// <returns>The created IosGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<IosGeneralDeviceConfiguration> CreateAsync(IosGeneralDeviceConfiguration iosGeneralDeviceConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosGeneralDeviceConfiguration> CreateAsync(IosGeneralDeviceConfiguration iosGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified IosGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="iosGeneralDeviceConfigurationToCreate">The IosGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<IosGeneralDeviceConfiguration> CreateAsync(IosGeneralDeviceConfiguration iosGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosGeneralDeviceConfigurationToCreate">The IosGeneralDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosGeneralDeviceConfiguration>> CreateResponseAsync(IosGeneralDeviceConfiguration iosGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified IosGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosGeneralDeviceConfigurationToCreate">The IosGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosGeneralDeviceConfiguration>> CreateResponseAsync(IosGeneralDeviceConfiguration iosGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosGeneralDeviceConfiguration.

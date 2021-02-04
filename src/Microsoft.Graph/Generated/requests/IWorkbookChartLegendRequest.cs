@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
         /// <returns>The created WorkbookChartLegend.</returns>
-        System.Threading.Tasks.Task<WorkbookChartLegend> CreateAsync(WorkbookChartLegend workbookChartLegendToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartLegend> CreateAsync(WorkbookChartLegend workbookChartLegendToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartLegend using POST.
         /// </summary>
         /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartLegend.</returns>
         System.Threading.Tasks.Task<WorkbookChartLegend> CreateAsync(WorkbookChartLegend workbookChartLegendToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartLegend using POST and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> CreateResponseAsync(WorkbookChartLegend workbookChartLegendToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartLegend using POST and returns a <see cref="GraphResponse{WorkbookChartLegend}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendToCreate">The WorkbookChartLegend to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegend}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegend>> CreateResponseAsync(WorkbookChartLegend workbookChartLegendToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartLegend.

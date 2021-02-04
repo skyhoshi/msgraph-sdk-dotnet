@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MessageRule using POST and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate)
+        {
+            return this.CreateResponseAsync(messageRuleToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MessageRule using POST and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToCreate">The MessageRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MessageRule>> CreateResponseAsync(MessageRule messageRuleToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MessageRule>(messageRuleToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MessageRule.
         /// </summary>
         /// <returns>The task to await.</returns>

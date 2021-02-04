@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
         /// <returns>The created UserTeamwork.</returns>
-        System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate);        /// <summary>
+        System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate);
+
+        /// <summary>
         /// Creates the specified UserTeamwork using POST.
         /// </summary>
         /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserTeamwork.</returns>
         System.Threading.Tasks.Task<UserTeamwork> CreateAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified UserTeamwork using POST and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
+        /// </summary>
+        /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> CreateResponseAsync(UserTeamwork userTeamworkToCreate);
+
+        /// <summary>
+        /// Creates the specified UserTeamwork using POST and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
+        /// </summary>
+        /// <param name="userTeamworkToCreate">The UserTeamwork to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> CreateResponseAsync(UserTeamwork userTeamworkToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified UserTeamwork.

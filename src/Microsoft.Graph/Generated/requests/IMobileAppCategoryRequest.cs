@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
         /// <returns>The created MobileAppCategory.</returns>
-        System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate);
+
+        /// <summary>
         /// Creates the specified MobileAppCategory using POST.
         /// </summary>
         /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppCategory.</returns>
         System.Threading.Tasks.Task<MobileAppCategory> CreateAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MobileAppCategory using POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> CreateResponseAsync(MobileAppCategory mobileAppCategoryToCreate);
+
+        /// <summary>
+        /// Creates the specified MobileAppCategory using POST and returns a <see cref="GraphResponse{MobileAppCategory}"/> object.
+        /// </summary>
+        /// <param name="mobileAppCategoryToCreate">The MobileAppCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppCategory>> CreateResponseAsync(MobileAppCategory mobileAppCategoryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MobileAppCategory.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="domainDnsRecordToCreate">The DomainDnsRecord to create.</param>
         /// <returns>The created DomainDnsRecord.</returns>
-        System.Threading.Tasks.Task<DomainDnsRecord> CreateAsync(DomainDnsRecord domainDnsRecordToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DomainDnsRecord> CreateAsync(DomainDnsRecord domainDnsRecordToCreate);
+
+        /// <summary>
         /// Creates the specified DomainDnsRecord using POST.
         /// </summary>
         /// <param name="domainDnsRecordToCreate">The DomainDnsRecord to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DomainDnsRecord.</returns>
         System.Threading.Tasks.Task<DomainDnsRecord> CreateAsync(DomainDnsRecord domainDnsRecordToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DomainDnsRecord using POST and returns a <see cref="GraphResponse{DomainDnsRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsRecordToCreate">The DomainDnsRecord to create.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> CreateResponseAsync(DomainDnsRecord domainDnsRecordToCreate);
+
+        /// <summary>
+        /// Creates the specified DomainDnsRecord using POST and returns a <see cref="GraphResponse{DomainDnsRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsRecordToCreate">The DomainDnsRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsRecord>> CreateResponseAsync(DomainDnsRecord domainDnsRecordToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DomainDnsRecord.

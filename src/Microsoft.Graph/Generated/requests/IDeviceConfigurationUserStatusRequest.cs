@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceConfigurationUserStatusToCreate">The DeviceConfigurationUserStatus to create.</param>
         /// <returns>The created DeviceConfigurationUserStatus.</returns>
-        System.Threading.Tasks.Task<DeviceConfigurationUserStatus> CreateAsync(DeviceConfigurationUserStatus deviceConfigurationUserStatusToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceConfigurationUserStatus> CreateAsync(DeviceConfigurationUserStatus deviceConfigurationUserStatusToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceConfigurationUserStatus using POST.
         /// </summary>
         /// <param name="deviceConfigurationUserStatusToCreate">The DeviceConfigurationUserStatus to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceConfigurationUserStatus.</returns>
         System.Threading.Tasks.Task<DeviceConfigurationUserStatus> CreateAsync(DeviceConfigurationUserStatus deviceConfigurationUserStatusToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationUserStatus using POST and returns a <see cref="GraphResponse{DeviceConfigurationUserStatus}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserStatusToCreate">The DeviceConfigurationUserStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserStatus>> CreateResponseAsync(DeviceConfigurationUserStatus deviceConfigurationUserStatusToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceConfigurationUserStatus using POST and returns a <see cref="GraphResponse{DeviceConfigurationUserStatus}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserStatusToCreate">The DeviceConfigurationUserStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserStatus>> CreateResponseAsync(DeviceConfigurationUserStatus deviceConfigurationUserStatusToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceConfigurationUserStatus.

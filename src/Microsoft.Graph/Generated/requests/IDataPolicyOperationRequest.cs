@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
         /// <returns>The created DataPolicyOperation.</returns>
-        System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate);
+
+        /// <summary>
         /// Creates the specified DataPolicyOperation using POST.
         /// </summary>
         /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DataPolicyOperation.</returns>
         System.Threading.Tasks.Task<DataPolicyOperation> CreateAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DataPolicyOperation using POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> CreateResponseAsync(DataPolicyOperation dataPolicyOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified DataPolicyOperation using POST and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="dataPolicyOperationToCreate">The DataPolicyOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> CreateResponseAsync(DataPolicyOperation dataPolicyOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DataPolicyOperation.

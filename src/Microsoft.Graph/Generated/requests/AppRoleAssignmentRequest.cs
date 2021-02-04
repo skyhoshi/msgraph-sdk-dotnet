@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AppRoleAssignment using POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> CreateResponseAsync(AppRoleAssignment appRoleAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(appRoleAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AppRoleAssignment using POST and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="appRoleAssignmentToCreate">The AppRoleAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> CreateResponseAsync(AppRoleAssignment appRoleAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AppRoleAssignment>(appRoleAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AppRoleAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>

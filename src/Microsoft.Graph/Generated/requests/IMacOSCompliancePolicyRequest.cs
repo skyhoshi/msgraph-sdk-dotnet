@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
         /// <returns>The created MacOSCompliancePolicy.</returns>
-        System.Threading.Tasks.Task<MacOSCompliancePolicy> CreateAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOSCompliancePolicy> CreateAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified MacOSCompliancePolicy using POST.
         /// </summary>
         /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSCompliancePolicy.</returns>
         System.Threading.Tasks.Task<MacOSCompliancePolicy> CreateAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOSCompliancePolicy using POST and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> CreateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOSCompliancePolicy using POST and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToCreate">The MacOSCompliancePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> CreateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOSCompliancePolicy.

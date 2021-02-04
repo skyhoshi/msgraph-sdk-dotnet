@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="baseItemToCreate">The BaseItem to create.</param>
         /// <returns>The created BaseItem.</returns>
-        System.Threading.Tasks.Task<BaseItem> CreateAsync(BaseItem baseItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<BaseItem> CreateAsync(BaseItem baseItemToCreate);
+
+        /// <summary>
         /// Creates the specified BaseItem using POST.
         /// </summary>
         /// <param name="baseItemToCreate">The BaseItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created BaseItem.</returns>
         System.Threading.Tasks.Task<BaseItem> CreateAsync(BaseItem baseItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified BaseItem using POST and returns a <see cref="GraphResponse{BaseItem}"/> object.
+        /// </summary>
+        /// <param name="baseItemToCreate">The BaseItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseItem>> CreateResponseAsync(BaseItem baseItemToCreate);
+
+        /// <summary>
+        /// Creates the specified BaseItem using POST and returns a <see cref="GraphResponse{BaseItem}"/> object.
+        /// </summary>
+        /// <param name="baseItemToCreate">The BaseItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseItem>> CreateResponseAsync(BaseItem baseItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified BaseItem.

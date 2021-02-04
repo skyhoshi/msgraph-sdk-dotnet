@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified FileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{FileAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="fileAssessmentRequestObjectToCreate">The FileAssessmentRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{FileAssessmentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> CreateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(fileAssessmentRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified FileAssessmentRequestObject using POST and returns a <see cref="GraphResponse{FileAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="fileAssessmentRequestObjectToCreate">The FileAssessmentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileAssessmentRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<FileAssessmentRequestObject>> CreateResponseAsync(FileAssessmentRequestObject fileAssessmentRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<FileAssessmentRequestObject>(fileAssessmentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified FileAssessmentRequest.
         /// </summary>
         /// <returns>The task to await.</returns>

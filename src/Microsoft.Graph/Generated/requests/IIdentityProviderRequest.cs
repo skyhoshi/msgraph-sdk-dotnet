@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
         /// <returns>The created IdentityProvider.</returns>
-        System.Threading.Tasks.Task<IdentityProvider> CreateAsync(IdentityProvider identityProviderToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IdentityProvider> CreateAsync(IdentityProvider identityProviderToCreate);
+
+        /// <summary>
         /// Creates the specified IdentityProvider using POST.
         /// </summary>
         /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IdentityProvider.</returns>
         System.Threading.Tasks.Task<IdentityProvider> CreateAsync(IdentityProvider identityProviderToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IdentityProvider using POST and returns a <see cref="GraphResponse{IdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> CreateResponseAsync(IdentityProvider identityProviderToCreate);
+
+        /// <summary>
+        /// Creates the specified IdentityProvider using POST and returns a <see cref="GraphResponse{IdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> CreateResponseAsync(IdentityProvider identityProviderToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IdentityProvider.

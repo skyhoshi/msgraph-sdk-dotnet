@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
         /// <returns>The created AndroidStoreApp.</returns>
-        System.Threading.Tasks.Task<AndroidStoreApp> CreateAsync(AndroidStoreApp androidStoreAppToCreate);        /// <summary>
+        System.Threading.Tasks.Task<AndroidStoreApp> CreateAsync(AndroidStoreApp androidStoreAppToCreate);
+
+        /// <summary>
         /// Creates the specified AndroidStoreApp using POST.
         /// </summary>
         /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AndroidStoreApp.</returns>
         System.Threading.Tasks.Task<AndroidStoreApp> CreateAsync(AndroidStoreApp androidStoreAppToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified AndroidStoreApp using POST and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> CreateResponseAsync(AndroidStoreApp androidStoreAppToCreate);
+
+        /// <summary>
+        /// Creates the specified AndroidStoreApp using POST and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToCreate">The AndroidStoreApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> CreateResponseAsync(AndroidStoreApp androidStoreAppToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified AndroidStoreApp.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedAppOperationToCreate">The ManagedAppOperation to create.</param>
         /// <returns>The created ManagedAppOperation.</returns>
-        System.Threading.Tasks.Task<ManagedAppOperation> CreateAsync(ManagedAppOperation managedAppOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedAppOperation> CreateAsync(ManagedAppOperation managedAppOperationToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedAppOperation using POST.
         /// </summary>
         /// <param name="managedAppOperationToCreate">The ManagedAppOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppOperation.</returns>
         System.Threading.Tasks.Task<ManagedAppOperation> CreateAsync(ManagedAppOperation managedAppOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedAppOperation using POST and returns a <see cref="GraphResponse{ManagedAppOperation}"/> object.
+        /// </summary>
+        /// <param name="managedAppOperationToCreate">The ManagedAppOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> CreateResponseAsync(ManagedAppOperation managedAppOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedAppOperation using POST and returns a <see cref="GraphResponse{ManagedAppOperation}"/> object.
+        /// </summary>
+        /// <param name="managedAppOperationToCreate">The ManagedAppOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> CreateResponseAsync(ManagedAppOperation managedAppOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedAppOperation.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
         /// <returns>The created MdmWindowsInformationProtectionPolicy.</returns>
-        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> CreateAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> CreateAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate);
+
+        /// <summary>
         /// Creates the specified MdmWindowsInformationProtectionPolicy using POST.
         /// </summary>
         /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MdmWindowsInformationProtectionPolicy.</returns>
         System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> CreateAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> CreateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> CreateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MdmWindowsInformationProtectionPolicy.

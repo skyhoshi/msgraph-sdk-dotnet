@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
         /// <returns>The created WorkbookFunctionResult.</returns>
-        System.Threading.Tasks.Task<WorkbookFunctionResult> CreateAsync(WorkbookFunctionResult workbookFunctionResultToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookFunctionResult> CreateAsync(WorkbookFunctionResult workbookFunctionResultToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookFunctionResult using POST.
         /// </summary>
         /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookFunctionResult.</returns>
         System.Threading.Tasks.Task<WorkbookFunctionResult> CreateAsync(WorkbookFunctionResult workbookFunctionResultToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookFunctionResult using POST and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> CreateResponseAsync(WorkbookFunctionResult workbookFunctionResultToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookFunctionResult using POST and returns a <see cref="GraphResponse{WorkbookFunctionResult}"/> object.
+        /// </summary>
+        /// <param name="workbookFunctionResultToCreate">The WorkbookFunctionResult to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctionResult}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookFunctionResult>> CreateResponseAsync(WorkbookFunctionResult workbookFunctionResultToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookFunctionResult.

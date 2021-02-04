@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosDeviceFeaturesConfiguration using POST and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> CreateResponseAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(iosDeviceFeaturesConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosDeviceFeaturesConfiguration using POST and returns a <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosDeviceFeaturesConfigurationToCreate">The IosDeviceFeaturesConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosDeviceFeaturesConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosDeviceFeaturesConfiguration>> CreateResponseAsync(IosDeviceFeaturesConfiguration iosDeviceFeaturesConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosDeviceFeaturesConfiguration>(iosDeviceFeaturesConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosDeviceFeaturesConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

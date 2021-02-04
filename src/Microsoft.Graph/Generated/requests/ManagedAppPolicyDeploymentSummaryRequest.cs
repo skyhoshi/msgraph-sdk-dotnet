@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> CreateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate)
+        {
+            return this.CreateResponseAsync(managedAppPolicyDeploymentSummaryToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedAppPolicyDeploymentSummary using POST and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToCreate">The ManagedAppPolicyDeploymentSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> CreateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedAppPolicyDeploymentSummary>(managedAppPolicyDeploymentSummaryToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedAppPolicyDeploymentSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

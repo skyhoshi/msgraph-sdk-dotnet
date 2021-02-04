@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> CreateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate)
+        {
+            return this.CreateResponseAsync(mdmWindowsInformationProtectionPolicyToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MdmWindowsInformationProtectionPolicy using POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicyToCreate">The MdmWindowsInformationProtectionPolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> CreateResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicyToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicyToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MdmWindowsInformationProtectionPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

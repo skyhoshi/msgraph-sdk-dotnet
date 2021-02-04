@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
         /// <returns>The created PlayPromptOperation.</returns>
-        System.Threading.Tasks.Task<PlayPromptOperation> CreateAsync(PlayPromptOperation playPromptOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlayPromptOperation> CreateAsync(PlayPromptOperation playPromptOperationToCreate);
+
+        /// <summary>
         /// Creates the specified PlayPromptOperation using POST.
         /// </summary>
         /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlayPromptOperation.</returns>
         System.Threading.Tasks.Task<PlayPromptOperation> CreateAsync(PlayPromptOperation playPromptOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlayPromptOperation using POST and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> CreateResponseAsync(PlayPromptOperation playPromptOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified PlayPromptOperation using POST and returns a <see cref="GraphResponse{PlayPromptOperation}"/> object.
+        /// </summary>
+        /// <param name="playPromptOperationToCreate">The PlayPromptOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlayPromptOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlayPromptOperation>> CreateResponseAsync(PlayPromptOperation playPromptOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlayPromptOperation.

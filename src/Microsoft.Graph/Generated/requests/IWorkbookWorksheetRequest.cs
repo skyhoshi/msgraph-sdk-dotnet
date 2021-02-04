@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
         /// <returns>The created WorkbookWorksheet.</returns>
-        System.Threading.Tasks.Task<WorkbookWorksheet> CreateAsync(WorkbookWorksheet workbookWorksheetToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookWorksheet> CreateAsync(WorkbookWorksheet workbookWorksheetToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookWorksheet using POST.
         /// </summary>
         /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookWorksheet.</returns>
         System.Threading.Tasks.Task<WorkbookWorksheet> CreateAsync(WorkbookWorksheet workbookWorksheetToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookWorksheet using POST and returns a <see cref="GraphResponse{WorkbookWorksheet}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheet>> CreateResponseAsync(WorkbookWorksheet workbookWorksheetToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookWorksheet using POST and returns a <see cref="GraphResponse{WorkbookWorksheet}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetToCreate">The WorkbookWorksheet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheet>> CreateResponseAsync(WorkbookWorksheet workbookWorksheetToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookWorksheet.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UserScopeTeamsAppInstallation using POST and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallationToCreate">The UserScopeTeamsAppInstallation to create.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> CreateResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallationToCreate)
+        {
+            return this.CreateResponseAsync(userScopeTeamsAppInstallationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UserScopeTeamsAppInstallation using POST and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallationToCreate">The UserScopeTeamsAppInstallation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> CreateResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserScopeTeamsAppInstallation>(userScopeTeamsAppInstallationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UserScopeTeamsAppInstallation.
         /// </summary>
         /// <returns>The task to await.</returns>

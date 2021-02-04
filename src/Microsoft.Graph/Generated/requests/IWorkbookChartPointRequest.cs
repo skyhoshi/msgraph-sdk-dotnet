@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartPointToCreate">The WorkbookChartPoint to create.</param>
         /// <returns>The created WorkbookChartPoint.</returns>
-        System.Threading.Tasks.Task<WorkbookChartPoint> CreateAsync(WorkbookChartPoint workbookChartPointToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChartPoint> CreateAsync(WorkbookChartPoint workbookChartPointToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChartPoint using POST.
         /// </summary>
         /// <param name="workbookChartPointToCreate">The WorkbookChartPoint to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartPoint.</returns>
         System.Threading.Tasks.Task<WorkbookChartPoint> CreateAsync(WorkbookChartPoint workbookChartPointToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartPoint using POST and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
+        /// </summary>
+        /// <param name="workbookChartPointToCreate">The WorkbookChartPoint to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> CreateResponseAsync(WorkbookChartPoint workbookChartPointToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChartPoint using POST and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
+        /// </summary>
+        /// <param name="workbookChartPointToCreate">The WorkbookChartPoint to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> CreateResponseAsync(WorkbookChartPoint workbookChartPointToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChartPoint.

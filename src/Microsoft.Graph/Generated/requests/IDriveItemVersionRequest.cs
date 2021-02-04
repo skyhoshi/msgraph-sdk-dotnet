@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
         /// <returns>The created DriveItemVersion.</returns>
-        System.Threading.Tasks.Task<DriveItemVersion> CreateAsync(DriveItemVersion driveItemVersionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DriveItemVersion> CreateAsync(DriveItemVersion driveItemVersionToCreate);
+
+        /// <summary>
         /// Creates the specified DriveItemVersion using POST.
         /// </summary>
         /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DriveItemVersion.</returns>
         System.Threading.Tasks.Task<DriveItemVersion> CreateAsync(DriveItemVersion driveItemVersionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DriveItemVersion using POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object.
+        /// </summary>
+        /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> CreateResponseAsync(DriveItemVersion driveItemVersionToCreate);
+
+        /// <summary>
+        /// Creates the specified DriveItemVersion using POST and returns a <see cref="GraphResponse{DriveItemVersion}"/> object.
+        /// </summary>
+        /// <param name="driveItemVersionToCreate">The DriveItemVersion to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> CreateResponseAsync(DriveItemVersion driveItemVersionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DriveItemVersion.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
         /// <returns>The created LocalizedNotificationMessage.</returns>
-        System.Threading.Tasks.Task<LocalizedNotificationMessage> CreateAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate);        /// <summary>
+        System.Threading.Tasks.Task<LocalizedNotificationMessage> CreateAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate);
+
+        /// <summary>
         /// Creates the specified LocalizedNotificationMessage using POST.
         /// </summary>
         /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LocalizedNotificationMessage.</returns>
         System.Threading.Tasks.Task<LocalizedNotificationMessage> CreateAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified LocalizedNotificationMessage using POST and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
+        /// </summary>
+        /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
+        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> CreateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate);
+
+        /// <summary>
+        /// Creates the specified LocalizedNotificationMessage using POST and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
+        /// </summary>
+        /// <param name="localizedNotificationMessageToCreate">The LocalizedNotificationMessage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> CreateResponseAsync(LocalizedNotificationMessage localizedNotificationMessageToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified LocalizedNotificationMessage.

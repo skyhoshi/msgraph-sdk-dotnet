@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="thumbnailToCreate">The Thumbnail to create.</param>
         /// <returns>The created Thumbnail.</returns>
-        System.Threading.Tasks.Task<Thumbnail> CreateAsync(Thumbnail thumbnailToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Thumbnail> CreateAsync(Thumbnail thumbnailToCreate);
+
+        /// <summary>
         /// Creates the specified Thumbnail using POST.
         /// </summary>
         /// <param name="thumbnailToCreate">The Thumbnail to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Thumbnail.</returns>
         System.Threading.Tasks.Task<Thumbnail> CreateAsync(Thumbnail thumbnailToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Thumbnail using POST and returns a <see cref="GraphResponse{Thumbnail}"/> object.
+        /// </summary>
+        /// <param name="thumbnailToCreate">The Thumbnail to create.</param>
+        /// <returns>The <see cref="GraphResponse{Thumbnail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Thumbnail>> CreateResponseAsync(Thumbnail thumbnailToCreate);
+
+        /// <summary>
+        /// Creates the specified Thumbnail using POST and returns a <see cref="GraphResponse{Thumbnail}"/> object.
+        /// </summary>
+        /// <param name="thumbnailToCreate">The Thumbnail to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Thumbnail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Thumbnail>> CreateResponseAsync(Thumbnail thumbnailToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Thumbnail.

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified EnrollmentConfigurationAssignment using POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> CreateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(enrollmentConfigurationAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EnrollmentConfigurationAssignment using POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignmentToCreate">The EnrollmentConfigurationAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> CreateResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified EnrollmentConfigurationAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>

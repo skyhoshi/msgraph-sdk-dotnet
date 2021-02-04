@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
         /// <returns>The created Windows10SecureAssessmentConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> CreateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> CreateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10SecureAssessmentConfiguration using POST.
         /// </summary>
         /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10SecureAssessmentConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10SecureAssessmentConfiguration> CreateAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10SecureAssessmentConfiguration using POST and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> CreateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10SecureAssessmentConfiguration using POST and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> CreateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10SecureAssessmentConfiguration.

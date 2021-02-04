@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DomainDnsUnavailableRecord using POST and returns a <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsUnavailableRecordToCreate">The DomainDnsUnavailableRecord to create.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DomainDnsUnavailableRecord>> CreateResponseAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToCreate)
+        {
+            return this.CreateResponseAsync(domainDnsUnavailableRecordToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DomainDnsUnavailableRecord using POST and returns a <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsUnavailableRecordToCreate">The DomainDnsUnavailableRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsUnavailableRecord>> CreateResponseAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DomainDnsUnavailableRecord>(domainDnsUnavailableRecordToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DomainDnsUnavailableRecord.
         /// </summary>
         /// <returns>The task to await.</returns>

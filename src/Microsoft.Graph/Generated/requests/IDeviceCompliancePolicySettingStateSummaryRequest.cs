@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
         /// <returns>The created DeviceCompliancePolicySettingStateSummary.</returns>
-        System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> CreateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> CreateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceCompliancePolicySettingStateSummary using POST.
         /// </summary>
         /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCompliancePolicySettingStateSummary.</returns>
         System.Threading.Tasks.Task<DeviceCompliancePolicySettingStateSummary> CreateAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicySettingStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> CreateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceCompliancePolicySettingStateSummary using POST and returns a <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicySettingStateSummaryToCreate">The DeviceCompliancePolicySettingStateSummary to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicySettingStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicySettingStateSummary>> CreateResponseAsync(DeviceCompliancePolicySettingStateSummary deviceCompliancePolicySettingStateSummaryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceCompliancePolicySettingStateSummary.

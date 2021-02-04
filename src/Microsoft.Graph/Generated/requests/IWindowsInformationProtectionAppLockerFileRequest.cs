@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
         /// <returns>The created WindowsInformationProtectionAppLockerFile.</returns>
-        System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> CreateAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> CreateAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsInformationProtectionAppLockerFile using POST.
         /// </summary>
         /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionAppLockerFile.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> CreateAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionAppLockerFile using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> CreateResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsInformationProtectionAppLockerFile using POST and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLockerFileToCreate">The WindowsInformationProtectionAppLockerFile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> CreateResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsInformationProtectionAppLockerFile.

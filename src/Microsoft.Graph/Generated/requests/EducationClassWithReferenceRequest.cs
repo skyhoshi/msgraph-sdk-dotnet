@@ -81,6 +81,29 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Creates the specified EducationClass using POST and returns a <see cref="GraphResponse{EducationClass}"/> object.
+        /// </summary>
+        /// <param name="educationClassToCreate">The EducationClass to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationClass}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationClass>> CreateResponseAsync(EducationClass educationClassToCreate)
+        {
+            return this.CreateResponseAsync(educationClassToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified EducationClass using POST and returns a <see cref="GraphResponse{EducationClass}"/> object.
+        /// </summary>
+        /// <param name="educationClassToCreate">The EducationClass to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationClass}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationClass>> CreateResponseAsync(EducationClass educationClassToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationClass>(educationClassToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Updates the specified EducationClass using PATCH.
         /// </summary>
         /// <param name="educationClassToUpdate">The EducationClass to update.</param>

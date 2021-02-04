@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
         /// <returns>The created PlannerBucketTaskBoardTaskFormat.</returns>
-        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> CreateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> CreateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST.
         /// </summary>
         /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerBucketTaskBoardTaskFormat.</returns>
         System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> CreateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> CreateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerBucketTaskBoardTaskFormat using POST and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketTaskBoardTaskFormatToCreate">The PlannerBucketTaskBoardTaskFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> CreateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerBucketTaskBoardTaskFormat.

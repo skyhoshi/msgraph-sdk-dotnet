@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows10SecureAssessmentConfiguration using POST and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> CreateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windows10SecureAssessmentConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows10SecureAssessmentConfiguration using POST and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10SecureAssessmentConfigurationToCreate">The Windows10SecureAssessmentConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> CreateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows10SecureAssessmentConfiguration>(windows10SecureAssessmentConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows10SecureAssessmentConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

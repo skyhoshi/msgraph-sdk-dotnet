@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="educationOrganizationToCreate">The EducationOrganization to create.</param>
         /// <returns>The created EducationOrganization.</returns>
-        System.Threading.Tasks.Task<EducationOrganization> CreateAsync(EducationOrganization educationOrganizationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<EducationOrganization> CreateAsync(EducationOrganization educationOrganizationToCreate);
+
+        /// <summary>
         /// Creates the specified EducationOrganization using POST.
         /// </summary>
         /// <param name="educationOrganizationToCreate">The EducationOrganization to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created EducationOrganization.</returns>
         System.Threading.Tasks.Task<EducationOrganization> CreateAsync(EducationOrganization educationOrganizationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified EducationOrganization using POST and returns a <see cref="GraphResponse{EducationOrganization}"/> object.
+        /// </summary>
+        /// <param name="educationOrganizationToCreate">The EducationOrganization to create.</param>
+        /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> CreateResponseAsync(EducationOrganization educationOrganizationToCreate);
+
+        /// <summary>
+        /// Creates the specified EducationOrganization using POST and returns a <see cref="GraphResponse{EducationOrganization}"/> object.
+        /// </summary>
+        /// <param name="educationOrganizationToCreate">The EducationOrganization to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> CreateResponseAsync(EducationOrganization educationOrganizationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified EducationOrganization.

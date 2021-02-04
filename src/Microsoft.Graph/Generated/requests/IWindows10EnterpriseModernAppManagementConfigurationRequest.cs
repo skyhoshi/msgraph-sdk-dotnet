@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
         /// <returns>The created Windows10EnterpriseModernAppManagementConfiguration.</returns>
-        System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST.
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Windows10EnterpriseModernAppManagementConfiguration.</returns>
         System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> CreateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified Windows10EnterpriseModernAppManagementConfiguration using POST and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EnterpriseModernAppManagementConfigurationToCreate">The Windows10EnterpriseModernAppManagementConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> CreateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Windows10EnterpriseModernAppManagementConfiguration.

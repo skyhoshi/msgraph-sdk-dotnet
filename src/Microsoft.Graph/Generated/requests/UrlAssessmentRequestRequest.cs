@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified UrlAssessmentRequestObject using POST and returns a <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="urlAssessmentRequestObjectToCreate">The UrlAssessmentRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UrlAssessmentRequestObject>> CreateResponseAsync(UrlAssessmentRequestObject urlAssessmentRequestObjectToCreate)
+        {
+            return this.CreateResponseAsync(urlAssessmentRequestObjectToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified UrlAssessmentRequestObject using POST and returns a <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="urlAssessmentRequestObjectToCreate">The UrlAssessmentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UrlAssessmentRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UrlAssessmentRequestObject>> CreateResponseAsync(UrlAssessmentRequestObject urlAssessmentRequestObjectToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UrlAssessmentRequestObject>(urlAssessmentRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified UrlAssessmentRequest.
         /// </summary>
         /// <returns>The task to await.</returns>

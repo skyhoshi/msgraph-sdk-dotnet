@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
         /// <returns>The created Calendar.</returns>
-        System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate);
+
+        /// <summary>
         /// Creates the specified Calendar using POST.
         /// </summary>
         /// <param name="calendarToCreate">The Calendar to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Calendar.</returns>
         System.Threading.Tasks.Task<Calendar> CreateAsync(Calendar calendarToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Calendar using POST and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToCreate">The Calendar to create.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> CreateResponseAsync(Calendar calendarToCreate);
+
+        /// <summary>
+        /// Creates the specified Calendar using POST and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="calendarToCreate">The Calendar to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> CreateResponseAsync(Calendar calendarToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Calendar.

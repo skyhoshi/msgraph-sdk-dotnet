@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MacOSOfficeSuiteApp using POST and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
+        /// </summary>
+        /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate)
+        {
+            return this.CreateResponseAsync(macOSOfficeSuiteAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MacOSOfficeSuiteApp using POST and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
+        /// </summary>
+        /// <param name="macOSOfficeSuiteAppToCreate">The MacOSOfficeSuiteApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> CreateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MacOSOfficeSuiteApp>(macOSOfficeSuiteAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MacOSOfficeSuiteApp.
         /// </summary>
         /// <returns>The task to await.</returns>

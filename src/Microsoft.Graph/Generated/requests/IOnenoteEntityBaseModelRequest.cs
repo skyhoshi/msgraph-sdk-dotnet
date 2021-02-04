@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="onenoteEntityBaseModelToCreate">The OnenoteEntityBaseModel to create.</param>
         /// <returns>The created OnenoteEntityBaseModel.</returns>
-        System.Threading.Tasks.Task<OnenoteEntityBaseModel> CreateAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OnenoteEntityBaseModel> CreateAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToCreate);
+
+        /// <summary>
         /// Creates the specified OnenoteEntityBaseModel using POST.
         /// </summary>
         /// <param name="onenoteEntityBaseModelToCreate">The OnenoteEntityBaseModel to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OnenoteEntityBaseModel.</returns>
         System.Threading.Tasks.Task<OnenoteEntityBaseModel> CreateAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OnenoteEntityBaseModel using POST and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityBaseModelToCreate">The OnenoteEntityBaseModel to create.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> CreateResponseAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToCreate);
+
+        /// <summary>
+        /// Creates the specified OnenoteEntityBaseModel using POST and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityBaseModelToCreate">The OnenoteEntityBaseModel to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> CreateResponseAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OnenoteEntityBaseModel.

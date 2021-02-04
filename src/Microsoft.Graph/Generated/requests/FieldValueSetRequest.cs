@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified FieldValueSet using POST and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
+        /// </summary>
+        /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
+        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> CreateResponseAsync(FieldValueSet fieldValueSetToCreate)
+        {
+            return this.CreateResponseAsync(fieldValueSetToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified FieldValueSet using POST and returns a <see cref="GraphResponse{FieldValueSet}"/> object.
+        /// </summary>
+        /// <param name="fieldValueSetToCreate">The FieldValueSet to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FieldValueSet}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<FieldValueSet>> CreateResponseAsync(FieldValueSet fieldValueSetToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<FieldValueSet>(fieldValueSetToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified FieldValueSet.
         /// </summary>
         /// <returns>The task to await.</returns>

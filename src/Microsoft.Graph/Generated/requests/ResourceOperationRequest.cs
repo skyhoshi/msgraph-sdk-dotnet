@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ResourceOperation using POST and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> CreateResponseAsync(ResourceOperation resourceOperationToCreate)
+        {
+            return this.CreateResponseAsync(resourceOperationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ResourceOperation using POST and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> CreateResponseAsync(ResourceOperation resourceOperationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ResourceOperation>(resourceOperationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ResourceOperation.
         /// </summary>
         /// <returns>The task to await.</returns>

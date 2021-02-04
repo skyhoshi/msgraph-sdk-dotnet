@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
         /// <returns>The created DeviceCategory.</returns>
-        System.Threading.Tasks.Task<DeviceCategory> CreateAsync(DeviceCategory deviceCategoryToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceCategory> CreateAsync(DeviceCategory deviceCategoryToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceCategory using POST.
         /// </summary>
         /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceCategory.</returns>
         System.Threading.Tasks.Task<DeviceCategory> CreateAsync(DeviceCategory deviceCategoryToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceCategory using POST and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> CreateResponseAsync(DeviceCategory deviceCategoryToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceCategory using POST and returns a <see cref="GraphResponse{DeviceCategory}"/> object.
+        /// </summary>
+        /// <param name="deviceCategoryToCreate">The DeviceCategory to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCategory>> CreateResponseAsync(DeviceCategory deviceCategoryToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceCategory.

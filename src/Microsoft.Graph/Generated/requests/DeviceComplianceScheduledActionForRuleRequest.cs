@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceComplianceScheduledActionForRule using POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate)
+        {
+            return this.CreateResponseAsync(deviceComplianceScheduledActionForRuleToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceComplianceScheduledActionForRule using POST and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <param name="deviceComplianceScheduledActionForRuleToCreate">The DeviceComplianceScheduledActionForRule to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> CreateResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRuleToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRuleToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceComplianceScheduledActionForRule.
         /// </summary>
         /// <returns>The task to await.</returns>

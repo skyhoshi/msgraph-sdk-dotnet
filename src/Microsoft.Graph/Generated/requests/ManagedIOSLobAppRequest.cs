@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedIOSLobApp using POST and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedIOSLobAppToCreate">The ManagedIOSLobApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> CreateResponseAsync(ManagedIOSLobApp managedIOSLobAppToCreate)
+        {
+            return this.CreateResponseAsync(managedIOSLobAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedIOSLobApp using POST and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="managedIOSLobAppToCreate">The ManagedIOSLobApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> CreateResponseAsync(ManagedIOSLobApp managedIOSLobAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedIOSLobApp>(managedIOSLobAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedIOSLobApp.
         /// </summary>
         /// <returns>The task to await.</returns>

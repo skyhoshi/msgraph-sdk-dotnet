@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Windows10CustomConfiguration using POST and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> CreateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(windows10CustomConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Windows10CustomConfiguration using POST and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10CustomConfigurationToCreate">The Windows10CustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> CreateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Windows10CustomConfiguration>(windows10CustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Windows10CustomConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerBucketToCreate">The PlannerBucket to create.</param>
         /// <returns>The created PlannerBucket.</returns>
-        System.Threading.Tasks.Task<PlannerBucket> CreateAsync(PlannerBucket plannerBucketToCreate);        /// <summary>
+        System.Threading.Tasks.Task<PlannerBucket> CreateAsync(PlannerBucket plannerBucketToCreate);
+
+        /// <summary>
         /// Creates the specified PlannerBucket using POST.
         /// </summary>
         /// <param name="plannerBucketToCreate">The PlannerBucket to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created PlannerBucket.</returns>
         System.Threading.Tasks.Task<PlannerBucket> CreateAsync(PlannerBucket plannerBucketToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified PlannerBucket using POST and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketToCreate">The PlannerBucket to create.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> CreateResponseAsync(PlannerBucket plannerBucketToCreate);
+
+        /// <summary>
+        /// Creates the specified PlannerBucket using POST and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketToCreate">The PlannerBucket to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> CreateResponseAsync(PlannerBucket plannerBucketToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified PlannerBucket.

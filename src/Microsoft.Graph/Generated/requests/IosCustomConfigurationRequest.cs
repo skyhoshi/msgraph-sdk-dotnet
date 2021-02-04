@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosCustomConfiguration using POST and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> CreateResponseAsync(IosCustomConfiguration iosCustomConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(iosCustomConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosCustomConfiguration using POST and returns a <see cref="GraphResponse{IosCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="iosCustomConfigurationToCreate">The IosCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosCustomConfiguration>> CreateResponseAsync(IosCustomConfiguration iosCustomConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosCustomConfiguration>(iosCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosCustomConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
-        System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookPivotTable using POST.
         /// </summary>
         /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
         System.Threading.Tasks.Task<WorkbookPivotTable> CreateAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookPivotTable using POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> CreateResponseAsync(WorkbookPivotTable workbookPivotTableToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookPivotTable using POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToCreate">The WorkbookPivotTable to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> CreateResponseAsync(WorkbookPivotTable workbookPivotTableToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookPivotTable.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
         /// <returns>The created MacOSGeneralDeviceConfiguration.</returns>
-        System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> CreateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> CreateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
         /// Creates the specified MacOSGeneralDeviceConfiguration using POST.
         /// </summary>
         /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MacOSGeneralDeviceConfiguration.</returns>
         System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> CreateAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified MacOSGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> CreateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate);
+
+        /// <summary>
+        /// Creates the specified MacOSGeneralDeviceConfiguration using POST and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="macOSGeneralDeviceConfigurationToCreate">The MacOSGeneralDeviceConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> CreateResponseAsync(MacOSGeneralDeviceConfiguration macOSGeneralDeviceConfigurationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified MacOSGeneralDeviceConfiguration.

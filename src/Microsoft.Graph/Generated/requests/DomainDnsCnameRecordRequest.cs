@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DomainDnsCnameRecord using POST and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> CreateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate)
+        {
+            return this.CreateResponseAsync(domainDnsCnameRecordToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DomainDnsCnameRecord using POST and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToCreate">The DomainDnsCnameRecord to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> CreateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DomainDnsCnameRecord>(domainDnsCnameRecordToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DomainDnsCnameRecord.
         /// </summary>
         /// <returns>The task to await.</returns>

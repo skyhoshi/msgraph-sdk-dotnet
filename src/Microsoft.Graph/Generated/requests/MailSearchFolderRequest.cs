@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified MailSearchFolder using POST and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> CreateResponseAsync(MailSearchFolder mailSearchFolderToCreate)
+        {
+            return this.CreateResponseAsync(mailSearchFolderToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified MailSearchFolder using POST and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="mailSearchFolderToCreate">The MailSearchFolder to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> CreateResponseAsync(MailSearchFolder mailSearchFolderToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MailSearchFolder>(mailSearchFolderToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified MailSearchFolder.
         /// </summary>
         /// <returns>The task to await.</returns>

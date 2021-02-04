@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="plannerToCreate">The Planner to create.</param>
         /// <returns>The created Planner.</returns>
-        System.Threading.Tasks.Task<Planner> CreateAsync(Planner plannerToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Planner> CreateAsync(Planner plannerToCreate);
+
+        /// <summary>
         /// Creates the specified Planner using POST.
         /// </summary>
         /// <param name="plannerToCreate">The Planner to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Planner.</returns>
         System.Threading.Tasks.Task<Planner> CreateAsync(Planner plannerToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Planner using POST and returns a <see cref="GraphResponse{Planner}"/> object.
+        /// </summary>
+        /// <param name="plannerToCreate">The Planner to create.</param>
+        /// <returns>The <see cref="GraphResponse{Planner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Planner>> CreateResponseAsync(Planner plannerToCreate);
+
+        /// <summary>
+        /// Creates the specified Planner using POST and returns a <see cref="GraphResponse{Planner}"/> object.
+        /// </summary>
+        /// <param name="plannerToCreate">The Planner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Planner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Planner>> CreateResponseAsync(Planner plannerToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Planner.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workbookChartToCreate">The WorkbookChart to create.</param>
         /// <returns>The created WorkbookChart.</returns>
-        System.Threading.Tasks.Task<WorkbookChart> CreateAsync(WorkbookChart workbookChartToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkbookChart> CreateAsync(WorkbookChart workbookChartToCreate);
+
+        /// <summary>
         /// Creates the specified WorkbookChart using POST.
         /// </summary>
         /// <param name="workbookChartToCreate">The WorkbookChart to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChart.</returns>
         System.Threading.Tasks.Task<WorkbookChart> CreateAsync(WorkbookChart workbookChartToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkbookChart using POST and returns a <see cref="GraphResponse{WorkbookChart}"/> object.
+        /// </summary>
+        /// <param name="workbookChartToCreate">The WorkbookChart to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChart}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChart>> CreateResponseAsync(WorkbookChart workbookChartToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkbookChart using POST and returns a <see cref="GraphResponse{WorkbookChart}"/> object.
+        /// </summary>
+        /// <param name="workbookChartToCreate">The WorkbookChart to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChart}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChart>> CreateResponseAsync(WorkbookChart workbookChartToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkbookChart.

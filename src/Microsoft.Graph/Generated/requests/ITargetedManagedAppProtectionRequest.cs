@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
         /// <returns>The created TargetedManagedAppProtection.</returns>
-        System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate);
+
+        /// <summary>
         /// Creates the specified TargetedManagedAppProtection using POST.
         /// </summary>
         /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppProtection.</returns>
         System.Threading.Tasks.Task<TargetedManagedAppProtection> CreateAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified TargetedManagedAppProtection using POST and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> CreateResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate);
+
+        /// <summary>
+        /// Creates the specified TargetedManagedAppProtection using POST and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="targetedManagedAppProtectionToCreate">The TargetedManagedAppProtection to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> CreateResponseAsync(TargetedManagedAppProtection targetedManagedAppProtectionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified TargetedManagedAppProtection.

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
         /// <returns>The created ActivityHistoryItem.</returns>
-        System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate);
+
+        /// <summary>
         /// Creates the specified ActivityHistoryItem using POST.
         /// </summary>
         /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityHistoryItem.</returns>
         System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ActivityHistoryItem using POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> CreateResponseAsync(ActivityHistoryItem activityHistoryItemToCreate);
+
+        /// <summary>
+        /// Creates the specified ActivityHistoryItem using POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="activityHistoryItemToCreate">The ActivityHistoryItem to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> CreateResponseAsync(ActivityHistoryItem activityHistoryItemToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ActivityHistoryItem.

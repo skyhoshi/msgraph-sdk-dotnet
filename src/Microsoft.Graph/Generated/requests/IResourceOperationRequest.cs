@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
         /// <returns>The created ResourceOperation.</returns>
-        System.Threading.Tasks.Task<ResourceOperation> CreateAsync(ResourceOperation resourceOperationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ResourceOperation> CreateAsync(ResourceOperation resourceOperationToCreate);
+
+        /// <summary>
         /// Creates the specified ResourceOperation using POST.
         /// </summary>
         /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ResourceOperation.</returns>
         System.Threading.Tasks.Task<ResourceOperation> CreateAsync(ResourceOperation resourceOperationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ResourceOperation using POST and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> CreateResponseAsync(ResourceOperation resourceOperationToCreate);
+
+        /// <summary>
+        /// Creates the specified ResourceOperation using POST and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="resourceOperationToCreate">The ResourceOperation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> CreateResponseAsync(ResourceOperation resourceOperationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ResourceOperation.

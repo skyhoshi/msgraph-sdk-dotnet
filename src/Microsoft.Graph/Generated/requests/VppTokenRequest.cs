@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified VppToken using POST and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToCreate">The VppToken to create.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VppToken>> CreateResponseAsync(VppToken vppTokenToCreate)
+        {
+            return this.CreateResponseAsync(vppTokenToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified VppToken using POST and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="vppTokenToCreate">The VppToken to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<VppToken>> CreateResponseAsync(VppToken vppTokenToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<VppToken>(vppTokenToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified VppToken.
         /// </summary>
         /// <returns>The task to await.</returns>

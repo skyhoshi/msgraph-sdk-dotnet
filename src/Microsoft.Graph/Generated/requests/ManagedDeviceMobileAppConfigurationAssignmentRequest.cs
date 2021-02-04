@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate)
+        {
+            return this.CreateResponseAsync(managedDeviceMobileAppConfigurationAssignmentToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationAssignment using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignmentToCreate">The ManagedDeviceMobileAppConfigurationAssignment to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationAssignment>(managedDeviceMobileAppConfigurationAssignmentToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationAssignment.
         /// </summary>
         /// <returns>The task to await.</returns>

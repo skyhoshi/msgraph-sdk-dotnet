@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
         /// <returns>The created WindowsMobileMSI.</returns>
-        System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate);
+
+        /// <summary>
         /// Creates the specified WindowsMobileMSI using POST.
         /// </summary>
         /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsMobileMSI.</returns>
         System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WindowsMobileMSI using POST and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> CreateResponseAsync(WindowsMobileMSI windowsMobileMSIToCreate);
+
+        /// <summary>
+        /// Creates the specified WindowsMobileMSI using POST and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="windowsMobileMSIToCreate">The WindowsMobileMSI to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> CreateResponseAsync(WindowsMobileMSI windowsMobileMSIToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WindowsMobileMSI.

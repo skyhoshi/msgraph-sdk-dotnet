@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToCreate">The Trending to create.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate)
+        {
+            return this.CreateResponseAsync(trendingToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Trending using POST and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToCreate">The Trending to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Trending>> CreateResponseAsync(Trending trendingToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Trending>(trendingToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Trending.
         /// </summary>
         /// <returns>The task to await.</returns>

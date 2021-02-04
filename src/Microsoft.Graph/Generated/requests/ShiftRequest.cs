@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Shift using POST and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToCreate">The Shift to create.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Shift>> CreateResponseAsync(Shift shiftToCreate)
+        {
+            return this.CreateResponseAsync(shiftToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Shift using POST and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="shiftToCreate">The Shift to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Shift>> CreateResponseAsync(Shift shiftToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Shift>(shiftToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Shift.
         /// </summary>
         /// <returns>The task to await.</returns>

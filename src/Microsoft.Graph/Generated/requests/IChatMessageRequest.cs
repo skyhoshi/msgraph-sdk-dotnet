@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="chatMessageToCreate">The ChatMessage to create.</param>
         /// <returns>The created ChatMessage.</returns>
-        System.Threading.Tasks.Task<ChatMessage> CreateAsync(ChatMessage chatMessageToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ChatMessage> CreateAsync(ChatMessage chatMessageToCreate);
+
+        /// <summary>
         /// Creates the specified ChatMessage using POST.
         /// </summary>
         /// <param name="chatMessageToCreate">The ChatMessage to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ChatMessage.</returns>
         System.Threading.Tasks.Task<ChatMessage> CreateAsync(ChatMessage chatMessageToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ChatMessage using POST and returns a <see cref="GraphResponse{ChatMessage}"/> object.
+        /// </summary>
+        /// <param name="chatMessageToCreate">The ChatMessage to create.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatMessage>> CreateResponseAsync(ChatMessage chatMessageToCreate);
+
+        /// <summary>
+        /// Creates the specified ChatMessage using POST and returns a <see cref="GraphResponse{ChatMessage}"/> object.
+        /// </summary>
+        /// <param name="chatMessageToCreate">The ChatMessage to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessage}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatMessage>> CreateResponseAsync(ChatMessage chatMessageToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ChatMessage.

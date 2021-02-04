@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified WorkbookChartGridlinesFormat using POST and returns a <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartGridlinesFormatToCreate">The WorkbookChartGridlinesFormat to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> CreateResponseAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToCreate)
+        {
+            return this.CreateResponseAsync(workbookChartGridlinesFormatToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified WorkbookChartGridlinesFormat using POST and returns a <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartGridlinesFormatToCreate">The WorkbookChartGridlinesFormat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartGridlinesFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartGridlinesFormat>> CreateResponseAsync(WorkbookChartGridlinesFormat workbookChartGridlinesFormatToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartGridlinesFormat>(workbookChartGridlinesFormatToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified WorkbookChartGridlinesFormat.
         /// </summary>
         /// <returns>The task to await.</returns>

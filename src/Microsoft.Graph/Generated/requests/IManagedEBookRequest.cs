@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedEBookToCreate">The ManagedEBook to create.</param>
         /// <returns>The created ManagedEBook.</returns>
-        System.Threading.Tasks.Task<ManagedEBook> CreateAsync(ManagedEBook managedEBookToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedEBook> CreateAsync(ManagedEBook managedEBookToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedEBook using POST.
         /// </summary>
         /// <param name="managedEBookToCreate">The ManagedEBook to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedEBook.</returns>
         System.Threading.Tasks.Task<ManagedEBook> CreateAsync(ManagedEBook managedEBookToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedEBook using POST and returns a <see cref="GraphResponse{ManagedEBook}"/> object.
+        /// </summary>
+        /// <param name="managedEBookToCreate">The ManagedEBook to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> CreateResponseAsync(ManagedEBook managedEBookToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedEBook using POST and returns a <see cref="GraphResponse{ManagedEBook}"/> object.
+        /// </summary>
+        /// <param name="managedEBookToCreate">The ManagedEBook to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> CreateResponseAsync(ManagedEBook managedEBookToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedEBook.

@@ -81,6 +81,29 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Creates the specified ItemActivityStat using POST and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
+        /// </summary>
+        /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> CreateResponseAsync(ItemActivityStat itemActivityStatToCreate)
+        {
+            return this.CreateResponseAsync(itemActivityStatToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ItemActivityStat using POST and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
+        /// </summary>
+        /// <param name="itemActivityStatToCreate">The ItemActivityStat to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> CreateResponseAsync(ItemActivityStat itemActivityStatToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ItemActivityStat>(itemActivityStatToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Updates the specified ItemActivityStat using PATCH.
         /// </summary>
         /// <param name="itemActivityStatToUpdate">The ItemActivityStat to update.</param>

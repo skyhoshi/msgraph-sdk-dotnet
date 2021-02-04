@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> CreateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate)
+        {
+            return this.CreateResponseAsync(appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AppleDeviceFeaturesConfigurationBase using POST and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="appleDeviceFeaturesConfigurationBaseToCreate">The AppleDeviceFeaturesConfigurationBase to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> CreateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AppleDeviceFeaturesConfigurationBase>(appleDeviceFeaturesConfigurationBaseToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AppleDeviceFeaturesConfigurationBase.
         /// </summary>
         /// <returns>The task to await.</returns>

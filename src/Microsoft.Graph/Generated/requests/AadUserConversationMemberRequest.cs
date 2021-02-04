@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AadUserConversationMember using POST and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> CreateResponseAsync(AadUserConversationMember aadUserConversationMemberToCreate)
+        {
+            return this.CreateResponseAsync(aadUserConversationMemberToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AadUserConversationMember using POST and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="aadUserConversationMemberToCreate">The AadUserConversationMember to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> CreateResponseAsync(AadUserConversationMember aadUserConversationMemberToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AadUserConversationMember>(aadUserConversationMemberToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AadUserConversationMember.
         /// </summary>
         /// <returns>The task to await.</returns>

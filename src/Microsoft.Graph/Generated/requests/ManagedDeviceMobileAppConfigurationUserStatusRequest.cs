@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationUserStatus using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserStatusToCreate">The ManagedDeviceMobileAppConfigurationUserStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToCreate)
+        {
+            return this.CreateResponseAsync(managedDeviceMobileAppConfigurationUserStatusToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceMobileAppConfigurationUserStatus using POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserStatusToCreate">The ManagedDeviceMobileAppConfigurationUserStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> CreateResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatusToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>(managedDeviceMobileAppConfigurationUserStatusToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ManagedDeviceMobileAppConfigurationUserStatus.
         /// </summary>
         /// <returns>The task to await.</returns>

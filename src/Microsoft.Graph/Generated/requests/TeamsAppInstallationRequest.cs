@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified TeamsAppInstallation using POST and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> CreateResponseAsync(TeamsAppInstallation teamsAppInstallationToCreate)
+        {
+            return this.CreateResponseAsync(teamsAppInstallationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified TeamsAppInstallation using POST and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="teamsAppInstallationToCreate">The TeamsAppInstallation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> CreateResponseAsync(TeamsAppInstallation teamsAppInstallationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TeamsAppInstallation>(teamsAppInstallationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified TeamsAppInstallation.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
         /// <returns>The created ManagedDeviceOverview.</returns>
-        System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate);
+
+        /// <summary>
         /// Creates the specified ManagedDeviceOverview using POST.
         /// </summary>
         /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceOverview.</returns>
         System.Threading.Tasks.Task<ManagedDeviceOverview> CreateAsync(ManagedDeviceOverview managedDeviceOverviewToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceOverview using POST and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> CreateResponseAsync(ManagedDeviceOverview managedDeviceOverviewToCreate);
+
+        /// <summary>
+        /// Creates the specified ManagedDeviceOverview using POST and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToCreate">The ManagedDeviceOverview to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> CreateResponseAsync(ManagedDeviceOverview managedDeviceOverviewToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ManagedDeviceOverview.

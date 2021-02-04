@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IdentityProvider using POST and returns a <see cref="GraphResponse{IdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> CreateResponseAsync(IdentityProvider identityProviderToCreate)
+        {
+            return this.CreateResponseAsync(identityProviderToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IdentityProvider using POST and returns a <see cref="GraphResponse{IdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="identityProviderToCreate">The IdentityProvider to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> CreateResponseAsync(IdentityProvider identityProviderToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IdentityProvider>(identityProviderToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IdentityProvider.
         /// </summary>
         /// <returns>The task to await.</returns>

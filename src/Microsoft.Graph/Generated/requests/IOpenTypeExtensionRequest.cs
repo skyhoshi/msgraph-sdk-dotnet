@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
         /// <returns>The created OpenTypeExtension.</returns>
-        System.Threading.Tasks.Task<OpenTypeExtension> CreateAsync(OpenTypeExtension openTypeExtensionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OpenTypeExtension> CreateAsync(OpenTypeExtension openTypeExtensionToCreate);
+
+        /// <summary>
         /// Creates the specified OpenTypeExtension using POST.
         /// </summary>
         /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OpenTypeExtension.</returns>
         System.Threading.Tasks.Task<OpenTypeExtension> CreateAsync(OpenTypeExtension openTypeExtensionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OpenTypeExtension using POST and returns a <see cref="GraphResponse{OpenTypeExtension}"/> object.
+        /// </summary>
+        /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
+        /// <returns>The <see cref="GraphResponse{OpenTypeExtension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenTypeExtension>> CreateResponseAsync(OpenTypeExtension openTypeExtensionToCreate);
+
+        /// <summary>
+        /// Creates the specified OpenTypeExtension using POST and returns a <see cref="GraphResponse{OpenTypeExtension}"/> object.
+        /// </summary>
+        /// <param name="openTypeExtensionToCreate">The OpenTypeExtension to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenTypeExtension}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenTypeExtension>> CreateResponseAsync(OpenTypeExtension openTypeExtensionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OpenTypeExtension.

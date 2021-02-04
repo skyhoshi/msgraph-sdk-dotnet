@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AndroidCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> CreateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate)
+        {
+            return this.CreateResponseAsync(androidCustomConfigurationToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AndroidCustomConfiguration using POST and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="androidCustomConfigurationToCreate">The AndroidCustomConfiguration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> CreateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AndroidCustomConfiguration>(androidCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AndroidCustomConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

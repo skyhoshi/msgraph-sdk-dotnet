@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
         /// <returns>The created ThreatAssessmentRequestObject.</returns>
-        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> CreateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ThreatAssessmentRequestObject> CreateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate);
+
+        /// <summary>
         /// Creates the specified ThreatAssessmentRequestObject using POST.
         /// </summary>
         /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ThreatAssessmentRequestObject.</returns>
         System.Threading.Tasks.Task<ThreatAssessmentRequestObject> CreateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ThreatAssessmentRequestObject using POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> CreateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate);
+
+        /// <summary>
+        /// Creates the specified ThreatAssessmentRequestObject using POST and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToCreate">The ThreatAssessmentRequestObject to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> CreateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ThreatAssessmentRequestObject.

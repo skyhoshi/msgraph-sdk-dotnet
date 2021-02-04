@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified LinkedResource using POST and returns a <see cref="GraphResponse{LinkedResource}"/> object.
+        /// </summary>
+        /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LinkedResource>> CreateResponseAsync(LinkedResource linkedResourceToCreate)
+        {
+            return this.CreateResponseAsync(linkedResourceToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified LinkedResource using POST and returns a <see cref="GraphResponse{LinkedResource}"/> object.
+        /// </summary>
+        /// <param name="linkedResourceToCreate">The LinkedResource to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<LinkedResource>> CreateResponseAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<LinkedResource>(linkedResourceToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified LinkedResource.
         /// </summary>
         /// <returns>The task to await.</returns>

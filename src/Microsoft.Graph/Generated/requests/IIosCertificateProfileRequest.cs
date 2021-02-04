@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="iosCertificateProfileToCreate">The IosCertificateProfile to create.</param>
         /// <returns>The created IosCertificateProfile.</returns>
-        System.Threading.Tasks.Task<IosCertificateProfile> CreateAsync(IosCertificateProfile iosCertificateProfileToCreate);        /// <summary>
+        System.Threading.Tasks.Task<IosCertificateProfile> CreateAsync(IosCertificateProfile iosCertificateProfileToCreate);
+
+        /// <summary>
         /// Creates the specified IosCertificateProfile using POST.
         /// </summary>
         /// <param name="iosCertificateProfileToCreate">The IosCertificateProfile to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosCertificateProfile.</returns>
         System.Threading.Tasks.Task<IosCertificateProfile> CreateAsync(IosCertificateProfile iosCertificateProfileToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified IosCertificateProfile using POST and returns a <see cref="GraphResponse{IosCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosCertificateProfileToCreate">The IosCertificateProfile to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCertificateProfile>> CreateResponseAsync(IosCertificateProfile iosCertificateProfileToCreate);
+
+        /// <summary>
+        /// Creates the specified IosCertificateProfile using POST and returns a <see cref="GraphResponse{IosCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="iosCertificateProfileToCreate">The IosCertificateProfile to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCertificateProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosCertificateProfile>> CreateResponseAsync(IosCertificateProfile iosCertificateProfileToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified IosCertificateProfile.

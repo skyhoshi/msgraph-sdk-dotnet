@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified IosUpdateDeviceStatus using POST and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateDeviceStatusToCreate">The IosUpdateDeviceStatus to create.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> CreateResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate)
+        {
+            return this.CreateResponseAsync(iosUpdateDeviceStatusToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified IosUpdateDeviceStatus using POST and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="iosUpdateDeviceStatusToCreate">The IosUpdateDeviceStatus to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> CreateResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified IosUpdateDeviceStatus.
         /// </summary>
         /// <returns>The task to await.</returns>

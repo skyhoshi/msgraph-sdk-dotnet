@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified Extension using POST and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <param name="extensionToCreate">The Extension to create.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Extension>> CreateResponseAsync(Extension extensionToCreate)
+        {
+            return this.CreateResponseAsync(extensionToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified Extension using POST and returns a <see cref="GraphResponse{Extension}"/> object.
+        /// </summary>
+        /// <param name="extensionToCreate">The Extension to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Extension}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Extension>> CreateResponseAsync(Extension extensionToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Extension>(extensionToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified Extension.
         /// </summary>
         /// <returns>The task to await.</returns>

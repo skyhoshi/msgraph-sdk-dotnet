@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
         /// <returns>The created OutlookUser.</returns>
-        System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate);        /// <summary>
+        System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate);
+
+        /// <summary>
         /// Creates the specified OutlookUser using POST.
         /// </summary>
         /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookUser.</returns>
         System.Threading.Tasks.Task<OutlookUser> CreateAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified OutlookUser using POST and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> CreateResponseAsync(OutlookUser outlookUserToCreate);
+
+        /// <summary>
+        /// Creates the specified OutlookUser using POST and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> CreateResponseAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified OutlookUser.

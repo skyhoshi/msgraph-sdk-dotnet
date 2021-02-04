@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="groupLifecyclePolicyToCreate">The GroupLifecyclePolicy to create.</param>
         /// <returns>The created GroupLifecyclePolicy.</returns>
-        System.Threading.Tasks.Task<GroupLifecyclePolicy> CreateAsync(GroupLifecyclePolicy groupLifecyclePolicyToCreate);        /// <summary>
+        System.Threading.Tasks.Task<GroupLifecyclePolicy> CreateAsync(GroupLifecyclePolicy groupLifecyclePolicyToCreate);
+
+        /// <summary>
         /// Creates the specified GroupLifecyclePolicy using POST.
         /// </summary>
         /// <param name="groupLifecyclePolicyToCreate">The GroupLifecyclePolicy to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupLifecyclePolicy.</returns>
         System.Threading.Tasks.Task<GroupLifecyclePolicy> CreateAsync(GroupLifecyclePolicy groupLifecyclePolicyToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified GroupLifecyclePolicy using POST and returns a <see cref="GraphResponse{GroupLifecyclePolicy}"/> object.
+        /// </summary>
+        /// <param name="groupLifecyclePolicyToCreate">The GroupLifecyclePolicy to create.</param>
+        /// <returns>The <see cref="GraphResponse{GroupLifecyclePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupLifecyclePolicy>> CreateResponseAsync(GroupLifecyclePolicy groupLifecyclePolicyToCreate);
+
+        /// <summary>
+        /// Creates the specified GroupLifecyclePolicy using POST and returns a <see cref="GraphResponse{GroupLifecyclePolicy}"/> object.
+        /// </summary>
+        /// <param name="groupLifecyclePolicyToCreate">The GroupLifecyclePolicy to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupLifecyclePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupLifecyclePolicy>> CreateResponseAsync(GroupLifecyclePolicy groupLifecyclePolicyToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified GroupLifecyclePolicy.

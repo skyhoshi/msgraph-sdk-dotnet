@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="subscribedSkuToCreate">The SubscribedSku to create.</param>
         /// <returns>The created SubscribedSku.</returns>
-        System.Threading.Tasks.Task<SubscribedSku> CreateAsync(SubscribedSku subscribedSkuToCreate);        /// <summary>
+        System.Threading.Tasks.Task<SubscribedSku> CreateAsync(SubscribedSku subscribedSkuToCreate);
+
+        /// <summary>
         /// Creates the specified SubscribedSku using POST.
         /// </summary>
         /// <param name="subscribedSkuToCreate">The SubscribedSku to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SubscribedSku.</returns>
         System.Threading.Tasks.Task<SubscribedSku> CreateAsync(SubscribedSku subscribedSkuToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified SubscribedSku using POST and returns a <see cref="GraphResponse{SubscribedSku}"/> object.
+        /// </summary>
+        /// <param name="subscribedSkuToCreate">The SubscribedSku to create.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> CreateResponseAsync(SubscribedSku subscribedSkuToCreate);
+
+        /// <summary>
+        /// Creates the specified SubscribedSku using POST and returns a <see cref="GraphResponse{SubscribedSku}"/> object.
+        /// </summary>
+        /// <param name="subscribedSkuToCreate">The SubscribedSku to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> CreateResponseAsync(SubscribedSku subscribedSkuToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified SubscribedSku.

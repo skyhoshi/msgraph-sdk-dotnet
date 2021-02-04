@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate)
+        {
+            return this.CreateResponseAsync(detectedAppToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DetectedApp using POST and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="detectedAppToCreate">The DetectedApp to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DetectedApp>> CreateResponseAsync(DetectedApp detectedAppToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DetectedApp>(detectedAppToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DetectedApp.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified DeviceManagementPartner using POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> CreateResponseAsync(DeviceManagementPartner deviceManagementPartnerToCreate)
+        {
+            return this.CreateResponseAsync(deviceManagementPartnerToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified DeviceManagementPartner using POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToCreate">The DeviceManagementPartner to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> CreateResponseAsync(DeviceManagementPartner deviceManagementPartnerToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementPartner>(deviceManagementPartnerToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified DeviceManagementPartner.
         /// </summary>
         /// <returns>The task to await.</returns>

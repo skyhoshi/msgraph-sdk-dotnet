@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="conversationToCreate">The Conversation to create.</param>
         /// <returns>The created Conversation.</returns>
-        System.Threading.Tasks.Task<Conversation> CreateAsync(Conversation conversationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<Conversation> CreateAsync(Conversation conversationToCreate);
+
+        /// <summary>
         /// Creates the specified Conversation using POST.
         /// </summary>
         /// <param name="conversationToCreate">The Conversation to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Conversation.</returns>
         System.Threading.Tasks.Task<Conversation> CreateAsync(Conversation conversationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified Conversation using POST and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToCreate">The Conversation to create.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> CreateResponseAsync(Conversation conversationToCreate);
+
+        /// <summary>
+        /// Creates the specified Conversation using POST and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="conversationToCreate">The Conversation to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> CreateResponseAsync(Conversation conversationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified Conversation.

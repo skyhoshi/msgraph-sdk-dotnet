@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="reportRootToCreate">The ReportRoot to create.</param>
         /// <returns>The created ReportRoot.</returns>
-        System.Threading.Tasks.Task<ReportRoot> CreateAsync(ReportRoot reportRootToCreate);        /// <summary>
+        System.Threading.Tasks.Task<ReportRoot> CreateAsync(ReportRoot reportRootToCreate);
+
+        /// <summary>
         /// Creates the specified ReportRoot using POST.
         /// </summary>
         /// <param name="reportRootToCreate">The ReportRoot to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ReportRoot.</returns>
         System.Threading.Tasks.Task<ReportRoot> CreateAsync(ReportRoot reportRootToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified ReportRoot using POST and returns a <see cref="GraphResponse{ReportRoot}"/> object.
+        /// </summary>
+        /// <param name="reportRootToCreate">The ReportRoot to create.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRoot>> CreateResponseAsync(ReportRoot reportRootToCreate);
+
+        /// <summary>
+        /// Creates the specified ReportRoot using POST and returns a <see cref="GraphResponse{ReportRoot}"/> object.
+        /// </summary>
+        /// <param name="reportRootToCreate">The ReportRoot to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRoot>> CreateResponseAsync(ReportRoot reportRootToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified ReportRoot.

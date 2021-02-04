@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="deviceAndAppManagementRoleDefinitionToCreate">The DeviceAndAppManagementRoleDefinition to create.</param>
         /// <returns>The created DeviceAndAppManagementRoleDefinition.</returns>
-        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> CreateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate);        /// <summary>
+        System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> CreateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate);
+
+        /// <summary>
         /// Creates the specified DeviceAndAppManagementRoleDefinition using POST.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleDefinitionToCreate">The DeviceAndAppManagementRoleDefinition to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceAndAppManagementRoleDefinition.</returns>
         System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> CreateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified DeviceAndAppManagementRoleDefinition using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleDefinitionToCreate">The DeviceAndAppManagementRoleDefinition to create.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> CreateResponseAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate);
+
+        /// <summary>
+        /// Creates the specified DeviceAndAppManagementRoleDefinition using POST and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleDefinitionToCreate">The DeviceAndAppManagementRoleDefinition to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> CreateResponseAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified DeviceAndAppManagementRoleDefinition.

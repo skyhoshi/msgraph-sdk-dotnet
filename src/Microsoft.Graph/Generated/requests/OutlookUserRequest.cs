@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified OutlookUser using POST and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OutlookUser>> CreateResponseAsync(OutlookUser outlookUserToCreate)
+        {
+            return this.CreateResponseAsync(outlookUserToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified OutlookUser using POST and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="outlookUserToCreate">The OutlookUser to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookUser>> CreateResponseAsync(OutlookUser outlookUserToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OutlookUser>(outlookUserToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified OutlookUser.
         /// </summary>
         /// <returns>The task to await.</returns>

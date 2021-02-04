@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified ScopedRoleMembership using POST and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
+        /// </summary>
+        /// <param name="scopedRoleMembershipToCreate">The ScopedRoleMembership to create.</param>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> CreateResponseAsync(ScopedRoleMembership scopedRoleMembershipToCreate)
+        {
+            return this.CreateResponseAsync(scopedRoleMembershipToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified ScopedRoleMembership using POST and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
+        /// </summary>
+        /// <param name="scopedRoleMembershipToCreate">The ScopedRoleMembership to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> CreateResponseAsync(ScopedRoleMembership scopedRoleMembershipToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ScopedRoleMembership>(scopedRoleMembershipToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified ScopedRoleMembership.
         /// </summary>
         /// <returns>The task to await.</returns>

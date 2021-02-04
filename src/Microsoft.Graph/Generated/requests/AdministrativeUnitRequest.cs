@@ -61,6 +61,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate)
+        {
+            return this.CreateResponseAsync(administrativeUnitToCreate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Creates the specified AdministrativeUnit using POST and returns a <see cref="GraphResponse{AdministrativeUnit}"/> object.
+        /// </summary>
+        /// <param name="administrativeUnitToCreate">The AdministrativeUnit to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AdministrativeUnit}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AdministrativeUnit>> CreateResponseAsync(AdministrativeUnit administrativeUnitToCreate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<AdministrativeUnit>(administrativeUnitToCreate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Deletes the specified AdministrativeUnit.
         /// </summary>
         /// <returns>The task to await.</returns>

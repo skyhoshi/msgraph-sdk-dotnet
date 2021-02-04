@@ -25,13 +25,30 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="workforceIntegrationToCreate">The WorkforceIntegration to create.</param>
         /// <returns>The created WorkforceIntegration.</returns>
-        System.Threading.Tasks.Task<WorkforceIntegration> CreateAsync(WorkforceIntegration workforceIntegrationToCreate);        /// <summary>
+        System.Threading.Tasks.Task<WorkforceIntegration> CreateAsync(WorkforceIntegration workforceIntegrationToCreate);
+
+        /// <summary>
         /// Creates the specified WorkforceIntegration using POST.
         /// </summary>
         /// <param name="workforceIntegrationToCreate">The WorkforceIntegration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkforceIntegration.</returns>
         System.Threading.Tasks.Task<WorkforceIntegration> CreateAsync(WorkforceIntegration workforceIntegrationToCreate, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Creates the specified WorkforceIntegration using POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
+        /// </summary>
+        /// <param name="workforceIntegrationToCreate">The WorkforceIntegration to create.</param>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> CreateResponseAsync(WorkforceIntegration workforceIntegrationToCreate);
+
+        /// <summary>
+        /// Creates the specified WorkforceIntegration using POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
+        /// </summary>
+        /// <param name="workforceIntegrationToCreate">The WorkforceIntegration to create.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> CreateResponseAsync(WorkforceIntegration workforceIntegrationToCreate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Deletes the specified WorkforceIntegration.
