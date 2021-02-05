@@ -86,30 +86,29 @@ The Microsoft Graph library now supports the use of TokenCredential classes in t
 
 You can read more about available Credential classes [here](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/identity-readme#key-concepts) and this is encouraged to be used in place of the `Microsoft.Graph.Auth` package. 
 
-For example, rather than using the [Username/password provider](https://docs.microsoft.com/en-us/graph/sdks/choose-authentication-providers?tabs=CS#UsernamePasswordProvider) from the `Microsoft.Graph.Auth` package, one could use the [UsernamePasswordCredential](https://docs.microsoft.com/en-us/dotnet/api/azure.identity.usernamepasswordcredential?view=azure-dotnet) class from `Azure.Identity` as follows.
+For example, rather than using the [Interactive provider](https://docs.microsoft.com/en-us/graph/sdks/choose-authentication-providers?tabs=CS#InteractiveProvider) from the `Microsoft.Graph.Auth` package, one could use the [InteractiveBrowserCredential](https://docs.microsoft.com/en-us/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) class from `Azure.Identity` as follows.
 
 #### Example using Microsoft.Graph.Auth
 
 ```cs
 IPublicClientApplication publicClientApplication = PublicClientApplicationBuilder
             .Create(clientId)
-            .WithTenantId(tenantID)
             .Build();
 
-UsernamePasswordProvider authProvider = new UsernamePasswordProvider(publicClientApplication, scopes);
+InteractiveAuthenticationProvider authProvider = new InteractiveAuthenticationProvider(publicClientApplication, scopes);
 
 GraphServiceClient graphClient = new GraphServiceClient(authProvider);
 
 User me = await graphClient.Me.Request()
-                .WithUsernamePassword(email, password)
                 .GetAsync();
 ```
 
 #### Example using TokenCredential class
 
 ```cs
-UsernamePasswordCredential usernamePasswordCredential = new UsernamePasswordCredential("username", "password", "tenantId", "clientId");
-TokenCredentialAuthProvider tokenCredentialAuthProvider = new TokenCredentialAuthProvider(usernamePasswordCredential, scopes);
+InteractiveBrowserCredential myBrowserCredential = new InteractiveBrowserCredential(clientId);
+
+TokenCredentialAuthProvider tokenCredentialAuthProvider = new TokenCredentialAuthProvider(myBrowserCredential, scopes);
 
 GraphServiceClient graphClient = new GraphServiceClient(tokenCredentialAuthProvider);
 
