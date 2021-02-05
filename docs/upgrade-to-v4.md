@@ -23,7 +23,7 @@ From the experience of the user of the SDKs, these are the main changes to look 
 
 1. Object types and function parameters using Newtonsoft's JToken are now replaced by System.Text.Json's JsonDocument.
 
-For example, the code sample :-
+  For example, the code sample :-
 
 ```cs
 GraphServiceClient graphClient = new GraphServiceClient( authProvider );
@@ -38,7 +38,7 @@ await graphClient.Me.Drive.Items["{id}"].Workbook.Tables["{id|name}"].Rows
 	.PostAsync();
 ```
 
-would change to :-
+  would change to :-
 
 ```cs
 GraphServiceClient graphClient = new GraphServiceClient( authProvider );
