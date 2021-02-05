@@ -1,4 +1,4 @@
-# Microsoft Graph .Net SDK v4 changelog and upgrade guide
+# Microsoft Graph .NET SDK v4 changelog and upgrade guide
 
 The purpose of this document is to outline any breaking change and migration work SDK users might run into while upgrading to the v4 of the SDK.
 
@@ -6,7 +6,7 @@ The purpose of this document is to outline any breaking change and migration wor
 
 To improve the development experience provided by the SDK, it was necessary to make the following breaking changes in addition to the changes listed in the migration guide below:
 
- * .NET Standard minimum version bumped from `netStandard1.3` to `netstandard2.0`
+ * .NET Standard minimum version bumped from `netstandard1.3` to `netstandard2.0`
  * .NET Framework minimum version bumped from `net45` to `net461`
  * Replacing Newtonsoft.Json dependency with System.Text.Json for serialization/de-serialization
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
@@ -59,7 +59,7 @@ You can always infer if the JsonElement is an array/string/boolean/object from t
 
 You can find other relevant JsonElement methods [here](https://docs.microsoft.com/en-us/dotnet/api/system.text.json.jsonelement?view=net-5.0#methods).
 
-3. System.Text.Json enforces stricter json standards than Newtonsoft(e.g. Trailing Commas and Comments are not allowed). 
+3. System.Text.Json enforces stricter json standards than Newtonsoft (e.g. trailing commas and comments are not allowed). 
 
 In the event a user would like to use this, you can check out the guide [here](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-invalid-json?pivots=dotnet-5-0) and use it to override the current default serializer options.
 
@@ -146,7 +146,7 @@ GraphResponse<User> userResponse = await graphClient.Me.Request()
 HttpStatusCode status = userResponse.StatusCode;
 // Get the headers
 HttpResponseHeaders headers = userResponse.HttpHeaders;
-//Get the user object using inbuilt serializer
+// Get the user object using inbuilt serializer
 User me = await response.GetResponseObjectAsync();
 ``` 
 
@@ -154,14 +154,14 @@ If you choose you can even deserialize the response in your own custom way as fo
 
 1. Use a custom IResponseHandler
 ```cs
-ISerializer serializer = new CustomSerializer(); //Custom Serializer
+ISerializer serializer = new CustomSerializer(); // Custom Serializer
 IResponseHandler responseHandler = new ResponseHandler(serializer); // Our Response Handler with custom Serializer
     
 GraphResponse<User> graphResponse = await graphServiceClient.Me.Request()
-                                                    .WithResponseHandler(responseHandler)// customized yay!
-                                                    .UpdateWithGraphResponseAsync<User>(patchUser, cancellationToken);//response with no serialization
+                                                    .WithResponseHandler(responseHandler) // customized yay!
+                                                    .UpdateWithGraphResponseAsync<User>(patchUser, cancellationToken); // response with no serialization
 
-User user = graphResponse.GetResponseObjectAsync(); //calls the responsehandler with custom serailizer
+User user = graphResponse.GetResponseObjectAsync(); // calls the Response Handler with custom serializer
 ```
 
 2. Read the response and deserialize it.(Example using Newtonsoft)
@@ -170,7 +170,7 @@ User user = graphResponse.GetResponseObjectAsync(); //calls the responsehandler 
 GraphResponse<User> userResponse = await graphClient.Me.Request()
                 .GetResponseAsync();
 
-JsonSerializer serializer = new JsonSerializer();// Custom serializer
+JsonSerializer serializer = new JsonSerializer(); // Custom serializer
 
 using (StreamReader sr = new StreamReader(userResponse.Content.ReadAsStreamAsync()))
 using (JsonTextReader jsonTextReader = new JsonTextReader(sr))
