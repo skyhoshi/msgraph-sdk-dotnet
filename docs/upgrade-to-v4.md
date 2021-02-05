@@ -80,7 +80,7 @@ User me = await graphClient.Me.Request()
                 .GetAsync();
 ```
 
-### Azure identity
+### Azure Identity
 
 The Microsoft Graph library now supports the use of TokenCredential classes in the Azure.Identity library through the new `TokenCredentialAuthProvider`.
 
@@ -157,7 +157,7 @@ ISerializer serializer = new CustomSerializer(); // Custom Serializer
 IResponseHandler responseHandler = new ResponseHandler(serializer); // Our Response Handler with custom Serializer
     
 GraphResponse<User> graphResponse = await graphServiceClient.Me.Request()
-                                                    .WithResponseHandler(responseHandler) // customized yay!
+                                                    .WithResponseHandler(responseHandler) // customized response handler
                                                     .UpdateWithGraphResponseAsync<User>(patchUser, cancellationToken); // response with no serialization
 
 User user = graphResponse.GetResponseObjectAsync(); // calls the Response Handler with custom serializer
