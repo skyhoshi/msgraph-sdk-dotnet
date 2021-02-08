@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SharedPCConfiguration> UpdateAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified SharedPCConfiguration using PATCH and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> UpdateResponseAsync(SharedPCConfiguration sharedPCConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified SharedPCConfiguration using PATCH and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> UpdateResponseAsync(SharedPCConfiguration sharedPCConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

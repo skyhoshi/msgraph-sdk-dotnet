@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceCompliancePolicyState> UpdateAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified DeviceCompliancePolicyState using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyStateToUpdate">The DeviceCompliancePolicyState to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> UpdateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyState using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyStateToUpdate">The DeviceCompliancePolicyState to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> UpdateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

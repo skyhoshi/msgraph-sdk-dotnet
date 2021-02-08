@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ConditionalAccessPolicy> UpdateAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified ConditionalAccessPolicy using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToUpdate">The ConditionalAccessPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> UpdateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified ConditionalAccessPolicy using PATCH and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object.
+        /// </summary>
+        /// <param name="conditionalAccessPolicyToUpdate">The ConditionalAccessPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> UpdateResponseAsync(ConditionalAccessPolicy conditionalAccessPolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

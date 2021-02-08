@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DomainDnsCnameRecord> UpdateAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified DomainDnsCnameRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToUpdate">The DomainDnsCnameRecord to update.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> UpdateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate);
+
+        /// <summary>
+        /// Updates the specified DomainDnsCnameRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToUpdate">The DomainDnsCnameRecord to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> UpdateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

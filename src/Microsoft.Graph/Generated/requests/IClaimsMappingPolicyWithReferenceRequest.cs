@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ClaimsMappingPolicy> UpdateAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified ClaimsMappingPolicy using PATCH and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToUpdate">The ClaimsMappingPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> UpdateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified ClaimsMappingPolicy using PATCH and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToUpdate">The ClaimsMappingPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> UpdateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified ClaimsMappingPolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

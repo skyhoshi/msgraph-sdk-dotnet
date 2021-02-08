@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AppRoleAssignment> UpdateAsync(AppRoleAssignment appRoleAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified AppRoleAssignment using PATCH and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="appRoleAssignmentToUpdate">The AppRoleAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> UpdateResponseAsync(AppRoleAssignment appRoleAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified AppRoleAssignment using PATCH and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="appRoleAssignmentToUpdate">The AppRoleAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> UpdateResponseAsync(AppRoleAssignment appRoleAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<UserScopeTeamsAppInstallation> UpdateAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified UserScopeTeamsAppInstallation using PATCH and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallationToUpdate">The UserScopeTeamsAppInstallation to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> UpdateResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallationToUpdate);
+
+        /// <summary>
+        /// Updates the specified UserScopeTeamsAppInstallation using PATCH and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallationToUpdate">The UserScopeTeamsAppInstallation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> UpdateResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

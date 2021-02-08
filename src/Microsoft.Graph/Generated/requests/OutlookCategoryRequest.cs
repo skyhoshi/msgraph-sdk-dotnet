@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
+        /// </summary>
+        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate)
+        {
+            return this.UpdateResponseAsync(outlookCategoryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
+        /// </summary>
+        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken)
+        {
+			if (outlookCategoryToUpdate.AdditionalData != null)
+			{
+				if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookCategoryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (outlookCategoryToUpdate.AdditionalData != null)
+            {
+                if (outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    outlookCategoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, outlookCategoryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OutlookCategory>(outlookCategoryToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

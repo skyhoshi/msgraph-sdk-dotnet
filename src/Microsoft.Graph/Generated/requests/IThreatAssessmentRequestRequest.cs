@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ThreatAssessmentRequestObject> UpdateAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified ThreatAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate);
+
+        /// <summary>
+        /// Updates the specified ThreatAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

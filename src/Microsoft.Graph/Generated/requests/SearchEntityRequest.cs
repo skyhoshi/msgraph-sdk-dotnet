@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified SearchEntity using PATCH and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <param name="searchEntityToUpdate">The SearchEntity to update.</param>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SearchEntity>> UpdateResponseAsync(SearchEntity searchEntityToUpdate)
+        {
+            return this.UpdateResponseAsync(searchEntityToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified SearchEntity using PATCH and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <param name="searchEntityToUpdate">The SearchEntity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SearchEntity>> UpdateResponseAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken)
+        {
+			if (searchEntityToUpdate.AdditionalData != null)
+			{
+				if (searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, searchEntityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (searchEntityToUpdate.AdditionalData != null)
+            {
+                if (searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    searchEntityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, searchEntityToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<SearchEntity>(searchEntityToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

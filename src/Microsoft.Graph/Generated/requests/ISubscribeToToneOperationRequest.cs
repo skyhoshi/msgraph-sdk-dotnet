@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SubscribeToToneOperation> UpdateAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified SubscribeToToneOperation using PATCH and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
+        /// </summary>
+        /// <param name="subscribeToToneOperationToUpdate">The SubscribeToToneOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> UpdateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate);
+
+        /// <summary>
+        /// Updates the specified SubscribeToToneOperation using PATCH and returns a <see cref="GraphResponse{SubscribeToToneOperation}"/> object.
+        /// </summary>
+        /// <param name="subscribeToToneOperationToUpdate">The SubscribeToToneOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> UpdateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

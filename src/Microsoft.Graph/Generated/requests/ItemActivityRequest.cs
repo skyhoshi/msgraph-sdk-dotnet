@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ItemActivity using PATCH and returns a <see cref="GraphResponse{ItemActivity}"/> object.
+        /// </summary>
+        /// <param name="itemActivityToUpdate">The ItemActivity to update.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemActivity>> UpdateResponseAsync(ItemActivity itemActivityToUpdate)
+        {
+            return this.UpdateResponseAsync(itemActivityToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ItemActivity using PATCH and returns a <see cref="GraphResponse{ItemActivity}"/> object.
+        /// </summary>
+        /// <param name="itemActivityToUpdate">The ItemActivity to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemActivity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemActivity>> UpdateResponseAsync(ItemActivity itemActivityToUpdate, CancellationToken cancellationToken)
+        {
+			if (itemActivityToUpdate.AdditionalData != null)
+			{
+				if (itemActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					itemActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemActivityToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (itemActivityToUpdate.AdditionalData != null)
+            {
+                if (itemActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    itemActivityToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, itemActivityToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ItemActivity>(itemActivityToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidStoreApp> UpdateAsync(AndroidStoreApp androidStoreAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified AndroidStoreApp using PATCH and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToUpdate">The AndroidStoreApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> UpdateResponseAsync(AndroidStoreApp androidStoreAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified AndroidStoreApp using PATCH and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="androidStoreAppToUpdate">The AndroidStoreApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> UpdateResponseAsync(AndroidStoreApp androidStoreAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

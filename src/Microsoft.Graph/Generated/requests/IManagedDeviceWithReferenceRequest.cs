@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagedDevice> UpdateAsync(ManagedDevice managedDeviceToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified ManagedDevice using PATCH and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceToUpdate">The ManagedDevice to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> UpdateResponseAsync(ManagedDevice managedDeviceToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedDevice using PATCH and returns a <see cref="GraphResponse{ManagedDevice}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceToUpdate">The ManagedDevice to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> UpdateResponseAsync(ManagedDevice managedDeviceToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified ManagedDevice.
         /// </summary>
         /// <returns>The task to await.</returns>

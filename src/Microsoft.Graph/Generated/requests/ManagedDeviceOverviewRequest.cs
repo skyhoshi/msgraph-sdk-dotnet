@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ManagedDeviceOverview using PATCH and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> UpdateResponseAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate)
+        {
+            return this.UpdateResponseAsync(managedDeviceOverviewToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceOverview using PATCH and returns a <see cref="GraphResponse{ManagedDeviceOverview}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceOverviewToUpdate">The ManagedDeviceOverview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceOverview}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceOverview>> UpdateResponseAsync(ManagedDeviceOverview managedDeviceOverviewToUpdate, CancellationToken cancellationToken)
+        {
+			if (managedDeviceOverviewToUpdate.AdditionalData != null)
+			{
+				if (managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceOverviewToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (managedDeviceOverviewToUpdate.AdditionalData != null)
+            {
+                if (managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedDeviceOverviewToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedDeviceOverviewToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceOverview>(managedDeviceOverviewToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

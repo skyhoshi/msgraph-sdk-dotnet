@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DeviceConfigurationAssignment using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationAssignmentToUpdate">The DeviceConfigurationAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationAssignment>> UpdateResponseAsync(DeviceConfigurationAssignment deviceConfigurationAssignmentToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceConfigurationAssignmentToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationAssignment using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationAssignmentToUpdate">The DeviceConfigurationAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationAssignment>> UpdateResponseAsync(DeviceConfigurationAssignment deviceConfigurationAssignmentToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceConfigurationAssignmentToUpdate.AdditionalData != null)
+			{
+				if (deviceConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationAssignmentToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceConfigurationAssignmentToUpdate.AdditionalData != null)
+            {
+                if (deviceConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceConfigurationAssignmentToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceConfigurationAssignmentToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceConfigurationAssignment>(deviceConfigurationAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

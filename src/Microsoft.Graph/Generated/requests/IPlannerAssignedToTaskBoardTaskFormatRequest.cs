@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> UpdateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified PlannerAssignedToTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerAssignedToTaskBoardTaskFormatToUpdate">The PlannerAssignedToTaskBoardTaskFormat to update.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> UpdateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToUpdate);
+
+        /// <summary>
+        /// Updates the specified PlannerAssignedToTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerAssignedToTaskBoardTaskFormatToUpdate">The PlannerAssignedToTaskBoardTaskFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> UpdateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

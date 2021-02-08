@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OrgContact> UpdateAsync(OrgContact orgContactToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified OrgContact using PATCH and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <param name="orgContactToUpdate">The OrgContact to update.</param>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrgContact>> UpdateResponseAsync(OrgContact orgContactToUpdate);
+
+        /// <summary>
+        /// Updates the specified OrgContact using PATCH and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <param name="orgContactToUpdate">The OrgContact to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrgContact>> UpdateResponseAsync(OrgContact orgContactToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

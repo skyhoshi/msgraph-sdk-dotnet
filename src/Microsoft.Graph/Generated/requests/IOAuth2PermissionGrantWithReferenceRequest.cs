@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OAuth2PermissionGrant> UpdateAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified OAuth2PermissionGrant using PATCH and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> UpdateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate);
+
+        /// <summary>
+        /// Updates the specified OAuth2PermissionGrant using PATCH and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="oAuth2PermissionGrantToUpdate">The OAuth2PermissionGrant to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> UpdateResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrantToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified OAuth2PermissionGrant.
         /// </summary>
         /// <returns>The task to await.</returns>

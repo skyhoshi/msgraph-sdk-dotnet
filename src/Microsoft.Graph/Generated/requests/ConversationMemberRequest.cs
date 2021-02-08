@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ConversationMember using PATCH and returns a <see cref="GraphResponse{ConversationMember}"/> object.
+        /// </summary>
+        /// <param name="conversationMemberToUpdate">The ConversationMember to update.</param>
+        /// <returns>The <see cref="GraphResponse{ConversationMember}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ConversationMember>> UpdateResponseAsync(ConversationMember conversationMemberToUpdate)
+        {
+            return this.UpdateResponseAsync(conversationMemberToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ConversationMember using PATCH and returns a <see cref="GraphResponse{ConversationMember}"/> object.
+        /// </summary>
+        /// <param name="conversationMemberToUpdate">The ConversationMember to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ConversationMember}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ConversationMember>> UpdateResponseAsync(ConversationMember conversationMemberToUpdate, CancellationToken cancellationToken)
+        {
+			if (conversationMemberToUpdate.AdditionalData != null)
+			{
+				if (conversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					conversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conversationMemberToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (conversationMemberToUpdate.AdditionalData != null)
+            {
+                if (conversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    conversationMemberToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, conversationMemberToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ConversationMember>(conversationMemberToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

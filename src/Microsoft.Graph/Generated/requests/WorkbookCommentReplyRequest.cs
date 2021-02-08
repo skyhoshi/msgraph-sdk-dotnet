@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookCommentReply using PATCH and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> UpdateResponseAsync(WorkbookCommentReply workbookCommentReplyToUpdate)
+        {
+            return this.UpdateResponseAsync(workbookCommentReplyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookCommentReply using PATCH and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> UpdateResponseAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken)
+        {
+			if (workbookCommentReplyToUpdate.AdditionalData != null)
+			{
+				if (workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookCommentReplyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (workbookCommentReplyToUpdate.AdditionalData != null)
+            {
+                if (workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookCommentReplyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookCommentReplyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WorkbookCommentReply>(workbookCommentReplyToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

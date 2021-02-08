@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OnenoteResource> UpdateAsync(OnenoteResource onenoteResourceToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified OnenoteResource using PATCH and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToUpdate">The OnenoteResource to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> UpdateResponseAsync(OnenoteResource onenoteResourceToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnenoteResource using PATCH and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToUpdate">The OnenoteResource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> UpdateResponseAsync(OnenoteResource onenoteResourceToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

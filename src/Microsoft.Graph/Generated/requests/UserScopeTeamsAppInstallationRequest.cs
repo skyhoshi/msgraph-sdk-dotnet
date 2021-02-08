@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified UserScopeTeamsAppInstallation using PATCH and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallationToUpdate">The UserScopeTeamsAppInstallation to update.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> UpdateResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallationToUpdate)
+        {
+            return this.UpdateResponseAsync(userScopeTeamsAppInstallationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified UserScopeTeamsAppInstallation using PATCH and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallationToUpdate">The UserScopeTeamsAppInstallation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> UpdateResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallationToUpdate, CancellationToken cancellationToken)
+        {
+			if (userScopeTeamsAppInstallationToUpdate.AdditionalData != null)
+			{
+				if (userScopeTeamsAppInstallationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					userScopeTeamsAppInstallationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userScopeTeamsAppInstallationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (userScopeTeamsAppInstallationToUpdate.AdditionalData != null)
+            {
+                if (userScopeTeamsAppInstallationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    userScopeTeamsAppInstallationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, userScopeTeamsAppInstallationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<UserScopeTeamsAppInstallation>(userScopeTeamsAppInstallationToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

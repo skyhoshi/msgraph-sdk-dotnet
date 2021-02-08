@@ -155,6 +155,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified Chat using PATCH and returns a <see cref="GraphResponse{Chat}"/> object.
+        /// </summary>
+        /// <param name="chatToUpdate">The Chat to update.</param>
+        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Chat>> UpdateResponseAsync(Chat chatToUpdate)
+        {
+            return this.UpdateResponseAsync(chatToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Chat using PATCH and returns a <see cref="GraphResponse{Chat}"/> object.
+        /// </summary>
+        /// <param name="chatToUpdate">The Chat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Chat>> UpdateResponseAsync(Chat chatToUpdate, CancellationToken cancellationToken)
+        {
+			if (chatToUpdate.AdditionalData != null)
+			{
+				if (chatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					chatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, chatToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (chatToUpdate.AdditionalData != null)
+            {
+                if (chatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    chatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, chatToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Chat>(chatToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified Chat.
         /// </summary>
         /// <returns>The task to await.</returns>

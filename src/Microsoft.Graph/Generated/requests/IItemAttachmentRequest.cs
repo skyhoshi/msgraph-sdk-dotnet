@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ItemAttachment> UpdateAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified ItemAttachment using PATCH and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <param name="itemAttachmentToUpdate">The ItemAttachment to update.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> UpdateResponseAsync(ItemAttachment itemAttachmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified ItemAttachment using PATCH and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <param name="itemAttachmentToUpdate">The ItemAttachment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> UpdateResponseAsync(ItemAttachment itemAttachmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

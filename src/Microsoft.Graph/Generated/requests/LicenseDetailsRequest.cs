@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate)
+        {
+            return this.UpdateResponseAsync(licenseDetailsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified LicenseDetails using PATCH and returns a <see cref="GraphResponse{LicenseDetails}"/> object.
+        /// </summary>
+        /// <param name="licenseDetailsToUpdate">The LicenseDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> UpdateResponseAsync(LicenseDetails licenseDetailsToUpdate, CancellationToken cancellationToken)
+        {
+			if (licenseDetailsToUpdate.AdditionalData != null)
+			{
+				if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, licenseDetailsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (licenseDetailsToUpdate.AdditionalData != null)
+            {
+                if (licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    licenseDetailsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, licenseDetailsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<LicenseDetails>(licenseDetailsToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

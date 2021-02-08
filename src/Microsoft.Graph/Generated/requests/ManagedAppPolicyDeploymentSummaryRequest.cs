@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ManagedAppPolicyDeploymentSummary using PATCH and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToUpdate">The ManagedAppPolicyDeploymentSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> UpdateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(managedAppPolicyDeploymentSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ManagedAppPolicyDeploymentSummary using PATCH and returns a <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object.
+        /// </summary>
+        /// <param name="managedAppPolicyDeploymentSummaryToUpdate">The ManagedAppPolicyDeploymentSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicyDeploymentSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicyDeploymentSummary>> UpdateResponseAsync(ManagedAppPolicyDeploymentSummary managedAppPolicyDeploymentSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (managedAppPolicyDeploymentSummaryToUpdate.AdditionalData != null)
+			{
+				if (managedAppPolicyDeploymentSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					managedAppPolicyDeploymentSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppPolicyDeploymentSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (managedAppPolicyDeploymentSummaryToUpdate.AdditionalData != null)
+            {
+                if (managedAppPolicyDeploymentSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    managedAppPolicyDeploymentSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, managedAppPolicyDeploymentSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ManagedAppPolicyDeploymentSummary>(managedAppPolicyDeploymentSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

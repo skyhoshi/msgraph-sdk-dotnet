@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsInformationProtectionAppLearningSummary> UpdateAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified WindowsInformationProtectionAppLearningSummary using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLearningSummaryToUpdate">The WindowsInformationProtectionAppLearningSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsInformationProtectionAppLearningSummary using PATCH and returns a <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object.
+        /// </summary>
+        /// <param name="windowsInformationProtectionAppLearningSummaryToUpdate">The WindowsInformationProtectionAppLearningSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLearningSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLearningSummary>> UpdateResponseAsync(WindowsInformationProtectionAppLearningSummary windowsInformationProtectionAppLearningSummaryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

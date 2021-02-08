@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DeviceManagementPartner using PATCH and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToUpdate">The DeviceManagementPartner to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> UpdateResponseAsync(DeviceManagementPartner deviceManagementPartnerToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceManagementPartnerToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceManagementPartner using PATCH and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="deviceManagementPartnerToUpdate">The DeviceManagementPartner to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> UpdateResponseAsync(DeviceManagementPartner deviceManagementPartnerToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceManagementPartnerToUpdate.AdditionalData != null)
+			{
+				if (deviceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementPartnerToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceManagementPartnerToUpdate.AdditionalData != null)
+            {
+                if (deviceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceManagementPartnerToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceManagementPartnerToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementPartner>(deviceManagementPartnerToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

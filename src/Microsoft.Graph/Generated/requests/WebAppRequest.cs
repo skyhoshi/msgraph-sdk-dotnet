@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WebApp using PATCH and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToUpdate">The WebApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WebApp>> UpdateResponseAsync(WebApp webAppToUpdate)
+        {
+            return this.UpdateResponseAsync(webAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WebApp using PATCH and returns a <see cref="GraphResponse{WebApp}"/> object.
+        /// </summary>
+        /// <param name="webAppToUpdate">The WebApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WebApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WebApp>> UpdateResponseAsync(WebApp webAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (webAppToUpdate.AdditionalData != null)
+			{
+				if (webAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					webAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, webAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (webAppToUpdate.AdditionalData != null)
+            {
+                if (webAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    webAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, webAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WebApp>(webAppToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

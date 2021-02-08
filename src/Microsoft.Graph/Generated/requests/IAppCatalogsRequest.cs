@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AppCatalogs> UpdateAsync(AppCatalogs appCatalogsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified AppCatalogs using PATCH and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToUpdate">The AppCatalogs to update.</param>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> UpdateResponseAsync(AppCatalogs appCatalogsToUpdate);
+
+        /// <summary>
+        /// Updates the specified AppCatalogs using PATCH and returns a <see cref="GraphResponse{AppCatalogs}"/> object.
+        /// </summary>
+        /// <param name="appCatalogsToUpdate">The AppCatalogs to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{AppCatalogs}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppCatalogs>> UpdateResponseAsync(AppCatalogs appCatalogsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

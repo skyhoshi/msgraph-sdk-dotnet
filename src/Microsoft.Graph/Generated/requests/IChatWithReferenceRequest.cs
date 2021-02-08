@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Chat> UpdateAsync(Chat chatToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified Chat using PATCH and returns a <see cref="GraphResponse{Chat}"/> object.
+        /// </summary>
+        /// <param name="chatToUpdate">The Chat to update.</param>
+        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Chat>> UpdateResponseAsync(Chat chatToUpdate);
+
+        /// <summary>
+        /// Updates the specified Chat using PATCH and returns a <see cref="GraphResponse{Chat}"/> object.
+        /// </summary>
+        /// <param name="chatToUpdate">The Chat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Chat>> UpdateResponseAsync(Chat chatToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified Chat.
         /// </summary>
         /// <returns>The task to await.</returns>

@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MobileLobApp using PATCH and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="mobileLobAppToUpdate">The MobileLobApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> UpdateResponseAsync(MobileLobApp mobileLobAppToUpdate)
+        {
+            return this.UpdateResponseAsync(mobileLobAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MobileLobApp using PATCH and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="mobileLobAppToUpdate">The MobileLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> UpdateResponseAsync(MobileLobApp mobileLobAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (mobileLobAppToUpdate.AdditionalData != null)
+			{
+				if (mobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileLobAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mobileLobAppToUpdate.AdditionalData != null)
+            {
+                if (mobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileLobAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileLobAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MobileLobApp>(mobileLobAppToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

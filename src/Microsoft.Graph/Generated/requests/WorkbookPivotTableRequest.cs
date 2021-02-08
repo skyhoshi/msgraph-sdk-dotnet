@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookPivotTable using PATCH and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> UpdateResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate)
+        {
+            return this.UpdateResponseAsync(workbookPivotTableToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookPivotTable using PATCH and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object.
+        /// </summary>
+        /// <param name="workbookPivotTableToUpdate">The WorkbookPivotTable to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> UpdateResponseAsync(WorkbookPivotTable workbookPivotTableToUpdate, CancellationToken cancellationToken)
+        {
+			if (workbookPivotTableToUpdate.AdditionalData != null)
+			{
+				if (workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookPivotTableToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (workbookPivotTableToUpdate.AdditionalData != null)
+            {
+                if (workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookPivotTableToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookPivotTableToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WorkbookPivotTable>(workbookPivotTableToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

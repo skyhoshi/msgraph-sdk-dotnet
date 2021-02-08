@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OnenoteEntityBaseModel> UpdateAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified OnenoteEntityBaseModel using PATCH and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityBaseModelToUpdate">The OnenoteEntityBaseModel to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> UpdateResponseAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToUpdate);
+
+        /// <summary>
+        /// Updates the specified OnenoteEntityBaseModel using PATCH and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityBaseModelToUpdate">The OnenoteEntityBaseModel to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> UpdateResponseAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookChartLegendFormat using PATCH and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendFormatToUpdate">The WorkbookChartLegendFormat to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> UpdateResponseAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate)
+        {
+            return this.UpdateResponseAsync(workbookChartLegendFormatToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartLegendFormat using PATCH and returns a <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object.
+        /// </summary>
+        /// <param name="workbookChartLegendFormatToUpdate">The WorkbookChartLegendFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartLegendFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartLegendFormat>> UpdateResponseAsync(WorkbookChartLegendFormat workbookChartLegendFormatToUpdate, CancellationToken cancellationToken)
+        {
+			if (workbookChartLegendFormatToUpdate.AdditionalData != null)
+			{
+				if (workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendFormatToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (workbookChartLegendFormatToUpdate.AdditionalData != null)
+            {
+                if (workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookChartLegendFormatToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartLegendFormatToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartLegendFormat>(workbookChartLegendFormatToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

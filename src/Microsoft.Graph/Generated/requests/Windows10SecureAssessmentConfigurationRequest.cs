@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Windows10SecureAssessmentConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10SecureAssessmentConfigurationToUpdate">The Windows10SecureAssessmentConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> UpdateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(windows10SecureAssessmentConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10SecureAssessmentConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10SecureAssessmentConfigurationToUpdate">The Windows10SecureAssessmentConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10SecureAssessmentConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10SecureAssessmentConfiguration>> UpdateResponseAsync(Windows10SecureAssessmentConfiguration windows10SecureAssessmentConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10SecureAssessmentConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows10SecureAssessmentConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10SecureAssessmentConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Windows10SecureAssessmentConfiguration>(windows10SecureAssessmentConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

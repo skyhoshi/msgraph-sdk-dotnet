@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookChartAxis using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxis}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisToUpdate">The WorkbookChartAxis to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxis}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxis>> UpdateResponseAsync(WorkbookChartAxis workbookChartAxisToUpdate)
+        {
+            return this.UpdateResponseAsync(workbookChartAxisToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookChartAxis using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxis}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxisToUpdate">The WorkbookChartAxis to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxis}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxis>> UpdateResponseAsync(WorkbookChartAxis workbookChartAxisToUpdate, CancellationToken cancellationToken)
+        {
+			if (workbookChartAxisToUpdate.AdditionalData != null)
+			{
+				if (workbookChartAxisToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookChartAxisToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartAxisToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (workbookChartAxisToUpdate.AdditionalData != null)
+            {
+                if (workbookChartAxisToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookChartAxisToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookChartAxisToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WorkbookChartAxis>(workbookChartAxisToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

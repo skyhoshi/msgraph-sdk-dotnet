@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToUpdate">The WindowsDefenderAdvancedThreatProtectionConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> UpdateResponseAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsDefenderAdvancedThreatProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsDefenderAdvancedThreatProtectionConfigurationToUpdate">The WindowsDefenderAdvancedThreatProtectionConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsDefenderAdvancedThreatProtectionConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>> UpdateResponseAsync(WindowsDefenderAdvancedThreatProtectionConfiguration windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsDefenderAdvancedThreatProtectionConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsDefenderAdvancedThreatProtectionConfiguration>(windowsDefenderAdvancedThreatProtectionConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

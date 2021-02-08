@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ClaimsMappingPolicy using PATCH and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToUpdate">The ClaimsMappingPolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> UpdateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(claimsMappingPolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ClaimsMappingPolicy using PATCH and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object.
+        /// </summary>
+        /// <param name="claimsMappingPolicyToUpdate">The ClaimsMappingPolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ClaimsMappingPolicy>> UpdateResponseAsync(ClaimsMappingPolicy claimsMappingPolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (claimsMappingPolicyToUpdate.AdditionalData != null)
+			{
+				if (claimsMappingPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					claimsMappingPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, claimsMappingPolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (claimsMappingPolicyToUpdate.AdditionalData != null)
+            {
+                if (claimsMappingPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    claimsMappingPolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, claimsMappingPolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ClaimsMappingPolicy>(claimsMappingPolicyToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

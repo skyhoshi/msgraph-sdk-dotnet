@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WindowsPhone81CustomConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81CustomConfigurationToUpdate">The WindowsPhone81CustomConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CustomConfiguration>> UpdateResponseAsync(WindowsPhone81CustomConfiguration windowsPhone81CustomConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(windowsPhone81CustomConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WindowsPhone81CustomConfiguration using PATCH and returns a <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windowsPhone81CustomConfigurationToUpdate">The WindowsPhone81CustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CustomConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CustomConfiguration>> UpdateResponseAsync(WindowsPhone81CustomConfiguration windowsPhone81CustomConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (windowsPhone81CustomConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windowsPhone81CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windowsPhone81CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81CustomConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windowsPhone81CustomConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windowsPhone81CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windowsPhone81CustomConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windowsPhone81CustomConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WindowsPhone81CustomConfiguration>(windowsPhone81CustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

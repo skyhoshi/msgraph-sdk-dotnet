@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MacOSOfficeSuiteApp using PATCH and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
+        /// </summary>
+        /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate)
+        {
+            return this.UpdateResponseAsync(macOSOfficeSuiteAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MacOSOfficeSuiteApp using PATCH and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
+        /// </summary>
+        /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> UpdateResponseAsync(MacOSOfficeSuiteApp macOSOfficeSuiteAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
+			{
+				if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSOfficeSuiteAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (macOSOfficeSuiteAppToUpdate.AdditionalData != null)
+            {
+                if (macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    macOSOfficeSuiteAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, macOSOfficeSuiteAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MacOSOfficeSuiteApp>(macOSOfficeSuiteAppToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

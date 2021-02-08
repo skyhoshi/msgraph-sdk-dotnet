@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ChatMessageHostedContent> UpdateAsync(ChatMessageHostedContent chatMessageHostedContentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified ChatMessageHostedContent using PATCH and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="chatMessageHostedContentToUpdate">The ChatMessageHostedContent to update.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> UpdateResponseAsync(ChatMessageHostedContent chatMessageHostedContentToUpdate);
+
+        /// <summary>
+        /// Updates the specified ChatMessageHostedContent using PATCH and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="chatMessageHostedContentToUpdate">The ChatMessageHostedContent to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> UpdateResponseAsync(ChatMessageHostedContent chatMessageHostedContentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

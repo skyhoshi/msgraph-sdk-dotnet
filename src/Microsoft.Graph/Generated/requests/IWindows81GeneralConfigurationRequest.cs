@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Windows81GeneralConfiguration> UpdateAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified Windows81GeneralConfiguration using PATCH and returns a <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> UpdateResponseAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows81GeneralConfiguration using PATCH and returns a <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows81GeneralConfigurationToUpdate">The Windows81GeneralConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows81GeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows81GeneralConfiguration>> UpdateResponseAsync(Windows81GeneralConfiguration windows81GeneralConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

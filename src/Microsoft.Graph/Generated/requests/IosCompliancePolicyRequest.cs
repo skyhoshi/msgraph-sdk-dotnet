@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified IosCompliancePolicy using PATCH and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="iosCompliancePolicyToUpdate">The IosCompliancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> UpdateResponseAsync(IosCompliancePolicy iosCompliancePolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(iosCompliancePolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified IosCompliancePolicy using PATCH and returns a <see cref="GraphResponse{IosCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="iosCompliancePolicyToUpdate">The IosCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosCompliancePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosCompliancePolicy>> UpdateResponseAsync(IosCompliancePolicy iosCompliancePolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (iosCompliancePolicyToUpdate.AdditionalData != null)
+			{
+				if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosCompliancePolicyToUpdate.AdditionalData != null)
+            {
+                if (iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosCompliancePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosCompliancePolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<IosCompliancePolicy>(iosCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

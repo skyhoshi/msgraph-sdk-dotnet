@@ -155,6 +155,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified TeamsAppDefinition using PATCH and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToUpdate">The TeamsAppDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> UpdateResponseAsync(TeamsAppDefinition teamsAppDefinitionToUpdate)
+        {
+            return this.UpdateResponseAsync(teamsAppDefinitionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified TeamsAppDefinition using PATCH and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object.
+        /// </summary>
+        /// <param name="teamsAppDefinitionToUpdate">The TeamsAppDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> UpdateResponseAsync(TeamsAppDefinition teamsAppDefinitionToUpdate, CancellationToken cancellationToken)
+        {
+			if (teamsAppDefinitionToUpdate.AdditionalData != null)
+			{
+				if (teamsAppDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					teamsAppDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppDefinitionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (teamsAppDefinitionToUpdate.AdditionalData != null)
+            {
+                if (teamsAppDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    teamsAppDefinitionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, teamsAppDefinitionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<TeamsAppDefinition>(teamsAppDefinitionToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified TeamsAppDefinition.
         /// </summary>
         /// <returns>The task to await.</returns>

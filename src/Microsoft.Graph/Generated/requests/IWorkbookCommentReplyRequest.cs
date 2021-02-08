@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookCommentReply> UpdateAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified WorkbookCommentReply using PATCH and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> UpdateResponseAsync(WorkbookCommentReply workbookCommentReplyToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookCommentReply using PATCH and returns a <see cref="GraphResponse{WorkbookCommentReply}"/> object.
+        /// </summary>
+        /// <param name="workbookCommentReplyToUpdate">The WorkbookCommentReply to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookCommentReply}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookCommentReply>> UpdateResponseAsync(WorkbookCommentReply workbookCommentReplyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

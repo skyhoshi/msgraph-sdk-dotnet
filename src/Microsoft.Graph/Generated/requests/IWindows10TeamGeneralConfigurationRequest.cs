@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Windows10TeamGeneralConfiguration> UpdateAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified Windows10TeamGeneralConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToUpdate">The Windows10TeamGeneralConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> UpdateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows10TeamGeneralConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10TeamGeneralConfigurationToUpdate">The Windows10TeamGeneralConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> UpdateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

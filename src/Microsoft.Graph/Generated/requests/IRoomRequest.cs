@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Room> UpdateAsync(Room roomToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified Room using PATCH and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <param name="roomToUpdate">The Room to update.</param>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Room>> UpdateResponseAsync(Room roomToUpdate);
+
+        /// <summary>
+        /// Updates the specified Room using PATCH and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <param name="roomToUpdate">The Room to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Room>> UpdateResponseAsync(Room roomToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

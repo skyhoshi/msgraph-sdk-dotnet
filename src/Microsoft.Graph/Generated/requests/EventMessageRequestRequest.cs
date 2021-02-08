@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified EventMessageRequestObject using PATCH and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <param name="eventMessageRequestObjectToUpdate">The EventMessageRequestObject to update.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> UpdateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate)
+        {
+            return this.UpdateResponseAsync(eventMessageRequestObjectToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EventMessageRequestObject using PATCH and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <param name="eventMessageRequestObjectToUpdate">The EventMessageRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> UpdateResponseAsync(EventMessageRequestObject eventMessageRequestObjectToUpdate, CancellationToken cancellationToken)
+        {
+			if (eventMessageRequestObjectToUpdate.AdditionalData != null)
+			{
+				if (eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventMessageRequestObjectToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (eventMessageRequestObjectToUpdate.AdditionalData != null)
+            {
+                if (eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    eventMessageRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, eventMessageRequestObjectToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EventMessageRequestObject>(eventMessageRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

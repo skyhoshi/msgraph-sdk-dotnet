@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified OnenoteResource using PATCH and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToUpdate">The OnenoteResource to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> UpdateResponseAsync(OnenoteResource onenoteResourceToUpdate)
+        {
+            return this.UpdateResponseAsync(onenoteResourceToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteResource using PATCH and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="onenoteResourceToUpdate">The OnenoteResource to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> UpdateResponseAsync(OnenoteResource onenoteResourceToUpdate, CancellationToken cancellationToken)
+        {
+			if (onenoteResourceToUpdate.AdditionalData != null)
+			{
+				if (onenoteResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onenoteResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteResourceToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (onenoteResourceToUpdate.AdditionalData != null)
+            {
+                if (onenoteResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    onenoteResourceToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteResourceToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OnenoteResource>(onenoteResourceToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

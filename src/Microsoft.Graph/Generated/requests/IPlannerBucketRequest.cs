@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PlannerBucket> UpdateAsync(PlannerBucket plannerBucketToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified PlannerBucket using PATCH and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketToUpdate">The PlannerBucket to update.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> UpdateResponseAsync(PlannerBucket plannerBucketToUpdate);
+
+        /// <summary>
+        /// Updates the specified PlannerBucket using PATCH and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketToUpdate">The PlannerBucket to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> UpdateResponseAsync(PlannerBucket plannerBucketToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

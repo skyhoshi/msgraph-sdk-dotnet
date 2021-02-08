@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MessageRule using PATCH and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToUpdate">The MessageRule to update.</param>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MessageRule>> UpdateResponseAsync(MessageRule messageRuleToUpdate)
+        {
+            return this.UpdateResponseAsync(messageRuleToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MessageRule using PATCH and returns a <see cref="GraphResponse{MessageRule}"/> object.
+        /// </summary>
+        /// <param name="messageRuleToUpdate">The MessageRule to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MessageRule>> UpdateResponseAsync(MessageRule messageRuleToUpdate, CancellationToken cancellationToken)
+        {
+			if (messageRuleToUpdate.AdditionalData != null)
+			{
+				if (messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, messageRuleToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (messageRuleToUpdate.AdditionalData != null)
+            {
+                if (messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    messageRuleToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, messageRuleToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MessageRule>(messageRuleToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

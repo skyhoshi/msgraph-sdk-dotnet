@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Thumbnail using PATCH and returns a <see cref="GraphResponse{Thumbnail}"/> object.
+        /// </summary>
+        /// <param name="thumbnailToUpdate">The Thumbnail to update.</param>
+        /// <returns>The <see cref="GraphResponse{Thumbnail}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Thumbnail>> UpdateResponseAsync(Thumbnail thumbnailToUpdate)
+        {
+            return this.UpdateResponseAsync(thumbnailToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Thumbnail using PATCH and returns a <see cref="GraphResponse{Thumbnail}"/> object.
+        /// </summary>
+        /// <param name="thumbnailToUpdate">The Thumbnail to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Thumbnail}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Thumbnail>> UpdateResponseAsync(Thumbnail thumbnailToUpdate, CancellationToken cancellationToken)
+        {
+			if (thumbnailToUpdate.AdditionalData != null)
+			{
+				if (thumbnailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					thumbnailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, thumbnailToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (thumbnailToUpdate.AdditionalData != null)
+            {
+                if (thumbnailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    thumbnailToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, thumbnailToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Thumbnail>(thumbnailToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

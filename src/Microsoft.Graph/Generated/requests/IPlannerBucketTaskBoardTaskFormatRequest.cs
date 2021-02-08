@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PlannerBucketTaskBoardTaskFormat> UpdateAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified PlannerBucketTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketTaskBoardTaskFormatToUpdate">The PlannerBucketTaskBoardTaskFormat to update.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> UpdateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate);
+
+        /// <summary>
+        /// Updates the specified PlannerBucketTaskBoardTaskFormat using PATCH and returns a <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="plannerBucketTaskBoardTaskFormatToUpdate">The PlannerBucketTaskBoardTaskFormat to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerBucketTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucketTaskBoardTaskFormat>> UpdateResponseAsync(PlannerBucketTaskBoardTaskFormat plannerBucketTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

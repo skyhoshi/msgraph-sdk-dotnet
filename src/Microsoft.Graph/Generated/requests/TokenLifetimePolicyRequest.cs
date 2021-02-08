@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified TokenLifetimePolicy using PATCH and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenLifetimePolicyToUpdate">The TokenLifetimePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> UpdateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToUpdate)
+        {
+            return this.UpdateResponseAsync(tokenLifetimePolicyToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified TokenLifetimePolicy using PATCH and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenLifetimePolicyToUpdate">The TokenLifetimePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> UpdateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToUpdate, CancellationToken cancellationToken)
+        {
+			if (tokenLifetimePolicyToUpdate.AdditionalData != null)
+			{
+				if (tokenLifetimePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					tokenLifetimePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tokenLifetimePolicyToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (tokenLifetimePolicyToUpdate.AdditionalData != null)
+            {
+                if (tokenLifetimePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    tokenLifetimePolicyToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, tokenLifetimePolicyToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<TokenLifetimePolicy>(tokenLifetimePolicyToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

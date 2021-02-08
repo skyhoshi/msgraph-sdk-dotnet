@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified WorkbookWorksheetProtection using PATCH and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> UpdateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate)
+        {
+            return this.UpdateResponseAsync(workbookWorksheetProtectionToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified WorkbookWorksheetProtection using PATCH and returns a <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object.
+        /// </summary>
+        /// <param name="workbookWorksheetProtectionToUpdate">The WorkbookWorksheetProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookWorksheetProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookWorksheetProtection>> UpdateResponseAsync(WorkbookWorksheetProtection workbookWorksheetProtectionToUpdate, CancellationToken cancellationToken)
+        {
+			if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
+			{
+				if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetProtectionToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (workbookWorksheetProtectionToUpdate.AdditionalData != null)
+            {
+                if (workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    workbookWorksheetProtectionToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, workbookWorksheetProtectionToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<WorkbookWorksheetProtection>(workbookWorksheetProtectionToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

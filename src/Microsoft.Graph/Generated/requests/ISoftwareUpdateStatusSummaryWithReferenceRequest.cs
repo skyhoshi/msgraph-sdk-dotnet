@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SoftwareUpdateStatusSummary> UpdateAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PATCH and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> UpdateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate);
+
+        /// <summary>
+        /// Updates the specified SoftwareUpdateStatusSummary using PATCH and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
+        /// </summary>
+        /// <param name="softwareUpdateStatusSummaryToUpdate">The SoftwareUpdateStatusSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> UpdateResponseAsync(SoftwareUpdateStatusSummary softwareUpdateStatusSummaryToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified SoftwareUpdateStatusSummary.
         /// </summary>
         /// <returns>The task to await.</returns>

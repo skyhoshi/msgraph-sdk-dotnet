@@ -155,6 +155,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified Group using PATCH and returns a <see cref="GraphResponse{Group}"/> object.
+        /// </summary>
+        /// <param name="groupToUpdate">The Group to update.</param>
+        /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Group>> UpdateResponseAsync(Group groupToUpdate)
+        {
+            return this.UpdateResponseAsync(groupToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Group using PATCH and returns a <see cref="GraphResponse{Group}"/> object.
+        /// </summary>
+        /// <param name="groupToUpdate">The Group to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Group}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Group>> UpdateResponseAsync(Group groupToUpdate, CancellationToken cancellationToken)
+        {
+			if (groupToUpdate.AdditionalData != null)
+			{
+				if (groupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupToUpdate.AdditionalData != null)
+            {
+                if (groupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Group>(groupToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified Group.
         /// </summary>
         /// <returns>The task to await.</returns>

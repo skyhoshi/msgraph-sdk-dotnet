@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TokenLifetimePolicy> UpdateAsync(TokenLifetimePolicy tokenLifetimePolicyToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified TokenLifetimePolicy using PATCH and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenLifetimePolicyToUpdate">The TokenLifetimePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> UpdateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified TokenLifetimePolicy using PATCH and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <param name="tokenLifetimePolicyToUpdate">The TokenLifetimePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> UpdateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified TokenLifetimePolicy.
         /// </summary>
         /// <returns>The task to await.</returns>

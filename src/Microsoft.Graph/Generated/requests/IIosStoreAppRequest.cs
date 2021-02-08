@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IosStoreApp> UpdateAsync(IosStoreApp iosStoreAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified IosStoreApp using PATCH and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToUpdate">The IosStoreApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> UpdateResponseAsync(IosStoreApp iosStoreAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified IosStoreApp using PATCH and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="iosStoreAppToUpdate">The IosStoreApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> UpdateResponseAsync(IosStoreApp iosStoreAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

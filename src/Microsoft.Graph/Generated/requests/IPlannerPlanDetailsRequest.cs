@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PlannerPlanDetails> UpdateAsync(PlannerPlanDetails plannerPlanDetailsToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified PlannerPlanDetails using PATCH and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToUpdate">The PlannerPlanDetails to update.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerPlanDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> UpdateResponseAsync(PlannerPlanDetails plannerPlanDetailsToUpdate);
+
+        /// <summary>
+        /// Updates the specified PlannerPlanDetails using PATCH and returns a <see cref="GraphResponse{PlannerPlanDetails}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanDetailsToUpdate">The PlannerPlanDetails to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerPlanDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerPlanDetails>> UpdateResponseAsync(PlannerPlanDetails plannerPlanDetailsToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

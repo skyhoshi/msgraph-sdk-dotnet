@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OutlookCategory> UpdateAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
+        /// </summary>
+        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate);
+
+        /// <summary>
+        /// Updates the specified OutlookCategory using PATCH and returns a <see cref="GraphResponse{OutlookCategory}"/> object.
+        /// </summary>
+        /// <param name="outlookCategoryToUpdate">The OutlookCategory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> UpdateResponseAsync(OutlookCategory outlookCategoryToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

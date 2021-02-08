@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified OnenoteEntityBaseModel using PATCH and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityBaseModelToUpdate">The OnenoteEntityBaseModel to update.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> UpdateResponseAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToUpdate)
+        {
+            return this.UpdateResponseAsync(onenoteEntityBaseModelToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified OnenoteEntityBaseModel using PATCH and returns a <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object.
+        /// </summary>
+        /// <param name="onenoteEntityBaseModelToUpdate">The OnenoteEntityBaseModel to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityBaseModel}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteEntityBaseModel>> UpdateResponseAsync(OnenoteEntityBaseModel onenoteEntityBaseModelToUpdate, CancellationToken cancellationToken)
+        {
+			if (onenoteEntityBaseModelToUpdate.AdditionalData != null)
+			{
+				if (onenoteEntityBaseModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onenoteEntityBaseModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteEntityBaseModelToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (onenoteEntityBaseModelToUpdate.AdditionalData != null)
+            {
+                if (onenoteEntityBaseModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    onenoteEntityBaseModelToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteEntityBaseModelToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<OnenoteEntityBaseModel>(onenoteEntityBaseModelToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

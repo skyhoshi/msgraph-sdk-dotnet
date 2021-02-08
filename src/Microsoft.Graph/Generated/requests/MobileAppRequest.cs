@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified MobileApp using PATCH and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToUpdate">The MobileApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileApp>> UpdateResponseAsync(MobileApp mobileAppToUpdate)
+        {
+            return this.UpdateResponseAsync(mobileAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified MobileApp using PATCH and returns a <see cref="GraphResponse{MobileApp}"/> object.
+        /// </summary>
+        /// <param name="mobileAppToUpdate">The MobileApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileApp>> UpdateResponseAsync(MobileApp mobileAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (mobileAppToUpdate.AdditionalData != null)
+			{
+				if (mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (mobileAppToUpdate.AdditionalData != null)
+            {
+                if (mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    mobileAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, mobileAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<MobileApp>(mobileAppToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified IosVppApp using PATCH and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToUpdate">The IosVppApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosVppApp>> UpdateResponseAsync(IosVppApp iosVppAppToUpdate)
+        {
+            return this.UpdateResponseAsync(iosVppAppToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified IosVppApp using PATCH and returns a <see cref="GraphResponse{IosVppApp}"/> object.
+        /// </summary>
+        /// <param name="iosVppAppToUpdate">The IosVppApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{IosVppApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosVppApp>> UpdateResponseAsync(IosVppApp iosVppAppToUpdate, CancellationToken cancellationToken)
+        {
+			if (iosVppAppToUpdate.AdditionalData != null)
+			{
+				if (iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppAppToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (iosVppAppToUpdate.AdditionalData != null)
+            {
+                if (iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    iosVppAppToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, iosVppAppToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<IosVppApp>(iosVppAppToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

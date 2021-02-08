@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SharedDriveItem> UpdateAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified SharedDriveItem using PATCH and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
+        /// </summary>
+        /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate);
+
+        /// <summary>
+        /// Updates the specified SharedDriveItem using PATCH and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
+        /// </summary>
+        /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> UpdateResponseAsync(SharedDriveItem sharedDriveItemToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

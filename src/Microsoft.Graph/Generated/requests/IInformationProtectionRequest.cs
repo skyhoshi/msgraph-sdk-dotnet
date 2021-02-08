@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<InformationProtection> UpdateAsync(InformationProtection informationProtectionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified InformationProtection using PATCH and returns a <see cref="GraphResponse{InformationProtection}"/> object.
+        /// </summary>
+        /// <param name="informationProtectionToUpdate">The InformationProtection to update.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtection>> UpdateResponseAsync(InformationProtection informationProtectionToUpdate);
+
+        /// <summary>
+        /// Updates the specified InformationProtection using PATCH and returns a <see cref="GraphResponse{InformationProtection}"/> object.
+        /// </summary>
+        /// <param name="informationProtectionToUpdate">The InformationProtection to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{InformationProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtection>> UpdateResponseAsync(InformationProtection informationProtectionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

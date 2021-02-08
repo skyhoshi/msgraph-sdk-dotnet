@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<InviteParticipantsOperation> UpdateAsync(InviteParticipantsOperation inviteParticipantsOperationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified InviteParticipantsOperation using PATCH and returns a <see cref="GraphResponse{InviteParticipantsOperation}"/> object.
+        /// </summary>
+        /// <param name="inviteParticipantsOperationToUpdate">The InviteParticipantsOperation to update.</param>
+        /// <returns>The <see cref="GraphResponse{InviteParticipantsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InviteParticipantsOperation>> UpdateResponseAsync(InviteParticipantsOperation inviteParticipantsOperationToUpdate);
+
+        /// <summary>
+        /// Updates the specified InviteParticipantsOperation using PATCH and returns a <see cref="GraphResponse{InviteParticipantsOperation}"/> object.
+        /// </summary>
+        /// <param name="inviteParticipantsOperationToUpdate">The InviteParticipantsOperation to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{InviteParticipantsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InviteParticipantsOperation>> UpdateResponseAsync(InviteParticipantsOperation inviteParticipantsOperationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

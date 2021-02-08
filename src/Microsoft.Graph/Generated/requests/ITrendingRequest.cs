@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Trending> UpdateAsync(Trending trendingToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified Trending using PATCH and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToUpdate">The Trending to update.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate);
+
+        /// <summary>
+        /// Updates the specified Trending using PATCH and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="trendingToUpdate">The Trending to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> UpdateResponseAsync(Trending trendingToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

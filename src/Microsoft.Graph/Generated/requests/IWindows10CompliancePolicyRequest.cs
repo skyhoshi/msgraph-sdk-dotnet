@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Windows10CompliancePolicy> UpdateAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified Windows10CompliancePolicy using PATCH and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10CompliancePolicyToUpdate">The Windows10CompliancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> UpdateResponseAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows10CompliancePolicy using PATCH and returns a <see cref="GraphResponse{Windows10CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="windows10CompliancePolicyToUpdate">The Windows10CompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CompliancePolicy>> UpdateResponseAsync(Windows10CompliancePolicy windows10CompliancePolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

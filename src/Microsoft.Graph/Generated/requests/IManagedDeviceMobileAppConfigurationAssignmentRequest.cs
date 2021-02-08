@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationAssignment> UpdateAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfigurationAssignment using PATCH and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignmentToUpdate">The ManagedDeviceMobileAppConfigurationAssignment to update.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> UpdateResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToUpdate);
+
+        /// <summary>
+        /// Updates the specified ManagedDeviceMobileAppConfigurationAssignment using PATCH and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignmentToUpdate">The ManagedDeviceMobileAppConfigurationAssignment to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> UpdateResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignmentToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

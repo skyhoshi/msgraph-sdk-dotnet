@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceConfigurationUserOverview> UpdateAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified DeviceConfigurationUserOverview using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserOverviewToUpdate">The DeviceConfigurationUserOverview to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserOverview>> UpdateResponseAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceConfigurationUserOverview using PATCH and returns a <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationUserOverviewToUpdate">The DeviceConfigurationUserOverview to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationUserOverview}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationUserOverview>> UpdateResponseAsync(DeviceConfigurationUserOverview deviceConfigurationUserOverviewToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

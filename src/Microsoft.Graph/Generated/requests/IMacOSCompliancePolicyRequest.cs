@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MacOSCompliancePolicy> UpdateAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified MacOSCompliancePolicy using PATCH and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy to update.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> UpdateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate);
+
+        /// <summary>
+        /// Updates the specified MacOSCompliancePolicy using PATCH and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> UpdateResponseAsync(MacOSCompliancePolicy macOSCompliancePolicyToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

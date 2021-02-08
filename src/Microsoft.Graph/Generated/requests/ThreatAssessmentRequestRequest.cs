@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified ThreatAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate)
+        {
+            return this.UpdateResponseAsync(threatAssessmentRequestObjectToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified ThreatAssessmentRequestObject using PATCH and returns a <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="threatAssessmentRequestObjectToUpdate">The ThreatAssessmentRequestObject to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentRequestObject>> UpdateResponseAsync(ThreatAssessmentRequestObject threatAssessmentRequestObjectToUpdate, CancellationToken cancellationToken)
+        {
+			if (threatAssessmentRequestObjectToUpdate.AdditionalData != null)
+			{
+				if (threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, threatAssessmentRequestObjectToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (threatAssessmentRequestObjectToUpdate.AdditionalData != null)
+            {
+                if (threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    threatAssessmentRequestObjectToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, threatAssessmentRequestObjectToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<ThreatAssessmentRequestObject>(threatAssessmentRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

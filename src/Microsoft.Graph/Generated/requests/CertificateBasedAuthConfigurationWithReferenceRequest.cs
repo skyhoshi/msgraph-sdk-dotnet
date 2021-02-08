@@ -155,6 +155,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified CertificateBasedAuthConfiguration using PATCH and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfigurationToUpdate">The CertificateBasedAuthConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> UpdateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(certificateBasedAuthConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified CertificateBasedAuthConfiguration using PATCH and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="certificateBasedAuthConfigurationToUpdate">The CertificateBasedAuthConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> UpdateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (certificateBasedAuthConfigurationToUpdate.AdditionalData != null)
+			{
+				if (certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, certificateBasedAuthConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (certificateBasedAuthConfigurationToUpdate.AdditionalData != null)
+            {
+                if (certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    certificateBasedAuthConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, certificateBasedAuthConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<CertificateBasedAuthConfiguration>(certificateBasedAuthConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified CertificateBasedAuthConfiguration.
         /// </summary>
         /// <returns>The task to await.</returns>

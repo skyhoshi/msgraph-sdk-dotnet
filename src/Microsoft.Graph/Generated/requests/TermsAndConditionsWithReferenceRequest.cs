@@ -155,6 +155,56 @@ namespace Microsoft.Graph
         }
 
 		/// <summary>
+        /// Updates the specified TermsAndConditions using PATCH and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsToUpdate">The TermsAndConditions to update.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> UpdateResponseAsync(TermsAndConditions termsAndConditionsToUpdate)
+        {
+            return this.UpdateResponseAsync(termsAndConditionsToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified TermsAndConditions using PATCH and returns a <see cref="GraphResponse{TermsAndConditions}"/> object.
+        /// </summary>
+        /// <param name="termsAndConditionsToUpdate">The TermsAndConditions to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> UpdateResponseAsync(TermsAndConditions termsAndConditionsToUpdate, CancellationToken cancellationToken)
+        {
+			if (termsAndConditionsToUpdate.AdditionalData != null)
+			{
+				if (termsAndConditionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					termsAndConditionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (termsAndConditionsToUpdate.AdditionalData != null)
+            {
+                if (termsAndConditionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    termsAndConditionsToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, termsAndConditionsToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<TermsAndConditions>(termsAndConditionsToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+		/// <summary>
         /// Deletes the specified TermsAndConditions.
         /// </summary>
         /// <returns>The task to await.</returns>

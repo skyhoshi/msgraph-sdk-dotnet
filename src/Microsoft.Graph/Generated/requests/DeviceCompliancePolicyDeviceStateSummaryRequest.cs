@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DeviceCompliancePolicyDeviceStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToUpdate">The DeviceCompliancePolicyDeviceStateSummary to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> UpdateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToUpdate)
+        {
+            return this.UpdateResponseAsync(deviceCompliancePolicyDeviceStateSummaryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DeviceCompliancePolicyDeviceStateSummary using PATCH and returns a <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="deviceCompliancePolicyDeviceStateSummaryToUpdate">The DeviceCompliancePolicyDeviceStateSummary to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyDeviceStateSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyDeviceStateSummary>> UpdateResponseAsync(DeviceCompliancePolicyDeviceStateSummary deviceCompliancePolicyDeviceStateSummaryToUpdate, CancellationToken cancellationToken)
+        {
+			if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData != null)
+			{
+				if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicyDeviceStateSummaryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData != null)
+            {
+                if (deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    deviceCompliancePolicyDeviceStateSummaryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, deviceCompliancePolicyDeviceStateSummaryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyDeviceStateSummary>(deviceCompliancePolicyDeviceStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

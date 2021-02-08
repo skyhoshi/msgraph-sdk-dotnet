@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified PlannerPlan using PATCH and returns a <see cref="GraphResponse{PlannerPlan}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanToUpdate">The PlannerPlan to update.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerPlan}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerPlan>> UpdateResponseAsync(PlannerPlan plannerPlanToUpdate)
+        {
+            return this.UpdateResponseAsync(plannerPlanToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified PlannerPlan using PATCH and returns a <see cref="GraphResponse{PlannerPlan}"/> object.
+        /// </summary>
+        /// <param name="plannerPlanToUpdate">The PlannerPlan to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PlannerPlan}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerPlan>> UpdateResponseAsync(PlannerPlan plannerPlanToUpdate, CancellationToken cancellationToken)
+        {
+			if (plannerPlanToUpdate.AdditionalData != null)
+			{
+				if (plannerPlanToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					plannerPlanToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerPlanToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (plannerPlanToUpdate.AdditionalData != null)
+            {
+                if (plannerPlanToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    plannerPlanToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, plannerPlanToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<PlannerPlan>(plannerPlanToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

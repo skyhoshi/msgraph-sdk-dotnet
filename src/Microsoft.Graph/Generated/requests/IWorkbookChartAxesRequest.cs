@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookChartAxes> UpdateAsync(WorkbookChartAxes workbookChartAxesToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified WorkbookChartAxes using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxesToUpdate">The WorkbookChartAxes to update.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> UpdateResponseAsync(WorkbookChartAxes workbookChartAxesToUpdate);
+
+        /// <summary>
+        /// Updates the specified WorkbookChartAxes using PATCH and returns a <see cref="GraphResponse{WorkbookChartAxes}"/> object.
+        /// </summary>
+        /// <param name="workbookChartAxesToUpdate">The WorkbookChartAxes to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAxes}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAxes>> UpdateResponseAsync(WorkbookChartAxes workbookChartAxesToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

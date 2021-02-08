@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Windows10EndpointProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EndpointProtectionConfigurationToUpdate">The Windows10EndpointProtectionConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> UpdateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate)
+        {
+            return this.UpdateResponseAsync(windows10EndpointProtectionConfigurationToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Windows10EndpointProtectionConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10EndpointProtectionConfigurationToUpdate">The Windows10EndpointProtectionConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10EndpointProtectionConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Windows10EndpointProtectionConfiguration>> UpdateResponseAsync(Windows10EndpointProtectionConfiguration windows10EndpointProtectionConfigurationToUpdate, CancellationToken cancellationToken)
+        {
+			if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData != null)
+			{
+				if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					windows10EndpointProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10EndpointProtectionConfigurationToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData != null)
+            {
+                if (windows10EndpointProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    windows10EndpointProtectionConfigurationToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, windows10EndpointProtectionConfigurationToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Windows10EndpointProtectionConfiguration>(windows10EndpointProtectionConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

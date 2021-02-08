@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> UpdateAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleDefinition using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleDefinitionToUpdate">The DeviceAndAppManagementRoleDefinition to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> UpdateResponseAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceAndAppManagementRoleDefinition using PATCH and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="deviceAndAppManagementRoleDefinitionToUpdate">The DeviceAndAppManagementRoleDefinition to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> UpdateResponseAsync(DeviceAndAppManagementRoleDefinition deviceAndAppManagementRoleDefinitionToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

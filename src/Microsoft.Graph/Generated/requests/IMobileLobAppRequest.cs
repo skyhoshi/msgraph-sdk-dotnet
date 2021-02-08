@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MobileLobApp> UpdateAsync(MobileLobApp mobileLobAppToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified MobileLobApp using PATCH and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="mobileLobAppToUpdate">The MobileLobApp to update.</param>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> UpdateResponseAsync(MobileLobApp mobileLobAppToUpdate);
+
+        /// <summary>
+        /// Updates the specified MobileLobApp using PATCH and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="mobileLobAppToUpdate">The MobileLobApp to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> UpdateResponseAsync(MobileLobApp mobileLobAppToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

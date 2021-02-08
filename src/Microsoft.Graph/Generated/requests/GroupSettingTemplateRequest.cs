@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified GroupSettingTemplate using PATCH and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> UpdateResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate)
+        {
+            return this.UpdateResponseAsync(groupSettingTemplateToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified GroupSettingTemplate using PATCH and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> UpdateResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken)
+        {
+			if (groupSettingTemplateToUpdate.AdditionalData != null)
+			{
+				if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupSettingTemplateToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (groupSettingTemplateToUpdate.AdditionalData != null)
+            {
+                if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupSettingTemplateToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<GroupSettingTemplate>(groupSettingTemplateToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

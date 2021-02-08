@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceConfiguration> UpdateAsync(DeviceConfiguration deviceConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified DeviceConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationToUpdate">The DeviceConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> UpdateResponseAsync(DeviceConfiguration deviceConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified DeviceConfiguration using PATCH and returns a <see cref="GraphResponse{DeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="deviceConfigurationToUpdate">The DeviceConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> UpdateResponseAsync(DeviceConfiguration deviceConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

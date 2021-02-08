@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsMobileMSI> UpdateAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified WindowsMobileMSI using PATCH and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI to update.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> UpdateResponseAsync(WindowsMobileMSI windowsMobileMSIToUpdate);
+
+        /// <summary>
+        /// Updates the specified WindowsMobileMSI using PATCH and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> UpdateResponseAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

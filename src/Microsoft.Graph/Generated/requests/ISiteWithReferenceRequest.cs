@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Site> UpdateAsync(Site siteToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified Site using PATCH and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToUpdate">The Site to update.</param>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Site>> UpdateResponseAsync(Site siteToUpdate);
+
+        /// <summary>
+        /// Updates the specified Site using PATCH and returns a <see cref="GraphResponse{Site}"/> object.
+        /// </summary>
+        /// <param name="siteToUpdate">The Site to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Site}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Site>> UpdateResponseAsync(Site siteToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified Site.
         /// </summary>
         /// <returns>The task to await.</returns>

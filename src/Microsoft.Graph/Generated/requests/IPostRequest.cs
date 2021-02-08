@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Post> UpdateAsync(Post postToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified Post using PATCH and returns a <see cref="GraphResponse{Post}"/> object.
+        /// </summary>
+        /// <param name="postToUpdate">The Post to update.</param>
+        /// <returns>The <see cref="GraphResponse{Post}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Post>> UpdateResponseAsync(Post postToUpdate);
+
+        /// <summary>
+        /// Updates the specified Post using PATCH and returns a <see cref="GraphResponse{Post}"/> object.
+        /// </summary>
+        /// <param name="postToUpdate">The Post to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Post}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Post>> UpdateResponseAsync(Post postToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Drive using PATCH and returns a <see cref="GraphResponse{Drive}"/> object.
+        /// </summary>
+        /// <param name="driveToUpdate">The Drive to update.</param>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Drive>> UpdateResponseAsync(Drive driveToUpdate)
+        {
+            return this.UpdateResponseAsync(driveToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Drive using PATCH and returns a <see cref="GraphResponse{Drive}"/> object.
+        /// </summary>
+        /// <param name="driveToUpdate">The Drive to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Drive>> UpdateResponseAsync(Drive driveToUpdate, CancellationToken cancellationToken)
+        {
+			if (driveToUpdate.AdditionalData != null)
+			{
+				if (driveToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					driveToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, driveToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (driveToUpdate.AdditionalData != null)
+            {
+                if (driveToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    driveToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, driveToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Drive>(driveToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

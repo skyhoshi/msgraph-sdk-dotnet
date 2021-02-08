@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Windows10CustomConfiguration> UpdateAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified Windows10CustomConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10CustomConfigurationToUpdate">The Windows10CustomConfiguration to update.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> UpdateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate);
+
+        /// <summary>
+        /// Updates the specified Windows10CustomConfiguration using PATCH and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="windows10CustomConfigurationToUpdate">The Windows10CustomConfiguration to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> UpdateResponseAsync(Windows10CustomConfiguration windows10CustomConfigurationToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ScopedRoleMembership> UpdateAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified ScopedRoleMembership using PATCH and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
+        /// </summary>
+        /// <param name="scopedRoleMembershipToUpdate">The ScopedRoleMembership to update.</param>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> UpdateResponseAsync(ScopedRoleMembership scopedRoleMembershipToUpdate);
+
+        /// <summary>
+        /// Updates the specified ScopedRoleMembership using PATCH and returns a <see cref="GraphResponse{ScopedRoleMembership}"/> object.
+        /// </summary>
+        /// <param name="scopedRoleMembershipToUpdate">The ScopedRoleMembership to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> UpdateResponseAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

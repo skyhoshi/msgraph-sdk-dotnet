@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified PolicyBase using PATCH and returns a <see cref="GraphResponse{PolicyBase}"/> object.
+        /// </summary>
+        /// <param name="policyBaseToUpdate">The PolicyBase to update.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyBase>> UpdateResponseAsync(PolicyBase policyBaseToUpdate)
+        {
+            return this.UpdateResponseAsync(policyBaseToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified PolicyBase using PATCH and returns a <see cref="GraphResponse{PolicyBase}"/> object.
+        /// </summary>
+        /// <param name="policyBaseToUpdate">The PolicyBase to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyBase>> UpdateResponseAsync(PolicyBase policyBaseToUpdate, CancellationToken cancellationToken)
+        {
+			if (policyBaseToUpdate.AdditionalData != null)
+			{
+				if (policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyBaseToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (policyBaseToUpdate.AdditionalData != null)
+            {
+                if (policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    policyBaseToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, policyBaseToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<PolicyBase>(policyBaseToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

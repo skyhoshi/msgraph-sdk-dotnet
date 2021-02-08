@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified EducationRoot using PATCH and returns a <see cref="GraphResponse{EducationRoot}"/> object.
+        /// </summary>
+        /// <param name="educationRootToUpdate">The EducationRoot to update.</param>
+        /// <returns>The <see cref="GraphResponse{EducationRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationRoot>> UpdateResponseAsync(EducationRoot educationRootToUpdate)
+        {
+            return this.UpdateResponseAsync(educationRootToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified EducationRoot using PATCH and returns a <see cref="GraphResponse{EducationRoot}"/> object.
+        /// </summary>
+        /// <param name="educationRootToUpdate">The EducationRoot to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{EducationRoot}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationRoot>> UpdateResponseAsync(EducationRoot educationRootToUpdate, CancellationToken cancellationToken)
+        {
+			if (educationRootToUpdate.AdditionalData != null)
+			{
+				if (educationRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					educationRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationRootToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (educationRootToUpdate.AdditionalData != null)
+            {
+                if (educationRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    educationRootToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, educationRootToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<EducationRoot>(educationRootToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

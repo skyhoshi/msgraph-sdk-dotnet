@@ -106,6 +106,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DirectoryRole> UpdateAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Updates the specified DirectoryRole using PATCH and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleToUpdate">The DirectoryRole to update.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> UpdateResponseAsync(DirectoryRole directoryRoleToUpdate);
+
+        /// <summary>
+        /// Updates the specified DirectoryRole using PATCH and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
+        /// </summary>
+        /// <param name="directoryRoleToUpdate">The DirectoryRole to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> UpdateResponseAsync(DirectoryRole directoryRoleToUpdate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

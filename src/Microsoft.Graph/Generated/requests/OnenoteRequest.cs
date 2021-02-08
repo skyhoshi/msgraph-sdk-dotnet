@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Onenote using PATCH and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToUpdate">The Onenote to update.</param>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Onenote>> UpdateResponseAsync(Onenote onenoteToUpdate)
+        {
+            return this.UpdateResponseAsync(onenoteToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Onenote using PATCH and returns a <see cref="GraphResponse{Onenote}"/> object.
+        /// </summary>
+        /// <param name="onenoteToUpdate">The Onenote to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Onenote}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Onenote>> UpdateResponseAsync(Onenote onenoteToUpdate, CancellationToken cancellationToken)
+        {
+			if (onenoteToUpdate.AdditionalData != null)
+			{
+				if (onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (onenoteToUpdate.AdditionalData != null)
+            {
+                if (onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    onenoteToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, onenoteToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Onenote>(onenoteToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

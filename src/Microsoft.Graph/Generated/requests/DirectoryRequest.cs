@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified Directory using PATCH and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// </summary>
+        /// <param name="directoryToUpdate">The Directory to update.</param>
+        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Directory>> UpdateResponseAsync(Directory directoryToUpdate)
+        {
+            return this.UpdateResponseAsync(directoryToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified Directory using PATCH and returns a <see cref="GraphResponse{Directory}"/> object.
+        /// </summary>
+        /// <param name="directoryToUpdate">The Directory to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{Directory}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Directory>> UpdateResponseAsync(Directory directoryToUpdate, CancellationToken cancellationToken)
+        {
+			if (directoryToUpdate.AdditionalData != null)
+			{
+				if (directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (directoryToUpdate.AdditionalData != null)
+            {
+                if (directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    directoryToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, directoryToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<Directory>(directoryToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

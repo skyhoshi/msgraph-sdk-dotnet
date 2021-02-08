@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DomainDnsUnavailableRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsUnavailableRecordToUpdate">The DomainDnsUnavailableRecord to update.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DomainDnsUnavailableRecord>> UpdateResponseAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToUpdate)
+        {
+            return this.UpdateResponseAsync(domainDnsUnavailableRecordToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DomainDnsUnavailableRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsUnavailableRecordToUpdate">The DomainDnsUnavailableRecord to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsUnavailableRecord>> UpdateResponseAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToUpdate, CancellationToken cancellationToken)
+        {
+			if (domainDnsUnavailableRecordToUpdate.AdditionalData != null)
+			{
+				if (domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsUnavailableRecordToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (domainDnsUnavailableRecordToUpdate.AdditionalData != null)
+            {
+                if (domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    domainDnsUnavailableRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsUnavailableRecordToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DomainDnsUnavailableRecord>(domainDnsUnavailableRecordToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

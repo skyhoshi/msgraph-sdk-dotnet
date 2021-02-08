@@ -80,6 +80,22 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TeamsTemplate> UpdateAsync(TeamsTemplate teamsTemplateToUpdate, CancellationToken cancellationToken);
 
 		/// <summary>
+        /// Updates the specified TeamsTemplate using PATCH and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="teamsTemplateToUpdate">The TeamsTemplate to update.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> UpdateResponseAsync(TeamsTemplate teamsTemplateToUpdate);
+
+        /// <summary>
+        /// Updates the specified TeamsTemplate using PATCH and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="teamsTemplateToUpdate">The TeamsTemplate to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> UpdateResponseAsync(TeamsTemplate teamsTemplateToUpdate, CancellationToken cancellationToken);
+
+		/// <summary>
         /// Deletes the specified TeamsTemplate.
         /// </summary>
         /// <returns>The task to await.</returns>

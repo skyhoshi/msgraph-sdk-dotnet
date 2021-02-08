@@ -198,6 +198,56 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Updates the specified DomainDnsCnameRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToUpdate">The DomainDnsCnameRecord to update.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> UpdateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate)
+        {
+            return this.UpdateResponseAsync(domainDnsCnameRecordToUpdate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Updates the specified DomainDnsCnameRecord using PATCH and returns a <see cref="GraphResponse{DomainDnsCnameRecord}"/> object.
+        /// </summary>
+        /// <param name="domainDnsCnameRecordToUpdate">The DomainDnsCnameRecord to update.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
+        /// <returns>The <see cref="GraphResponse{DomainDnsCnameRecord}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DomainDnsCnameRecord>> UpdateResponseAsync(DomainDnsCnameRecord domainDnsCnameRecordToUpdate, CancellationToken cancellationToken)
+        {
+			if (domainDnsCnameRecordToUpdate.AdditionalData != null)
+			{
+				if (domainDnsCnameRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+					domainDnsCnameRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+				{
+					throw new ClientException(
+						new Error
+						{
+							Code = GeneratedErrorConstants.Codes.NotAllowed,
+							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsCnameRecordToUpdate.GetType().Name)
+						});
+				}
+			}
+            if (domainDnsCnameRecordToUpdate.AdditionalData != null)
+            {
+                if (domainDnsCnameRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
+                    domainDnsCnameRecordToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
+                {
+                    throw new ClientException(
+                        new Error
+                        {
+                            Code = GeneratedErrorConstants.Codes.NotAllowed,
+                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, domainDnsCnameRecordToUpdate.GetType().Name)
+                        });
+                }
+            }
+            this.ContentType = "application/json";
+            this.Method = "PATCH";
+            return await this.SendAsyncWithGraphResponse<DomainDnsCnameRecord>(domainDnsCnameRecordToUpdate, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>
