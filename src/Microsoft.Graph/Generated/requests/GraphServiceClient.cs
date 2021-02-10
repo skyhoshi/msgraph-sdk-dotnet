@@ -77,6 +77,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodConfigurations request builder.
+        /// </summary>
+        public IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations
+        {
+            get
+            {
+                return new GraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder(this.BaseUrl + "/authenticationMethodConfigurations", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
         /// </summary>
         public IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders
@@ -436,6 +447,17 @@ namespace Microsoft.Graph
             get
             {
                 return new AuditLogRootRequestBuilder(this.BaseUrl + "/auditLogs", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodsPolicy request builder.
+        /// </summary>
+        public IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        {
+            get
+            {
+                return new AuthenticationMethodsPolicyRequestBuilder(this.BaseUrl + "/authenticationMethodsPolicy", this);
             }
         }
     
