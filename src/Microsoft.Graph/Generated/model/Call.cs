@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets chat info.
-        /// The chat information. Required information for joining a meeting.
+        /// The chat information. Required information for meeting scenarios.
         /// </summary>
         [JsonPropertyName("chatInfo")]
         public ChatInfo ChatInfo { get; set; }
@@ -71,13 +71,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets incoming context.
+        /// The context associated with an incoming call. Read-only. Server generated.
         /// </summary>
         [JsonPropertyName("incomingContext")]
         public IncomingContext IncomingContext { get; set; }
     
         /// <summary>
         /// Gets or sets media config.
-        /// The media configuration. Required.
+        /// The media configuration. Required information for creating peer to peer calls or joining meetings.
         /// </summary>
         [JsonPropertyName("mediaConfig")]
         public MediaConfig MediaConfig { get; set; }
@@ -91,7 +92,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets meeting info.
-        /// The meeting information that's required for joining a meeting.
+        /// The meeting information. Required information for meeting scenarios.
         /// </summary>
         [JsonPropertyName("meetingInfo")]
         public MeetingInfo MeetingInfo { get; set; }
@@ -152,6 +153,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transcription.
+        /// The transcription information for the call. Read-only.
         /// </summary>
         [JsonPropertyName("transcription")]
         public CallTranscriptionInfo Transcription { get; set; }

@@ -27,6 +27,11 @@ namespace Microsoft.Graph
         IGraphServiceUsersCollectionRequestBuilder Users { get; }
     
         /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodConfigurations request builder.
+        /// </summary>
+        IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentityProviders request builder.
         /// </summary>
         IGraphServiceIdentityProvidersCollectionRequestBuilder IdentityProviders { get; }
@@ -190,6 +195,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServiceAuditLogs request builder.
         /// </summary>
         IAuditLogRootRequestBuilder AuditLogs { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodsPolicy request builder.
+        /// </summary>
+        IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get; }
     
         /// <summary>
         /// Gets the GraphServiceIdentity request builder.

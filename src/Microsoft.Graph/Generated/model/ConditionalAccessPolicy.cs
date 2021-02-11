@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// Not used.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

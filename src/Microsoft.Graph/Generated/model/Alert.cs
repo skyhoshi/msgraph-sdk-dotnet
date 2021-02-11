@@ -141,6 +141,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets history states.
+        /// A collection of alertHistoryStates comprising an audit log of all updates made to an alert.
         /// </summary>
         [JsonPropertyName("historyStates")]
         public IEnumerable<AlertHistoryState> HistoryStates { get; set; }

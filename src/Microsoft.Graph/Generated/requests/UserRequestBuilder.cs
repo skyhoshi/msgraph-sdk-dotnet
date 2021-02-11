@@ -531,6 +531,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Authentication.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationRequestBuilder"/>.</returns>
+        public IAuthenticationRequestBuilder Authentication
+        {
+            get
+            {
+                return new AuthenticationRequestBuilder(this.AppendSegmentToRequestUrl("authentication"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>

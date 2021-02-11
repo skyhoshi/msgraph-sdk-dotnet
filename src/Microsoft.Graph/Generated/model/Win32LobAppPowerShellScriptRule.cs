@@ -71,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets runAsAccount.
-        /// The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context.
+        /// The execution context of the script. Do not specify this value if the rule is used for detection. Script detection rules will run in the same context as the associated app install context. Possible values are: system, user.
         /// </summary>
         [JsonPropertyName("runAsAccount")]
         public RunAsAccountType? RunAsAccount { get; set; }

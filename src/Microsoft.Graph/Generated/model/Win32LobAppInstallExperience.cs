@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets runAsAccount.
-        /// Indicates the type of execution context the app runs in.
+        /// Indicates the type of execution context the app runs in. Possible values are: system, user.
         /// </summary>
         [JsonPropertyName("runAsAccount")]
         public RunAsAccountType? RunAsAccount { get; set; }

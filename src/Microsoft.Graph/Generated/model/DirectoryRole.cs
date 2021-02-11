@@ -58,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scoped members.
+        /// Members of this directory role that are scoped to administrative units. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("scopedMembers")]
         public IDirectoryRoleScopedMembersCollectionPage ScopedMembers { get; set; }

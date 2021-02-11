@@ -30,30 +30,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignedByGroup.
+        /// The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
         /// </summary>
         [JsonPropertyName("assignedByGroup")]
         public string AssignedByGroup { get; set; }
     
         /// <summary>
         /// Gets or sets disabledPlans.
+        /// The service plans that are disabled in this assignment. Read-Only.
         /// </summary>
         [JsonPropertyName("disabledPlans")]
         public IEnumerable<Guid> DisabledPlans { get; set; }
     
         /// <summary>
         /// Gets or sets error.
+        /// License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. Possible values: CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Others. For more information on how to identify and resolve license assignment errors see here.
         /// </summary>
         [JsonPropertyName("error")]
         public string Error { get; set; }
     
         /// <summary>
         /// Gets or sets skuId.
+        /// The unique identifier for the SKU. Read-Only.
         /// </summary>
         [JsonPropertyName("skuId")]
         public Guid? SkuId { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// Indicate the current state of this assignment. Read-Only. Possible values: Active, ActiveWithError, Disabled and Error.
         /// </summary>
         [JsonPropertyName("state")]
         public string State { get; set; }

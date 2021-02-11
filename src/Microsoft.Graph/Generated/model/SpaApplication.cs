@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets redirectUris.
+        /// Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.
         /// </summary>
         [JsonPropertyName("redirectUris")]
         public IEnumerable<string> RedirectUris { get; set; }

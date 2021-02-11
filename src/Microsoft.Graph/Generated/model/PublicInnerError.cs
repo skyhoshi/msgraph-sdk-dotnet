@@ -30,24 +30,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets code.
+        /// The error code.
         /// </summary>
         [JsonPropertyName("code")]
         public string Code { get; set; }
     
         /// <summary>
         /// Gets or sets details.
+        /// A collection of error details.
         /// </summary>
         [JsonPropertyName("details")]
         public IEnumerable<PublicErrorDetail> Details { get; set; }
     
         /// <summary>
         /// Gets or sets message.
+        /// The error message.
         /// </summary>
         [JsonPropertyName("message")]
         public string Message { get; set; }
     
         /// <summary>
         /// Gets or sets target.
+        /// The target of the error.
         /// </summary>
         [JsonPropertyName("target")]
         public string Target { get; set; }
