@@ -32,6 +32,16 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
 
         #region Not implemented
 
+        public Task<GraphResponse<UserEventsCollectionResponse>> GetResponseAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<GraphResponse<UserEventsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public string ContentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public IList<HeaderOption> Headers => throw new NotImplementedException();
