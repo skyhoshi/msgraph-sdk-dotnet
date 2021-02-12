@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified AndroidWorkProfileGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AndroidWorkProfileGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileGeneralDeviceConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AndroidWorkProfileGeneralDeviceConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified AndroidWorkProfileGeneralDeviceConfiguration using PATCH.
         /// </summary>
         /// <param name="androidWorkProfileGeneralDeviceConfigurationToUpdate">The AndroidWorkProfileGeneralDeviceConfiguration to update.</param>

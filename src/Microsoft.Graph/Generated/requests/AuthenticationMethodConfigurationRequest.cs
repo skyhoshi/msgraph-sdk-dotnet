@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified AuthenticationMethodConfiguration and returns a <see cref="GraphResponse{AuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AuthenticationMethodConfiguration and returns a <see cref="GraphResponse{AuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthenticationMethodConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified AuthenticationMethodConfiguration using PATCH.
         /// </summary>
         /// <param name="authenticationMethodConfigurationToUpdate">The AuthenticationMethodConfiguration to update.</param>

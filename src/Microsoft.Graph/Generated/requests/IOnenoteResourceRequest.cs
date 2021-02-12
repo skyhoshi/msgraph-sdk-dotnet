@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OnenoteResource> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OnenoteResource and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnenoteResource and returns a <see cref="GraphResponse{OnenoteResource}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OnenoteResource using PATCH.
         /// </summary>
         /// <param name="onenoteResourceToUpdate">The OnenoteResource to update.</param>

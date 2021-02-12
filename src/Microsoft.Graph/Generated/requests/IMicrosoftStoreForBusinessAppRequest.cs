@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MicrosoftStoreForBusinessApp> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MicrosoftStoreForBusinessApp and returns a <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftStoreForBusinessApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftStoreForBusinessApp>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MicrosoftStoreForBusinessApp using PATCH.
         /// </summary>
         /// <param name="microsoftStoreForBusinessAppToUpdate">The MicrosoftStoreForBusinessApp to update.</param>

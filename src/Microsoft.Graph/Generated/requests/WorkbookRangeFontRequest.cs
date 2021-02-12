@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkbookRangeFont and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookRangeFont and returns a <see cref="GraphResponse{WorkbookRangeFont}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeFont}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeFont>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookRangeFont>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkbookRangeFont using PATCH.
         /// </summary>
         /// <param name="workbookRangeFontToUpdate">The WorkbookRangeFont to update.</param>

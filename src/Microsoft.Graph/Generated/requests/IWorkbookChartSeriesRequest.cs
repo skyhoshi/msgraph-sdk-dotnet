@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookChartSeries> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookChartSeries and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookChartSeries and returns a <see cref="GraphResponse{WorkbookChartSeries}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookChartSeries using PATCH.
         /// </summary>
         /// <param name="workbookChartSeriesToUpdate">The WorkbookChartSeries to update.</param>

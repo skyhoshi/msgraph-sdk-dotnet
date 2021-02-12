@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DriveItem> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DriveItem and returns a <see cref="GraphResponse{DriveItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DriveItem>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DriveItem using PATCH.
         /// </summary>
         /// <param name="driveItemToUpdate">The DriveItem to update.</param>

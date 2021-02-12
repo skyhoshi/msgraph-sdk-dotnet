@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkforceIntegration and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkforceIntegration and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkforceIntegration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkforceIntegration using PATCH.
         /// </summary>
         /// <param name="workforceIntegrationToUpdate">The WorkforceIntegration to update.</param>

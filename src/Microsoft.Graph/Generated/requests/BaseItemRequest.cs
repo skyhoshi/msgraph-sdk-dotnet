@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified BaseItem and returns a <see cref="GraphResponse{BaseItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BaseItem>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified BaseItem and returns a <see cref="GraphResponse{BaseItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BaseItem>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<BaseItem>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified BaseItem using PATCH.
         /// </summary>
         /// <param name="baseItemToUpdate">The BaseItem to update.</param>

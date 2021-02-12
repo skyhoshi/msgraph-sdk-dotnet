@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidManagedAppRegistration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AndroidManagedAppRegistration and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidManagedAppRegistration and returns a <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppRegistration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AndroidManagedAppRegistration using PATCH.
         /// </summary>
         /// <param name="androidManagedAppRegistrationToUpdate">The AndroidManagedAppRegistration to update.</param>

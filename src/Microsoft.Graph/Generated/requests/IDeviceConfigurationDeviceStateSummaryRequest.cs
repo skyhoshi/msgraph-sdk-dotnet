@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceConfigurationDeviceStateSummary> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DeviceConfigurationDeviceStateSummary and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStateSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationDeviceStateSummary and returns a <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DeviceConfigurationDeviceStateSummary using PATCH.
         /// </summary>
         /// <param name="deviceConfigurationDeviceStateSummaryToUpdate">The DeviceConfigurationDeviceStateSummary to update.</param>

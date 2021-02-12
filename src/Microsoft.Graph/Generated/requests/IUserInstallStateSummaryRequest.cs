@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<UserInstallStateSummary> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified UserInstallStateSummary and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UserInstallStateSummary and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified UserInstallStateSummary using PATCH.
         /// </summary>
         /// <param name="userInstallStateSummaryToUpdate">The UserInstallStateSummary to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified DeviceManagementExchangeConnector and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceManagementExchangeConnector and returns a <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnector>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified DeviceManagementExchangeConnector using PATCH.
         /// </summary>
         /// <param name="deviceManagementExchangeConnectorToUpdate">The DeviceManagementExchangeConnector to update.</param>

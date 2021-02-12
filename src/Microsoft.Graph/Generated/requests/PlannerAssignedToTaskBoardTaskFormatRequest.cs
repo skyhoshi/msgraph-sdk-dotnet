@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified PlannerAssignedToTaskBoardTaskFormat and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PlannerAssignedToTaskBoardTaskFormat and returns a <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PlannerAssignedToTaskBoardTaskFormat>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified PlannerAssignedToTaskBoardTaskFormat using PATCH.
         /// </summary>
         /// <param name="plannerAssignedToTaskBoardTaskFormatToUpdate">The PlannerAssignedToTaskBoardTaskFormat to update.</param>

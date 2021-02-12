@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MailFolder> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MailFolder and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MailFolder and returns a <see cref="GraphResponse{MailFolder}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailFolder>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MailFolder using PATCH.
         /// </summary>
         /// <param name="mailFolderToUpdate">The MailFolder to update.</param>

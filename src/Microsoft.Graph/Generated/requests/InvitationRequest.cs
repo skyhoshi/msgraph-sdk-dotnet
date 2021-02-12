@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Invitation and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Invitation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Invitation and returns a <see cref="GraphResponse{Invitation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Invitation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Invitation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Invitation using PATCH.
         /// </summary>
         /// <param name="invitationToUpdate">The Invitation to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified DeviceEnrollmentLimitConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified DeviceEnrollmentLimitConfiguration and returns a <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<DeviceEnrollmentLimitConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified DeviceEnrollmentLimitConfiguration using PATCH.
         /// </summary>
         /// <param name="deviceEnrollmentLimitConfigurationToUpdate">The DeviceEnrollmentLimitConfiguration to update.</param>

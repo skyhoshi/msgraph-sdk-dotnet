@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OutlookUser> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OutlookUser and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OutlookUser and returns a <see cref="GraphResponse{OutlookUser}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookUser>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OutlookUser using PATCH.
         /// </summary>
         /// <param name="outlookUserToUpdate">The OutlookUser to update.</param>

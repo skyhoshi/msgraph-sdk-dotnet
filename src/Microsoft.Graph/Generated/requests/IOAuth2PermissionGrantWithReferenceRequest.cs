@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The OAuth2PermissionGrant.</returns>
         System.Threading.Tasks.Task<OAuth2PermissionGrant> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified OAuth2PermissionGrant and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OAuth2PermissionGrant and returns a <see cref="GraphResponse{OAuth2PermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified OAuth2PermissionGrant using POST.
         /// </summary>

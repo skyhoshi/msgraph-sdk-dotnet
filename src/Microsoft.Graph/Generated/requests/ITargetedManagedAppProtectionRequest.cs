@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TargetedManagedAppProtection> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified TargetedManagedAppProtection and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TargetedManagedAppProtection and returns a <see cref="GraphResponse{TargetedManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified TargetedManagedAppProtection using PATCH.
         /// </summary>
         /// <param name="targetedManagedAppProtectionToUpdate">The TargetedManagedAppProtection to update.</param>

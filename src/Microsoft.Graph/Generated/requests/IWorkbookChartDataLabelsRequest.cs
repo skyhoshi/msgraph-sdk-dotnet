@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookChartDataLabels> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookChartDataLabels and returns a <see cref="GraphResponse{WorkbookChartDataLabels}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabels}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabels>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookChartDataLabels and returns a <see cref="GraphResponse{WorkbookChartDataLabels}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabels}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabels>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookChartDataLabels using PATCH.
         /// </summary>
         /// <param name="workbookChartDataLabelsToUpdate">The WorkbookChartDataLabels to update.</param>

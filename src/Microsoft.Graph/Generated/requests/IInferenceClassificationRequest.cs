@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<InferenceClassification> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified InferenceClassification and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified InferenceClassification and returns a <see cref="GraphResponse{InferenceClassification}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InferenceClassification}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InferenceClassification>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified InferenceClassification using PATCH.
         /// </summary>
         /// <param name="inferenceClassificationToUpdate">The InferenceClassification to update.</param>

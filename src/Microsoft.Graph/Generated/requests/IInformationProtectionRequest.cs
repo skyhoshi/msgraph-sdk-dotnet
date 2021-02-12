@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<InformationProtection> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified InformationProtection and returns a <see cref="GraphResponse{InformationProtection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{InformationProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtection>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified InformationProtection and returns a <see cref="GraphResponse{InformationProtection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{InformationProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<InformationProtection>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified InformationProtection using PATCH.
         /// </summary>
         /// <param name="informationProtectionToUpdate">The InformationProtection to update.</param>

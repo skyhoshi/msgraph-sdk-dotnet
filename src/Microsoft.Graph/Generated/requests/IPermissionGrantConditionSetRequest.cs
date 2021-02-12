@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PermissionGrantConditionSet> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified PermissionGrantConditionSet and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PermissionGrantConditionSet and returns a <see cref="GraphResponse{PermissionGrantConditionSet}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantConditionSet}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantConditionSet>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified PermissionGrantConditionSet using PATCH.
         /// </summary>
         /// <param name="permissionGrantConditionSetToUpdate">The PermissionGrantConditionSet to update.</param>

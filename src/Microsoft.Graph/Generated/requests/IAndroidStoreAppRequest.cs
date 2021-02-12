@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidStoreApp> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AndroidStoreApp and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidStoreApp and returns a <see cref="GraphResponse{AndroidStoreApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidStoreApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidStoreApp>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AndroidStoreApp using PATCH.
         /// </summary>
         /// <param name="androidStoreAppToUpdate">The AndroidStoreApp to update.</param>

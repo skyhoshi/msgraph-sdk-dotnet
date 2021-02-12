@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified HomeRealmDiscoveryPolicy and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified HomeRealmDiscoveryPolicy and returns a <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified HomeRealmDiscoveryPolicy using POST.
         /// </summary>

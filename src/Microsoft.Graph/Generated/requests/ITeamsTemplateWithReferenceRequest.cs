@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The TeamsTemplate.</returns>
         System.Threading.Tasks.Task<TeamsTemplate> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified TeamsTemplate and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TeamsTemplate and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified TeamsTemplate using POST.
         /// </summary>

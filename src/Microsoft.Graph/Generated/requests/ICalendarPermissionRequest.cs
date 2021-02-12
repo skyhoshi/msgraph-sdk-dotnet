@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<CalendarPermission> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified CalendarPermission and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified CalendarPermission and returns a <see cref="GraphResponse{CalendarPermission}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified CalendarPermission using PATCH.
         /// </summary>
         /// <param name="calendarPermissionToUpdate">The CalendarPermission to update.</param>

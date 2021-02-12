@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AppleDeviceFeaturesConfigurationBase and returns a <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AppleDeviceFeaturesConfigurationBase using PATCH.
         /// </summary>
         /// <param name="appleDeviceFeaturesConfigurationBaseToUpdate">The AppleDeviceFeaturesConfigurationBase to update.</param>

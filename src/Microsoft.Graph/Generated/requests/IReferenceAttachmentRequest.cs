@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ReferenceAttachment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ReferenceAttachment and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ReferenceAttachment and returns a <see cref="GraphResponse{ReferenceAttachment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReferenceAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReferenceAttachment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ReferenceAttachment using PATCH.
         /// </summary>
         /// <param name="referenceAttachmentToUpdate">The ReferenceAttachment to update.</param>

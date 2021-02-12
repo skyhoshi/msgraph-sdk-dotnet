@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SubscribedSku> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SubscribedSku and returns a <see cref="GraphResponse{SubscribedSku}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SubscribedSku and returns a <see cref="GraphResponse{SubscribedSku}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SubscribedSku using PATCH.
         /// </summary>
         /// <param name="subscribedSkuToUpdate">The SubscribedSku to update.</param>

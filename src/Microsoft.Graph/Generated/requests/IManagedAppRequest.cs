@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagedApp> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ManagedApp and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedApp and returns a <see cref="GraphResponse{ManagedApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedApp>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ManagedApp using PATCH.
         /// </summary>
         /// <param name="managedAppToUpdate">The ManagedApp to update.</param>

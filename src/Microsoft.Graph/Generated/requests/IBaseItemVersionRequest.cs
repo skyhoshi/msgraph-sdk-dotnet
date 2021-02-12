@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<BaseItemVersion> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified BaseItemVersion and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified BaseItemVersion and returns a <see cref="GraphResponse{BaseItemVersion}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItemVersion}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<BaseItemVersion>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified BaseItemVersion using PATCH.
         /// </summary>
         /// <param name="baseItemVersionToUpdate">The BaseItemVersion to update.</param>

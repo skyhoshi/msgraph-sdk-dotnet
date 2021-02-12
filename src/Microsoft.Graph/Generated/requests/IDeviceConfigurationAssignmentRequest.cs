@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceConfigurationAssignment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DeviceConfigurationAssignment and returns a <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceConfigurationAssignment and returns a <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DeviceConfigurationAssignment using PATCH.
         /// </summary>
         /// <param name="deviceConfigurationAssignmentToUpdate">The DeviceConfigurationAssignment to update.</param>

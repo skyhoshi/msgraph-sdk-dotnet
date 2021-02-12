@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified OfficeGraphInsights and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OfficeGraphInsights}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OfficeGraphInsights and returns a <see cref="GraphResponse{OfficeGraphInsights}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfficeGraphInsights}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfficeGraphInsights>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OfficeGraphInsights>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified OfficeGraphInsights using PATCH.
         /// </summary>
         /// <param name="officeGraphInsightsToUpdate">The OfficeGraphInsights to update.</param>

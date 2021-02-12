@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified SoftwareUpdateStatusSummary and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SoftwareUpdateStatusSummary and returns a <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SoftwareUpdateStatusSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SoftwareUpdateStatusSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SoftwareUpdateStatusSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified SoftwareUpdateStatusSummary using POST.
         /// </summary>

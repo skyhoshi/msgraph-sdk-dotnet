@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkbookApplication and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookApplication and returns a <see cref="GraphResponse{WorkbookApplication}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookApplication}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookApplication>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookApplication>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkbookApplication using PATCH.
         /// </summary>
         /// <param name="workbookApplicationToUpdate">The WorkbookApplication to update.</param>

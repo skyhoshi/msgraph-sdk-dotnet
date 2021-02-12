@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagedEBookAssignment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ManagedEBookAssignment and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedEBookAssignment and returns a <see cref="GraphResponse{ManagedEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedEBookAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ManagedEBookAssignment using PATCH.
         /// </summary>
         /// <param name="managedEBookAssignmentToUpdate">The ManagedEBookAssignment to update.</param>

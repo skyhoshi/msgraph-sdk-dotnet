@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DeviceComplianceScheduledActionForRule and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceComplianceScheduledActionForRule and returns a <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DeviceComplianceScheduledActionForRule using PATCH.
         /// </summary>
         /// <param name="deviceComplianceScheduledActionForRuleToUpdate">The DeviceComplianceScheduledActionForRule to update.</param>

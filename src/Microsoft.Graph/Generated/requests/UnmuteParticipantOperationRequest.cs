@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified UnmuteParticipantOperation and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UnmuteParticipantOperation and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UnmuteParticipantOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified UnmuteParticipantOperation using PATCH.
         /// </summary>
         /// <param name="unmuteParticipantOperationToUpdate">The UnmuteParticipantOperation to update.</param>

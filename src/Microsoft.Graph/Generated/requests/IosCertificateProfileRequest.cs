@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified IosCertificateProfile and returns a <see cref="GraphResponse{IosCertificateProfile}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosCertificateProfile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosCertificateProfile>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosCertificateProfile and returns a <see cref="GraphResponse{IosCertificateProfile}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosCertificateProfile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosCertificateProfile>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosCertificateProfile>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified IosCertificateProfile using PATCH.
         /// </summary>
         /// <param name="iosCertificateProfileToUpdate">The IosCertificateProfile to update.</param>

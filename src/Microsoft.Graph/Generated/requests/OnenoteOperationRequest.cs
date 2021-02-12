@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified OnenoteOperation and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OnenoteOperation and returns a <see cref="GraphResponse{OnenoteOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OnenoteOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified OnenoteOperation using PATCH.
         /// </summary>
         /// <param name="onenoteOperationToUpdate">The OnenoteOperation to update.</param>

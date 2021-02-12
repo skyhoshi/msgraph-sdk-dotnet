@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<EnrollmentConfigurationAssignment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EnrollmentConfigurationAssignment and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified EnrollmentConfigurationAssignment using PATCH.
         /// </summary>
         /// <param name="enrollmentConfigurationAssignmentToUpdate">The EnrollmentConfigurationAssignment to update.</param>

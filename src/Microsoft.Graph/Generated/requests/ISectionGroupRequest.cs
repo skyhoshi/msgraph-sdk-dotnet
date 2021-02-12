@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SectionGroup> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SectionGroup and returns a <see cref="GraphResponse{SectionGroup}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SectionGroup and returns a <see cref="GraphResponse{SectionGroup}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SectionGroup>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SectionGroup using PATCH.
         /// </summary>
         /// <param name="sectionGroupToUpdate">The SectionGroup to update.</param>

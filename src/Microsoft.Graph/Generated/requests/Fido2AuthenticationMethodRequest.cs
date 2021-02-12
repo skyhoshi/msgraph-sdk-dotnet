@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Fido2AuthenticationMethod and returns a <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Fido2AuthenticationMethod>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Fido2AuthenticationMethod using PATCH.
         /// </summary>
         /// <param name="fido2AuthenticationMethodToUpdate">The Fido2AuthenticationMethod to update.</param>

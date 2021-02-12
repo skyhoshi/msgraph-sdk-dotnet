@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<EducationUser> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified EducationUser and returns a <see cref="GraphResponse{EducationUser}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationUser>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EducationUser and returns a <see cref="GraphResponse{EducationUser}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationUser>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified EducationUser using PATCH.
         /// </summary>
         /// <param name="educationUserToUpdate">The EducationUser to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceCompliancePolicyState> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DeviceCompliancePolicyState and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceCompliancePolicyState and returns a <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DeviceCompliancePolicyState using PATCH.
         /// </summary>
         /// <param name="deviceCompliancePolicyStateToUpdate">The DeviceCompliancePolicyState to update.</param>

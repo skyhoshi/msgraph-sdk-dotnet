@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkbookFilter and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookFilter and returns a <see cref="GraphResponse{WorkbookFilter}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFilter}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookFilter>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookFilter>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkbookFilter using PATCH.
         /// </summary>
         /// <param name="workbookFilterToUpdate">The WorkbookFilter to update.</param>

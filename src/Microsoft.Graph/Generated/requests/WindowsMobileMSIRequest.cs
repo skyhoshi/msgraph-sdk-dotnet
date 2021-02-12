@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WindowsMobileMSI and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsMobileMSI and returns a <see cref="GraphResponse{WindowsMobileMSI}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsMobileMSI>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WindowsMobileMSI using PATCH.
         /// </summary>
         /// <param name="windowsMobileMSIToUpdate">The WindowsMobileMSI to update.</param>

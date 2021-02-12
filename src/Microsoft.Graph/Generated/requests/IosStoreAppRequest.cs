@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified IosStoreApp and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosStoreApp and returns a <see cref="GraphResponse{IosStoreApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosStoreApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosStoreApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosStoreApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified IosStoreApp using PATCH.
         /// </summary>
         /// <param name="iosStoreAppToUpdate">The IosStoreApp to update.</param>

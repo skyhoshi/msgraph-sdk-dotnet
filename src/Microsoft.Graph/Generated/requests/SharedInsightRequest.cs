@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified SharedInsight and returns a <see cref="GraphResponse{SharedInsight}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharedInsight>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SharedInsight and returns a <see cref="GraphResponse{SharedInsight}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SharedInsight>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SharedInsight>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified SharedInsight using PATCH.
         /// </summary>
         /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ThreatAssessmentResult and returns a <see cref="GraphResponse{ThreatAssessmentResult}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ThreatAssessmentResult and returns a <see cref="GraphResponse{ThreatAssessmentResult}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ThreatAssessmentResult>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ThreatAssessmentResult using PATCH.
         /// </summary>
         /// <param name="threatAssessmentResultToUpdate">The ThreatAssessmentResult to update.</param>

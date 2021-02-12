@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified TodoTask and returns a <see cref="GraphResponse{TodoTask}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TodoTask}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TodoTask>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified TodoTask and returns a <see cref="GraphResponse{TodoTask}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TodoTask}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TodoTask>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TodoTask>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified TodoTask using PATCH.
         /// </summary>
         /// <param name="todoTaskToUpdate">The TodoTask to update.</param>

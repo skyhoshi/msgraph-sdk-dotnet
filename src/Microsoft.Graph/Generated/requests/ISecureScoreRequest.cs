@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SecureScore> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SecureScore and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SecureScore and returns a <see cref="GraphResponse{SecureScore}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScore>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SecureScore using PATCH.
         /// </summary>
         /// <param name="secureScoreToUpdate">The SecureScore to update.</param>

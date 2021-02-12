@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TelecomExpenseManagementPartner> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TelecomExpenseManagementPartner and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified TelecomExpenseManagementPartner using PATCH.
         /// </summary>
         /// <param name="telecomExpenseManagementPartnerToUpdate">The TelecomExpenseManagementPartner to update.</param>

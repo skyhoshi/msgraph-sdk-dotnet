@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TodoTaskList> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified TodoTaskList and returns a <see cref="GraphResponse{TodoTaskList}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TodoTaskList and returns a <see cref="GraphResponse{TodoTaskList}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified TodoTaskList using PATCH.
         /// </summary>
         /// <param name="todoTaskListToUpdate">The TodoTaskList to update.</param>

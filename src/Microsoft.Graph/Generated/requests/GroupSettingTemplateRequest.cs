@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified GroupSettingTemplate and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified GroupSettingTemplate and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<GroupSettingTemplate>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified GroupSettingTemplate using PATCH.
         /// </summary>
         /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>

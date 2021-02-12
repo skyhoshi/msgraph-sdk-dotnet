@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<UserSettings> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified UserSettings and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UserSettings and returns a <see cref="GraphResponse{UserSettings}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserSettings}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserSettings>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified UserSettings using PATCH.
         /// </summary>
         /// <param name="userSettingsToUpdate">The UserSettings to update.</param>

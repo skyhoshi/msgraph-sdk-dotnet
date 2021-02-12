@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<CountryNamedLocation> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified CountryNamedLocation and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified CountryNamedLocation and returns a <see cref="GraphResponse{CountryNamedLocation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CountryNamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CountryNamedLocation>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified CountryNamedLocation using PATCH.
         /// </summary>
         /// <param name="countryNamedLocationToUpdate">The CountryNamedLocation to update.</param>

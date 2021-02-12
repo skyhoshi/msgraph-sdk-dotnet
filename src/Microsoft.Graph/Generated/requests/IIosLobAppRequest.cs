@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IosLobApp> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified IosLobApp and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosLobApp and returns a <see cref="GraphResponse{IosLobApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosLobApp>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified IosLobApp using PATCH.
         /// </summary>
         /// <param name="iosLobAppToUpdate">The IosLobApp to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IosManagedAppRegistration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified IosManagedAppRegistration and returns a <see cref="GraphResponse{IosManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosManagedAppRegistration and returns a <see cref="GraphResponse{IosManagedAppRegistration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified IosManagedAppRegistration using PATCH.
         /// </summary>
         /// <param name="iosManagedAppRegistrationToUpdate">The IosManagedAppRegistration to update.</param>

@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The TokenLifetimePolicy.</returns>
         System.Threading.Tasks.Task<TokenLifetimePolicy> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified TokenLifetimePolicy and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TokenLifetimePolicy and returns a <see cref="GraphResponse{TokenLifetimePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified TokenLifetimePolicy using POST.
         /// </summary>

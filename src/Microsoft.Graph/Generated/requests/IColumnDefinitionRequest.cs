@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ColumnDefinition> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ColumnDefinition and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ColumnDefinition and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ColumnDefinition using PATCH.
         /// </summary>
         /// <param name="columnDefinitionToUpdate">The ColumnDefinition to update.</param>

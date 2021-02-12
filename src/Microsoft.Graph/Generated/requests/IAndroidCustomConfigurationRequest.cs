@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidCustomConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AndroidCustomConfiguration and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidCustomConfiguration and returns a <see cref="GraphResponse{AndroidCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AndroidCustomConfiguration using PATCH.
         /// </summary>
         /// <param name="androidCustomConfigurationToUpdate">The AndroidCustomConfiguration to update.</param>

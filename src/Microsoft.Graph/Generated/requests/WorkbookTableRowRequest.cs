@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkbookTableRow and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableRow}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookTableRow and returns a <see cref="GraphResponse{WorkbookTableRow}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableRow}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookTableRow>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookTableRow>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkbookTableRow using PATCH.
         /// </summary>
         /// <param name="workbookTableRowToUpdate">The WorkbookTableRow to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TermsAndConditionsAcceptanceStatus> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified TermsAndConditionsAcceptanceStatus and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TermsAndConditionsAcceptanceStatus and returns a <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAcceptanceStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAcceptanceStatus>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified TermsAndConditionsAcceptanceStatus using PATCH.
         /// </summary>
         /// <param name="termsAndConditionsAcceptanceStatusToUpdate">The TermsAndConditionsAcceptanceStatus to update.</param>

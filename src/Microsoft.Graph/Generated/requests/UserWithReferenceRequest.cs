@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified User and returns a <see cref="GraphResponse{User}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<User>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified User and returns a <see cref="GraphResponse{User}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<User>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<User>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified User using POST.
         /// </summary>

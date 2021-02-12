@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SettingStateDeviceSummary> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SettingStateDeviceSummary and returns a <see cref="GraphResponse{SettingStateDeviceSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SettingStateDeviceSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SettingStateDeviceSummary>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SettingStateDeviceSummary using PATCH.
         /// </summary>
         /// <param name="settingStateDeviceSummaryToUpdate">The SettingStateDeviceSummary to update.</param>

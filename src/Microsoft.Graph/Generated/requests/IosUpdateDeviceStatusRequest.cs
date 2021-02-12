@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified IosUpdateDeviceStatus and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IosUpdateDeviceStatus and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified IosUpdateDeviceStatus using PATCH.
         /// </summary>
         /// <param name="iosUpdateDeviceStatusToUpdate">The IosUpdateDeviceStatus to update.</param>

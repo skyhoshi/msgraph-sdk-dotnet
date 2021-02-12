@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ShiftPreferences and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ShiftPreferences and returns a <see cref="GraphResponse{ShiftPreferences}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ShiftPreferences>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ShiftPreferences using PATCH.
         /// </summary>
         /// <param name="shiftPreferencesToUpdate">The ShiftPreferences to update.</param>

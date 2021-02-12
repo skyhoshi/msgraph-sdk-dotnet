@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WindowsUniversalAppX and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsUniversalAppX and returns a <see cref="GraphResponse{WindowsUniversalAppX}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUniversalAppX}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsUniversalAppX>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsUniversalAppX>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WindowsUniversalAppX using PATCH.
         /// </summary>
         /// <param name="windowsUniversalAppXToUpdate">The WindowsUniversalAppX to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified PlannerTaskDetails and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PlannerTaskDetails and returns a <see cref="GraphResponse{PlannerTaskDetails}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PlannerTaskDetails>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified PlannerTaskDetails using PATCH.
         /// </summary>
         /// <param name="plannerTaskDetailsToUpdate">The PlannerTaskDetails to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Authentication> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Authentication and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Authentication>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Authentication and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Authentication>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Authentication using PATCH.
         /// </summary>
         /// <param name="authenticationToUpdate">The Authentication to update.</param>

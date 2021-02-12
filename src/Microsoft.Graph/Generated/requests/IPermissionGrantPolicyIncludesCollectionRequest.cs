@@ -49,6 +49,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IPermissionGrantPolicyIncludesCollectionPage> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicyIncludesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PermissionGrantPolicyIncludesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicyIncludesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

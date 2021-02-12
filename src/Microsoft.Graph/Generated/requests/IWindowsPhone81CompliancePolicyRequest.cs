@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WindowsPhone81CompliancePolicy and returns a <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CompliancePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsPhone81CompliancePolicy and returns a <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WindowsPhone81CompliancePolicy using PATCH.
         /// </summary>
         /// <param name="windowsPhone81CompliancePolicyToUpdate">The WindowsPhone81CompliancePolicy to update.</param>

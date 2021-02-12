@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified CancelMediaProcessingOperation and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified CancelMediaProcessingOperation and returns a <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CancelMediaProcessingOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CancelMediaProcessingOperation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<CancelMediaProcessingOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified CancelMediaProcessingOperation using PATCH.
         /// </summary>
         /// <param name="cancelMediaProcessingOperationToUpdate">The CancelMediaProcessingOperation to update.</param>

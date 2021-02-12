@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ComplianceManagementPartner> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ComplianceManagementPartner and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ComplianceManagementPartner and returns a <see cref="GraphResponse{ComplianceManagementPartner}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ComplianceManagementPartner using PATCH.
         /// </summary>
         /// <param name="complianceManagementPartnerToUpdate">The ComplianceManagementPartner to update.</param>

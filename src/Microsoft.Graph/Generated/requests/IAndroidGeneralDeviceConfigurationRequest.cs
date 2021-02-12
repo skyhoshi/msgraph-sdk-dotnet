@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AndroidGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidGeneralDeviceConfiguration and returns a <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AndroidGeneralDeviceConfiguration using PATCH.
         /// </summary>
         /// <param name="androidGeneralDeviceConfigurationToUpdate">The AndroidGeneralDeviceConfiguration to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkbookOperation and returns a <see cref="GraphResponse{WorkbookOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookOperation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookOperation and returns a <see cref="GraphResponse{WorkbookOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookOperation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkbookOperation using PATCH.
         /// </summary>
         /// <param name="workbookOperationToUpdate">The WorkbookOperation to update.</param>

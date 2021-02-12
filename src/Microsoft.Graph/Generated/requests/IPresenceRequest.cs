@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Presence> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Presence and returns a <see cref="GraphResponse{Presence}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Presence>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Presence using PATCH.
         /// </summary>
         /// <param name="presenceToUpdate">The Presence to update.</param>

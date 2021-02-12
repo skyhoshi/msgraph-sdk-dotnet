@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The RoleDefinition.</returns>
         System.Threading.Tasks.Task<RoleDefinition> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified RoleDefinition and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified RoleDefinition and returns a <see cref="GraphResponse{RoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified RoleDefinition using POST.
         /// </summary>

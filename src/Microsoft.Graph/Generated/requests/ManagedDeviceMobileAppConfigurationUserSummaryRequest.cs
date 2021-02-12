@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ManagedDeviceMobileAppConfigurationUserSummary and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserSummary>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ManagedDeviceMobileAppConfigurationUserSummary and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserSummary}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserSummary>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationUserSummary>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ManagedDeviceMobileAppConfigurationUserSummary using PATCH.
         /// </summary>
         /// <param name="managedDeviceMobileAppConfigurationUserSummaryToUpdate">The ManagedDeviceMobileAppConfigurationUserSummary to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Notebook> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Notebook and returns a <see cref="GraphResponse{Notebook}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Notebook and returns a <see cref="GraphResponse{Notebook}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Notebook using PATCH.
         /// </summary>
         /// <param name="notebookToUpdate">The Notebook to update.</param>

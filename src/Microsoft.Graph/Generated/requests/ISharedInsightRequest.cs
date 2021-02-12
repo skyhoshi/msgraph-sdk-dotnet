@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SharedInsight> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SharedInsight and returns a <see cref="GraphResponse{SharedInsight}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SharedInsight and returns a <see cref="GraphResponse{SharedInsight}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedInsight>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SharedInsight using PATCH.
         /// </summary>
         /// <param name="sharedInsightToUpdate">The SharedInsight to update.</param>

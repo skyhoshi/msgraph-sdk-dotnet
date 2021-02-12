@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SharedDriveItem> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SharedDriveItem and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SharedDriveItem and returns a <see cref="GraphResponse{SharedDriveItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SharedDriveItem using PATCH.
         /// </summary>
         /// <param name="sharedDriveItemToUpdate">The SharedDriveItem to update.</param>

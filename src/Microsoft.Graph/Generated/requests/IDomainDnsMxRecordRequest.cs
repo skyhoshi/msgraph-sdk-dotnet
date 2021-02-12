@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DomainDnsMxRecord> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DomainDnsMxRecord and returns a <see cref="GraphResponse{DomainDnsMxRecord}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DomainDnsMxRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsMxRecord>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DomainDnsMxRecord and returns a <see cref="GraphResponse{DomainDnsMxRecord}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DomainDnsMxRecord}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DomainDnsMxRecord>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DomainDnsMxRecord using PATCH.
         /// </summary>
         /// <param name="domainDnsMxRecordToUpdate">The DomainDnsMxRecord to update.</param>

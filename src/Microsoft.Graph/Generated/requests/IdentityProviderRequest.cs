@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified IdentityProvider and returns a <see cref="GraphResponse{IdentityProvider}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified IdentityProvider and returns a <see cref="GraphResponse{IdentityProvider}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<IdentityProvider>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified IdentityProvider using PATCH.
         /// </summary>
         /// <param name="identityProviderToUpdate">The IdentityProvider to update.</param>

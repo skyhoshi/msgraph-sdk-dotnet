@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified PolicyRoot and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified PolicyRoot and returns a <see cref="GraphResponse{PolicyRoot}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyRoot}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<PolicyRoot>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<PolicyRoot>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified PolicyRoot using PATCH.
         /// </summary>
         /// <param name="policyRootToUpdate">The PolicyRoot to update.</param>

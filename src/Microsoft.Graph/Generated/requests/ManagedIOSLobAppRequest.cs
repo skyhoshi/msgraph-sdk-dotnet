@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ManagedIOSLobApp and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ManagedIOSLobApp and returns a <see cref="GraphResponse{ManagedIOSLobApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ManagedIOSLobApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ManagedIOSLobApp using PATCH.
         /// </summary>
         /// <param name="managedIOSLobAppToUpdate">The ManagedIOSLobApp to update.</param>

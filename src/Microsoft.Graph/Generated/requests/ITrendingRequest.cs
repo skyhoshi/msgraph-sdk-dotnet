@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Trending> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Trending and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Trending and returns a <see cref="GraphResponse{Trending}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Trending using PATCH.
         /// </summary>
         /// <param name="trendingToUpdate">The Trending to update.</param>

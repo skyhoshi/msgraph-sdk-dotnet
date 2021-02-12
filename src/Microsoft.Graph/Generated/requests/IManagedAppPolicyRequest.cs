@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ManagedAppPolicy> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ManagedAppPolicy and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ManagedAppPolicy and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ManagedAppPolicy using PATCH.
         /// </summary>
         /// <param name="managedAppPolicyToUpdate">The ManagedAppPolicy to update.</param>

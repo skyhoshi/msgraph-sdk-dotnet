@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified Entity and returns a <see cref="GraphResponse{Entity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Entity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Entity>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Entity and returns a <see cref="GraphResponse{Entity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Entity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Entity>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Entity>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified Entity using POST.
         /// </summary>

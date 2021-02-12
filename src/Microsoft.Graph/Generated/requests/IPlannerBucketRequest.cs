@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PlannerBucket> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified PlannerBucket and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PlannerBucket and returns a <see cref="GraphResponse{PlannerBucket}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerBucket}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerBucket>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified PlannerBucket using PATCH.
         /// </summary>
         /// <param name="plannerBucketToUpdate">The PlannerBucket to update.</param>

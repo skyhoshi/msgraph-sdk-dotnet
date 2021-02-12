@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookChartAreaFormat> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookChartAreaFormat and returns a <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookChartAreaFormat and returns a <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookChartAreaFormat using PATCH.
         /// </summary>
         /// <param name="workbookChartAreaFormatToUpdate">The WorkbookChartAreaFormat to update.</param>

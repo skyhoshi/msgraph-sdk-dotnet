@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ActivityHistoryItem> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ActivityHistoryItem and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ActivityHistoryItem and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ActivityHistoryItem using PATCH.
         /// </summary>
         /// <param name="activityHistoryItemToUpdate">The ActivityHistoryItem to update.</param>

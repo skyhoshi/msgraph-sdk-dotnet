@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OnlineMeeting> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OnlineMeeting using PATCH.
         /// </summary>
         /// <param name="onlineMeetingToUpdate">The OnlineMeeting to update.</param>

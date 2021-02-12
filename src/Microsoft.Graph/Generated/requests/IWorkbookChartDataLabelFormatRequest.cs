@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookChartDataLabelFormat> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookChartDataLabelFormat and returns a <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabelFormat>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookChartDataLabelFormat and returns a <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartDataLabelFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartDataLabelFormat>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookChartDataLabelFormat using PATCH.
         /// </summary>
         /// <param name="workbookChartDataLabelFormatToUpdate">The WorkbookChartDataLabelFormat to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified SchemaExtension and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SchemaExtension and returns a <see cref="GraphResponse{SchemaExtension}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SchemaExtension>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified SchemaExtension using PATCH.
         /// </summary>
         /// <param name="schemaExtensionToUpdate">The SchemaExtension to update.</param>

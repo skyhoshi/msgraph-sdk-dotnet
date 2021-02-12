@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IdentitySecurityDefaultsEnforcementPolicy> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IdentitySecurityDefaultsEnforcementPolicy and returns a <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IdentitySecurityDefaultsEnforcementPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IdentitySecurityDefaultsEnforcementPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified IdentitySecurityDefaultsEnforcementPolicy using PATCH.
         /// </summary>
         /// <param name="identitySecurityDefaultsEnforcementPolicyToUpdate">The IdentitySecurityDefaultsEnforcementPolicy to update.</param>

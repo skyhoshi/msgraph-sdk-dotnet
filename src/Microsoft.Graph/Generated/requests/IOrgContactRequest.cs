@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OrgContact> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OrgContact and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrgContact>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OrgContact and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OrgContact>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OrgContact using PATCH.
         /// </summary>
         /// <param name="orgContactToUpdate">The OrgContact to update.</param>

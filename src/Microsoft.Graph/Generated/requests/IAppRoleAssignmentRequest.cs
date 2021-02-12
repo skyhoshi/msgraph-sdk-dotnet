@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AppRoleAssignment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AppRoleAssignment and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AppRoleAssignment and returns a <see cref="GraphResponse{AppRoleAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AppRoleAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AppRoleAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AppRoleAssignment using PATCH.
         /// </summary>
         /// <param name="appRoleAssignmentToUpdate">The AppRoleAssignment to update.</param>

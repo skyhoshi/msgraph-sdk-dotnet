@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Thumbnail> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Thumbnail and returns a <see cref="GraphResponse{Thumbnail}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Thumbnail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Thumbnail>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Thumbnail and returns a <see cref="GraphResponse{Thumbnail}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Thumbnail}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Thumbnail>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Thumbnail using PATCH.
         /// </summary>
         /// <param name="thumbnailToUpdate">The Thumbnail to update.</param>

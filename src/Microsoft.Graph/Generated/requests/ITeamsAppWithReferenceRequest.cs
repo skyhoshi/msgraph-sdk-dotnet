@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The TeamsApp.</returns>
         System.Threading.Tasks.Task<TeamsApp> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified TeamsApp and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TeamsApp and returns a <see cref="GraphResponse{TeamsApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified TeamsApp using POST.
         /// </summary>

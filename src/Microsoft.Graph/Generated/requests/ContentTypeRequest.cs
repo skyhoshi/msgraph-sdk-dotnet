@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ContentType and returns a <see cref="GraphResponse{ContentType}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ContentType>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ContentType and returns a <see cref="GraphResponse{ContentType}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ContentType>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ContentType>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ContentType using PATCH.
         /// </summary>
         /// <param name="contentTypeToUpdate">The ContentType to update.</param>

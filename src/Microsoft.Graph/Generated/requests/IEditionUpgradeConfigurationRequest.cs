@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<EditionUpgradeConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EditionUpgradeConfiguration and returns a <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EditionUpgradeConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EditionUpgradeConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified EditionUpgradeConfiguration using PATCH.
         /// </summary>
         /// <param name="editionUpgradeConfigurationToUpdate">The EditionUpgradeConfiguration to update.</param>

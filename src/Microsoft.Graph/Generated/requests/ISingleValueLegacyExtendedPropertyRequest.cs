@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SingleValueLegacyExtendedProperty> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SingleValueLegacyExtendedProperty and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SingleValueLegacyExtendedProperty and returns a <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SingleValueLegacyExtendedProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SingleValueLegacyExtendedProperty>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SingleValueLegacyExtendedProperty using PATCH.
         /// </summary>
         /// <param name="singleValueLegacyExtendedPropertyToUpdate">The SingleValueLegacyExtendedProperty to update.</param>

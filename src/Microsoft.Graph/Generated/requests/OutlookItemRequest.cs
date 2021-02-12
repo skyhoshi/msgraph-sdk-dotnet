@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified OutlookItem and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OutlookItem>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OutlookItem and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OutlookItem>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OutlookItem>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified OutlookItem using PATCH.
         /// </summary>
         /// <param name="outlookItemToUpdate">The OutlookItem to update.</param>

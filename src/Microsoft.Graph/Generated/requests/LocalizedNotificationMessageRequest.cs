@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified LocalizedNotificationMessage and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified LocalizedNotificationMessage and returns a <see cref="GraphResponse{LocalizedNotificationMessage}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<LocalizedNotificationMessage>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified LocalizedNotificationMessage using PATCH.
         /// </summary>
         /// <param name="localizedNotificationMessageToUpdate">The LocalizedNotificationMessage to update.</param>

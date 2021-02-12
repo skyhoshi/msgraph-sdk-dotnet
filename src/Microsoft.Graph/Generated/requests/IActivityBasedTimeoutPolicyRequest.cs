@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ActivityBasedTimeoutPolicy and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ActivityBasedTimeoutPolicy and returns a <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ActivityBasedTimeoutPolicy using PATCH.
         /// </summary>
         /// <param name="activityBasedTimeoutPolicyToUpdate">The ActivityBasedTimeoutPolicy to update.</param>

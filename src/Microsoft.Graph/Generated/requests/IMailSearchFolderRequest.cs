@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MailSearchFolder> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MailSearchFolder using PATCH.
         /// </summary>
         /// <param name="mailSearchFolderToUpdate">The MailSearchFolder to update.</param>

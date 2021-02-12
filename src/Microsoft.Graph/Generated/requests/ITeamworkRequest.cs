@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Teamwork> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Teamwork and returns a <see cref="GraphResponse{Teamwork}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Teamwork and returns a <see cref="GraphResponse{Teamwork}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Teamwork>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Teamwork using PATCH.
         /// </summary>
         /// <param name="teamworkToUpdate">The Teamwork to update.</param>

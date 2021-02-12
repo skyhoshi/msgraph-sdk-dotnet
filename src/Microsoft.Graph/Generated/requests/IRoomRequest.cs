@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Room> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Room and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Room>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Room and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Room>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Room using PATCH.
         /// </summary>
         /// <param name="roomToUpdate">The Room to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MacOSGeneralDeviceConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MacOSGeneralDeviceConfiguration and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOSGeneralDeviceConfiguration and returns a <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSGeneralDeviceConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSGeneralDeviceConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MacOSGeneralDeviceConfiguration using PATCH.
         /// </summary>
         /// <param name="macOSGeneralDeviceConfigurationToUpdate">The MacOSGeneralDeviceConfiguration to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Drive and returns a <see cref="GraphResponse{Drive}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Drive>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Drive and returns a <see cref="GraphResponse{Drive}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Drive>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Drive>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Drive using PATCH.
         /// </summary>
         /// <param name="driveToUpdate">The Drive to update.</param>

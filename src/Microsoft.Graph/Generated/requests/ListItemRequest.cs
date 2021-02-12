@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ListItem and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItem>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ListItem and returns a <see cref="GraphResponse{ListItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ListItem>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ListItem>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ListItem using PATCH.
         /// </summary>
         /// <param name="listItemToUpdate">The ListItem to update.</param>

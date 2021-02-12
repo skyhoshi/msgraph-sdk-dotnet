@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MobileLobApp> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MobileLobApp and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileLobApp and returns a <see cref="GraphResponse{MobileLobApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileLobApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileLobApp>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MobileLobApp using PATCH.
         /// </summary>
         /// <param name="mobileLobAppToUpdate">The MobileLobApp to update.</param>

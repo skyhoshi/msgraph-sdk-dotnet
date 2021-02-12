@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ExtensionProperty> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ExtensionProperty and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ExtensionProperty and returns a <see cref="GraphResponse{ExtensionProperty}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ExtensionProperty using PATCH.
         /// </summary>
         /// <param name="extensionPropertyToUpdate">The ExtensionProperty to update.</param>

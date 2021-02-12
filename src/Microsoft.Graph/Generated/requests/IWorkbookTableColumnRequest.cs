@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookTableColumn> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookTableColumn and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookTableColumn and returns a <see cref="GraphResponse{WorkbookTableColumn}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookTableColumn using PATCH.
         /// </summary>
         /// <param name="workbookTableColumnToUpdate">The WorkbookTableColumn to update.</param>

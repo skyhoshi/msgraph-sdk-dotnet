@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified OfferShiftRequestObject and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OfferShiftRequestObject and returns a <see cref="GraphResponse{OfferShiftRequestObject}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified OfferShiftRequestObject using PATCH.
         /// </summary>
         /// <param name="offerShiftRequestObjectToUpdate">The OfferShiftRequestObject to update.</param>

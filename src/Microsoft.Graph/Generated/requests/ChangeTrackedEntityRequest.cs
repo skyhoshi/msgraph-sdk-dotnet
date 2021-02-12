@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ChangeTrackedEntity and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ChangeTrackedEntity and returns a <see cref="GraphResponse{ChangeTrackedEntity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ChangeTrackedEntity>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ChangeTrackedEntity using PATCH.
         /// </summary>
         /// <param name="changeTrackedEntityToUpdate">The ChangeTrackedEntity to update.</param>

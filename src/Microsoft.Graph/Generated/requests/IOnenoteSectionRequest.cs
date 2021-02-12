@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OnenoteSection> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OnenoteSection and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnenoteSection and returns a <see cref="GraphResponse{OnenoteSection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteSection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteSection>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OnenoteSection using PATCH.
         /// </summary>
         /// <param name="onenoteSectionToUpdate">The OnenoteSection to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DefaultManagedAppProtection> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DefaultManagedAppProtection and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DefaultManagedAppProtection and returns a <see cref="GraphResponse{DefaultManagedAppProtection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DefaultManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DefaultManagedAppProtection>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DefaultManagedAppProtection using PATCH.
         /// </summary>
         /// <param name="defaultManagedAppProtectionToUpdate">The DefaultManagedAppProtection to update.</param>

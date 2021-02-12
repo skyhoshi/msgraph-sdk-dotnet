@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Permission> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Permission using PATCH.
         /// </summary>
         /// <param name="permissionToUpdate">The Permission to update.</param>

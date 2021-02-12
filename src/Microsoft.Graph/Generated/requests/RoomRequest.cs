@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Room and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Room>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Room and returns a <see cref="GraphResponse{Room}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Room>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Room>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Room using PATCH.
         /// </summary>
         /// <param name="roomToUpdate">The Room to update.</param>

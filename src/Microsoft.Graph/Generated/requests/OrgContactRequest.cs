@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified OrgContact and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OrgContact>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OrgContact and returns a <see cref="GraphResponse{OrgContact}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OrgContact>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OrgContact>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified OrgContact using PATCH.
         /// </summary>
         /// <param name="orgContactToUpdate">The OrgContact to update.</param>

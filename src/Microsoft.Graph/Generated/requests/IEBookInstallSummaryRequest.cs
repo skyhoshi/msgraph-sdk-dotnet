@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<EBookInstallSummary> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified EBookInstallSummary and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EBookInstallSummary and returns a <see cref="GraphResponse{EBookInstallSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EBookInstallSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EBookInstallSummary>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified EBookInstallSummary using PATCH.
         /// </summary>
         /// <param name="eBookInstallSummaryToUpdate">The EBookInstallSummary to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AuthorizationPolicy> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AuthorizationPolicy and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AuthorizationPolicy and returns a <see cref="GraphResponse{AuthorizationPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthorizationPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthorizationPolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AuthorizationPolicy using PATCH.
         /// </summary>
         /// <param name="authorizationPolicyToUpdate">The AuthorizationPolicy to update.</param>

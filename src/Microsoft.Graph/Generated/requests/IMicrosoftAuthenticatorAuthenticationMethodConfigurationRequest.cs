@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using PATCH.
         /// </summary>
         /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to update.</param>

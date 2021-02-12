@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ResourceSpecificPermissionGrant and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ResourceSpecificPermissionGrant and returns a <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ResourceSpecificPermissionGrant>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ResourceSpecificPermissionGrant using PATCH.
         /// </summary>
         /// <param name="resourceSpecificPermissionGrantToUpdate">The ResourceSpecificPermissionGrant to update.</param>

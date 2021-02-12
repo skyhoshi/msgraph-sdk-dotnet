@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ResourceOperation> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ResourceOperation and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ResourceOperation and returns a <see cref="GraphResponse{ResourceOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ResourceOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ResourceOperation>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ResourceOperation using PATCH.
         /// </summary>
         /// <param name="resourceOperationToUpdate">The ResourceOperation to update.</param>

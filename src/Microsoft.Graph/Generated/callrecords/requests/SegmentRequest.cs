@@ -146,6 +146,26 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
+        /// Gets the specified Segment and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Segment>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Segment and returns a <see cref="GraphResponse{Segment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Segment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Segment>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Segment>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Segment using PATCH.
         /// </summary>
         /// <param name="segmentToUpdate">The Segment to update.</param>

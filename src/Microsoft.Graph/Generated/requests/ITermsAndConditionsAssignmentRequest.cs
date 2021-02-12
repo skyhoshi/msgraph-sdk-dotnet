@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TermsAndConditionsAssignment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified TermsAndConditionsAssignment and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TermsAndConditionsAssignment and returns a <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified TermsAndConditionsAssignment using PATCH.
         /// </summary>
         /// <param name="termsAndConditionsAssignmentToUpdate">The TermsAndConditionsAssignment to update.</param>

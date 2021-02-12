@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified TeamsAsyncOperation and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified TeamsAsyncOperation and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TeamsAsyncOperation>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified TeamsAsyncOperation using PATCH.
         /// </summary>
         /// <param name="teamsAsyncOperationToUpdate">The TeamsAsyncOperation to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<VppToken> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified VppToken and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified VppToken and returns a <see cref="GraphResponse{VppToken}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<VppToken>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified VppToken using PATCH.
         /// </summary>
         /// <param name="vppTokenToUpdate">The VppToken to update.</param>

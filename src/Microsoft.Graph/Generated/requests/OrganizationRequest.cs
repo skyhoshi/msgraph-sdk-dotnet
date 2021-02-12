@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Organization and returns a <see cref="GraphResponse{Organization}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Organization>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Organization and returns a <see cref="GraphResponse{Organization}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Organization}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Organization>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Organization>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Organization using PATCH.
         /// </summary>
         /// <param name="organizationToUpdate">The Organization to update.</param>

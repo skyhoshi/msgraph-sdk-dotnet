@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Windows10CustomConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Windows10CustomConfiguration and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Windows10CustomConfiguration and returns a <see cref="GraphResponse{Windows10CustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10CustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10CustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Windows10CustomConfiguration using PATCH.
         /// </summary>
         /// <param name="windows10CustomConfigurationToUpdate">The Windows10CustomConfiguration to update.</param>

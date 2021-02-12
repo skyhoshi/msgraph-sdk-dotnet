@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ColumnLink> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ColumnLink and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ColumnLink and returns a <see cref="GraphResponse{ColumnLink}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ColumnLink using PATCH.
         /// </summary>
         /// <param name="columnLinkToUpdate">The ColumnLink to update.</param>

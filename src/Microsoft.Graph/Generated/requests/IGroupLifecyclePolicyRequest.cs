@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GroupLifecyclePolicy> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified GroupLifecyclePolicy and returns a <see cref="GraphResponse{GroupLifecyclePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupLifecyclePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupLifecyclePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupLifecyclePolicy and returns a <see cref="GraphResponse{GroupLifecyclePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupLifecyclePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupLifecyclePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified GroupLifecyclePolicy using PATCH.
         /// </summary>
         /// <param name="groupLifecyclePolicyToUpdate">The GroupLifecyclePolicy to update.</param>

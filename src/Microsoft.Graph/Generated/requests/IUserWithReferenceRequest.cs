@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The User.</returns>
         System.Threading.Tasks.Task<User> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified User and returns a <see cref="GraphResponse{User}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<User>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified User and returns a <see cref="GraphResponse{User}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{User}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<User>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified User using POST.
         /// </summary>

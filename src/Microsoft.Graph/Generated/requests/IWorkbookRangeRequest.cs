@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookRange> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookRange and returns a <see cref="GraphResponse{WorkbookRange}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookRange}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookRange and returns a <see cref="GraphResponse{WorkbookRange}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRange}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRange>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookRange using PATCH.
         /// </summary>
         /// <param name="workbookRangeToUpdate">The WorkbookRange to update.</param>

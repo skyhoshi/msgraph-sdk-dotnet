@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MobileThreatDefenseConnector> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MobileThreatDefenseConnector and returns a <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileThreatDefenseConnector and returns a <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MobileThreatDefenseConnector using PATCH.
         /// </summary>
         /// <param name="mobileThreatDefenseConnectorToUpdate">The MobileThreatDefenseConnector to update.</param>

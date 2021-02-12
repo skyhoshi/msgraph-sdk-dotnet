@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DataPolicyOperation> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DataPolicyOperation and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DataPolicyOperation and returns a <see cref="GraphResponse{DataPolicyOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DataPolicyOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DataPolicyOperation>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DataPolicyOperation using PATCH.
         /// </summary>
         /// <param name="dataPolicyOperationToUpdate">The DataPolicyOperation to update.</param>

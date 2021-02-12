@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DetectedApp> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DetectedApp and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DetectedApp and returns a <see cref="GraphResponse{DetectedApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DetectedApp>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DetectedApp using PATCH.
         /// </summary>
         /// <param name="detectedAppToUpdate">The DetectedApp to update.</param>

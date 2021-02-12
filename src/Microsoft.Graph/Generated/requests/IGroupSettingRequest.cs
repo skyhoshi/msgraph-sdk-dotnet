@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GroupSetting> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified GroupSetting and returns a <see cref="GraphResponse{GroupSetting}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSetting>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified GroupSetting and returns a <see cref="GraphResponse{GroupSetting}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSetting>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified GroupSetting using PATCH.
         /// </summary>
         /// <param name="groupSettingToUpdate">The GroupSetting to update.</param>

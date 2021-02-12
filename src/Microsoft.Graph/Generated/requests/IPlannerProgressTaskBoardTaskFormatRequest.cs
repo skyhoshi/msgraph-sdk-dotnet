@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PlannerProgressTaskBoardTaskFormat> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified PlannerProgressTaskBoardTaskFormat and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PlannerProgressTaskBoardTaskFormat and returns a <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerProgressTaskBoardTaskFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerProgressTaskBoardTaskFormat>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified PlannerProgressTaskBoardTaskFormat using PATCH.
         /// </summary>
         /// <param name="plannerProgressTaskBoardTaskFormatToUpdate">The PlannerProgressTaskBoardTaskFormat to update.</param>

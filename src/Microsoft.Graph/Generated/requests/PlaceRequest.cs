@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Place and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Place>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Place and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Place>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Place>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Place using PATCH.
         /// </summary>
         /// <param name="placeToUpdate">The Place to update.</param>

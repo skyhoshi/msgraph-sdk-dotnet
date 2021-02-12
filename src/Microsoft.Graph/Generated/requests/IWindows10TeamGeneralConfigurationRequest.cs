@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Windows10TeamGeneralConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Windows10TeamGeneralConfiguration and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Windows10TeamGeneralConfiguration and returns a <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Windows10TeamGeneralConfiguration using PATCH.
         /// </summary>
         /// <param name="windows10TeamGeneralConfigurationToUpdate">The Windows10TeamGeneralConfiguration to update.</param>

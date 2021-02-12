@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AadUserConversationMember> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AadUserConversationMember and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AadUserConversationMember and returns a <see cref="GraphResponse{AadUserConversationMember}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AadUserConversationMember}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AadUserConversationMember>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AadUserConversationMember using PATCH.
         /// </summary>
         /// <param name="aadUserConversationMemberToUpdate">The AadUserConversationMember to update.</param>

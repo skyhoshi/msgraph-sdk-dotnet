@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ProfilePhoto> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ProfilePhoto and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ProfilePhoto and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ProfilePhoto using PATCH.
         /// </summary>
         /// <param name="profilePhotoToUpdate">The ProfilePhoto to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified RemoteAssistancePartner and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified RemoteAssistancePartner and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<RemoteAssistancePartner>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified RemoteAssistancePartner using PATCH.
         /// </summary>
         /// <param name="remoteAssistancePartnerToUpdate">The RemoteAssistancePartner to update.</param>

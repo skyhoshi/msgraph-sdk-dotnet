@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ManagedEBook and returns a <see cref="GraphResponse{ManagedEBook}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ManagedEBook and returns a <see cref="GraphResponse{ManagedEBook}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ManagedEBook>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ManagedEBook using PATCH.
         /// </summary>
         /// <param name="managedEBookToUpdate">The ManagedEBook to update.</param>

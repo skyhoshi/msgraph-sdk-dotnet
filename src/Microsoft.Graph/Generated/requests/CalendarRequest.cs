@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Calendar and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Calendar>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Calendar and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Calendar>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Calendar>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Calendar using PATCH.
         /// </summary>
         /// <param name="calendarToUpdate">The Calendar to update.</param>

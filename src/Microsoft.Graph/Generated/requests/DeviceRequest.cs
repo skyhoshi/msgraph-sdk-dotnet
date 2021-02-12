@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Device and returns a <see cref="GraphResponse{Device}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Device>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Device and returns a <see cref="GraphResponse{Device}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Device>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Device>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Device using PATCH.
         /// </summary>
         /// <param name="deviceToUpdate">The Device to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<AndroidWorkProfileCustomConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified AndroidWorkProfileCustomConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified AndroidWorkProfileCustomConfiguration and returns a <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCustomConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCustomConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified AndroidWorkProfileCustomConfiguration using PATCH.
         /// </summary>
         /// <param name="androidWorkProfileCustomConfigurationToUpdate">The AndroidWorkProfileCustomConfiguration to update.</param>

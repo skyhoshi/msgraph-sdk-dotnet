@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Team and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Team>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Team and returns a <see cref="GraphResponse{Team}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Team}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Team>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Team>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Team using PATCH.
         /// </summary>
         /// <param name="teamToUpdate">The Team to update.</param>

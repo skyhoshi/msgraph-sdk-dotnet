@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MobileAppContent> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MobileAppContent and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MobileAppContent and returns a <see cref="GraphResponse{MobileAppContent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppContent>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MobileAppContent using PATCH.
         /// </summary>
         /// <param name="mobileAppContentToUpdate">The MobileAppContent to update.</param>

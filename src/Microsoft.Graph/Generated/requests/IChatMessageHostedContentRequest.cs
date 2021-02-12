@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ChatMessageHostedContent> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ChatMessageHostedContent and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ChatMessageHostedContent and returns a <see cref="GraphResponse{ChatMessageHostedContent}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ChatMessageHostedContent}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ChatMessageHostedContent>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ChatMessageHostedContent using PATCH.
         /// </summary>
         /// <param name="chatMessageHostedContentToUpdate">The ChatMessageHostedContent to update.</param>

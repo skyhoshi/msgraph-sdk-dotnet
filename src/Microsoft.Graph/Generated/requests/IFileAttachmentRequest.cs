@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<FileAttachment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified FileAttachment and returns a <see cref="GraphResponse{FileAttachment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified FileAttachment and returns a <see cref="GraphResponse{FileAttachment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{FileAttachment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<FileAttachment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified FileAttachment using PATCH.
         /// </summary>
         /// <param name="fileAttachmentToUpdate">The FileAttachment to update.</param>

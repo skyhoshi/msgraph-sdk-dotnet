@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Security> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Security and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Security and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Security>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Security using PATCH.
         /// </summary>
         /// <param name="securityToUpdate">The Security to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsInformationProtectionNetworkLearningSummary> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WindowsInformationProtectionNetworkLearningSummary and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsInformationProtectionNetworkLearningSummary and returns a <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionNetworkLearningSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionNetworkLearningSummary>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WindowsInformationProtectionNetworkLearningSummary using PATCH.
         /// </summary>
         /// <param name="windowsInformationProtectionNetworkLearningSummaryToUpdate">The WindowsInformationProtectionNetworkLearningSummary to update.</param>

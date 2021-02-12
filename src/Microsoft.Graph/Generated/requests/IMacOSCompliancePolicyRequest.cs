@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MacOSCompliancePolicy> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MacOSCompliancePolicy and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOSCompliancePolicy and returns a <see cref="GraphResponse{MacOSCompliancePolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSCompliancePolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSCompliancePolicy>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MacOSCompliancePolicy using PATCH.
         /// </summary>
         /// <param name="macOSCompliancePolicyToUpdate">The MacOSCompliancePolicy to update.</param>

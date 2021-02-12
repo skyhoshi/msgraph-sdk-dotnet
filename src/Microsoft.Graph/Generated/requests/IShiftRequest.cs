@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Shift> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Shift and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Shift>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Shift and returns a <see cref="GraphResponse{Shift}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Shift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Shift>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Shift using PATCH.
         /// </summary>
         /// <param name="shiftToUpdate">The Shift to update.</param>

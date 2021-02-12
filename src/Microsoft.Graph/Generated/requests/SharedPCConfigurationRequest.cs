@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified SharedPCConfiguration and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified SharedPCConfiguration and returns a <see cref="GraphResponse{SharedPCConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SharedPCConfiguration}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SharedPCConfiguration>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<SharedPCConfiguration>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified SharedPCConfiguration using PATCH.
         /// </summary>
         /// <param name="sharedPCConfigurationToUpdate">The SharedPCConfiguration to update.</param>

@@ -56,6 +56,26 @@ namespace Microsoft.Graph
             return retrievedEntity;
         }
 
+        /// <summary>
+        /// Gets the specified UserActivity and returns a <see cref="GraphResponse{UserActivity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserActivity>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UserActivity and returns a <see cref="GraphResponse{UserActivity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserActivity}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserActivity>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserActivity>(null, cancellationToken).ConfigureAwait(false);
+        }
+
 		/// <summary>
         /// Creates the specified UserActivity using POST.
         /// </summary>

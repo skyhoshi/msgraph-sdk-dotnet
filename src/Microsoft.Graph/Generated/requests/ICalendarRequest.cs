@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Calendar> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Calendar and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Calendar and returns a <see cref="GraphResponse{Calendar}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Calendar}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Calendar>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Calendar using PATCH.
         /// </summary>
         /// <param name="calendarToUpdate">The Calendar to update.</param>

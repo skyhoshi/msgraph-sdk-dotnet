@@ -146,6 +146,26 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
+        /// Gets the specified Session and returns a <see cref="GraphResponse{Session}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Session>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Session and returns a <see cref="GraphResponse{Session}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Session}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Session>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Session>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Session using PATCH.
         /// </summary>
         /// <param name="sessionToUpdate">The Session to update.</param>

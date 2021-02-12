@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookChartTitleFormat> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookChartTitleFormat and returns a <see cref="GraphResponse{WorkbookChartTitleFormat}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartTitleFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitleFormat>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookChartTitleFormat and returns a <see cref="GraphResponse{WorkbookChartTitleFormat}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartTitleFormat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartTitleFormat>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookChartTitleFormat using PATCH.
         /// </summary>
         /// <param name="workbookChartTitleFormatToUpdate">The WorkbookChartTitleFormat to update.</param>

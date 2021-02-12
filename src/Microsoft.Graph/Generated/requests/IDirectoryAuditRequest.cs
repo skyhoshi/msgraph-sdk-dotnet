@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DirectoryAudit> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DirectoryAudit and returns a <see cref="GraphResponse{DirectoryAudit}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DirectoryAudit and returns a <see cref="GraphResponse{DirectoryAudit}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DirectoryAudit using PATCH.
         /// </summary>
         /// <param name="directoryAuditToUpdate">The DirectoryAudit to update.</param>

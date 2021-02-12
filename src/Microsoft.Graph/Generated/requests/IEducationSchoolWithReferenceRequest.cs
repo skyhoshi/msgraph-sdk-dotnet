@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The EducationSchool.</returns>
         System.Threading.Tasks.Task<EducationSchool> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified EducationSchool and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EducationSchool and returns a <see cref="GraphResponse{EducationSchool}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EducationSchool>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified EducationSchool using POST.
         /// </summary>

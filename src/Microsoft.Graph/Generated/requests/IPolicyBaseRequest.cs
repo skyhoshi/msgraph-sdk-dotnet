@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PolicyBase> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified PolicyBase and returns a <see cref="GraphResponse{PolicyBase}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyBase>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PolicyBase and returns a <see cref="GraphResponse{PolicyBase}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PolicyBase>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified PolicyBase using PATCH.
         /// </summary>
         /// <param name="policyBaseToUpdate">The PolicyBase to update.</param>

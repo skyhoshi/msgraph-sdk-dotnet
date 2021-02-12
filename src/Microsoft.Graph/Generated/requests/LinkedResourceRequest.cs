@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified LinkedResource and returns a <see cref="GraphResponse{LinkedResource}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<LinkedResource>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified LinkedResource and returns a <see cref="GraphResponse{LinkedResource}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<LinkedResource>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<LinkedResource>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified LinkedResource using PATCH.
         /// </summary>
         /// <param name="linkedResourceToUpdate">The LinkedResource to update.</param>

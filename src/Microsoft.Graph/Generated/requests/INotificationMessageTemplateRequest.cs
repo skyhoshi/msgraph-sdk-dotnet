@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<NotificationMessageTemplate> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified NotificationMessageTemplate and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified NotificationMessageTemplate and returns a <see cref="GraphResponse{NotificationMessageTemplate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NotificationMessageTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NotificationMessageTemplate>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified NotificationMessageTemplate using PATCH.
         /// </summary>
         /// <param name="notificationMessageTemplateToUpdate">The NotificationMessageTemplate to update.</param>

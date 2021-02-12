@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TeamsTemplate> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified TeamsTemplate and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TeamsTemplate and returns a <see cref="GraphResponse{TeamsTemplate}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified TeamsTemplate using PATCH.
         /// </summary>
         /// <param name="teamsTemplateToUpdate">The TeamsTemplate to update.</param>

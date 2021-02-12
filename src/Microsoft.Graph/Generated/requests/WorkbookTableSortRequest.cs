@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkbookTableSort and returns a <see cref="GraphResponse{WorkbookTableSort}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableSort}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookTableSort>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookTableSort and returns a <see cref="GraphResponse{WorkbookTableSort}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookTableSort}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookTableSort>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookTableSort>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkbookTableSort using PATCH.
         /// </summary>
         /// <param name="workbookTableSortToUpdate">The WorkbookTableSort to update.</param>

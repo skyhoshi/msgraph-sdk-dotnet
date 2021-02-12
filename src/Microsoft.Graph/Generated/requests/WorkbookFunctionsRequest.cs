@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WorkbookFunctions and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctions}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WorkbookFunctions and returns a <see cref="GraphResponse{WorkbookFunctions}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookFunctions}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookFunctions>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WorkbookFunctions>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WorkbookFunctions using PATCH.
         /// </summary>
         /// <param name="workbookFunctionsToUpdate">The WorkbookFunctions to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Alert and returns a <see cref="GraphResponse{Alert}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Alert>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Alert and returns a <see cref="GraphResponse{Alert}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Alert>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Alert>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Alert using PATCH.
         /// </summary>
         /// <param name="alertToUpdate">The Alert to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified AuthenticationMethodsPolicy and returns a <see cref="GraphResponse{AuthenticationMethodsPolicy}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsPolicy>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified AuthenticationMethodsPolicy and returns a <see cref="GraphResponse{AuthenticationMethodsPolicy}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethodsPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsPolicy>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<AuthenticationMethodsPolicy>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified AuthenticationMethodsPolicy using PATCH.
         /// </summary>
         /// <param name="authenticationMethodsPolicyToUpdate">The AuthenticationMethodsPolicy to update.</param>

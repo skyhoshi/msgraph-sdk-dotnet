@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ItemAnalytics> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ItemAnalytics and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ItemAnalytics and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ItemAnalytics using PATCH.
         /// </summary>
         /// <param name="itemAnalyticsToUpdate">The ItemAnalytics to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IosVppEBookAssignment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified IosVppEBookAssignment and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosVppEBookAssignment and returns a <see cref="GraphResponse{IosVppEBookAssignment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified IosVppEBookAssignment using PATCH.
         /// </summary>
         /// <param name="iosVppEBookAssignmentToUpdate">The IosVppEBookAssignment to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<SearchEntity> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified SearchEntity and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SearchEntity>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified SearchEntity and returns a <see cref="GraphResponse{SearchEntity}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SearchEntity>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified SearchEntity using PATCH.
         /// </summary>
         /// <param name="searchEntityToUpdate">The SearchEntity to update.</param>

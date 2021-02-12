@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The ItemActivityStat.</returns>
         System.Threading.Tasks.Task<ItemActivityStat> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified ItemActivityStat and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ItemActivityStat and returns a <see cref="GraphResponse{ItemActivityStat}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemActivityStat}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ItemActivityStat>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified ItemActivityStat using POST.
         /// </summary>

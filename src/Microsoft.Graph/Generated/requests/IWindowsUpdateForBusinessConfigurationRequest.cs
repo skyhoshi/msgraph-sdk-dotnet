@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WindowsUpdateForBusinessConfiguration and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WindowsUpdateForBusinessConfiguration and returns a <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WindowsUpdateForBusinessConfiguration using PATCH.
         /// </summary>
         /// <param name="windowsUpdateForBusinessConfigurationToUpdate">The WindowsUpdateForBusinessConfiguration to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Contact and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Contact>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Contact and returns a <see cref="GraphResponse{Contact}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Contact>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Contact>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Contact using PATCH.
         /// </summary>
         /// <param name="contactToUpdate">The Contact to update.</param>

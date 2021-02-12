@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified WindowsInformationProtection and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified WindowsInformationProtection and returns a <see cref="GraphResponse{WindowsInformationProtection}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtection}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtection>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<WindowsInformationProtection>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified WindowsInformationProtection using PATCH.
         /// </summary>
         /// <param name="windowsInformationProtectionToUpdate">The WindowsInformationProtection to update.</param>

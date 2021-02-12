@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified MailSearchFolder and returns a <see cref="GraphResponse{MailSearchFolder}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailSearchFolder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MailSearchFolder>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<MailSearchFolder>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified MailSearchFolder using PATCH.
         /// </summary>
         /// <param name="mailSearchFolderToUpdate">The MailSearchFolder to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<TeamsAppInstallation> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified TeamsAppInstallation and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified TeamsAppInstallation and returns a <see cref="GraphResponse{TeamsAppInstallation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified TeamsAppInstallation using PATCH.
         /// </summary>
         /// <param name="teamsAppInstallationToUpdate">The TeamsAppInstallation to update.</param>

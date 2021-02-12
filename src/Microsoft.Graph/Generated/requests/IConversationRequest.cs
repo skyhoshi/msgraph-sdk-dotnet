@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Conversation> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Conversation and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Conversation and returns a <see cref="GraphResponse{Conversation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Conversation using PATCH.
         /// </summary>
         /// <param name="conversationToUpdate">The Conversation to update.</param>

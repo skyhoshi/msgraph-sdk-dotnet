@@ -33,6 +33,19 @@ namespace Microsoft.Graph
         /// <returns>The CertificateBasedAuthConfiguration.</returns>
         System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> GetAsync(CancellationToken cancellationToken);
 
+        /// <summary>
+        /// Gets the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified CertificateBasedAuthConfiguration and returns a <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
 		/// <summary>
         /// Creates the specified CertificateBasedAuthConfiguration using POST.
         /// </summary>

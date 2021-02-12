@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<UsedInsight> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified UsedInsight and returns a <see cref="GraphResponse{UsedInsight}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UsedInsight and returns a <see cref="GraphResponse{UsedInsight}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UsedInsight>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified UsedInsight using PATCH.
         /// </summary>
         /// <param name="usedInsightToUpdate">The UsedInsight to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookComment> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookComment and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookComment and returns a <see cref="GraphResponse{WorkbookComment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookComment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookComment>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookComment using PATCH.
         /// </summary>
         /// <param name="workbookCommentToUpdate">The WorkbookComment to update.</param>

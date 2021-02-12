@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<EmailAuthenticationMethodConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified EmailAuthenticationMethodConfiguration and returns a <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethodConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EmailAuthenticationMethodConfiguration and returns a <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EmailAuthenticationMethodConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EmailAuthenticationMethodConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified EmailAuthenticationMethodConfiguration using PATCH.
         /// </summary>
         /// <param name="emailAuthenticationMethodConfigurationToUpdate">The EmailAuthenticationMethodConfiguration to update.</param>

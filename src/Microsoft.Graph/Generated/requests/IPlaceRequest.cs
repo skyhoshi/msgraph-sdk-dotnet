@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Place> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Place and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Place>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Place and returns a <see cref="GraphResponse{Place}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Place}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Place>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Place using PATCH.
         /// </summary>
         /// <param name="placeToUpdate">The Place to update.</param>

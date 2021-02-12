@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DeviceAndAppManagementRoleDefinition> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DeviceAndAppManagementRoleDefinition and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DeviceAndAppManagementRoleDefinition and returns a <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleDefinition>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DeviceAndAppManagementRoleDefinition using PATCH.
         /// </summary>
         /// <param name="deviceAndAppManagementRoleDefinitionToUpdate">The DeviceAndAppManagementRoleDefinition to update.</param>

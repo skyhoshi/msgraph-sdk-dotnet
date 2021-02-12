@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ManagedMobileApp and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ManagedMobileApp and returns a <see cref="GraphResponse{ManagedMobileApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ManagedMobileApp>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ManagedMobileApp using PATCH.
         /// </summary>
         /// <param name="managedMobileAppToUpdate">The ManagedMobileApp to update.</param>

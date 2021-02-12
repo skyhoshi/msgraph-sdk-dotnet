@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified UserTeamwork and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified UserTeamwork and returns a <see cref="GraphResponse{UserTeamwork}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserTeamwork}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserTeamwork>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<UserTeamwork>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified UserTeamwork using PATCH.
         /// </summary>
         /// <param name="userTeamworkToUpdate">The UserTeamwork to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MacOSOfficeSuiteApp> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MacOSOfficeSuiteApp and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MacOSOfficeSuiteApp and returns a <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MacOSOfficeSuiteApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MacOSOfficeSuiteApp>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MacOSOfficeSuiteApp using PATCH.
         /// </summary>
         /// <param name="macOSOfficeSuiteAppToUpdate">The MacOSOfficeSuiteApp to update.</param>

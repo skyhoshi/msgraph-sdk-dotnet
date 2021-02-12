@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ItemAnalytics and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ItemAnalytics and returns a <see cref="GraphResponse{ItemAnalytics}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAnalytics}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAnalytics>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ItemAnalytics>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ItemAnalytics using PATCH.
         /// </summary>
         /// <param name="itemAnalyticsToUpdate">The ItemAnalytics to update.</param>

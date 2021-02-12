@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MuteParticipantOperation> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MuteParticipantOperation and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MuteParticipantOperation and returns a <see cref="GraphResponse{MuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MuteParticipantOperation>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MuteParticipantOperation using PATCH.
         /// </summary>
         /// <param name="muteParticipantOperationToUpdate">The MuteParticipantOperation to update.</param>

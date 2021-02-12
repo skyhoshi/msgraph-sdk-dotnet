@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<UnmuteParticipantOperation> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified UnmuteParticipantOperation and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified UnmuteParticipantOperation and returns a <see cref="GraphResponse{UnmuteParticipantOperation}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UnmuteParticipantOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UnmuteParticipantOperation>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified UnmuteParticipantOperation using PATCH.
         /// </summary>
         /// <param name="unmuteParticipantOperationToUpdate">The UnmuteParticipantOperation to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Permission and returns a <see cref="GraphResponse{Permission}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Permission>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Permission>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Permission using PATCH.
         /// </summary>
         /// <param name="permissionToUpdate">The Permission to update.</param>

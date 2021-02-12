@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Subscription and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Subscription>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Subscription and returns a <see cref="GraphResponse{Subscription}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Subscription>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Subscription>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Subscription using PATCH.
         /// </summary>
         /// <param name="subscriptionToUpdate">The Subscription to update.</param>

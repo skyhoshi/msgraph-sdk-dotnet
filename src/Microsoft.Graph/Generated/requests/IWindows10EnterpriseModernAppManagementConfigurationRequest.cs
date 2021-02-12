@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified Windows10EnterpriseModernAppManagementConfiguration and returns a <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified Windows10EnterpriseModernAppManagementConfiguration using PATCH.
         /// </summary>
         /// <param name="windows10EnterpriseModernAppManagementConfigurationToUpdate">The Windows10EnterpriseModernAppManagementConfiguration to update.</param>

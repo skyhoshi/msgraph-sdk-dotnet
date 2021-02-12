@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<PlannerUser> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified PlannerUser and returns a <see cref="GraphResponse{PlannerUser}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{PlannerUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerUser>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified PlannerUser and returns a <see cref="GraphResponse{PlannerUser}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{PlannerUser}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<PlannerUser>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified PlannerUser using PATCH.
         /// </summary>
         /// <param name="plannerUserToUpdate">The PlannerUser to update.</param>

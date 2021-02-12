@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OpenShift> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OpenShift using PATCH.
         /// </summary>
         /// <param name="openShiftToUpdate">The OpenShift to update.</param>

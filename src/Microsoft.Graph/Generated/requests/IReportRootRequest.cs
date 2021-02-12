@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ReportRoot> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ReportRoot and returns a <see cref="GraphResponse{ReportRoot}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRoot>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ReportRoot and returns a <see cref="GraphResponse{ReportRoot}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ReportRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ReportRoot>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ReportRoot using PATCH.
         /// </summary>
         /// <param name="reportRootToUpdate">The ReportRoot to update.</param>

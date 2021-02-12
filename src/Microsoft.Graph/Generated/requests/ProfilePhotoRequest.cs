@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ProfilePhoto and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ProfilePhoto and returns a <see cref="GraphResponse{ProfilePhoto}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ProfilePhoto>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ProfilePhoto using PATCH.
         /// </summary>
         /// <param name="profilePhotoToUpdate">The ProfilePhoto to update.</param>

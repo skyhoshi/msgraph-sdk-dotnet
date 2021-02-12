@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<DirectoryRole> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified DirectoryRole and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified DirectoryRole and returns a <see cref="GraphResponse{DirectoryRole}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified DirectoryRole using PATCH.
         /// </summary>
         /// <param name="directoryRoleToUpdate">The DirectoryRole to update.</param>

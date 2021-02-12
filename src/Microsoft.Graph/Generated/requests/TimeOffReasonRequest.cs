@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified TimeOffReason and returns a <see cref="GraphResponse{TimeOffReason}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified TimeOffReason and returns a <see cref="GraphResponse{TimeOffReason}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<TimeOffReason>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified TimeOffReason using PATCH.
         /// </summary>
         /// <param name="timeOffReasonToUpdate">The TimeOffReason to update.</param>

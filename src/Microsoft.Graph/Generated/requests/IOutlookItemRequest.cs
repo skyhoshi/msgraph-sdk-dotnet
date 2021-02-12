@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OutlookItem> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OutlookItem and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookItem>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OutlookItem and returns a <see cref="GraphResponse{OutlookItem}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookItem>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OutlookItem using PATCH.
         /// </summary>
         /// <param name="outlookItemToUpdate">The OutlookItem to update.</param>

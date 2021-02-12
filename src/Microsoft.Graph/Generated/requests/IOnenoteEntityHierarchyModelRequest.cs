@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified OnenoteEntityHierarchyModel and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified OnenoteEntityHierarchyModel and returns a <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified OnenoteEntityHierarchyModel using PATCH.
         /// </summary>
         /// <param name="onenoteEntityHierarchyModelToUpdate">The OnenoteEntityHierarchyModel to update.</param>

@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ColumnDefinition and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ColumnDefinition and returns a <see cref="GraphResponse{ColumnDefinition}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ColumnDefinition>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ColumnDefinition using PATCH.
         /// </summary>
         /// <param name="columnDefinitionToUpdate">The ColumnDefinition to update.</param>

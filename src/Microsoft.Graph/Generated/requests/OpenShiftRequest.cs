@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified OpenShift and returns a <see cref="GraphResponse{OpenShift}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OpenShift}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OpenShift>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<OpenShift>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified OpenShift using PATCH.
         /// </summary>
         /// <param name="openShiftToUpdate">The OpenShift to update.</param>

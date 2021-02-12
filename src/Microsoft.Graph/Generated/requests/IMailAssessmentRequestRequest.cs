@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<MailAssessmentRequestObject> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified MailAssessmentRequestObject and returns a <see cref="GraphResponse{MailAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{MailAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailAssessmentRequestObject>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified MailAssessmentRequestObject and returns a <see cref="GraphResponse{MailAssessmentRequestObject}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MailAssessmentRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MailAssessmentRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified MailAssessmentRequestObject using PATCH.
         /// </summary>
         /// <param name="mailAssessmentRequestObjectToUpdate">The MailAssessmentRequestObject to update.</param>

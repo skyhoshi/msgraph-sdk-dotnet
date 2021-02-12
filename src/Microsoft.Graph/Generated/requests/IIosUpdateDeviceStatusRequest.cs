@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<IosUpdateDeviceStatus> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified IosUpdateDeviceStatus and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified IosUpdateDeviceStatus and returns a <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified IosUpdateDeviceStatus using PATCH.
         /// </summary>
         /// <param name="iosUpdateDeviceStatusToUpdate">The IosUpdateDeviceStatus to update.</param>

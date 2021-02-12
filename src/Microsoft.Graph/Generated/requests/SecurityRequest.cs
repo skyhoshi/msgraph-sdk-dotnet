@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Security and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Security>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Security and returns a <see cref="GraphResponse{Security}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Security}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Security>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Security>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Security using PATCH.
         /// </summary>
         /// <param name="securityToUpdate">The Security to update.</param>

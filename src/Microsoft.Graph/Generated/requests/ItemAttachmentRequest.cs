@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified ItemAttachment and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified ItemAttachment and returns a <see cref="GraphResponse{ItemAttachment}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ItemAttachment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ItemAttachment>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<ItemAttachment>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified ItemAttachment using PATCH.
         /// </summary>
         /// <param name="itemAttachmentToUpdate">The ItemAttachment to update.</param>

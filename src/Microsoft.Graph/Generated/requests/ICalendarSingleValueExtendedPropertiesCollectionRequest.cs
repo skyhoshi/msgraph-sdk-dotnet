@@ -49,6 +49,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ICalendarSingleValueExtendedPropertiesCollectionPage> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CalendarSingleValueExtendedPropertiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{CalendarSingleValueExtendedPropertiesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarSingleValueExtendedPropertiesCollectionResponse>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the collection page and returns a <see cref="GraphResponse{CalendarSingleValueExtendedPropertiesCollectionResponse}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarSingleValueExtendedPropertiesCollectionResponse}"/> object.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CalendarSingleValueExtendedPropertiesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Adds the specified expand value to the request.
         /// </summary>
         /// <param name="value">The expand value.</param>

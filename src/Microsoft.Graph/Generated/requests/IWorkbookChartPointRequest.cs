@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<WorkbookChartPoint> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified WorkbookChartPoint and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified WorkbookChartPoint and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified WorkbookChartPoint using PATCH.
         /// </summary>
         /// <param name="workbookChartPointToUpdate">The WorkbookChartPoint to update.</param>

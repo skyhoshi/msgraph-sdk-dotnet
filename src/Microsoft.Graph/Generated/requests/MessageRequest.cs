@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Message and returns a <see cref="GraphResponse{Message}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Message}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Message>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Message and returns a <see cref="GraphResponse{Message}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Message}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Message>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Message>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Message using PATCH.
         /// </summary>
         /// <param name="messageToUpdate">The Message to update.</param>

@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<EventMessageRequestObject> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified EventMessageRequestObject and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified EventMessageRequestObject and returns a <see cref="GraphResponse{EventMessageRequestObject}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EventMessageRequestObject}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<EventMessageRequestObject>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified EventMessageRequestObject using PATCH.
         /// </summary>
         /// <param name="eventMessageRequestObjectToUpdate">The EventMessageRequestObject to update.</param>

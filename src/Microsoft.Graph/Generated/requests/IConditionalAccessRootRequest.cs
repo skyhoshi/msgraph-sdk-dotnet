@@ -90,6 +90,19 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<ConditionalAccessRoot> GetAsync(CancellationToken cancellationToken);
 
         /// <summary>
+        /// Gets the specified ConditionalAccessRoot and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> GetResponseAsync();
+
+        /// <summary>
+        /// Gets the specified ConditionalAccessRoot and returns a <see cref="GraphResponse{ConditionalAccessRoot}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> GetResponseAsync(CancellationToken cancellationToken);
+
+        /// <summary>
         /// Updates the specified ConditionalAccessRoot using PATCH.
         /// </summary>
         /// <param name="conditionalAccessRootToUpdate">The ConditionalAccessRoot to update.</param>

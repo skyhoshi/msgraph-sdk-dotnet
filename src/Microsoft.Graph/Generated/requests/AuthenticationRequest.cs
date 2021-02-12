@@ -146,6 +146,26 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the specified Authentication and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Authentication>> GetResponseAsync()
+        {
+            return this.GetResponseAsync(CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Gets the specified Authentication and returns a <see cref="GraphResponse{Authentication}"/> object.
+        /// </summary>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Authentication}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Authentication>> GetResponseAsync(CancellationToken cancellationToken)
+        {
+            this.Method = "GET";
+            return await this.SendAsyncWithGraphResponse<Authentication>(null, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// Updates the specified Authentication using PATCH.
         /// </summary>
         /// <param name="authenticationToUpdate">The Authentication to update.</param>
