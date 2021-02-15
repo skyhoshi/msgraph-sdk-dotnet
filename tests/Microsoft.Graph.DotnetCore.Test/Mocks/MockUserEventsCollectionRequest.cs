@@ -42,6 +42,16 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
             throw new NotImplementedException();
         }
 
+        public Task<GraphResponse<Event>> AddResponseAsync(Event eventsEvent)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<GraphResponse<Event>> AddResponseAsync(Event events, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
         public string ContentType { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public IList<HeaderOption> Headers => throw new NotImplementedException();
