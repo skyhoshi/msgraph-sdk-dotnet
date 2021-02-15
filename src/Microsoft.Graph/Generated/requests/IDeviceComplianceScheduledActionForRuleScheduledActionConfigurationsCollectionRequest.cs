@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceActionItem.</returns>
         System.Threading.Tasks.Task<DeviceComplianceActionItem> AddAsync(DeviceComplianceActionItem deviceComplianceActionItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceComplianceActionItem to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceActionItem">The DeviceComplianceActionItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceActionItem>> AddResponseAsync(DeviceComplianceActionItem deviceComplianceActionItem);
+
+        /// <summary>
+        /// Adds the specified DeviceComplianceActionItem to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceActionItem">The DeviceComplianceActionItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceActionItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceActionItem>> AddResponseAsync(DeviceComplianceActionItem deviceComplianceActionItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

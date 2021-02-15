@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UserScopeTeamsAppInstallation>(userScopeTeamsAppInstallation, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> AddResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation)
+        {
+            return this.AddResponseAsync(userScopeTeamsAppInstallation, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UserScopeTeamsAppInstallation to the collection via POST and returns a <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.
+        /// </summary>
+        /// <param name="userScopeTeamsAppInstallation">The UserScopeTeamsAppInstallation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserScopeTeamsAppInstallation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UserScopeTeamsAppInstallation>> AddResponseAsync(UserScopeTeamsAppInstallation userScopeTeamsAppInstallation, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UserScopeTeamsAppInstallation>(userScopeTeamsAppInstallation, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

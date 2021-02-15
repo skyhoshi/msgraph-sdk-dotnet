@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ServicePrincipal.</returns>
         System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ServicePrincipal to the collection via POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object of the request.
+        /// </summary>
+        /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> AddResponseAsync(ServicePrincipal servicePrincipal);
+
+        /// <summary>
+        /// Adds the specified ServicePrincipal to the collection via POST and returns a <see cref="GraphResponse{ServicePrincipal}"/> object of the request.
+        /// </summary>
+        /// <param name="servicePrincipal">The ServicePrincipal to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> AddResponseAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

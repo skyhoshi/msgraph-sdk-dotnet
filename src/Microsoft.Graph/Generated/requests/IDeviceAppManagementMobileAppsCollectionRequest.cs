@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileApp.</returns>
         System.Threading.Tasks.Task<MobileApp> AddAsync(MobileApp mobileApp, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MobileApp to the collection via POST and returns a <see cref="GraphResponse{MobileApp}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileApp">The MobileApp to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileApp>> AddResponseAsync(MobileApp mobileApp);
+
+        /// <summary>
+        /// Adds the specified MobileApp to the collection via POST and returns a <see cref="GraphResponse{MobileApp}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileApp">The MobileApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileApp>> AddResponseAsync(MobileApp mobileApp, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SchemaExtension>(schemaExtension, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SchemaExtension to the collection via POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object of the request.
+        /// </summary>
+        /// <param name="schemaExtension">The SchemaExtension to add.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> AddResponseAsync(SchemaExtension schemaExtension)
+        {
+            return this.AddResponseAsync(schemaExtension, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SchemaExtension to the collection via POST and returns a <see cref="GraphResponse{SchemaExtension}"/> object of the request.
+        /// </summary>
+        /// <param name="schemaExtension">The SchemaExtension to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> AddResponseAsync(SchemaExtension schemaExtension, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SchemaExtension>(schemaExtension, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

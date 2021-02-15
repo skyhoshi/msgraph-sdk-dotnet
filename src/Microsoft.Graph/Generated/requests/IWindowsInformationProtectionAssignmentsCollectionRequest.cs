@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppPolicyAssignment.</returns>
         System.Threading.Tasks.Task<TargetedManagedAppPolicyAssignment> AddAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TargetedManagedAppPolicyAssignment to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="targetedManagedAppPolicyAssignment">The TargetedManagedAppPolicyAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> AddResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment);
+
+        /// <summary>
+        /// Adds the specified TargetedManagedAppPolicyAssignment to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="targetedManagedAppPolicyAssignment">The TargetedManagedAppPolicyAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppPolicyAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppPolicyAssignment>> AddResponseAsync(TargetedManagedAppPolicyAssignment targetedManagedAppPolicyAssignment, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

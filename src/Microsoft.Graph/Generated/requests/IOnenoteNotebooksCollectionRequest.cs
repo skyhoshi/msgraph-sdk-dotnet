@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Notebook.</returns>
         System.Threading.Tasks.Task<Notebook> AddAsync(Notebook notebook, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Notebook to the collection via POST and returns a <see cref="GraphResponse{Notebook}"/> object of the request.
+        /// </summary>
+        /// <param name="notebook">The Notebook to add.</param>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> AddResponseAsync(Notebook notebook);
+
+        /// <summary>
+        /// Adds the specified Notebook to the collection via POST and returns a <see cref="GraphResponse{Notebook}"/> object of the request.
+        /// </summary>
+        /// <param name="notebook">The Notebook to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Notebook>> AddResponseAsync(Notebook notebook, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

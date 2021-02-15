@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceComplianceSettingState.</returns>
         System.Threading.Tasks.Task<DeviceComplianceSettingState> AddAsync(DeviceComplianceSettingState deviceComplianceSettingState, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceComplianceSettingState to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceSettingState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceSettingState">The DeviceComplianceSettingState to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceSettingState>> AddResponseAsync(DeviceComplianceSettingState deviceComplianceSettingState);
+
+        /// <summary>
+        /// Adds the specified DeviceComplianceSettingState to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceSettingState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceSettingState">The DeviceComplianceSettingState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceSettingState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceComplianceSettingState>> AddResponseAsync(DeviceComplianceSettingState deviceComplianceSettingState, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

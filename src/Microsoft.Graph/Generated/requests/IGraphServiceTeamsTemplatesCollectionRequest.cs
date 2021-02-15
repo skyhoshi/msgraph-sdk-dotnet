@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTemplate.</returns>
         System.Threading.Tasks.Task<TeamsTemplate> AddAsync(TeamsTemplate teamsTemplate, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TeamsTemplate to the collection via POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsTemplate">The TeamsTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> AddResponseAsync(TeamsTemplate teamsTemplate);
+
+        /// <summary>
+        /// Adds the specified TeamsTemplate to the collection via POST and returns a <see cref="GraphResponse{TeamsTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsTemplate">The TeamsTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTemplate>> AddResponseAsync(TeamsTemplate teamsTemplate, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

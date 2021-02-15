@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicy, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified MdmWindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicy">The MdmWindowsInformationProtectionPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> AddResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy)
+        {
+            return this.AddResponseAsync(mdmWindowsInformationProtectionPolicy, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified MdmWindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicy">The MdmWindowsInformationProtectionPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> AddResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MdmWindowsInformationProtectionPolicy>(mdmWindowsInformationProtectionPolicy, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

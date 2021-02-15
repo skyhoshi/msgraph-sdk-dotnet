@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ActivityHistoryItem.</returns>
         System.Threading.Tasks.Task<ActivityHistoryItem> AddAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ActivityHistoryItem to the collection via POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.
+        /// </summary>
+        /// <param name="activityHistoryItem">The ActivityHistoryItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> AddResponseAsync(ActivityHistoryItem activityHistoryItem);
+
+        /// <summary>
+        /// Adds the specified ActivityHistoryItem to the collection via POST and returns a <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.
+        /// </summary>
+        /// <param name="activityHistoryItem">The ActivityHistoryItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> AddResponseAsync(ActivityHistoryItem activityHistoryItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

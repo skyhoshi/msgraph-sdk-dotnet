@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceManagementPartner.</returns>
         System.Threading.Tasks.Task<DeviceManagementPartner> AddAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceManagementPartner to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> AddResponseAsync(DeviceManagementPartner deviceManagementPartner);
+
+        /// <summary>
+        /// Adds the specified DeviceManagementPartner to the collection via POST and returns a <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceManagementPartner">The DeviceManagementPartner to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceManagementPartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceManagementPartner>> AddResponseAsync(DeviceManagementPartner deviceManagementPartner, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

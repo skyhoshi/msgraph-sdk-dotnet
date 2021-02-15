@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<RestrictedSignIn>(restrictedSignIn, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified RestrictedSignIn to the collection via POST and returns a <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.
+        /// </summary>
+        /// <param name="restrictedSignIn">The RestrictedSignIn to add.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> AddResponseAsync(RestrictedSignIn restrictedSignIn)
+        {
+            return this.AddResponseAsync(restrictedSignIn, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified RestrictedSignIn to the collection via POST and returns a <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.
+        /// </summary>
+        /// <param name="restrictedSignIn">The RestrictedSignIn to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> AddResponseAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RestrictedSignIn>(restrictedSignIn, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

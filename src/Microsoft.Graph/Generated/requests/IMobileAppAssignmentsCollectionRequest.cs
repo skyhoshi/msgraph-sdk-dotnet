@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileAppAssignment.</returns>
         System.Threading.Tasks.Task<MobileAppAssignment> AddAsync(MobileAppAssignment mobileAppAssignment, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MobileAppAssignment to the collection via POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> AddResponseAsync(MobileAppAssignment mobileAppAssignment);
+
+        /// <summary>
+        /// Adds the specified MobileAppAssignment to the collection via POST and returns a <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppAssignment">The MobileAppAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppAssignment}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileAppAssignment>> AddResponseAsync(MobileAppAssignment mobileAppAssignment, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

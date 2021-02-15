@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<BaseItem>(baseItem, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified BaseItem to the collection via POST and returns a <see cref="GraphResponse{BaseItem}"/> object of the request.
+        /// </summary>
+        /// <param name="baseItem">The BaseItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<BaseItem>> AddResponseAsync(BaseItem baseItem)
+        {
+            return this.AddResponseAsync(baseItem, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified BaseItem to the collection via POST and returns a <see cref="GraphResponse{BaseItem}"/> object of the request.
+        /// </summary>
+        /// <param name="baseItem">The BaseItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<BaseItem>> AddResponseAsync(BaseItem baseItem, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            baseItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(baseItem.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<BaseItem>(baseItem, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeView.</returns>
         System.Threading.Tasks.Task<WorkbookRangeView> AddAsync(WorkbookRangeView workbookRangeView, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkbookRangeView to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookRangeView">The WorkbookRangeView to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> AddResponseAsync(WorkbookRangeView workbookRangeView);
+
+        /// <summary>
+        /// Adds the specified WorkbookRangeView to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookRangeView">The WorkbookRangeView to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeView}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> AddResponseAsync(WorkbookRangeView workbookRangeView, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

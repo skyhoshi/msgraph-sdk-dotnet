@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ListItem>(listItem, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ListItem to the collection via POST and returns a <see cref="GraphResponse{ListItem}"/> object of the request.
+        /// </summary>
+        /// <param name="listItem">The ListItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItem>> AddResponseAsync(ListItem listItem)
+        {
+            return this.AddResponseAsync(listItem, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ListItem to the collection via POST and returns a <see cref="GraphResponse{ListItem}"/> object of the request.
+        /// </summary>
+        /// <param name="listItem">The ListItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItem}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ListItem>> AddResponseAsync(ListItem listItem, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ListItem>(listItem, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

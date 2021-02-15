@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupSettingTemplate.</returns>
         System.Threading.Tasks.Task<GroupSettingTemplate> AddAsync(GroupSettingTemplate groupSettingTemplate, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified GroupSettingTemplate to the collection via POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="groupSettingTemplate">The GroupSettingTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> AddResponseAsync(GroupSettingTemplate groupSettingTemplate);
+
+        /// <summary>
+        /// Adds the specified GroupSettingTemplate to the collection via POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="groupSettingTemplate">The GroupSettingTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> AddResponseAsync(GroupSettingTemplate groupSettingTemplate, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

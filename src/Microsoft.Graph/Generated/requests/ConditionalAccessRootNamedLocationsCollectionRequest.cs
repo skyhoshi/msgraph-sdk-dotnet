@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<NamedLocation>(namedLocation, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified NamedLocation to the collection via POST and returns a <see cref="GraphResponse{NamedLocation}"/> object of the request.
+        /// </summary>
+        /// <param name="namedLocation">The NamedLocation to add.</param>
+        /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<NamedLocation>> AddResponseAsync(NamedLocation namedLocation)
+        {
+            return this.AddResponseAsync(namedLocation, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified NamedLocation to the collection via POST and returns a <see cref="GraphResponse{NamedLocation}"/> object of the request.
+        /// </summary>
+        /// <param name="namedLocation">The NamedLocation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<NamedLocation>> AddResponseAsync(NamedLocation namedLocation, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<NamedLocation>(namedLocation, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

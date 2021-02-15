@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceInstallState.</returns>
         System.Threading.Tasks.Task<DeviceInstallState> AddAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceInstallState to the collection via POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> AddResponseAsync(DeviceInstallState deviceInstallState);
+
+        /// <summary>
+        /// Adds the specified DeviceInstallState to the collection via POST and returns a <see cref="GraphResponse{DeviceInstallState}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceInstallState">The DeviceInstallState to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> AddResponseAsync(DeviceInstallState deviceInstallState, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

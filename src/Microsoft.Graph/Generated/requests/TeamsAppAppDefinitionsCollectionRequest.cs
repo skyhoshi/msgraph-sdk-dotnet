@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TeamsAppDefinition>(teamsAppDefinition, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TeamsAppDefinition to the collection via POST and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsAppDefinition">The TeamsAppDefinition to add.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> AddResponseAsync(TeamsAppDefinition teamsAppDefinition)
+        {
+            return this.AddResponseAsync(teamsAppDefinition, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TeamsAppDefinition to the collection via POST and returns a <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsAppDefinition">The TeamsAppDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAppDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsAppDefinition>> AddResponseAsync(TeamsAppDefinition teamsAppDefinition, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TeamsAppDefinition>(teamsAppDefinition, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

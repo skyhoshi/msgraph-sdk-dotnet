@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsAsyncOperation.</returns>
         System.Threading.Tasks.Task<TeamsAsyncOperation> AddAsync(TeamsAsyncOperation teamsAsyncOperation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TeamsAsyncOperation to the collection via POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsAsyncOperation">The TeamsAsyncOperation to add.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> AddResponseAsync(TeamsAsyncOperation teamsAsyncOperation);
+
+        /// <summary>
+        /// Adds the specified TeamsAsyncOperation to the collection via POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsAsyncOperation">The TeamsAsyncOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> AddResponseAsync(TeamsAsyncOperation teamsAsyncOperation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

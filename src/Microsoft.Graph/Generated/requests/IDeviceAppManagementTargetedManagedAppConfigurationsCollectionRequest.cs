@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TargetedManagedAppConfiguration.</returns>
         System.Threading.Tasks.Task<TargetedManagedAppConfiguration> AddAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TargetedManagedAppConfiguration to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="targetedManagedAppConfiguration">The TargetedManagedAppConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> AddResponseAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration);
+
+        /// <summary>
+        /// Adds the specified TargetedManagedAppConfiguration to the collection via POST and returns a <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="targetedManagedAppConfiguration">The TargetedManagedAppConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TargetedManagedAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TargetedManagedAppConfiguration>> AddResponseAsync(TargetedManagedAppConfiguration targetedManagedAppConfiguration, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

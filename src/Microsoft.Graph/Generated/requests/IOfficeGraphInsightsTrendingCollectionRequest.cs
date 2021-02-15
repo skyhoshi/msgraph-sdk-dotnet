@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Trending.</returns>
         System.Threading.Tasks.Task<Trending> AddAsync(Trending trending, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Trending to the collection via POST and returns a <see cref="GraphResponse{Trending}"/> object of the request.
+        /// </summary>
+        /// <param name="trending">The Trending to add.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> AddResponseAsync(Trending trending);
+
+        /// <summary>
+        /// Adds the specified Trending to the collection via POST and returns a <see cref="GraphResponse{Trending}"/> object of the request.
+        /// </summary>
+        /// <param name="trending">The Trending to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Trending>> AddResponseAsync(Trending trending, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsInformationProtectionPolicy.</returns>
         System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> AddAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicy">The WindowsInformationProtectionPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> AddResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy);
+
+        /// <summary>
+        /// Adds the specified WindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsInformationProtectionPolicy">The WindowsInformationProtectionPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> AddResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

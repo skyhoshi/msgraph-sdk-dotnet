@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Permission.</returns>
         System.Threading.Tasks.Task<Permission> AddAsync(Permission permission, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Permission to the collection via POST and returns a <see cref="GraphResponse{Permission}"/> object of the request.
+        /// </summary>
+        /// <param name="permission">The Permission to add.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> AddResponseAsync(Permission permission);
+
+        /// <summary>
+        /// Adds the specified Permission to the collection via POST and returns a <see cref="GraphResponse{Permission}"/> object of the request.
+        /// </summary>
+        /// <param name="permission">The Permission to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Permission>> AddResponseAsync(Permission permission, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

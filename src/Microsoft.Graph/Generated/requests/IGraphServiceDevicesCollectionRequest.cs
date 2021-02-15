@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Device.</returns>
         System.Threading.Tasks.Task<Device> AddAsync(Device device, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Device to the collection via POST and returns a <see cref="GraphResponse{Device}"/> object of the request.
+        /// </summary>
+        /// <param name="device">The Device to add.</param>
+        /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Device>> AddResponseAsync(Device device);
+
+        /// <summary>
+        /// Adds the specified Device to the collection via POST and returns a <see cref="GraphResponse{Device}"/> object of the request.
+        /// </summary>
+        /// <param name="device">The Device to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Device}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Device>> AddResponseAsync(Device device, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

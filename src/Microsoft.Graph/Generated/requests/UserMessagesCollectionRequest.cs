@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Message>(message, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Message to the collection via POST and returns a <see cref="GraphResponse{Message}"/> object of the request.
+        /// </summary>
+        /// <param name="message">The Message to add.</param>
+        /// <returns>The <see cref="GraphResponse{Message}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Message>> AddResponseAsync(Message message)
+        {
+            return this.AddResponseAsync(message, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Message to the collection via POST and returns a <see cref="GraphResponse{Message}"/> object of the request.
+        /// </summary>
+        /// <param name="message">The Message to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Message}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Message>> AddResponseAsync(Message message, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Message>(message, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

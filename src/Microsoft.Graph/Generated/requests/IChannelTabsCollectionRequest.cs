@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsTab.</returns>
         System.Threading.Tasks.Task<TeamsTab> AddAsync(TeamsTab teamsTab, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TeamsTab to the collection via POST and returns a <see cref="GraphResponse{TeamsTab}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsTab">The TeamsTab to add.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> AddResponseAsync(TeamsTab teamsTab);
+
+        /// <summary>
+        /// Adds the specified TeamsTab to the collection via POST and returns a <see cref="GraphResponse{TeamsTab}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsTab">The TeamsTab to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsTab>> AddResponseAsync(TeamsTab teamsTab, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

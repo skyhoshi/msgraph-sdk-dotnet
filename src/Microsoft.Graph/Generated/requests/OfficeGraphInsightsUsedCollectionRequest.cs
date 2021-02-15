@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<UsedInsight>(usedInsight, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified UsedInsight to the collection via POST and returns a <see cref="GraphResponse{UsedInsight}"/> object of the request.
+        /// </summary>
+        /// <param name="usedInsight">The UsedInsight to add.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<UsedInsight>> AddResponseAsync(UsedInsight usedInsight)
+        {
+            return this.AddResponseAsync(usedInsight, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified UsedInsight to the collection via POST and returns a <see cref="GraphResponse{UsedInsight}"/> object of the request.
+        /// </summary>
+        /// <param name="usedInsight">The UsedInsight to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UsedInsight}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<UsedInsight>> AddResponseAsync(UsedInsight usedInsight, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<UsedInsight>(usedInsight, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TeamsAsyncOperation>(teamsAsyncOperation, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TeamsAsyncOperation to the collection via POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsAsyncOperation">The TeamsAsyncOperation to add.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> AddResponseAsync(TeamsAsyncOperation teamsAsyncOperation)
+        {
+            return this.AddResponseAsync(teamsAsyncOperation, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TeamsAsyncOperation to the collection via POST and returns a <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsAsyncOperation">The TeamsAsyncOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> AddResponseAsync(TeamsAsyncOperation teamsAsyncOperation, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TeamsAsyncOperation>(teamsAsyncOperation, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

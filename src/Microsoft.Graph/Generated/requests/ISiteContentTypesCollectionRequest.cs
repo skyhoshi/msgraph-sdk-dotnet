@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ContentType.</returns>
         System.Threading.Tasks.Task<ContentType> AddAsync(ContentType contentType, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ContentType to the collection via POST and returns a <see cref="GraphResponse{ContentType}"/> object of the request.
+        /// </summary>
+        /// <param name="contentType">The ContentType to add.</param>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> AddResponseAsync(ContentType contentType);
+
+        /// <summary>
+        /// Adds the specified ContentType to the collection via POST and returns a <see cref="GraphResponse{ContentType}"/> object of the request.
+        /// </summary>
+        /// <param name="contentType">The ContentType to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ContentType}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ContentType>> AddResponseAsync(ContentType contentType, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

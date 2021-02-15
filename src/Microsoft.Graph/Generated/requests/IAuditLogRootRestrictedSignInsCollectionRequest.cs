@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RestrictedSignIn.</returns>
         System.Threading.Tasks.Task<RestrictedSignIn> AddAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified RestrictedSignIn to the collection via POST and returns a <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.
+        /// </summary>
+        /// <param name="restrictedSignIn">The RestrictedSignIn to add.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> AddResponseAsync(RestrictedSignIn restrictedSignIn);
+
+        /// <summary>
+        /// Adds the specified RestrictedSignIn to the collection via POST and returns a <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.
+        /// </summary>
+        /// <param name="restrictedSignIn">The RestrictedSignIn to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RestrictedSignIn}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RestrictedSignIn>> AddResponseAsync(RestrictedSignIn restrictedSignIn, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

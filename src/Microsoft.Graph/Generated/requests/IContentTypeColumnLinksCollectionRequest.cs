@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnLink.</returns>
         System.Threading.Tasks.Task<ColumnLink> AddAsync(ColumnLink columnLink, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ColumnLink to the collection via POST and returns a <see cref="GraphResponse{ColumnLink}"/> object of the request.
+        /// </summary>
+        /// <param name="columnLink">The ColumnLink to add.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> AddResponseAsync(ColumnLink columnLink);
+
+        /// <summary>
+        /// Adds the specified ColumnLink to the collection via POST and returns a <see cref="GraphResponse{ColumnLink}"/> object of the request.
+        /// </summary>
+        /// <param name="columnLink">The ColumnLink to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnLink}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnLink>> AddResponseAsync(ColumnLink columnLink, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

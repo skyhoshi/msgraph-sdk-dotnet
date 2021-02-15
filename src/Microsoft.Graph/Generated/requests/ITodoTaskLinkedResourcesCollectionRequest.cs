@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LinkedResource.</returns>
         System.Threading.Tasks.Task<LinkedResource> AddAsync(LinkedResource linkedResource, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified LinkedResource to the collection via POST and returns a <see cref="GraphResponse{LinkedResource}"/> object of the request.
+        /// </summary>
+        /// <param name="linkedResource">The LinkedResource to add.</param>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> AddResponseAsync(LinkedResource linkedResource);
+
+        /// <summary>
+        /// Adds the specified LinkedResource to the collection via POST and returns a <see cref="GraphResponse{LinkedResource}"/> object of the request.
+        /// </summary>
+        /// <param name="linkedResource">The LinkedResource to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LinkedResource>> AddResponseAsync(LinkedResource linkedResource, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

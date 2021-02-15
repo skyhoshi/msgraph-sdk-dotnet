@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookRangeBorder.</returns>
         System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkbookRangeBorder to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> AddResponseAsync(WorkbookRangeBorder workbookRangeBorder);
+
+        /// <summary>
+        /// Adds the specified WorkbookRangeBorder to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> AddResponseAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DirectoryAudit>(directoryAudit, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DirectoryAudit to the collection via POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryAudit">The DirectoryAudit to add.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit)
+        {
+            return this.AddResponseAsync(directoryAudit, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DirectoryAudit to the collection via POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryAudit">The DirectoryAudit to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DirectoryAudit>(directoryAudit, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookChartPoint.</returns>
         System.Threading.Tasks.Task<WorkbookChartPoint> AddAsync(WorkbookChartPoint workbookChartPoint, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkbookChartPoint to the collection via POST and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookChartPoint">The WorkbookChartPoint to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> AddResponseAsync(WorkbookChartPoint workbookChartPoint);
+
+        /// <summary>
+        /// Adds the specified WorkbookChartPoint to the collection via POST and returns a <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookChartPoint">The WorkbookChartPoint to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> AddResponseAsync(WorkbookChartPoint workbookChartPoint, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

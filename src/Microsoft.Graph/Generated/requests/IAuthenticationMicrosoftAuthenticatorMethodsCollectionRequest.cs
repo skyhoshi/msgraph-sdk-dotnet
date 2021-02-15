@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftAuthenticatorAuthenticationMethod.</returns>
         System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethod> AddAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MicrosoftAuthenticatorAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="microsoftAuthenticatorAuthenticationMethod">The MicrosoftAuthenticatorAuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethod>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod);
+
+        /// <summary>
+        /// Adds the specified MicrosoftAuthenticatorAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="microsoftAuthenticatorAuthenticationMethod">The MicrosoftAuthenticatorAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethod>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethod microsoftAuthenticatorAuthenticationMethod, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

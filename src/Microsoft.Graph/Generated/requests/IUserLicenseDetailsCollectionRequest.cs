@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created LicenseDetails.</returns>
         System.Threading.Tasks.Task<LicenseDetails> AddAsync(LicenseDetails licenseDetails, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified LicenseDetails to the collection via POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object of the request.
+        /// </summary>
+        /// <param name="licenseDetails">The LicenseDetails to add.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> AddResponseAsync(LicenseDetails licenseDetails);
+
+        /// <summary>
+        /// Adds the specified LicenseDetails to the collection via POST and returns a <see cref="GraphResponse{LicenseDetails}"/> object of the request.
+        /// </summary>
+        /// <param name="licenseDetails">The LicenseDetails to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{LicenseDetails}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<LicenseDetails>> AddResponseAsync(LicenseDetails licenseDetails, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

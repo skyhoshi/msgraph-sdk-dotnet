@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Person>(person, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Person to the collection via POST and returns a <see cref="GraphResponse{Person}"/> object of the request.
+        /// </summary>
+        /// <param name="person">The Person to add.</param>
+        /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Person>> AddResponseAsync(Person person)
+        {
+            return this.AddResponseAsync(person, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Person to the collection via POST and returns a <see cref="GraphResponse{Person}"/> object of the request.
+        /// </summary>
+        /// <param name="person">The Person to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Person}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Person>> AddResponseAsync(Person person, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Person>(person, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookNamedItem.</returns>
         System.Threading.Tasks.Task<WorkbookNamedItem> AddAsync(WorkbookNamedItem workbookNamedItem, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkbookNamedItem to the collection via POST and returns a <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookNamedItem">The WorkbookNamedItem to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamedItem>> AddResponseAsync(WorkbookNamedItem workbookNamedItem);
+
+        /// <summary>
+        /// Adds the specified WorkbookNamedItem to the collection via POST and returns a <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookNamedItem">The WorkbookNamedItem to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookNamedItem}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookNamedItem>> AddResponseAsync(WorkbookNamedItem workbookNamedItem, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

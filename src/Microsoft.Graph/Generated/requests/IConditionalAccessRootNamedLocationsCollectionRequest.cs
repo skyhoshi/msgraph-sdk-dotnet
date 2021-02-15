@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created NamedLocation.</returns>
         System.Threading.Tasks.Task<NamedLocation> AddAsync(NamedLocation namedLocation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified NamedLocation to the collection via POST and returns a <see cref="GraphResponse{NamedLocation}"/> object of the request.
+        /// </summary>
+        /// <param name="namedLocation">The NamedLocation to add.</param>
+        /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NamedLocation>> AddResponseAsync(NamedLocation namedLocation);
+
+        /// <summary>
+        /// Adds the specified NamedLocation to the collection via POST and returns a <see cref="GraphResponse{NamedLocation}"/> object of the request.
+        /// </summary>
+        /// <param name="namedLocation">The NamedLocation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<NamedLocation>> AddResponseAsync(NamedLocation namedLocation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

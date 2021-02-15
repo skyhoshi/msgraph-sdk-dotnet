@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<RemoteAssistancePartner>(remoteAssistancePartner, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified RemoteAssistancePartner to the collection via POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.
+        /// </summary>
+        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner)
+        {
+            return this.AddResponseAsync(remoteAssistancePartner, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified RemoteAssistancePartner to the collection via POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.
+        /// </summary>
+        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RemoteAssistancePartner>(remoteAssistancePartner, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

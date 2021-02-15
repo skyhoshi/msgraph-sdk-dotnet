@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created OutlookCategory.</returns>
         System.Threading.Tasks.Task<OutlookCategory> AddAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified OutlookCategory to the collection via POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="outlookCategory">The OutlookCategory to add.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> AddResponseAsync(OutlookCategory outlookCategory);
+
+        /// <summary>
+        /// Adds the specified OutlookCategory to the collection via POST and returns a <see cref="GraphResponse{OutlookCategory}"/> object of the request.
+        /// </summary>
+        /// <param name="outlookCategory">The OutlookCategory to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OutlookCategory}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<OutlookCategory>> AddResponseAsync(OutlookCategory outlookCategory, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

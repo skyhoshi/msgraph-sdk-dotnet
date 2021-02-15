@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<GroupSettingTemplate>(groupSettingTemplate, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified GroupSettingTemplate to the collection via POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="groupSettingTemplate">The GroupSettingTemplate to add.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> AddResponseAsync(GroupSettingTemplate groupSettingTemplate)
+        {
+            return this.AddResponseAsync(groupSettingTemplate, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified GroupSettingTemplate to the collection via POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.
+        /// </summary>
+        /// <param name="groupSettingTemplate">The GroupSettingTemplate to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> AddResponseAsync(GroupSettingTemplate groupSettingTemplate, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<GroupSettingTemplate>(groupSettingTemplate, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

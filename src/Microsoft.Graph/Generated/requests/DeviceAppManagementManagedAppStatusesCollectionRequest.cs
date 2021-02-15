@@ -58,6 +58,31 @@ namespace Microsoft.Graph
             return this.SendAsync<ManagedAppStatus>(managedAppStatus, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagedAppStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> AddResponseAsync(ManagedAppStatus managedAppStatus)
+        {
+            return this.AddResponseAsync(managedAppStatus, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagedAppStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> AddResponseAsync(ManagedAppStatus managedAppStatus, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            managedAppStatus.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppStatus.GetType().FullName));
+            return await this.SendAsyncWithGraphResponse<ManagedAppStatus>(managedAppStatus, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

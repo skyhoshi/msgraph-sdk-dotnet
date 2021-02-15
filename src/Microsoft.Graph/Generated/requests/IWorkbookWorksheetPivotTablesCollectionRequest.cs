@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkbookPivotTable.</returns>
         System.Threading.Tasks.Task<WorkbookPivotTable> AddAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkbookPivotTable to the collection via POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookPivotTable">The WorkbookPivotTable to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> AddResponseAsync(WorkbookPivotTable workbookPivotTable);
+
+        /// <summary>
+        /// Adds the specified WorkbookPivotTable to the collection via POST and returns a <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookPivotTable">The WorkbookPivotTable to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> AddResponseAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DirectoryAudit.</returns>
         System.Threading.Tasks.Task<DirectoryAudit> AddAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DirectoryAudit to the collection via POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryAudit">The DirectoryAudit to add.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit);
+
+        /// <summary>
+        /// Adds the specified DirectoryAudit to the collection via POST and returns a <see cref="GraphResponse{DirectoryAudit}"/> object of the request.
+        /// </summary>
+        /// <param name="directoryAudit">The DirectoryAudit to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

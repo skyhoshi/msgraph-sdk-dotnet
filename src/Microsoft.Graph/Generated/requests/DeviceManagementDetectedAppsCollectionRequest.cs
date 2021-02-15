@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DetectedApp>(detectedApp, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DetectedApp to the collection via POST and returns a <see cref="GraphResponse{DetectedApp}"/> object of the request.
+        /// </summary>
+        /// <param name="detectedApp">The DetectedApp to add.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DetectedApp>> AddResponseAsync(DetectedApp detectedApp)
+        {
+            return this.AddResponseAsync(detectedApp, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DetectedApp to the collection via POST and returns a <see cref="GraphResponse{DetectedApp}"/> object of the request.
+        /// </summary>
+        /// <param name="detectedApp">The DetectedApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DetectedApp}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DetectedApp>> AddResponseAsync(DetectedApp detectedApp, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DetectedApp>(detectedApp, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppOperation.</returns>
         System.Threading.Tasks.Task<ManagedAppOperation> AddAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ManagedAppOperation to the collection via POST and returns a <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppOperation">The ManagedAppOperation to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> AddResponseAsync(ManagedAppOperation managedAppOperation);
+
+        /// <summary>
+        /// Adds the specified ManagedAppOperation to the collection via POST and returns a <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppOperation">The ManagedAppOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> AddResponseAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created CommsOperation.</returns>
         System.Threading.Tasks.Task<CommsOperation> AddAsync(CommsOperation commsOperation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified CommsOperation to the collection via POST and returns a <see cref="GraphResponse{CommsOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="commsOperation">The CommsOperation to add.</param>
+        /// <returns>The <see cref="GraphResponse{CommsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsOperation>> AddResponseAsync(CommsOperation commsOperation);
+
+        /// <summary>
+        /// Adds the specified CommsOperation to the collection via POST and returns a <see cref="GraphResponse{CommsOperation}"/> object of the request.
+        /// </summary>
+        /// <param name="commsOperation">The CommsOperation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CommsOperation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<CommsOperation>> AddResponseAsync(CommsOperation commsOperation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

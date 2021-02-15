@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created AuthenticationMethod.</returns>
         System.Threading.Tasks.Task<AuthenticationMethod> AddAsync(AuthenticationMethod authenticationMethod, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified AuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="authenticationMethod">The AuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethod>> AddResponseAsync(AuthenticationMethod authenticationMethod);
+
+        /// <summary>
+        /// Adds the specified AuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="authenticationMethod">The AuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{AuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<AuthenticationMethod>> AddResponseAsync(AuthenticationMethod authenticationMethod, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SectionGroup>(sectionGroup, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SectionGroup to the collection via POST and returns a <see cref="GraphResponse{SectionGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="sectionGroup">The SectionGroup to add.</param>
+        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SectionGroup>> AddResponseAsync(SectionGroup sectionGroup)
+        {
+            return this.AddResponseAsync(sectionGroup, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SectionGroup to the collection via POST and returns a <see cref="GraphResponse{SectionGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="sectionGroup">The SectionGroup to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SectionGroup>> AddResponseAsync(SectionGroup sectionGroup, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SectionGroup>(sectionGroup, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

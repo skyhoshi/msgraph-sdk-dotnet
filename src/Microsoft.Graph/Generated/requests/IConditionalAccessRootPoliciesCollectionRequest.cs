@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ConditionalAccessPolicy.</returns>
         System.Threading.Tasks.Task<ConditionalAccessPolicy> AddAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ConditionalAccessPolicy to the collection via POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="conditionalAccessPolicy">The ConditionalAccessPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> AddResponseAsync(ConditionalAccessPolicy conditionalAccessPolicy);
+
+        /// <summary>
+        /// Adds the specified ConditionalAccessPolicy to the collection via POST and returns a <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="conditionalAccessPolicy">The ConditionalAccessPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> AddResponseAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

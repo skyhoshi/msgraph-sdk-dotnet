@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftAuthenticatorAuthenticationMethodTarget.</returns>
         System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodTarget> AddAsync(MicrosoftAuthenticatorAuthenticationMethodTarget microsoftAuthenticatorAuthenticationMethodTarget, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MicrosoftAuthenticatorAuthenticationMethodTarget to the collection via POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodTarget}"/> object of the request.
+        /// </summary>
+        /// <param name="microsoftAuthenticatorAuthenticationMethodTarget">The MicrosoftAuthenticatorAuthenticationMethodTarget to add.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodTarget}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodTarget>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethodTarget microsoftAuthenticatorAuthenticationMethodTarget);
+
+        /// <summary>
+        /// Adds the specified MicrosoftAuthenticatorAuthenticationMethodTarget to the collection via POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodTarget}"/> object of the request.
+        /// </summary>
+        /// <param name="microsoftAuthenticatorAuthenticationMethodTarget">The MicrosoftAuthenticatorAuthenticationMethodTarget to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodTarget}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodTarget>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethodTarget microsoftAuthenticatorAuthenticationMethodTarget, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

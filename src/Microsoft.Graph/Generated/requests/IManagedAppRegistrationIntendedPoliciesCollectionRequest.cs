@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppPolicy.</returns>
         System.Threading.Tasks.Task<ManagedAppPolicy> AddAsync(ManagedAppPolicy managedAppPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ManagedAppPolicy to the collection via POST and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppPolicy">The ManagedAppPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> AddResponseAsync(ManagedAppPolicy managedAppPolicy);
+
+        /// <summary>
+        /// Adds the specified ManagedAppPolicy to the collection via POST and returns a <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppPolicy">The ManagedAppPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> AddResponseAsync(ManagedAppPolicy managedAppPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

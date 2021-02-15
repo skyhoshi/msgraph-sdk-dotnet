@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<OnlineMeeting>(onlineMeeting, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified OnlineMeeting to the collection via POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object of the request.
+        /// </summary>
+        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> AddResponseAsync(OnlineMeeting onlineMeeting)
+        {
+            return this.AddResponseAsync(onlineMeeting, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified OnlineMeeting to the collection via POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object of the request.
+        /// </summary>
+        /// <param name="onlineMeeting">The OnlineMeeting to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> AddResponseAsync(OnlineMeeting onlineMeeting, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeeting, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

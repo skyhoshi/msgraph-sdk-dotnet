@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<OnenoteResource>(onenoteResource, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified OnenoteResource to the collection via POST and returns a <see cref="GraphResponse{OnenoteResource}"/> object of the request.
+        /// </summary>
+        /// <param name="onenoteResource">The OnenoteResource to add.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> AddResponseAsync(OnenoteResource onenoteResource)
+        {
+            return this.AddResponseAsync(onenoteResource, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified OnenoteResource to the collection via POST and returns a <see cref="GraphResponse{OnenoteResource}"/> object of the request.
+        /// </summary>
+        /// <param name="onenoteResource">The OnenoteResource to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{OnenoteResource}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<OnenoteResource>> AddResponseAsync(OnenoteResource onenoteResource, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<OnenoteResource>(onenoteResource, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

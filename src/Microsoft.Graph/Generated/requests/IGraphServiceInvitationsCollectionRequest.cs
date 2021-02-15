@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Invitation.</returns>
         System.Threading.Tasks.Task<Invitation> AddAsync(Invitation invitation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Invitation to the collection via POST and returns a <see cref="GraphResponse{Invitation}"/> object of the request.
+        /// </summary>
+        /// <param name="invitation">The Invitation to add.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> AddResponseAsync(Invitation invitation);
+
+        /// <summary>
+        /// Adds the specified Invitation to the collection via POST and returns a <see cref="GraphResponse{Invitation}"/> object of the request.
+        /// </summary>
+        /// <param name="invitation">The Invitation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Invitation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Invitation>> AddResponseAsync(Invitation invitation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

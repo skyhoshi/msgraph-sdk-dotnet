@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<EducationSchool>(educationSchool, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified EducationSchool to the collection via POST and returns a <see cref="GraphResponse{EducationSchool}"/> object of the request.
+        /// </summary>
+        /// <param name="educationSchool">The EducationSchool to add.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EducationSchool>> AddResponseAsync(EducationSchool educationSchool)
+        {
+            return this.AddResponseAsync(educationSchool, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified EducationSchool to the collection via POST and returns a <see cref="GraphResponse{EducationSchool}"/> object of the request.
+        /// </summary>
+        /// <param name="educationSchool">The EducationSchool to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EducationSchool}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EducationSchool>> AddResponseAsync(EducationSchool educationSchool, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EducationSchool>(educationSchool, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

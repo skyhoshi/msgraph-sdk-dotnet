@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ColumnDefinition.</returns>
         System.Threading.Tasks.Task<ColumnDefinition> AddAsync(ColumnDefinition columnDefinition, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ColumnDefinition to the collection via POST and returns a <see cref="GraphResponse{ColumnDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="columnDefinition">The ColumnDefinition to add.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> AddResponseAsync(ColumnDefinition columnDefinition);
+
+        /// <summary>
+        /// Adds the specified ColumnDefinition to the collection via POST and returns a <see cref="GraphResponse{ColumnDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="columnDefinition">The ColumnDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ColumnDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ColumnDefinition>> AddResponseAsync(ColumnDefinition columnDefinition, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<MobileAppContentFile>(mobileAppContentFile, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified MobileAppContentFile to the collection via POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppContentFile">The MobileAppContentFile to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> AddResponseAsync(MobileAppContentFile mobileAppContentFile)
+        {
+            return this.AddResponseAsync(mobileAppContentFile, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified MobileAppContentFile to the collection via POST and returns a <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileAppContentFile">The MobileAppContentFile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileAppContentFile}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<MobileAppContentFile>> AddResponseAsync(MobileAppContentFile mobileAppContentFile, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<MobileAppContentFile>(mobileAppContentFile, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

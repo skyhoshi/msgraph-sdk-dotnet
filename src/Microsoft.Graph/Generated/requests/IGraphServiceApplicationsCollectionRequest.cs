@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Application.</returns>
         System.Threading.Tasks.Task<Application> AddAsync(Application application, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Application to the collection via POST and returns a <see cref="GraphResponse{Application}"/> object of the request.
+        /// </summary>
+        /// <param name="application">The Application to add.</param>
+        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Application>> AddResponseAsync(Application application);
+
+        /// <summary>
+        /// Adds the specified Application to the collection via POST and returns a <see cref="GraphResponse{Application}"/> object of the request.
+        /// </summary>
+        /// <param name="application">The Application to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Application}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Application>> AddResponseAsync(Application application, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SecureScoreControlProfile.</returns>
         System.Threading.Tasks.Task<SecureScoreControlProfile> AddAsync(SecureScoreControlProfile secureScoreControlProfile, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SecureScoreControlProfile to the collection via POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="secureScoreControlProfile">The SecureScoreControlProfile to add.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> AddResponseAsync(SecureScoreControlProfile secureScoreControlProfile);
+
+        /// <summary>
+        /// Adds the specified SecureScoreControlProfile to the collection via POST and returns a <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.
+        /// </summary>
+        /// <param name="secureScoreControlProfile">The SecureScoreControlProfile to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SecureScoreControlProfile}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SecureScoreControlProfile>> AddResponseAsync(SecureScoreControlProfile secureScoreControlProfile, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

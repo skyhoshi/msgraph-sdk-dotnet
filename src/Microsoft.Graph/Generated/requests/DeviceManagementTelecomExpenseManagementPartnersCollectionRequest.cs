@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TelecomExpenseManagementPartner>(telecomExpenseManagementPartner, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TelecomExpenseManagementPartner to the collection via POST and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartner">The TelecomExpenseManagementPartner to add.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> AddResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner)
+        {
+            return this.AddResponseAsync(telecomExpenseManagementPartner, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TelecomExpenseManagementPartner to the collection via POST and returns a <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.
+        /// </summary>
+        /// <param name="telecomExpenseManagementPartner">The TelecomExpenseManagementPartner to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TelecomExpenseManagementPartner}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TelecomExpenseManagementPartner>> AddResponseAsync(TelecomExpenseManagementPartner telecomExpenseManagementPartner, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TelecomExpenseManagementPartner>(telecomExpenseManagementPartner, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MobileThreatDefenseConnector.</returns>
         System.Threading.Tasks.Task<MobileThreatDefenseConnector> AddAsync(MobileThreatDefenseConnector mobileThreatDefenseConnector, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MobileThreatDefenseConnector to the collection via POST and returns a <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileThreatDefenseConnector">The MobileThreatDefenseConnector to add.</param>
+        /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> AddResponseAsync(MobileThreatDefenseConnector mobileThreatDefenseConnector);
+
+        /// <summary>
+        /// Adds the specified MobileThreatDefenseConnector to the collection via POST and returns a <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.
+        /// </summary>
+        /// <param name="mobileThreatDefenseConnector">The MobileThreatDefenseConnector to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> AddResponseAsync(MobileThreatDefenseConnector mobileThreatDefenseConnector, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

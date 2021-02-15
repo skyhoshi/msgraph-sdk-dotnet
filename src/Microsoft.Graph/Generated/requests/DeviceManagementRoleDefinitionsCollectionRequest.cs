@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<RoleDefinition>(roleDefinition, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified RoleDefinition to the collection via POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="roleDefinition">The RoleDefinition to add.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> AddResponseAsync(RoleDefinition roleDefinition)
+        {
+            return this.AddResponseAsync(roleDefinition, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified RoleDefinition to the collection via POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="roleDefinition">The RoleDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> AddResponseAsync(RoleDefinition roleDefinition, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<RoleDefinition>(roleDefinition, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Domain.</returns>
         System.Threading.Tasks.Task<Domain> AddAsync(Domain domain, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Domain to the collection via POST and returns a <see cref="GraphResponse{Domain}"/> object of the request.
+        /// </summary>
+        /// <param name="domain">The Domain to add.</param>
+        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain);
+
+        /// <summary>
+        /// Adds the specified Domain to the collection via POST and returns a <see cref="GraphResponse{Domain}"/> object of the request.
+        /// </summary>
+        /// <param name="domain">The Domain to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

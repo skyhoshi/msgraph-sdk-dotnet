@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<TimeOffReason>(timeOffReason, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified TimeOffReason to the collection via POST and returns a <see cref="GraphResponse{TimeOffReason}"/> object of the request.
+        /// </summary>
+        /// <param name="timeOffReason">The TimeOffReason to add.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> AddResponseAsync(TimeOffReason timeOffReason)
+        {
+            return this.AddResponseAsync(timeOffReason, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified TimeOffReason to the collection via POST and returns a <see cref="GraphResponse{TimeOffReason}"/> object of the request.
+        /// </summary>
+        /// <param name="timeOffReason">The TimeOffReason to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TimeOffReason}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<TimeOffReason>> AddResponseAsync(TimeOffReason timeOffReason, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<TimeOffReason>(timeOffReason, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WorkforceIntegration.</returns>
         System.Threading.Tasks.Task<WorkforceIntegration> AddAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
+        /// </summary>
+        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration);
+
+        /// <summary>
+        /// Adds the specified WorkforceIntegration to the collection via POST and returns a <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.
+        /// </summary>
+        /// <param name="workforceIntegration">The WorkforceIntegration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkforceIntegration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WorkforceIntegration>> AddResponseAsync(WorkforceIntegration workforceIntegration, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Contract.</returns>
         System.Threading.Tasks.Task<Contract> AddAsync(Contract contract, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Contract to the collection via POST and returns a <see cref="GraphResponse{Contract}"/> object of the request.
+        /// </summary>
+        /// <param name="contract">The Contract to add.</param>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> AddResponseAsync(Contract contract);
+
+        /// <summary>
+        /// Adds the specified Contract to the collection via POST and returns a <see cref="GraphResponse{Contract}"/> object of the request.
+        /// </summary>
+        /// <param name="contract">The Contract to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Contract>> AddResponseAsync(Contract contract, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

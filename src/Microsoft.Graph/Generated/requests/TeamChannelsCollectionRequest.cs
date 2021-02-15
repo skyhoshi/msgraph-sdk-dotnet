@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<Channel>(channel, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified Channel to the collection via POST and returns a <see cref="GraphResponse{Channel}"/> object of the request.
+        /// </summary>
+        /// <param name="channel">The Channel to add.</param>
+        /// <returns>The <see cref="GraphResponse{Channel}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Channel>> AddResponseAsync(Channel channel)
+        {
+            return this.AddResponseAsync(channel, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified Channel to the collection via POST and returns a <see cref="GraphResponse{Channel}"/> object of the request.
+        /// </summary>
+        /// <param name="channel">The Channel to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Channel}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<Channel>> AddResponseAsync(Channel channel, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<Channel>(channel, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created SchedulingGroup.</returns>
         System.Threading.Tasks.Task<SchedulingGroup> AddAsync(SchedulingGroup schedulingGroup, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified SchedulingGroup to the collection via POST and returns a <see cref="GraphResponse{SchedulingGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="schedulingGroup">The SchedulingGroup to add.</param>
+        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> AddResponseAsync(SchedulingGroup schedulingGroup);
+
+        /// <summary>
+        /// Adds the specified SchedulingGroup to the collection via POST and returns a <see cref="GraphResponse{SchedulingGroup}"/> object of the request.
+        /// </summary>
+        /// <param name="schedulingGroup">The SchedulingGroup to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> AddResponseAsync(SchedulingGroup schedulingGroup, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

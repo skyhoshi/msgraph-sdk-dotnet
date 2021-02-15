@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfigurationUserStatus.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> AddAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ManagedDeviceMobileAppConfigurationUserStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserStatus">The ManagedDeviceMobileAppConfigurationUserStatus to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> AddResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus);
+
+        /// <summary>
+        /// Adds the specified ManagedDeviceMobileAppConfigurationUserStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationUserStatus">The ManagedDeviceMobileAppConfigurationUserStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> AddResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

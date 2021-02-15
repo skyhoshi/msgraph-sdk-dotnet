@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WorkbookRangeBorder>(workbookRangeBorder, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WorkbookRangeBorder to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> AddResponseAsync(WorkbookRangeBorder workbookRangeBorder)
+        {
+            return this.AddResponseAsync(workbookRangeBorder, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WorkbookRangeBorder to the collection via POST and returns a <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.
+        /// </summary>
+        /// <param name="workbookRangeBorder">The WorkbookRangeBorder to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> AddResponseAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WorkbookRangeBorder>(workbookRangeBorder, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

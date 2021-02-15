@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created IosManagedAppProtection.</returns>
         System.Threading.Tasks.Task<IosManagedAppProtection> AddAsync(IosManagedAppProtection iosManagedAppProtection, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified IosManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.
+        /// </summary>
+        /// <param name="iosManagedAppProtection">The IosManagedAppProtection to add.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> AddResponseAsync(IosManagedAppProtection iosManagedAppProtection);
+
+        /// <summary>
+        /// Adds the specified IosManagedAppProtection to the collection via POST and returns a <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.
+        /// </summary>
+        /// <param name="iosManagedAppProtection">The IosManagedAppProtection to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{IosManagedAppProtection}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<IosManagedAppProtection>> AddResponseAsync(IosManagedAppProtection iosManagedAppProtection, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

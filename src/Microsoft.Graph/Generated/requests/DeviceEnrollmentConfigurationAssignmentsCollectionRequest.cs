@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> AddResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment)
+        {
+            return this.AddResponseAsync(enrollmentConfigurationAssignment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified EnrollmentConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="enrollmentConfigurationAssignment">The EnrollmentConfigurationAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{EnrollmentConfigurationAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<EnrollmentConfigurationAssignment>> AddResponseAsync(EnrollmentConfigurationAssignment enrollmentConfigurationAssignment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<EnrollmentConfigurationAssignment>(enrollmentConfigurationAssignment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

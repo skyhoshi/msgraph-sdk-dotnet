@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<DeviceComplianceDeviceStatus>(deviceComplianceDeviceStatus, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified DeviceComplianceDeviceStatus to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceDeviceStatus">The DeviceComplianceDeviceStatus to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceStatus>> AddResponseAsync(DeviceComplianceDeviceStatus deviceComplianceDeviceStatus)
+        {
+            return this.AddResponseAsync(deviceComplianceDeviceStatus, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified DeviceComplianceDeviceStatus to the collection via POST and returns a <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceComplianceDeviceStatus">The DeviceComplianceDeviceStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceComplianceDeviceStatus}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceDeviceStatus>> AddResponseAsync(DeviceComplianceDeviceStatus deviceComplianceDeviceStatus, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<DeviceComplianceDeviceStatus>(deviceComplianceDeviceStatus, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

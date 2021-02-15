@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedAppStatus.</returns>
         System.Threading.Tasks.Task<ManagedAppStatus> AddAsync(ManagedAppStatus managedAppStatus, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ManagedAppStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> AddResponseAsync(ManagedAppStatus managedAppStatus);
+
+        /// <summary>
+        /// Adds the specified ManagedAppStatus to the collection via POST and returns a <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.
+        /// </summary>
+        /// <param name="managedAppStatus">The ManagedAppStatus to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedAppStatus}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedAppStatus>> AddResponseAsync(ManagedAppStatus managedAppStatus, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

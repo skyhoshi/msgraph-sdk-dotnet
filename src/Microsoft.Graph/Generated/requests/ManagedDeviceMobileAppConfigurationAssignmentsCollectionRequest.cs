@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ManagedDeviceMobileAppConfigurationAssignment>(managedDeviceMobileAppConfigurationAssignment, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ManagedDeviceMobileAppConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignment">The ManagedDeviceMobileAppConfigurationAssignment to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> AddResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignment)
+        {
+            return this.AddResponseAsync(managedDeviceMobileAppConfigurationAssignment, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ManagedDeviceMobileAppConfigurationAssignment to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfigurationAssignment">The ManagedDeviceMobileAppConfigurationAssignment to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationAssignment}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationAssignment>> AddResponseAsync(ManagedDeviceMobileAppConfigurationAssignment managedDeviceMobileAppConfigurationAssignment, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationAssignment>(managedDeviceMobileAppConfigurationAssignment, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

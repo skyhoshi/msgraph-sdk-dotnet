@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created Conversation.</returns>
         System.Threading.Tasks.Task<Conversation> AddAsync(Conversation conversation, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified Conversation to the collection via POST and returns a <see cref="GraphResponse{Conversation}"/> object of the request.
+        /// </summary>
+        /// <param name="conversation">The Conversation to add.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> AddResponseAsync(Conversation conversation);
+
+        /// <summary>
+        /// Adds the specified Conversation to the collection via POST and returns a <see cref="GraphResponse{Conversation}"/> object of the request.
+        /// </summary>
+        /// <param name="conversation">The Conversation to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{Conversation}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<Conversation>> AddResponseAsync(Conversation conversation, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

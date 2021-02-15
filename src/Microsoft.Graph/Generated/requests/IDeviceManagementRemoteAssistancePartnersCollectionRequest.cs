@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RemoteAssistancePartner.</returns>
         System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified RemoteAssistancePartner to the collection via POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.
+        /// </summary>
+        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner);
+
+        /// <summary>
+        /// Adds the specified RemoteAssistancePartner to the collection via POST and returns a <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.
+        /// </summary>
+        /// <param name="remoteAssistancePartner">The RemoteAssistancePartner to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

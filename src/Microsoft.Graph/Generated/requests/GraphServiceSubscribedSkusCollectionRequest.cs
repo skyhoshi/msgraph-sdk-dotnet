@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<SubscribedSku>(subscribedSku, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified SubscribedSku to the collection via POST and returns a <see cref="GraphResponse{SubscribedSku}"/> object of the request.
+        /// </summary>
+        /// <param name="subscribedSku">The SubscribedSku to add.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> AddResponseAsync(SubscribedSku subscribedSku)
+        {
+            return this.AddResponseAsync(subscribedSku, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified SubscribedSku to the collection via POST and returns a <see cref="GraphResponse{SubscribedSku}"/> object of the request.
+        /// </summary>
+        /// <param name="subscribedSku">The SubscribedSku to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> AddResponseAsync(SubscribedSku subscribedSku, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<SubscribedSku>(subscribedSku, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

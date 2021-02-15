@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<ListItemVersion>(listItemVersion, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified ListItemVersion to the collection via POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="listItemVersion">The ListItemVersion to add.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> AddResponseAsync(ListItemVersion listItemVersion)
+        {
+            return this.AddResponseAsync(listItemVersion, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified ListItemVersion to the collection via POST and returns a <see cref="GraphResponse{ListItemVersion}"/> object of the request.
+        /// </summary>
+        /// <param name="listItemVersion">The ListItemVersion to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> AddResponseAsync(ListItemVersion listItemVersion, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<ListItemVersion>(listItemVersion, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

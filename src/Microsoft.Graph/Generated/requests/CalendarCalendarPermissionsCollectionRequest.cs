@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<CalendarPermission>(calendarPermission, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified CalendarPermission to the collection via POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object of the request.
+        /// </summary>
+        /// <param name="calendarPermission">The CalendarPermission to add.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> AddResponseAsync(CalendarPermission calendarPermission)
+        {
+            return this.AddResponseAsync(calendarPermission, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified CalendarPermission to the collection via POST and returns a <see cref="GraphResponse{CalendarPermission}"/> object of the request.
+        /// </summary>
+        /// <param name="calendarPermission">The CalendarPermission to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{CalendarPermission}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<CalendarPermission>> AddResponseAsync(CalendarPermission calendarPermission, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<CalendarPermission>(calendarPermission, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created DeviceEnrollmentConfiguration.</returns>
         System.Threading.Tasks.Task<DeviceEnrollmentConfiguration> AddAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfiguration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified DeviceEnrollmentConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfiguration">The DeviceEnrollmentConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> AddResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfiguration);
+
+        /// <summary>
+        /// Adds the specified DeviceEnrollmentConfiguration to the collection via POST and returns a <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="deviceEnrollmentConfiguration">The DeviceEnrollmentConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{DeviceEnrollmentConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentConfiguration>> AddResponseAsync(DeviceEnrollmentConfiguration deviceEnrollmentConfiguration, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

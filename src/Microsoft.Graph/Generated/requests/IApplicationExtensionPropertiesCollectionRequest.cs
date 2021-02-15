@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ExtensionProperty.</returns>
         System.Threading.Tasks.Task<ExtensionProperty> AddAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ExtensionProperty to the collection via POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object of the request.
+        /// </summary>
+        /// <param name="extensionProperty">The ExtensionProperty to add.</param>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty);
+
+        /// <summary>
+        /// Adds the specified ExtensionProperty to the collection via POST and returns a <see cref="GraphResponse{ExtensionProperty}"/> object of the request.
+        /// </summary>
+        /// <param name="extensionProperty">The ExtensionProperty to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

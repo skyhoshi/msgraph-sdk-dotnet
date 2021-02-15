@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created RoleDefinition.</returns>
         System.Threading.Tasks.Task<RoleDefinition> AddAsync(RoleDefinition roleDefinition, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified RoleDefinition to the collection via POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="roleDefinition">The RoleDefinition to add.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> AddResponseAsync(RoleDefinition roleDefinition);
+
+        /// <summary>
+        /// Adds the specified RoleDefinition to the collection via POST and returns a <see cref="GraphResponse{RoleDefinition}"/> object of the request.
+        /// </summary>
+        /// <param name="roleDefinition">The RoleDefinition to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{RoleDefinition}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<RoleDefinition>> AddResponseAsync(RoleDefinition roleDefinition, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

@@ -57,6 +57,30 @@ namespace Microsoft.Graph
             return this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethod, cancellationToken);
         }
 
+        
+        /// <summary>
+        /// Adds the specified WindowsHelloForBusinessAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethod">The WindowsHelloForBusinessAuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> AddResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod)
+        {
+            return this.AddResponseAsync(windowsHelloForBusinessAuthenticationMethod, CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Adds the specified WindowsHelloForBusinessAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethod">The WindowsHelloForBusinessAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
+        public async System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> AddResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod, CancellationToken cancellationToken)
+        {
+            this.ContentType = "application/json";
+            this.Method = "POST";
+            return await this.SendAsyncWithGraphResponse<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethod, cancellationToken).ConfigureAwait(false);
+        }
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

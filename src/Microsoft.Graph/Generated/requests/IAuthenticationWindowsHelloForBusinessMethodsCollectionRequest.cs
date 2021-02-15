@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created WindowsHelloForBusinessAuthenticationMethod.</returns>
         System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> AddAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified WindowsHelloForBusinessAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethod">The WindowsHelloForBusinessAuthenticationMethod to add.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> AddResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod);
+
+        /// <summary>
+        /// Adds the specified WindowsHelloForBusinessAuthenticationMethod to the collection via POST and returns a <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.
+        /// </summary>
+        /// <param name="windowsHelloForBusinessAuthenticationMethod">The WindowsHelloForBusinessAuthenticationMethod to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> AddResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethod, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

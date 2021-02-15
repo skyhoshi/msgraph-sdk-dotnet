@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created UserInstallStateSummary.</returns>
         System.Threading.Tasks.Task<UserInstallStateSummary> AddAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified UserInstallStateSummary to the collection via POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="userInstallStateSummary">The UserInstallStateSummary to add.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> AddResponseAsync(UserInstallStateSummary userInstallStateSummary);
+
+        /// <summary>
+        /// Adds the specified UserInstallStateSummary to the collection via POST and returns a <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.
+        /// </summary>
+        /// <param name="userInstallStateSummary">The UserInstallStateSummary to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> AddResponseAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

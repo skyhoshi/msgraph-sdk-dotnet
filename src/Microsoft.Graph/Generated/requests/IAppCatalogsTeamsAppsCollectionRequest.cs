@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created TeamsApp.</returns>
         System.Threading.Tasks.Task<TeamsApp> AddAsync(TeamsApp teamsApp, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified TeamsApp to the collection via POST and returns a <see cref="GraphResponse{TeamsApp}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsApp">The TeamsApp to add.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> AddResponseAsync(TeamsApp teamsApp);
+
+        /// <summary>
+        /// Adds the specified TeamsApp to the collection via POST and returns a <see cref="GraphResponse{TeamsApp}"/> object of the request.
+        /// </summary>
+        /// <param name="teamsApp">The TeamsApp to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{TeamsApp}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<TeamsApp>> AddResponseAsync(TeamsApp teamsApp, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

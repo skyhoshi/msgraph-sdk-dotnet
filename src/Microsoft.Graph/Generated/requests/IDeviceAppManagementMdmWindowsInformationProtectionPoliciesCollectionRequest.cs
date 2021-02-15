@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MdmWindowsInformationProtectionPolicy.</returns>
         System.Threading.Tasks.Task<MdmWindowsInformationProtectionPolicy> AddAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified MdmWindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicy">The MdmWindowsInformationProtectionPolicy to add.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> AddResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy);
+
+        /// <summary>
+        /// Adds the specified MdmWindowsInformationProtectionPolicy to the collection via POST and returns a <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.
+        /// </summary>
+        /// <param name="mdmWindowsInformationProtectionPolicy">The MdmWindowsInformationProtectionPolicy to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{MdmWindowsInformationProtectionPolicy}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<MdmWindowsInformationProtectionPolicy>> AddResponseAsync(MdmWindowsInformationProtectionPolicy mdmWindowsInformationProtectionPolicy, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>

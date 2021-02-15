@@ -35,6 +35,22 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ManagedDeviceMobileAppConfiguration.</returns>
         System.Threading.Tasks.Task<ManagedDeviceMobileAppConfiguration> AddAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration, CancellationToken cancellationToken);
+        
+        /// <summary>
+        /// Adds the specified ManagedDeviceMobileAppConfiguration to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfiguration">The ManagedDeviceMobileAppConfiguration to add.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> AddResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration);
+
+        /// <summary>
+        /// Adds the specified ManagedDeviceMobileAppConfiguration to the collection via POST and returns a <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.
+        /// </summary>
+        /// <param name="managedDeviceMobileAppConfiguration">The ManagedDeviceMobileAppConfiguration to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfiguration}"/> object of the request.</returns>
+        System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfiguration>> AddResponseAsync(ManagedDeviceMobileAppConfiguration managedDeviceMobileAppConfiguration, CancellationToken cancellationToken);
+
         /// <summary>
         /// Gets the collection page.
         /// </summary>
