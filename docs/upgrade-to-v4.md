@@ -19,7 +19,7 @@ The following section lists out the breaking changes requiring code changes from
 
 Updating to the latest version of the library involves the migration from [Newtonsoft.Json](https://www.newtonsoft.com/json) to System.Text.Json. You can always read more about the differences between the two libraries [here](https://docs.microsoft.com/en-us/dotnet/standard/serialization/system-text-json-migrate-from-newtonsoft-how-to?pivots=dotnet-5-0#table-of-differences-between-newtonsoftjson-and-systemtextjson).
 
-From the experience of the user of the SDKs, these are the main changes to look out for when upgrading.
+From the SDK developer experience, these are the main changes to look out for when upgrading.
 
 1. Object types and function parameters using Newtonsoft's JToken are now replaced by System.Text.Json's JsonDocument.
 
