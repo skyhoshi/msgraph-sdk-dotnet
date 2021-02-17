@@ -77,6 +77,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceApplicationTemplates request builder.
+        /// </summary>
+        public IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates
+        {
+            get
+            {
+                return new GraphServiceApplicationTemplatesCollectionRequestBuilder(this.BaseUrl + "/applicationTemplates", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceAuthenticationMethodConfigurations request builder.
         /// </summary>
         public IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations
