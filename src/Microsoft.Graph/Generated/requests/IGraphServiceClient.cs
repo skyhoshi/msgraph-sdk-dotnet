@@ -27,6 +27,11 @@ namespace Microsoft.Graph
         IGraphServiceUsersCollectionRequestBuilder Users { get; }
     
         /// <summary>
+        /// Gets the GraphServiceApplicationTemplates request builder.
+        /// </summary>
+        IGraphServiceApplicationTemplatesCollectionRequestBuilder ApplicationTemplates { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceAuthenticationMethodConfigurations request builder.
         /// </summary>
         IGraphServiceAuthenticationMethodConfigurationsCollectionRequestBuilder AuthenticationMethodConfigurations { get; }
