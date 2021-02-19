@@ -32,24 +32,13 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified ClaimsMappingPolicy to the collection via POST.
-        /// </summary>
-        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ClaimsMappingPolicy claimsMappingPolicy)
-        {
-            return this.AddAsync(claimsMappingPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ClaimsMappingPolicy to the collection via POST.
         /// </summary>
         /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task AddAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = "application/json";
             this.Method = "POST";
@@ -63,24 +52,13 @@ namespace Microsoft.Graph
             return this.SendAsync(requestBody, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified ClaimsMappingPolicy to the collection via POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.
-        /// </summary>
-        /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy)
-        {
-            return this.AddResponseAsync(claimsMappingPolicy, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified ClaimsMappingPolicy to the collection via POST and returns a <see cref="GraphResponse{ClaimsMappingPolicy}"/> object of the request.
         /// </summary>
         /// <param name="claimsMappingPolicy">The ClaimsMappingPolicy to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(ClaimsMappingPolicy claimsMappingPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = "application/json";
             this.Method = "POST";

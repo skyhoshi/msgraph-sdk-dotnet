@@ -24,23 +24,9 @@ namespace Microsoft.Graph
         /// Creates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using POST.
         /// </summary>
         /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToCreate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to create.</param>
-        /// <returns>The created MicrosoftAuthenticatorAuthenticationMethodConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodConfiguration> CreateAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToCreate);
-
-        /// <summary>
-        /// Creates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using POST.
-        /// </summary>
-        /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToCreate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created MicrosoftAuthenticatorAuthenticationMethodConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodConfiguration> CreateAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Creates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object.
-        /// </summary>
-        /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToCreate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to create.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> CreateResponseAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToCreate);
+        System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodConfiguration> CreateAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using POST and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object.
@@ -48,33 +34,21 @@ namespace Microsoft.Graph
         /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToCreate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> CreateResponseAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration.
-        /// </summary>
-        /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync();
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> CreateResponseAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Deletes the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync();
+        System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Deletes the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Gets the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration.
@@ -106,24 +80,10 @@ namespace Microsoft.Graph
         /// Updates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using PATCH.
         /// </summary>
         /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to update.</param>
-        /// <returns>The updated MicrosoftAuthenticatorAuthenticationMethodConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodConfiguration> UpdateAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate);
-
-        /// <summary>
-        /// Updates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using PATCH.
-        /// </summary>
-        /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated MicrosoftAuthenticatorAuthenticationMethodConfiguration.</returns>
-        System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodConfiguration> UpdateAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken);
-
-        /// <summary>
-        /// Updates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using PATCH and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object.
-        /// </summary>
-        /// <param name="microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate">The MicrosoftAuthenticatorAuthenticationMethodConfiguration to update.</param>
-        /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> UpdateResponseAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate);
+        System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodConfiguration> UpdateAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Updates the specified MicrosoftAuthenticatorAuthenticationMethodConfiguration using PATCH and returns a <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object.
@@ -132,7 +92,7 @@ namespace Microsoft.Graph
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfiguration}"/> object of the request.</returns>
-        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> UpdateResponseAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfiguration>> UpdateResponseAsync(MicrosoftAuthenticatorAuthenticationMethodConfiguration microsoftAuthenticatorAuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Adds the specified expand value to the request.

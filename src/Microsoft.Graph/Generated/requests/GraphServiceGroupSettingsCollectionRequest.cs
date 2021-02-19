@@ -33,69 +33,39 @@ namespace Microsoft.Graph
             : base(requestUrl, client, options)
         {
         }
-        
-        /// <summary>
-        /// Adds the specified GroupSetting to the collection via POST.
-        /// </summary>
-        /// <param name="groupSetting">The GroupSetting to add.</param>
-        /// <returns>The created GroupSetting.</returns>
-        public System.Threading.Tasks.Task<GroupSetting> AddAsync(GroupSetting groupSetting)
-        {
-            return this.AddAsync(groupSetting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupSetting to the collection via POST.
         /// </summary>
         /// <param name="groupSetting">The GroupSetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupSetting.</returns>
-        public System.Threading.Tasks.Task<GroupSetting> AddAsync(GroupSetting groupSetting, CancellationToken cancellationToken)
+        public System.Threading.Tasks.Task<GroupSetting> AddAsync(GroupSetting groupSetting, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = "application/json";
             this.Method = "POST";
             return this.SendAsync<GroupSetting>(groupSetting, cancellationToken);
         }
 
-        
-        /// <summary>
-        /// Adds the specified GroupSetting to the collection via POST and returns a <see cref="GraphResponse{GroupSetting}"/> object of the request.
-        /// </summary>
-        /// <param name="groupSetting">The GroupSetting to add.</param>
-        /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupSetting>> AddResponseAsync(GroupSetting groupSetting)
-        {
-            return this.AddResponseAsync(groupSetting, CancellationToken.None);
-        }
-
         /// <summary>
         /// Adds the specified GroupSetting to the collection via POST and returns a <see cref="GraphResponse{GroupSetting}"/> object of the request.
         /// </summary>
         /// <param name="groupSetting">The GroupSetting to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupSetting}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupSetting>> AddResponseAsync(GroupSetting groupSetting, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSetting>> AddResponseAsync(GroupSetting groupSetting, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = "application/json";
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupSetting>(groupSetting, cancellationToken).ConfigureAwait(false);
         }
 
-        /// <summary>
-        /// Gets the collection page.
-        /// </summary>
-        /// <returns>The collection page.</returns>
-        public System.Threading.Tasks.Task<IGraphServiceGroupSettingsCollectionPage> GetAsync()
-        {
-            return this.GetAsync(CancellationToken.None);
-        }
 
         /// <summary>
         /// Gets the collection page.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IGraphServiceGroupSettingsCollectionPage> GetAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<IGraphServiceGroupSettingsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             var response = await this.SendAsync<GraphServiceGroupSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -128,18 +98,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGroupSettingsCollectionResponse}"/> object.
         /// </summary>
-        /// <returns>The <see cref="GraphResponse{GraphServiceGroupSettingsCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GraphServiceGroupSettingsCollectionResponse>> GetResponseAsync()
-        {
-            return this.GetResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Gets the collection page and returns a <see cref="GraphResponse{GraphServiceGroupSettingsCollectionResponse}"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GraphServiceGroupSettingsCollectionResponse}"/> object.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceGroupSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GraphServiceGroupSettingsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "GET";
             return await this.SendAsyncWithGraphResponse<GraphServiceGroupSettingsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);

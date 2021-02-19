@@ -39,19 +39,9 @@ namespace Microsoft.Graph
         /// Creates the specified GroupSettingTemplate using POST.
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
-        /// <returns>The created GroupSettingTemplate.</returns>
-        public System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate)
-        {
-            return this.CreateAsync(groupSettingTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupSettingTemplate using POST.
-        /// </summary>
-        /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created GroupSettingTemplate.</returns>
-        public async System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = "application/json";
             this.Method = "POST";
@@ -64,19 +54,9 @@ namespace Microsoft.Graph
         /// Creates the specified GroupSettingTemplate using POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
         /// </summary>
         /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
-        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> CreateResponseAsync(GroupSettingTemplate groupSettingTemplateToCreate)
-        {
-            return this.CreateResponseAsync(groupSettingTemplateToCreate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Creates the specified GroupSettingTemplate using POST and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
-        /// </summary>
-        /// <param name="groupSettingTemplateToCreate">The GroupSettingTemplate to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> CreateResponseAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> CreateResponseAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = "application/json";
             this.Method = "POST";
@@ -86,18 +66,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified GroupSettingTemplate.
         /// </summary>
-        /// <returns>The task to await.</returns>
-        public System.Threading.Tasks.Task DeleteAsync()
-        {
-            return this.DeleteAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupSettingTemplate.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             await this.SendAsync<GroupSettingTemplate>(null, cancellationToken).ConfigureAwait(false);
@@ -106,18 +77,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Deletes the specified GroupSettingTemplate and returns a <see cref="GraphResponse"/> object.
         /// </summary>
-        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync()
-        {
-            return this.DeleteResponseAsync(CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Deletes the specified GroupSettingTemplate and returns a <see cref="GraphResponse"/> object.
-        /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse> DeleteResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             this.Method = "DELETE";
             return await this.SendAsyncWithGraphResponse(null, cancellationToken).ConfigureAwait(false);
@@ -169,47 +131,11 @@ namespace Microsoft.Graph
         /// Updates the specified GroupSettingTemplate using PATCH.
         /// </summary>
         /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
-        /// <returns>The updated GroupSettingTemplate.</returns>
-        public System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate)
-        {
-            return this.UpdateAsync(groupSettingTemplateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupSettingTemplate using PATCH.
-        /// </summary>
-        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The updated GroupSettingTemplate.</returns>
-        public async System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupSettingTemplateToUpdate.AdditionalData != null)
-			{
-				if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupSettingTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupSettingTemplateToUpdate.AdditionalData != null)
-            {
-                if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupSettingTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupSettingTemplate>(groupSettingTemplateToUpdate, cancellationToken).ConfigureAwait(false);
@@ -221,47 +147,11 @@ namespace Microsoft.Graph
         /// Updates the specified GroupSettingTemplate using PATCH and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
         /// </summary>
         /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
-        /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> UpdateResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate)
-        {
-            return this.UpdateResponseAsync(groupSettingTemplateToUpdate, CancellationToken.None);
-        }
-
-        /// <summary>
-        /// Updates the specified GroupSettingTemplate using PATCH and returns a <see cref="GraphResponse{GroupSettingTemplate}"/> object.
-        /// </summary>
-        /// <param name="groupSettingTemplateToUpdate">The GroupSettingTemplate to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
         /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
-        public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> UpdateResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> UpdateResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-			if (groupSettingTemplateToUpdate.AdditionalData != null)
-			{
-				if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-					groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-				{
-					throw new ClientException(
-						new Error
-						{
-							Code = GeneratedErrorConstants.Codes.NotAllowed,
-							Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupSettingTemplateToUpdate.GetType().Name)
-						});
-				}
-			}
-            if (groupSettingTemplateToUpdate.AdditionalData != null)
-            {
-                if (groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.ResponseHeaders) ||
-                    groupSettingTemplateToUpdate.AdditionalData.ContainsKey(Constants.HttpPropertyNames.StatusCode))
-                {
-                    throw new ClientException(
-                        new Error
-                        {
-                            Code = GeneratedErrorConstants.Codes.NotAllowed,
-                            Message = String.Format(GeneratedErrorConstants.Messages.ResponseObjectUsedForUpdate, groupSettingTemplateToUpdate.GetType().Name)
-                        });
-                }
-            }
             this.ContentType = "application/json";
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<GroupSettingTemplate>(groupSettingTemplateToUpdate, cancellationToken).ConfigureAwait(false);
