@@ -68,6 +68,7 @@ namespace Microsoft.Graph
         /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="report">The Report object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         System.Threading.Tasks.Task<GraphResponse<Report>> PutResponseAsync(Report report, CancellationToken cancellationToken = default(CancellationToken));
 

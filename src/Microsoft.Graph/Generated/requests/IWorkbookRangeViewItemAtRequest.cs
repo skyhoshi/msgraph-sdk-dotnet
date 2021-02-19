@@ -68,6 +68,7 @@ namespace Microsoft.Graph
         /// Issues the PUT request and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <param name="workbookrangeview">The WorkbookRangeView object set with the properties to update.</param>
         /// <returns>The <see cref="GraphResponse"/> object of the request</returns>
         System.Threading.Tasks.Task<GraphResponse<WorkbookRangeView>> PutResponseAsync(WorkbookRangeView workbookrangeview, CancellationToken cancellationToken = default(CancellationToken));
 
