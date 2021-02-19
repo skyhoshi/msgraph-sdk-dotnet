@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -76,6 +76,22 @@ namespace Microsoft.Graph
             /// The deltaLink annotations string.
             /// </summary>
             public const string DeltaLink = "@odata.deltaLink";
+        }
+
+        /// <summary>
+        /// Constants used to specify content types
+        /// </summary>
+        public static class ContentTypes
+        {
+            /// <summary>
+            /// The deltaLink annotations string.
+            /// </summary>
+            public const string JsonContentType = "application/json";
+
+            /// <summary>
+            /// The deltaLink annotations string.
+            /// </summary>
+            public const string StreamContentType = "application/octet-stream";
         }
     }
 }
