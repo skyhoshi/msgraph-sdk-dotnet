@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created LinkedResource.</returns>
         public async System.Threading.Tasks.Task<LinkedResource> CreateAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<LinkedResource>(linkedResourceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<LinkedResource>> CreateResponseAsync(LinkedResource linkedResourceToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LinkedResource>(linkedResourceToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated LinkedResource.</returns>
         public async System.Threading.Tasks.Task<LinkedResource> UpdateAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<LinkedResource>(linkedResourceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{LinkedResource}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<LinkedResource>> UpdateResponseAsync(LinkedResource linkedResourceToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<LinkedResource>(linkedResourceToUpdate, cancellationToken).ConfigureAwait(false);
         }

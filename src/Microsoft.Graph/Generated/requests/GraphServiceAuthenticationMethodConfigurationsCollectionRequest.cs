@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created AuthenticationMethodConfiguration.</returns>
         public System.Threading.Tasks.Task<AuthenticationMethodConfiguration> AddAsync(AuthenticationMethodConfiguration authenticationMethodConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             authenticationMethodConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(authenticationMethodConfiguration.GetType().FullName));
             return this.SendAsync<AuthenticationMethodConfiguration>(authenticationMethodConfiguration, cancellationToken);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AuthenticationMethodConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodConfiguration>> AddResponseAsync(AuthenticationMethodConfiguration authenticationMethodConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             authenticationMethodConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(authenticationMethodConfiguration.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<AuthenticationMethodConfiguration>(authenticationMethodConfiguration, cancellationToken).ConfigureAwait(false);

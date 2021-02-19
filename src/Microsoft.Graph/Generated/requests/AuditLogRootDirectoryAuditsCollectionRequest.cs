@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created DirectoryAudit.</returns>
         public System.Threading.Tasks.Task<DirectoryAudit> AddAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DirectoryAudit>(directoryAudit, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> AddResponseAsync(DirectoryAudit directoryAudit, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryAudit>(directoryAudit, cancellationToken).ConfigureAwait(false);
         }

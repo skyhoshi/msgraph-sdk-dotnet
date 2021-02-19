@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsUpdateForBusinessConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> CreateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> CreateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsUpdateForBusinessConfiguration.</returns>
         public async System.Threading.Tasks.Task<WindowsUpdateForBusinessConfiguration> UpdateAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsUpdateForBusinessConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsUpdateForBusinessConfiguration>> UpdateResponseAsync(WindowsUpdateForBusinessConfiguration windowsUpdateForBusinessConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsUpdateForBusinessConfiguration>(windowsUpdateForBusinessConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

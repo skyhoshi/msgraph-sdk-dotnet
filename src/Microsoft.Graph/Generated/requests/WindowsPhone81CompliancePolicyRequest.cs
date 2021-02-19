@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsPhone81CompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> CreateAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsPhone81CompliancePolicy>(windowsPhone81CompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CompliancePolicy>> CreateResponseAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsPhone81CompliancePolicy>(windowsPhone81CompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsPhone81CompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<WindowsPhone81CompliancePolicy> UpdateAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsPhone81CompliancePolicy>(windowsPhone81CompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsPhone81CompliancePolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsPhone81CompliancePolicy>> UpdateResponseAsync(WindowsPhone81CompliancePolicy windowsPhone81CompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsPhone81CompliancePolicy>(windowsPhone81CompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

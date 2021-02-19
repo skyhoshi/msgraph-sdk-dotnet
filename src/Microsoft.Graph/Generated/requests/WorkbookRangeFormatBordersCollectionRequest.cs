@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookRangeBorder.</returns>
         public System.Threading.Tasks.Task<WorkbookRangeBorder> AddAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WorkbookRangeBorder>(workbookRangeBorder, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookRangeBorder}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookRangeBorder>> AddResponseAsync(WorkbookRangeBorder workbookRangeBorder, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookRangeBorder>(workbookRangeBorder, cancellationToken).ConfigureAwait(false);
         }

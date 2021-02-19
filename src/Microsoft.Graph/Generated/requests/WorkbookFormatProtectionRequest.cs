@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookFormatProtection.</returns>
         public async System.Threading.Tasks.Task<WorkbookFormatProtection> CreateAsync(WorkbookFormatProtection workbookFormatProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookFormatProtection>(workbookFormatProtectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookFormatProtection}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookFormatProtection>> CreateResponseAsync(WorkbookFormatProtection workbookFormatProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookFormatProtection>(workbookFormatProtectionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookFormatProtection.</returns>
         public async System.Threading.Tasks.Task<WorkbookFormatProtection> UpdateAsync(WorkbookFormatProtection workbookFormatProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookFormatProtection>(workbookFormatProtectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookFormatProtection}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookFormatProtection>> UpdateResponseAsync(WorkbookFormatProtection workbookFormatProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookFormatProtection>(workbookFormatProtectionToUpdate, cancellationToken).ConfigureAwait(false);
         }

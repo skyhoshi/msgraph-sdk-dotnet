@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created SwapShiftsChangeRequestObject.</returns>
         public async System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> CreateAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SwapShiftsChangeRequestObject>(swapShiftsChangeRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> CreateResponseAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SwapShiftsChangeRequestObject>(swapShiftsChangeRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated SwapShiftsChangeRequestObject.</returns>
         public async System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> UpdateAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SwapShiftsChangeRequestObject>(swapShiftsChangeRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> UpdateResponseAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SwapShiftsChangeRequestObject>(swapShiftsChangeRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ConditionalAccessRoot.</returns>
         public async System.Threading.Tasks.Task<ConditionalAccessRoot> CreateAsync(ConditionalAccessRoot conditionalAccessRootToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ConditionalAccessRoot>(conditionalAccessRootToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> CreateResponseAsync(ConditionalAccessRoot conditionalAccessRootToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ConditionalAccessRoot>(conditionalAccessRootToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ConditionalAccessRoot.</returns>
         public async System.Threading.Tasks.Task<ConditionalAccessRoot> UpdateAsync(ConditionalAccessRoot conditionalAccessRootToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ConditionalAccessRoot>(conditionalAccessRootToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ConditionalAccessRoot}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessRoot>> UpdateResponseAsync(ConditionalAccessRoot conditionalAccessRootToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ConditionalAccessRoot>(conditionalAccessRootToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedAppPolicy.</returns>
         public System.Threading.Tasks.Task<ManagedAppPolicy> AddAsync(ManagedAppPolicy managedAppPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedAppPolicy.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppPolicy.GetType().FullName));
             return this.SendAsync<ManagedAppPolicy>(managedAppPolicy, cancellationToken);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAppPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAppPolicy>> AddResponseAsync(ManagedAppPolicy managedAppPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedAppPolicy.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppPolicy.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<ManagedAppPolicy>(managedAppPolicy, cancellationToken).ConfigureAwait(false);

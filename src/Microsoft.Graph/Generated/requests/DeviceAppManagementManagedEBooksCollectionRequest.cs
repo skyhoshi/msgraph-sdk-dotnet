@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedEBook.</returns>
         public System.Threading.Tasks.Task<ManagedEBook> AddAsync(ManagedEBook managedEBook, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedEBook.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedEBook.GetType().FullName));
             return this.SendAsync<ManagedEBook>(managedEBook, cancellationToken);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> AddResponseAsync(ManagedEBook managedEBook, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedEBook.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedEBook.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<ManagedEBook>(managedEBook, cancellationToken).ConfigureAwait(false);

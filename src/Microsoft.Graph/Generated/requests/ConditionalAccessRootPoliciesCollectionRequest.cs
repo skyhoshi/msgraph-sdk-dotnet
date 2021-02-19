@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ConditionalAccessPolicy.</returns>
         public System.Threading.Tasks.Task<ConditionalAccessPolicy> AddAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ConditionalAccessPolicy>(conditionalAccessPolicy, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ConditionalAccessPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ConditionalAccessPolicy>> AddResponseAsync(ConditionalAccessPolicy conditionalAccessPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ConditionalAccessPolicy>(conditionalAccessPolicy, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedDevice.</returns>
         public System.Threading.Tasks.Task<ManagedDevice> AddAsync(ManagedDevice managedDevice, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ManagedDevice>(managedDevice, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedDevice}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedDevice>> AddResponseAsync(ManagedDevice managedDevice, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedDevice>(managedDevice, cancellationToken).ConfigureAwait(false);
         }

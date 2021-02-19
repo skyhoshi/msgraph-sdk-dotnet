@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Permission.</returns>
         public System.Threading.Tasks.Task<Permission> AddAsync(Permission permission, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Permission>(permission, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Permission}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Permission>> AddResponseAsync(Permission permission, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Permission>(permission, cancellationToken).ConfigureAwait(false);
         }

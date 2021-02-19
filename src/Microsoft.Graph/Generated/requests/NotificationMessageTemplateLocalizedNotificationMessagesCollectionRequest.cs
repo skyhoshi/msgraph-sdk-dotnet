@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created LocalizedNotificationMessage.</returns>
         public System.Threading.Tasks.Task<LocalizedNotificationMessage> AddAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<LocalizedNotificationMessage>(localizedNotificationMessage, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{LocalizedNotificationMessage}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<LocalizedNotificationMessage>> AddResponseAsync(LocalizedNotificationMessage localizedNotificationMessage, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<LocalizedNotificationMessage>(localizedNotificationMessage, cancellationToken).ConfigureAwait(false);
         }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created SubscribeToToneOperation.</returns>
         public async System.Threading.Tasks.Task<SubscribeToToneOperation> CreateAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SubscribeToToneOperation>(subscribeToToneOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> CreateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SubscribeToToneOperation>(subscribeToToneOperationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated SubscribeToToneOperation.</returns>
         public async System.Threading.Tasks.Task<SubscribeToToneOperation> UpdateAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SubscribeToToneOperation>(subscribeToToneOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SubscribeToToneOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SubscribeToToneOperation>> UpdateResponseAsync(SubscribeToToneOperation subscribeToToneOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SubscribeToToneOperation>(subscribeToToneOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }

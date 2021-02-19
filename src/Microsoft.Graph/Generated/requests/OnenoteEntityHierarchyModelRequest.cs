@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created OnenoteEntityHierarchyModel.</returns>
         public async System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> CreateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<OnenoteEntityHierarchyModel>(onenoteEntityHierarchyModelToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> CreateResponseAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OnenoteEntityHierarchyModel>(onenoteEntityHierarchyModelToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated OnenoteEntityHierarchyModel.</returns>
         public async System.Threading.Tasks.Task<OnenoteEntityHierarchyModel> UpdateAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OnenoteEntityHierarchyModel>(onenoteEntityHierarchyModelToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OnenoteEntityHierarchyModel}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<OnenoteEntityHierarchyModel>> UpdateResponseAsync(OnenoteEntityHierarchyModel onenoteEntityHierarchyModelToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<OnenoteEntityHierarchyModel>(onenoteEntityHierarchyModelToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created CertificateBasedAuthConfiguration.</returns>
         public async System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> CreateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CertificateBasedAuthConfiguration>(certificateBasedAuthConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> CreateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CertificateBasedAuthConfiguration>(certificateBasedAuthConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated CertificateBasedAuthConfiguration.</returns>
         public async System.Threading.Tasks.Task<CertificateBasedAuthConfiguration> UpdateAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CertificateBasedAuthConfiguration>(certificateBasedAuthConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CertificateBasedAuthConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<CertificateBasedAuthConfiguration>> UpdateResponseAsync(CertificateBasedAuthConfiguration certificateBasedAuthConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CertificateBasedAuthConfiguration>(certificateBasedAuthConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

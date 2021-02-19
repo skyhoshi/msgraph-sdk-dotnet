@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Contact.</returns>
         public System.Threading.Tasks.Task<Contact> AddAsync(Contact contact, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Contact>(contact, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Contact}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Contact>> AddResponseAsync(Contact contact, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Contact>(contact, cancellationToken).ConfigureAwait(false);
         }

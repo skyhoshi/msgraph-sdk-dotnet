@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Event.</returns>
         public System.Threading.Tasks.Task<Event> AddAsync(Event instancesEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Event>(instancesEvent, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Event}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Event>> AddResponseAsync(Event instancesEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Event>(instancesEvent, cancellationToken).ConfigureAwait(false);
         }

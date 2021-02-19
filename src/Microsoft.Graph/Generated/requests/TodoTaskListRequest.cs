@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created TodoTaskList.</returns>
         public async System.Threading.Tasks.Task<TodoTaskList> CreateAsync(TodoTaskList todoTaskListToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TodoTaskList>(todoTaskListToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> CreateResponseAsync(TodoTaskList todoTaskListToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TodoTaskList>(todoTaskListToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated TodoTaskList.</returns>
         public async System.Threading.Tasks.Task<TodoTaskList> UpdateAsync(TodoTaskList todoTaskListToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TodoTaskList>(todoTaskListToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> UpdateResponseAsync(TodoTaskList todoTaskListToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TodoTaskList>(todoTaskListToUpdate, cancellationToken).ConfigureAwait(false);
         }

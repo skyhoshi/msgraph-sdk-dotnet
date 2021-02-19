@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created DelegatedPermissionClassification.</returns>
         public System.Threading.Tasks.Task<DelegatedPermissionClassification> AddAsync(DelegatedPermissionClassification delegatedPermissionClassification, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DelegatedPermissionClassification>(delegatedPermissionClassification, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DelegatedPermissionClassification}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DelegatedPermissionClassification>> AddResponseAsync(DelegatedPermissionClassification delegatedPermissionClassification, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DelegatedPermissionClassification>(delegatedPermissionClassification, cancellationToken).ConfigureAwait(false);
         }

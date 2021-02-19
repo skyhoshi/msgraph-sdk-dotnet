@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created DirectoryRole.</returns>
         public System.Threading.Tasks.Task<DirectoryRole> AddAsync(DirectoryRole directoryRole, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DirectoryRole>(directoryRole, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DirectoryRole}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DirectoryRole>> AddResponseAsync(DirectoryRole directoryRole, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryRole>(directoryRole, cancellationToken).ConfigureAwait(false);
         }

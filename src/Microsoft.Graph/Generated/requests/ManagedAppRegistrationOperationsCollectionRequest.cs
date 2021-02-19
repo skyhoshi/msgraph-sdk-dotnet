@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedAppOperation.</returns>
         public System.Threading.Tasks.Task<ManagedAppOperation> AddAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ManagedAppOperation>(managedAppOperation, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> AddResponseAsync(ManagedAppOperation managedAppOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAppOperation>(managedAppOperation, cancellationToken).ConfigureAwait(false);
         }

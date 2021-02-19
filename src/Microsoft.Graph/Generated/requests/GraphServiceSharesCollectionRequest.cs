@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created SharedDriveItem.</returns>
         public System.Threading.Tasks.Task<SharedDriveItem> AddAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SharedDriveItem>(sharedDriveItem, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SharedDriveItem}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SharedDriveItem>> AddResponseAsync(SharedDriveItem sharedDriveItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SharedDriveItem>(sharedDriveItem, cancellationToken).ConfigureAwait(false);
         }

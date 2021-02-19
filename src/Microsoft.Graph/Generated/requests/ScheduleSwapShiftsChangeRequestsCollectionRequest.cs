@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created SwapShiftsChangeRequestObject.</returns>
         public System.Threading.Tasks.Task<SwapShiftsChangeRequestObject> AddAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SwapShiftsChangeRequestObject>(swapShiftsChangeRequest, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SwapShiftsChangeRequestObject}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SwapShiftsChangeRequestObject>> AddResponseAsync(SwapShiftsChangeRequestObject swapShiftsChangeRequest, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SwapShiftsChangeRequestObject>(swapShiftsChangeRequest, cancellationToken).ConfigureAwait(false);
         }

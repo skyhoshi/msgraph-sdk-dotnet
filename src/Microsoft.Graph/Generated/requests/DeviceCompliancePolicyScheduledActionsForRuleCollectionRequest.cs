@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceComplianceScheduledActionForRule.</returns>
         public System.Threading.Tasks.Task<DeviceComplianceScheduledActionForRule> AddAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRule, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRule, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceComplianceScheduledActionForRule}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceComplianceScheduledActionForRule>> AddResponseAsync(DeviceComplianceScheduledActionForRule deviceComplianceScheduledActionForRule, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceComplianceScheduledActionForRule>(deviceComplianceScheduledActionForRule, cancellationToken).ConfigureAwait(false);
         }

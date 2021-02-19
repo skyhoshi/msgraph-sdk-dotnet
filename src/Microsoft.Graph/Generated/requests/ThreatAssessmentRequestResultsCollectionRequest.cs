@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ThreatAssessmentResult.</returns>
         public System.Threading.Tasks.Task<ThreatAssessmentResult> AddAsync(ThreatAssessmentResult threatAssessmentResult, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ThreatAssessmentResult>(threatAssessmentResult, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> AddResponseAsync(ThreatAssessmentResult threatAssessmentResult, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ThreatAssessmentResult>(threatAssessmentResult, cancellationToken).ConfigureAwait(false);
         }

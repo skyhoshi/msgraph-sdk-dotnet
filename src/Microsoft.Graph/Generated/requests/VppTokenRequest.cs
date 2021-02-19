@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created VppToken.</returns>
         public async System.Threading.Tasks.Task<VppToken> CreateAsync(VppToken vppTokenToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<VppToken>(vppTokenToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<VppToken>> CreateResponseAsync(VppToken vppTokenToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<VppToken>(vppTokenToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated VppToken.</returns>
         public async System.Threading.Tasks.Task<VppToken> UpdateAsync(VppToken vppTokenToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<VppToken>(vppTokenToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{VppToken}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<VppToken>> UpdateResponseAsync(VppToken vppTokenToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<VppToken>(vppTokenToUpdate, cancellationToken).ConfigureAwait(false);
         }

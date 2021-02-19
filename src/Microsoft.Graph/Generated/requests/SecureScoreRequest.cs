@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created SecureScore.</returns>
         public async System.Threading.Tasks.Task<SecureScore> CreateAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SecureScore>(secureScoreToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SecureScore>> CreateResponseAsync(SecureScore secureScoreToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SecureScore>(secureScoreToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated SecureScore.</returns>
         public async System.Threading.Tasks.Task<SecureScore> UpdateAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SecureScore>(secureScoreToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SecureScore}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SecureScore>> UpdateResponseAsync(SecureScore secureScoreToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SecureScore>(secureScoreToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Room.</returns>
         public System.Threading.Tasks.Task<Room> AddAsync(Room room, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Room>(room, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Room}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Room>> AddResponseAsync(Room room, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Room>(room, cancellationToken).ConfigureAwait(false);
         }

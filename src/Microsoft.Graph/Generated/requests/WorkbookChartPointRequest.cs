@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookChartPoint.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartPoint> CreateAsync(WorkbookChartPoint workbookChartPointToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookChartPoint>(workbookChartPointToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> CreateResponseAsync(WorkbookChartPoint workbookChartPointToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookChartPoint>(workbookChartPointToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookChartPoint.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartPoint> UpdateAsync(WorkbookChartPoint workbookChartPointToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookChartPoint>(workbookChartPointToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookChartPoint}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartPoint>> UpdateResponseAsync(WorkbookChartPoint workbookChartPointToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookChartPoint>(workbookChartPointToUpdate, cancellationToken).ConfigureAwait(false);
         }

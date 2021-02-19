@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceConfigurationDeviceStatus.</returns>
         public System.Threading.Tasks.Task<DeviceConfigurationDeviceStatus> AddAsync(DeviceConfigurationDeviceStatus deviceConfigurationDeviceStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceConfigurationDeviceStatus>(deviceConfigurationDeviceStatus, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceConfigurationDeviceStatus}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceConfigurationDeviceStatus>> AddResponseAsync(DeviceConfigurationDeviceStatus deviceConfigurationDeviceStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceConfigurationDeviceStatus>(deviceConfigurationDeviceStatus, cancellationToken).ConfigureAwait(false);
         }

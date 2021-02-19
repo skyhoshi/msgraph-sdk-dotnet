@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created AppleDeviceFeaturesConfigurationBase.</returns>
         public async System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> CreateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AppleDeviceFeaturesConfigurationBase>(appleDeviceFeaturesConfigurationBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> CreateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AppleDeviceFeaturesConfigurationBase>(appleDeviceFeaturesConfigurationBaseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated AppleDeviceFeaturesConfigurationBase.</returns>
         public async System.Threading.Tasks.Task<AppleDeviceFeaturesConfigurationBase> UpdateAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AppleDeviceFeaturesConfigurationBase>(appleDeviceFeaturesConfigurationBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AppleDeviceFeaturesConfigurationBase}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AppleDeviceFeaturesConfigurationBase>> UpdateResponseAsync(AppleDeviceFeaturesConfigurationBase appleDeviceFeaturesConfigurationBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AppleDeviceFeaturesConfigurationBase>(appleDeviceFeaturesConfigurationBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }

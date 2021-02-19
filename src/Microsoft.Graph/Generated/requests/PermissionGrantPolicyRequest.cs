@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created PermissionGrantPolicy.</returns>
         public async System.Threading.Tasks.Task<PermissionGrantPolicy> CreateAsync(PermissionGrantPolicy permissionGrantPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PermissionGrantPolicy>(permissionGrantPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> CreateResponseAsync(PermissionGrantPolicy permissionGrantPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PermissionGrantPolicy>(permissionGrantPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated PermissionGrantPolicy.</returns>
         public async System.Threading.Tasks.Task<PermissionGrantPolicy> UpdateAsync(PermissionGrantPolicy permissionGrantPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PermissionGrantPolicy>(permissionGrantPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PermissionGrantPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PermissionGrantPolicy>> UpdateResponseAsync(PermissionGrantPolicy permissionGrantPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PermissionGrantPolicy>(permissionGrantPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedAppProtection.</returns>
         public async System.Threading.Tasks.Task<ManagedAppProtection> CreateAsync(ManagedAppProtection managedAppProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedAppProtection>(managedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAppProtection}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAppProtection>> CreateResponseAsync(ManagedAppProtection managedAppProtectionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAppProtection>(managedAppProtectionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAppProtection.</returns>
         public async System.Threading.Tasks.Task<ManagedAppProtection> UpdateAsync(ManagedAppProtection managedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAppProtection>(managedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAppProtection}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAppProtection>> UpdateResponseAsync(ManagedAppProtection managedAppProtectionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedAppProtection>(managedAppProtectionToUpdate, cancellationToken).ConfigureAwait(false);
         }

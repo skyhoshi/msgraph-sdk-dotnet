@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedDeviceMobileAppConfigurationUserStatus.</returns>
         public System.Threading.Tasks.Task<ManagedDeviceMobileAppConfigurationUserStatus> AddAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ManagedDeviceMobileAppConfigurationUserStatus>(managedDeviceMobileAppConfigurationUserStatus, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedDeviceMobileAppConfigurationUserStatus}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>> AddResponseAsync(ManagedDeviceMobileAppConfigurationUserStatus managedDeviceMobileAppConfigurationUserStatus, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedDeviceMobileAppConfigurationUserStatus>(managedDeviceMobileAppConfigurationUserStatus, cancellationToken).ConfigureAwait(false);
         }

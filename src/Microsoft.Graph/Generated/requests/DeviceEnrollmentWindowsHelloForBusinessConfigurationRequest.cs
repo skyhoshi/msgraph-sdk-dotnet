@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceEnrollmentWindowsHelloForBusinessConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentWindowsHelloForBusinessConfiguration> CreateAsync(DeviceEnrollmentWindowsHelloForBusinessConfiguration deviceEnrollmentWindowsHelloForBusinessConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceEnrollmentWindowsHelloForBusinessConfiguration>(deviceEnrollmentWindowsHelloForBusinessConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceEnrollmentWindowsHelloForBusinessConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentWindowsHelloForBusinessConfiguration>> CreateResponseAsync(DeviceEnrollmentWindowsHelloForBusinessConfiguration deviceEnrollmentWindowsHelloForBusinessConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceEnrollmentWindowsHelloForBusinessConfiguration>(deviceEnrollmentWindowsHelloForBusinessConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceEnrollmentWindowsHelloForBusinessConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentWindowsHelloForBusinessConfiguration> UpdateAsync(DeviceEnrollmentWindowsHelloForBusinessConfiguration deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceEnrollmentWindowsHelloForBusinessConfiguration>(deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceEnrollmentWindowsHelloForBusinessConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentWindowsHelloForBusinessConfiguration>> UpdateResponseAsync(DeviceEnrollmentWindowsHelloForBusinessConfiguration deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceEnrollmentWindowsHelloForBusinessConfiguration>(deviceEnrollmentWindowsHelloForBusinessConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

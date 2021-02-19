@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created TeamsTab.</returns>
         public System.Threading.Tasks.Task<TeamsTab> AddAsync(TeamsTab teamsTab, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TeamsTab>(teamsTab, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TeamsTab>> AddResponseAsync(TeamsTab teamsTab, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsTab>(teamsTab, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created MobileApp.</returns>
         public System.Threading.Tasks.Task<MobileApp> AddAsync(MobileApp mobileApp, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             mobileApp.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileApp.GetType().FullName));
             return this.SendAsync<MobileApp>(mobileApp, cancellationToken);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<MobileApp>> AddResponseAsync(MobileApp mobileApp, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             mobileApp.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(mobileApp.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<MobileApp>(mobileApp, cancellationToken).ConfigureAwait(false);

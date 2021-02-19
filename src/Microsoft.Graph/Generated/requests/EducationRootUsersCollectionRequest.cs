@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created EducationUser.</returns>
         public System.Threading.Tasks.Task<EducationUser> AddAsync(EducationUser educationUser, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<EducationUser>(educationUser, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EducationUser}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<EducationUser>> AddResponseAsync(EducationUser educationUser, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EducationUser>(educationUser, cancellationToken).ConfigureAwait(false);
         }

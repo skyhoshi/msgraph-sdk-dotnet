@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created MobileApp.</returns>
         public async System.Threading.Tasks.Task<MobileApp> CreateAsync(MobileApp mobileAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<MobileApp>(mobileAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<MobileApp>> CreateResponseAsync(MobileApp mobileAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MobileApp>(mobileAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated MobileApp.</returns>
         public async System.Threading.Tasks.Task<MobileApp> UpdateAsync(MobileApp mobileAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<MobileApp>(mobileAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MobileApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<MobileApp>> UpdateResponseAsync(MobileApp mobileAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<MobileApp>(mobileAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

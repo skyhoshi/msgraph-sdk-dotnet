@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created MicrosoftAuthenticatorAuthenticationMethodTarget.</returns>
         public System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodTarget> AddAsync(MicrosoftAuthenticatorAuthenticationMethodTarget microsoftAuthenticatorAuthenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MicrosoftAuthenticatorAuthenticationMethodTarget>(microsoftAuthenticatorAuthenticationMethodTarget, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodTarget}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodTarget>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethodTarget microsoftAuthenticatorAuthenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MicrosoftAuthenticatorAuthenticationMethodTarget>(microsoftAuthenticatorAuthenticationMethodTarget, cancellationToken).ConfigureAwait(false);
         }

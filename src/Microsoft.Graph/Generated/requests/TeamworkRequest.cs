@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created Teamwork.</returns>
         public async System.Threading.Tasks.Task<Teamwork> CreateAsync(Teamwork teamworkToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Teamwork>(teamworkToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Teamwork>> CreateResponseAsync(Teamwork teamworkToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Teamwork>(teamworkToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated Teamwork.</returns>
         public async System.Threading.Tasks.Task<Teamwork> UpdateAsync(Teamwork teamworkToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Teamwork>(teamworkToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Teamwork}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Teamwork>> UpdateResponseAsync(Teamwork teamworkToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Teamwork>(teamworkToUpdate, cancellationToken).ConfigureAwait(false);
         }

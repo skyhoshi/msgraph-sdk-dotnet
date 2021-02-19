@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Presence.</returns>
         public System.Threading.Tasks.Task<Presence> AddAsync(Presence presence, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Presence>(presence, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Presence}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Presence>> AddResponseAsync(Presence presence, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Presence>(presence, cancellationToken).ConfigureAwait(false);
         }

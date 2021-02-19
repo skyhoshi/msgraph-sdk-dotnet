@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created TeamsTab.</returns>
         public async System.Threading.Tasks.Task<TeamsTab> CreateAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TeamsTab>(teamsTabToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TeamsTab>> CreateResponseAsync(TeamsTab teamsTabToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsTab>(teamsTabToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated TeamsTab.</returns>
         public async System.Threading.Tasks.Task<TeamsTab> UpdateAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TeamsTab>(teamsTabToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamsTab}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TeamsTab>> UpdateResponseAsync(TeamsTab teamsTabToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TeamsTab>(teamsTabToUpdate, cancellationToken).ConfigureAwait(false);
         }

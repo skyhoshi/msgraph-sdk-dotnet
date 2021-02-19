@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created MobileThreatDefenseConnector.</returns>
         public System.Threading.Tasks.Task<MobileThreatDefenseConnector> AddAsync(MobileThreatDefenseConnector mobileThreatDefenseConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MobileThreatDefenseConnector>(mobileThreatDefenseConnector, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MobileThreatDefenseConnector}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<MobileThreatDefenseConnector>> AddResponseAsync(MobileThreatDefenseConnector mobileThreatDefenseConnector, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MobileThreatDefenseConnector>(mobileThreatDefenseConnector, cancellationToken).ConfigureAwait(false);
         }

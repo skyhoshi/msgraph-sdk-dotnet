@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ApplicationTemplate.</returns>
         public System.Threading.Tasks.Task<ApplicationTemplate> AddAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ApplicationTemplate>(applicationTemplate, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ApplicationTemplate}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ApplicationTemplate>> AddResponseAsync(ApplicationTemplate applicationTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ApplicationTemplate>(applicationTemplate, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookPivotTable.</returns>
         public System.Threading.Tasks.Task<WorkbookPivotTable> AddAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WorkbookPivotTable>(workbookPivotTable, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookPivotTable}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookPivotTable>> AddResponseAsync(WorkbookPivotTable workbookPivotTable, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookPivotTable>(workbookPivotTable, cancellationToken).ConfigureAwait(false);
         }

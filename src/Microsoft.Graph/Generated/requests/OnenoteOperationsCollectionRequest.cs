@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created OnenoteOperation.</returns>
         public System.Threading.Tasks.Task<OnenoteOperation> AddAsync(OnenoteOperation onenoteOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OnenoteOperation>(onenoteOperation, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OnenoteOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<OnenoteOperation>> AddResponseAsync(OnenoteOperation onenoteOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OnenoteOperation>(onenoteOperation, cancellationToken).ConfigureAwait(false);
         }

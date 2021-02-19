@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created MessageRule.</returns>
         public System.Threading.Tasks.Task<MessageRule> AddAsync(MessageRule messageRule, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<MessageRule>(messageRule, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MessageRule}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<MessageRule>> AddResponseAsync(MessageRule messageRule, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<MessageRule>(messageRule, cancellationToken).ConfigureAwait(false);
         }

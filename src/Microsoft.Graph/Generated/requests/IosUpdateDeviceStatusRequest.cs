@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created IosUpdateDeviceStatus.</returns>
         public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> CreateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> CreateResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated IosUpdateDeviceStatus.</returns>
         public async System.Threading.Tasks.Task<IosUpdateDeviceStatus> UpdateAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IosUpdateDeviceStatus}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IosUpdateDeviceStatus>> UpdateResponseAsync(IosUpdateDeviceStatus iosUpdateDeviceStatusToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosUpdateDeviceStatus>(iosUpdateDeviceStatusToUpdate, cancellationToken).ConfigureAwait(false);
         }

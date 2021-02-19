@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created TeamsAppInstallation.</returns>
         public async System.Threading.Tasks.Task<TeamsAppInstallation> CreateAsync(TeamsAppInstallation teamsAppInstallationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TeamsAppInstallation>(teamsAppInstallationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> CreateResponseAsync(TeamsAppInstallation teamsAppInstallationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsAppInstallation>(teamsAppInstallationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated TeamsAppInstallation.</returns>
         public async System.Threading.Tasks.Task<TeamsAppInstallation> UpdateAsync(TeamsAppInstallation teamsAppInstallationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TeamsAppInstallation>(teamsAppInstallationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> UpdateResponseAsync(TeamsAppInstallation teamsAppInstallationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TeamsAppInstallation>(teamsAppInstallationToUpdate, cancellationToken).ConfigureAwait(false);
         }

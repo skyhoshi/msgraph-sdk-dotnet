@@ -40,7 +40,7 @@ namespace Microsoft.Graph
         /// <returns>The task to await.</returns>
         public System.Threading.Tasks.Task AddAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(mobileAppCategory.Id))
@@ -60,7 +60,7 @@ namespace Microsoft.Graph
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
         public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(MobileAppCategory mobileAppCategory, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
 
             if (string.IsNullOrEmpty(mobileAppCategory.Id))

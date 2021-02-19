@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ScopedRoleMembership.</returns>
         public async System.Threading.Tasks.Task<ScopedRoleMembership> CreateAsync(ScopedRoleMembership scopedRoleMembershipToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ScopedRoleMembership>(scopedRoleMembershipToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> CreateResponseAsync(ScopedRoleMembership scopedRoleMembershipToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ScopedRoleMembership>(scopedRoleMembershipToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ScopedRoleMembership.</returns>
         public async System.Threading.Tasks.Task<ScopedRoleMembership> UpdateAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ScopedRoleMembership>(scopedRoleMembershipToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ScopedRoleMembership}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ScopedRoleMembership>> UpdateResponseAsync(ScopedRoleMembership scopedRoleMembershipToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ScopedRoleMembership>(scopedRoleMembershipToUpdate, cancellationToken).ConfigureAwait(false);
         }

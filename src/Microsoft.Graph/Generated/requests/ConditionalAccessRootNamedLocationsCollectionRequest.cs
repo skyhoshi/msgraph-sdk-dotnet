@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created NamedLocation.</returns>
         public System.Threading.Tasks.Task<NamedLocation> AddAsync(NamedLocation namedLocation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<NamedLocation>(namedLocation, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{NamedLocation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<NamedLocation>> AddResponseAsync(NamedLocation namedLocation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<NamedLocation>(namedLocation, cancellationToken).ConfigureAwait(false);
         }

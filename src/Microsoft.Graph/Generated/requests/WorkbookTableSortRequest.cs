@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookTableSort.</returns>
         public async System.Threading.Tasks.Task<WorkbookTableSort> CreateAsync(WorkbookTableSort workbookTableSortToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookTableSort>(workbookTableSortToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookTableSort}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookTableSort>> CreateResponseAsync(WorkbookTableSort workbookTableSortToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookTableSort>(workbookTableSortToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookTableSort.</returns>
         public async System.Threading.Tasks.Task<WorkbookTableSort> UpdateAsync(WorkbookTableSort workbookTableSortToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookTableSort>(workbookTableSortToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookTableSort}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookTableSort>> UpdateResponseAsync(WorkbookTableSort workbookTableSortToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookTableSort>(workbookTableSortToUpdate, cancellationToken).ConfigureAwait(false);
         }

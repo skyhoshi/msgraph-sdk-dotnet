@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Drive.</returns>
         public System.Threading.Tasks.Task<Drive> AddAsync(Drive drive, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Drive>(drive, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Drive}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Drive>> AddResponseAsync(Drive drive, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Drive>(drive, cancellationToken).ConfigureAwait(false);
         }

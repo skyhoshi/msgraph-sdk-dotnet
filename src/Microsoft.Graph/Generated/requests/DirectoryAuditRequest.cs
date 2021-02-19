@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DirectoryAudit.</returns>
         public async System.Threading.Tasks.Task<DirectoryAudit> CreateAsync(DirectoryAudit directoryAuditToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DirectoryAudit>(directoryAuditToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> CreateResponseAsync(DirectoryAudit directoryAuditToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DirectoryAudit>(directoryAuditToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DirectoryAudit.</returns>
         public async System.Threading.Tasks.Task<DirectoryAudit> UpdateAsync(DirectoryAudit directoryAuditToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DirectoryAudit>(directoryAuditToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DirectoryAudit}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DirectoryAudit>> UpdateResponseAsync(DirectoryAudit directoryAuditToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DirectoryAudit>(directoryAuditToUpdate, cancellationToken).ConfigureAwait(false);
         }

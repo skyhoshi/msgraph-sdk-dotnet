@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created TermsAndConditionsAssignment.</returns>
         public async System.Threading.Tasks.Task<TermsAndConditionsAssignment> CreateAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TermsAndConditionsAssignment>(termsAndConditionsAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> CreateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TermsAndConditionsAssignment>(termsAndConditionsAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated TermsAndConditionsAssignment.</returns>
         public async System.Threading.Tasks.Task<TermsAndConditionsAssignment> UpdateAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TermsAndConditionsAssignment>(termsAndConditionsAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TermsAndConditionsAssignment}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditionsAssignment>> UpdateResponseAsync(TermsAndConditionsAssignment termsAndConditionsAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TermsAndConditionsAssignment>(termsAndConditionsAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

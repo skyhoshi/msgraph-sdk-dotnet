@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created Windows10TeamGeneralConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10TeamGeneralConfiguration> CreateAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> CreateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated Windows10TeamGeneralConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10TeamGeneralConfiguration> UpdateAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Windows10TeamGeneralConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Windows10TeamGeneralConfiguration>> UpdateResponseAsync(Windows10TeamGeneralConfiguration windows10TeamGeneralConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Windows10TeamGeneralConfiguration>(windows10TeamGeneralConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

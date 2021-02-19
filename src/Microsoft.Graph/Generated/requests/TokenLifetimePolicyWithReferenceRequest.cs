@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <returns>The created TokenLifetimePolicy.</returns>
         public async System.Threading.Tasks.Task<TokenLifetimePolicy> CreateAsync(TokenLifetimePolicy tokenLifetimePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<TokenLifetimePolicy>(tokenLifetimePolicyToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -98,7 +98,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> CreateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TokenLifetimePolicy>(tokenLifetimePolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -112,7 +112,7 @@ namespace Microsoft.Graph
         /// <returns>The updated TokenLifetimePolicy.</returns>
         public async System.Threading.Tasks.Task<TokenLifetimePolicy> UpdateAsync(TokenLifetimePolicy tokenLifetimePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<TokenLifetimePolicy>(tokenLifetimePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -127,7 +127,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TokenLifetimePolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TokenLifetimePolicy>> UpdateResponseAsync(TokenLifetimePolicy tokenLifetimePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<TokenLifetimePolicy>(tokenLifetimePolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

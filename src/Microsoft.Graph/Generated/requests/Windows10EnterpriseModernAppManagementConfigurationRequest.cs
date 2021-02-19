@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created Windows10EnterpriseModernAppManagementConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> CreateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Windows10EnterpriseModernAppManagementConfiguration>(windows10EnterpriseModernAppManagementConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> CreateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Windows10EnterpriseModernAppManagementConfiguration>(windows10EnterpriseModernAppManagementConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated Windows10EnterpriseModernAppManagementConfiguration.</returns>
         public async System.Threading.Tasks.Task<Windows10EnterpriseModernAppManagementConfiguration> UpdateAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Windows10EnterpriseModernAppManagementConfiguration>(windows10EnterpriseModernAppManagementConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Windows10EnterpriseModernAppManagementConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Windows10EnterpriseModernAppManagementConfiguration>> UpdateResponseAsync(Windows10EnterpriseModernAppManagementConfiguration windows10EnterpriseModernAppManagementConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Windows10EnterpriseModernAppManagementConfiguration>(windows10EnterpriseModernAppManagementConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

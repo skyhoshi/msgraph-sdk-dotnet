@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created Domain.</returns>
         public async System.Threading.Tasks.Task<Domain> CreateAsync(Domain domainToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Domain>(domainToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Domain>> CreateResponseAsync(Domain domainToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Domain>(domainToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated Domain.</returns>
         public async System.Threading.Tasks.Task<Domain> UpdateAsync(Domain domainToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Domain>(domainToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Domain>> UpdateResponseAsync(Domain domainToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Domain>(domainToUpdate, cancellationToken).ConfigureAwait(false);
         }

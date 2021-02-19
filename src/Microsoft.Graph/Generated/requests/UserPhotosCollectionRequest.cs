@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ProfilePhoto.</returns>
         public System.Threading.Tasks.Task<ProfilePhoto> AddAsync(ProfilePhoto profilePhoto, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ProfilePhoto>(profilePhoto, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ProfilePhoto}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ProfilePhoto>> AddResponseAsync(ProfilePhoto profilePhoto, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ProfilePhoto>(profilePhoto, cancellationToken).ConfigureAwait(false);
         }

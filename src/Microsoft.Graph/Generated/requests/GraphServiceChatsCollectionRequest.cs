@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Chat.</returns>
         public System.Threading.Tasks.Task<Chat> AddAsync(Chat chat, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Chat>(chat, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Chat}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Chat>> AddResponseAsync(Chat chat, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Chat>(chat, cancellationToken).ConfigureAwait(false);
         }

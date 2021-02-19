@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created IosManagedAppRegistration.</returns>
         public async System.Threading.Tasks.Task<IosManagedAppRegistration> CreateAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosManagedAppRegistration>(iosManagedAppRegistrationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> CreateResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosManagedAppRegistration>(iosManagedAppRegistrationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated IosManagedAppRegistration.</returns>
         public async System.Threading.Tasks.Task<IosManagedAppRegistration> UpdateAsync(IosManagedAppRegistration iosManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosManagedAppRegistration>(iosManagedAppRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IosManagedAppRegistration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IosManagedAppRegistration>> UpdateResponseAsync(IosManagedAppRegistration iosManagedAppRegistrationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosManagedAppRegistration>(iosManagedAppRegistrationToUpdate, cancellationToken).ConfigureAwait(false);
         }

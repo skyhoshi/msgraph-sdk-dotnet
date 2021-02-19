@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedIOSLobApp.</returns>
         public async System.Threading.Tasks.Task<ManagedIOSLobApp> CreateAsync(ManagedIOSLobApp managedIOSLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedIOSLobApp>(managedIOSLobAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> CreateResponseAsync(ManagedIOSLobApp managedIOSLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedIOSLobApp>(managedIOSLobAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedIOSLobApp.</returns>
         public async System.Threading.Tasks.Task<ManagedIOSLobApp> UpdateAsync(ManagedIOSLobApp managedIOSLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedIOSLobApp>(managedIOSLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedIOSLobApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedIOSLobApp>> UpdateResponseAsync(ManagedIOSLobApp managedIOSLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedIOSLobApp>(managedIOSLobAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

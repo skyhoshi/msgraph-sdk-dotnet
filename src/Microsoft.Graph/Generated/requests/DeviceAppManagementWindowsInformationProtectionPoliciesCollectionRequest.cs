@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsInformationProtectionPolicy.</returns>
         public System.Threading.Tasks.Task<WindowsInformationProtectionPolicy> AddAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicy, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionPolicy>> AddResponseAsync(WindowsInformationProtectionPolicy windowsInformationProtectionPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionPolicy>(windowsInformationProtectionPolicy, cancellationToken).ConfigureAwait(false);
         }

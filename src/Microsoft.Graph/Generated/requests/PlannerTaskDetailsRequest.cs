@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created PlannerTaskDetails.</returns>
         public async System.Threading.Tasks.Task<PlannerTaskDetails> CreateAsync(PlannerTaskDetails plannerTaskDetailsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PlannerTaskDetails>(plannerTaskDetailsToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> CreateResponseAsync(PlannerTaskDetails plannerTaskDetailsToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PlannerTaskDetails>(plannerTaskDetailsToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated PlannerTaskDetails.</returns>
         public async System.Threading.Tasks.Task<PlannerTaskDetails> UpdateAsync(PlannerTaskDetails plannerTaskDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PlannerTaskDetails>(plannerTaskDetailsToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PlannerTaskDetails}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PlannerTaskDetails>> UpdateResponseAsync(PlannerTaskDetails plannerTaskDetailsToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PlannerTaskDetails>(plannerTaskDetailsToUpdate, cancellationToken).ConfigureAwait(false);
         }

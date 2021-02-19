@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ExtensionProperty.</returns>
         public System.Threading.Tasks.Task<ExtensionProperty> AddAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ExtensionProperty>(extensionProperty, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> AddResponseAsync(ExtensionProperty extensionProperty, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExtensionProperty>(extensionProperty, cancellationToken).ConfigureAwait(false);
         }

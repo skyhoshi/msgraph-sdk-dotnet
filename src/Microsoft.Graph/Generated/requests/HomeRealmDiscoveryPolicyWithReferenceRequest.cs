@@ -84,7 +84,7 @@ namespace Microsoft.Graph
         /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
         public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> CreateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToCreate, cancellationToken).ConfigureAwait(false);
             return newEntity;
@@ -98,7 +98,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> CreateResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -112,7 +112,7 @@ namespace Microsoft.Graph
         /// <returns>The updated HomeRealmDiscoveryPolicy.</returns>
         public async System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> UpdateAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             return updatedEntity;
@@ -127,7 +127,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> UpdateResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

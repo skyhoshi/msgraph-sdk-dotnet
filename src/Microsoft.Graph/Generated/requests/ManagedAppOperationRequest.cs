@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedAppOperation.</returns>
         public async System.Threading.Tasks.Task<ManagedAppOperation> CreateAsync(ManagedAppOperation managedAppOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedAppOperation>(managedAppOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> CreateResponseAsync(ManagedAppOperation managedAppOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAppOperation>(managedAppOperationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAppOperation.</returns>
         public async System.Threading.Tasks.Task<ManagedAppOperation> UpdateAsync(ManagedAppOperation managedAppOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAppOperation>(managedAppOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAppOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAppOperation>> UpdateResponseAsync(ManagedAppOperation managedAppOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedAppOperation>(managedAppOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }

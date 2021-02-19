@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created PolicyBase.</returns>
         public async System.Threading.Tasks.Task<PolicyBase> CreateAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PolicyBase>(policyBaseToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PolicyBase>> CreateResponseAsync(PolicyBase policyBaseToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PolicyBase>(policyBaseToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated PolicyBase.</returns>
         public async System.Threading.Tasks.Task<PolicyBase> UpdateAsync(PolicyBase policyBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PolicyBase>(policyBaseToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PolicyBase}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PolicyBase>> UpdateResponseAsync(PolicyBase policyBaseToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PolicyBase>(policyBaseToUpdate, cancellationToken).ConfigureAwait(false);
         }

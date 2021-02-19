@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceConfiguration> CreateAsync(DeviceConfiguration deviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceConfiguration>(deviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> CreateResponseAsync(DeviceConfiguration deviceConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceConfiguration>(deviceConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceConfiguration> UpdateAsync(DeviceConfiguration deviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceConfiguration>(deviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceConfiguration>> UpdateResponseAsync(DeviceConfiguration deviceConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceConfiguration>(deviceConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

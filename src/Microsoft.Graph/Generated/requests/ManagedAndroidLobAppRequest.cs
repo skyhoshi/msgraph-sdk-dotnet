@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedAndroidLobApp.</returns>
         public async System.Threading.Tasks.Task<ManagedAndroidLobApp> CreateAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedAndroidLobApp>(managedAndroidLobAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAndroidLobApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> CreateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedAndroidLobApp>(managedAndroidLobAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedAndroidLobApp.</returns>
         public async System.Threading.Tasks.Task<ManagedAndroidLobApp> UpdateAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedAndroidLobApp>(managedAndroidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAndroidLobApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAndroidLobApp>> UpdateResponseAsync(ManagedAndroidLobApp managedAndroidLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedAndroidLobApp>(managedAndroidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

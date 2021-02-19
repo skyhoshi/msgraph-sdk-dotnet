@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceEnrollmentLimitConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> CreateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceEnrollmentLimitConfiguration>(deviceEnrollmentLimitConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> CreateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceEnrollmentLimitConfiguration>(deviceEnrollmentLimitConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceEnrollmentLimitConfiguration.</returns>
         public async System.Threading.Tasks.Task<DeviceEnrollmentLimitConfiguration> UpdateAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceEnrollmentLimitConfiguration>(deviceEnrollmentLimitConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceEnrollmentLimitConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceEnrollmentLimitConfiguration>> UpdateResponseAsync(DeviceEnrollmentLimitConfiguration deviceEnrollmentLimitConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceEnrollmentLimitConfiguration>(deviceEnrollmentLimitConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

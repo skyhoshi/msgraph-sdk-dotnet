@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ShiftPreferences.</returns>
         public async System.Threading.Tasks.Task<ShiftPreferences> CreateAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ShiftPreferences>(shiftPreferencesToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> CreateResponseAsync(ShiftPreferences shiftPreferencesToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ShiftPreferences>(shiftPreferencesToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ShiftPreferences.</returns>
         public async System.Threading.Tasks.Task<ShiftPreferences> UpdateAsync(ShiftPreferences shiftPreferencesToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ShiftPreferences>(shiftPreferencesToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ShiftPreferences}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ShiftPreferences>> UpdateResponseAsync(ShiftPreferences shiftPreferencesToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ShiftPreferences>(shiftPreferencesToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Subscription.</returns>
         public System.Threading.Tasks.Task<Subscription> AddAsync(Subscription subscription, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Subscription>(subscription, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Subscription}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Subscription>> AddResponseAsync(Subscription subscription, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Subscription>(subscription, cancellationToken).ConfigureAwait(false);
         }

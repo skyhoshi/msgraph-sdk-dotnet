@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedEBook.</returns>
         public async System.Threading.Tasks.Task<ManagedEBook> CreateAsync(ManagedEBook managedEBookToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedEBook>(managedEBookToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> CreateResponseAsync(ManagedEBook managedEBookToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedEBook>(managedEBookToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedEBook.</returns>
         public async System.Threading.Tasks.Task<ManagedEBook> UpdateAsync(ManagedEBook managedEBookToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedEBook>(managedEBookToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedEBook}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedEBook>> UpdateResponseAsync(ManagedEBook managedEBookToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedEBook>(managedEBookToUpdate, cancellationToken).ConfigureAwait(false);
         }

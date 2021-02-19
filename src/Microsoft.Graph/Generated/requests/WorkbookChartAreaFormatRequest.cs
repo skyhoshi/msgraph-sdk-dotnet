@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookChartAreaFormat.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartAreaFormat> CreateAsync(WorkbookChartAreaFormat workbookChartAreaFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookChartAreaFormat>(workbookChartAreaFormatToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> CreateResponseAsync(WorkbookChartAreaFormat workbookChartAreaFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookChartAreaFormat>(workbookChartAreaFormatToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookChartAreaFormat.</returns>
         public async System.Threading.Tasks.Task<WorkbookChartAreaFormat> UpdateAsync(WorkbookChartAreaFormat workbookChartAreaFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookChartAreaFormat>(workbookChartAreaFormatToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookChartAreaFormat}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartAreaFormat>> UpdateResponseAsync(WorkbookChartAreaFormat workbookChartAreaFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookChartAreaFormat>(workbookChartAreaFormatToUpdate, cancellationToken).ConfigureAwait(false);
         }

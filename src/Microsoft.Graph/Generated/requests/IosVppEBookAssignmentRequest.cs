@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created IosVppEBookAssignment.</returns>
         public async System.Threading.Tasks.Task<IosVppEBookAssignment> CreateAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IosVppEBookAssignment>(iosVppEBookAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> CreateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IosVppEBookAssignment>(iosVppEBookAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated IosVppEBookAssignment.</returns>
         public async System.Threading.Tasks.Task<IosVppEBookAssignment> UpdateAsync(IosVppEBookAssignment iosVppEBookAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IosVppEBookAssignment>(iosVppEBookAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IosVppEBookAssignment}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IosVppEBookAssignment>> UpdateResponseAsync(IosVppEBookAssignment iosVppEBookAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IosVppEBookAssignment>(iosVppEBookAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

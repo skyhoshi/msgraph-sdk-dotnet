@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created PlannerAssignedToTaskBoardTaskFormat.</returns>
         public async System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> CreateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<PlannerAssignedToTaskBoardTaskFormat>(plannerAssignedToTaskBoardTaskFormatToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> CreateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<PlannerAssignedToTaskBoardTaskFormat>(plannerAssignedToTaskBoardTaskFormatToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated PlannerAssignedToTaskBoardTaskFormat.</returns>
         public async System.Threading.Tasks.Task<PlannerAssignedToTaskBoardTaskFormat> UpdateAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<PlannerAssignedToTaskBoardTaskFormat>(plannerAssignedToTaskBoardTaskFormatToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{PlannerAssignedToTaskBoardTaskFormat}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<PlannerAssignedToTaskBoardTaskFormat>> UpdateResponseAsync(PlannerAssignedToTaskBoardTaskFormat plannerAssignedToTaskBoardTaskFormatToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<PlannerAssignedToTaskBoardTaskFormat>(plannerAssignedToTaskBoardTaskFormatToUpdate, cancellationToken).ConfigureAwait(false);
         }

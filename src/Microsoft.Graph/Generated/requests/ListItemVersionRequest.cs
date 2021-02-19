@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ListItemVersion.</returns>
         public async System.Threading.Tasks.Task<ListItemVersion> CreateAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ListItemVersion>(listItemVersionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> CreateResponseAsync(ListItemVersion listItemVersionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ListItemVersion>(listItemVersionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ListItemVersion.</returns>
         public async System.Threading.Tasks.Task<ListItemVersion> UpdateAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ListItemVersion>(listItemVersionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ListItemVersion}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ListItemVersion>> UpdateResponseAsync(ListItemVersion listItemVersionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ListItemVersion>(listItemVersionToUpdate, cancellationToken).ConfigureAwait(false);
         }

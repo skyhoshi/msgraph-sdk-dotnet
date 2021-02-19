@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created OrgContact.</returns>
         public System.Threading.Tasks.Task<OrgContact> AddAsync(OrgContact orgContact, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OrgContact>(orgContact, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OrgContact}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<OrgContact>> AddResponseAsync(OrgContact orgContact, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OrgContact>(orgContact, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created UserInstallStateSummary.</returns>
         public System.Threading.Tasks.Task<UserInstallStateSummary> AddAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<UserInstallStateSummary>(userInstallStateSummary, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> AddResponseAsync(UserInstallStateSummary userInstallStateSummary, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserInstallStateSummary>(userInstallStateSummary, cancellationToken).ConfigureAwait(false);
         }

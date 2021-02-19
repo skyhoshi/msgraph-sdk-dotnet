@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DomainDnsTxtRecord.</returns>
         public async System.Threading.Tasks.Task<DomainDnsTxtRecord> CreateAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DomainDnsTxtRecord>(domainDnsTxtRecordToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> CreateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DomainDnsTxtRecord>(domainDnsTxtRecordToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DomainDnsTxtRecord.</returns>
         public async System.Threading.Tasks.Task<DomainDnsTxtRecord> UpdateAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DomainDnsTxtRecord>(domainDnsTxtRecordToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DomainDnsTxtRecord}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DomainDnsTxtRecord>> UpdateResponseAsync(DomainDnsTxtRecord domainDnsTxtRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DomainDnsTxtRecord>(domainDnsTxtRecordToUpdate, cancellationToken).ConfigureAwait(false);
         }

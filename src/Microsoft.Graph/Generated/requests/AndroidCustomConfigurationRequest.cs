@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created AndroidCustomConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidCustomConfiguration> CreateAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidCustomConfiguration>(androidCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> CreateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidCustomConfiguration>(androidCustomConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidCustomConfiguration.</returns>
         public async System.Threading.Tasks.Task<AndroidCustomConfiguration> UpdateAsync(AndroidCustomConfiguration androidCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidCustomConfiguration>(androidCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidCustomConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AndroidCustomConfiguration>> UpdateResponseAsync(AndroidCustomConfiguration androidCustomConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidCustomConfiguration>(androidCustomConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

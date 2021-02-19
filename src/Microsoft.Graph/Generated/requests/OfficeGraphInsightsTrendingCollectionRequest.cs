@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Trending.</returns>
         public System.Threading.Tasks.Task<Trending> AddAsync(Trending trending, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Trending>(trending, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Trending}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Trending>> AddResponseAsync(Trending trending, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Trending>(trending, cancellationToken).ConfigureAwait(false);
         }

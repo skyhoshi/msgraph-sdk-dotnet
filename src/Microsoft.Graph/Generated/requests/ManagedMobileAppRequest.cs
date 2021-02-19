@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedMobileApp.</returns>
         public async System.Threading.Tasks.Task<ManagedMobileApp> CreateAsync(ManagedMobileApp managedMobileAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ManagedMobileApp>(managedMobileAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> CreateResponseAsync(ManagedMobileApp managedMobileAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ManagedMobileApp>(managedMobileAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ManagedMobileApp.</returns>
         public async System.Threading.Tasks.Task<ManagedMobileApp> UpdateAsync(ManagedMobileApp managedMobileAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ManagedMobileApp>(managedMobileAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedMobileApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedMobileApp>> UpdateResponseAsync(ManagedMobileApp managedMobileAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ManagedMobileApp>(managedMobileAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

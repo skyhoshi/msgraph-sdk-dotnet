@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created TeamsAppInstallation.</returns>
         public System.Threading.Tasks.Task<TeamsAppInstallation> AddAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TeamsAppInstallation>(teamsAppInstallation, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamsAppInstallation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TeamsAppInstallation>> AddResponseAsync(TeamsAppInstallation teamsAppInstallation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsAppInstallation>(teamsAppInstallation, cancellationToken).ConfigureAwait(false);
         }

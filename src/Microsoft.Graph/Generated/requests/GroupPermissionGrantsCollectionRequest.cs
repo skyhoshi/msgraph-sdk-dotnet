@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ResourceSpecificPermissionGrant.</returns>
         public System.Threading.Tasks.Task<ResourceSpecificPermissionGrant> AddAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ResourceSpecificPermissionGrant>(resourceSpecificPermissionGrant, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ResourceSpecificPermissionGrant}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ResourceSpecificPermissionGrant>> AddResponseAsync(ResourceSpecificPermissionGrant resourceSpecificPermissionGrant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ResourceSpecificPermissionGrant>(resourceSpecificPermissionGrant, cancellationToken).ConfigureAwait(false);
         }

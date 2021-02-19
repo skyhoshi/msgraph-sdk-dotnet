@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookChartSeries.</returns>
         public System.Threading.Tasks.Task<WorkbookChartSeries> AddAsync(WorkbookChartSeries workbookChartSeries, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<WorkbookChartSeries>(workbookChartSeries, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookChartSeries}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookChartSeries>> AddResponseAsync(WorkbookChartSeries workbookChartSeries, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookChartSeries>(workbookChartSeries, cancellationToken).ConfigureAwait(false);
         }

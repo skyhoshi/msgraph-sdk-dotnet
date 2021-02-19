@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Fido2AuthenticationMethod.</returns>
         public System.Threading.Tasks.Task<Fido2AuthenticationMethod> AddAsync(Fido2AuthenticationMethod fido2AuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Fido2AuthenticationMethod>(fido2AuthenticationMethod, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethod}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethod>> AddResponseAsync(Fido2AuthenticationMethod fido2AuthenticationMethod, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Fido2AuthenticationMethod>(fido2AuthenticationMethod, cancellationToken).ConfigureAwait(false);
         }

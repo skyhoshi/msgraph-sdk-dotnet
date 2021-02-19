@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsMobileMSI.</returns>
         public async System.Threading.Tasks.Task<WindowsMobileMSI> CreateAsync(WindowsMobileMSI windowsMobileMSIToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsMobileMSI>(windowsMobileMSIToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> CreateResponseAsync(WindowsMobileMSI windowsMobileMSIToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsMobileMSI>(windowsMobileMSIToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsMobileMSI.</returns>
         public async System.Threading.Tasks.Task<WindowsMobileMSI> UpdateAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsMobileMSI>(windowsMobileMSIToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsMobileMSI}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsMobileMSI>> UpdateResponseAsync(WindowsMobileMSI windowsMobileMSIToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsMobileMSI>(windowsMobileMSIToUpdate, cancellationToken).ConfigureAwait(false);
         }

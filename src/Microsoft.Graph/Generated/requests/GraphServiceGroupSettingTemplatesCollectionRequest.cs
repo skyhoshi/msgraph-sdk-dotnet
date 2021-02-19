@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created GroupSettingTemplate.</returns>
         public System.Threading.Tasks.Task<GroupSettingTemplate> AddAsync(GroupSettingTemplate groupSettingTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<GroupSettingTemplate>(groupSettingTemplate, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> AddResponseAsync(GroupSettingTemplate groupSettingTemplate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupSettingTemplate>(groupSettingTemplate, cancellationToken).ConfigureAwait(false);
         }

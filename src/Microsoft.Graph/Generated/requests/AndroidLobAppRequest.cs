@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created AndroidLobApp.</returns>
         public async System.Threading.Tasks.Task<AndroidLobApp> CreateAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidLobApp>(androidLobAppToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> CreateResponseAsync(AndroidLobApp androidLobAppToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidLobApp>(androidLobAppToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidLobApp.</returns>
         public async System.Threading.Tasks.Task<AndroidLobApp> UpdateAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidLobApp>(androidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidLobApp}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AndroidLobApp>> UpdateResponseAsync(AndroidLobApp androidLobAppToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidLobApp>(androidLobAppToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created AndroidWorkProfileCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> CreateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AndroidWorkProfileCompliancePolicy>(androidWorkProfileCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCompliancePolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCompliancePolicy>> CreateResponseAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidWorkProfileCompliancePolicy>(androidWorkProfileCompliancePolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated AndroidWorkProfileCompliancePolicy.</returns>
         public async System.Threading.Tasks.Task<AndroidWorkProfileCompliancePolicy> UpdateAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AndroidWorkProfileCompliancePolicy>(androidWorkProfileCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidWorkProfileCompliancePolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AndroidWorkProfileCompliancePolicy>> UpdateResponseAsync(AndroidWorkProfileCompliancePolicy androidWorkProfileCompliancePolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AndroidWorkProfileCompliancePolicy>(androidWorkProfileCompliancePolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

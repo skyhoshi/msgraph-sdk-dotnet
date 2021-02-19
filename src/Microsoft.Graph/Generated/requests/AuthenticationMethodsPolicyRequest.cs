@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created AuthenticationMethodsPolicy.</returns>
         public async System.Threading.Tasks.Task<AuthenticationMethodsPolicy> CreateAsync(AuthenticationMethodsPolicy authenticationMethodsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<AuthenticationMethodsPolicy>(authenticationMethodsPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AuthenticationMethodsPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsPolicy>> CreateResponseAsync(AuthenticationMethodsPolicy authenticationMethodsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AuthenticationMethodsPolicy>(authenticationMethodsPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated AuthenticationMethodsPolicy.</returns>
         public async System.Threading.Tasks.Task<AuthenticationMethodsPolicy> UpdateAsync(AuthenticationMethodsPolicy authenticationMethodsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<AuthenticationMethodsPolicy>(authenticationMethodsPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AuthenticationMethodsPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsPolicy>> UpdateResponseAsync(AuthenticationMethodsPolicy authenticationMethodsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<AuthenticationMethodsPolicy>(authenticationMethodsPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

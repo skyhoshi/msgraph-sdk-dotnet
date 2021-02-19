@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsInformationProtectionAppLockerFile.</returns>
         public async System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> CreateAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsInformationProtectionAppLockerFile>(windowsInformationProtectionAppLockerFileToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> CreateResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionAppLockerFile>(windowsInformationProtectionAppLockerFileToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsInformationProtectionAppLockerFile.</returns>
         public async System.Threading.Tasks.Task<WindowsInformationProtectionAppLockerFile> UpdateAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsInformationProtectionAppLockerFile>(windowsInformationProtectionAppLockerFileToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsInformationProtectionAppLockerFile}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsInformationProtectionAppLockerFile>> UpdateResponseAsync(WindowsInformationProtectionAppLockerFile windowsInformationProtectionAppLockerFileToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsInformationProtectionAppLockerFile>(windowsInformationProtectionAppLockerFileToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ManagedAppRegistration.</returns>
         public System.Threading.Tasks.Task<ManagedAppRegistration> AddAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedAppRegistration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppRegistration.GetType().FullName));
             return this.SendAsync<ManagedAppRegistration>(managedAppRegistration, cancellationToken);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ManagedAppRegistration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ManagedAppRegistration>> AddResponseAsync(ManagedAppRegistration managedAppRegistration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             managedAppRegistration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(managedAppRegistration.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<ManagedAppRegistration>(managedAppRegistration, cancellationToken).ConfigureAwait(false);

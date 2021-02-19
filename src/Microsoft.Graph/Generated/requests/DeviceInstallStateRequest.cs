@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceInstallState.</returns>
         public async System.Threading.Tasks.Task<DeviceInstallState> CreateAsync(DeviceInstallState deviceInstallStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceInstallState>(deviceInstallStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> CreateResponseAsync(DeviceInstallState deviceInstallStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceInstallState>(deviceInstallStateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceInstallState.</returns>
         public async System.Threading.Tasks.Task<DeviceInstallState> UpdateAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceInstallState>(deviceInstallStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceInstallState}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceInstallState>> UpdateResponseAsync(DeviceInstallState deviceInstallStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceInstallState>(deviceInstallStateToUpdate, cancellationToken).ConfigureAwait(false);
         }

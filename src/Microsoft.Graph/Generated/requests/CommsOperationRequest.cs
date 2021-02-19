@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created CommsOperation.</returns>
         public async System.Threading.Tasks.Task<CommsOperation> CreateAsync(CommsOperation commsOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CommsOperation>(commsOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CommsOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<CommsOperation>> CreateResponseAsync(CommsOperation commsOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CommsOperation>(commsOperationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated CommsOperation.</returns>
         public async System.Threading.Tasks.Task<CommsOperation> UpdateAsync(CommsOperation commsOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CommsOperation>(commsOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CommsOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<CommsOperation>> UpdateResponseAsync(CommsOperation commsOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CommsOperation>(commsOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }

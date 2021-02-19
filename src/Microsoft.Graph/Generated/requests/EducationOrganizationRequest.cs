@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created EducationOrganization.</returns>
         public async System.Threading.Tasks.Task<EducationOrganization> CreateAsync(EducationOrganization educationOrganizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<EducationOrganization>(educationOrganizationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> CreateResponseAsync(EducationOrganization educationOrganizationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<EducationOrganization>(educationOrganizationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated EducationOrganization.</returns>
         public async System.Threading.Tasks.Task<EducationOrganization> UpdateAsync(EducationOrganization educationOrganizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<EducationOrganization>(educationOrganizationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{EducationOrganization}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<EducationOrganization>> UpdateResponseAsync(EducationOrganization educationOrganizationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<EducationOrganization>(educationOrganizationToUpdate, cancellationToken).ConfigureAwait(false);
         }

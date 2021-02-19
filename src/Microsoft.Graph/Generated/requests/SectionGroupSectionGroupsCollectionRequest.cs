@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created SectionGroup.</returns>
         public System.Threading.Tasks.Task<SectionGroup> AddAsync(SectionGroup sectionGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SectionGroup>(sectionGroup, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SectionGroup}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SectionGroup>> AddResponseAsync(SectionGroup sectionGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SectionGroup>(sectionGroup, cancellationToken).ConfigureAwait(false);
         }

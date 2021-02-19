@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Domain.</returns>
         public System.Threading.Tasks.Task<Domain> AddAsync(Domain domain, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Domain>(domain, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Domain}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Domain>> AddResponseAsync(Domain domain, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Domain>(domain, cancellationToken).ConfigureAwait(false);
         }

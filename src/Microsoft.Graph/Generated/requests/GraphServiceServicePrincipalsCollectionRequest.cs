@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ServicePrincipal.</returns>
         public System.Threading.Tasks.Task<ServicePrincipal> AddAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ServicePrincipal>(servicePrincipal, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ServicePrincipal}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ServicePrincipal>> AddResponseAsync(ServicePrincipal servicePrincipal, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ServicePrincipal>(servicePrincipal, cancellationToken).ConfigureAwait(false);
         }

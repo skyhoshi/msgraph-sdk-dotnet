@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Alert.</returns>
         public System.Threading.Tasks.Task<Alert> AddAsync(Alert alert, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Alert>(alert, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Alert}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Alert>> AddResponseAsync(Alert alert, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Alert>(alert, cancellationToken).ConfigureAwait(false);
         }

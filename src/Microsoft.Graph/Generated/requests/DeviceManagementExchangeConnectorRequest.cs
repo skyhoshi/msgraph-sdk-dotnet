@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceManagementExchangeConnector.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementExchangeConnector> CreateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> CreateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceManagementExchangeConnector.</returns>
         public async System.Threading.Tasks.Task<DeviceManagementExchangeConnector> UpdateAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementExchangeConnector}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementExchangeConnector>> UpdateResponseAsync(DeviceManagementExchangeConnector deviceManagementExchangeConnectorToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceManagementExchangeConnector>(deviceManagementExchangeConnectorToUpdate, cancellationToken).ConfigureAwait(false);
         }

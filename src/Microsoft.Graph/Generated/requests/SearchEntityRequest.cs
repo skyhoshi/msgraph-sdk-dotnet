@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created SearchEntity.</returns>
         public async System.Threading.Tasks.Task<SearchEntity> CreateAsync(SearchEntity searchEntityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SearchEntity>(searchEntityToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SearchEntity>> CreateResponseAsync(SearchEntity searchEntityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SearchEntity>(searchEntityToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated SearchEntity.</returns>
         public async System.Threading.Tasks.Task<SearchEntity> UpdateAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SearchEntity>(searchEntityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SearchEntity}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SearchEntity>> UpdateResponseAsync(SearchEntity searchEntityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SearchEntity>(searchEntityToUpdate, cancellationToken).ConfigureAwait(false);
         }

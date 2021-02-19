@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created OfferShiftRequestObject.</returns>
         public async System.Threading.Tasks.Task<OfferShiftRequestObject> CreateAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<OfferShiftRequestObject>(offerShiftRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> CreateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(offerShiftRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated OfferShiftRequestObject.</returns>
         public async System.Threading.Tasks.Task<OfferShiftRequestObject> UpdateAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<OfferShiftRequestObject>(offerShiftRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OfferShiftRequestObject}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<OfferShiftRequestObject>> UpdateResponseAsync(OfferShiftRequestObject offerShiftRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<OfferShiftRequestObject>(offerShiftRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }

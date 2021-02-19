@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created OAuth2PermissionGrant.</returns>
         public System.Threading.Tasks.Task<OAuth2PermissionGrant> AddAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<OAuth2PermissionGrant>(oAuth2PermissionGrant, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{OAuth2PermissionGrant}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<OAuth2PermissionGrant>> AddResponseAsync(OAuth2PermissionGrant oAuth2PermissionGrant, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<OAuth2PermissionGrant>(oAuth2PermissionGrant, cancellationToken).ConfigureAwait(false);
         }

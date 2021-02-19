@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ThreatAssessmentResult.</returns>
         public async System.Threading.Tasks.Task<ThreatAssessmentResult> CreateAsync(ThreatAssessmentResult threatAssessmentResultToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ThreatAssessmentResult>(threatAssessmentResultToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> CreateResponseAsync(ThreatAssessmentResult threatAssessmentResultToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ThreatAssessmentResult>(threatAssessmentResultToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ThreatAssessmentResult.</returns>
         public async System.Threading.Tasks.Task<ThreatAssessmentResult> UpdateAsync(ThreatAssessmentResult threatAssessmentResultToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ThreatAssessmentResult>(threatAssessmentResultToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ThreatAssessmentResult}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ThreatAssessmentResult>> UpdateResponseAsync(ThreatAssessmentResult threatAssessmentResultToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ThreatAssessmentResult>(threatAssessmentResultToUpdate, cancellationToken).ConfigureAwait(false);
         }

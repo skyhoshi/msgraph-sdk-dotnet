@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created GroupSettingTemplate.</returns>
         public async System.Threading.Tasks.Task<GroupSettingTemplate> CreateAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<GroupSettingTemplate>(groupSettingTemplateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> CreateResponseAsync(GroupSettingTemplate groupSettingTemplateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<GroupSettingTemplate>(groupSettingTemplateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated GroupSettingTemplate.</returns>
         public async System.Threading.Tasks.Task<GroupSettingTemplate> UpdateAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<GroupSettingTemplate>(groupSettingTemplateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{GroupSettingTemplate}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<GroupSettingTemplate>> UpdateResponseAsync(GroupSettingTemplate groupSettingTemplateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<GroupSettingTemplate>(groupSettingTemplateToUpdate, cancellationToken).ConfigureAwait(false);
         }

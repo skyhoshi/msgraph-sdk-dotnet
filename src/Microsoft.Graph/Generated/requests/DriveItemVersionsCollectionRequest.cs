@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created DriveItemVersion.</returns>
         public System.Threading.Tasks.Task<DriveItemVersion> AddAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DriveItemVersion>(driveItemVersion, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DriveItemVersion}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DriveItemVersion>> AddResponseAsync(DriveItemVersion driveItemVersion, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DriveItemVersion>(driveItemVersion, cancellationToken).ConfigureAwait(false);
         }

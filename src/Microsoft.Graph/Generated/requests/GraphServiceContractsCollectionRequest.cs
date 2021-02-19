@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created Contract.</returns>
         public System.Threading.Tasks.Task<Contract> AddAsync(Contract contract, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<Contract>(contract, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Contract}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Contract>> AddResponseAsync(Contract contract, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Contract>(contract, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created RoleAssignment.</returns>
         public System.Threading.Tasks.Task<RoleAssignment> AddAsync(RoleAssignment roleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<RoleAssignment>(roleAssignment, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{RoleAssignment}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<RoleAssignment>> AddResponseAsync(RoleAssignment roleAssignment, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RoleAssignment>(roleAssignment, cancellationToken).ConfigureAwait(false);
         }

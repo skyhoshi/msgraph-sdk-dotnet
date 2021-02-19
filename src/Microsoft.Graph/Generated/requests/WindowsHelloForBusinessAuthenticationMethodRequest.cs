@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WindowsHelloForBusinessAuthenticationMethod.</returns>
         public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> CreateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> CreateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WindowsHelloForBusinessAuthenticationMethod.</returns>
         public async System.Threading.Tasks.Task<WindowsHelloForBusinessAuthenticationMethod> UpdateAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WindowsHelloForBusinessAuthenticationMethod}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WindowsHelloForBusinessAuthenticationMethod>> UpdateResponseAsync(WindowsHelloForBusinessAuthenticationMethod windowsHelloForBusinessAuthenticationMethodToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WindowsHelloForBusinessAuthenticationMethod>(windowsHelloForBusinessAuthenticationMethodToUpdate, cancellationToken).ConfigureAwait(false);
         }

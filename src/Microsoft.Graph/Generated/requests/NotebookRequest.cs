@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created Notebook.</returns>
         public async System.Threading.Tasks.Task<Notebook> CreateAsync(Notebook notebookToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Notebook>(notebookToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Notebook>> CreateResponseAsync(Notebook notebookToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Notebook>(notebookToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated Notebook.</returns>
         public async System.Threading.Tasks.Task<Notebook> UpdateAsync(Notebook notebookToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Notebook>(notebookToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Notebook}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Notebook>> UpdateResponseAsync(Notebook notebookToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Notebook>(notebookToUpdate, cancellationToken).ConfigureAwait(false);
         }

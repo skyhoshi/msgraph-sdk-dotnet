@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ActivityBasedTimeoutPolicy.</returns>
         public async System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> CreateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> CreateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ActivityBasedTimeoutPolicy.</returns>
         public async System.Threading.Tasks.Task<ActivityBasedTimeoutPolicy> UpdateAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ActivityBasedTimeoutPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ActivityBasedTimeoutPolicy>> UpdateResponseAsync(ActivityBasedTimeoutPolicy activityBasedTimeoutPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ActivityBasedTimeoutPolicy>(activityBasedTimeoutPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

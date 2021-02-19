@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created AndroidManagedAppProtection.</returns>
         public System.Threading.Tasks.Task<AndroidManagedAppProtection> AddAsync(AndroidManagedAppProtection androidManagedAppProtection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<AndroidManagedAppProtection>(androidManagedAppProtection, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AndroidManagedAppProtection}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<AndroidManagedAppProtection>> AddResponseAsync(AndroidManagedAppProtection androidManagedAppProtection, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<AndroidManagedAppProtection>(androidManagedAppProtection, cancellationToken).ConfigureAwait(false);
         }

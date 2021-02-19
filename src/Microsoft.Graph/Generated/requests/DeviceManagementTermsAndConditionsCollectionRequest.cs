@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created TermsAndConditions.</returns>
         public System.Threading.Tasks.Task<TermsAndConditions> AddAsync(TermsAndConditions termsAndConditions, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TermsAndConditions>(termsAndConditions, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TermsAndConditions}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TermsAndConditions>> AddResponseAsync(TermsAndConditions termsAndConditions, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TermsAndConditions>(termsAndConditions, cancellationToken).ConfigureAwait(false);
         }

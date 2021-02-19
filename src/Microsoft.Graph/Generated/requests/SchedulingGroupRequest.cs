@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created SchedulingGroup.</returns>
         public async System.Threading.Tasks.Task<SchedulingGroup> CreateAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SchedulingGroup>(schedulingGroupToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> CreateResponseAsync(SchedulingGroup schedulingGroupToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SchedulingGroup>(schedulingGroupToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated SchedulingGroup.</returns>
         public async System.Threading.Tasks.Task<SchedulingGroup> UpdateAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SchedulingGroup>(schedulingGroupToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SchedulingGroup}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SchedulingGroup>> UpdateResponseAsync(SchedulingGroup schedulingGroupToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SchedulingGroup>(schedulingGroupToUpdate, cancellationToken).ConfigureAwait(false);
         }

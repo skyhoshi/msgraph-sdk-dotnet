@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created SubscribedSku.</returns>
         public System.Threading.Tasks.Task<SubscribedSku> AddAsync(SubscribedSku subscribedSku, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<SubscribedSku>(subscribedSku, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SubscribedSku}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SubscribedSku>> AddResponseAsync(SubscribedSku subscribedSku, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SubscribedSku>(subscribedSku, cancellationToken).ConfigureAwait(false);
         }

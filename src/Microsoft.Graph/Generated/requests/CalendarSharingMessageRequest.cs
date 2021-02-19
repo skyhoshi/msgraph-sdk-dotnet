@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created CalendarSharingMessage.</returns>
         public async System.Threading.Tasks.Task<CalendarSharingMessage> CreateAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<CalendarSharingMessage>(calendarSharingMessageToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> CreateResponseAsync(CalendarSharingMessage calendarSharingMessageToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CalendarSharingMessage>(calendarSharingMessageToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated CalendarSharingMessage.</returns>
         public async System.Threading.Tasks.Task<CalendarSharingMessage> UpdateAsync(CalendarSharingMessage calendarSharingMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<CalendarSharingMessage>(calendarSharingMessageToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CalendarSharingMessage}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<CalendarSharingMessage>> UpdateResponseAsync(CalendarSharingMessage calendarSharingMessageToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<CalendarSharingMessage>(calendarSharingMessageToUpdate, cancellationToken).ConfigureAwait(false);
         }

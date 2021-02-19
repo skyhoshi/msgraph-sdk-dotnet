@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ScheduleChangeRequestObject.</returns>
         public async System.Threading.Tasks.Task<ScheduleChangeRequestObject> CreateAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ScheduleChangeRequestObject>(scheduleChangeRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ScheduleChangeRequestObject}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ScheduleChangeRequestObject>> CreateResponseAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ScheduleChangeRequestObject>(scheduleChangeRequestObjectToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ScheduleChangeRequestObject.</returns>
         public async System.Threading.Tasks.Task<ScheduleChangeRequestObject> UpdateAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ScheduleChangeRequestObject>(scheduleChangeRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ScheduleChangeRequestObject}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ScheduleChangeRequestObject>> UpdateResponseAsync(ScheduleChangeRequestObject scheduleChangeRequestObjectToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ScheduleChangeRequestObject>(scheduleChangeRequestObjectToUpdate, cancellationToken).ConfigureAwait(false);
         }

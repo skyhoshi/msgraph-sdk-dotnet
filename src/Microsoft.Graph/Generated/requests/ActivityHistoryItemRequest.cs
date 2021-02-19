@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ActivityHistoryItem.</returns>
         public async System.Threading.Tasks.Task<ActivityHistoryItem> CreateAsync(ActivityHistoryItem activityHistoryItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ActivityHistoryItem>(activityHistoryItemToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> CreateResponseAsync(ActivityHistoryItem activityHistoryItemToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ActivityHistoryItem>(activityHistoryItemToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ActivityHistoryItem.</returns>
         public async System.Threading.Tasks.Task<ActivityHistoryItem> UpdateAsync(ActivityHistoryItem activityHistoryItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ActivityHistoryItem>(activityHistoryItemToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ActivityHistoryItem}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ActivityHistoryItem>> UpdateResponseAsync(ActivityHistoryItem activityHistoryItemToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ActivityHistoryItem>(activityHistoryItemToUpdate, cancellationToken).ConfigureAwait(false);
         }

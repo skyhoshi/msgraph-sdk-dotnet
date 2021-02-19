@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created TodoTaskList.</returns>
         public System.Threading.Tasks.Task<TodoTaskList> AddAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TodoTaskList>(todoTaskList, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TodoTaskList}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TodoTaskList>> AddResponseAsync(TodoTaskList todoTaskList, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TodoTaskList>(todoTaskList, cancellationToken).ConfigureAwait(false);
         }

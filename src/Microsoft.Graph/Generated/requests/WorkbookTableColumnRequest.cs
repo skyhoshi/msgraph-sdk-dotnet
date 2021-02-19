@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created WorkbookTableColumn.</returns>
         public async System.Threading.Tasks.Task<WorkbookTableColumn> CreateAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<WorkbookTableColumn>(workbookTableColumnToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> CreateResponseAsync(WorkbookTableColumn workbookTableColumnToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<WorkbookTableColumn>(workbookTableColumnToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated WorkbookTableColumn.</returns>
         public async System.Threading.Tasks.Task<WorkbookTableColumn> UpdateAsync(WorkbookTableColumn workbookTableColumnToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<WorkbookTableColumn>(workbookTableColumnToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{WorkbookTableColumn}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<WorkbookTableColumn>> UpdateResponseAsync(WorkbookTableColumn workbookTableColumnToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<WorkbookTableColumn>(workbookTableColumnToUpdate, cancellationToken).ConfigureAwait(false);
         }

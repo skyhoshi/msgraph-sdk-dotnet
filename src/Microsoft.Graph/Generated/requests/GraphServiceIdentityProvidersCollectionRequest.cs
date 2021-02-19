@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created IdentityProvider.</returns>
         public System.Threading.Tasks.Task<IdentityProvider> AddAsync(IdentityProvider identityProvider, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<IdentityProvider>(identityProvider, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IdentityProvider}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IdentityProvider>> AddResponseAsync(IdentityProvider identityProvider, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IdentityProvider>(identityProvider, cancellationToken).ConfigureAwait(false);
         }

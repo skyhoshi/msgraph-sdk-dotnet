@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created SchemaExtension.</returns>
         public async System.Threading.Tasks.Task<SchemaExtension> CreateAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SchemaExtension>(schemaExtensionToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> CreateResponseAsync(SchemaExtension schemaExtensionToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SchemaExtension>(schemaExtensionToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated SchemaExtension.</returns>
         public async System.Threading.Tasks.Task<SchemaExtension> UpdateAsync(SchemaExtension schemaExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SchemaExtension>(schemaExtensionToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SchemaExtension}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SchemaExtension>> UpdateResponseAsync(SchemaExtension schemaExtensionToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SchemaExtension>(schemaExtensionToUpdate, cancellationToken).ConfigureAwait(false);
         }

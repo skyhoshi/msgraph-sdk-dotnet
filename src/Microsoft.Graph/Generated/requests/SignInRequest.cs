@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created SignIn.</returns>
         public async System.Threading.Tasks.Task<SignIn> CreateAsync(SignIn signInToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<SignIn>(signInToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SignIn>> CreateResponseAsync(SignIn signInToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<SignIn>(signInToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated SignIn.</returns>
         public async System.Threading.Tasks.Task<SignIn> UpdateAsync(SignIn signInToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<SignIn>(signInToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{SignIn}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<SignIn>> UpdateResponseAsync(SignIn signInToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<SignIn>(signInToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created ThumbnailSet.</returns>
         public System.Threading.Tasks.Task<ThumbnailSet> AddAsync(ThumbnailSet thumbnailSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<ThumbnailSet>(thumbnailSet, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ThumbnailSet}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ThumbnailSet>> AddResponseAsync(ThumbnailSet thumbnailSet, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ThumbnailSet>(thumbnailSet, cancellationToken).ConfigureAwait(false);
         }

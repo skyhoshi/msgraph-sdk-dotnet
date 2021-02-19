@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ComplianceManagementPartner.</returns>
         public async System.Threading.Tasks.Task<ComplianceManagementPartner> CreateAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ComplianceManagementPartner>(complianceManagementPartnerToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> CreateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ComplianceManagementPartner>(complianceManagementPartnerToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ComplianceManagementPartner.</returns>
         public async System.Threading.Tasks.Task<ComplianceManagementPartner> UpdateAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ComplianceManagementPartner>(complianceManagementPartnerToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ComplianceManagementPartner}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ComplianceManagementPartner>> UpdateResponseAsync(ComplianceManagementPartner complianceManagementPartnerToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ComplianceManagementPartner>(complianceManagementPartnerToUpdate, cancellationToken).ConfigureAwait(false);
         }

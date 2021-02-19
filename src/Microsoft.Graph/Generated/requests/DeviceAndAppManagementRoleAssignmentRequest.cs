@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceAndAppManagementRoleAssignment.</returns>
         public async System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> CreateAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> CreateResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceAndAppManagementRoleAssignment.</returns>
         public async System.Threading.Tasks.Task<DeviceAndAppManagementRoleAssignment> UpdateAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceAndAppManagementRoleAssignment}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceAndAppManagementRoleAssignment>> UpdateResponseAsync(DeviceAndAppManagementRoleAssignment deviceAndAppManagementRoleAssignmentToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceAndAppManagementRoleAssignment>(deviceAndAppManagementRoleAssignmentToUpdate, cancellationToken).ConfigureAwait(false);
         }

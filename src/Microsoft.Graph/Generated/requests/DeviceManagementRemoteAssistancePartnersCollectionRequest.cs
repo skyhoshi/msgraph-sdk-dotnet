@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created RemoteAssistancePartner.</returns>
         public System.Threading.Tasks.Task<RemoteAssistancePartner> AddAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<RemoteAssistancePartner>(remoteAssistancePartner, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{RemoteAssistancePartner}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<RemoteAssistancePartner>> AddResponseAsync(RemoteAssistancePartner remoteAssistancePartner, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<RemoteAssistancePartner>(remoteAssistancePartner, cancellationToken).ConfigureAwait(false);
         }

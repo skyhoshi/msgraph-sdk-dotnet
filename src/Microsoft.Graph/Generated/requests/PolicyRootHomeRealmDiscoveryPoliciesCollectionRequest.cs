@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created HomeRealmDiscoveryPolicy.</returns>
         public System.Threading.Tasks.Task<HomeRealmDiscoveryPolicy> AddAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicy, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{HomeRealmDiscoveryPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<HomeRealmDiscoveryPolicy>> AddResponseAsync(HomeRealmDiscoveryPolicy homeRealmDiscoveryPolicy, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<HomeRealmDiscoveryPolicy>(homeRealmDiscoveryPolicy, cancellationToken).ConfigureAwait(false);
         }

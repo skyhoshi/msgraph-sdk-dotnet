@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created BaseItem.</returns>
         public System.Threading.Tasks.Task<BaseItem> AddAsync(BaseItem baseItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             baseItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(baseItem.GetType().FullName));
             return this.SendAsync<BaseItem>(baseItem, cancellationToken);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{BaseItem}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<BaseItem>> AddResponseAsync(BaseItem baseItem, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             baseItem.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(baseItem.GetType().FullName));
             return await this.SendAsyncWithGraphResponse<BaseItem>(baseItem, cancellationToken).ConfigureAwait(false);

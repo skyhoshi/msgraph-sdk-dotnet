@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ExtensionProperty.</returns>
         public async System.Threading.Tasks.Task<ExtensionProperty> CreateAsync(ExtensionProperty extensionPropertyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ExtensionProperty>(extensionPropertyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> CreateResponseAsync(ExtensionProperty extensionPropertyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ExtensionProperty>(extensionPropertyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ExtensionProperty.</returns>
         public async System.Threading.Tasks.Task<ExtensionProperty> UpdateAsync(ExtensionProperty extensionPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ExtensionProperty>(extensionPropertyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ExtensionProperty}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ExtensionProperty>> UpdateResponseAsync(ExtensionProperty extensionPropertyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ExtensionProperty>(extensionPropertyToUpdate, cancellationToken).ConfigureAwait(false);
         }

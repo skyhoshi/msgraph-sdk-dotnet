@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created UserInstallStateSummary.</returns>
         public async System.Threading.Tasks.Task<UserInstallStateSummary> CreateAsync(UserInstallStateSummary userInstallStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UserInstallStateSummary>(userInstallStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> CreateResponseAsync(UserInstallStateSummary userInstallStateSummaryToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UserInstallStateSummary>(userInstallStateSummaryToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated UserInstallStateSummary.</returns>
         public async System.Threading.Tasks.Task<UserInstallStateSummary> UpdateAsync(UserInstallStateSummary userInstallStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UserInstallStateSummary>(userInstallStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UserInstallStateSummary}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<UserInstallStateSummary>> UpdateResponseAsync(UserInstallStateSummary userInstallStateSummaryToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UserInstallStateSummary>(userInstallStateSummaryToUpdate, cancellationToken).ConfigureAwait(false);
         }

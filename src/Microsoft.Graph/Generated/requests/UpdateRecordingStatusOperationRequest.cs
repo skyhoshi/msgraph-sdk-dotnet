@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created UpdateRecordingStatusOperation.</returns>
         public async System.Threading.Tasks.Task<UpdateRecordingStatusOperation> CreateAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<UpdateRecordingStatusOperation>(updateRecordingStatusOperationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UpdateRecordingStatusOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<UpdateRecordingStatusOperation>> CreateResponseAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<UpdateRecordingStatusOperation>(updateRecordingStatusOperationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated UpdateRecordingStatusOperation.</returns>
         public async System.Threading.Tasks.Task<UpdateRecordingStatusOperation> UpdateAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<UpdateRecordingStatusOperation>(updateRecordingStatusOperationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{UpdateRecordingStatusOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<UpdateRecordingStatusOperation>> UpdateResponseAsync(UpdateRecordingStatusOperation updateRecordingStatusOperationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<UpdateRecordingStatusOperation>(updateRecordingStatusOperationToUpdate, cancellationToken).ConfigureAwait(false);
         }

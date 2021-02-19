@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created Fido2AuthenticationMethodConfiguration.</returns>
         public async System.Threading.Tasks.Task<Fido2AuthenticationMethodConfiguration> CreateAsync(Fido2AuthenticationMethodConfiguration fido2AuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<Fido2AuthenticationMethodConfiguration>(fido2AuthenticationMethodConfigurationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethodConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethodConfiguration>> CreateResponseAsync(Fido2AuthenticationMethodConfiguration fido2AuthenticationMethodConfigurationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<Fido2AuthenticationMethodConfiguration>(fido2AuthenticationMethodConfigurationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated Fido2AuthenticationMethodConfiguration.</returns>
         public async System.Threading.Tasks.Task<Fido2AuthenticationMethodConfiguration> UpdateAsync(Fido2AuthenticationMethodConfiguration fido2AuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<Fido2AuthenticationMethodConfiguration>(fido2AuthenticationMethodConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{Fido2AuthenticationMethodConfiguration}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<Fido2AuthenticationMethodConfiguration>> UpdateResponseAsync(Fido2AuthenticationMethodConfiguration fido2AuthenticationMethodConfigurationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<Fido2AuthenticationMethodConfiguration>(fido2AuthenticationMethodConfigurationToUpdate, cancellationToken).ConfigureAwait(false);
         }

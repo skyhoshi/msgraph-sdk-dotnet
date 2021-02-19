@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DomainDnsUnavailableRecord.</returns>
         public async System.Threading.Tasks.Task<DomainDnsUnavailableRecord> CreateAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DomainDnsUnavailableRecord>(domainDnsUnavailableRecordToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DomainDnsUnavailableRecord>> CreateResponseAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DomainDnsUnavailableRecord>(domainDnsUnavailableRecordToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DomainDnsUnavailableRecord.</returns>
         public async System.Threading.Tasks.Task<DomainDnsUnavailableRecord> UpdateAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DomainDnsUnavailableRecord>(domainDnsUnavailableRecordToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DomainDnsUnavailableRecord}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DomainDnsUnavailableRecord>> UpdateResponseAsync(DomainDnsUnavailableRecord domainDnsUnavailableRecordToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DomainDnsUnavailableRecord>(domainDnsUnavailableRecordToUpdate, cancellationToken).ConfigureAwait(false);
         }

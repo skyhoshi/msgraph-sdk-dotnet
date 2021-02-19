@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created ChangeTrackedEntity.</returns>
         public async System.Threading.Tasks.Task<ChangeTrackedEntity> CreateAsync(ChangeTrackedEntity changeTrackedEntityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<ChangeTrackedEntity>(changeTrackedEntityToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> CreateResponseAsync(ChangeTrackedEntity changeTrackedEntityToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<ChangeTrackedEntity>(changeTrackedEntityToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated ChangeTrackedEntity.</returns>
         public async System.Threading.Tasks.Task<ChangeTrackedEntity> UpdateAsync(ChangeTrackedEntity changeTrackedEntityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<ChangeTrackedEntity>(changeTrackedEntityToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{ChangeTrackedEntity}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<ChangeTrackedEntity>> UpdateResponseAsync(ChangeTrackedEntity changeTrackedEntityToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<ChangeTrackedEntity>(changeTrackedEntityToUpdate, cancellationToken).ConfigureAwait(false);
         }

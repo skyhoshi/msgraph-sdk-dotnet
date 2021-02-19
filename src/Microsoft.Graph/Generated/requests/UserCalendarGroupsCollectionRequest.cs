@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created CalendarGroup.</returns>
         public System.Threading.Tasks.Task<CalendarGroup> AddAsync(CalendarGroup calendarGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<CalendarGroup>(calendarGroup, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{CalendarGroup}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<CalendarGroup>> AddResponseAsync(CalendarGroup calendarGroup, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<CalendarGroup>(calendarGroup, cancellationToken).ConfigureAwait(false);
         }

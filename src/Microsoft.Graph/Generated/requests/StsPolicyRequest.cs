@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created StsPolicy.</returns>
         public async System.Threading.Tasks.Task<StsPolicy> CreateAsync(StsPolicy stsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<StsPolicy>(stsPolicyToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<StsPolicy>> CreateResponseAsync(StsPolicy stsPolicyToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<StsPolicy>(stsPolicyToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated StsPolicy.</returns>
         public async System.Threading.Tasks.Task<StsPolicy> UpdateAsync(StsPolicy stsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<StsPolicy>(stsPolicyToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{StsPolicy}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<StsPolicy>> UpdateResponseAsync(StsPolicy stsPolicyToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<StsPolicy>(stsPolicyToUpdate, cancellationToken).ConfigureAwait(false);
         }

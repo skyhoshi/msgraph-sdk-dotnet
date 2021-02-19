@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceManagementTroubleshootingEvent.</returns>
         public System.Threading.Tasks.Task<DeviceManagementTroubleshootingEvent> AddAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<DeviceManagementTroubleshootingEvent>(deviceManagementTroubleshootingEvent, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceManagementTroubleshootingEvent}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceManagementTroubleshootingEvent>> AddResponseAsync(DeviceManagementTroubleshootingEvent deviceManagementTroubleshootingEvent, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceManagementTroubleshootingEvent>(deviceManagementTroubleshootingEvent, cancellationToken).ConfigureAwait(false);
         }

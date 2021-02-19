@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created DeviceCompliancePolicyState.</returns>
         public async System.Threading.Tasks.Task<DeviceCompliancePolicyState> CreateAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<DeviceCompliancePolicyState>(deviceCompliancePolicyStateToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> CreateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyState>(deviceCompliancePolicyStateToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated DeviceCompliancePolicyState.</returns>
         public async System.Threading.Tasks.Task<DeviceCompliancePolicyState> UpdateAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<DeviceCompliancePolicyState>(deviceCompliancePolicyStateToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{DeviceCompliancePolicyState}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<DeviceCompliancePolicyState>> UpdateResponseAsync(DeviceCompliancePolicyState deviceCompliancePolicyStateToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<DeviceCompliancePolicyState>(deviceCompliancePolicyStateToUpdate, cancellationToken).ConfigureAwait(false);
         }

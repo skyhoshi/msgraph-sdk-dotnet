@@ -43,7 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The created IpNamedLocation.</returns>
         public async System.Threading.Tasks.Task<IpNamedLocation> CreateAsync(IpNamedLocation ipNamedLocationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             var newEntity = await this.SendAsync<IpNamedLocation>(ipNamedLocationToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> CreateResponseAsync(IpNamedLocation ipNamedLocationToCreate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<IpNamedLocation>(ipNamedLocationToCreate, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Microsoft.Graph
         /// <returns>The updated IpNamedLocation.</returns>
         public async System.Threading.Tasks.Task<IpNamedLocation> UpdateAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             var updatedEntity = await this.SendAsync<IpNamedLocation>(ipNamedLocationToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
@@ -152,7 +152,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{IpNamedLocation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<IpNamedLocation>> UpdateResponseAsync(IpNamedLocation ipNamedLocationToUpdate, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "PATCH";
             return await this.SendAsyncWithGraphResponse<IpNamedLocation>(ipNamedLocationToUpdate, cancellationToken).ConfigureAwait(false);
         }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         /// <returns>The created TeamsAsyncOperation.</returns>
         public System.Threading.Tasks.Task<TeamsAsyncOperation> AddAsync(TeamsAsyncOperation teamsAsyncOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return this.SendAsync<TeamsAsyncOperation>(teamsAsyncOperation, cancellationToken);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{TeamsAsyncOperation}"/> object of the request.</returns>
         public async System.Threading.Tasks.Task<GraphResponse<TeamsAsyncOperation>> AddResponseAsync(TeamsAsyncOperation teamsAsyncOperation, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = "application/json";
+            this.ContentType = Constants.ContentTypes.JsonContentType;
             this.Method = "POST";
             return await this.SendAsyncWithGraphResponse<TeamsAsyncOperation>(teamsAsyncOperation, cancellationToken).ConfigureAwait(false);
         }
