@@ -42,7 +42,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<MicrosoftAuthenticatorAuthenticationMethodTarget> AddAsync(MicrosoftAuthenticatorAuthenticationMethodTarget microsoftAuthenticatorAuthenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsync<MicrosoftAuthenticatorAuthenticationMethodTarget>(microsoftAuthenticatorAuthenticationMethodTarget, cancellationToken);
         }
 
@@ -55,7 +55,7 @@ namespace Microsoft.Graph
         public System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodTarget>> AddResponseAsync(MicrosoftAuthenticatorAuthenticationMethodTarget microsoftAuthenticatorAuthenticationMethodTarget, CancellationToken cancellationToken = default(CancellationToken))
         {
             this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = Constants.HttpMethods.Post;
+            this.Method = Constants.HttpMethods.POST.ToString();
             return this.SendAsyncWithGraphResponse<MicrosoftAuthenticatorAuthenticationMethodTarget>(microsoftAuthenticatorAuthenticationMethodTarget, cancellationToken);
         }
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IMicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             var response = await this.SendAsync<MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -102,7 +102,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = Constants.HttpMethods.Get;
+            this.Method = Constants.HttpMethods.GET.ToString();
             return this.SendAsyncWithGraphResponse<MicrosoftAuthenticatorAuthenticationMethodConfigurationIncludeTargetsCollectionResponse>(null, cancellationToken);
         }
 

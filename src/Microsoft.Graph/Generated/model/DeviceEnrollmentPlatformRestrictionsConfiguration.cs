@@ -30,35 +30,35 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets android restriction.
-        /// Android restrictions based on platform, platform operating system version, and device ownership
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("androidRestriction")]
         public DeviceEnrollmentPlatformRestriction AndroidRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets ios restriction.
-        /// Ios restrictions based on platform, platform operating system version, and device ownership
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("iosRestriction")]
         public DeviceEnrollmentPlatformRestriction IosRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets mac osrestriction.
-        /// Mac restrictions based on platform, platform operating system version, and device ownership
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("macOSRestriction")]
         public DeviceEnrollmentPlatformRestriction MacOSRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets windows mobile restriction.
-        /// Windows mobile restrictions based on platform, platform operating system version, and device ownership
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("windowsMobileRestriction")]
         public DeviceEnrollmentPlatformRestriction WindowsMobileRestriction { get; set; }
     
         /// <summary>
         /// Gets or sets windows restriction.
-        /// Windows restrictions based on platform, platform operating system version, and device ownership
+        /// Not yet documented
         /// </summary>
         [JsonPropertyName("windowsRestriction")]
         public DeviceEnrollmentPlatformRestriction WindowsRestriction { get; set; }
