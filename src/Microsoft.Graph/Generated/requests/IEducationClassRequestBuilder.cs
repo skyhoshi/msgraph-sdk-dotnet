@@ -55,5 +55,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IEducationClassTeachersCollectionWithReferencesRequestBuilder"/>.</returns>
         IEducationClassTeachersCollectionWithReferencesRequestBuilder Teachers { get; }
     
+        
+    
     }
 }
