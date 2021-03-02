@@ -30,42 +30,49 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentSources.
+        /// Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note : contentSource is only applicable when entityType=externalItem. Optional.
         /// </summary>
         [JsonPropertyName("contentSources")]
         public IEnumerable<string> ContentSources { get; set; }
     
         /// <summary>
         /// Gets or sets enableTopResults.
+        /// This triggers hybrid sort for messages : the first 3 messages are the most relevant. This property is only applicable to entityType=message. Optional.
         /// </summary>
         [JsonPropertyName("enableTopResults")]
         public bool? EnableTopResults { get; set; }
     
         /// <summary>
         /// Gets or sets entityTypes.
+        /// One or more types of resources expected in the response. Possible values are: list, site, listItem, message, event, drive, driveItem, externalItem. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.
         /// </summary>
         [JsonPropertyName("entityTypes")]
         public IEnumerable<EntityType> EntityTypes { get; set; }
     
         /// <summary>
         /// Gets or sets fields.
+        /// Contains the fields to be returned for each resource object specified in entityTypes, allowing customization of the fields returned by default otherwise, including additional fields such as custom managed properties from SharePoint and OneDrive, or custom fields in externalItem from content ingested by Graph connectors. Optional.
         /// </summary>
         [JsonPropertyName("fields")]
         public IEnumerable<string> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets from.
+        /// Specifies the offset for the search results. Offset 0 returns the very first result. Optional.
         /// </summary>
         [JsonPropertyName("from")]
         public Int32? From { get; set; }
     
         /// <summary>
         /// Gets or sets query.
+        /// Contains the query terms. Required.
         /// </summary>
         [JsonPropertyName("query")]
         public SearchQuery Query { get; set; }
     
         /// <summary>
         /// Gets or sets size.
+        /// The size of the page to be retrieved. Optional.
         /// </summary>
         [JsonPropertyName("size")]
         public Int32? Size { get; set; }

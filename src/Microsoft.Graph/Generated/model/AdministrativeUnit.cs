@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets visibility.
-        /// Controls whether the administrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.
+        /// Controls whether the adminstrative unit and its members are hidden or public. Can be set to HiddenMembership or Public. If not set, default behavior is Public. When set to HiddenMembership, only members of the administrative unit can list other members of the adminstrative unit.
         /// </summary>
         [JsonPropertyName("visibility")]
         public string Visibility { get; set; }
@@ -65,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets extensions.
+        /// The collection of open extensions defined for this Administrative Unit. Nullable.
         /// </summary>
         [JsonPropertyName("extensions")]
         public IAdministrativeUnitExtensionsCollectionPage Extensions { get; set; }

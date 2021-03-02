@@ -212,6 +212,12 @@ namespace Microsoft.Graph
         IUserExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
+        /// Gets the request builder for AgreementAcceptances.
+        /// </summary>
+        /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder AgreementAcceptances { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagedDevices.
         /// </summary>
         /// <returns>The <see cref="IUserManagedDevicesCollectionRequestBuilder"/>.</returns>
@@ -270,6 +276,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPresenceRequestBuilder"/>.</returns>
         IPresenceRequestBuilder Presence { get; }
+
+        /// <summary>
+        /// Gets the request builder for Authentication.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationRequestBuilder"/>.</returns>
+        IAuthenticationRequestBuilder Authentication { get; }
 
         /// <summary>
         /// Gets the request builder for JoinedTeams.

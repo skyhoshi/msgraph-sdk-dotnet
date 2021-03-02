@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets createdDateTime.
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: '2014-01-01T00:00:00Z'
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets reactionType.
+        /// Supported values are like, angry, sad, laugh, heart, surprised.
         /// </summary>
         [JsonPropertyName("reactionType")]
         public string ReactionType { get; set; }
     
         /// <summary>
         /// Gets or sets user.
+        /// The user who reacted to the message.
         /// </summary>
         [JsonPropertyName("user")]
         public IdentitySet User { get; set; }

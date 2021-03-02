@@ -110,6 +110,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         IOnenoteRequestBuilder Onenote  { get; }
         /// <summary>
+        /// Gets the request builder for Permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        /// <returns>The <see cref="IPermissionRequestBuilder"/>.</returns>
+        IPermissionRequestBuilder Permissions  { get; }
+        /// <summary>
         /// Gets the request builder for Sites.
         /// The collection of the sub-sites under this site.
         /// </summary>

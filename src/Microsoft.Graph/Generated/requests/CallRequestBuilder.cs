@@ -75,6 +75,23 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CallRedirect.
+        /// </summary>
+        /// <returns>The <see cref="ICallRedirectRequestBuilder"/>.</returns>
+        public ICallRedirectRequestBuilder Redirect(
+            IEnumerable<InvitationParticipantInfo> targets,
+            Int32? timeout = null,
+            string callbackUri = null)
+        {
+            return new CallRedirectRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.redirect"),
+                this.Client,
+                targets,
+                timeout,
+                callbackUri);
+        }
+
+        /// <summary>
         /// Gets the request builder for CallAnswer.
         /// </summary>
         /// <returns>The <see cref="ICallAnswerRequestBuilder"/>.</returns>
@@ -181,23 +198,6 @@ namespace Microsoft.Graph
                 playBeep,
                 stopTones,
                 clientContext);
-        }
-
-        /// <summary>
-        /// Gets the request builder for CallRedirect.
-        /// </summary>
-        /// <returns>The <see cref="ICallRedirectRequestBuilder"/>.</returns>
-        public ICallRedirectRequestBuilder Redirect(
-            IEnumerable<InvitationParticipantInfo> targets,
-            Int32? timeout = null,
-            string callbackUri = null)
-        {
-            return new CallRedirectRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.redirect"),
-                this.Client,
-                targets,
-                timeout,
-                callbackUri);
         }
 
         /// <summary>

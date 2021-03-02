@@ -112,6 +112,13 @@ namespace Microsoft.Graph
         public ISiteListsCollectionPage Lists { get; set; }
     
         /// <summary>
+        /// Gets or sets permissions.
+        /// The permissions associated with the site. Nullable.
+        /// </summary>
+        [JsonPropertyName("permissions")]
+        public ISitePermissionsCollectionPage Permissions { get; set; }
+    
+        /// <summary>
         /// Gets or sets sites.
         /// The collection of the sub-sites under this site.
         /// </summary>

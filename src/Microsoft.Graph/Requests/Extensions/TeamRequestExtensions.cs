@@ -41,7 +41,7 @@ namespace Microsoft.Graph
         public async System.Threading.Tasks.Task<Team> PutAsync(Team teamToCreate, CancellationToken cancellationToken)
         {
             this.ContentType = "application/json";
-            this.Method = "PUT";
+            this.Method = HttpMethods.PUT;
             var newEntity = await this.SendAsync<Team>(teamToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;

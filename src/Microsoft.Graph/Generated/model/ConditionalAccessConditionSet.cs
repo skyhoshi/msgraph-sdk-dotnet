@@ -58,10 +58,17 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets signInRiskLevels.
-        /// Risk levels included in the policy. Possible values are: low, medium, high, none.
+        /// Sign-in risk levels included in the policy. Possible values are: low, medium, high, none.
         /// </summary>
         [JsonPropertyName("signInRiskLevels")]
         public IEnumerable<RiskLevel> SignInRiskLevels { get; set; }
+    
+        /// <summary>
+        /// Gets or sets userRiskLevels.
+        /// User risk levels included in the policy. Possible values are: low, medium, high, none.
+        /// </summary>
+        [JsonPropertyName("userRiskLevels")]
+        public IEnumerable<RiskLevel> UserRiskLevels { get; set; }
     
         /// <summary>
         /// Gets or sets users.
