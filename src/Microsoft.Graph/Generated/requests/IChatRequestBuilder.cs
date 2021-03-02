@@ -31,6 +31,24 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IChatRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for InstalledApps.
+        /// </summary>
+        /// <returns>The <see cref="IChatInstalledAppsCollectionRequestBuilder"/>.</returns>
+        IChatInstalledAppsCollectionRequestBuilder InstalledApps { get; }
+
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IChatMembersCollectionRequestBuilder"/>.</returns>
+        IChatMembersCollectionRequestBuilder Members { get; }
+
+        /// <summary>
+        /// Gets the request builder for Tabs.
+        /// </summary>
+        /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>
+        IChatTabsCollectionRequestBuilder Tabs { get; }
+    
         
     
     }

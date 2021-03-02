@@ -46,22 +46,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Constants used for HTTP property names
-        /// </summary>
-        public static class HttpPropertyNames
-        {
-            /// <summary>
-            /// The Response Headers string
-            /// </summary>
-            public const string ResponseHeaders = "responseHeaders";
-
-            /// <summary>
-            /// The Status Code string
-            /// </summary>
-            public const string StatusCode = "statusCode";
-        }
-
-        /// <summary>
         /// Constants used to specify OData instance annotations.
         /// https://www.odata.org/vocabularies/
         /// </summary>
@@ -78,20 +62,5 @@ namespace Microsoft.Graph
             public const string DeltaLink = "@odata.deltaLink";
         }
 
-        /// <summary>
-        /// Constants used to specify content types
-        /// </summary>
-        public static class ContentTypes
-        {
-            /// <summary>
-            /// The deltaLink annotations string.
-            /// </summary>
-            public const string JsonContentType = "application/json";
-
-            /// <summary>
-            /// The deltaLink annotations string.
-            /// </summary>
-            public const string StreamContentType = "application/octet-stream";
-        }
     }
 }

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Mocks
 
         public IBaseClient Client => throw new NotImplementedException();
 
-        public string Method => throw new NotImplementedException();
+        public HttpMethods Method => throw new NotImplementedException();
 
         public string RequestUrl => throw new NotImplementedException();
 

@@ -105,6 +105,12 @@ namespace Microsoft.Graph
         public string SchoolNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets administrative unit.
+        /// </summary>
+        [JsonPropertyName("administrativeUnit")]
+        public AdministrativeUnit AdministrativeUnit { get; set; }
+    
+        /// <summary>
         /// Gets or sets classes.
         /// Classes taught at the school. Nullable.
         /// </summary>
