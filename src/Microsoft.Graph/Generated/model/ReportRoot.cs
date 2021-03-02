@@ -28,6 +28,30 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.reportRoot";
         }
 	
+        /// <summary>
+        /// Gets or sets daily print usage by printer.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByPrinter")]
+        public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets daily print usage by user.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByUser")]
+        public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage by printer.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByPrinter")]
+        public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
+    
+        /// <summary>
+        /// Gets or sets monthly print usage by user.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByUser")]
+        public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
+    
     }
 }
 

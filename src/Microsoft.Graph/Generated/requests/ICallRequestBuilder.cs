@@ -44,6 +44,15 @@ namespace Microsoft.Graph
         ICallParticipantsCollectionRequestBuilder Participants { get; }
     
         /// <summary>
+        /// Gets the request builder for CallRedirect.
+        /// </summary>
+        /// <returns>The <see cref="ICallRedirectRequestBuilder"/>.</returns>
+        ICallRedirectRequestBuilder Redirect(
+            IEnumerable<InvitationParticipantInfo> targets,
+            Int32? timeout = null,
+            string callbackUri = null);
+
+        /// <summary>
         /// Gets the request builder for CallAnswer.
         /// </summary>
         /// <returns>The <see cref="ICallAnswerRequestBuilder"/>.</returns>
@@ -100,15 +109,6 @@ namespace Microsoft.Graph
             bool? playBeep = null,
             IEnumerable<string> stopTones = null,
             string clientContext = null);
-
-        /// <summary>
-        /// Gets the request builder for CallRedirect.
-        /// </summary>
-        /// <returns>The <see cref="ICallRedirectRequestBuilder"/>.</returns>
-        ICallRedirectRequestBuilder Redirect(
-            IEnumerable<InvitationParticipantInfo> targets,
-            Int32? timeout = null,
-            string callbackUri = null);
 
         /// <summary>
         /// Gets the request builder for CallReject.

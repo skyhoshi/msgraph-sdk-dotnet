@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public string ClassCode { get; set; }
     
         /// <summary>
+        /// Gets or sets course.
+        /// Course information for the class
+        /// </summary>
+        [JsonPropertyName("course")]
+        public EducationCourse Course { get; set; }
+    
+        /// <summary>
         /// Gets or sets created by.
         /// Entity who created the class
         /// </summary>
@@ -72,10 +79,24 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source.
-        /// How this class was created. The possible values are: sis, manual, unknownFutureValue.
+        /// The type of external source this resource was generated from (automatically determined from externalSourceDetail). Possible values are: sis, lms, or manual.
         /// </summary>
         [JsonPropertyName("externalSource")]
         public EducationExternalSource? ExternalSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external source detail.
+        /// The name of the external source this resources was generated from.
+        /// </summary>
+        [JsonPropertyName("externalSourceDetail")]
+        public string ExternalSourceDetail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets grade.
+        /// Grade level of the class.
+        /// </summary>
+        [JsonPropertyName("grade")]
+        public string Grade { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
@@ -86,7 +107,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets term.
-        /// Term for this class.
+        /// Term for the class.
         /// </summary>
         [JsonPropertyName("term")]
         public EducationTerm Term { get; set; }

@@ -253,6 +253,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceLocalizations request builder.
+        /// </summary>
+        public IGraphServiceLocalizationsCollectionRequestBuilder Localizations
+        {
+            get
+            {
+                return new GraphServiceLocalizationsCollectionRequestBuilder(this.BaseUrl + "/localizations", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceOauth2PermissionGrants request builder.
         /// </summary>
         public IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants
@@ -396,6 +407,28 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceAgreementAcceptances request builder.
+        /// </summary>
+        public IGraphServiceAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances
+        {
+            get
+            {
+                return new GraphServiceAgreementAcceptancesCollectionRequestBuilder(this.BaseUrl + "/agreementAcceptances", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAgreements request builder.
+        /// </summary>
+        public IGraphServiceAgreementsCollectionRequestBuilder Agreements
+        {
+            get
+            {
+                return new GraphServiceAgreementsCollectionRequestBuilder(this.BaseUrl + "/agreements", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
         public IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations
@@ -484,6 +517,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceBranding request builder.
+        /// </summary>
+        public IOrganizationalBrandingRequestBuilder Branding
+        {
+            get
+            {
+                return new OrganizationalBrandingRequestBuilder(this.BaseUrl + "/branding", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectory request builder.
         /// </summary>
         public IDirectoryRequestBuilder Directory
@@ -550,6 +594,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceIdentityGovernance request builder.
+        /// </summary>
+        public IIdentityGovernanceRequestBuilder IdentityGovernance
+        {
+            get
+            {
+                return new IdentityGovernanceRequestBuilder(this.BaseUrl + "/identityGovernance", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
         public IDeviceAppManagementRequestBuilder DeviceAppManagement
@@ -601,6 +656,17 @@ namespace Microsoft.Graph
             get
             {
                 return new PlannerRequestBuilder(this.BaseUrl + "/planner", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServicePrint request builder.
+        /// </summary>
+        public IPrintRequestBuilder Print
+        {
+            get
+            {
+                return new PrintRequestBuilder(this.BaseUrl + "/print", this);
             }
         }
     

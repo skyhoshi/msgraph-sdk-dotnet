@@ -50,6 +50,42 @@ namespace Microsoft.Graph
             return new ChatRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for InstalledApps.
+        /// </summary>
+        /// <returns>The <see cref="IChatInstalledAppsCollectionRequestBuilder"/>.</returns>
+        public IChatInstalledAppsCollectionRequestBuilder InstalledApps
+        {
+            get
+            {
+                return new ChatInstalledAppsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("installedApps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Members.
+        /// </summary>
+        /// <returns>The <see cref="IChatMembersCollectionRequestBuilder"/>.</returns>
+        public IChatMembersCollectionRequestBuilder Members
+        {
+            get
+            {
+                return new ChatMembersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("members"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Tabs.
+        /// </summary>
+        /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>
+        public IChatTabsCollectionRequestBuilder Tabs
+        {
+            get
+            {
+                return new ChatTabsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("tabs"), this.Client);
+            }
+        }
+    
         
     
     }

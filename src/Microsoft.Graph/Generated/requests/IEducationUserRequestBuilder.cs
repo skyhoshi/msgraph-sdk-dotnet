@@ -44,10 +44,18 @@ namespace Microsoft.Graph
         IEducationUserSchoolsCollectionWithReferencesRequestBuilder Schools { get; }
 
         /// <summary>
+        /// Gets the request builder for TaughtClasses.
+        /// </summary>
+        /// <returns>The <see cref="IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IEducationUserTaughtClassesCollectionWithReferencesRequestBuilder TaughtClasses { get; }
+
+        /// <summary>
         /// Gets the request builder for User.
         /// </summary>
         /// <returns>The <see cref="IUserWithReferenceRequestBuilder"/>.</returns>
         IUserWithReferenceRequestBuilder User { get; }
+    
+        
     
     }
 }

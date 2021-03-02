@@ -28,6 +28,54 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.chat";
         }
 	
+        /// <summary>
+        /// Gets or sets chat type.
+        /// Specifies the type of chat. Possible values are:group, oneOnOne and meeting.
+        /// </summary>
+        [JsonPropertyName("chatType")]
+        public ChatType? ChatType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets created date time.
+        /// Date and time at which the chat was created. Read-only.
+        /// </summary>
+        [JsonPropertyName("createdDateTime")]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets last updated date time.
+        /// Date and time at which the chat was renamed or list of members were last changed. Read-only.
+        /// </summary>
+        [JsonPropertyName("lastUpdatedDateTime")]
+        public DateTimeOffset? LastUpdatedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets topic.
+        /// (Optional) Subject or topic for the chat. Only available for group chats.
+        /// </summary>
+        [JsonPropertyName("topic")]
+        public string Topic { get; set; }
+    
+        /// <summary>
+        /// Gets or sets installed apps.
+        /// A collection of all the apps in the chat. Nullable.
+        /// </summary>
+        [JsonPropertyName("installedApps")]
+        public IChatInstalledAppsCollectionPage InstalledApps { get; set; }
+    
+        /// <summary>
+        /// Gets or sets members.
+        /// A collection of all the members in the chat. Nullable.
+        /// </summary>
+        [JsonPropertyName("members")]
+        public IChatMembersCollectionPage Members { get; set; }
+    
+        /// <summary>
+        /// Gets or sets tabs.
+        /// </summary>
+        [JsonPropertyName("tabs")]
+        public IChatTabsCollectionPage Tabs { get; set; }
+    
     }
 }
 

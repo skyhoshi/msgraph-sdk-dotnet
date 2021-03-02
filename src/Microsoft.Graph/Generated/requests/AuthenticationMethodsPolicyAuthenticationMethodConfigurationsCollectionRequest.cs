@@ -41,8 +41,8 @@ namespace Microsoft.Graph
         /// <returns>The created AuthenticationMethodConfiguration.</returns>
         public System.Threading.Tasks.Task<AuthenticationMethodConfiguration> AddAsync(AuthenticationMethodConfiguration authenticationMethodConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             authenticationMethodConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(authenticationMethodConfiguration.GetType().FullName));
             return this.SendAsync<AuthenticationMethodConfiguration>(authenticationMethodConfiguration, cancellationToken);
         }
@@ -55,8 +55,8 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AuthenticationMethodConfiguration}"/> object of the request.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodConfiguration>> AddResponseAsync(AuthenticationMethodConfiguration authenticationMethodConfiguration, CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.ContentType = Constants.ContentTypes.JsonContentType;
-            this.Method = CoreConstants.HttpMethods.POST.ToString();
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
             authenticationMethodConfiguration.ODataType = string.Concat("#", StringHelper.ConvertTypeToLowerCamelCase(authenticationMethodConfiguration.GetType().FullName));
             return this.SendAsyncWithGraphResponse<AuthenticationMethodConfiguration>(authenticationMethodConfiguration, cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph
         /// <returns>The collection page.</returns>
         public async System.Threading.Tasks.Task<IAuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             var response = await this.SendAsync<AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
             if (response != null && response.Value != null && response.Value.CurrentPage != null)
             {
@@ -104,7 +104,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="GraphResponse{AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionResponse}"/> object.</returns>
         public System.Threading.Tasks.Task<GraphResponse<AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            this.Method = CoreConstants.HttpMethods.GET.ToString();
+            this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<AuthenticationMethodsPolicyAuthenticationMethodConfigurationsCollectionResponse>(null, cancellationToken);
         }
 
