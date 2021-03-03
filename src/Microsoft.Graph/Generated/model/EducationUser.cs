@@ -87,6 +87,13 @@ namespace Microsoft.Graph
         public EducationExternalSource? ExternalSource { get; set; }
     
         /// <summary>
+        /// Gets or sets external source detail.
+        /// The name of the external source this resources was generated from.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSourceDetail", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalSourceDetail { get; set; }
+    
+        /// <summary>
         /// Gets or sets given name.
         /// The given name (first name) of the user. Supports /$filter.
         /// </summary>
@@ -133,6 +140,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "officeLocation", Required = Newtonsoft.Json.Required.Default)]
         public string OfficeLocation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets on premises info.
+        /// Additional information used to associate the AAD user with it's Active Directory counterpart.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "onPremisesInfo", Required = Newtonsoft.Json.Required.Default)]
+        public EducationOnPremisesInfo OnPremisesInfo { get; set; }
     
         /// <summary>
         /// Gets or sets password policies.
@@ -243,6 +257,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "schools", Required = Newtonsoft.Json.Required.Default)]
         public IEducationUserSchoolsCollectionWithReferencesPage Schools { get; set; }
+    
+        /// <summary>
+        /// Gets or sets taught classes.
+        /// Classes for which the user is a teacher.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "taughtClasses", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationUserTaughtClassesCollectionWithReferencesPage TaughtClasses { get; set; }
     
         /// <summary>
         /// Gets or sets user.

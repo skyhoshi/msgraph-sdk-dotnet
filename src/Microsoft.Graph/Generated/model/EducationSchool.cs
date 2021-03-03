@@ -107,6 +107,12 @@ namespace Microsoft.Graph
         public string SchoolNumber { get; set; }
     
         /// <summary>
+        /// Gets or sets administrative unit.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "administrativeUnit", Required = Newtonsoft.Json.Required.Default)]
+        public AdministrativeUnit AdministrativeUnit { get; set; }
+    
+        /// <summary>
         /// Gets or sets classes.
         /// Classes taught at the school. Nullable.
         /// </summary>

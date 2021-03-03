@@ -107,6 +107,11 @@ namespace Microsoft.Graph
         IGraphServiceGroupSettingTemplatesCollectionRequestBuilder GroupSettingTemplates { get; }
     
         /// <summary>
+        /// Gets the GraphServiceLocalizations request builder.
+        /// </summary>
+        IGraphServiceLocalizationsCollectionRequestBuilder Localizations { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceOauth2PermissionGrants request builder.
         /// </summary>
         IGraphServiceOauth2PermissionGrantsCollectionRequestBuilder Oauth2PermissionGrants { get; }
@@ -172,6 +177,16 @@ namespace Microsoft.Graph
         IGraphServiceGroupLifecyclePoliciesCollectionRequestBuilder GroupLifecyclePolicies { get; }
     
         /// <summary>
+        /// Gets the GraphServiceAgreementAcceptances request builder.
+        /// </summary>
+        IGraphServiceAgreementAcceptancesCollectionRequestBuilder AgreementAcceptances { get; }
+    
+        /// <summary>
+        /// Gets the GraphServiceAgreements request builder.
+        /// </summary>
+        IGraphServiceAgreementsCollectionRequestBuilder Agreements { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDataPolicyOperations request builder.
         /// </summary>
         IGraphServiceDataPolicyOperationsCollectionRequestBuilder DataPolicyOperations { get; }
@@ -212,6 +227,11 @@ namespace Microsoft.Graph
         IIdentityContainerRequestBuilder Identity { get; }
     
         /// <summary>
+        /// Gets the GraphServiceBranding request builder.
+        /// </summary>
+        IOrganizationalBrandingRequestBuilder Branding { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDirectory request builder.
         /// </summary>
         IDirectoryRequestBuilder Directory { get; }
@@ -242,6 +262,11 @@ namespace Microsoft.Graph
         ICloudCommunicationsRequestBuilder Communications { get; }
     
         /// <summary>
+        /// Gets the GraphServiceIdentityGovernance request builder.
+        /// </summary>
+        IIdentityGovernanceRequestBuilder IdentityGovernance { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceAppManagement request builder.
         /// </summary>
         IDeviceAppManagementRequestBuilder DeviceAppManagement { get; }
@@ -265,6 +290,11 @@ namespace Microsoft.Graph
         /// Gets the GraphServicePlanner request builder.
         /// </summary>
         IPlannerRequestBuilder Planner { get; }
+    
+        /// <summary>
+        /// Gets the GraphServicePrint request builder.
+        /// </summary>
+        IPrintRequestBuilder Print { get; }
     
         /// <summary>
         /// Gets the GraphServiceSecurity request builder.

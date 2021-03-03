@@ -32,6 +32,30 @@ namespace Microsoft.Graph
         new IReportRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for DailyPrintUsageByPrinter.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>
+        IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder DailyPrintUsageByPrinter { get; }
+
+        /// <summary>
+        /// Gets the request builder for DailyPrintUsageByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageByUserCollectionRequestBuilder"/>.</returns>
+        IReportRootDailyPrintUsageByUserCollectionRequestBuilder DailyPrintUsageByUser { get; }
+
+        /// <summary>
+        /// Gets the request builder for MonthlyPrintUsageByPrinter.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>
+        IReportRootMonthlyPrintUsageByPrinterCollectionRequestBuilder MonthlyPrintUsageByPrinter { get; }
+
+        /// <summary>
+        /// Gets the request builder for MonthlyPrintUsageByUser.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootMonthlyPrintUsageByUserCollectionRequestBuilder"/>.</returns>
+        IReportRootMonthlyPrintUsageByUserCollectionRequestBuilder MonthlyPrintUsageByUser { get; }
+    
+        /// <summary>
         /// Gets the request builder for ReportRootDeviceConfigurationDeviceActivity.
         /// </summary>
         /// <returns>The <see cref="IReportRootDeviceConfigurationDeviceActivityRequestBuilder"/>.</returns>
@@ -649,6 +673,33 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IReportRootGetYammerGroupsActivityGroupCountsRequestBuilder"/>.</returns>
         IReportRootGetYammerGroupsActivityGroupCountsRequestBuilder GetYammerGroupsActivityGroupCounts(
             string period);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetGroupArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetGroupArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetGroupArchivedPrintJobsRequestBuilder GetGroupArchivedPrintJobs(
+            string groupId,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetPrinterArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetPrinterArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetPrinterArchivedPrintJobsRequestBuilder GetPrinterArchivedPrintJobs(
+            string printerId,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null);
+
+        /// <summary>
+        /// Gets the request builder for ReportRootGetUserArchivedPrintJobs.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetUserArchivedPrintJobsRequestBuilder"/>.</returns>
+        IReportRootGetUserArchivedPrintJobsRequestBuilder GetUserArchivedPrintJobs(
+            string userId,
+            DateTimeOffset? startDateTime = null,
+            DateTimeOffset? endDateTime = null);
     
     }
 }

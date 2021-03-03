@@ -212,6 +212,12 @@ namespace Microsoft.Graph
         IUserExtensionsCollectionRequestBuilder Extensions { get; }
 
         /// <summary>
+        /// Gets the request builder for AgreementAcceptances.
+        /// </summary>
+        /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder AgreementAcceptances { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagedDevices.
         /// </summary>
         /// <returns>The <see cref="IUserManagedDevicesCollectionRequestBuilder"/>.</returns>
