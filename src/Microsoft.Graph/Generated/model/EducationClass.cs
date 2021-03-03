@@ -38,6 +38,13 @@ namespace Microsoft.Graph
         public string ClassCode { get; set; }
     
         /// <summary>
+        /// Gets or sets course.
+        /// Course information for the class
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "course", Required = Newtonsoft.Json.Required.Default)]
+        public EducationCourse Course { get; set; }
+    
+        /// <summary>
         /// Gets or sets created by.
         /// Entity who created the class
         /// </summary>
@@ -78,6 +85,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSource", Required = Newtonsoft.Json.Required.Default)]
         public EducationExternalSource? ExternalSource { get; set; }
+    
+        /// <summary>
+        /// Gets or sets external source detail.
+        /// The name of the external source this resources was generated from.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "externalSourceDetail", Required = Newtonsoft.Json.Required.Default)]
+        public string ExternalSourceDetail { get; set; }
+    
+        /// <summary>
+        /// Gets or sets grade.
+        /// Grade level of the class.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "grade", Required = Newtonsoft.Json.Required.Default)]
+        public string Grade { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.

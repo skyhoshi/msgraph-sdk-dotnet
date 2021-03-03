@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Branding.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationalBrandingRequestBuilder"/>.</returns>
+        public IOrganizationalBrandingRequestBuilder Branding
+        {
+            get
+            {
+                return new OrganizationalBrandingRequestBuilder(this.AppendSegmentToRequestUrl("branding"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for CertificateBasedAuthConfiguration.
         /// </summary>
         /// <returns>The <see cref="IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesRequestBuilder"/>.</returns>

@@ -411,6 +411,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AgreementAcceptances.
+        /// </summary>
+        /// <returns>The <see cref="IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserAgreementAcceptancesCollectionWithReferencesRequestBuilder AgreementAcceptances
+        {
+            get
+            {
+                return new UserAgreementAcceptancesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("agreementAcceptances"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDevices.
         /// </summary>
         /// <returns>The <see cref="IUserManagedDevicesCollectionRequestBuilder"/>.</returns>
