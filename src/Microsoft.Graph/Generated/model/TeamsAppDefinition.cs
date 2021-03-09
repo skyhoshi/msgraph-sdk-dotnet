@@ -38,6 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// Verbose description of the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "description", Required = Newtonsoft.Json.Required.Default)]
         public string Description { get; set; }
@@ -64,6 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets short description.
+        /// Short description of the application.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "shortDescription", Required = Newtonsoft.Json.Required.Default)]
         public string ShortDescription { get; set; }
