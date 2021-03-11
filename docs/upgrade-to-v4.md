@@ -7,7 +7,7 @@ The purpose of this document is to outline any breaking change and migration wor
 To improve the development experience provided by the SDK, it was necessary to make the following breaking changes in addition to the changes listed in the migration guide below:
 
  * .NET Standard minimum version bumped from `netstandard1.3` to `netstandard2.0`
- * .NET Framework minimum version bumped from `net45` to `net461`
+ * .NET Framework minimum version bumped from `net45` to `net462`
  * Replacing Newtonsoft.Json dependency with System.Text.Json for serialization/de-serialization
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
 
@@ -91,6 +91,8 @@ For example, rather than using the [Interactive provider](https://docs.microsoft
 #### Example using Microsoft.Graph.Auth
 
 ```cs
+string[] scopes = {"User.Read"};
+
 IPublicClientApplication publicClientApplication = PublicClientApplicationBuilder
             .Create(clientId)
             .Build();
@@ -106,11 +108,11 @@ User me = await graphClient.Me.Request()
 #### Example using TokenCredential class
 
 ```cs
+string[] scopes = {"User.Read"};
+
 InteractiveBrowserCredential myBrowserCredential = new InteractiveBrowserCredential(clientId);
 
-TokenCredentialAuthProvider tokenCredentialAuthProvider = new TokenCredentialAuthProvider(myBrowserCredential, scopes);
-
-GraphServiceClient graphClient = new GraphServiceClient(tokenCredentialAuthProvider);
+GraphServiceClient graphClient = new GraphServiceClient(myBrowserCredential, scopes); // you can pass the TokenCredential directly to the GraphServiceClient
 
 User me = await graphClient.Me.Request()
                 .GetAsync();
@@ -118,6 +120,10 @@ User me = await graphClient.Me.Request()
 ### IBaseRequest now takes IResponseHandler as a member
 
 The `IBaseRequest` interface now has a new member of type `IResponseHandler`. Any existing code that derives from it will now have to take this into consideration.
+
+### Method property in IBaseRequest is of type enum from string.
+
+The `Method` property in the `IBaseRequest` interface now is of type enum. Any existing code that derives from it will now have to take this into consideration by changing the string values to the enum values provided now provided in the library.
 
 ### Graph Response
 
@@ -155,7 +161,12 @@ If you choose you can even deserialize the response in your own custom way as fo
 ```cs
 ISerializer serializer = new CustomSerializer(); // Custom Serializer
 IResponseHandler responseHandler = new ResponseHandler(serializer); // Our Response Handler with custom Serializer
-    
+
+var patchUser = new User()
+{
+    DisplayName = "Graph User"
+};
+
 GraphResponse<User> graphResponse = await graphServiceClient.Me.Request()
                                                     .WithResponseHandler(responseHandler) // customized response handler
                                                     .UpdateWithGraphResponseAsync<User>(patchUser, cancellationToken); // response with no serialization
@@ -178,6 +189,13 @@ using (JsonTextReader jsonTextReader = new JsonTextReader(sr))
 }
 
 ```
+### HTTP Status Code and Headers are not placed into the AdditionalData
+
+Since the HTTP status code and response headers are now available through the GraphResponse object, the default response handler will no longer put this information into the AdditionalData property bag. This is to allow for a better user experience and better performance on deserialization of the response payload.
+
+### GraphServiceClient no longer implements the IGraphServiceClient
+
+The `IGraphServiceClient` interface is not really an interface because it continues to change with metadata changes. This makes it not ideal to mock or inherit. The interface has therefore been removed and no longer exists.
 
 ## Remarks about this guide
 
