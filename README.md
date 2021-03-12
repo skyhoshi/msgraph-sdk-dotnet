@@ -110,7 +110,7 @@ Between 1.x and 3.x there were some minor possibly breaking changes:
 Between 3.x and 4.x there were some major breaking changes:
 
  * .NET Standard minimum version bumped from `netStandard1.3` to `netstandard2.0`
- * .NET Framework minimum version bumped from `net45` to `net461`
+ * .NET Framework minimum version bumped from `net45` to `net462`
  * Replacing Newtosoft.Json with System.Text.Json
  * Upgrading Microsoft.Graph.Core dependency to version 2.0.0
 
