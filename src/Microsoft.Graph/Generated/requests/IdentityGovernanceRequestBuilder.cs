@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AppConsent.
+        /// </summary>
+        /// <returns>The <see cref="IAppConsentApprovalRouteRequestBuilder"/>.</returns>
+        public IAppConsentApprovalRouteRequestBuilder AppConsent
+        {
+            get
+            {
+                return new AppConsentApprovalRouteRequestBuilder(this.AppendSegmentToRequestUrl("appConsent"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for TermsOfUse.
         /// </summary>
         /// <returns>The <see cref="ITermsOfUseContainerRequestBuilder"/>.</returns>

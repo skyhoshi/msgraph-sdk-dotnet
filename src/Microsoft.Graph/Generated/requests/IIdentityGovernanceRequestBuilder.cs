@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IIdentityGovernanceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AppConsent.
+        /// </summary>
+        /// <returns>The <see cref="IAppConsentApprovalRouteRequestBuilder"/>.</returns>
+        IAppConsentApprovalRouteRequestBuilder AppConsent { get; }
+
+        /// <summary>
         /// Gets the request builder for TermsOfUse.
         /// </summary>
         /// <returns>The <see cref="ITermsOfUseContainerRequestBuilder"/>.</returns>

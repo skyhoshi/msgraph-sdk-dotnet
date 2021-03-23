@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets app consent.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConsent", Required = Newtonsoft.Json.Required.Default)]
+        public AppConsentApprovalRoute AppConsent { get; set; }
+    
+        /// <summary>
         /// Gets or sets terms of use.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "termsOfUse", Required = Newtonsoft.Json.Required.Default)]

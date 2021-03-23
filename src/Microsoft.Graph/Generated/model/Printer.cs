@@ -45,6 +45,13 @@ namespace Microsoft.Graph
         public bool? IsShared { get; set; }
     
         /// <summary>
+        /// Gets or sets last seen date time.
+        /// The most recent dateTimeOffset when a printer interacted with Universal Print. Read-only.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "lastSeenDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? LastSeenDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets registered date time.
         /// The DateTimeOffset when the printer was registered. Read-only.
         /// </summary>
