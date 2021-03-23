@@ -183,6 +183,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TeamCompleteMigration.
+        /// </summary>
+        /// <returns>The <see cref="ITeamCompleteMigrationRequestBuilder"/>.</returns>
+        public ITeamCompleteMigrationRequestBuilder CompleteMigration()
+        {
+            return new TeamCompleteMigrationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.completeMigration"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for TeamUnarchive.
         /// </summary>
         /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>

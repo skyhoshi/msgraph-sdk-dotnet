@@ -43,5 +43,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IChatMessageRepliesCollectionRequestBuilder"/>.</returns>
         IChatMessageRepliesCollectionRequestBuilder Replies { get; }
     
+        
+    
     }
 }

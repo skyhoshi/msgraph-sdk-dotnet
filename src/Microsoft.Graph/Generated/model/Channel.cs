@@ -31,6 +31,13 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets created date time.
+        /// Read only. Timestamp at which the channel was created.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// Optional textual description for the channel.
         /// </summary>
@@ -60,7 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets membership type.
-        /// The type of the channel. Can be set during creation and cannot be changed. Default: standard.
+        /// The type of the channel. Can be set during creation and cannot be changed. Possible values are: standard - Channel inherits the list of members of the parent team; private - Channel can have members that are a subset of all the members on the parent team.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "membershipType", Required = Newtonsoft.Json.Required.Default)]
         public ChannelMembershipType? MembershipType { get; set; }
