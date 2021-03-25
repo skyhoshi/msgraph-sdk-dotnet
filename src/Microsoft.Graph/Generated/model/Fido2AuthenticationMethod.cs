@@ -53,6 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The timestamp when this key was registered to the user.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "createdDateTime", Required = Newtonsoft.Json.Required.Default)]
         public DateTimeOffset? CreatedDateTime { get; set; }
