@@ -110,13 +110,19 @@ User me = await graphClient.Me.Request()
 ```cs
 string[] scopes = {"User.Read"};
 
-InteractiveBrowserCredential myBrowserCredential = new InteractiveBrowserCredential(clientId);
+InteractiveBrowserCredentialOptions interactiveBrowserCredentialOptions = new InteractiveBrowserCredentialOptions() {
+                ClientId = clientId
+};
+InteractiveBrowserCredential interactiveBrowserCredential = new InteractiveBrowserCredential(interactiveBrowserCredentialOptions);
 
 GraphServiceClient graphClient = new GraphServiceClient(myBrowserCredential, scopes); // you can pass the TokenCredential directly to the GraphServiceClient
 
 User me = await graphClient.Me.Request()
                 .GetAsync();
 ```
+
+You can check out examples on how to quickly setup other TokenCredential instances [here](tokencredentials.md).
+
 ### IBaseRequest now takes IResponseHandler as a member
 
 The `IBaseRequest` interface now has a new member of type `IResponseHandler`. Any existing code that derives from it will now have to take this into consideration.
@@ -130,9 +136,11 @@ The `Method` property in the `IBaseRequest` interface now is of type enum. Any e
 To enable SDK users to have easier access to response information like response headers and status codes, we have introduced the GraphResponse object which also involves the following new methods being added which correspond to the existing API methods.
 
 * `GetResponseAsync(): : GraphResponse<T>`
+* `AddResponseAsync(NewObject: Entity) : GraphResponse<T>`
 * `CreateResponseAsync(NewObject: Entity) : GraphResponse<T>`
 * `PostResponseAsync(NewObject: Entity) : GraphResponse<T>`
 * `UpdateResponseAsync(UpdatedObject: Entity) : GraphResponse<T>`
+* `PutResponseAsync(UpdatedObject: Entity) : GraphResponse<T>`
 * `DeleteResponseAsync() : GraphResponse`  (no generic here) 
 
 Essentially, using the fluent APIs of the service libraries should remain the same as follows
