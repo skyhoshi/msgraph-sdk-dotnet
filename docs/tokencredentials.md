@@ -114,17 +114,12 @@ It is also useful to know that Azure.Identity provides other TokenCredentials th
 
 This credential enables the used of defined environment variables to configure authentication. The environment varables used are as follows.
 
-AZURE_TENANT_ID -   The Azure Active Directory tenant(directory) ID.
-
-AZURE_CLIENT_ID -   The client(application) ID of an App Registration in the tenant.
-
-AZURE_CLIENT_SECRET	- A client secret that was generated for the App Registration.
-
-AZURE_CLIENT_CERTIFICATE_PATH - A path to certificate and private key pair in PEM or PFX format, which can authenticate the App Registration.
-
-AZURE_USERNAME -    The username, also known as upn, of an Azure Active Directory user account.
-
-AZURE_PASSWORD -    The password of the Azure Active Directory user account. Note this does not support accounts with MFA enabled.
+- AZURE_TENANT_ID -   The Azure Active Directory tenant(directory) ID.
+- AZURE_CLIENT_ID -   The client(application) ID of an App Registration in the tenant.
+- AZURE_CLIENT_SECRET	- A client secret that was generated for the App Registration.
+- AZURE_CLIENT_CERTIFICATE_PATH - A path to certificate and private key pair in PEM or PFX format, which can authenticate the App Registration.
+- AZURE_USERNAME -    The username, also known as upn, of an Azure Active Directory user account.
+- AZURE_PASSWORD -    The password of the Azure Active Directory user account. Note this does not support accounts with MFA enabled.
 
 Based on the environment varialbe defined, this credential ultimately uses a `ClientSecretCredential` or `UsernamePasswordCredential` to perform the authentication using these details.
 ```cs
