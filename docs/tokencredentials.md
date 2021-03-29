@@ -140,7 +140,7 @@ User me = await graphClient.Me.Request()
 
 ## 2. ChainedTokenCredential
 
-This credential class provides a way to chain TokenCredential instances to be used in the attempt of token aquisiitions until one of the `getToken` methods of the TokenCredential instances returns a non-default AccessToken. An example is as shown below. In the example, the application will first attempt to check if it can get an AccessToken from the Environment and then use the interactive browser flow if it is unable to do so.
+This credential class provides a way to chain TokenCredential instances to be used in the attempt of token acquisitions until one of the `getToken` methods of the TokenCredential instances returns a non-default AccessToken. An example is as shown below. In the example, the application will first attempt to check if it can get an AccessToken from the Environment and then use the interactive browser flow if it is unable to do so.
 
 ```cs
 string[] scopes = {"User.Read"};
