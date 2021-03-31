@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets app consent.
+        /// </summary>
+        [JsonPropertyName("appConsent")]
+        public AppConsentApprovalRoute AppConsent { get; set; }
+    
+        /// <summary>
         /// Gets or sets terms of use.
         /// </summary>
         [JsonPropertyName("termsOfUse")]

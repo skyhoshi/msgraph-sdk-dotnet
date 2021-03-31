@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public string Classification { get; set; }
     
         /// <summary>
+        /// Gets or sets created date time.
+        /// Timestamp at which the team was created.
+        /// </summary>
+        [JsonPropertyName("createdDateTime")]
+        public DateTimeOffset? CreatedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// An optional description for the team.
         /// </summary>

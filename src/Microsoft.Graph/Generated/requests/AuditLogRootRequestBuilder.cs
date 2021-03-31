@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Provisioning.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootProvisioningCollectionRequestBuilder"/>.</returns>
+        public IAuditLogRootProvisioningCollectionRequestBuilder Provisioning
+        {
+            get
+            {
+                return new AuditLogRootProvisioningCollectionRequestBuilder(this.AppendSegmentToRequestUrl("provisioning"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for RestrictedSignIns.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
