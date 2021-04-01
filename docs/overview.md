@@ -38,7 +38,7 @@ var graphServiceClient = new GraphServiceClient(new DelegateAuthenticationProvid
         .Headers
         .Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-    return Task.FromResult(0);
+    return Task.CompletedTask;
 }));
 ```
 
