@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         public IAuditLogRootDirectoryAuditsCollectionPage DirectoryAudits { get; set; }
     
         /// <summary>
+        /// Gets or sets provisioning.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "provisioning", Required = Newtonsoft.Json.Required.Default)]
+        public IAuditLogRootProvisioningCollectionPage Provisioning { get; set; }
+    
+        /// <summary>
         /// Gets or sets restricted sign ins.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "restrictedSignIns", Required = Newtonsoft.Json.Required.Default)]

@@ -252,6 +252,11 @@ namespace Microsoft.Graph
         IEducationRootRequestBuilder Education { get; }
     
         /// <summary>
+        /// Gets the GraphServiceRoleManagement request builder.
+        /// </summary>
+        IRoleManagementRequestBuilder RoleManagement { get; }
+    
+        /// <summary>
         /// Gets the GraphServiceDrive request builder.
         /// </summary>
         IDriveRequestBuilder Drive { get; }

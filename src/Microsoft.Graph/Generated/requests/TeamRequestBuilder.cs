@@ -194,6 +194,29 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TeamSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="ITeamSendActivityNotificationRequestBuilder"/>.</returns>
+        public ITeamSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationRecipient recipient = null)
+        {
+            return new TeamSendActivityNotificationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.sendActivityNotification"),
+                this.Client,
+                topic,
+                activityType,
+                chainId,
+                previewText,
+                templateParameters,
+                recipient);
+        }
+
+        /// <summary>
         /// Gets the request builder for TeamUnarchive.
         /// </summary>
         /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>

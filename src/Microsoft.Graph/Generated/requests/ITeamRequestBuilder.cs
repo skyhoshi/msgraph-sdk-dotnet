@@ -105,6 +105,18 @@ namespace Microsoft.Graph
         ITeamCompleteMigrationRequestBuilder CompleteMigration();
 
         /// <summary>
+        /// Gets the request builder for TeamSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="ITeamSendActivityNotificationRequestBuilder"/>.</returns>
+        ITeamSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationRecipient recipient = null);
+
+        /// <summary>
         /// Gets the request builder for TeamUnarchive.
         /// </summary>
         /// <returns>The <see cref="ITeamUnarchiveRequestBuilder"/>.</returns>
