@@ -36,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// Verbose description of the application.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -62,13 +63,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets short description.
+        /// Short description of the application.
         /// </summary>
         [JsonPropertyName("shortDescription")]
         public string ShortDescription { get; set; }
     
         /// <summary>
         /// Gets or sets teams app id.
-        /// The id from the Teams App manifest.
+        /// The ID from the Teams app manifest.
         /// </summary>
         [JsonPropertyName("teamsAppId")]
         public string TeamsAppId { get; set; }
@@ -82,7 +84,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets bot.
-        /// The details of the bot specified in the Teams App manifest.
+        /// The details of the bot specified in the Teams app manifest.
         /// </summary>
         [JsonPropertyName("bot")]
         public TeamworkBot Bot { get; set; }

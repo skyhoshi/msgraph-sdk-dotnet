@@ -71,6 +71,13 @@ namespace Microsoft.Graph
         public IChatMembersCollectionPage Members { get; set; }
     
         /// <summary>
+        /// Gets or sets messages.
+        /// A collection of all the messages in the chat. Nullable.
+        /// </summary>
+        [JsonPropertyName("messages")]
+        public IChatMessagesCollectionPage Messages { get; set; }
+    
+        /// <summary>
         /// Gets or sets tabs.
         /// </summary>
         [JsonPropertyName("tabs")]

@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public IAuditLogRootDirectoryAuditsCollectionPage DirectoryAudits { get; set; }
     
         /// <summary>
+        /// Gets or sets provisioning.
+        /// </summary>
+        [JsonPropertyName("provisioning")]
+        public IAuditLogRootProvisioningCollectionPage Provisioning { get; set; }
+    
+        /// <summary>
         /// Gets or sets restricted sign ins.
         /// </summary>
         [JsonPropertyName("restrictedSignIns")]

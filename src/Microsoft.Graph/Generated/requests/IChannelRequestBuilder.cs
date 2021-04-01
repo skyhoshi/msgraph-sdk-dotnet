@@ -55,5 +55,11 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IChannelTabsCollectionRequestBuilder"/>.</returns>
         IChannelTabsCollectionRequestBuilder Tabs { get; }
     
+        /// <summary>
+        /// Gets the request builder for ChannelCompleteMigration.
+        /// </summary>
+        /// <returns>The <see cref="IChannelCompleteMigrationRequestBuilder"/>.</returns>
+        IChannelCompleteMigrationRequestBuilder CompleteMigration();
+    
     }
 }

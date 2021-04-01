@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for ChatMessageDelta.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageDeltaRequestBuilder"/>.</returns>
+        public IChatMessageDeltaRequestBuilder Delta()
+        {
+            return new ChatMessageDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

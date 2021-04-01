@@ -588,6 +588,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceRoleManagement request builder.
+        /// </summary>
+        public IRoleManagementRequestBuilder RoleManagement
+        {
+            get
+            {
+                return new RoleManagementRequestBuilder(this.BaseUrl + "/roleManagement", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDrive request builder.
         /// </summary>
         public IDriveRequestBuilder Drive

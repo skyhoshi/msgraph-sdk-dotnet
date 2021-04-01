@@ -98,5 +98,16 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for ChannelCompleteMigration.
+        /// </summary>
+        /// <returns>The <see cref="IChannelCompleteMigrationRequestBuilder"/>.</returns>
+        public IChannelCompleteMigrationRequestBuilder CompleteMigration()
+        {
+            return new ChannelCompleteMigrationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.completeMigration"),
+                this.Client);
+        }
+    
     }
 }
