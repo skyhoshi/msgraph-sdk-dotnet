@@ -44,12 +44,28 @@ namespace Microsoft.Graph
         IChatMembersCollectionRequestBuilder Members { get; }
 
         /// <summary>
+        /// Gets the request builder for Messages.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessagesCollectionRequestBuilder"/>.</returns>
+        IChatMessagesCollectionRequestBuilder Messages { get; }
+
+        /// <summary>
         /// Gets the request builder for Tabs.
         /// </summary>
         /// <returns>The <see cref="IChatTabsCollectionRequestBuilder"/>.</returns>
         IChatTabsCollectionRequestBuilder Tabs { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for ChatSendActivityNotification.
+        /// </summary>
+        /// <returns>The <see cref="IChatSendActivityNotificationRequestBuilder"/>.</returns>
+        IChatSendActivityNotificationRequestBuilder SendActivityNotification(
+            TeamworkActivityTopic topic = null,
+            string activityType = null,
+            Int64? chainId = null,
+            ItemBody previewText = null,
+            IEnumerable<KeyValuePair> templateParameters = null,
+            TeamworkNotificationRecipient recipient = null);
     
     }
 }

@@ -45,6 +45,20 @@ namespace Microsoft.Graph
         public ItemBody Body { get; set; }
     
         /// <summary>
+        /// Gets or sets channel identity.
+        /// The identity of the channel in which the message was posted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "channelIdentity", Required = Newtonsoft.Json.Required.Default)]
+        public ChannelIdentity ChannelIdentity { get; set; }
+    
+        /// <summary>
+        /// Gets or sets chat id.
+        /// The identity of the chat in which the message was posted.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "chatId", Required = Newtonsoft.Json.Required.Default)]
+        public string ChatId { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
         /// Read only. Timestamp of when the chat message was created.
         /// </summary>

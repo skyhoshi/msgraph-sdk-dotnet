@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IAuditLogRootDirectoryAuditsCollectionRequestBuilder DirectoryAudits { get; }
 
         /// <summary>
+        /// Gets the request builder for Provisioning.
+        /// </summary>
+        /// <returns>The <see cref="IAuditLogRootProvisioningCollectionRequestBuilder"/>.</returns>
+        IAuditLogRootProvisioningCollectionRequestBuilder Provisioning { get; }
+
+        /// <summary>
         /// Gets the request builder for RestrictedSignIns.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>

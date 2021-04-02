@@ -266,6 +266,22 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (chatToInitialize.Messages != null && chatToInitialize.Messages.CurrentPage != null)
+                {
+                    chatToInitialize.Messages.AdditionalData = chatToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    chatToInitialize.AdditionalData.TryGetValue("messages@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        chatToInitialize.Messages.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (chatToInitialize.Tabs != null && chatToInitialize.Tabs.CurrentPage != null)
                 {
                     chatToInitialize.Tabs.AdditionalData = chatToInitialize.AdditionalData;
