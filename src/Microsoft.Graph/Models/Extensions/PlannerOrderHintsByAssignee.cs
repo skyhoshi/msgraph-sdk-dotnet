@@ -8,6 +8,7 @@ namespace Microsoft.Graph
     using System.Linq;
     using System.Collections.Generic;
     using System.Collections;
+    using System.Text.Json.Serialization;
 
     /// <summary>
     /// Represents the order hints for each assignee's column in "assigned to" task board for the containing <see cref="PlannerTask"/>. 
@@ -19,6 +20,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="userId">User id of the assignee.</param>
         /// <returns>The order hint.</returns>
+        [JsonIgnore]
         public string this[string userId]
         {
             get
