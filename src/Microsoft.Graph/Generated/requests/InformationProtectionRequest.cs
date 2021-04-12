@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     informationProtectionToInitialize.ThreatAssessmentRequests.AdditionalData = informationProtectionToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    informationProtectionToInitialize.AdditionalData.TryGetValue("threatAssessmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(informationProtectionToInitialize.AdditionalData.TryGetValue("threatAssessmentRequests@odata.nextLink", out var nextPageLink))
                     {
-                        informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

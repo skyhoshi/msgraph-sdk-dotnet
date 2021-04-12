@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     listItemToInitialize.Versions.AdditionalData = listItemToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    listItemToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(listItemToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out var nextPageLink))
                     {
-                        listItemToInitialize.Versions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            listItemToInitialize.Versions.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

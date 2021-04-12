@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     outlookUserToInitialize.MasterCategories.AdditionalData = outlookUserToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out var nextPageLink))
                     {
-                        outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 

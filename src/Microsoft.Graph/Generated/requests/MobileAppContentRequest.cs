@@ -251,15 +251,17 @@ namespace Microsoft.Graph
                 {
                     mobileAppContentToInitialize.Files.AdditionalData = mobileAppContentToInitialize.AdditionalData;
 
-                    object nextPageLink;
-                    mobileAppContentToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    if(mobileAppContentToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out var nextPageLink))
                     {
-                        mobileAppContentToInitialize.Files.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
+                        // Ensure it is a non empty JsonElement string
+                        if (nextPageLink is System.Text.Json.JsonElement element
+                            && element.ValueKind == System.Text.Json.JsonValueKind.String
+                            && !string.IsNullOrEmpty(element.ToString()))
+                        {
+                            mobileAppContentToInitialize.Files.InitializeNextPageRequest(
+                                this.Client,
+                                element.ToString());
+                        }
                     }
                 }
 
