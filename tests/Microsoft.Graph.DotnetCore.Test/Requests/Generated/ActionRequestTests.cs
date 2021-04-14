@@ -163,7 +163,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 
                 var requestUrl = string.Format("{0}/me/microsoft.graph.checkMemberGroups", this.graphBaseUrl);
                 var nextPageRequestUrl = string.Format("{0}?{1}={2}", requestUrl, nextQueryKey, nextQueryValue);
-                var nextPageRequestUrlElement = JsonDocument.Parse(string.Format("\"{0}\"", nextPageRequestUrl)).RootElement;
 
                 this.httpProvider.Setup(
                     provider => provider.SendAsync(
@@ -183,7 +182,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var checkMemberGroupsCollectionResponse = new DirectoryObjectCheckMemberGroupsCollectionResponse
                 {
                     Value = checkMemberGroupsCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { Constants.OdataInstanceAnnotations.NextLink, nextPageRequestUrlElement } },
+                    NextLink = nextPageRequestUrl
                 };
 
                 this.serializer.Setup(

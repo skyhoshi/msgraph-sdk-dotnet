@@ -71,7 +71,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var membersCollectionResponse = new GroupMembersCollectionWithReferencesResponse
                 {
                     Value = membersCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { Constants.OdataInstanceAnnotations.NextLink, nextPageRequestUrlElement } },
+                    NextLink = nextPageRequestUrl
                 };
 
                 this.serializer.Setup(
