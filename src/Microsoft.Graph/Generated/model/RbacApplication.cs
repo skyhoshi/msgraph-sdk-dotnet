@@ -33,12 +33,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("roleAssignments")]
         public IRbacApplicationRoleAssignmentsCollectionPage RoleAssignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleAssignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleAssignments@odata.nextLink")]
+        public string RoleAssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets role definitions.
         /// </summary>
         [JsonPropertyName("roleDefinitions")]
         public IRbacApplicationRoleDefinitionsCollectionPage RoleDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets roleDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("roleDefinitions@odata.nextLink")]
+        public string RoleDefinitionsNextLink { get; set; }
     
     }
 }

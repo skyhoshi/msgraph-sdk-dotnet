@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("threatAssessmentRequests")]
         public IInformationProtectionThreatAssessmentRequestsCollectionPage ThreatAssessmentRequests { get; set; }
+
+        /// <summary>
+        /// Gets or sets threatAssessmentRequestsNextLink.
+        /// </summary>
+        [JsonPropertyName("threatAssessmentRequests@odata.nextLink")]
+        public string ThreatAssessmentRequestsNextLink { get; set; }
     
     }
 }

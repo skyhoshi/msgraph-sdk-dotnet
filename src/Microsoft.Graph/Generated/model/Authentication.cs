@@ -33,24 +33,48 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("fido2Methods")]
         public IAuthenticationFido2MethodsCollectionPage Fido2Methods { get; set; }
+
+        /// <summary>
+        /// Gets or sets fido2MethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("fido2Methods@odata.nextLink")]
+        public string Fido2MethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets methods.
         /// </summary>
         [JsonPropertyName("methods")]
         public IAuthenticationMethodsCollectionPage Methods { get; set; }
+
+        /// <summary>
+        /// Gets or sets methodsNextLink.
+        /// </summary>
+        [JsonPropertyName("methods@odata.nextLink")]
+        public string MethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets microsoft authenticator methods.
         /// </summary>
         [JsonPropertyName("microsoftAuthenticatorMethods")]
         public IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage MicrosoftAuthenticatorMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets microsoftAuthenticatorMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("microsoftAuthenticatorMethods@odata.nextLink")]
+        public string MicrosoftAuthenticatorMethodsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets windows hello for business methods.
         /// </summary>
         [JsonPropertyName("windowsHelloForBusinessMethods")]
         public IAuthenticationWindowsHelloForBusinessMethodsCollectionPage WindowsHelloForBusinessMethods { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsHelloForBusinessMethodsNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsHelloForBusinessMethods@odata.nextLink")]
+        public string WindowsHelloForBusinessMethodsNextLink { get; set; }
     
     }
 }

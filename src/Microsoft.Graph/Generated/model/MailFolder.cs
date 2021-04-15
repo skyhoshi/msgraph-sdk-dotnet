@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("childFolders")]
         public IMailFolderChildFoldersCollectionPage ChildFolders { get; set; }
+
+        /// <summary>
+        /// Gets or sets childFoldersNextLink.
+        /// </summary>
+        [JsonPropertyName("childFolders@odata.nextLink")]
+        public string ChildFoldersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets message rules.
@@ -76,6 +82,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("messageRules")]
         public IMailFolderMessageRulesCollectionPage MessageRules { get; set; }
+
+        /// <summary>
+        /// Gets or sets messageRulesNextLink.
+        /// </summary>
+        [JsonPropertyName("messageRules@odata.nextLink")]
+        public string MessageRulesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets messages.
@@ -83,6 +95,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("messages")]
         public IMailFolderMessagesCollectionPage Messages { get; set; }
+
+        /// <summary>
+        /// Gets or sets messagesNextLink.
+        /// </summary>
+        [JsonPropertyName("messages@odata.nextLink")]
+        public string MessagesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
@@ -90,6 +108,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties")]
         public IMailFolderMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -97,6 +121,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties")]
         public IMailFolderSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

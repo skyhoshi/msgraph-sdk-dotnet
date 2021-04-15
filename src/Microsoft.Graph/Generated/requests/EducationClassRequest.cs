@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(EducationClass educationClassToInitialize)
         {
 
-            if (educationClassToInitialize != null && educationClassToInitialize.AdditionalData != null)
+            if (educationClassToInitialize != null)
             {
-
                 if (educationClassToInitialize.Members != null && educationClassToInitialize.Members.CurrentPage != null)
                 {
+                    educationClassToInitialize.Members.InitializeNextPageRequest(this.Client, educationClassToInitialize.MembersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationClassToInitialize.Members.AdditionalData = educationClassToInitialize.AdditionalData;
-
-                    if(educationClassToInitialize.AdditionalData.TryGetValue("members@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationClassToInitialize.Members.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (educationClassToInitialize.Schools != null && educationClassToInitialize.Schools.CurrentPage != null)
                 {
+                    educationClassToInitialize.Schools.InitializeNextPageRequest(this.Client, educationClassToInitialize.SchoolsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationClassToInitialize.Schools.AdditionalData = educationClassToInitialize.AdditionalData;
-
-                    if(educationClassToInitialize.AdditionalData.TryGetValue("schools@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationClassToInitialize.Schools.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (educationClassToInitialize.Teachers != null && educationClassToInitialize.Teachers.CurrentPage != null)
                 {
+                    educationClassToInitialize.Teachers.InitializeNextPageRequest(this.Client, educationClassToInitialize.TeachersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     educationClassToInitialize.Teachers.AdditionalData = educationClassToInitialize.AdditionalData;
-
-                    if(educationClassToInitialize.AdditionalData.TryGetValue("teachers@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            educationClassToInitialize.Teachers.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

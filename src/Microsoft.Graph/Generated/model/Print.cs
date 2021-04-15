@@ -42,6 +42,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("connectors")]
         public IPrintConnectorsCollectionPage Connectors { get; set; }
+
+        /// <summary>
+        /// Gets or sets connectorsNextLink.
+        /// </summary>
+        [JsonPropertyName("connectors@odata.nextLink")]
+        public string ConnectorsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
@@ -49,6 +55,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("operations")]
         public IPrintOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets printers.
@@ -56,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("printers")]
         public IPrintPrintersCollectionPage Printers { get; set; }
+
+        /// <summary>
+        /// Gets or sets printersNextLink.
+        /// </summary>
+        [JsonPropertyName("printers@odata.nextLink")]
+        public string PrintersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets services.
@@ -63,6 +81,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("services")]
         public IPrintServicesCollectionPage Services { get; set; }
+
+        /// <summary>
+        /// Gets or sets servicesNextLink.
+        /// </summary>
+        [JsonPropertyName("services@odata.nextLink")]
+        public string ServicesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets shares.
@@ -70,6 +94,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("shares")]
         public IPrintSharesCollectionPage Shares { get; set; }
+
+        /// <summary>
+        /// Gets or sets sharesNextLink.
+        /// </summary>
+        [JsonPropertyName("shares@odata.nextLink")]
+        public string SharesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets task definitions.
@@ -77,6 +107,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("taskDefinitions")]
         public IPrintTaskDefinitionsCollectionPage TaskDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets taskDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("taskDefinitions@odata.nextLink")]
+        public string TaskDefinitionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets @odata.type.

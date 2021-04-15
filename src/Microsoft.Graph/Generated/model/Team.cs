@@ -132,6 +132,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("channels")]
         public ITeamChannelsCollectionPage Channels { get; set; }
+
+        /// <summary>
+        /// Gets or sets channelsNextLink.
+        /// </summary>
+        [JsonPropertyName("channels@odata.nextLink")]
+        public string ChannelsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets group.
@@ -145,6 +151,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("installedApps")]
         public ITeamInstalledAppsCollectionPage InstalledApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets installedAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("installedApps@odata.nextLink")]
+        public string InstalledAppsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets members.
@@ -152,6 +164,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("members")]
         public ITeamMembersCollectionPage Members { get; set; }
+
+        /// <summary>
+        /// Gets or sets membersNextLink.
+        /// </summary>
+        [JsonPropertyName("members@odata.nextLink")]
+        public string MembersNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
@@ -159,6 +177,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("operations")]
         public ITeamOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets primary channel.

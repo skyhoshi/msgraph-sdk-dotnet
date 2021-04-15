@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("classes")]
         public IEducationRootClassesCollectionPage Classes { get; set; }
+
+        /// <summary>
+        /// Gets or sets classesNextLink.
+        /// </summary>
+        [JsonPropertyName("classes@odata.nextLink")]
+        public string ClassesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets me.
@@ -48,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("schools")]
         public IEducationRootSchoolsCollectionPage Schools { get; set; }
+
+        /// <summary>
+        /// Gets or sets schoolsNextLink.
+        /// </summary>
+        [JsonPropertyName("schools@odata.nextLink")]
+        public string SchoolsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets users.
@@ -55,6 +67,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("users")]
         public IEducationRootUsersCollectionPage Users { get; set; }
+
+        /// <summary>
+        /// Gets or sets usersNextLink.
+        /// </summary>
+        [JsonPropertyName("users@odata.nextLink")]
+        public string UsersNextLink { get; set; }
     
     }
 }

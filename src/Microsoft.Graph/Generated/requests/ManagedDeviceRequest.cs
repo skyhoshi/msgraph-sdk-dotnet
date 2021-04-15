@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ManagedDevice managedDeviceToInitialize)
         {
 
-            if (managedDeviceToInitialize != null && managedDeviceToInitialize.AdditionalData != null)
+            if (managedDeviceToInitialize != null)
             {
-
                 if (managedDeviceToInitialize.DeviceCompliancePolicyStates != null && managedDeviceToInitialize.DeviceCompliancePolicyStates.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DeviceCompliancePolicyStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.DeviceCompliancePolicyStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    if(managedDeviceToInitialize.AdditionalData.TryGetValue("deviceCompliancePolicyStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedDeviceToInitialize.DeviceCompliancePolicyStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (managedDeviceToInitialize.DeviceConfigurationStates != null && managedDeviceToInitialize.DeviceConfigurationStates.CurrentPage != null)
                 {
+                    managedDeviceToInitialize.DeviceConfigurationStates.InitializeNextPageRequest(this.Client, managedDeviceToInitialize.DeviceConfigurationStatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     managedDeviceToInitialize.DeviceConfigurationStates.AdditionalData = managedDeviceToInitialize.AdditionalData;
-
-                    if(managedDeviceToInitialize.AdditionalData.TryGetValue("deviceConfigurationStates@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            managedDeviceToInitialize.DeviceConfigurationStates.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

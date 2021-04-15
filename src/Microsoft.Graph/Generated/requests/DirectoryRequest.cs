@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Directory directoryToInitialize)
         {
 
-            if (directoryToInitialize != null && directoryToInitialize.AdditionalData != null)
+            if (directoryToInitialize != null)
             {
-
                 if (directoryToInitialize.AdministrativeUnits != null && directoryToInitialize.AdministrativeUnits.CurrentPage != null)
                 {
+                    directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(this.Client, directoryToInitialize.AdministrativeUnitsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.AdministrativeUnits.AdditionalData = directoryToInitialize.AdditionalData;
-
-                    if(directoryToInitialize.AdditionalData.TryGetValue("administrativeUnits@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (directoryToInitialize.DeletedItems != null && directoryToInitialize.DeletedItems.CurrentPage != null)
                 {
+                    directoryToInitialize.DeletedItems.InitializeNextPageRequest(this.Client, directoryToInitialize.DeletedItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.DeletedItems.AdditionalData = directoryToInitialize.AdditionalData;
-
-                    if(directoryToInitialize.AdditionalData.TryGetValue("deletedItems@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            directoryToInitialize.DeletedItems.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

@@ -244,151 +244,55 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PolicyRoot policyRootToInitialize)
         {
 
-            if (policyRootToInitialize != null && policyRootToInitialize.AdditionalData != null)
+            if (policyRootToInitialize != null)
             {
-
                 if (policyRootToInitialize.ActivityBasedTimeoutPolicies != null && policyRootToInitialize.ActivityBasedTimeoutPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.ActivityBasedTimeoutPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ActivityBasedTimeoutPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ActivityBasedTimeoutPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("activityBasedTimeoutPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.ActivityBasedTimeoutPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policyRootToInitialize.ClaimsMappingPolicies != null && policyRootToInitialize.ClaimsMappingPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ClaimsMappingPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ClaimsMappingPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("claimsMappingPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.ClaimsMappingPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policyRootToInitialize.HomeRealmDiscoveryPolicies != null && policyRootToInitialize.HomeRealmDiscoveryPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.HomeRealmDiscoveryPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.HomeRealmDiscoveryPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("homeRealmDiscoveryPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.HomeRealmDiscoveryPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policyRootToInitialize.PermissionGrantPolicies != null && policyRootToInitialize.PermissionGrantPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.PermissionGrantPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.PermissionGrantPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.PermissionGrantPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("permissionGrantPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.PermissionGrantPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policyRootToInitialize.TokenIssuancePolicies != null && policyRootToInitialize.TokenIssuancePolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.TokenIssuancePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.TokenIssuancePolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("tokenIssuancePolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.TokenIssuancePolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policyRootToInitialize.TokenLifetimePolicies != null && policyRootToInitialize.TokenLifetimePolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.TokenLifetimePoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.TokenLifetimePolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("tokenLifetimePolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.TokenLifetimePolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policyRootToInitialize.FeatureRolloutPolicies != null && policyRootToInitialize.FeatureRolloutPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.FeatureRolloutPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.FeatureRolloutPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("featureRolloutPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.FeatureRolloutPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (policyRootToInitialize.ConditionalAccessPolicies != null && policyRootToInitialize.ConditionalAccessPolicies.CurrentPage != null)
                 {
+                    policyRootToInitialize.ConditionalAccessPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ConditionalAccessPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     policyRootToInitialize.ConditionalAccessPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
-
-                    if(policyRootToInitialize.AdditionalData.TryGetValue("conditionalAccessPolicies@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            policyRootToInitialize.ConditionalAccessPolicies.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

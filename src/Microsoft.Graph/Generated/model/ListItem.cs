@@ -69,6 +69,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("versions")]
         public IListItemVersionsCollectionPage Versions { get; set; }
+
+        /// <summary>
+        /// Gets or sets versionsNextLink.
+        /// </summary>
+        [JsonPropertyName("versions@odata.nextLink")]
+        public string VersionsNextLink { get; set; }
     
     }
 }

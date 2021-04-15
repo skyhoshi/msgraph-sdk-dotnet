@@ -216,6 +216,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("attachments")]
         public IMessageAttachmentsCollectionPage Attachments { get; set; }
+
+        /// <summary>
+        /// Gets or sets attachmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("attachments@odata.nextLink")]
+        public string AttachmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
@@ -223,6 +229,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensions")]
         public IMessageExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets multi value extended properties.
@@ -230,6 +242,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("multiValueExtendedProperties")]
         public IMessageMultiValueExtendedPropertiesCollectionPage MultiValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets multiValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("multiValueExtendedProperties@odata.nextLink")]
+        public string MultiValueExtendedPropertiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets single value extended properties.
@@ -237,6 +255,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("singleValueExtendedProperties")]
         public IMessageSingleValueExtendedPropertiesCollectionPage SingleValueExtendedProperties { get; set; }
+
+        /// <summary>
+        /// Gets or sets singleValueExtendedPropertiesNextLink.
+        /// </summary>
+        [JsonPropertyName("singleValueExtendedProperties@odata.nextLink")]
+        public string SingleValueExtendedPropertiesNextLink { get; set; }
     
     }
 }

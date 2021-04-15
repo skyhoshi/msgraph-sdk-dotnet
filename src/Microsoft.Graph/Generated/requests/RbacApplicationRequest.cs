@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(RbacApplication rbacApplicationToInitialize)
         {
 
-            if (rbacApplicationToInitialize != null && rbacApplicationToInitialize.AdditionalData != null)
+            if (rbacApplicationToInitialize != null)
             {
-
                 if (rbacApplicationToInitialize.RoleAssignments != null && rbacApplicationToInitialize.RoleAssignments.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleAssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleAssignments.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleAssignments@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleAssignments.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (rbacApplicationToInitialize.RoleDefinitions != null && rbacApplicationToInitialize.RoleDefinitions.CurrentPage != null)
                 {
+                    rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(this.Client, rbacApplicationToInitialize.RoleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     rbacApplicationToInitialize.RoleDefinitions.AdditionalData = rbacApplicationToInitialize.AdditionalData;
-
-                    if(rbacApplicationToInitialize.AdditionalData.TryGetValue("roleDefinitions@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            rbacApplicationToInitialize.RoleDefinitions.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

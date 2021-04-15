@@ -244,61 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Security securityToInitialize)
         {
 
-            if (securityToInitialize != null && securityToInitialize.AdditionalData != null)
+            if (securityToInitialize != null)
             {
-
                 if (securityToInitialize.Alerts != null && securityToInitialize.Alerts.CurrentPage != null)
                 {
+                    securityToInitialize.Alerts.InitializeNextPageRequest(this.Client, securityToInitialize.AlertsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.Alerts.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("alerts@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.Alerts.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.SecureScoreControlProfiles != null && securityToInitialize.SecureScoreControlProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoreControlProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScoreControlProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("secureScoreControlProfiles@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (securityToInitialize.SecureScores != null && securityToInitialize.SecureScores.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScores.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScores.AdditionalData = securityToInitialize.AdditionalData;
-
-                    if(securityToInitialize.AdditionalData.TryGetValue("secureScores@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            securityToInitialize.SecureScores.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

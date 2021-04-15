@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("stages")]
         public IApprovalStagesCollectionPage Stages { get; set; }
+
+        /// <summary>
+        /// Gets or sets stagesNextLink.
+        /// </summary>
+        [JsonPropertyName("stages@odata.nextLink")]
+        public string StagesNextLink { get; set; }
     
     }
 }

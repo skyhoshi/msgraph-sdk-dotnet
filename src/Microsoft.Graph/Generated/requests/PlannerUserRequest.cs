@@ -244,43 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(PlannerUser plannerUserToInitialize)
         {
 
-            if (plannerUserToInitialize != null && plannerUserToInitialize.AdditionalData != null)
+            if (plannerUserToInitialize != null)
             {
-
                 if (plannerUserToInitialize.Plans != null && plannerUserToInitialize.Plans.CurrentPage != null)
                 {
+                    plannerUserToInitialize.Plans.InitializeNextPageRequest(this.Client, plannerUserToInitialize.PlansNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.Plans.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("plans@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.Plans.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
-
                 if (plannerUserToInitialize.Tasks != null && plannerUserToInitialize.Tasks.CurrentPage != null)
                 {
+                    plannerUserToInitialize.Tasks.InitializeNextPageRequest(this.Client, plannerUserToInitialize.TasksNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     plannerUserToInitialize.Tasks.AdditionalData = plannerUserToInitialize.AdditionalData;
-
-                    if(plannerUserToInitialize.AdditionalData.TryGetValue("tasks@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            plannerUserToInitialize.Tasks.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

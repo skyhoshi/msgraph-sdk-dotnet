@@ -98,6 +98,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IManagedEBookAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device states.
@@ -105,6 +111,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStates")]
         public IManagedEBookDeviceStatesCollectionPage DeviceStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStates@odata.nextLink")]
+        public string DeviceStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets install summary.
@@ -119,6 +131,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userStateSummary")]
         public IManagedEBookUserStateSummaryCollectionPage UserStateSummary { get; set; }
+
+        /// <summary>
+        /// Gets or sets userStateSummaryNextLink.
+        /// </summary>
+        [JsonPropertyName("userStateSummary@odata.nextLink")]
+        public string UserStateSummaryNextLink { get; set; }
     
     }
 }

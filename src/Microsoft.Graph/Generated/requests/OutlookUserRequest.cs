@@ -244,25 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookUser outlookUserToInitialize)
         {
 
-            if (outlookUserToInitialize != null && outlookUserToInitialize.AdditionalData != null)
+            if (outlookUserToInitialize != null)
             {
-
                 if (outlookUserToInitialize.MasterCategories != null && outlookUserToInitialize.MasterCategories.CurrentPage != null)
                 {
+                    outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(this.Client, outlookUserToInitialize.MasterCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.MasterCategories.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    if(outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out var nextPageLink))
-                    {
-                        // Ensure it is a non empty JsonElement string
-                        if (nextPageLink is System.Text.Json.JsonElement element
-                            && element.ValueKind == System.Text.Json.JsonValueKind.String
-                            && !string.IsNullOrEmpty(element.GetString()))
-                        {
-                            outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
-                                this.Client,
-                                element.GetString());
-                        }
-                    }
                 }
 
             }

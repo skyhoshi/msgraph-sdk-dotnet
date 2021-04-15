@@ -70,6 +70,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IDeviceCompliancePolicyAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device setting state summaries.
@@ -77,6 +83,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceSettingStateSummaries")]
         public IDeviceCompliancePolicyDeviceSettingStateSummariesCollectionPage DeviceSettingStateSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceSettingStateSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceSettingStateSummaries@odata.nextLink")]
+        public string DeviceSettingStateSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device statuses.
@@ -84,6 +96,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceStatuses")]
         public IDeviceCompliancePolicyDeviceStatusesCollectionPage DeviceStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceStatuses@odata.nextLink")]
+        public string DeviceStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device status overview.
@@ -98,6 +116,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("scheduledActionsForRule")]
         public IDeviceCompliancePolicyScheduledActionsForRuleCollectionPage ScheduledActionsForRule { get; set; }
+
+        /// <summary>
+        /// Gets or sets scheduledActionsForRuleNextLink.
+        /// </summary>
+        [JsonPropertyName("scheduledActionsForRule@odata.nextLink")]
+        public string ScheduledActionsForRuleNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user statuses.
@@ -105,6 +129,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userStatuses")]
         public IDeviceCompliancePolicyUserStatusesCollectionPage UserStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets userStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("userStatuses@odata.nextLink")]
+        public string UserStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user status overview.
