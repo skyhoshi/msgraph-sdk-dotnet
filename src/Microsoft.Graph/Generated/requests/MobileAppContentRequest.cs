@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(MobileAppContent mobileAppContentToInitialize)
         {
 
-            if (mobileAppContentToInitialize != null && mobileAppContentToInitialize.AdditionalData != null)
+            if (mobileAppContentToInitialize != null)
             {
-
                 if (mobileAppContentToInitialize.Files != null && mobileAppContentToInitialize.Files.CurrentPage != null)
                 {
+                    mobileAppContentToInitialize.Files.InitializeNextPageRequest(this.Client, mobileAppContentToInitialize.FilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     mobileAppContentToInitialize.Files.AdditionalData = mobileAppContentToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    mobileAppContentToInitialize.AdditionalData.TryGetValue("files@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        mobileAppContentToInitialize.Files.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

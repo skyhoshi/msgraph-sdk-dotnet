@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Security securityToInitialize)
         {
 
-            if (securityToInitialize != null && securityToInitialize.AdditionalData != null)
+            if (securityToInitialize != null)
             {
-
                 if (securityToInitialize.Alerts != null && securityToInitialize.Alerts.CurrentPage != null)
                 {
+                    securityToInitialize.Alerts.InitializeNextPageRequest(this.Client, securityToInitialize.AlertsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.Alerts.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("alerts@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.Alerts.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.SecureScoreControlProfiles != null && securityToInitialize.SecureScoreControlProfiles.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoreControlProfilesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScoreControlProfiles.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScoreControlProfiles@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecureScoreControlProfiles.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (securityToInitialize.SecureScores != null && securityToInitialize.SecureScores.CurrentPage != null)
                 {
+                    securityToInitialize.SecureScores.InitializeNextPageRequest(this.Client, securityToInitialize.SecureScoresNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     securityToInitialize.SecureScores.AdditionalData = securityToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    securityToInitialize.AdditionalData.TryGetValue("secureScores@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        securityToInitialize.SecureScores.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

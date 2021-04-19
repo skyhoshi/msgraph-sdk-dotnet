@@ -33,24 +33,48 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByPrinter")]
         public IReportRootDailyPrintUsageByPrinterCollectionPage DailyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByPrinter@odata.nextLink")]
+        public string DailyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets daily print usage by user.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByUser")]
         public IReportRootDailyPrintUsageByUserCollectionPage DailyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsageByUser@odata.nextLink")]
+        public string DailyPrintUsageByUserNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by printer.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByPrinter")]
         public IReportRootMonthlyPrintUsageByPrinterCollectionPage MonthlyPrintUsageByPrinter { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByPrinterNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByPrinter@odata.nextLink")]
+        public string MonthlyPrintUsageByPrinterNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets monthly print usage by user.
         /// </summary>
         [JsonPropertyName("monthlyPrintUsageByUser")]
         public IReportRootMonthlyPrintUsageByUserCollectionPage MonthlyPrintUsageByUser { get; set; }
+
+        /// <summary>
+        /// Gets or sets monthlyPrintUsageByUserNextLink.
+        /// </summary>
+        [JsonPropertyName("monthlyPrintUsageByUser@odata.nextLink")]
+        public string MonthlyPrintUsageByUserNextLink { get; set; }
     
     }
 }

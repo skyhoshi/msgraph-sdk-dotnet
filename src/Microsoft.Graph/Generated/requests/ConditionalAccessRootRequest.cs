@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ConditionalAccessRoot conditionalAccessRootToInitialize)
         {
 
-            if (conditionalAccessRootToInitialize != null && conditionalAccessRootToInitialize.AdditionalData != null)
+            if (conditionalAccessRootToInitialize != null)
             {
-
                 if (conditionalAccessRootToInitialize.NamedLocations != null && conditionalAccessRootToInitialize.NamedLocations.CurrentPage != null)
                 {
+                    conditionalAccessRootToInitialize.NamedLocations.InitializeNextPageRequest(this.Client, conditionalAccessRootToInitialize.NamedLocationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     conditionalAccessRootToInitialize.NamedLocations.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    conditionalAccessRootToInitialize.AdditionalData.TryGetValue("namedLocations@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        conditionalAccessRootToInitialize.NamedLocations.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (conditionalAccessRootToInitialize.Policies != null && conditionalAccessRootToInitialize.Policies.CurrentPage != null)
                 {
+                    conditionalAccessRootToInitialize.Policies.InitializeNextPageRequest(this.Client, conditionalAccessRootToInitialize.PoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     conditionalAccessRootToInitialize.Policies.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    conditionalAccessRootToInitialize.AdditionalData.TryGetValue("policies@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        conditionalAccessRootToInitialize.Policies.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

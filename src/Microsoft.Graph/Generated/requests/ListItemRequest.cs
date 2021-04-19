@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ListItem listItemToInitialize)
         {
 
-            if (listItemToInitialize != null && listItemToInitialize.AdditionalData != null)
+            if (listItemToInitialize != null)
             {
-
                 if (listItemToInitialize.Versions != null && listItemToInitialize.Versions.CurrentPage != null)
                 {
+                    listItemToInitialize.Versions.InitializeNextPageRequest(this.Client, listItemToInitialize.VersionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     listItemToInitialize.Versions.AdditionalData = listItemToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    listItemToInitialize.AdditionalData.TryGetValue("versions@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        listItemToInitialize.Versions.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

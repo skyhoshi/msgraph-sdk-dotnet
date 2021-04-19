@@ -244,55 +244,25 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Drive driveToInitialize)
         {
 
-            if (driveToInitialize != null && driveToInitialize.AdditionalData != null)
+            if (driveToInitialize != null)
             {
-
                 if (driveToInitialize.Following != null && driveToInitialize.Following.CurrentPage != null)
                 {
+                    driveToInitialize.Following.InitializeNextPageRequest(this.Client, driveToInitialize.FollowingNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveToInitialize.Following.AdditionalData = driveToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveToInitialize.AdditionalData.TryGetValue("following@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveToInitialize.Following.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (driveToInitialize.Items != null && driveToInitialize.Items.CurrentPage != null)
                 {
+                    driveToInitialize.Items.InitializeNextPageRequest(this.Client, driveToInitialize.ItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveToInitialize.Items.AdditionalData = driveToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveToInitialize.AdditionalData.TryGetValue("items@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveToInitialize.Items.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (driveToInitialize.Special != null && driveToInitialize.Special.CurrentPage != null)
                 {
+                    driveToInitialize.Special.InitializeNextPageRequest(this.Client, driveToInitialize.SpecialNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     driveToInitialize.Special.AdditionalData = driveToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    driveToInitialize.AdditionalData.TryGetValue("special@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        driveToInitialize.Special.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

@@ -90,6 +90,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("acceptanceStatuses")]
         public ITermsAndConditionsAcceptanceStatusesCollectionPage AcceptanceStatuses { get; set; }
+
+        /// <summary>
+        /// Gets or sets acceptanceStatusesNextLink.
+        /// </summary>
+        [JsonPropertyName("acceptanceStatuses@odata.nextLink")]
+        public string AcceptanceStatusesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets assignments.
@@ -97,6 +103,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public ITermsAndConditionsAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
     }
 }

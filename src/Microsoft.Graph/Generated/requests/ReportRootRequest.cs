@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(ReportRoot reportRootToInitialize)
         {
 
-            if (reportRootToInitialize != null && reportRootToInitialize.AdditionalData != null)
+            if (reportRootToInitialize != null)
             {
-
                 if (reportRootToInitialize.DailyPrintUsageByPrinter != null && reportRootToInitialize.DailyPrintUsageByPrinter.CurrentPage != null)
                 {
+                    reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageByPrinterNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.DailyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByPrinter@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (reportRootToInitialize.DailyPrintUsageByUser != null && reportRootToInitialize.DailyPrintUsageByUser.CurrentPage != null)
                 {
+                    reportRootToInitialize.DailyPrintUsageByUser.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageByUserNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.DailyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("dailyPrintUsageByUser@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        reportRootToInitialize.DailyPrintUsageByUser.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (reportRootToInitialize.MonthlyPrintUsageByPrinter != null && reportRootToInitialize.MonthlyPrintUsageByPrinter.CurrentPage != null)
                 {
+                    reportRootToInitialize.MonthlyPrintUsageByPrinter.InitializeNextPageRequest(this.Client, reportRootToInitialize.MonthlyPrintUsageByPrinterNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.MonthlyPrintUsageByPrinter.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByPrinter@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        reportRootToInitialize.MonthlyPrintUsageByPrinter.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (reportRootToInitialize.MonthlyPrintUsageByUser != null && reportRootToInitialize.MonthlyPrintUsageByUser.CurrentPage != null)
                 {
+                    reportRootToInitialize.MonthlyPrintUsageByUser.InitializeNextPageRequest(this.Client, reportRootToInitialize.MonthlyPrintUsageByUserNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.MonthlyPrintUsageByUser.AdditionalData = reportRootToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    reportRootToInitialize.AdditionalData.TryGetValue("monthlyPrintUsageByUser@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        reportRootToInitialize.MonthlyPrintUsageByUser.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

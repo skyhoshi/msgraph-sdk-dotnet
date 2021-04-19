@@ -191,6 +191,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("certificateBasedAuthConfiguration")]
         public IOrganizationCertificateBasedAuthConfigurationCollectionWithReferencesPage CertificateBasedAuthConfiguration { get; set; }
+
+        /// <summary>
+        /// Gets or sets certificateBasedAuthConfigurationNextLink.
+        /// </summary>
+        [JsonPropertyName("certificateBasedAuthConfiguration@odata.nextLink")]
+        public string CertificateBasedAuthConfigurationNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets extensions.
@@ -198,6 +204,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("extensions")]
         public IOrganizationExtensionsCollectionPage Extensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets extensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("extensions@odata.nextLink")]
+        public string ExtensionsNextLink { get; set; }
     
     }
 }

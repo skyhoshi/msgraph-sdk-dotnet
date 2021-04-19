@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(InformationProtection informationProtectionToInitialize)
         {
 
-            if (informationProtectionToInitialize != null && informationProtectionToInitialize.AdditionalData != null)
+            if (informationProtectionToInitialize != null)
             {
-
                 if (informationProtectionToInitialize.ThreatAssessmentRequests != null && informationProtectionToInitialize.ThreatAssessmentRequests.CurrentPage != null)
                 {
+                    informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(this.Client, informationProtectionToInitialize.ThreatAssessmentRequestsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     informationProtectionToInitialize.ThreatAssessmentRequests.AdditionalData = informationProtectionToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    informationProtectionToInitialize.AdditionalData.TryGetValue("threatAssessmentRequests@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        informationProtectionToInitialize.ThreatAssessmentRequests.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

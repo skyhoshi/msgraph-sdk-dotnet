@@ -244,23 +244,13 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(OutlookUser outlookUserToInitialize)
         {
 
-            if (outlookUserToInitialize != null && outlookUserToInitialize.AdditionalData != null)
+            if (outlookUserToInitialize != null)
             {
-
                 if (outlookUserToInitialize.MasterCategories != null && outlookUserToInitialize.MasterCategories.CurrentPage != null)
                 {
+                    outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(this.Client, outlookUserToInitialize.MasterCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     outlookUserToInitialize.MasterCategories.AdditionalData = outlookUserToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    outlookUserToInitialize.AdditionalData.TryGetValue("masterCategories@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        outlookUserToInitialize.MasterCategories.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

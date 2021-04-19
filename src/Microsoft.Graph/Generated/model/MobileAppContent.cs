@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("files")]
         public IMobileAppContentFilesCollectionPage Files { get; set; }
+
+        /// <summary>
+        /// Gets or sets filesNextLink.
+        /// </summary>
+        [JsonPropertyName("files@odata.nextLink")]
+        public string FilesNextLink { get; set; }
     
     }
 }

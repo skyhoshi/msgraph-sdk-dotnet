@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("administrativeUnits")]
         public IDirectoryAdministrativeUnitsCollectionPage AdministrativeUnits { get; set; }
+
+        /// <summary>
+        /// Gets or sets administrativeUnitsNextLink.
+        /// </summary>
+        [JsonPropertyName("administrativeUnits@odata.nextLink")]
+        public string AdministrativeUnitsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets deleted items.
@@ -40,6 +46,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deletedItems")]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }
+
+        /// <summary>
+        /// Gets or sets deletedItemsNextLink.
+        /// </summary>
+        [JsonPropertyName("deletedItems@odata.nextLink")]
+        public string DeletedItemsNextLink { get; set; }
     
     }
 }

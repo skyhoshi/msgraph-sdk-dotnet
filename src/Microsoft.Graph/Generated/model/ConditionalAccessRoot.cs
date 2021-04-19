@@ -33,12 +33,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("namedLocations")]
         public IConditionalAccessRootNamedLocationsCollectionPage NamedLocations { get; set; }
+
+        /// <summary>
+        /// Gets or sets namedLocationsNextLink.
+        /// </summary>
+        [JsonPropertyName("namedLocations@odata.nextLink")]
+        public string NamedLocationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets policies.
         /// </summary>
         [JsonPropertyName("policies")]
         public IConditionalAccessRootPoliciesCollectionPage Policies { get; set; }
+
+        /// <summary>
+        /// Gets or sets policiesNextLink.
+        /// </summary>
+        [JsonPropertyName("policies@odata.nextLink")]
+        public string PoliciesNextLink { get; set; }
     
     }
 }

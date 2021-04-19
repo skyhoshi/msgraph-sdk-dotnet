@@ -126,6 +126,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("assignments")]
         public IMobileAppAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets categories.
@@ -133,6 +139,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("categories")]
         public IMobileAppCategoriesCollectionWithReferencesPage Categories { get; set; }
+
+        /// <summary>
+        /// Gets or sets categoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("categories@odata.nextLink")]
+        public string CategoriesNextLink { get; set; }
     
     }
 }

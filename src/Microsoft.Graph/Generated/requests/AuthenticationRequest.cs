@@ -244,71 +244,31 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Authentication authenticationToInitialize)
         {
 
-            if (authenticationToInitialize != null && authenticationToInitialize.AdditionalData != null)
+            if (authenticationToInitialize != null)
             {
-
                 if (authenticationToInitialize.Fido2Methods != null && authenticationToInitialize.Fido2Methods.CurrentPage != null)
                 {
+                    authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(this.Client, authenticationToInitialize.Fido2MethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.Fido2Methods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("fido2Methods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.Fido2Methods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (authenticationToInitialize.Methods != null && authenticationToInitialize.Methods.CurrentPage != null)
                 {
+                    authenticationToInitialize.Methods.InitializeNextPageRequest(this.Client, authenticationToInitialize.MethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.Methods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("methods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.Methods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (authenticationToInitialize.MicrosoftAuthenticatorMethods != null && authenticationToInitialize.MicrosoftAuthenticatorMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.MicrosoftAuthenticatorMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.MicrosoftAuthenticatorMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("microsoftAuthenticatorMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.MicrosoftAuthenticatorMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (authenticationToInitialize.WindowsHelloForBusinessMethods != null && authenticationToInitialize.WindowsHelloForBusinessMethods.CurrentPage != null)
                 {
+                    authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(this.Client, authenticationToInitialize.WindowsHelloForBusinessMethodsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     authenticationToInitialize.WindowsHelloForBusinessMethods.AdditionalData = authenticationToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    authenticationToInitialize.AdditionalData.TryGetValue("windowsHelloForBusinessMethods@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        authenticationToInitialize.WindowsHelloForBusinessMethods.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

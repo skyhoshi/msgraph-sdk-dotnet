@@ -119,6 +119,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("appliedPolicies")]
         public IManagedAppRegistrationAppliedPoliciesCollectionPage AppliedPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets appliedPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("appliedPolicies@odata.nextLink")]
+        public string AppliedPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets intended policies.
@@ -126,6 +132,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("intendedPolicies")]
         public IManagedAppRegistrationIntendedPoliciesCollectionPage IntendedPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets intendedPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("intendedPolicies@odata.nextLink")]
+        public string IntendedPoliciesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets operations.
@@ -133,6 +145,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("operations")]
         public IManagedAppRegistrationOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
     }
 }

@@ -244,39 +244,19 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(Directory directoryToInitialize)
         {
 
-            if (directoryToInitialize != null && directoryToInitialize.AdditionalData != null)
+            if (directoryToInitialize != null)
             {
-
                 if (directoryToInitialize.AdministrativeUnits != null && directoryToInitialize.AdministrativeUnits.CurrentPage != null)
                 {
+                    directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(this.Client, directoryToInitialize.AdministrativeUnitsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.AdministrativeUnits.AdditionalData = directoryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("administrativeUnits@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        directoryToInitialize.AdministrativeUnits.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
-
                 if (directoryToInitialize.DeletedItems != null && directoryToInitialize.DeletedItems.CurrentPage != null)
                 {
+                    directoryToInitialize.DeletedItems.InitializeNextPageRequest(this.Client, directoryToInitialize.DeletedItemsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.DeletedItems.AdditionalData = directoryToInitialize.AdditionalData;
-
-                    object nextPageLink;
-                    directoryToInitialize.AdditionalData.TryGetValue("deletedItems@odata.nextLink", out nextPageLink);
-                    var nextPageLinkString = nextPageLink as string;
-
-                    if (!string.IsNullOrEmpty(nextPageLinkString))
-                    {
-                        directoryToInitialize.DeletedItems.InitializeNextPageRequest(
-                            this.Client,
-                            nextPageLinkString);
-                    }
                 }
 
             }

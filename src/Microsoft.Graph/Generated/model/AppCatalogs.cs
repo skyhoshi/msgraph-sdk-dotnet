@@ -33,6 +33,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("teamsApps")]
         public IAppCatalogsTeamsAppsCollectionPage TeamsApps { get; set; }
+
+        /// <summary>
+        /// Gets or sets teamsAppsNextLink.
+        /// </summary>
+        [JsonPropertyName("teamsApps@odata.nextLink")]
+        public string TeamsAppsNextLink { get; set; }
     
     }
 }

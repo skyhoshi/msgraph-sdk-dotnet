@@ -164,6 +164,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("operations")]
         public ICallOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        public string OperationsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets participants.
@@ -171,6 +177,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("participants")]
         public ICallParticipantsCollectionPage Participants { get; set; }
+
+        /// <summary>
+        /// Gets or sets participantsNextLink.
+        /// </summary>
+        [JsonPropertyName("participants@odata.nextLink")]
+        public string ParticipantsNextLink { get; set; }
     
     }
 }

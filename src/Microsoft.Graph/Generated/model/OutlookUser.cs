@@ -34,6 +34,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("masterCategories")]
         public IOutlookUserMasterCategoriesCollectionPage MasterCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets masterCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("masterCategories@odata.nextLink")]
+        public string MasterCategoriesNextLink { get; set; }
     
     }
 }

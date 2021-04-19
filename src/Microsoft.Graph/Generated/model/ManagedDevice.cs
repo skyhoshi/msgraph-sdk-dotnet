@@ -356,6 +356,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceCompliancePolicyStates")]
         public IManagedDeviceDeviceCompliancePolicyStatesCollectionPage DeviceCompliancePolicyStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceCompliancePolicyStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceCompliancePolicyStates@odata.nextLink")]
+        public string DeviceCompliancePolicyStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device configuration states.
@@ -363,6 +369,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("deviceConfigurationStates")]
         public IManagedDeviceDeviceConfigurationStatesCollectionPage DeviceConfigurationStates { get; set; }
+
+        /// <summary>
+        /// Gets or sets deviceConfigurationStatesNextLink.
+        /// </summary>
+        [JsonPropertyName("deviceConfigurationStates@odata.nextLink")]
+        public string DeviceConfigurationStatesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets device category.

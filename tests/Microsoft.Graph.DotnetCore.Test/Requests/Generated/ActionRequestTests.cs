@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                 var checkMemberGroupsCollectionResponse = new DirectoryObjectCheckMemberGroupsCollectionResponse
                 {
                     Value = checkMemberGroupsCollectionPage,
-                    AdditionalData = new Dictionary<string, object> { { Constants.OdataInstanceAnnotations.NextLink, nextPageRequestUrl } },
+                    NextLink = nextPageRequestUrl
                 };
 
                 this.serializer.Setup(

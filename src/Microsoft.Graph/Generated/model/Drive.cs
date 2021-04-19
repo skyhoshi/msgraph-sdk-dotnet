@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("following")]
         public IDriveFollowingCollectionPage Following { get; set; }
+
+        /// <summary>
+        /// Gets or sets followingNextLink.
+        /// </summary>
+        [JsonPropertyName("following@odata.nextLink")]
+        public string FollowingNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets items.
@@ -75,6 +81,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("items")]
         public IDriveItemsCollectionPage Items { get; set; }
+
+        /// <summary>
+        /// Gets or sets itemsNextLink.
+        /// </summary>
+        [JsonPropertyName("items@odata.nextLink")]
+        public string ItemsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets list.
@@ -96,6 +108,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("special")]
         public IDriveSpecialCollectionPage Special { get; set; }
+
+        /// <summary>
+        /// Gets or sets specialNextLink.
+        /// </summary>
+        [JsonPropertyName("special@odata.nextLink")]
+        public string SpecialNextLink { get; set; }
     
     }
 }

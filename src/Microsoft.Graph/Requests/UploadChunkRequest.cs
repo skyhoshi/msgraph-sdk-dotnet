@@ -5,7 +5,7 @@
 using System.Linq;
 using System.Net;
 using System.Net.Http.Headers;
-using System.Runtime.Serialization;
+using System.Text.Json;
 
 namespace Microsoft.Graph
 {
@@ -112,7 +112,7 @@ namespace Microsoft.Graph
                                         this.Client.HttpProvider.Serializer.DeserializeObject<UploadSession>(responseString)
                             };
                         }
-                        catch (SerializationException exception)
+                        catch (JsonException exception)
                         {
                             throw new ServiceException(new Error()
                             {

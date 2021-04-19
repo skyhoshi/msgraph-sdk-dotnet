@@ -34,18 +34,36 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("alerts")]
         public ISecurityAlertsCollectionPage Alerts { get; set; }
+
+        /// <summary>
+        /// Gets or sets alertsNextLink.
+        /// </summary>
+        [JsonPropertyName("alerts@odata.nextLink")]
+        public string AlertsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets secure score control profiles.
         /// </summary>
         [JsonPropertyName("secureScoreControlProfiles")]
         public ISecuritySecureScoreControlProfilesCollectionPage SecureScoreControlProfiles { get; set; }
+
+        /// <summary>
+        /// Gets or sets secureScoreControlProfilesNextLink.
+        /// </summary>
+        [JsonPropertyName("secureScoreControlProfiles@odata.nextLink")]
+        public string SecureScoreControlProfilesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets secure scores.
         /// </summary>
         [JsonPropertyName("secureScores")]
         public ISecuritySecureScoresCollectionPage SecureScores { get; set; }
+
+        /// <summary>
+        /// Gets or sets secureScoresNextLink.
+        /// </summary>
+        [JsonPropertyName("secureScores@odata.nextLink")]
+        public string SecureScoresNextLink { get; set; }
     
     }
 }
