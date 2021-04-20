@@ -17,8 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserIdentity.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<UserIdentity>))]
-    public partial class UserIdentity
+    public partial class UserIdentity : Identity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="UserIdentity"/> class.
@@ -28,20 +27,6 @@ namespace Microsoft.Graph
             this.ODataType = "microsoft.graph.userIdentity";
         }
 
-        /// <summary>
-        /// Gets or sets displayName.
-        /// The identity's display name. Note that this may not always be available or up-to-date.
-        /// </summary>
-        [JsonPropertyName("displayName")]
-        public string DisplayName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets id.
-        /// Unique identifier for the identity.
-        /// </summary>
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-    
         /// <summary>
         /// Gets or sets ipAddress.
         /// Indicates the client IP address used by user performing the activity (audit log only).
@@ -55,18 +40,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
     
     }
 }
