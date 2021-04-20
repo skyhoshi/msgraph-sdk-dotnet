@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationFlowsPolicy.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationFlowsPolicyRequestBuilder"/>.</returns>
+        IAuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy { get; }
+
+        /// <summary>
         /// Gets the request builder for ActivityBasedTimeoutPolicies.
         /// </summary>
         /// <returns>The <see cref="IPolicyRootActivityBasedTimeoutPoliciesCollectionRequestBuilder"/>.</returns>
