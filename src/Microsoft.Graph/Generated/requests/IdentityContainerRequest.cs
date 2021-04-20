@@ -231,6 +231,60 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IdentityContainer identityContainerToInitialize)
         {
 
+            if (identityContainerToInitialize != null && identityContainerToInitialize.AdditionalData != null)
+            {
+
+                if (identityContainerToInitialize.ApiConnectors != null && identityContainerToInitialize.ApiConnectors.CurrentPage != null)
+                {
+                    identityContainerToInitialize.ApiConnectors.AdditionalData = identityContainerToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    identityContainerToInitialize.AdditionalData.TryGetValue("apiConnectors@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (identityContainerToInitialize.B2xUserFlows != null && identityContainerToInitialize.B2xUserFlows.CurrentPage != null)
+                {
+                    identityContainerToInitialize.B2xUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    identityContainerToInitialize.AdditionalData.TryGetValue("b2xUserFlows@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (identityContainerToInitialize.UserFlowAttributes != null && identityContainerToInitialize.UserFlowAttributes.CurrentPage != null)
+                {
+                    identityContainerToInitialize.UserFlowAttributes.AdditionalData = identityContainerToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    identityContainerToInitialize.AdditionalData.TryGetValue("userFlowAttributes@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+            }
+
+
         }
     }
 }

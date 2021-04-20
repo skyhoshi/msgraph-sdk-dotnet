@@ -61,6 +61,42 @@ namespace Microsoft.Graph
                 return new ConditionalAccessRootRequestBuilder(this.AppendSegmentToRequestUrl("conditionalAccess"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for ApiConnectors.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerApiConnectorsCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerApiConnectorsCollectionRequestBuilder ApiConnectors
+        {
+            get
+            {
+                return new IdentityContainerApiConnectorsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("apiConnectors"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for B2xUserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerB2xUserFlowsCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerB2xUserFlowsCollectionRequestBuilder B2xUserFlows
+        {
+            get
+            {
+                return new IdentityContainerB2xUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("b2xUserFlows"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserFlowAttributes.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerUserFlowAttributesCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerUserFlowAttributesCollectionRequestBuilder UserFlowAttributes
+        {
+            get
+            {
+                return new IdentityContainerUserFlowAttributesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userFlowAttributes"), this.Client);
+            }
+        }
     
     }
 }

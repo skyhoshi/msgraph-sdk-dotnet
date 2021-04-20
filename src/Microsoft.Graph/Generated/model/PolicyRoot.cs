@@ -37,6 +37,12 @@ namespace Microsoft.Graph
         public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication flows policy.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "authenticationFlowsPolicy", Required = Newtonsoft.Json.Required.Default)]
+        public AuthenticationFlowsPolicy AuthenticationFlowsPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets activity based timeout policies.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "activityBasedTimeoutPolicies", Required = Newtonsoft.Json.Required.Default)]
