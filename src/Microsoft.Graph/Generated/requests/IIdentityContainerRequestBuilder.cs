@@ -36,6 +36,24 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IConditionalAccessRootRequestBuilder"/>.</returns>
         IConditionalAccessRootRequestBuilder ConditionalAccess { get; }
+
+        /// <summary>
+        /// Gets the request builder for ApiConnectors.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerApiConnectorsCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerApiConnectorsCollectionRequestBuilder ApiConnectors { get; }
+
+        /// <summary>
+        /// Gets the request builder for B2xUserFlows.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerB2xUserFlowsCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerB2xUserFlowsCollectionRequestBuilder B2xUserFlows { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserFlowAttributes.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerUserFlowAttributesCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerUserFlowAttributesCollectionRequestBuilder UserFlowAttributes { get; }
     
     }
 }

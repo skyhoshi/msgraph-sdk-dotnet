@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets access reviews.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "accessReviews", Required = Newtonsoft.Json.Required.Default)]
+        public AccessReviewSet AccessReviews { get; set; }
+    
+        /// <summary>
         /// Gets or sets app consent.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "appConsent", Required = Newtonsoft.Json.Required.Default)]
