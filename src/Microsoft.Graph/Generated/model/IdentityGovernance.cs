@@ -30,6 +30,12 @@ namespace Microsoft.Graph
         }
 	
         /// <summary>
+        /// Gets or sets access reviews.
+        /// </summary>
+        [JsonPropertyName("accessReviews")]
+        public AccessReviewSet AccessReviews { get; set; }
+    
+        /// <summary>
         /// Gets or sets app consent.
         /// </summary>
         [JsonPropertyName("appConsent")]

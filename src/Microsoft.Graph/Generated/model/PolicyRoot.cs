@@ -35,6 +35,12 @@ namespace Microsoft.Graph
         public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication flows policy.
+        /// </summary>
+        [JsonPropertyName("authenticationFlowsPolicy")]
+        public AuthenticationFlowsPolicy AuthenticationFlowsPolicy { get; set; }
+    
+        /// <summary>
         /// Gets or sets activity based timeout policies.
         /// </summary>
         [JsonPropertyName("activityBasedTimeoutPolicies")]

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AccessReviews.
+        /// </summary>
+        /// <returns>The <see cref="IAccessReviewSetRequestBuilder"/>.</returns>
+        public IAccessReviewSetRequestBuilder AccessReviews
+        {
+            get
+            {
+                return new AccessReviewSetRequestBuilder(this.AppendSegmentToRequestUrl("accessReviews"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AppConsent.
         /// </summary>
         /// <returns>The <see cref="IAppConsentApprovalRouteRequestBuilder"/>.</returns>

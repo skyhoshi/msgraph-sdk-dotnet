@@ -24,7 +24,7 @@
     <!-- VersionPrefix minor version should not be set when the change comes from the generator. It will be updated automatically. -->
     <!-- VersionPrefix minor version must be manually set when making manual changes to code. -->
     <!-- VersionPrefix major and patch versions must be manually set. -->
-    <VersionSuffix>preview.2</VersionSuffix>
+    <VersionSuffix>preview.3</VersionSuffix>
     <PackageReleaseNotes>
 - [Breaking change] Update Microsoft.Graph.Core to v2.0.0
 - [Breaking change] Replace Newtosoft.Json with System.Text.Json
@@ -52,7 +52,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.9" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.10" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
   <ItemGroup>

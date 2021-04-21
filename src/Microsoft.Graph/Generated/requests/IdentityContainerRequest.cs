@@ -244,6 +244,30 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(IdentityContainer identityContainerToInitialize)
         {
 
+            if (identityContainerToInitialize != null)
+            {
+                if (identityContainerToInitialize.ApiConnectors != null && identityContainerToInitialize.ApiConnectors.CurrentPage != null)
+                {
+                    identityContainerToInitialize.ApiConnectors.InitializeNextPageRequest(this.Client, identityContainerToInitialize.ApiConnectorsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    identityContainerToInitialize.ApiConnectors.AdditionalData = identityContainerToInitialize.AdditionalData;
+                }
+                if (identityContainerToInitialize.B2xUserFlows != null && identityContainerToInitialize.B2xUserFlows.CurrentPage != null)
+                {
+                    identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.B2xUserFlowsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    identityContainerToInitialize.B2xUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
+                }
+                if (identityContainerToInitialize.UserFlowAttributes != null && identityContainerToInitialize.UserFlowAttributes.CurrentPage != null)
+                {
+                    identityContainerToInitialize.UserFlowAttributes.InitializeNextPageRequest(this.Client, identityContainerToInitialize.UserFlowAttributesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    identityContainerToInitialize.UserFlowAttributes.AdditionalData = identityContainerToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }
