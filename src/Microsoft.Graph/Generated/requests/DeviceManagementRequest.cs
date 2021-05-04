@@ -442,6 +442,38 @@ namespace Microsoft.Graph
                     }
                 }
 
+                if (deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("importedWindowsAutopilotDeviceIdentities@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (deviceManagementToInitialize.WindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    deviceManagementToInitialize.AdditionalData.TryGetValue("windowsAutopilotDeviceIdentities@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (deviceManagementToInitialize.NotificationMessageTemplates != null && deviceManagementToInitialize.NotificationMessageTemplates.CurrentPage != null)
                 {
                     deviceManagementToInitialize.NotificationMessageTemplates.AdditionalData = deviceManagementToInitialize.AdditionalData;

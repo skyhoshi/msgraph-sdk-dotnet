@@ -555,6 +555,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Chats.
+        /// </summary>
+        /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
+        public IUserChatsCollectionRequestBuilder Chats
+        {
+            get
+            {
+                return new UserChatsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("chats"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>

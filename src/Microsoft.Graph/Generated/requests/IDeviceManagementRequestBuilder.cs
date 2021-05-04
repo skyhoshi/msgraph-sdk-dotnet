@@ -146,6 +146,18 @@ namespace Microsoft.Graph
         IDeviceManagementManagedDevicesCollectionRequestBuilder ManagedDevices { get; }
 
         /// <summary>
+        /// Gets the request builder for ImportedWindowsAutopilotDeviceIdentities.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder ImportedWindowsAutopilotDeviceIdentities { get; }
+
+        /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentities.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder WindowsAutopilotDeviceIdentities { get; }
+
+        /// <summary>
         /// Gets the request builder for NotificationMessageTemplates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementNotificationMessageTemplatesCollectionRequestBuilder"/>.</returns>
