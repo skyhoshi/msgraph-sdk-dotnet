@@ -426,6 +426,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.OnlineMeetings.AdditionalData = userToInitialize.AdditionalData;
                 }
+                if (userToInitialize.Chats != null && userToInitialize.Chats.CurrentPage != null)
+                {
+                    userToInitialize.Chats.InitializeNextPageRequest(this.Client, userToInitialize.ChatsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userToInitialize.Chats.AdditionalData = userToInitialize.AdditionalData;
+                }
                 if (userToInitialize.JoinedTeams != null && userToInitialize.JoinedTeams.CurrentPage != null)
                 {
                     userToInitialize.JoinedTeams.InitializeNextPageRequest(this.Client, userToInitialize.JoinedTeamsNextLink);

@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
         /// </summary>
         [JsonPropertyName("subscriptionState")]
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
@@ -266,6 +266,32 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("managedDevices@odata.nextLink")]
         public string ManagedDevicesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets imported windows autopilot device identities.
+        /// Collection of imported Windows autopilot devices.
+        /// </summary>
+        [JsonPropertyName("importedWindowsAutopilotDeviceIdentities")]
+        public IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionPage ImportedWindowsAutopilotDeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets importedWindowsAutopilotDeviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("importedWindowsAutopilotDeviceIdentities@odata.nextLink")]
+        public string ImportedWindowsAutopilotDeviceIdentitiesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows autopilot device identities.
+        /// The Windows autopilot device identities contained collection.
+        /// </summary>
+        [JsonPropertyName("windowsAutopilotDeviceIdentities")]
+        public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionPage WindowsAutopilotDeviceIdentities { get; set; }
+
+        /// <summary>
+        /// Gets or sets windowsAutopilotDeviceIdentitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("windowsAutopilotDeviceIdentities@odata.nextLink")]
+        public string WindowsAutopilotDeviceIdentitiesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets notification message templates.

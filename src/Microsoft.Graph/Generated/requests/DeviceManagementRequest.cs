@@ -324,6 +324,18 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ManagedDevices.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.ImportedWindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.WindowsAutopilotDeviceIdentities != null && deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.WindowsAutopilotDeviceIdentitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.WindowsAutopilotDeviceIdentities.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.NotificationMessageTemplates != null && deviceManagementToInitialize.NotificationMessageTemplates.CurrentPage != null)
                 {
                     deviceManagementToInitialize.NotificationMessageTemplates.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.NotificationMessageTemplatesNextLink);

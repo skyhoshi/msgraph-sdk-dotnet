@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 	
         /// <summary>
         /// Gets or sets app url.
-        /// The web app URL. This property cannot be PATCHed.
+        /// The web app URL.
         /// </summary>
         [JsonPropertyName("appUrl")]
         public string AppUrl { get; set; }
