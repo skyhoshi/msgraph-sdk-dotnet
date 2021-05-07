@@ -53,7 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets subscription state.
-        /// Tenant mobile device management subscription state. Possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
+        /// Tenant mobile device management subscription state. The possible values are: pending, active, warning, disabled, deleted, blocked, lockedOut.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "subscriptionState", Required = Newtonsoft.Json.Required.Default)]
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
@@ -190,6 +190,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "managedDevices", Required = Newtonsoft.Json.Required.Default)]
         public IDeviceManagementManagedDevicesCollectionPage ManagedDevices { get; set; }
+    
+        /// <summary>
+        /// Gets or sets imported windows autopilot device identities.
+        /// Collection of imported Windows autopilot devices.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "importedWindowsAutopilotDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionPage ImportedWindowsAutopilotDeviceIdentities { get; set; }
+    
+        /// <summary>
+        /// Gets or sets windows autopilot device identities.
+        /// The Windows autopilot device identities contained collection.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "windowsAutopilotDeviceIdentities", Required = Newtonsoft.Json.Required.Default)]
+        public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionPage WindowsAutopilotDeviceIdentities { get; set; }
     
         /// <summary>
         /// Gets or sets notification message templates.
