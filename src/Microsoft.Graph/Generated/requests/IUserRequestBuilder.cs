@@ -284,6 +284,12 @@ namespace Microsoft.Graph
         IAuthenticationRequestBuilder Authentication { get; }
 
         /// <summary>
+        /// Gets the request builder for Chats.
+        /// </summary>
+        /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>
+        IUserChatsCollectionRequestBuilder Chats { get; }
+
+        /// <summary>
         /// Gets the request builder for JoinedTeams.
         /// </summary>
         /// <returns>The <see cref="IUserJoinedTeamsCollectionRequestBuilder"/>.</returns>

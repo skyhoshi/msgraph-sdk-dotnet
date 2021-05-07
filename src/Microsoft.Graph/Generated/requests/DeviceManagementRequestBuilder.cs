@@ -279,6 +279,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ImportedWindowsAutopilotDeviceIdentities.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder ImportedWindowsAutopilotDeviceIdentities
+        {
+            get
+            {
+                return new DeviceManagementImportedWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("importedWindowsAutopilotDeviceIdentities"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WindowsAutopilotDeviceIdentities.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder WindowsAutopilotDeviceIdentities
+        {
+            get
+            {
+                return new DeviceManagementWindowsAutopilotDeviceIdentitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("windowsAutopilotDeviceIdentities"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for NotificationMessageTemplates.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementNotificationMessageTemplatesCollectionRequestBuilder"/>.</returns>
