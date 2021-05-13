@@ -160,7 +160,7 @@ HttpStatusCode status = userResponse.StatusCode;
 // Get the headers
 HttpResponseHeaders headers = userResponse.HttpHeaders;
 // Get the user object using inbuilt serializer
-User me = await response.GetResponseObjectAsync();
+User me = await userResponse.GetResponseObjectAsync();
 ``` 
 
 If you choose you can even deserialize the response in your own custom way as follows.
