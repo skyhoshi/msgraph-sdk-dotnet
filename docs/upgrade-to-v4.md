@@ -124,7 +124,7 @@ User me = await graphClient.Me.Request()
 You can check out examples on how to quickly setup other TokenCredential instances [here](tokencredentials.md).
 
 ### Microsoft Identity Web
-Although this version supports Azure Identity, for Web/API scenarios, we encouraged you to use the [Microsoft.Identity.Web](https://github.com/AzureAD/microsoft-identity-web) library. Check the [Wiki](https://github.com/AzureAD/microsoft-identity-web/wiki) section to get more information. 
+Although this version supports Azure Identity, for Web/API scenarios, we encourage you to use the [Microsoft.Identity.Web](https://github.com/AzureAD/microsoft-identity-web) library. Check the [Wiki](https://github.com/AzureAD/microsoft-identity-web/wiki) section to get more information. 
 
 For example, here is a sample of a [WebApp calling Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user), and here is a sample of a [Web API calling Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph)
 
