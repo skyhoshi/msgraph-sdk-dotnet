@@ -84,7 +84,7 @@ User me = await graphClient.Me.Request()
 
 The Microsoft Graph library now supports the use of TokenCredential classes in the Azure.Identity library through the new `TokenCredentialAuthProvider`.
 
-You can read more about available Credential classes [here](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/identity-readme#key-concepts) and this is encouraged to be used in place of the `Microsoft.Graph.Auth` package. 
+You can read more about available Credential classes [here](https://docs.microsoft.com/en-us/dotnet/api/overview/azure/identity-readme#key-concepts) and this is encouraged to be used in place of the `Microsoft.Graph.Auth` package.
 
 For example, rather than using the [Interactive provider](https://docs.microsoft.com/en-us/graph/sdks/choose-authentication-providers?tabs=CS#InteractiveProvider) from the `Microsoft.Graph.Auth` package, one could use the [InteractiveBrowserCredential](https://docs.microsoft.com/en-us/dotnet/api/azure.identity.interactivebrowsercredential?view=azure-dotnet) class from `Azure.Identity` as follows.
 
@@ -122,6 +122,11 @@ User me = await graphClient.Me.Request()
 ```
 
 You can check out examples on how to quickly setup other TokenCredential instances [here](tokencredentials.md).
+
+### Microsoft Identity Web
+Although this version supports Azure Identity, for Web/API scenarios, we encouraged you to use the [Microsoft.Identity.Web](https://github.com/AzureAD/microsoft-identity-web) library. Check the [Wiki](https://github.com/AzureAD/microsoft-identity-web/wiki) section to get more information. 
+
+For example, here is a sample of a [WebApp calling Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user), and here is a sample of a [Web API calling Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph)
 
 ### IBaseRequest now takes IResponseHandler as a member
 
