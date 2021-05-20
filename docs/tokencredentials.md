@@ -48,6 +48,10 @@ string[] scopes = {"User.Read"};
 DeviceCodeCredentialOptions deviceCodeCredentialOptions = new DeviceCodeCredentialOptions()
 {
     ClientId = clientId,
+    DeviceCodeCallback = (info, cts) => {
+        Console.WriteLine(info.Message); // prompts the user to sign-in
+        return Task.CompletedTask;
+    },
 };
 DeviceCodeCredential deviceCodeCredential = new DeviceCodeCredential(deviceCodeCredentialOptions);
 
