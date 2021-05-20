@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10CompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The Windows10CompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10CompliancePolicy constructor
+        ///</summary>
         public Windows10CompliancePolicy()
         {
             this.ODataType = "microsoft.graph.windows10CompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets bit locker enabled.
         /// Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled

@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSGeneralDeviceConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The MacOSGeneralDeviceConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSGeneralDeviceConfiguration constructor
+        ///</summary>
         public MacOSGeneralDeviceConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSGeneralDeviceConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets compliant app list type.
         /// List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.

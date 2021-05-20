@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class Windows10EndpointProtectionConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The Windows10EndpointProtectionConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The Windows10EndpointProtectionConfiguration constructor
+        ///</summary>
         public Windows10EndpointProtectionConfiguration()
         {
             this.ODataType = "microsoft.graph.windows10EndpointProtectionConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets application guard allow persistence.
         /// Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)

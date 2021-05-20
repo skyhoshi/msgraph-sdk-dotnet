@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class WindowsDefenderAdvancedThreatProtectionConfiguration : DeviceConfiguration
     {
     
-		///<summary>
-		/// The WindowsDefenderAdvancedThreatProtectionConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The WindowsDefenderAdvancedThreatProtectionConfiguration constructor
+        ///</summary>
         public WindowsDefenderAdvancedThreatProtectionConfiguration()
         {
             this.ODataType = "microsoft.graph.windowsDefenderAdvancedThreatProtectionConfiguration";
         }
-	
+    
         /// <summary>
         /// Gets or sets allow sample sharing.
         /// Windows Defender AdvancedThreatProtection 'Allow Sample Sharing' Rule

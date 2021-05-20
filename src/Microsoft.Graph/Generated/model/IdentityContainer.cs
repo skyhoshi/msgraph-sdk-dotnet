@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class IdentityContainer : Entity
     {
     
-		///<summary>
-		/// The IdentityContainer constructor
-		///</summary>
-        public IdentityContainer()
-        {
-            this.ODataType = "microsoft.graph.identityContainer";
-        }
-	
         /// <summary>
         /// Gets or sets conditional access.
         /// </summary>

@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PlannerBucket : Entity
     {
     
-		///<summary>
-		/// The PlannerBucket constructor
-		///</summary>
-        public PlannerBucket()
-        {
-            this.ODataType = "microsoft.graph.plannerBucket";
-        }
-	
         /// <summary>
         /// Gets or sets name.
         /// Name of the bucket.

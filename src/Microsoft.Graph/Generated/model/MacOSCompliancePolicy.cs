@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class MacOSCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The MacOSCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSCompliancePolicy constructor
+        ///</summary>
         public MacOSCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.macOSCompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets device threat protection enabled.
         /// Require that devices have enabled device threat protection.

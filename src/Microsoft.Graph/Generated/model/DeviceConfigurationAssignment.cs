@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class DeviceConfigurationAssignment : Entity
     {
     
-		///<summary>
-		/// The DeviceConfigurationAssignment constructor
-		///</summary>
-        public DeviceConfigurationAssignment()
-        {
-            this.ODataType = "microsoft.graph.deviceConfigurationAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// The assignment target for the device configuration.

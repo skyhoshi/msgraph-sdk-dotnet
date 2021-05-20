@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class MacOSDeviceFeaturesConfiguration : AppleDeviceFeaturesConfigurationBase
     {
     
-		///<summary>
-		/// The MacOSDeviceFeaturesConfiguration constructor
-		///</summary>
+        ///<summary>
+        /// The MacOSDeviceFeaturesConfiguration constructor
+        ///</summary>
         public MacOSDeviceFeaturesConfiguration()
         {
             this.ODataType = "microsoft.graph.macOSDeviceFeaturesConfiguration";
         }
-	
+    
     }
 }
 

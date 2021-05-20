@@ -21,14 +21,14 @@ namespace Microsoft.Graph
     public partial class AndroidCompliancePolicy : DeviceCompliancePolicy
     {
     
-		///<summary>
-		/// The AndroidCompliancePolicy constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidCompliancePolicy constructor
+        ///</summary>
         public AndroidCompliancePolicy()
         {
             this.ODataType = "microsoft.graph.androidCompliancePolicy";
         }
-	
+    
         /// <summary>
         /// Gets or sets device threat protection enabled.
         /// Require that devices have enabled device threat protection.

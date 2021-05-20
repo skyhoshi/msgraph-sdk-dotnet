@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class ApprovalStage : Entity
     {
     
-		///<summary>
-		/// The ApprovalStage constructor
-		///</summary>
-        public ApprovalStage()
-        {
-            this.ODataType = "microsoft.graph.approvalStage";
-        }
-	
         /// <summary>
         /// Gets or sets assigned to me.
         /// Indicates whether the stage is assigned to the calling user to review. Read-only.
