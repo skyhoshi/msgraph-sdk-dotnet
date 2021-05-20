@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.ExternalConnectors
 {
     using System;
     using System.Collections.Generic;
@@ -15,29 +15,27 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type KeyValue.
+    /// The type ExternalItemContent.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<KeyValue>))]
-    public partial class KeyValue
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<ExternalItemContent>))]
+    public partial class ExternalItemContent
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="KeyValue"/> class.
+        /// Initializes a new instance of the <see cref="ExternalItemContent"/> class.
         /// </summary>
-        public KeyValue()
+        public ExternalItemContent()
         {
-            this.ODataType = "microsoft.graph.keyValue";
+            this.ODataType = "microsoft.graph.externalConnectors.externalItemContent";
         }
 
         /// <summary>
-        /// Gets or sets key.
-        /// Key.
+        /// Gets or sets type.
         /// </summary>
-        [JsonPropertyName("key")]
-        public string Key { get; set; }
+        [JsonPropertyName("type")]
+        public ExternalItemContentType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets value.
-        /// Value.
         /// </summary>
         [JsonPropertyName("value")]
         public string Value { get; set; }
