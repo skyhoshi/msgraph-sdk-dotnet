@@ -33,6 +33,7 @@
 - Added GraphServiceClient constructor that accepts TokenCredential instance
 - [Breaking change] Bump minimun .NetFramework version to 4.6.2 from 4.6.1
 - Publish symbols.
+- ChunkedUploadProvider marked as deprecated/obsolete
     </PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
