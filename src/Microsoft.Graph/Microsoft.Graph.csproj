@@ -33,6 +33,7 @@
 - Added GraphServiceClient constructor that accepts TokenCredential instance
 - [Breaking change] Bump minimun .NetFramework version to 4.6.2 from 4.6.1
 - Publish symbols.
+- ChunkedUploadProvider marked as deprecated/obsolete
 - Fix setting of odata.type in constructor to only types derived from abstract types, or types derived from types referenced in properties or odata actions
     </PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
