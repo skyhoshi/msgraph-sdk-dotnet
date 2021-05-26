@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class GroupSettingTemplate : DirectoryObject
     {
     
-		///<summary>
-		/// The GroupSettingTemplate constructor
-		///</summary>
+        ///<summary>
+        /// The GroupSettingTemplate constructor
+        ///</summary>
         public GroupSettingTemplate()
         {
             this.ODataType = "microsoft.graph.groupSettingTemplate";
         }
-	
+    
         /// <summary>
         /// Gets or sets description.
         /// Description of the template.

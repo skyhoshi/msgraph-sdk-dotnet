@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class PlayPromptOperation : CommsOperation
     {
     
-		///<summary>
-		/// The PlayPromptOperation constructor
-		///</summary>
+        ///<summary>
+        /// The PlayPromptOperation constructor
+        ///</summary>
         public PlayPromptOperation()
         {
             this.ODataType = "microsoft.graph.playPromptOperation";
         }
-	
+    
     }
 }
 

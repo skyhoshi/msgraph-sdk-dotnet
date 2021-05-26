@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PlannerPlan : Entity
     {
     
-		///<summary>
-		/// The PlannerPlan constructor
-		///</summary>
-        public PlannerPlan()
-        {
-            this.ODataType = "microsoft.graph.plannerPlan";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// Read-only. The user who created the plan.

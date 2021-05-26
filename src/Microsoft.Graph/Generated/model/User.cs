@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class User : DirectoryObject
     {
     
-		///<summary>
-		/// The User constructor
-		///</summary>
+        ///<summary>
+        /// The User constructor
+        ///</summary>
         public User()
         {
             this.ODataType = "microsoft.graph.user";
         }
-	
+    
         /// <summary>
         /// Gets or sets account enabled.
         /// true if the account is enabled; otherwise, false. This property is required when a user is created. Returned only on $select. Supports $filter.

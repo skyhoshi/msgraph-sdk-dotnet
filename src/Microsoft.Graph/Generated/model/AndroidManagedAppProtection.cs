@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class AndroidManagedAppProtection : TargetedManagedAppProtection
     {
     
-		///<summary>
-		/// The AndroidManagedAppProtection constructor
-		///</summary>
+        ///<summary>
+        /// The AndroidManagedAppProtection constructor
+        ///</summary>
         public AndroidManagedAppProtection()
         {
             this.ODataType = "microsoft.graph.androidManagedAppProtection";
         }
-	
+    
         /// <summary>
         /// Gets or sets custom browser display name.
         /// Friendly name of the preferred custom browser to open weblink on Android.

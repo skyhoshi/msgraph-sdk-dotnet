@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class AccessReviewScheduleDefinition : Entity
     {
     
-		///<summary>
-		/// The AccessReviewScheduleDefinition constructor
-		///</summary>
-        public AccessReviewScheduleDefinition()
-        {
-            this.ODataType = "microsoft.graph.accessReviewScheduleDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// User who created this review.

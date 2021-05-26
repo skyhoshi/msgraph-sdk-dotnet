@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PolicyRoot : Entity
     {
     
-		///<summary>
-		/// The PolicyRoot constructor
-		///</summary>
-        public PolicyRoot()
-        {
-            this.ODataType = "microsoft.graph.policyRoot";
-        }
-	
         /// <summary>
         /// Gets or sets authentication methods policy.
         /// </summary>

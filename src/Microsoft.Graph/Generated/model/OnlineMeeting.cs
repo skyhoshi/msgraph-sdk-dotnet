@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class OnlineMeeting : Entity
     {
     
-		///<summary>
-		/// The OnlineMeeting constructor
-		///</summary>
-        public OnlineMeeting()
-        {
-            this.ODataType = "microsoft.graph.onlineMeeting";
-        }
-	
         /// <summary>
         /// Gets or sets allowed presenters.
         /// Specifies who can be a presenter in a meeting. Possible values are everyone, organization, roleIsPresenter, organizer, and unknownFutureValue.

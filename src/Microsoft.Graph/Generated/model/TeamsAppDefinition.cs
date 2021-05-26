@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class TeamsAppDefinition : Entity
     {
     
-		///<summary>
-		/// The TeamsAppDefinition constructor
-		///</summary>
-        public TeamsAppDefinition()
-        {
-            this.ODataType = "microsoft.graph.teamsAppDefinition";
-        }
-	
         /// <summary>
         /// Gets or sets created by.
         /// </summary>

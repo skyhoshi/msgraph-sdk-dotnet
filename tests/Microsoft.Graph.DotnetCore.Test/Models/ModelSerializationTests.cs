@@ -129,6 +129,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var itemBody = new ItemBody
             {
+                ODataType = "microsoft.graph.itemBody",
                 Content = "bodyContent",
                 ContentType = BodyType.Text,
             };
@@ -155,7 +156,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
         {
             var now = DateTimeOffset.UtcNow;
 
-            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\",\"@odata.type\":\"microsoft.graph.recurrenceRange\"}}", now.ToString("yyyy-MM-dd"));
+            var expectedSerializedString = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
 
             var recurrence = new RecurrenceRange
             {

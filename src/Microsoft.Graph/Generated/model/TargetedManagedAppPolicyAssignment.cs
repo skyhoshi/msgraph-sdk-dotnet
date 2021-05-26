@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class TargetedManagedAppPolicyAssignment : Entity
     {
     
-		///<summary>
-		/// The TargetedManagedAppPolicyAssignment constructor
-		///</summary>
-        public TargetedManagedAppPolicyAssignment()
-        {
-            this.ODataType = "microsoft.graph.targetedManagedAppPolicyAssignment";
-        }
-	
         /// <summary>
         /// Gets or sets target.
         /// Identifier for deployment to a group or app

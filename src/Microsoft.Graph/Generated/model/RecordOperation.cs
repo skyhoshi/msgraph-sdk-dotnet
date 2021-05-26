@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class RecordOperation : CommsOperation
     {
     
-		///<summary>
-		/// The RecordOperation constructor
-		///</summary>
+        ///<summary>
+        /// The RecordOperation constructor
+        ///</summary>
         public RecordOperation()
         {
             this.ODataType = "microsoft.graph.recordOperation";
         }
-	
+    
         /// <summary>
         /// Gets or sets recording access token.
         /// The access token required to retrieve the recording.

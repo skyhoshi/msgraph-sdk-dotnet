@@ -20,14 +20,6 @@ namespace Microsoft.Graph
     public partial class PlannerPlanDetails : Entity
     {
     
-		///<summary>
-		/// The PlannerPlanDetails constructor
-		///</summary>
-        public PlannerPlanDetails()
-        {
-            this.ODataType = "microsoft.graph.plannerPlanDetails";
-        }
-	
         /// <summary>
         /// Gets or sets category descriptions.
         /// An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan

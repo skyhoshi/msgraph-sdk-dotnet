@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class Application : DirectoryObject
     {
     
-		///<summary>
-		/// The Application constructor
-		///</summary>
+        ///<summary>
+        /// The Application constructor
+        ///</summary>
         public Application()
         {
             this.ODataType = "microsoft.graph.application";
         }
-	
+    
         /// <summary>
         /// Gets or sets add ins.
         /// Defines custom behavior that a consuming service can use to call an app in specific contexts. For example, applications that can render file streams may set the addIns property for its 'FileHandler' functionality. This will let services like Office 365 call the application in the context of a document the user is working on.

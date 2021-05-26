@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class Call : Entity
     {
     
-		///<summary>
-		/// The Call constructor
-		///</summary>
-        public Call()
-        {
-            this.ODataType = "microsoft.graph.call";
-        }
-	
         /// <summary>
         /// Gets or sets callback uri.
         /// The callback URL on which callbacks will be delivered. Must be https.

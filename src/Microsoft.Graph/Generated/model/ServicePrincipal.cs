@@ -20,14 +20,14 @@ namespace Microsoft.Graph
     public partial class ServicePrincipal : DirectoryObject
     {
     
-		///<summary>
-		/// The ServicePrincipal constructor
-		///</summary>
+        ///<summary>
+        /// The ServicePrincipal constructor
+        ///</summary>
         public ServicePrincipal()
         {
             this.ODataType = "microsoft.graph.servicePrincipal";
         }
-	
+    
         /// <summary>
         /// Gets or sets account enabled.
         /// true if the service principal account is enabled; otherwise, false.

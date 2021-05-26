@@ -20,13 +20,6 @@ namespace Microsoft.Graph
     [JsonConverter(typeof(DerivedTypeConverter<AccessReviewReviewerScope>))]
     public partial class AccessReviewReviewerScope
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AccessReviewReviewerScope"/> class.
-        /// </summary>
-        public AccessReviewReviewerScope()
-        {
-            this.ODataType = "microsoft.graph.accessReviewReviewerScope";
-        }
 
         /// <summary>
         /// Gets or sets query.

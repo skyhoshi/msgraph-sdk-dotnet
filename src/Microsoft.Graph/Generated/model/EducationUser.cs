@@ -21,14 +21,6 @@ namespace Microsoft.Graph
     public partial class EducationUser : Entity
     {
     
-		///<summary>
-		/// The EducationUser constructor
-		///</summary>
-        public EducationUser()
-        {
-            this.ODataType = "microsoft.graph.educationUser";
-        }
-	
         /// <summary>
         /// Gets or sets account enabled.
         /// True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.
