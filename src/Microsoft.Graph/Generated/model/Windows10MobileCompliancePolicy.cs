@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10MobileCompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets bit locker enabled.
         /// Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled

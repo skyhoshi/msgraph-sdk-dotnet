@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidManagedAppProtection";
         }
-    
+
         /// <summary>
         /// Gets or sets custom browser display name.
         /// Friendly name of the preferred custom browser to open weblink on Android.

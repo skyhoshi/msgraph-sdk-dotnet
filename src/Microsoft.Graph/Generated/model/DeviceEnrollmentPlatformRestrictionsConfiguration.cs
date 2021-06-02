@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.deviceEnrollmentPlatformRestrictionsConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets android restriction.
         /// Android restrictions based on platform, platform operating system version, and device ownership

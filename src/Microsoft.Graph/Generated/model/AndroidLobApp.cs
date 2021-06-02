@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidLobApp";
         }
-    
+
         /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.

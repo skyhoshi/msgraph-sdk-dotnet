@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.servicePrincipal";
         }
-    
+
         /// <summary>
         /// Gets or sets account enabled.
         /// true if the service principal account is enabled; otherwise, false.

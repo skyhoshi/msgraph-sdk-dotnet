@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.groupSettingTemplate";
         }
-    
+
         /// <summary>
         /// Gets or sets description.
         /// Description of the template.

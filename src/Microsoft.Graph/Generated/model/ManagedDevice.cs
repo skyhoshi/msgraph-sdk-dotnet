@@ -148,6 +148,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? EnrolledDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets ethernet mac address.
+        /// Ethernet MAC. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("ethernetMacAddress")]
+        public string EthernetMacAddress { get; set; }
+    
+        /// <summary>
         /// Gets or sets exchange access state.
         /// The Access State of the device in Exchange. This property is read-only. Possible values are: none, unknown, allowed, blocked, quarantined.
         /// </summary>
@@ -174,6 +181,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("freeStorageSpaceInBytes")]
         public Int64? FreeStorageSpaceInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets iccid.
+        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("iccid")]
+        public string Iccid { get; set; }
     
         /// <summary>
         /// Gets or sets imei.
@@ -226,7 +240,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets management agent.
-        /// Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense.
+        /// Management channel of the device. Intune, EAS, etc. This property is read-only. Possible values are: eas, mdm, easMdm, intuneClient, easIntuneClient, configurationManagerClient, configurationManagerClientMdm, configurationManagerClientMdmEas, unknown, jamf, googleCloudDevicePolicyController, microsoft365ManagedMdm, msSense, intuneAosp.
         /// </summary>
         [JsonPropertyName("managementAgent")]
         public ManagementAgentType? ManagementAgent { get; set; }
@@ -251,6 +265,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("model")]
         public string Model { get; set; }
+    
+        /// <summary>
+        /// Gets or sets notes.
+        /// Notes on the device created by IT Admin
+        /// </summary>
+        [JsonPropertyName("notes")]
+        public string Notes { get; set; }
     
         /// <summary>
         /// Gets or sets operating system.
@@ -279,6 +300,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("phoneNumber")]
         public string PhoneNumber { get; set; }
+    
+        /// <summary>
+        /// Gets or sets physical memory in bytes.
+        /// Total Memory in Bytes. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("physicalMemoryInBytes")]
+        public Int64? PhysicalMemoryInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets remote assistance session error details.
@@ -314,6 +342,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("totalStorageSpaceInBytes")]
         public Int64? TotalStorageSpaceInBytes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets udid.
+        /// Unique Device Identifier for iOS and macOS devices. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("udid")]
+        public string Udid { get; set; }
     
         /// <summary>
         /// Gets or sets user display name.

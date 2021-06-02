@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSCompliancePolicy";
         }
-    
+
         /// <summary>
         /// Gets or sets device threat protection enabled.
         /// Require that devices have enabled device threat protection.
