@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.macOSGeneralDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets compliant app list type.
         /// List that is in the CompliantAppsList. Possible values are: none, appsInListCompliant, appsNotInListCompliant.

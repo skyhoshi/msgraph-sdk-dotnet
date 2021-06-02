@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.iosGeneralDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets account block modification.
         /// Indicates whether or not to allow account modification when the device is in supervised mode.
@@ -941,7 +941,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets wi fi connect only to configured networks.
-        /// Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode.
+        /// Indicates whether or not to force the device to use only Wi-Fi networks from configuration profiles when the device is in supervised mode. Available for devices running iOS and iPadOS versions 14.4 and earlier. Devices running 14.5+ should use the setting, 'WiFiConnectToAllowedNetworksOnlyForced.
         /// </summary>
         [JsonPropertyName("wiFiConnectOnlyToConfiguredNetworks")]
         public bool? WiFiConnectOnlyToConfiguredNetworks { get; set; }

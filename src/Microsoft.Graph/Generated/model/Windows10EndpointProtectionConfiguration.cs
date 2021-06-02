@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.windows10EndpointProtectionConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets application guard allow persistence.
         /// Allow persisting user generated data inside the App Guard Containter (favorites, cookies, web passwords, etc.)

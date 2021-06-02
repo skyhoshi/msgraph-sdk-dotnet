@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.printer";
         }
-    
+
         /// <summary>
         /// Gets or sets has physical device.
         /// True if the printer has a physical device for printing. Read-only.

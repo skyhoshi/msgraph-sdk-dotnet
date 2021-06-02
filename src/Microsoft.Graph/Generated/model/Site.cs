@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.site";
         }
-    
+
         /// <summary>
         /// Gets or sets display name.
         /// The full title for the site. Read-only.

@@ -28,7 +28,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.androidWorkProfileGeneralDeviceConfiguration";
         }
-    
+
         /// <summary>
         /// Gets or sets password block fingerprint unlock.
         /// Indicates whether or not to block fingerprint unlock.

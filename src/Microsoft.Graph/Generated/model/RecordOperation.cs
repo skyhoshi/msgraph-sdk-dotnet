@@ -27,7 +27,7 @@ namespace Microsoft.Graph
         {
             this.ODataType = "microsoft.graph.recordOperation";
         }
-    
+
         /// <summary>
         /// Gets or sets recording access token.
         /// The access token required to retrieve the recording.

@@ -35,6 +35,13 @@ namespace Microsoft.Graph
         public string Certificate { get; set; }
     
         /// <summary>
+        /// Gets or sets certificate serial number.
+        /// Certificate serial number. This property is read-only.
+        /// </summary>
+        [JsonPropertyName("certificateSerialNumber")]
+        public string CertificateSerialNumber { get; set; }
+    
+        /// <summary>
         /// Gets or sets expiration date time.
         /// The expiration date and time for Apple push notification certificate.
         /// </summary>
