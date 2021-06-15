@@ -234,6 +234,38 @@ namespace Microsoft.Graph
             if (educationClassToInitialize != null && educationClassToInitialize.AdditionalData != null)
             {
 
+                if (educationClassToInitialize.AssignmentCategories != null && educationClassToInitialize.AssignmentCategories.CurrentPage != null)
+                {
+                    educationClassToInitialize.AssignmentCategories.AdditionalData = educationClassToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    educationClassToInitialize.AdditionalData.TryGetValue("assignmentCategories@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        educationClassToInitialize.AssignmentCategories.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
+                if (educationClassToInitialize.Assignments != null && educationClassToInitialize.Assignments.CurrentPage != null)
+                {
+                    educationClassToInitialize.Assignments.AdditionalData = educationClassToInitialize.AdditionalData;
+
+                    object nextPageLink;
+                    educationClassToInitialize.AdditionalData.TryGetValue("assignments@odata.nextLink", out nextPageLink);
+                    var nextPageLinkString = nextPageLink as string;
+
+                    if (!string.IsNullOrEmpty(nextPageLinkString))
+                    {
+                        educationClassToInitialize.Assignments.InitializeNextPageRequest(
+                            this.Client,
+                            nextPageLinkString);
+                    }
+                }
+
                 if (educationClassToInitialize.Members != null && educationClassToInitialize.Members.CurrentPage != null)
                 {
                     educationClassToInitialize.Members.AdditionalData = educationClassToInitialize.AdditionalData;

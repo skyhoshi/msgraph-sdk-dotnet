@@ -74,7 +74,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is entry exit announced.
-        /// Whether or not to announce when callers join or leave.
+        /// Indicates whether to announce when callers join or leave.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isEntryExitAnnounced", Required = Newtonsoft.Json.Required.Default)]
         public bool? IsEntryExitAnnounced { get; set; }

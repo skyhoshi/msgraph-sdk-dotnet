@@ -115,6 +115,31 @@ namespace Microsoft.Graph
         public EducationTerm Term { get; set; }
     
         /// <summary>
+        /// Gets or sets assignment categories.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentCategories", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment defaults.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentDefaults", Required = Newtonsoft.Json.Required.Default)]
+        public EducationAssignmentDefaults AssignmentDefaults { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignments.
+        /// All assignments associated with this class. Nullable.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignments", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment settings.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "assignmentSettings", Required = Newtonsoft.Json.Required.Default)]
+        public EducationAssignmentSettings AssignmentSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets group.
         /// The underlying Microsoft 365 group object.
         /// </summary>
