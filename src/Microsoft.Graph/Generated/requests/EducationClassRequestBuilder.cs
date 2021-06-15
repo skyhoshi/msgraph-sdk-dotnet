@@ -51,6 +51,54 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for AssignmentCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
+        public IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories
+        {
+            get
+            {
+                return new EducationClassAssignmentCategoriesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignmentCategories"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentDefaults.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentDefaultsRequestBuilder"/>.</returns>
+        public IEducationAssignmentDefaultsRequestBuilder AssignmentDefaults
+        {
+            get
+            {
+                return new EducationAssignmentDefaultsRequestBuilder(this.AppendSegmentToRequestUrl("assignmentDefaults"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
+        public IEducationClassAssignmentsCollectionRequestBuilder Assignments
+        {
+            get
+            {
+                return new EducationClassAssignmentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("assignments"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentSettings.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSettingsRequestBuilder"/>.</returns>
+        public IEducationAssignmentSettingsRequestBuilder AssignmentSettings
+        {
+            get
+            {
+                return new EducationAssignmentSettingsRequestBuilder(this.AppendSegmentToRequestUrl("assignmentSettings"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Group.
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>

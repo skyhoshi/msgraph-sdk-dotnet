@@ -246,6 +246,12 @@ namespace Microsoft.Graph
         public string UserType { get; set; }
     
         /// <summary>
+        /// Gets or sets rubrics.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "rubrics", Required = Newtonsoft.Json.Required.Default)]
+        public IEducationUserRubricsCollectionPage Rubrics { get; set; }
+    
+        /// <summary>
         /// Gets or sets classes.
         /// Classes to which the user belongs. Nullable.
         /// </summary>
