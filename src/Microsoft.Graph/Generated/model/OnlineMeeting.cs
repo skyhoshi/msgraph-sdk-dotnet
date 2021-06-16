@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is entry exit announced.
-        /// Whether or not to announce when callers join or leave.
+        /// Indicates whether to announce when callers join or leave.
         /// </summary>
         [JsonPropertyName("isEntryExitAnnounced")]
         public bool? IsEntryExitAnnounced { get; set; }
