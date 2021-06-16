@@ -106,6 +106,43 @@ namespace Microsoft.Graph
         public EducationTerm Term { get; set; }
     
         /// <summary>
+        /// Gets or sets assignment categories.
+        /// </summary>
+        [JsonPropertyName("assignmentCategories")]
+        public IEducationClassAssignmentCategoriesCollectionPage AssignmentCategories { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentCategoriesNextLink.
+        /// </summary>
+        [JsonPropertyName("assignmentCategories@odata.nextLink")]
+        public string AssignmentCategoriesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment defaults.
+        /// </summary>
+        [JsonPropertyName("assignmentDefaults")]
+        public EducationAssignmentDefaults AssignmentDefaults { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignments.
+        /// All assignments associated with this class. Nullable.
+        /// </summary>
+        [JsonPropertyName("assignments")]
+        public IEducationClassAssignmentsCollectionPage Assignments { get; set; }
+
+        /// <summary>
+        /// Gets or sets assignmentsNextLink.
+        /// </summary>
+        [JsonPropertyName("assignments@odata.nextLink")]
+        public string AssignmentsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets assignment settings.
+        /// </summary>
+        [JsonPropertyName("assignmentSettings")]
+        public EducationAssignmentSettings AssignmentSettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets group.
         /// The underlying Microsoft 365 group object.
         /// </summary>

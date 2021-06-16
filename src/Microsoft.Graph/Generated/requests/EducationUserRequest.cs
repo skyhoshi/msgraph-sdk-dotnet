@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (educationUserToInitialize != null)
             {
+                if (educationUserToInitialize.Rubrics != null && educationUserToInitialize.Rubrics.CurrentPage != null)
+                {
+                    educationUserToInitialize.Rubrics.InitializeNextPageRequest(this.Client, educationUserToInitialize.RubricsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    educationUserToInitialize.Rubrics.AdditionalData = educationUserToInitialize.AdditionalData;
+                }
                 if (educationUserToInitialize.Classes != null && educationUserToInitialize.Classes.CurrentPage != null)
                 {
                     educationUserToInitialize.Classes.InitializeNextPageRequest(this.Client, educationUserToInitialize.ClassesNextLink);

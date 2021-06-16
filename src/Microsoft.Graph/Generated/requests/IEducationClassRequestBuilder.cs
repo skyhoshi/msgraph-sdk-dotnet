@@ -32,6 +32,30 @@ namespace Microsoft.Graph
         new IEducationClassRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AssignmentCategories.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentCategoriesCollectionRequestBuilder"/>.</returns>
+        IEducationClassAssignmentCategoriesCollectionRequestBuilder AssignmentCategories { get; }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentDefaults.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentDefaultsRequestBuilder"/>.</returns>
+        IEducationAssignmentDefaultsRequestBuilder AssignmentDefaults { get; }
+
+        /// <summary>
+        /// Gets the request builder for Assignments.
+        /// </summary>
+        /// <returns>The <see cref="IEducationClassAssignmentsCollectionRequestBuilder"/>.</returns>
+        IEducationClassAssignmentsCollectionRequestBuilder Assignments { get; }
+
+        /// <summary>
+        /// Gets the request builder for AssignmentSettings.
+        /// </summary>
+        /// <returns>The <see cref="IEducationAssignmentSettingsRequestBuilder"/>.</returns>
+        IEducationAssignmentSettingsRequestBuilder AssignmentSettings { get; }
+
+        /// <summary>
         /// Gets the request builder for Group.
         /// </summary>
         /// <returns>The <see cref="IGroupWithReferenceRequestBuilder"/>.</returns>

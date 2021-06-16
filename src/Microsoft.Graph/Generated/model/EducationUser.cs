@@ -237,6 +237,18 @@ namespace Microsoft.Graph
         public string UserType { get; set; }
     
         /// <summary>
+        /// Gets or sets rubrics.
+        /// </summary>
+        [JsonPropertyName("rubrics")]
+        public IEducationUserRubricsCollectionPage Rubrics { get; set; }
+
+        /// <summary>
+        /// Gets or sets rubricsNextLink.
+        /// </summary>
+        [JsonPropertyName("rubrics@odata.nextLink")]
+        public string RubricsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets classes.
         /// Classes to which the user belongs. Nullable.
         /// </summary>

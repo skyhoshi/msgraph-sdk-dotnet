@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public bool? HasMembersWithLicenseErrors { get; set; }
     
         /// <summary>
+        /// Gets or sets is assignable to role.
+        /// Indicates whether this group can be assigned to an Azure Active Directory role.This property can only be set while creating the group and is immutable. If set to true, the securityEnabled property must also be set to true and the group cannot be a dynamic group (that is, groupTypes cannot contain DynamicMembership).Only callers in Global Administrator and Privileged Role Administrator roles can set this property. For more, see Using a group to manage Azure AD role assignmentsReturned by default.
+        /// </summary>
+        [JsonPropertyName("isAssignableToRole")]
+        public bool? IsAssignableToRole { get; set; }
+    
+        /// <summary>
         /// Gets or sets license processing state.
         /// Indicates status of the group license assignment to all members of the group. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete. Returned only on $select. Read-only.
         /// </summary>

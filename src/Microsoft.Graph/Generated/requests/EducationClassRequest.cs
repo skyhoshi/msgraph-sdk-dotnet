@@ -246,6 +246,18 @@ namespace Microsoft.Graph
 
             if (educationClassToInitialize != null)
             {
+                if (educationClassToInitialize.AssignmentCategories != null && educationClassToInitialize.AssignmentCategories.CurrentPage != null)
+                {
+                    educationClassToInitialize.AssignmentCategories.InitializeNextPageRequest(this.Client, educationClassToInitialize.AssignmentCategoriesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    educationClassToInitialize.AssignmentCategories.AdditionalData = educationClassToInitialize.AdditionalData;
+                }
+                if (educationClassToInitialize.Assignments != null && educationClassToInitialize.Assignments.CurrentPage != null)
+                {
+                    educationClassToInitialize.Assignments.InitializeNextPageRequest(this.Client, educationClassToInitialize.AssignmentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    educationClassToInitialize.Assignments.AdditionalData = educationClassToInitialize.AdditionalData;
+                }
                 if (educationClassToInitialize.Members != null && educationClassToInitialize.Members.CurrentPage != null)
                 {
                     educationClassToInitialize.Members.InitializeNextPageRequest(this.Client, educationClassToInitialize.MembersNextLink);
