@@ -210,6 +210,35 @@ Since the HTTP status code and response headers are now available through the Gr
 
 The `IGraphServiceClient` interface is not really an interface because it continues to change with metadata changes. This makes it not ideal to mock or inherit. The interface has therefore been removed and no longer exists.
 
+To alleviate challenges brought about by using mocking frameworks(such Moq), the properties/methods of the `GraphServiceClient` have been made virtual. 
+Therefore, one should be able to mock and mock and write tests in a fashion similar to the example below :-
+
+```cs
+// Arrange
+var mockAuthProvider = new Mock<IAuthenticationProvider>();
+var mockHttpProvider = new Mock<IHttpProvider>();
+var mockGraphClient = new Mock<GraphServiceClient>(mockAuthProvider.Object, mockHttpProvider.Object);
+
+ManagedDevice md = new ManagedDevice
+{
+    Id = "1",
+    DeviceCategory = new DeviceCategory()
+    {
+        Description = "Sample Description"
+    }
+};
+
+// setup the calls
+mockGraphClient.Setup(g => g.DeviceManagement.ManagedDevices["1"].Request().GetAsync(CancellationToken.None)).Returns(Task.Run(() => md)).Verifiable();
+
+// Act
+var graphClient = mockGraphClient.Object;
+var device = await graphClient.DeviceManagement.ManagedDevices["1"].Request().GetAsync(CancellationToken.None);
+
+// Assert
+Assert.Equal("1",device.Id);
+```
+
 ## Remarks about this guide
 
 This guide is written to be as exhaustive as possible, it is possible that we forgot to mention some breaking changes. If you experience breaking changes in your upgrade process that are not already listed in this guide, please open an issue or a pull request to add any information that might be missing.
