@@ -67,13 +67,13 @@ This credential class provides a similar use to the [Client Credential Provider]
 The device code flow enables sign in to devices by way of another device.
 
 ```cs
-string[] scopes = {"User.Read"};
+string[] scopes = {"https://graph.microsoft.com/.default"};
 
 ClientSecretCredential clientSecretCredential = new ClientSecretCredential(tenantId, clientId, clientSecret); 
 
 GraphServiceClient graphServiceClient = new GraphServiceClient(clientSecretCredential, scopes);
 
-User me = await graphClient.Me.Request()
+User me = await graphClient.Users["user-id"].Request()
                 .GetAsync();
 ```
 
@@ -82,7 +82,7 @@ User me = await graphClient.Me.Request()
 This credential class provides a similar use to the [Client Credential Provider](https://github.com/microsoftgraph/msgraph-sdk-dotnet-auth#b-client-credential-provider) with the use of a client certificate and can be used as follows.
 
 ```cs
-string[] scopes = {"User.Read"};
+string[] scopes = {"https://graph.microsoft.com/.default"};
 
 ClientCertificateCredential clientCertificateCredential = new ClientCertificateCredential(tenantId, clientId, certificatePath);
 
@@ -91,7 +91,7 @@ ClientCertificateCredential clientCertificateCredential = new ClientCertificateC
 
 GraphServiceClient graphServiceClient = new GraphServiceClient(clientCertificateCredential, scopes);
 
-User me = await graphClient.Me.Request()
+User me = await graphClient.Users["user-id"].Request()
                 .GetAsync();
 ```
 
