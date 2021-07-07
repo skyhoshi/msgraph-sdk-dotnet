@@ -36,6 +36,7 @@
 - ChunkedUploadProvider marked as deprecated/obsolete
 - Fix setting of odata.type in constructor to only types derived from abstract types, or types derived from types referenced in properties or odata actions
 - Make properties of GraphServiceClient virtual to support mocking frameworks
+- Add support for decrypting rich notifications content        
     </PackageReleaseNotes>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -55,7 +56,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.13" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="2.0.0-preview.14" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
   </ItemGroup>
   <ItemGroup>
