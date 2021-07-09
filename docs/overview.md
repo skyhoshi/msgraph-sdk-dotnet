@@ -38,7 +38,7 @@ var graphServiceClient = new GraphServiceClient(new DelegateAuthenticationProvid
         .Headers
         .Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
 
-    return Task.FromResult(0);
+    return Task.CompletedTask;
 }));
 ```
 
@@ -53,7 +53,7 @@ The resource model classes are generated based on the $metadata description of t
 
 ## Requests
 
-To make requests against the service, you'll need to build a request using the request builders off the client. The request builders are responsible for building the request URL while the `Request()` method off a request builder will build the request object. The request builder patterns are intended to mirror the REST API pattern.
+To make requests against the service, you'll need to build a request using the request builders of the client. The request builders are responsible for building the request URL while the `Request()` method of a request builder will build the request object. The request builder patterns are intended to mirror the REST API pattern.
 
 **Note:** Request and request builder classes are generated based on the $metadata description of the service. Interfaces are provided for each of these classes to enable easy unit testing around the logic contained in the classes. Since these interfaces are also generated, their signatures are subject to change without being considered a breaking change in the library. Anybody consuming these interfaces should be prepared for the class names or interface definitions to change between library versions.
 
