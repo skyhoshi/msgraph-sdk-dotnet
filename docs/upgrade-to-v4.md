@@ -239,6 +239,95 @@ var device = await graphClient.DeviceManagement.ManagedDevices["1"].Request().Ge
 Assert.Equal("1",device.Id);
 ```
 
+### @odata.type is no longer specified by default for all types
+
+In version 3 of the SDK, all the generated types had the @odata.type property set which led to the serialization of the property to cause errors as seen in the several issues( #909, #560, #283). This would mean that SDK users would need to have to make workarounds as below.
+
+```cs
+await _graphServiceClient
+        .TrustFramework
+        .KeySets
+        .Request()
+        .AddAsync(new TrustFrameworkKeySet()
+        {
+            Id = keySetId,
+            ODataType = null    // Work around needed
+        });
+```
+
+To mitigate this, the odata.type parameter is now set only in instances where we will need to do type disambiguation. These include,
+
+1. When type derives from an abstract type
+2. When one of its base types is referenced as the type for a property in another type (except if the base is entity).
+3. When one of its base types is referenced as the type in an odata action in another type (except if the base is entity).
+
+### Added support for encrypted content for rich notifications
+
+The SDK now includes native support to decrypt resource data in rich notifications payloads. 
+When creating a subscription, the user can now simply use the `AddPublicEncryptionCertificate` method to add the certificate to use for encryption/decryption.
+
+```cs
+// create a subscription to listen to new and edited teams messages sent 
+var subscription = new Subscription
+{
+    ChangeType = "created,updated",
+    IncludeResourceData = true,
+    NotificationUrl = _config.Ngrok + "/api/notifications",
+    Resource = "/teams/getAllMessages",
+    ExpirationDateTime = DateTime.UtcNow.AddMinutes(5),
+    ClientState = "SecretClientState",
+    EncryptionCertificateId = "my-custom-id",
+};
+
+// Load a X509Certificate in to the subscription object.
+subscription.AddPublicEncryptionCertificate(this._certificate);
+
+var newSubscription = await graphServiceClient
+    .Subscriptions
+    .Request()
+    .AddAsync(subscription);
+```
+
+Once the subscription is created, one can now use the `AreTokensValid` function to validate tokens and the `DecryptAsync` function to decrypt the encrypted content on the notification payload. 
+An example controller listening for notifications could look as follows
+
+```cs
+public async Task<ActionResult<string>> Post([FromQuery] string validationToken = null)
+{
+    // handle validation
+    if (!string.IsNullOrEmpty(validationToken))
+    {
+        Console.WriteLine($"Received Token: '{validationToken}'");
+        return Ok(validationToken);
+    }
+    var graphServiceClient = GetGraphClient();
+    var myTenantIds = new Guid[] { new Guid(_config.TenantId) };
+    var myAppIds = new Guid[] { new Guid(_config.AppId) };
+    
+    // handle notifications
+    var content = await new StreamReader(Request.Body).ReadToEndAsync();
+    var collection = graphServiceClient.HttpProvider.Serializer.DeserializeObject<ChangeNotificationCollection>(content);
+    
+    // validate the tokens
+    var areTokensValid = await collection.AreTokensValid(myTenantIds, myAppIds);
+    foreach (var changeNotification in collection.Value)
+    {
+        // Decrypt the encryptedContent
+        var attachedChatMessage = await changeNotification.EncryptedContent.DecryptAsync<ChatMessage>((id, thumbprint) => Task.FromResult(this._certificate));
+        if (areTokensValid)
+        {
+            // handle the decrypted object infromation
+            Console.WriteLine($"Message time: {attachedChatMessage.CreatedDateTime}");
+            Console.WriteLine($"Message from: {attachedChatMessage.From?.User?.DisplayName}");
+            Console.WriteLine($"Message content: {attachedChatMessage.Body.Content}");
+            Console.WriteLine();
+        }
+    }
+    return Ok();
+}
+```
+To learn more about rich notifications, you can read about the topic [here](https://docs.microsoft.com/en-us/graph/webhooks-with-resource-data).
+
 ## Remarks about this guide
 
 This guide is written to be as exhaustive as possible, it is possible that we forgot to mention some breaking changes. If you experience breaking changes in your upgrade process that are not already listed in this guide, please open an issue or a pull request to add any information that might be missing.
