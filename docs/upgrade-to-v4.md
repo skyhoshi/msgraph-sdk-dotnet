@@ -80,6 +80,53 @@ User me = await graphClient.Me.Request()
                 .GetAsync();
 ```
 
+### IBaseRequest now takes IResponseHandler as a member
+
+The `IBaseRequest` interface now has a new member of type `IResponseHandler`. Any existing code that derives from it will now have to take this into consideration.
+
+### Method property in IBaseRequest is of type enum from string.
+
+The `Method` property in the `IBaseRequest` interface now is of type enum. Any existing code that derives from it will now have to take this into consideration by changing the string values to the enum values provided now provided in the library.
+
+### HTTP Status Code and Headers are not placed into the AdditionalData
+
+Since the HTTP status code and response headers are now available through the [GraphResponse](#graph-response) object, the default response handler will no longer put this information into the AdditionalData property bag. This is to allow for a better user experience and better performance on deserialization of the response payload.
+
+### GraphServiceClient no longer implements the IGraphServiceClient
+
+The `IGraphServiceClient` interface is not really an interface because it continues to change with metadata changes. This makes it not ideal to mock or inherit. The interface has therefore been removed and no longer exists.
+
+To alleviate challenges brought about by using mocking frameworks(such Moq), the properties/methods of the `GraphServiceClient` have been made virtual. 
+Therefore, one should be able to mock and mock and write tests in a fashion similar to the example below :-
+
+```cs
+// Arrange
+var mockAuthProvider = new Mock<IAuthenticationProvider>();
+var mockHttpProvider = new Mock<IHttpProvider>();
+var mockGraphClient = new Mock<GraphServiceClient>(mockAuthProvider.Object, mockHttpProvider.Object);
+
+ManagedDevice md = new ManagedDevice
+{
+    Id = "1",
+    DeviceCategory = new DeviceCategory()
+    {
+        Description = "Sample Description"
+    }
+};
+
+// setup the calls
+mockGraphClient.Setup(g => g.DeviceManagement.ManagedDevices["1"].Request().GetAsync(CancellationToken.None)).Returns(Task.Run(() => md)).Verifiable();
+
+// Act
+var graphClient = mockGraphClient.Object;
+var device = await graphClient.DeviceManagement.ManagedDevices["1"].Request().GetAsync(CancellationToken.None);
+
+// Assert
+Assert.Equal("1",device.Id);
+```
+
+## New capabilities
+
 ### Azure Identity
 
 The Microsoft Graph library now supports the use of TokenCredential classes in the Azure.Identity library through the new `TokenCredentialAuthProvider`.
@@ -127,14 +174,6 @@ You can check out examples on how to quickly setup other TokenCredential instanc
 Although this version supports Azure Identity, for Web/API scenarios, we encourage you to use the [Microsoft.Identity.Web](https://github.com/AzureAD/microsoft-identity-web) library. Check the [Wiki](https://github.com/AzureAD/microsoft-identity-web/wiki) section to get more information. 
 
 For example, here is a sample of a [WebApp calling Graph](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user), and here is a sample of a [Web API calling Graph](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph)
-
-### IBaseRequest now takes IResponseHandler as a member
-
-The `IBaseRequest` interface now has a new member of type `IResponseHandler`. Any existing code that derives from it will now have to take this into consideration.
-
-### Method property in IBaseRequest is of type enum from string.
-
-The `Method` property in the `IBaseRequest` interface now is of type enum. Any existing code that derives from it will now have to take this into consideration by changing the string values to the enum values provided now provided in the library.
 
 ### Graph Response
 
@@ -202,64 +241,6 @@ using (JsonTextReader jsonTextReader = new JsonTextReader(sr))
 }
 
 ```
-### HTTP Status Code and Headers are not placed into the AdditionalData
-
-Since the HTTP status code and response headers are now available through the GraphResponse object, the default response handler will no longer put this information into the AdditionalData property bag. This is to allow for a better user experience and better performance on deserialization of the response payload.
-
-### GraphServiceClient no longer implements the IGraphServiceClient
-
-The `IGraphServiceClient` interface is not really an interface because it continues to change with metadata changes. This makes it not ideal to mock or inherit. The interface has therefore been removed and no longer exists.
-
-To alleviate challenges brought about by using mocking frameworks(such Moq), the properties/methods of the `GraphServiceClient` have been made virtual. 
-Therefore, one should be able to mock and mock and write tests in a fashion similar to the example below :-
-
-```cs
-// Arrange
-var mockAuthProvider = new Mock<IAuthenticationProvider>();
-var mockHttpProvider = new Mock<IHttpProvider>();
-var mockGraphClient = new Mock<GraphServiceClient>(mockAuthProvider.Object, mockHttpProvider.Object);
-
-ManagedDevice md = new ManagedDevice
-{
-    Id = "1",
-    DeviceCategory = new DeviceCategory()
-    {
-        Description = "Sample Description"
-    }
-};
-
-// setup the calls
-mockGraphClient.Setup(g => g.DeviceManagement.ManagedDevices["1"].Request().GetAsync(CancellationToken.None)).Returns(Task.Run(() => md)).Verifiable();
-
-// Act
-var graphClient = mockGraphClient.Object;
-var device = await graphClient.DeviceManagement.ManagedDevices["1"].Request().GetAsync(CancellationToken.None);
-
-// Assert
-Assert.Equal("1",device.Id);
-```
-
-### @odata.type is no longer specified by default for all types
-
-In version 3 of the SDK, all the generated types had the @odata.type property set which led to the serialization of the property to cause errors as seen in the several issues( #909, #560, #283). This would mean that SDK users would need to have to make workarounds as below.
-
-```cs
-await _graphServiceClient
-        .TrustFramework
-        .KeySets
-        .Request()
-        .AddAsync(new TrustFrameworkKeySet()
-        {
-            Id = keySetId,
-            ODataType = null    // Work around needed
-        });
-```
-
-To mitigate this, the odata.type parameter is now set only in instances where we will need to do type disambiguation. These include,
-
-1. When type derives from an abstract type
-2. When one of its base types is referenced as the type for a property in another type (except if the base is entity).
-3. When one of its base types is referenced as the type in an odata action in another type (except if the base is entity).
 
 ### Added support for encrypted content for rich notifications
 
@@ -327,6 +308,30 @@ public async Task<ActionResult<string>> Post([FromQuery] string validationToken 
 }
 ```
 To learn more about rich notifications, you can read about the topic [here](https://docs.microsoft.com/en-us/graph/webhooks-with-resource-data).
+
+## Bug fixes
+
+### @odata.type is no longer specified by default for all types
+
+In version 3 of the SDK, all the generated types had the @odata.type property set which led to the serialization of the property to cause errors as seen in the several issues( #909, #560, #283). This would mean that SDK users would need to have to make workarounds as below.
+
+```cs
+await _graphServiceClient
+        .TrustFramework
+        .KeySets
+        .Request()
+        .AddAsync(new TrustFrameworkKeySet()
+        {
+            Id = keySetId,
+            ODataType = null    // Work around needed
+        });
+```
+
+To mitigate this, the odata.type parameter is now set only in instances where we will need to do type disambiguation. These include,
+
+1. When type derives from an abstract type
+2. When one of its base types is referenced as the type for a property in another type (except if the base is entity).
+3. When one of its base types is referenced as the type in an odata action in another type (except if the base is entity).
 
 ## Remarks about this guide
 
