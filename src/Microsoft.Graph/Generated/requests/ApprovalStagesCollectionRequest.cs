@@ -39,7 +39,7 @@ namespace Microsoft.Graph
         /// <param name="approvalStage">The ApprovalStage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The created ApprovalStage.</returns>
-        public System.Threading.Tasks.Task<ApprovalStage> AddAsync(ApprovalStage approvalStage, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<ApprovalStage> AddAsync(ApprovalStage approvalStage, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -52,7 +52,7 @@ namespace Microsoft.Graph
         /// <param name="approvalStage">The ApprovalStage to add.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalStage}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ApprovalStage>> AddResponseAsync(ApprovalStage approvalStage, CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalStage>> AddResponseAsync(ApprovalStage approvalStage, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
@@ -65,7 +65,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The collection page.</returns>
-        public async System.Threading.Tasks.Task<IApprovalStagesCollectionPage> GetAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async System.Threading.Tasks.Task<IApprovalStagesCollectionPage> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             var response = await this.SendAsync<ApprovalStagesCollectionResponse>(null, cancellationToken).ConfigureAwait(false);
@@ -85,7 +85,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The <see cref="GraphResponse{ApprovalStagesCollectionResponse}"/> object.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<ApprovalStagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public System.Threading.Tasks.Task<GraphResponse<ApprovalStagesCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
             return this.SendAsyncWithGraphResponse<ApprovalStagesCollectionResponse>(null, cancellationToken);
