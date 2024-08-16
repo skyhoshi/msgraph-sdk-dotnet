@@ -24,7 +24,7 @@ catch (ODataError odataError)
 You can check the status code that caused the error as below.
 
 ```csharp
-catch (ODataError odataError) when (odataError.ResponseStatusCode.Equals(HttpStatusCode.NotFound))
+catch (ODataError odataError) when (odataError.ResponseStatusCode == (int)HttpStatusCode.NotFound)
 {
         // Handle 404 status code
 }
@@ -35,7 +35,7 @@ catch (ODataError odataError) when (odataError.ResponseStatusCode.Equals(HttpSta
 There are a few different types of errors that can occur during a network call. These most common error codes are defined in [GraphErrorCode.cs](../src/Microsoft.Graph/Enums/GraphErrorCode.cs). These can be checked by matching with the error code value as below.
 
 ```csharp
-catch (ODataError odataError) when (odataError.Error.Code.Equals(GraphErrorCode.AccessDenied.ToString()))
+catch (ODataError odataError) when (odataError.Error.Code.Equals(GraphErrorCode.AccessDenied.ToString(),StringComparison.OrdinalIgnoreCase))
 {
         // Handle access denied error
 }

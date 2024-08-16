@@ -130,6 +130,49 @@ var groups = await graphServiceClient
     });
 ```
 
+### Query Parameter Values
+
+Standard Query parameters such as `Select`, `Search` or `Filter` now uses the OData standard with the `$` prefix.
+
+This can break your requests if you do not adapt your parameter values to take this into account.
+
+Example for SharePoint searches:
+
+```cs
+//Valid
+var sites = await graphServiceClient
+                .Sites
+                .GetAsync(requestConfiguration =>
+                {
+                  requestConfiguration.QueryParameters.Search = "\"a1\""; //Quotes are escaped
+                });
+
+//Invalid
+var sites = await graphServiceClient
+                .Sites
+                .GetAsync(requestConfiguration =>
+                {
+                  requestConfiguration.QueryParameters.Search = "a1"; // Numbers not accepted without quotes in $search. Returns an OData exception.
+                });
+
+//Valid
+var allSites = await graphServiceClient
+                .Sites
+                .GetAsync(requestConfiguration =>
+                {
+                  requestConfiguration.QueryParameters.Search = "\"id=*\""; // Select all on the id property
+                });
+
+//Invalid
+var allSites = await graphServiceClient
+                .Sites
+                .GetAsync(requestConfiguration =>
+                {
+                  requestConfiguration.QueryParameters.Search = "\"*\""; // $search="*" returns an empty array
+                });
+```
+To make sure that your conversion is correct verify your query parameters in the [Microsoft Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) before running your code. Also make sure that special characters are either **escaped** or **URL encoded**.
+
 ### Per-Request Options
 To pass per-request options to the default http middleware to configure actions like redirects and retries, this can be done using the `requestConfiguration` by adding an `IRequestOption` instance to the `Options` collection. For example, adding a `RetryHandlerOption` instance to configure the retry handler option as below.
 
@@ -190,6 +233,53 @@ await pageIterator.IterateAsync();
 
 ```
 
+### `$skipToken` and `$deltaToken` query parameters in delta requests
+Given the API guidance [here](https://github.com/microsoft/api-guidelines/blob/vNext/graph/patterns/change-tracking.md#considerations), the metadata used to generate the SDK does not include the `$skipToken` and `$deltaToken` query parameters.
+The entire url is documented as opaque and the change of the url structure (e.g. using alternative query parameters) is not considered a breaking change. 
+Due to this, urls returned from a delta response should be used entirely by either
+
+1. Using the inbuilt request builders to make subsequent requests from the `@odata.nexlink`(OdataDeltaLink property) or `@odata.deltaLink`(OdataNextLink property) returned from the delta request.
+```cs
+// make the first request
+var deltaResponse = await graphClient.Groups.Delta.GetAsync((requestConfiguration) =>
+{
+    requestConfiguration.QueryParameters.Select = new string[] { "displayName", "description", "mailNickname" };
+});
+
+// use the deltaResponse.OdataDeltaLink/deltaResponse.OdataNextLink to make the next request.
+var deltaRequest = new Microsoft.Graph.Beta.Groups.Delta.DeltaRequestBuilder(deltaResponse.OdataDeltaLink, graphClient.RequestAdapter);
+var secondDeltaResponse = await deltaRequest.GetAsync();
+```
+1. Using the PageIterator
+```cs
+//fetch the first page of groups
+var deltaResponse = await graphClient.Groups.Delta.GetAsync((requestConfiguration) =>
+{
+    requestConfiguration.QueryParameters.Select = new string[] { "displayName", "description", "mailNickname" };
+});
+
+// create a list to hold the groups
+var groups = new List<Group>();
+// create a page iterator to iterate through the pages of the response
+var pageIterator = PageIterator<Group, Microsoft.Graph.Beta.Groups.Delta.DeltaResponse>.CreatePageIterator(graphClient, deltaResponse, group => 
+{
+    groups.Add(group);
+    return true;
+});
+
+// This will iterate follow through the odata.nextLink until the last page is reached with an odata.deltaLink
+await pageIterator.IterateAsync();
+
+if (pageIterator.State == PagingState.Delta) 
+{
+    await Task.Delay(30000);// wait for some time for changes to occur.
+    // call delta again with the deltaLink to get the next page of results
+    Console.WriteLine("Calling delta again with deltaLink");
+    Console.WriteLine("DeltaLink url is: " + pageIterator.Deltalink);
+    await pageIterator.ResumeAsync();
+}
+```
+
 ### Error handling
 Errors and exceptions from the new generated version will be exception classed derived from the [ApiException](https://github.com/microsoft/kiota-abstractions-dotnet/blob/8a136e509c7a71ef889643f047938bdbc3c752be/src/ApiException.cs#L11) class from the Kiota abstrations library. 
 Typically, this will be an instance of [OdataError](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/6d1a78fe1ca7d883667b5f231395651e24581653/src/Microsoft.Graph/Generated/Models/ODataErrors/ODataError.cs#L9) and can be handled as below.
@@ -226,7 +316,7 @@ var children = await graphServiceClient.Drives[userDriveId].Items["itemId"].Chil
 
 > NOTE: /drive/root is a shorthand for /drive/items/root so the `itemId` can be replaced with `root` to make a call to get the root folder.
 
-```
+```cs
 // List children in the root drive
 var children = await graphServiceClient.Drives[userDriveId].Items["root"].Children.GetAsync();
 ```
